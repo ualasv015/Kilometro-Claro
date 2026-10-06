@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { categories } from '../../data/tools';
+---
+<BaseLayout title="Categorías de herramientas | Kilómetro Claro" description="Explora las calculadoras para conductores por consumo, costes del coche y coche eléctrico.">
+  <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Categorías' }]} /><section class="listing-hero"><span class="eyebrow">Explora las herramientas</span><h1>Calcula por categoría.</h1><p>Accede directamente a las herramientas según lo que quieras averiguar.</p></section><div class="category-list">{categories.map((category) => <a class="category-row" href={`/categorias/${category.slug}/`}><span class="category-number">0{categories.indexOf(category) + 1}</span><span><h2>{category.name}</h2><p>{category.description}</p></span><span class="row-arrow">↗</span></a>)}</div></div>
+</BaseLayout>

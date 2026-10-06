@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+<BaseLayout title="Guías para conductores | Kilómetro Claro" description="Guías prácticas para entender el consumo, los costes y el uso del coche." noIndex={true}>
+  <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías' }]} /><section class="listing-hero"><span class="eyebrow">Aprende a calcular</span><h1>Guías para conducir con más contexto.</h1><p>Estamos preparando guías prácticas sobre consumo, energía y costes del coche. Mientras tanto, puedes calcularlo con las herramientas gratuitas.</p><a class="button-primary" href="/herramientas/">Ver herramientas <span aria-hidden="true">→</span></a></section></div>
+</BaseLayout>

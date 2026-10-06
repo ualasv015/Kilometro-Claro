@@ -1,0 +1,16 @@
+---
+type Crumb = { label: string; href?: string };
+const { items } = Astro.props as { items: Crumb[] };
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const structured = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem', position: index + 1, name: item.label,
+    item: new URL(item.href ?? Astro.url.pathname, siteUrl).toString(),
+  })),
+};
+---
+<nav class="breadcrumbs" aria-label="Ruta de navegación">
+  <ol>{items.map((item, index) => <li>{index < items.length - 1 && item.href ? <a href={item.href}>{item.label}</a> : <span aria-current="page">{item.label}</span>}</li>)}</ol>
+</nav>
+<script type="application/ld+json" set:html={JSON.stringify(structured)} />

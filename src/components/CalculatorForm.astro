@@ -1,0 +1,25 @@
+---
+import type { Tool } from '../data/tools';
+const { tool } = Astro.props as { tool: Tool };
+---
+<section class="calculator-panel" aria-labelledby="calculator-heading">
+  <div class="calculator-heading"><div><span class="eyebrow">Calculadora gratuita</span><h2 id="calculator-heading">{tool.resultTitle}</h2></div><span class="live-badge"><span></span> Resultado al instante</span></div>
+  <form class="calculator-form" data-calculator={tool.slug} novalidate>
+    <div class="fields-grid">
+      {tool.fields.map((field) => <div class="field">
+        <label for={`${tool.slug}-${field.name}`}>{field.label}{field.optional && <span class="optional"> (opcional)</span>}</label>
+        <div class="input-wrap"><input id={`${tool.slug}-${field.name}`} name={field.name} type="number" inputmode="decimal" min={field.min ?? 0} step={field.step ?? 'any'} placeholder={field.example} aria-describedby={`${tool.slug}-${field.name}-unit`} /><span id={`${tool.slug}-${field.name}-unit`} class="input-unit">{field.unit}</span></div>
+        {field.help && <small>{field.help}</small>}
+      </div>)}
+    </div>
+    {tool.slug === 'coste-viaje-coche' && <div class="form-options"><label class="check-field"><input type="checkbox" name="roundTrip" /><span>Incluir ida y vuelta</span></label></div>}
+    <button class="calculate-button" type="submit">Calcular resultado <span aria-hidden="true">→</span></button>
+    <p class="form-error" role="alert" aria-live="assertive" hidden></p>
+    <p class="form-prompt" aria-live="polite">Completa los datos para ver una estimación personalizada.</p>
+    <div class="result-box" aria-live="polite" aria-atomic="true" hidden></div>
+  </form>
+  <p class="calculator-note">{tool.resultHint}</p>
+</section>
+<script>
+  import '../scripts/calculators';
+</script>

@@ -1,0 +1,16 @@
+---
+const { title, description, canonical, image = '/og-default.svg', noIndex = false } = Astro.props;
+const fullImage = new URL(image, Astro.site ?? 'https://example.com').toString();
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+{noIndex && <meta name="robots" content="noindex,follow" />}
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:site_name" content="Kilómetro Claro" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={fullImage} />
+<meta name="twitter:card" content="summary_large_image" />

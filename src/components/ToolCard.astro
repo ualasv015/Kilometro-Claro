@@ -1,0 +1,10 @@
+---
+const { tool } = Astro.props;
+---
+<a class="tool-card" href={`/calculadoras/${tool.slug}/`}>
+  <span class="tool-card-icon" aria-hidden="true">↗</span>
+  <span class="eyebrow">{tool.category}</span>
+  <h3>{tool.shortTitle}</h3>
+  <p>{tool.description}</p>
+  <span class="text-link">Abrir calculadora <span aria-hidden="true">→</span></span>
+</a>

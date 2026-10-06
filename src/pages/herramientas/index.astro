@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ToolCard from '../../components/ToolCard.astro';
+import { tools } from '../../data/tools';
+---
+<BaseLayout title="Herramientas para conductores | Kilómetro Claro" description="Todas las calculadoras de consumo, coste de viaje y gastos del coche en un solo lugar.">
+  <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Herramientas' }]} /><section class="listing-hero"><span class="eyebrow">Calculadoras gratuitas</span><h1>Herramientas para cada kilómetro.</h1><p>Calcula con tus propios datos, al instante y sin registro.</p></section><div class="tool-grid listing-grid">{tools.map((tool) => <ToolCard tool={tool} />)}</div></div>
+</BaseLayout>

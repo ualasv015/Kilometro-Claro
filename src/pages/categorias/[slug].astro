@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ToolCard from '../../components/ToolCard.astro';
+import { categories, tools } from '../../data/tools';
+export function getStaticPaths() { return categories.map((category) => ({ params: { slug: category.slug }, props: { category } })); }
+const { category } = Astro.props;
+const categoryTools = category.tools.map((slug: string) => tools.find((tool) => tool.slug === slug)).filter(Boolean);
+---
+<BaseLayout title={`${category.name} | Kilómetro Claro`} description={category.description}>
+  <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Categorías', href: '/categorias/' }, { label: category.name }]} /><section class="listing-hero"><span class="eyebrow">Categoría</span><h1>{category.name}</h1><p>{category.description}</p></section><div class="tool-grid listing-grid">{categoryTools.map((tool) => <ToolCard tool={tool} />)}</div></div>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import SeoHead from '../components/SeoHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.com'), webSiteSchema = false, noIndex = ['/guias/', '/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
+const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Kilómetro Claro', url: Astro.site?.toString(), inLanguage: 'es-ES' };
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f8f5" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SeoHead title={title} description={description} canonical={canonical} noIndex={noIndex} />
+    {webSiteSchema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <SiteHeader />
+    <main id="contenido"><slot /></main>
+    <SiteFooter />
+  </body>
+</html>
