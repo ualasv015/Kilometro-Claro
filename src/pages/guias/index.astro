@@ -2,6 +2,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 ---
-<BaseLayout title="Guías para conductores | Kilómetro Claro" description="Guías prácticas para entender el consumo, los costes y el uso del coche." noIndex={true}>
-  <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías' }]} /><section class="listing-hero"><span class="eyebrow">Aprende a calcular</span><h1>Guías para conducir con más contexto.</h1><p>Estamos preparando guías prácticas sobre consumo, energía y costes del coche. Mientras tanto, puedes calcularlo con las herramientas gratuitas.</p><a class="button-primary" href="/herramientas/">Ver herramientas <span aria-hidden="true">→</span></a></section></div>
+<BaseLayout title="Guías para conductores: consumo y costes | Kilómetro Claro" description="Guías claras para entender el consumo, los gastos de tener coche y el coste de los viajes en España.">
+  <div class="wrap page-wrap">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías' }]} />
+    <section class="listing-hero"><span class="eyebrow">Guías para conductores</span><h1>Entiende lo que cuesta moverte.</h1><p>Explicaciones prácticas, cifras con contexto y herramientas para tomar decisiones sobre el coche con tus propios datos.</p></section>
+    <a class="guide-card" href="/guias/cuanto-cuesta-mantener-coche-mes-espana/"><span class="eyebrow">Costes del coche · 8 min de lectura</span><h2>¿Cuánto cuesta mantener un coche al mes en España?</h2><p>Desglosamos combustible, seguro, ITV, impuesto municipal y mantenimiento con estimaciones y un ejemplo transparente.</p><span class="text-link">Leer la guía <span aria-hidden="true">→</span></span></a>
+  </div>
 </BaseLayout>
+<style>
+  .guide-card{display:block;max-width:800px;padding:26px 28px;background:#fff;border:1px solid #e3e8e2;border-radius:8px}
+  .guide-card h2{font:700 23px Manrope,Arial,sans-serif;letter-spacing:-.6px;margin:13px 0 9px}
+  .guide-card p{font-size:13px;line-height:1.7;color:#64716c;max-width:650px;margin:0 0 16px}
+  .guide-card:hover{border-color:#b7c8bc}
+  @media(max-width:760px){.guide-card{padding:21px 19px}.guide-card h2{font-size:20px}}
+</style>
