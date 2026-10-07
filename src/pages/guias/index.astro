@@ -1,18 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { guides } from '../../data/guides';
 ---
 <BaseLayout title="Guías para conductores: consumo y costes | Kilómetro Claro" description="Guías claras para entender el consumo, los gastos de tener coche y el coste de los viajes en España.">
   <div class="wrap page-wrap">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías' }]} />
-    <section class="listing-hero"><span class="eyebrow">Guías para conductores</span><h1>Entiende lo que cuesta moverte.</h1><p>Explicaciones prácticas, cifras con contexto y herramientas para tomar decisiones sobre el coche con tus propios datos.</p></section>
-    <a class="guide-card" href="/guias/cuanto-cuesta-mantener-coche-mes-espana/"><span class="eyebrow">Costes del coche · 8 min de lectura</span><h2>¿Cuánto cuesta mantener un coche al mes en España?</h2><p>Desglosamos combustible, seguro, ITV, impuesto municipal y mantenimiento con estimaciones y un ejemplo transparente.</p><span class="text-link">Leer la guía <span aria-hidden="true">→</span></span></a>
+    <section class="listing-hero"><span class="eyebrow">Guías para conductores</span><h1>Entiende lo que cuesta moverte.</h1><p>Explicaciones prácticas sobre el coche para tomar decisiones con tus propios datos.</p></section>
+    <section class="guide-list" aria-label="Guías de Kilómetro Claro">
+      {guides.map((guide) => <a class="guide-card" href={`/guias/${guide.slug}/`}><span class="eyebrow">{guide.category}{!guide.published && ' · Próximamente'}</span><h2>{guide.title}</h2>{guide.published && <><p>{guide.description}</p><span class="text-link">Leer la guía <span aria-hidden="true">→</span></span></>}</a>)}
+    </section>
   </div>
 </BaseLayout>
 <style>
-  .guide-card{display:block;max-width:800px;padding:26px 28px;background:#fff;border:1px solid #e3e8e2;border-radius:8px}
-  .guide-card h2{font:700 23px Manrope,Arial,sans-serif;letter-spacing:-.6px;margin:13px 0 9px}
-  .guide-card p{font-size:13px;line-height:1.7;color:#64716c;max-width:650px;margin:0 0 16px}
-  .guide-card:hover{border-color:#b7c8bc}
-  @media(max-width:760px){.guide-card{padding:21px 19px}.guide-card h2{font-size:20px}}
+  .guide-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:900px}.guide-card{display:block;min-height:190px;padding:24px;background:#fff;border:1px solid #e3e8e2;border-radius:8px;transition:border-color .18s,transform .18s}.guide-card:hover{border-color:#b7c8bc;transform:translateY(-2px)}.guide-card h2{font:700 22px/1.25 Manrope,Arial,sans-serif;letter-spacing:-.6px;margin:15px 0 10px}.guide-card p{font-size:13px;line-height:1.7;color:#64716c;max-width:650px;margin:0 0 16px}.guide-card .eyebrow{font-size:9px}
+  @media(max-width:760px){.guide-list{grid-template-columns:1fr;gap:10px}.guide-card{min-height:unset;padding:20px}.guide-card h2{font-size:20px}}
 </style>
