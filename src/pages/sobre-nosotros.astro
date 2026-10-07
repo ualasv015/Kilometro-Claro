@@ -1,4 +1,12 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'; import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site } from '../data/site';
 ---
-<BaseLayout title="Sobre nosotros | Kilómetro Claro" description="Conoce el propósito de Kilómetro Claro: herramientas sencillas y transparentes para conductores."><div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Sobre nosotros' }]} /><article class="editorial-content legal-content"><span class="eyebrow">Quiénes somos</span><h1>Información clara para cada kilómetro.</h1><p>Kilómetro Claro reúne herramientas gratuitas para ayudar a los conductores a estimar consumo y costes de uso del coche. Queremos que cada cálculo sea comprensible: mostramos las fórmulas, explicamos qué datos se utilizan y dejamos que cada persona introduzca sus propios precios.</p><p>Los resultados son estimaciones orientativas, no presupuestos ni asesoramiento profesional.</p></article></div></BaseLayout>
+<BaseLayout title="Sobre nosotros | Kilómetro Claro" description="Conoce quién está detrás de Kilómetro Claro y cómo preparamos herramientas y guías prácticas para conductores.">
+  <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Sobre nosotros' }]} />
+    <article class="editorial-content legal-content"><span class="eyebrow">Quién está detrás</span><h1>Información clara para cada kilómetro.</h1>
+      <p>Soy Antonio Soto Vargas, creador de Kilómetro Claro, un proyecto independiente para ayudar a los conductores en España a entender mejor cuánto consumen, cuánto cuestan sus desplazamientos y qué gastos implica tener un coche.</p><p>La web reúne calculadoras gratuitas y guías prácticas para conductores. La idea es sencilla: que puedas introducir tus propios datos, ver cómo se obtiene cada resultado y usar la información para planificar con más claridad.</p><h2>Cómo trabajamos</h2><p>Explicamos las fórmulas utilizadas y distinguimos los datos personales que introduces de las referencias orientativas que aparecen en las guías. Los precios y gastos varían según el vehículo, la localidad, el proveedor y el momento; por eso recomendamos comprobar las tarifas y condiciones aplicables a tu caso.</p><p>El contenido es divulgativo y no sustituye una valoración de un profesional del automóvil, asesor financiero o administración pública. Revisamos las páginas para mantenerlas claras y corregir errores cuando los detectamos.</p><p>Para preguntas o avisos sobre una página, puedes escribir a <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+    </article>
+  </div>
+</BaseLayout>

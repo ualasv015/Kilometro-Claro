@@ -7,6 +7,7 @@ import { tools } from '../../data/tools';
 export function getStaticPaths() { return tools.map((tool) => ({ params: { slug: tool.slug }, props: { tool } })); }
 const { tool } = Astro.props;
 const related = tool.related.map((slug) => tools.find((entry) => entry.slug === slug)).filter(Boolean);
+const hasCostGuide = ['coste-viaje-coche', 'coste-por-kilometro', 'coste-anual-coche'].includes(tool.slug);
 ---
 <BaseLayout title={`${tool.title} | Kilómetro Claro`} description={tool.description}>
   <div class="wrap page-wrap">
@@ -22,6 +23,8 @@ const related = tool.related.map((slug) => tools.find((entry) => entry.slug === 
       <h3>Ejemplo de cálculo</h3><p>{tool.example}</p>
       <section class="faq-section"><h2>Preguntas frecuentes</h2>{tool.faq.map((item) => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</section>
     </article>
+    {hasCostGuide && <aside class="guide-related"><span class="eyebrow">Guía relacionada</span><h2>¿Cuánto cuesta mantener un coche al mes en España?</h2><p>Repasa las partidas habituales, las referencias publicadas y los límites de cada estimación.</p><a href="/guias/cuanto-cuesta-mantener-coche-mes-espana/">Leer la guía <span aria-hidden="true">→</span></a></aside>}
     {related.length > 0 && <section class="related-section"><div class="section-heading"><div><span class="section-kicker">Sigue calculando</span><h2>Herramientas relacionadas</h2></div></div><div class="tool-grid related-grid">{related.map((relatedTool) => <ToolCard tool={relatedTool} />)}</div></section>}
   </div>
 </BaseLayout>
+<style>.guide-related{max-width:760px;margin:35px 0 0;padding:19px 21px;background:#edf1eb;border-radius:7px}.guide-related h2{font:700 18px Manrope,Arial,sans-serif;margin:8px 0}.guide-related p{font-size:12px;color:#64716c;line-height:1.65;margin:0 0 9px}.guide-related>a{font-size:11px;font-weight:700;color:#1d5d4e}.guide-related>a span{padding-left:5px}</style>

@@ -1,6 +1,6 @@
 # Kilómetro Claro
 
-Sitio estático en Astro para herramientas de cálculo dirigidas a conductores en España. Las calculadoras ejecutan sus fórmulas en el navegador y no requieren un backend.
+Sitio principalmente estático en Astro para herramientas de cálculo dirigidas a conductores en España. Las calculadoras ejecutan sus fórmulas en el navegador. El formulario de contacto usa el endpoint `public/contacto.php` para enviar los mensajes desde un alojamiento con PHP.
 
 ## Desarrollo
 
@@ -18,6 +18,14 @@ La página estática individual se genera automáticamente desde `src/pages/calc
 
 Para una futura integración de anuncios se puede añadir un componente de anuncios y colocarlo en el layout o en ubicaciones editoriales elegidas, sin introducirlo en las calculadoras ni reservar huecos mientras no se utilice.
 
+## Formulario de contacto
+
+El formulario de `/contacto/` envía nombre, correo y mensaje por `POST` a `/contacto.php`. El endpoint valida los campos y remite el mensaje a `asv.webs.contact@gmail.com` usando `mail()` de PHP, con `web@kilometroclaro.com` como remitente y la dirección del visitante como respuesta.
+
+Para que funcione en producción, publica la carpeta `dist` en un alojamiento que ejecute PHP (por ejemplo, el hosting de Namecheap), confirma que PHP `mail()` está habilitado y configura el envío/correo del dominio `kilometroclaro.com`. Un alojamiento estático como Netlify no ejecuta este archivo PHP; en ese caso habría que sustituir el endpoint por una función serverless o un servicio de formularios. Haz un envío real de prueba después de publicar y revisa también la carpeta de spam. La compilación local no puede confirmar que el servidor acepte o entregue correos.
+
 ## Antes de publicar
 
-Reemplaza `SITE_URL`, la dirección de contacto y los textos legales de ejemplo con los datos reales del titular y los servicios efectivamente usados. La sección `/guias/` es una portada temporal; no se ha creado contenido de blog en este MVP.
+`src/data/site.ts` centraliza la identidad y los datos de contacto que aparecen en las páginas esenciales. Comprueba que siguen siendo correctos. Las políticas describen el funcionamiento actual: Analytics y AdSense no están instalados. Si se incorporan, revisa las políticas y añade la gestión de consentimiento requerida antes de activarlos. El contenido legal es una base informativa y no sustituye una revisión jurídica de tu situación concreta.
+
+La sección `/guias/` es una portada temporal; el artículo piloto aún no está publicado.
