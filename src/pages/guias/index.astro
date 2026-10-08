@@ -2,17 +2,23 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { guides } from '../../data/guides';
+const categories = [...new Set(guides.map((guide) => guide.category))];
+const categoryId = (category: string) => `tema-${category.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 ---
 <BaseLayout title="Guías para conductores: consumo y costes | Kilómetro Claro" description="Guías claras para entender el consumo, los gastos de tener coche y el coste de los viajes en España.">
   <div class="wrap page-wrap">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías' }]} />
     <section class="listing-hero"><span class="eyebrow">Guías para conductores</span><h1>Entiende lo que cuesta moverte.</h1><p>Explicaciones prácticas sobre el coche para tomar decisiones con tus propios datos.</p></section>
-    <section class="guide-list" aria-label="Guías de Kilómetro Claro">
-      {guides.map((guide) => <a class="guide-card" href={`/guias/${guide.slug}/`}><span class="eyebrow">{guide.category}{!guide.published && ' · Próximamente'}</span><h2>{guide.title}</h2>{guide.published && <><p>{guide.description}</p><span class="text-link">Leer la guía <span aria-hidden="true">→</span></span></>}</a>)}
-    </section>
+    <nav class="guide-topics" aria-label="Temas de las guías">{categories.map((category) => <a href={`#${categoryId(category)}`}>{category}<span aria-hidden="true">↓</span></a>)}</nav>
+    <div class="guide-groups" aria-label="Guías de Kilómetro Claro">
+      {categories.map((category) => <section class="guide-group" id={categoryId(category)} aria-labelledby={`${categoryId(category)}-title`}>
+        <div class="guide-group-heading"><span class="eyebrow">Explora el tema</span><h2 id={`${categoryId(category)}-title`}>{category}</h2><span class="guide-count">{guides.filter((guide) => guide.category === category).length} {guides.filter((guide) => guide.category === category).length === 1 ? 'guía' : 'guías'}</span></div>
+        <div class="guide-list">{guides.filter((guide) => guide.category === category).map((guide) => <a class="guide-card" href={`/guias/${guide.slug}/`}><span class="eyebrow">{guide.published ? category : `${category} · Próximamente`}</span><h3>{guide.title}</h3>{guide.published && <><p>{guide.description}</p><span class="text-link">Leer la guía <span aria-hidden="true">→</span></span></>}</a>)}</div>
+      </section>)}
+    </div>
   </div>
 </BaseLayout>
 <style>
-  .guide-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:900px}.guide-card{display:block;min-height:190px;padding:24px;background:#fff;border:1px solid #e3e8e2;border-radius:8px;transition:border-color .18s,transform .18s}.guide-card:hover{border-color:#b7c8bc;transform:translateY(-2px)}.guide-card h2{font:700 22px/1.25 Manrope,Arial,sans-serif;letter-spacing:-.6px;margin:15px 0 10px}.guide-card p{font-size:13px;line-height:1.7;color:#64716c;max-width:650px;margin:0 0 16px}.guide-card .eyebrow{font-size:9px}
-  @media(max-width:760px){.guide-list{grid-template-columns:1fr;gap:10px}.guide-card{min-height:unset;padding:20px}.guide-card h2{font-size:20px}}
+  .guide-topics{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 39px}.guide-topics a{display:inline-flex;align-items:center;gap:12px;padding:10px 13px;border:1px solid #dfe7de;border-radius:30px;background:#fff;color:#355246;font-size:11px;font-weight:650}.guide-topics a:hover{border-color:#9db7a6;background:#f1f5ef}.guide-topics span{color:#668276}.guide-groups{max-width:1000px}.guide-group{scroll-margin-top:24px;margin:0 0 46px}.guide-group-heading{display:flex;align-items:end;gap:13px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #dfe5de}.guide-group-heading .eyebrow{font-size:9px}.guide-group-heading h2{font:700 25px/1.2 Manrope,Arial,sans-serif;letter-spacing:-.7px;margin:5px 0 0;color:#172522}.guide-count{margin-left:auto;padding:5px 9px;border-radius:30px;background:#edf1eb;color:#607267;font-size:10px;white-space:nowrap}.guide-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.guide-card{display:block;min-height:175px;padding:22px;background:#fff;border:1px solid #e3e8e2;border-radius:8px;transition:border-color .18s,transform .18s}.guide-card:hover{border-color:#b7c8bc;transform:translateY(-2px)}.guide-card h3{font:700 20px/1.25 Manrope,Arial,sans-serif;letter-spacing:-.5px;margin:13px 0 9px}.guide-card p{font-size:13px;line-height:1.7;color:#64716c;max-width:650px;margin:0 0 14px}.guide-card .eyebrow{font-size:9px}
+  @media(max-width:760px){.guide-topics{gap:7px;margin-bottom:30px}.guide-topics a{font-size:10px;padding:9px 11px}.guide-group{margin-bottom:35px}.guide-group-heading{gap:9px}.guide-group-heading h2{font-size:21px}.guide-list{grid-template-columns:1fr;gap:10px}.guide-card{min-height:unset;padding:19px}.guide-card h3{font-size:18px}}
 </style>
