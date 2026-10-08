@@ -8,8 +8,8 @@ const { tool } = Astro.props as { tool: Tool };
     <div class="fields-grid">
       {tool.fields.map((field) => <div class="field">
         <label for={`${tool.slug}-${field.name}`}>{field.label}{field.optional && <span class="optional"> (opcional)</span>}</label>
-        <div class="input-wrap"><input id={`${tool.slug}-${field.name}`} name={field.name} type="number" inputmode="decimal" min={field.min ?? 0} step={field.step ?? 'any'} placeholder={field.example} aria-describedby={`${tool.slug}-${field.name}-unit`} /><span id={`${tool.slug}-${field.name}-unit`} class="input-unit">{field.unit}</span></div>
-        {field.help && <small>{field.help}</small>}
+        {field.options ? <div class="input-wrap select-wrap"><select id={`${tool.slug}-${field.name}`} name={field.name} aria-describedby={field.help ? `${tool.slug}-${field.name}-help` : undefined}><option value="">Selecciona una opción</option>{field.options.map((option) => <option value={option.value}>{option.label}</option>)}</select></div> : <div class="input-wrap"><input id={`${tool.slug}-${field.name}`} name={field.name} type="number" inputmode="decimal" min={field.min ?? 0} max={field.max} step={field.step ?? 'any'} placeholder={field.example} aria-describedby={`${tool.slug}-${field.name}-unit`} /><span id={`${tool.slug}-${field.name}-unit`} class="input-unit">{field.unit}</span></div>}
+        {field.help && <small id={`${tool.slug}-${field.name}-help`}>{field.help}</small>}
       </div>)}
     </div>
     {tool.slug === 'coste-viaje-coche' && <div class="form-options"><label class="check-field"><input type="checkbox" name="roundTrip" /><span>Incluir ida y vuelta</span></label></div>}
@@ -23,3 +23,6 @@ const { tool } = Astro.props as { tool: Tool };
 <script>
   import '../scripts/calculators';
 </script>
+<style>
+  .select-wrap select{width:100%;height:42px;border:0;outline:0;background:transparent;padding:0 12px;color:var(--ink);font-size:12px}
+</style>

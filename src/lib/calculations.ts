@@ -3,6 +3,10 @@ export type TripInput = { distanceKm: number; consumption: number; pricePerLiter
 export type CostPerKmInput = { distanceKm: number; fuel: number; maintenance: number; insurance: number; taxes: number; other: number };
 export type EnergyComparisonInput = { distanceKm: number; fuelConsumption: number; fuelPrice: number; electricConsumption: number; electricityPrice: number };
 export type AnnualCostInput = { annualKm: number; fuel: number; insurance: number; maintenance: number; taxes: number; parking: number; other: number };
+export type ChargeCostInput = { batteryCapacityKwh: number; currentChargePercent: number; targetChargePercent: number; electricityPrice: number; lossPercent: number };
+export type FiveYearCostInput = { annualKm: number; electricPurchasePrice: number; electricConsumption: number; electricityPrice: number; electricAnnualOtherCosts: number; electricResaleValue: number; combustionPurchasePrice: number; fuelConsumption: number; fuelPrice: number; combustionAnnualOtherCosts: number; combustionResaleValue: number };
+export type AutoPlusInput = { grossPrice: number; eligibleNetPrice: number; euAssembly: boolean; qualifiedBattery: boolean };
+export type CarFinanceInput = { vehiclePrice: number; downPayment: number; annualTinPercent: number; months: number; openingFee: number; finalPayment: number };
 
 const nonNegative = (value: number, label: string) => {
   if (!Number.isFinite(value) || value < 0) throw new Error(`${label}: introduce un valor igual o superior a cero.`);
@@ -61,4 +65,68 @@ export function calculateAnnualCarCost(input: AnnualCostInput) {
   const total = input.fuel + input.insurance + input.maintenance + input.taxes + input.parking + input.other;
   nonNegative(total, 'El coste anual');
   return { total, monthly: total / 12, perKm: total / input.annualKm };
+}
+
+export function calculateChargeCost(input: ChargeCostInput) {
+  positive(input.batteryCapacityKwh, 'La capacidad útil de la batería');
+  nonNegative(input.electricityPrice, 'El precio de la electricidad');
+  if (input.currentChargePercent < 0 || input.currentChargePercent > 100 || !Number.isFinite(input.currentChargePercent)) throw new Error('La carga actual debe estar entre 0 y 100 %.');
+  if (input.targetChargePercent < 0 || input.targetChargePercent > 100 || !Number.isFinite(input.targetChargePercent)) throw new Error('La carga objetivo debe estar entre 0 y 100 %.');
+  if (input.targetChargePercent <= input.currentChargePercent) throw new Error('La carga objetivo debe ser superior a la carga actual.');
+  if (input.lossPercent < 0 || input.lossPercent >= 100 || !Number.isFinite(input.lossPercent)) throw new Error('Las pérdidas deben estar entre 0 % y menos de 100 %.');
+  const batteryEnergyKwh = input.batteryCapacityKwh * (input.targetChargePercent - input.currentChargePercent) / 100;
+  const gridEnergyKwh = batteryEnergyKwh / (1 - input.lossPercent / 100);
+  return { batteryEnergyKwh, gridEnergyKwh, cost: gridEnergyKwh * input.electricityPrice };
+}
+
+export function calculateFiveYearCost(input: FiveYearCostInput) {
+  positive(input.annualKm, 'Los kilómetros anuales');
+  for (const [label, value] of [
+    ['El precio del eléctrico', input.electricPurchasePrice], ['El consumo eléctrico', input.electricConsumption], ['El precio de la electricidad', input.electricityPrice],
+    ['Los gastos anuales adicionales del eléctrico', input.electricAnnualOtherCosts], ['El valor de reventa del eléctrico', input.electricResaleValue],
+    ['El precio del coche de combustión', input.combustionPurchasePrice], ['El consumo de combustible', input.fuelConsumption], ['El precio del combustible', input.fuelPrice],
+    ['Los gastos anuales adicionales del coche de combustión', input.combustionAnnualOtherCosts], ['El valor de reventa del coche de combustión', input.combustionResaleValue],
+  ] as const) nonNegative(value, label);
+  const years = 5;
+  const totalKm = input.annualKm * years;
+  const electricEnergyCost = totalKm * input.electricConsumption / 100 * input.electricityPrice;
+  const combustionEnergyCost = totalKm * input.fuelConsumption / 100 * input.fuelPrice;
+  const electricTotal = input.electricPurchasePrice + electricEnergyCost + input.electricAnnualOtherCosts * years - input.electricResaleValue;
+  const combustionTotal = input.combustionPurchasePrice + combustionEnergyCost + input.combustionAnnualOtherCosts * years - input.combustionResaleValue;
+  return {
+    years, totalKm, electricEnergyCost, combustionEnergyCost, electricTotal, combustionTotal,
+    electricMonthly: electricTotal / (years * 12), combustionMonthly: combustionTotal / (years * 12),
+    electricPerKm: electricTotal / totalKm, combustionPerKm: combustionTotal / totalKm,
+    difference: combustionTotal - electricTotal,
+  };
+}
+
+export function calculateAutoPlusEstimate(input: AutoPlusInput) {
+  positive(input.grossPrice, 'El precio final con impuestos');
+  nonNegative(input.eligibleNetPrice, 'El precio en factura sin impuestos');
+  if (input.eligibleNetPrice > 45_000) return { eligible: false, aid: 0, finalPrice: input.grossPrice, percentage: 0, reason: 'El precio en factura sin impuestos supera el límite de 45.000 € para este supuesto de turismo M1.' };
+  const economicPercent = input.eligibleNetPrice <= 35_000 ? 0.25 : 0.15;
+  const percentage = Math.min(1, 0.5 + economicPercent + (input.euAssembly ? 0.15 : 0) + (input.qualifiedBattery ? 0.1 : 0));
+  const aid = 4_500 * percentage;
+  return { eligible: true, aid, finalPrice: Math.max(0, input.grossPrice - aid), percentage, reason: '' };
+}
+
+export function calculateCarFinance(input: CarFinanceInput) {
+  positive(input.vehiclePrice, 'El precio del coche');
+  nonNegative(input.downPayment, 'La entrada');
+  nonNegative(input.annualTinPercent, 'El TIN anual');
+  nonNegative(input.openingFee, 'La comisión de apertura');
+  nonNegative(input.finalPayment, 'La cuota final');
+  if (!Number.isInteger(input.months) || input.months < 1) throw new Error('El plazo debe ser un número entero de meses, como mínimo 1.');
+  if (input.downPayment >= input.vehiclePrice) throw new Error('La entrada debe ser inferior al precio del coche.');
+  const principal = input.vehiclePrice - input.downPayment;
+  if (input.finalPayment > principal) throw new Error('La cuota final no puede superar el importe financiado.');
+  const monthlyRate = input.annualTinPercent / 100 / 12;
+  const monthlyPayment = monthlyRate === 0
+    ? (principal - input.finalPayment) / input.months
+    : (principal - input.finalPayment / (1 + monthlyRate) ** input.months) * monthlyRate / (1 - (1 + monthlyRate) ** -input.months);
+  const installmentTotal = monthlyPayment * input.months;
+  const interestCost = installmentTotal + input.finalPayment - principal;
+  const totalPaid = input.downPayment + input.openingFee + installmentTotal + input.finalPayment;
+  return { principal, monthlyPayment, installmentTotal, interestCost, totalFinanceCost: interestCost + input.openingFee, totalPaid };
 }

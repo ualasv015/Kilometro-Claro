@@ -1,4 +1,4 @@
-export type Field = { name: string; label: string; unit: string; example: string; min?: number; step?: number; optional?: boolean; help?: string };
+export type Field = { name: string; label: string; unit: string; example: string; min?: number; max?: number; step?: number; optional?: boolean; help?: string; options?: { value: string; label: string }[] };
 export type Tool = {
   slug: string; title: string; shortTitle: string; description: string; category: string; categorySlug: string;
   intent: string; intro: string; explanation: string; formula: string; example: string; fields: Field[];
@@ -101,10 +101,100 @@ export const tools: Tool[] = [
       { question: '¿Por qué se muestra también el coste por kilómetro?', answer: 'Permite relacionar los gastos anuales con la distancia recorrida y comparar periodos de uso distintos, siempre que los datos sean representativos.' },
     ],
   },
+  {
+    slug: 'coste-carga-coche-electrico', title: 'Calculadora del coste de cargar un coche eléctrico', shortTitle: 'Coste de carga eléctrica',
+    description: 'Calcula cuánto cuesta cargar un coche eléctrico en casa según la batería, el porcentaje de carga y tu tarifa en €/kWh.',
+    category: 'Coche eléctrico', categorySlug: 'coche-electrico', intent: 'Calcular el coste de cargar una batería de coche eléctrico con una tarifa eléctrica concreta.',
+    intro: 'Estima el coste de una recarga indicando la capacidad útil de la batería, el nivel de carga actual y el objetivo. Puedes incluir una estimación de las pérdidas durante la carga.',
+    explanation: 'El cálculo aplica el precio por kWh a la energía que tendría que salir de la red para alcanzar el nivel indicado. Las pérdidas dependen del vehículo, el cargador, la potencia y la temperatura; introduce una estimación propia o deja el campo opcional a cero.',
+    formula: 'Energía en batería = capacidad útil × (carga objetivo − carga actual) ÷ 100. Energía de red = energía en batería ÷ (1 − pérdidas ÷ 100). Coste = energía de red × precio €/kWh.',
+    example: 'Con una batería útil de 60 kWh, del 20 % al 80 %, pérdidas estimadas del 10 % y una tarifa de 0,20 €/kWh, se necesitan unos 40 kWh de la red y la recarga cuesta aproximadamente 8 €.',
+    fields: [
+      { name: 'batteryCapacityKwh', label: 'Capacidad útil de la batería', unit: 'kWh', example: '60', min: 0.1, step: 0.1, help: 'Consulta la capacidad útil indicada por el fabricante; puede ser menor que la capacidad bruta.' },
+      { name: 'currentChargePercent', label: 'Carga actual', unit: '%', example: '20', min: 0, max: 100, step: 1 },
+      { name: 'targetChargePercent', label: 'Carga objetivo', unit: '%', example: '80', min: 0, max: 100, step: 1 },
+      { name: 'electricityPrice', label: 'Precio de la electricidad', unit: '€/kWh', example: '0,20', min: 0, step: 0.001, help: 'Usa el precio efectivo de la tarifa o del punto de carga.' },
+      { name: 'lossPercent', label: 'Pérdidas de carga estimadas', unit: '%', example: '10', min: 0, max: 30, step: 0.1, optional: true, help: 'Es una estimación: puede variar según el vehículo y el equipo de carga.' },
+    ], resultTitle: 'Coste estimado de la recarga', resultHint: 'Estimación orientativa. El precio real depende de la tarifa, la ubicación y las pérdidas de carga.',
+    related: ['comparador-gasolina-diesel-electrico', 'coste-total-electrico-combustion', 'coste-anual-coche'], faq: [
+      { question: '¿La calculadora sirve para cargar en casa y en un punto público?', answer: 'Sí. Introduce el precio por kWh que corresponda al lugar de carga. Si el operador aplica una tarifa por tiempo o sesión, convierte el coste a un precio efectivo por kWh para compararlo.' },
+      { question: '¿Por qué se pueden perder kWh durante la carga?', answer: 'Parte de la energía tomada de la red no termina almacenada en la batería. La proporción cambia con el coche, la potencia, la temperatura y el cargador, por lo que el porcentaje es una estimación.' },
+    ],
+  },
+  {
+    slug: 'coste-total-electrico-combustion', title: 'Comparador de coste total a cinco años: eléctrico frente a combustión', shortTitle: 'Coste total a cinco años',
+    description: 'Compara el coste estimado a cinco años de un coche eléctrico y uno de combustión, incluyendo compra, energía, gastos anuales y reventa.',
+    category: 'Comparar coches', categorySlug: 'comparar-coches', intent: 'Comparar el coste total de propiedad de un coche eléctrico y uno de combustión durante cinco años.',
+    intro: 'Compara dos escenarios con tus propios precios, kilómetros y estimaciones de reventa. El cálculo suma compra, energía y gastos anuales adicionales, y resta el valor estimado al vender cada coche.',
+    explanation: 'El horizonte es de cinco años y se mantiene fijo para que la comparación sea directa. Incluye en los gastos anuales adicionales conceptos como seguro, mantenimiento e impuestos. No añadas partidas ya incluidas en otro campo. El resultado depende mucho del kilometraje, el precio de compra y la reventa prevista.',
+    formula: 'Coste a 5 años = precio de compra + energía consumida en 5 años + (gastos anuales adicionales × 5) − valor de reventa estimado.',
+    example: 'Con 15.000 km al año, 17 kWh/100 km a 0,20 €/kWh, el eléctrico consume unos 2.550 € de electricidad en cinco años. A 6 L/100 km y 1,65 €/L, el coche térmico consume unos 7.425 € de combustible.',
+    fields: [
+      { name: 'annualKm', label: 'Kilómetros recorridos al año', unit: 'km/año', example: '15000', min: 1, step: 1 },
+      { name: 'electricPurchasePrice', label: 'Precio de compra del eléctrico', unit: '€', example: '35000', min: 0, step: 100, help: 'Introduce el precio que pagarías tras aplicar, si procede, las ayudas que ya tengas confirmadas.' },
+      { name: 'electricConsumption', label: 'Consumo del eléctrico', unit: 'kWh/100 km', example: '17', min: 0, step: 0.1 },
+      { name: 'electricityPrice', label: 'Precio medio de electricidad', unit: '€/kWh', example: '0,20', min: 0, step: 0.001 },
+      { name: 'electricAnnualOtherCosts', label: 'Otros gastos anuales del eléctrico', unit: '€/año', example: '1200', min: 0, step: 10, help: 'Suma seguro, mantenimiento, impuestos y otros gastos que quieras comparar.' },
+      { name: 'electricResaleValue', label: 'Reventa estimada del eléctrico al quinto año', unit: '€', example: '18000', min: 0, step: 100 },
+      { name: 'combustionPurchasePrice', label: 'Precio de compra del coche de combustión', unit: '€', example: '30000', min: 0, step: 100 },
+      { name: 'fuelConsumption', label: 'Consumo de combustible', unit: 'L/100 km', example: '6', min: 0, step: 0.1 },
+      { name: 'fuelPrice', label: 'Precio medio del combustible', unit: '€/L', example: '1,65', min: 0, step: 0.001 },
+      { name: 'combustionAnnualOtherCosts', label: 'Otros gastos anuales del coche de combustión', unit: '€/año', example: '1500', min: 0, step: 10, help: 'Suma seguro, mantenimiento, impuestos y otros gastos que quieras comparar.' },
+      { name: 'combustionResaleValue', label: 'Reventa estimada del coche de combustión al quinto año', unit: '€', example: '15000', min: 0, step: 100 },
+    ], resultTitle: 'Compara el coste estimado a cinco años', resultHint: 'Estimación: no incluye financiación ni gastos que no hayas añadido. La depreciación depende del valor de reventa que introduzcas.',
+    related: ['coste-carga-coche-electrico', 'precio-electrico-auto-plus', 'simulador-financiacion-coche'], faq: [
+      { question: '¿Qué gastos se incluyen en el coste total?', answer: 'La suma incluye precio de compra, coste de energía y otros gastos anuales que introduzcas; después resta el valor de reventa estimado al quinto año. Puedes incluir seguro, mantenimiento e impuestos en los gastos anuales.' },
+      { question: '¿Cómo calculo la depreciación?', answer: 'La herramienta la refleja indirectamente al restar el valor estimado de reventa al precio de compra. Conviene usar precios realistas para el modelo, kilometraje y estado previstos.' },
+      { question: '¿El precio de compra debe incluir la ayuda Auto+?', answer: 'Introduce el precio que realmente pagarías después de las ayudas confirmadas. Puedes obtener una estimación inicial con la calculadora Auto+, teniendo en cuenta que la concesión no está garantizada.' },
+    ],
+  },
+  {
+    slug: 'precio-electrico-auto-plus', title: 'Calculadora del precio final de un coche eléctrico con ayuda Auto+', shortTitle: 'Precio eléctrico con Auto+',
+    description: 'Estima el precio final de un turismo eléctrico puro para particulares tras aplicar los porcentajes orientativos de la ayuda Auto+.',
+    category: 'Coche eléctrico', categorySlug: 'coche-electrico', intent: 'Estimar cuánto podría costar un coche eléctrico tras la ayuda Auto+ en España.',
+    intro: 'Calcula una cuantía teórica para un turismo M1 100 % eléctrico comprado por un particular. La estimación combina el precio sin impuestos y los criterios eléctrico, económico y europeo del programa.',
+    explanation: 'El importe depende de la convocatoria, la elegibilidad del comprador y el vehículo, el precio en factura sin impuestos y la inclusión del modelo en la Lista Blanca para los porcentajes europeos. En la convocatoria de 2026, la factura normalmente debe acreditar un descuento del punto de venta de al menos 1.000 € antes de impuestos, con una excepción para ciertos vehículos adquiridos antes de abrirse el plazo. El precio final es una resta orientativa de la ayuda estimada al precio con impuestos antes de la ayuda. Comprueba las condiciones oficiales antes de comprar.',
+    formula: 'Ayuda teórica = 4.500 € × (50 % por vehículo eléctrico puro + 25 % o 15 % por precio + 15 % por montaje final en la UE + 10 % por criterios de batería, cuando correspondan). Precio final estimado = precio con impuestos − ayuda teórica.',
+    example: 'En un turismo eléctrico puro con precio de factura sin impuestos de 34.000 €, el criterio eléctrico y económico suman el 75 % del máximo: una ayuda teórica de 3.375 €. Si además se confirma el criterio de montaje europeo, el cálculo añade el porcentaje correspondiente.',
+    fields: [
+      { name: 'grossPrice', label: 'Precio total con impuestos antes de la ayuda', unit: '€', example: '41140', min: 1, step: 1, help: 'Introduce el precio final de la oferta, con impuestos, antes de descontar Auto+.' },
+      { name: 'eligibleNetPrice', label: 'Precio en factura sin impuestos', unit: '€', example: '34000', min: 0, step: 10, help: 'Incluye extras y servicios asociados, después de descuentos comerciales. La factura o el concesionario pueden confirmarlo.' },
+      { name: 'euAssembly', label: '¿El modelo tiene confirmado el montaje y acabado final en la UE?', unit: '', example: '', options: [{ value: 'yes', label: 'Sí, confirmado para este modelo' }, { value: 'no', label: 'No' }, { value: 'unknown', label: 'No lo sé' }] },
+      { name: 'qualifiedBattery', label: '¿El modelo cumple los criterios europeos adicionales de batería?', unit: '', example: '', options: [{ value: 'yes', label: 'Sí, confirmado para este modelo' }, { value: 'no', label: 'No' }, { value: 'unknown', label: 'No lo sé' }] },
+    ], resultTitle: 'Estima el precio con Auto+', resultHint: 'Orientativo para particulares y turismos M1 eléctricos puros; no confirma elegibilidad, disponibilidad presupuestaria ni concesión de la ayuda.',
+    related: ['coste-total-electrico-combustion', 'coste-carga-coche-electrico', 'simulador-financiacion-coche'], faq: [
+      { question: '¿La ayuda Auto+ está garantizada si el cálculo da una cantidad?', answer: 'No. La herramienta ofrece una estimación teórica. La concesión depende de cumplir todos los requisitos, de la convocatoria y sus fondos, y de la validación administrativa.' },
+      { question: '¿Por qué hay que introducir el precio sin impuestos?', answer: 'El criterio económico del programa utiliza el precio que consta en factura sin impuestos, con extras y servicios asociados, después de aplicar descuentos comerciales.' },
+      { question: '¿Cómo sé si un coche cumple el criterio europeo?', answer: 'Los porcentajes adicionales dependen de las declaraciones del fabricante y de la Lista Blanca del programa. Confirma la situación del modelo con el concesionario y la fuente oficial antes de usar esos porcentajes.' },
+    ],
+  },
+  {
+    slug: 'simulador-financiacion-coche', title: 'Simulador de financiación de coche', shortTitle: 'Financiación de coche',
+    description: 'Calcula la cuota mensual, los intereses y el coste total de financiar un coche con entrada, TIN, plazo y posible cuota final.',
+    category: 'Compra y financiación', categorySlug: 'compra-financiacion', intent: 'Calcular la cuota y el coste total de un préstamo para comprar un coche.',
+    intro: 'Calcula una cuota mensual orientativa para financiar un coche. Indica el precio, la entrada, el TIN anual y el plazo; puedes añadir una comisión de apertura y una cuota final.',
+    explanation: 'La estimación utiliza un sistema de amortización francés y un tipo mensual equivalente a TIN anual dividido entre doce. La TAE puede ser distinta porque incorpora comisiones y otros costes. Revisa la oferta completa del financiador, incluidos productos vinculados, seguros y condiciones de la cuota final.',
+    formula: 'Cuota = [capital financiado − cuota final ÷ (1 + tipo mensual)^meses] × tipo mensual ÷ [1 − (1 + tipo mensual)^−meses]. El tipo mensual se estima como TIN anual ÷ 12.',
+    example: 'Para financiar 20.000 € a 60 meses con un TIN del 6 %, sin cuota final, la cuota aproximada es de 386,66 €/mes. No incluye comisión de apertura ni otros productos.',
+    fields: [
+      { name: 'vehiclePrice', label: 'Precio del coche', unit: '€', example: '25000', min: 1, step: 1 },
+      { name: 'downPayment', label: 'Entrada', unit: '€', example: '5000', min: 0, step: 100 },
+      { name: 'annualTinPercent', label: 'TIN anual', unit: '%', example: '6', min: 0, step: 0.01, help: 'Utiliza el TIN de la oferta, no la TAE.' },
+      { name: 'months', label: 'Plazo', unit: 'meses', example: '60', min: 1, step: 1 },
+      { name: 'openingFee', label: 'Comisión de apertura', unit: '€', example: '300', min: 0, step: 10, optional: true },
+      { name: 'finalPayment', label: 'Cuota final', unit: '€', example: '0', min: 0, step: 100, optional: true, help: 'Déjala en 0 si todas las cuotas son iguales y no hay un pago final.' },
+    ], resultTitle: 'Tu financiación estimada', resultHint: 'Estimación orientativa: comprueba TAE, comisiones, seguros vinculados y cualquier condición de la oferta.',
+    related: ['coste-anual-coche', 'coste-total-electrico-combustion', 'precio-electrico-auto-plus'], faq: [
+      { question: '¿Qué diferencia hay entre TIN y TAE?', answer: 'El TIN expresa el tipo nominal aplicado al capital. La TAE incorpora además ciertos gastos y permite comparar ofertas; por eso el coste real puede diferir de esta simulación basada en TIN.' },
+      { question: '¿Qué es la cuota final?', answer: 'Es un pago de mayor importe que queda al vencimiento de algunas financiaciones. Reduce las cuotas periódicas, pero debe sumarse al total que pagarás.' },
+    ],
+  },
 ];
 
 export const categories = [
-  { slug: 'consumo-combustible', name: 'Consumo y combustible', description: 'Calculadoras para estimar consumo, litros y gasto en combustible.', tools: ['consumo-combustible', 'coste-viaje-coche'] },
+  { slug: 'consumo-combustible', name: 'Consumo y combustible', description: 'Calculadoras para estimar consumo, litros y gasto en combustible.', tools: ['consumo-combustible'] },
   { slug: 'costes-del-coche', name: 'Costes del coche', description: 'Calcula costes de viaje, coste por kilómetro y gastos anuales.', tools: ['coste-viaje-coche', 'coste-por-kilometro', 'coste-anual-coche'] },
-  { slug: 'coche-electrico', name: 'Coche eléctrico', description: 'Compara el coste de electricidad con el de gasolina o diésel.', tools: ['comparador-gasolina-diesel-electrico', 'coste-anual-coche'] },
+  { slug: 'coche-electrico', name: 'Coche eléctrico', description: 'Calcula el coste de recarga, compara la energía y estima ayudas para un coche eléctrico.', tools: ['comparador-gasolina-diesel-electrico', 'coste-carga-coche-electrico', 'precio-electrico-auto-plus'] },
+  { slug: 'comparar-coches', name: 'Comparar coches', description: 'Compara el coste total de distintas tecnologías y opciones de compra.', tools: ['coste-total-electrico-combustion'] },
+  { slug: 'compra-financiacion', name: 'Compra y financiación', description: 'Estima cuotas, intereses y el coste de financiar un coche.', tools: ['simulador-financiacion-coche'] },
 ];

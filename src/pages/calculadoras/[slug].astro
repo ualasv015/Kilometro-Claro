@@ -21,10 +21,11 @@ const hasCostGuide = ['coste-viaje-coche', 'coste-por-kilometro', 'coste-anual-c
       <div class="section-kicker">Cómo funciona</div><h2>Calcula con tus propios datos</h2><p>{tool.explanation}</p>
       <div class="formula-card"><span>FÓRMULA</span><p>{tool.formula}</p></div>
       <h3>Ejemplo de cálculo</h3><p>{tool.example}</p>
+      {tool.slug === 'precio-electrico-auto-plus' && <aside class="official-source"><strong>Normativa consultada</strong><p>La estimación toma como referencia el Real Decreto 609/2026 y la convocatoria de la Línea 1 para 2026. Comprueba siempre la versión vigente y los datos confirmados de tu modelo.</p><a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-16010" target="_blank" rel="noopener noreferrer">Consultar el Real Decreto en el BOE <span aria-hidden="true">↗</span></a></aside>}
       <section class="faq-section"><h2>Preguntas frecuentes</h2>{tool.faq.map((item) => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</section>
     </article>
     {hasCostGuide && <aside class="guide-related"><span class="eyebrow">Guía relacionada</span><h2>¿Cuánto cuesta mantener un coche al mes en España?</h2><p>Repasa las partidas habituales, las referencias publicadas y los límites de cada estimación.</p><a href="/guias/cuanto-cuesta-mantener-coche-mes-espana/">Leer la guía <span aria-hidden="true">→</span></a></aside>}
     {related.length > 0 && <section class="related-section"><div class="section-heading"><div><span class="section-kicker">Sigue calculando</span><h2>Herramientas relacionadas</h2></div></div><div class="tool-grid related-grid">{related.map((relatedTool) => <ToolCard tool={relatedTool} />)}</div></section>}
   </div>
 </BaseLayout>
-<style>.guide-related{max-width:760px;margin:35px 0 0;padding:19px 21px;background:#edf1eb;border-radius:7px}.guide-related h2{font:700 18px Manrope,Arial,sans-serif;margin:8px 0}.guide-related p{font-size:12px;color:#64716c;line-height:1.65;margin:0 0 9px}.guide-related>a{font-size:11px;font-weight:700;color:#1d5d4e}.guide-related>a span{padding-left:5px}</style>
+<style>.guide-related,.official-source{max-width:760px;margin:24px 0 0;padding:19px 21px;background:#edf1eb;border-radius:7px}.guide-related h2{font:700 18px Manrope,Arial,sans-serif;margin:8px 0}.guide-related p,.official-source p{font-size:12px;color:#64716c;line-height:1.65;margin:6px 0 9px}.guide-related>a,.official-source>a{font-size:11px;font-weight:700;color:#1d5d4e}.guide-related>a span,.official-source>a span{padding-left:5px}</style>

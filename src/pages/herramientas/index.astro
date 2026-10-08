@@ -2,8 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ToolCard from '../../components/ToolCard.astro';
-import { tools } from '../../data/tools';
+import { categories, tools } from '../../data/tools';
+const categoryTools = categories.map((category) => ({ category, tools: category.tools.map((slug) => tools.find((tool) => tool.slug === slug)).filter(Boolean) })).filter((group) => group.tools.length > 0);
 ---
 <BaseLayout title="Herramientas para conductores | Kilómetro Claro" description="Todas las calculadoras de consumo, coste de viaje y gastos del coche en un solo lugar.">
-  <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Herramientas' }]} /><section class="listing-hero"><span class="eyebrow">Calculadoras gratuitas</span><h1>Herramientas para cada kilómetro.</h1><p>Calcula con tus propios datos, al instante y sin registro.</p></section><div class="tool-grid listing-grid">{tools.map((tool) => <ToolCard tool={tool} />)}</div></div>
+  <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Herramientas' }]} /><section class="listing-hero"><span class="eyebrow">Calculadoras gratuitas</span><h1>Herramientas para cada kilómetro.</h1><p>Calcula con tus propios datos, al instante y sin registro.</p></section><nav class="tool-category-nav" aria-label="Categorías de herramientas">{categoryTools.map(({ category }) => <a href={`#${category.slug}`}>{category.name}<span aria-hidden="true">↓</span></a>)}</nav>{categoryTools.map(({ category, tools: groupTools }) => <section id={category.slug} class="tool-category-group" aria-labelledby={`${category.slug}-heading`}><div class="category-group-heading"><div><span class="eyebrow">Categoría</span><h2 id={`${category.slug}-heading`}>{category.name}</h2><p>{category.description}</p></div></div><div class="tool-grid listing-grid">{groupTools.map((tool) => <ToolCard tool={tool} />)}</div></section>)}</div>
 </BaseLayout>
+<style>
+  .tool-category-nav{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 34px}.tool-category-nav a{display:inline-flex;align-items:center;gap:12px;padding:10px 14px;border:1px solid #dfe7de;border-radius:40px;background:#fff;font-size:11px;font-weight:600}.tool-category-nav a span{color:var(--green)}.tool-category-group{padding:25px 0 31px;border-top:1px solid var(--line);scroll-margin-top:25px}.category-group-heading{margin-bottom:17px}.category-group-heading h2{font:700 23px Manrope,sans-serif;letter-spacing:-.7px;margin:6px 0}.category-group-heading p{font-size:12px;color:#69776e;margin:0;line-height:1.6}
+</style>
