@@ -3,11 +3,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ToolCard from '../../components/ToolCard.astro';
 import { categories, tools } from '../../data/tools';
+import { guides } from '../../data/guides';
 export function getStaticPaths() { return categories.map((category) => ({ params: { slug: category.slug }, props: { category } })); }
 const { category } = Astro.props;
 const categoryTools = category.tools.map((slug: string) => tools.find((tool) => tool.slug === slug)).filter(Boolean);
+const categoryGuides = guides.filter((guide) => guide.categorySlug === category.slug && guide.published);
 ---
 <BaseLayout title={`${category.name} | Kilómetro Claro`} description={category.description}>
-  <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Categorías', href: '/categorias/' }, { label: category.name }]} /><section class="listing-hero"><span class="eyebrow">Categoría</span><h1>{category.name}</h1><p>{category.description}</p></section><div class="tool-grid listing-grid">{categoryTools.map((tool) => <ToolCard tool={tool} />)}</div>{category.slug === 'costes-del-coche' && <aside class="category-guide"><span class="eyebrow">Guía destacada</span><h2>¿Cuánto cuesta mantener un coche al mes?</h2><p>Consulta un desglose de gastos habituales en España y aprende a calcular tu propio presupuesto.</p><a class="text-link" href="/guias/cuanto-cuesta-mantener-coche-mes-espana/">Leer la guía <span aria-hidden="true">→</span></a></aside>}</div>
+  <div class="wrap page-wrap">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Categorías', href: '/categorias/' }, { label: category.name }]} />
+    <section class="listing-hero"><span class="eyebrow">Categoría</span><h1>{category.name}</h1><p>{category.description}</p></section>
+
+    {categoryTools.length > 0 && <section class="category-section" aria-labelledby="category-tools-heading">
+      <div class="category-section-heading"><span class="eyebrow">Calcula con tus datos</span><h2 id="category-tools-heading">Calculadoras</h2></div>
+      <div class="tool-grid listing-grid">{categoryTools.map((tool) => <ToolCard tool={tool} />)}</div>
+    </section>}
+
+    {categoryGuides.length > 0 && <section class="category-section category-guides" aria-labelledby="category-guides-heading">
+      <div class="category-section-heading"><span class="eyebrow">Aprende sobre el tema</span><h2 id="category-guides-heading">Guías relacionadas</h2></div>
+      <div class="guide-grid">{categoryGuides.map((guide) => <a class="category-guide-card" href={`/guias/${guide.slug}/`}>
+        <span class="eyebrow">{guide.category}</span><h3>{guide.title}</h3><p>{guide.description}</p><span class="text-link">Leer la guía <span aria-hidden="true">→</span></span>
+      </a>)}</div>
+    </section>}
+  </div>
 </BaseLayout>
-<style>.category-guide{max-width:760px;margin-top:30px;padding:22px 24px;background:#edf1eb;border-radius:7px}.category-guide h2{font:700 20px Manrope,Arial,sans-serif;margin:8px 0}.category-guide p{font-size:12px;line-height:1.65;color:#64716c;margin:0 0 12px}</style>
+<style>
+  .category-section{margin-top:33px}.category-section-heading{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}.category-section-heading .eyebrow{font-size:9px}.category-section-heading h2{font:700 25px/1.2 Manrope,Arial,sans-serif;letter-spacing:-.7px;margin:6px 0 0;color:#172522}.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.category-guide-card{display:flex;flex-direction:column;align-items:flex-start;min-height:185px;padding:22px;background:#fff;border:1px solid #e3e8e2;border-radius:8px;transition:border-color .18s,transform .18s}.category-guide-card:hover{border-color:#b7c8bc;transform:translateY(-2px)}.category-guide-card .eyebrow{font-size:9px}.category-guide-card h3{font:700 19px/1.25 Manrope,Arial,sans-serif;letter-spacing:-.4px;margin:13px 0 9px}.category-guide-card p{font-size:12px;line-height:1.7;color:#64716c;margin:0 0 14px}.category-guide-card .text-link{margin-top:auto;font-size:11px}
+  @media(max-width:760px){.category-section{margin-top:27px}.category-section-heading h2{font-size:22px}.guide-grid{grid-template-columns:1fr;gap:10px}.category-guide-card{min-height:unset;padding:19px}.category-guide-card h3{font-size:18px}}
+</style>

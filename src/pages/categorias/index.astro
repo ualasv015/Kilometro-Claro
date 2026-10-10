@@ -2,7 +2,21 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { categories } from '../../data/tools';
+import { guides } from '../../data/guides';
+const categoryGroups = categories.map((category) => ({
+  category,
+  toolCount: category.tools.length,
+  guideCount: guides.filter((guide) => guide.categorySlug === category.slug && guide.published).length,
+})).filter(({ toolCount, guideCount }) => toolCount + guideCount > 0);
 ---
-<BaseLayout title="Categorías de herramientas | Kilómetro Claro" description="Explora las calculadoras para conductores por consumo, costes del coche y coche eléctrico.">
-  <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Categorías' }]} /><section class="listing-hero"><span class="eyebrow">Explora las herramientas</span><h1>Calcula por categoría.</h1><p>Accede directamente a las herramientas según lo que quieras averiguar.</p></section><div class="category-list">{categories.map((category) => <a class="category-row" href={`/categorias/${category.slug}/`}><span class="category-number">0{categories.indexOf(category) + 1}</span><span><h2>{category.name}</h2><p>{category.description}</p></span><span class="row-arrow">↗</span></a>)}</div></div>
+<BaseLayout title="Categorías de calculadoras y guías | Kilómetro Claro" description="Explora calculadoras y guías para conductores por consumo, costes del coche, movilidad y coche eléctrico.">
+  <div class="wrap page-wrap">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Categorías' }]} />
+    <section class="listing-hero"><span class="eyebrow">Explora por tema</span><h1>Calculadoras y guías por categoría.</h1><p>Encuentra herramientas prácticas y explicaciones relacionadas con lo que quieres resolver.</p></section>
+    <div class="category-list">{categoryGroups.map(({ category, toolCount, guideCount }, index) => <a class="category-row" href={`/categorias/${category.slug}/`}>
+      <span class="category-number">{String(index + 1).padStart(2, '0')}</span>
+      <span><h2>{category.name}</h2><p>{toolCount > 0 && `${toolCount} ${toolCount === 1 ? 'calculadora' : 'calculadoras'}`}{toolCount > 0 && guideCount > 0 && ' · '}{guideCount > 0 && `${guideCount} ${guideCount === 1 ? 'guía' : 'guías'}`}</p></span>
+      <span class="row-arrow" aria-hidden="true">↗</span>
+    </a>)}</div>
+  </div>
 </BaseLayout>
