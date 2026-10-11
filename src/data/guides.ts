@@ -79,4 +79,12 @@ export const guides = [
     description: 'Revisamos un estudio europeo reciente y explicamos por qué la fiabilidad también depende del modelo, el motor y el mantenimiento.',
     published: true,
   },
+  {
+    slug: 'marcas-coches-mas-vendidas-espana-2025',
+    title: 'Marcas de coches más vendidas en España en 2025: ranking y modelos líderes',
+    category: 'Comprar coche',
+    categorySlug: 'compra-financiacion',
+    description: 'Consulta las diez marcas con más matriculaciones de turismos en España en 2025, su modelo más vendido y cómo interpretar las cifras.',
+    published: true,
+  },
 ] as const;

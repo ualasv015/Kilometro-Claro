@@ -10,7 +10,7 @@ const related = tool.related.map((slug) => tools.find((entry) => entry.slug === 
 const hasCostGuide = ['coste-viaje-coche', 'coste-por-kilometro', 'coste-anual-coche'].includes(tool.slug);
 ---
 <BaseLayout title={`${tool.title} | Kilómetro Claro`} description={tool.description}>
-  <div class="wrap page-wrap">
+  <div class="wrap page-wrap calculator-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Herramientas', href: '/herramientas/' }, { label: tool.shortTitle }]} />
     <section class="tool-hero">
       <div class="tool-hero-copy"><span class="eyebrow">{tool.category}</span><h1>{tool.title}</h1><p>{tool.intro}</p></div>
