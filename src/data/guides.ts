@@ -64,6 +64,14 @@ export const guides = [
     published: true,
   },
   {
+    slug: 'nueva-normativa-dgt-octubre-2026',
+    title: 'Nueva normativa de la DGT desde el 1 de octubre de 2026: cambios para conductores',
+    category: 'Movilidad y normativa',
+    categorySlug: 'movilidad-normativa',
+    description: 'Resumen práctico del Real Decreto 518/2026: adelantamientos, motos, patinetes, bicicletas y las medidas que se aplazan a 2027.',
+    published: true,
+  },
+  {
     slug: 'marcas-coches-mas-fiables-ranking',
     title: 'Marcas de coches más fiables: ranking y cómo interpretar los datos',
     category: 'Comprar coche',
