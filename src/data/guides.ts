@@ -56,6 +56,14 @@ export const guides = [
     published: true,
   },
   {
+    slug: 'coches-baratos-espana',
+    title: 'Coches baratos en España en 2026: cinco opciones y su coste real',
+    category: 'Comprar coche',
+    categorySlug: 'compra-financiacion',
+    description: 'Comparamos cinco ofertas de octubre de 2026 y distinguimos el precio al contado de los descuentos por financiación y ayudas.',
+    published: true,
+  },
+  {
     slug: 'zonas-bajas-emisiones-espana-como-afectan',
     title: 'Zonas de bajas emisiones en España: cómo saber si afectan a tu coche',
     category: 'Movilidad y normativa',
