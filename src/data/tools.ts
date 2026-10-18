@@ -24,18 +24,18 @@ export const tools: Tool[] = [
     ],
   },
   {
-    slug: 'coste-viaje-coche', title: 'Calculadora de coste de viaje en coche', shortTitle: 'Coste de un viaje',
+    slug: 'coste-viaje-coche', title: 'Calculadora de coste de combustible para un viaje', shortTitle: 'Combustible de un viaje',
     description: 'Estima los litros necesarios y el coste de combustible de un viaje en coche, con opción de ida y vuelta y reparto por pasajeros.',
     category: 'Costes del coche', categorySlug: 'costes-del-coche', intent: 'Saber cuánto costará en combustible un viaje en coche según su distancia, consumo y precio por litro.',
     intro: 'Calcula el coste estimado del combustible de un desplazamiento. Indica la distancia de ida, el consumo medio y el precio por litro que quieras tomar como referencia.',
     explanation: 'El cálculo cubre únicamente combustible. Peajes, aparcamiento y otros gastos del viaje no están incluidos. Si marcas ida y vuelta se duplica la distancia; el reparto por pasajero es orientativo.',
-    formula: 'Litros = distancia × consumo ÷ 100. Coste = litros × precio por litro.', example: 'Un trayecto de 250 km con un consumo de 6 L/100 km y combustible a 1,60 €/L cuesta unos 24 € por trayecto.',
+    formula: 'Litros = distancia × consumo ÷ 100. Coste del combustible = litros × precio por litro.', example: 'Un trayecto de 250 km con un consumo de 6 L/100 km y combustible a 1,60 €/L cuesta unos 24 € de combustible por trayecto.',
     fields: [
       { name: 'distanceKm', label: 'Distancia de ida', unit: 'km', example: '250', min: 0, step: 0.1 },
       { name: 'consumption', label: 'Consumo medio', unit: 'L/100 km', example: '6,5', min: 0, step: 0.1, help: 'Puedes obtenerlo con la calculadora de consumo.' },
       { name: 'pricePerLiter', label: 'Precio del combustible', unit: '€/L', example: '1,60', min: 0, step: 0.01 },
       { name: 'passengers', label: 'Personas que comparten el gasto', unit: 'personas', example: '2', min: 1, step: 1, optional: true },
-    ], resultTitle: 'Coste estimado del viaje', resultHint: 'Estimación de combustible; no incluye peajes, aparcamiento ni desgaste.',
+    ], resultTitle: 'Coste estimado del combustible', resultHint: 'Solo combustible; no incluye peajes, aparcamiento ni desgaste del coche.',
     related: ['consumo-combustible', 'coste-por-kilometro'], faq: [
       { question: '¿La calculadora incluye peajes?', answer: 'No. El resultado estima solo el combustible. Añade por separado peajes, aparcamiento y otros gastos para conocer el presupuesto completo.' },
       { question: '¿El precio del combustible se actualiza automáticamente?', answer: 'No. Introduce el precio que quieras usar como referencia; así puedes adaptar el cálculo a tu gasolinera y fecha de viaje.' },

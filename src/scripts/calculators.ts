@@ -57,7 +57,7 @@ document.querySelectorAll<HTMLFormElement>('[data-calculator]').forEach((form) =
         }
         case 'coste-viaje-coche': {
           const r = calculateTripCost({ distanceKm: values.distanceKm, consumption: values.consumption, pricePerLiter: values.pricePerLiter, roundTrip: (form.elements.namedItem('roundTrip') as HTMLInputElement)?.checked, passengers: values.passengers || undefined });
-          renderResult(form, 'Estimación del viaje', [['Distancia calculada', `${formatNumber(r.distanceKm)} km`], ['Combustible necesario', `${formatNumber(r.liters)} L`], ['Coste total', formatEuro(r.total)], ...(r.perPassenger === null ? [] : [['Coste por persona', formatEuro(r.perPassenger)] as [string, string]])]); break;
+          renderResult(form, 'Combustible para el viaje', [['Distancia calculada', `${formatNumber(r.distanceKm)} km`], ['Combustible necesario', `${formatNumber(r.liters)} L`], ['Coste del combustible', formatEuro(r.total)], ...(r.perPassenger === null ? [] : [['Combustible por persona', formatEuro(r.perPassenger)] as [string, string]])]); break;
         }
         case 'coste-por-kilometro': {
           const r = calculateCostPerKm({ distanceKm: values.distanceKm, fuel: values.fuel, maintenance: values.maintenance, insurance: values.insurance, taxes: values.taxes, other: values.other });
