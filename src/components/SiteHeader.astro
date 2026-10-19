@@ -1,9 +1,75 @@
 <header class="site-header">
   <div class="header-inner wrap">
     <a class="brand" href="/" aria-label="Kilómetro Claro, inicio"><img class="brand-mark" src="/logo-marca-kilometro-claro.png" alt="" width="36" height="36" /><span>Kilómetro<span class="brand-light">Claro</span></span></a>
-    <nav aria-label="Navegación principal" class="main-nav">
-      <a href="/categorias/">Categorías</a><a href="/guias/">Guías</a>
+    <nav aria-label="Navegación principal" class="main-nav header-nav">
+      <a class="nav-pill" href="/herramientas/">Calculadoras</a>
+      <a class="nav-pill nav-pill-light" href="/categorias/">Categorías</a>
+      <a class="nav-pill" href="/guias/">Guías</a>
     </nav>
-    <a class="header-cta" href="/herramientas/">Ver calculadoras <span aria-hidden="true">↗</span></a>
   </div>
 </header>
+
+<style>
+  .header-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: min(100%, 480px);
+    margin-left: auto;
+  }
+
+  .header-nav .nav-pill {
+    display: grid;
+    place-items: center;
+    min-height: 40px;
+    padding: 9px 12px;
+    border: 1px solid var(--green);
+    border-radius: 7px;
+    background: var(--green);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    transition: background-color .18s, border-color .18s;
+  }
+
+  .header-nav .nav-pill:hover {
+    background: #17493d;
+    border-color: #17493d;
+    color: #fff;
+  }
+
+  .header-nav .nav-pill-light {
+    border-color: var(--lime);
+    background: var(--lime);
+    color: #173d34;
+  }
+
+  .header-nav .nav-pill-light:hover {
+    border-color: #c9ec5a;
+    background: #c9ec5a;
+    color: #173d34;
+  }
+
+  .header-nav .nav-pill:focus-visible {
+    outline: 3px solid #76a98f;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 760px) {
+    .header-nav {
+      order: 3;
+      width: 100%;
+      gap: 6px;
+      margin: 0;
+      padding: 3px 0 7px;
+    }
+
+    .header-nav .nav-pill {
+      min-height: 41px;
+      padding-inline: 6px;
+      font-size: 11px;
+    }
+  }
+</style>

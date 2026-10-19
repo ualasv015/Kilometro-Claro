@@ -1,5 +1,9 @@
 ---
-const { title, description, canonical, image = '/og-default.svg', noIndex = false, ogType = 'website' } = Astro.props;
+import { guideImages } from '../data/guide-images';
+
+const guideSlug = Astro.url.pathname.match(/^\/guias\/([^/]+)\//)?.[1];
+const defaultImage = guideSlug ? guideImages[guideSlug]?.src ?? '/og-default.svg' : '/og-default.svg';
+const { title, description, canonical, image = defaultImage, noIndex = false, ogType = 'website' } = Astro.props;
 const fullImage = new URL(image, Astro.site ?? 'https://example.com').toString();
 ---
 <title>{title}</title>
@@ -14,3 +18,4 @@ const fullImage = new URL(image, Astro.site ?? 'https://example.com').toString()
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={fullImage} />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content={fullImage} />

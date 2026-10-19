@@ -1,15 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import CapitalIvtm from '../../components/guides/CapitalIvtm.astro';
 import '../../styles/guide.css';
 
 const title = '¿Cuánto cuesta mantener un coche al mes en España? (Guía y desglose de costes)';
-const description = 'Seguro, gasolina, ITV, impuesto de circulación y mantenimiento: revisamos cuánto puede costar un coche al mes en España y cómo calcular tu caso.';
-const canonical = new URL('/guias/cuanto-cuesta-mantener-coche-mes-espana/', Astro.site ?? 'https://example.com');
-const date = '2026-10-06';
+const description = 'Desglosamos el coste mensual de un coche en España: combustible, seguro, ITV, mantenimiento e IVTM. Consulta las tarifas 2026 de las capitales y calcula tu caso.';
+const canonical = new URL('/guias/cuanto-cuesta-mantener-coche-mes-espana/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-10-06';
+const modifiedDate = '2026-10-19';
 const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
-  datePublished: date, dateModified: date, inLanguage: 'es-ES', mainEntityOfPage: canonical.toString(),
+  datePublished: publishedDate, dateModified: modifiedDate, inLanguage: 'es-ES', mainEntityOfPage: canonical.toString(),
   author: { '@type': 'Organization', name: 'Kilómetro Claro' }, publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
 };
 ---
@@ -19,9 +22,9 @@ const articleSchema = {
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Coste mensual de un coche' }]} />
     <article class="guide-article">
       <header class="guide-header">
-        <span class="eyebrow">Costes del coche · Actualizada el 6 de octubre de 2026</span>
+        <span class="eyebrow">Costes del coche · Actualizada el 19 de octubre de 2026</span>
         <h1>{title}</h1>
-        <p class="dek">El gasto mensual no es solo gasolina: seguro, mantenimiento, ITV e impuesto municipal también cuentan. Aquí tienes un desglose útil y una forma sencilla de calcular el coste de tu coche.</p>
+        <p class="dek">El gasto mensual no es solo gasolina: seguro, mantenimiento, ITV e impuesto municipal también cuentan. Desglosamos un ejemplo verificable, consultamos el IVTM de cada capital provincial y distinguimos el gasto del mes del coste de propiedad.</p>
         <p class="byline">Por el equipo editorial de Kilómetro Claro</p>
       </header>
 
@@ -30,8 +33,9 @@ const articleSchema = {
         <p>Como referencia amplia, RACE estima que mantener un coche de combustión con unos 15.000 km al año puede costar entre <strong>2.000 y 3.500 € al año</strong> en 2026, aproximadamente <strong>170–290 € al mes</strong>. El resultado cambia mucho con el vehículo, la ciudad, el seguro y los gastos que incluyas.</p>
         <a class="button-primary" href="/calculadoras/coste-anual-coche/">Calcula el coste anual de tu coche <span aria-hidden="true">→</span></a>
       </aside>
+      <GuideImage slug="cuanto-cuesta-mantener-coche-mes-espana" />
 
-      <nav class="article-toc" aria-label="Contenido de esta guía"><strong>En esta guía</strong><ul><li><a href="#desglose">Desglose mensual</a></li><li><a href="#ejemplo">Un ejemplo con cifras</a></li><li><a href="#calcular">Cómo calcular tu propio coste</a></li><li><a href="#reducir">Cómo ajustar el presupuesto</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></nav>
+      <nav class="article-toc" aria-label="Contenido de esta guía"><strong>En esta guía</strong><ul><li><a href="#desglose">Desglose mensual</a></li><li><a href="#ejemplo">Un ejemplo con cifras</a></li><li><a href="#ivtm-capitals-title">IVTM por capital provincial</a></li><li><a href="#coste-completo">Coste de uso y propiedad</a></li><li><a href="#calcular">Cómo calcular tu propio coste</a></li><li><a href="#reducir">Cómo ajustar el presupuesto</a></li><li><a href="#conclusion">Conclusión</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></nav>
 
       <p>Para saber cuánto cuesta tener coche conviene separar los pagos que se repiten de los gastos ligados al uso. El combustible sube con los kilómetros; el seguro y el impuesto municipal suelen llegar aunque conduzcas poco. Además, neumáticos, averías y pérdida de valor pueden hacer que el coste real sea mayor que el presupuesto habitual.</p>
 
@@ -55,9 +59,22 @@ const articleSchema = {
       <p>El cálculo encaja dentro de la horquilla general que publica RACE para 2026: 2.000–3.500 € al año, o aproximadamente 170–290 € al mes para un coche de combustión y unos 15.000 km anuales. La horquilla de RACE considera gastos habituales y puede incluir partidas distintas de nuestro ejemplo; no se deben sumar ambos resultados. <a href="https://www.race.es/cuanto-cuesta-mantener-coche">Ver desglose y supuestos de RACE</a>.</p>
       <p>El IVTM lo fija cada municipio. Como muestra concreta, Madrid publica para 2026 una cuota anual de 59 € en turismos de 8 a 11,99 caballos fiscales; otras potencias y localidades tienen importes diferentes. Comprueba la tarifa de tu ayuntamiento antes de cerrar el presupuesto. <a href="https://agenciatributaria.madrid.es/portales/contribuyente/es/Impuestos-tasas-y-precios-publicos/Vehiculos-de-Traccion-Mecanica-IVTM-/Pagos-tarifas-y-domiciliaciones/Impuesto-sobre-Vehiculos-de-Traccion-Mecanica-IVTM-Calculo-de-la-tarifa/?vgnextchannel=d3f1e5bcc9c78710VgnVCM1000008a4a900aRCRD&amp;vgnextfmt=default&amp;vgnextoid=cc561a0367ac8210VgnVCM1000000b205a0aRCRD">Tarifas IVTM 2026 del Ayuntamiento de Madrid</a>.</p>
 
+      <CapitalIvtm />
+
+      <h2 id="coste-completo">Gasto mensual y coste de propiedad: dos preguntas distintas</h2>
+      <p>Los <strong>176–244 € al mes</strong> del ejemplo sirven para prever pagos habituales de un coche de gasolina que ya supera los diez años. No describen todo el coste de poseerlo. Hay dos partidas que a menudo se olvidan: las reparaciones y piezas de desgaste que no llegan cada mes, y la pérdida de valor del vehículo. Conviene mostrarlas por separado para que sepas qué parte procede de recibos y qué parte de una previsión.</p>
+      <h3>Reserva para imprevistos: una decisión presupuestaria, no una tarifa</h3>
+      <p>Si decides apartar <strong>300 € al año</strong> para neumáticos, batería o una reparación, añades <strong>25 € al mes</strong> al presupuesto del ejemplo: la horquilla pasa a <strong>201–269 €/mes</strong>, aproximadamente. Los 300 € son solo un supuesto de planificación, no un gasto medio medido en España; una reparación puede superar la reserva y un año sin incidencias puede quedarse por debajo. No sustituyen la revisión sencilla de 150–350 € que ya incluimos.</p>
+      <h3>Depreciación: lo que pierdes al venderlo</h3>
+      <p>Supongamos ahora que compras ese turismo usado por <strong>10.000 €</strong> y lo vendes cinco años después por <strong>5.000 €</strong>. La pérdida hipotética de 5.000 € equivale a <strong>1.000 € al año o 83,33 € al mes</strong>. Sumada al escenario con reserva, el coste económico ilustrativo subiría a <strong>285–353 €/mes</strong>. No es una previsión de reventa para ningún modelo: depende de edad, kilómetros, estado y mercado. Si calculas la pérdida de valor, no vuelvas a sumar íntegro el precio de compra como gasto del mismo periodo.</p>
+      <p>Una <strong>cuota financiera</strong> responde a otra pregunta: cuánto dinero sale de la cuenta cada mes. Incluye devolución de capital e intereses. Si te interesa el flujo de caja, añade la cuota a los pagos corrientes. Si te interesa el coste económico de propiedad, cuenta la depreciación y el coste financiero, pero evita añadir además todo el capital devuelto como si fuera un gasto adicional. Puedes estimar cuotas e intereses con el <a href="/calculadoras/simulador-financiacion-coche/">simulador de financiación</a>.</p>
+
       <h2>Qué puede cambiar más tu gasto</h2>
       <h3>Los kilómetros y el tipo de recorrido</h3>
-      <p>Quien conduce 8.000 km al año no gasta lo mismo en combustible que quien hace 25.000. También influye el trayecto: tráfico urbano, velocidad, carga y temperatura modifican el consumo real. Para estimar los litros cada 100 km a partir de tus repostajes, utiliza la <a href="/calculadoras/consumo-combustible/">calculadora de consumo de combustible</a>.</p>
+      <p>Quien conduce 8.000 km al año no gasta lo mismo en combustible que quien hace 25.000. Aplicando solo como ejercicio el coste nacional de <strong>9,82 €/100 km</strong> de MITECO para gasolina 95 del 23 de septiembre de 2026, el cambio de kilometraje produce estas diferencias:</p>
+      <div class="table-scroll" role="region" aria-label="Ejemplo de gasto en gasolina según kilómetros al año" tabindex="0"><table><thead><tr><th scope="col">Distancia anual</th><th scope="col">Gasolina al año</th><th scope="col">Media al mes</th></tr></thead><tbody><tr><th scope="row">8.000 km</th><td>785,60 €</td><td>65,47 €</td></tr><tr><th scope="row">15.000 km</th><td>1.473,00 €</td><td>122,75 €</td></tr><tr><th scope="row">25.000 km</th><td>2.455,00 €</td><td>204,58 €</td></tr></tbody></table></div>
+      <p class="table-note">Cálculo propio: kilómetros ÷ 100 × 9,82 €. La referencia de MITECO no representa el consumo ni el precio real de todos los coches. El seguro, el IVTM y otras partidas no están incluidos en esta tabla.</p>
+      <p>También influye el trayecto: tráfico urbano, velocidad, carga y temperatura modifican el consumo real. Para estimar los litros cada 100 km a partir de tus repostajes, utiliza la <a href="/calculadoras/consumo-combustible/">calculadora de consumo de combustible</a>.</p>
       <h3>El seguro y el municipio</h3>
       <p>La prima se calcula según el perfil del conductor, el vehículo y las coberturas. Compara ofertas con las mismas condiciones y revisa el recibo anual. El IVTM, por su parte, depende del ayuntamiento y de los caballos fiscales, no de los kilómetros recorridos.</p>
       <h3>El estado del coche y los gastos que se olvidan</h3>
@@ -72,15 +89,18 @@ const articleSchema = {
       <ul><li>Registra combustible y kilometraje durante varios meses; una sola semana puede no ser representativa.</li><li>Compara seguros con coberturas equivalentes y vuelve a revisar la póliza al renovarla.</li><li>Planifica el mantenimiento según el manual del fabricante y guarda una provisión para neumáticos y averías.</li><li>Antes de un desplazamiento largo, calcula su gasto de combustible y reparte el importe si viajáis varias personas.</li></ul>
       <p>Para preparar una ruta concreta, usa la <a href="/calculadoras/coste-viaje-coche/">calculadora de coste de viaje</a>. Estima combustible según distancia, consumo y precio por litro; peajes y aparcamiento se añaden aparte.</p>
 
+      <h2 id="conclusion">Conclusión: tu coste mensual depende de tus recibos y kilómetros</h2>
+      <p>Una referencia mensual sirve para orientarse, pero no sustituye un presupuesto personal. Suma los pagos fijos, reparte los gastos anuales entre doce meses y calcula el combustible según los kilómetros que realmente recorres. El selector de capitales muestra que el IVTM cambia por municipio, aunque su diferencia mensual suele ser menor que la provocada por los kilómetros, el seguro o una reparación. Reserva margen para imprevistos y, si comparas la compra de dos coches, calcula por separado su pérdida estimada de valor. Así podrás distinguir los pagos habituales del coste total de propiedad.</p>
       <section class="faq-section" id="preguntas"><h2>Preguntas frecuentes</h2>
         <details><summary>¿Cuánto cuesta mantener un coche al mes en España?</summary><p>RACE estima para 2026 entre 2.000 y 3.500 € anuales en un coche de combustión que recorre alrededor de 15.000 km; equivale aproximadamente a 170–290 € al mes. Es una referencia general, no una factura garantizada.</p></details>
         <details><summary>¿Cuánto cuesta mantener un coche sin contar gasolina?</summary><p>No existe una cifra única: seguro, IVTM, ITV y mantenimiento varían según el coche y el conductor. Aparcamiento, reparaciones y financiación pueden añadir una cantidad importante. Suma tus recibos y divide por 12 para obtener tu promedio mensual.</p></details>
         <details><summary>¿Cada cuánto pasa la ITV un turismo particular?</summary><p>En general, la primera inspección es a los cuatro años; desde los cuatro hasta los diez años se realiza cada dos años y, con más de diez años, cada año. La DGT detalla estos plazos y contempla particularidades por tipo de vehículo.</p></details>
         <details><summary>¿El impuesto de circulación cuesta lo mismo en toda España?</summary><p>No. El IVTM es municipal y la cuota depende, entre otros factores, de la ordenanza local y los caballos fiscales. Consulta el importe publicado por el ayuntamiento donde esté domiciliado el vehículo.</p></details>
+        <details><summary>¿El desplegable muestra el IVTM de todos los municipios de mi provincia?</summary><p>No. Muestra la capital de cada una de las 50 provincias y, además, Ceuta y Melilla. Si el vehículo está domiciliado en otro municipio, consulta la ordenanza o el recibo de ese ayuntamiento. Las cifras de AEA son tarifas generales de 2026 para turismos de 8 a 11,99 caballos fiscales y no incluyen bonificaciones personales.</p></details>
         <details><summary>¿Debo incluir la depreciación y la cuota del préstamo?</summary><p>Depende de qué quieras medir. La cuota refleja una salida de dinero; la depreciación estima la pérdida de valor del coche. Si incluyes ambas, define el objetivo del cálculo y el criterio para no contabilizar dos veces el mismo coste.</p></details>
       </section>
 
-      <aside class="sources"><h2>Fuentes y alcance</h2><p>Las cifras de este artículo son referencias de terceros y se presentan con fecha y supuestos. MITECO actualiza su comparativa de combustible por trimestres; el IVTM varía por municipio, y los precios de seguro, ITV y taller dependen de cada caso. Consulta las fuentes antes de tomar decisiones:</p><ul><li><a href="https://www.miteco.gob.es/es/energia/hidrocarburos-nuevos-combustibles/euros-por-100-km/coste-euro-100km.html">MITECO: coste comparativo de combustibles, actualizado el 23/09/2026</a>.</li><li><a href="https://www.race.es/cuanto-cuesta-mantener-coche">RACE: estimación y desglose del coste de mantener un coche en 2026</a>.</li><li><a href="https://revista.dgt.es/es/motor/noticias/2019/04ABRIL/0411-DudasITV.shtml">DGT: periodicidad general de la ITV para turismos</a>.</li><li><a href="https://agenciatributaria.madrid.es/portales/contribuyente/es/Impuestos-tasas-y-precios-publicos/Vehiculos-de-Traccion-Mecanica-IVTM-/Pagos-tarifas-y-domiciliaciones/Impuesto-sobre-Vehiculos-de-Traccion-Mecanica-IVTM-Calculo-de-la-tarifa/?vgnextchannel=d3f1e5bcc9c78710VgnVCM1000008a4a900aRCRD&amp;vgnextfmt=default&amp;vgnextoid=cc561a0367ac8210VgnVCM1000000b205a0aRCRD">Ayuntamiento de Madrid: tarifas IVTM 2026, ejemplo municipal</a>.</li></ul></aside>
+      <aside class="sources"><h2>Fuentes y alcance</h2><p>Las cifras de este artículo son referencias de terceros y se presentan con fecha y supuestos. MITECO actualiza su comparativa de combustible por trimestres; el IVTM varía por municipio, y los precios de seguro, ITV y taller dependen de cada caso. El selector reproduce las tarifas generales del informe AEA para 2026, no las liquidaciones individuales. Los ejemplos de reserva y reventa son supuestos editoriales para explicar el cálculo. Consulta las fuentes antes de tomar decisiones:</p><ul><li><a href="https://www.miteco.gob.es/es/energia/hidrocarburos-nuevos-combustibles/euros-por-100-km/coste-euro-100km.html">MITECO: coste comparativo de combustibles, actualizado el 23/09/2026</a>.</li><li><a href="https://www.race.es/cuanto-cuesta-mantener-coche">RACE: estimación y desglose del coste de mantener un coche en 2026</a>.</li><li><a href="https://revista.dgt.es/es/motor/noticias/2019/04ABRIL/0411-DudasITV.shtml">DGT: periodicidad general de la ITV para turismos</a>.</li><li><a href="https://aeaclub.org/wp-content/uploads/2026/03/INFORME-IVTM-2026-MADRID.pdf">AEA: tarifas IVTM 2026 de las capitales y ciudades autónomas, página 5</a>.</li><li><a href="https://www.dgt.es/nuestros-servicios/tu-vehiculo/tus-vehiculos/impuesto-de-circulacion-ivtm/index.html">DGT: domicilio fiscal del vehículo e impuesto de circulación</a>.</li><li><a href="https://agenciatributaria.madrid.es/portales/contribuyente/es/Impuestos-tasas-y-precios-publicos/Vehiculos-de-Traccion-Mecanica-IVTM-/Pagos-tarifas-y-domiciliaciones/Impuesto-sobre-Vehiculos-de-Traccion-Mecanica-IVTM-Calculo-de-la-tarifa/?vgnextchannel=d3f1e5bcc9c78710VgnVCM1000008a4a900aRCRD&amp;vgnextfmt=default&amp;vgnextoid=cc561a0367ac8210VgnVCM1000000b205a0aRCRD">Ayuntamiento de Madrid: tarifas IVTM 2026, ejemplo municipal</a>.</li></ul></aside>
     </article>
   </div>
 </BaseLayout>

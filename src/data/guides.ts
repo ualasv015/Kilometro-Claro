@@ -4,7 +4,7 @@ export const guides = [
     title: '¿Cuánto cuesta mantener un coche al mes en España?',
     category: 'Costes del coche',
     categorySlug: 'costes-del-coche',
-    description: 'Desglosamos combustible, seguro, ITV, impuesto municipal y mantenimiento con estimaciones y un ejemplo transparente.',
+    description: 'Desglosamos el gasto mensual, añadimos el IVTM 2026 por capital provincial y distinguimos los pagos corrientes del coste de propiedad.',
     published: true,
   },
   {
@@ -12,15 +12,15 @@ export const guides = [
     title: 'Cómo calcular el consumo real de tu coche',
     category: 'Consumo y combustible',
     categorySlug: 'consumo-combustible',
-    description: 'Método de repostajes, fórmula L/100 km, ejemplo de cálculo y factores que hacen variar el consumo real.',
+    description: 'Método de repostajes y fórmula L/100 km, con una medición propia y un protocolo para revisar resultados anómalos.',
     published: true,
   },
   {
     slug: 'cuanto-cuesta-viaje-coche',
-    title: 'Cuánto cuesta un viaje en coche: cómo calcularlo',
+    title: 'Cuánto cuesta un viaje en coche: ejemplo Almería-Barcelona',
     category: 'Coste de los viajes',
     categorySlug: 'costes-del-coche',
-    description: 'Calcula el combustible de ida y vuelta, añade peajes y aparcamiento, y reparte el gasto entre pasajeros.',
+    description: 'Compara cuatro presupuestos para viajar de Almería a Barcelona: sin peajes o con C-32, parking privado o aparcamiento gratuito.',
     published: true,
   },
   {
@@ -28,15 +28,15 @@ export const guides = [
     title: 'Cómo reducir el consumo de combustible: hábitos que sí ayudan',
     category: 'Consumo y combustible',
     categorySlug: 'consumo-combustible',
-    description: 'Técnicas prácticas para conducir con suavidad, preparar el coche y comprobar con tus propios datos si cambia el consumo.',
+    description: 'Sigue un protocolo con repostajes reales para reducir el consumo y medir la diferencia en litros y euros.',
     published: true,
   },
   {
     slug: 'consumo-coche-electrico-gasolina-diesel',
-    title: 'Coche eléctrico frente a gasolina o diésel: cómo comparar el coste por 100 km',
+    title: 'Coche eléctrico frente a gasolina o diésel: costes y recargas en dos viajes',
     category: 'Coche eléctrico',
     categorySlug: 'comparar-coches',
-    description: 'Compara kWh y litros con una unidad común, revisa precios orientativos en España y calcula el coste según tu uso.',
+    description: 'Compara costes entre Almería y Granada y entre Almería y Bilbao, con recargas públicas, tiempos y planificación.',
     published: true,
   },
   {
@@ -68,7 +68,7 @@ export const guides = [
     title: 'Zonas de bajas emisiones en España: cómo saber si afectan a tu coche',
     category: 'Movilidad y normativa',
     categorySlug: 'movilidad-normativa',
-    description: 'Aprende a comprobar la etiqueta, consultar las reglas municipales y preparar una ruta antes de entrar en una ZBE.',
+    description: 'Consulta las ZBE por municipio en el mapa oficial y compara las reglas de Madrid Centro, Barcelona y Bilbao.',
     published: true,
   },
   {
@@ -81,10 +81,10 @@ export const guides = [
   },
   {
     slug: 'marcas-coches-mas-fiables-ranking',
-    title: 'Marcas de coches más fiables: ranking y cómo interpretar los datos',
+    title: 'Marcas de coches más y menos fiables en 2026: ranking OCU y averías',
     category: 'Comprar coche',
     categorySlug: 'compra-financiacion',
-    description: 'Revisamos un estudio europeo reciente y explicamos por qué la fiabilidad también depende del modelo, el motor y el mantenimiento.',
+    description: 'Ranking OCU 2026 y análisis de cinco modelos fiables con sus puntos débiles documentados y consejos para revisar una unidad concreta.',
     published: true,
   },
   {
@@ -93,6 +93,14 @@ export const guides = [
     category: 'Comprar coche',
     categorySlug: 'compra-financiacion',
     description: 'Consulta las diez marcas con más matriculaciones de turismos en España en 2025, su modelo más vendido y cómo interpretar las cifras.',
+    published: true,
+  },
+  {
+    slug: 'porsche-mission-s-2026',
+    title: 'Porsche Mission S: qué sabemos, sus rivales y su relación con el 911',
+    category: 'Comparar coches',
+    categorySlug: 'comparar-coches',
+    description: 'Datos confirmados del Mission S, posibles rivales de Ferrari, Lamborghini y McLaren, y análisis de por qué no sustituirá al 911.',
     published: true,
   },
 ] as const;

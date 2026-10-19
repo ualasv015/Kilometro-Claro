@@ -1,0 +1,81 @@
+---
+import { capitalIvtm2026 } from '../../data/ivtm-capitals';
+---
+<section class="ivtm-capitals" aria-labelledby="ivtm-capitals-title">
+  <span class="eyebrow">Impuesto municipal · datos de 2026</span>
+  <h2 id="ivtm-capitals-title">Consulta el IVTM de la capital de tu provincia</h2>
+  <p>Selecciona una de las <strong>50 capitales de provincia</strong> o las ciudades autónomas de Ceuta y Melilla. Mostramos la cuota anual publicada por Automovilistas Europeos Asociados (AEA) para un turismo de <strong>8 a 11,99 caballos fiscales (CVF)</strong> y su equivalente mensual. Es el tramo utilizado en el ejemplo de Madrid de esta guía.</p>
+  <label for="ivtm-capital">Provincia y municipio</label>
+  <select id="ivtm-capital" aria-describedby="ivtm-capitals-help">
+    <option value="">Elige una provincia o ciudad autónoma</option>
+    {capitalIvtm2026.map((capital) => <option value={capital.municipality} data-annual={capital.annualEur} data-from-nine={capital.annualEurFrom9Cvf} data-province={capital.province}>{capital.province} — {capital.municipality}</option>)}
+  </select>
+  <p id="ivtm-capitals-help" class="ivtm-help">Elige la capital <strong>solo si el vehículo figura domiciliado allí</strong>. Vivir en otra localidad de la misma provincia no implica pagar esta tarifa. La potencia fiscal aparece en la ficha técnica.</p>
+  <p id="ivtm-capitals-status" class="ivtm-status" aria-live="polite">Selecciona un municipio para ver la tarifa de referencia.</p>
+  <div id="ivtm-capitals-result" class="ivtm-result" hidden>
+    <div><span>Cuota IVTM anual</span><strong id="ivtm-annual"></strong></div>
+    <div><span>Equivalente mensual</span><strong id="ivtm-monthly"></strong></div>
+    <p id="ivtm-comparison"></p>
+  </div>
+  <p class="ivtm-note">Tarifas generales del <a href="https://aeaclub.org/wp-content/uploads/2026/03/INFORME-IVTM-2026-MADRID.pdf" target="_blank" rel="noopener noreferrer">informe IVTM 2026 de AEA, página 5</a>. No incluyen posibles bonificaciones, exenciones ni prorrateos. <strong>Donostia/San Sebastián</strong> distingue entre 8–8,99 CVF y 9–11,99 CVF; mostramos las dos cuotas. Para conocer lo que debes pagar, comprueba el recibo o la ordenanza del ayuntamiento que corresponda al <a href="https://www.dgt.es/nuestros-servicios/tu-vehiculo/tus-vehiculos/impuesto-de-circulacion-ivtm/index.html" target="_blank" rel="noopener noreferrer">domicilio fiscal del vehículo</a>.</p>
+</section>
+
+<script>
+  const capitalSelect = document.querySelector<HTMLSelectElement>('#ivtm-capital');
+  const status = document.querySelector<HTMLElement>('#ivtm-capitals-status');
+  const result = document.querySelector<HTMLElement>('#ivtm-capitals-result');
+  const annual = document.querySelector<HTMLElement>('#ivtm-annual');
+  const monthly = document.querySelector<HTMLElement>('#ivtm-monthly');
+  const comparison = document.querySelector<HTMLElement>('#ivtm-comparison');
+  const euros = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
+
+  if (capitalSelect && status && result && annual && monthly && comparison) {
+    capitalSelect.addEventListener('change', () => {
+      const option = capitalSelect.selectedOptions[0];
+      if (!capitalSelect.value) {
+        status.hidden = false;
+        result.hidden = true;
+        status.textContent = 'Selecciona un municipio para ver la tarifa de referencia.';
+        return;
+      }
+
+      const low = Number(option.dataset.annual);
+      const high = option.dataset.fromNine ? Number(option.dataset.fromNine) : low;
+      if (!Number.isFinite(low) || !Number.isFinite(high)) return;
+
+      if (low === high) {
+        annual.textContent = euros.format(low);
+        monthly.textContent = euros.format(low / 12);
+        const difference = low - 59;
+        comparison.textContent = Math.abs(difference) < 0.005
+          ? 'Es la misma cuota de 59 € al año utilizada en el ejemplo de Madrid.'
+          : `Frente a los 59 € anuales del ejemplo de Madrid, la diferencia es de ${euros.format(Math.abs(difference))} al año (${euros.format(Math.abs(difference) / 12)} al mes) ${difference > 0 ? 'más' : 'menos'}. Las demás partidas del ejemplo no cambian por esta selección.`;
+      } else {
+        annual.textContent = `${euros.format(low)} si tiene 8–8,99 CVF; ${euros.format(high)} si tiene 9–11,99 CVF`;
+        monthly.textContent = `${euros.format(low / 12)} o ${euros.format(high / 12)}, respectivamente`;
+        comparison.textContent = 'Comprueba los caballos fiscales de la unidad para escoger la cuota correcta. La diferencia respecto al ejemplo de Madrid afecta solo al IVTM, no al seguro, combustible o mantenimiento.';
+      }
+
+      status.textContent = `Tarifa de referencia para ${capitalSelect.value} (${option.dataset.province ?? 'municipio seleccionado'}):`;
+      result.hidden = false;
+    });
+  }
+</script>
+
+<style>
+  .ivtm-capitals{margin:33px 0;padding:22px 24px;border:1px solid #dbe6d9;border-radius:8px;background:#f5f8f3}
+  .ivtm-capitals h2{margin:8px 0 12px}
+  .ivtm-capitals > p{font-size:14px;line-height:1.75;color:#4e5d55}
+  .ivtm-capitals label{display:block;margin:20px 0 7px;font-size:13px;font-weight:700;color:#25382e}
+  .ivtm-capitals select{width:100%;max-width:570px;min-height:48px;padding:10px 13px;border:1px solid #bfcfc2;border-radius:6px;background:#fff;color:#172522;font:inherit;font-size:14px}
+  .ivtm-capitals select:focus-visible{outline:3px solid #9ab9a5;outline-offset:2px}
+  .ivtm-capitals .ivtm-help,.ivtm-capitals .ivtm-note{font-size:12px;line-height:1.7;color:#617168}
+  .ivtm-capitals .ivtm-status{font-size:13px;margin:15px 0 0}
+  .ivtm-result{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:17px}
+  .ivtm-result[hidden]{display:none}
+  .ivtm-result > div{padding:15px;background:#fff;border:1px solid #dfe7de;border-radius:6px}
+  .ivtm-result span{display:block;font-size:11px;color:#617168}
+  .ivtm-result strong{display:block;margin-top:5px;font:700 18px/1.3 Manrope,Arial,sans-serif;color:#173d34}
+  .ivtm-result p{grid-column:1/-1;margin:0;font-size:12px;line-height:1.7;color:#4e5d55}
+  @media(max-width:760px){.ivtm-capitals{padding:19px 17px}.ivtm-result{grid-template-columns:1fr}.ivtm-result p{grid-column:auto}}
+</style>

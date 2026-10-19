@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 const title = 'Híbrido, híbrido enchufable o microhíbrido: diferencias y ejemplos reales';
 const description = 'Compara microhíbridos, híbridos convencionales y enchufables con seis motorizaciones reales. Descubre cuál requiere recarga y qué uso puede encajar contigo.';
@@ -12,6 +13,7 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 <BaseLayout title={title} description={description} canonical={canonical} ogType="article"><script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} /><div class="wrap page-wrap guide-page"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Tipos de híbrido' }]} /><article class="guide-article">
   <header class="guide-header"><span class="eyebrow">Coche eléctrico · Actualizada el 18 de octubre de 2026</span><h1>{title}</h1><p class="dek">La palabra «híbrido» agrupa sistemas distintos. La diferencia práctica está en cuánto puede mover el coche el motor eléctrico y si puedes cargarlo conectándolo a la red.</p><p class="byline">Por el equipo editorial de Kilómetro Claro</p></header>
   <aside class="quick-answer" aria-label="Respuesta rápida"><strong>Respuesta rápida</strong><p>Un microhíbrido ayuda al motor térmico, pero normalmente no circula impulsado solo por electricidad. Un híbrido convencional combina motores y gestiona la batería sin enchufe. Un híbrido enchufable se conecta a la red y puede recorrer parte del trayecto en modo eléctrico, si se carga con regularidad. <strong>Fiat Pandina, Toyota Yaris Hybrid y Toyota C-HR Plug-in Hybrid</strong> son ejemplos respectivos; no utilizan el mismo tipo de sistema.</p><a class="button-primary" href="#ejemplos">Ver motorizaciones reales <span aria-hidden="true">↓</span></a></aside>
+      <GuideImage slug="coche-hibrido-enchufable-o-microhibrido" />
   <nav class="article-toc" aria-label="Contenido de esta guía"><strong>En esta guía</strong><ul><li><a href="#tipos">Tipos de híbrido</a></li><li><a href="#ejemplos">Motorizaciones reales</a></li><li><a href="#tabla">Comparación rápida</a></li><li><a href="#uso">Qué encaja con tu rutina</a></li><li><a href="#etiqueta">Etiqueta DGT</a></li><li><a href="#conclusion">Conclusión</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></nav>
   <p>Antes de comparar ofertas, pregunta qué sistema monta exactamente el coche. La denominación comercial, la etiqueta ambiental y la experiencia de conducción no son equivalentes: dos vehículos que se anuncian como híbridos pueden necesitar hábitos y costes de uso distintos.</p>
   <h2 id="tipos">Qué significa cada tecnología</h2>

@@ -1,0 +1,74 @@
+---
+interface Props {
+  brands: Array<{
+    brand: string;
+    registrations: number;
+    registrations2024: number;
+    rank2024: number;
+  }>;
+}
+
+const { brands } = Astro.props;
+const numberFormat = new Intl.NumberFormat('es-ES', { useGrouping: 'always' });
+const percentageFormat = new Intl.NumberFormat('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const signedNumber = (value: number) => `${value >= 0 ? '+' : '−'}${numberFormat.format(Math.abs(value))}`;
+const signedPercentage = (value: number) => `${value >= 0 ? '+' : '−'}${percentageFormat.format(Math.abs(value))} %`;
+const comparisonRows = brands.map((brand, index) => ({
+  ...brand,
+  rank2025: index + 1,
+  difference: brand.registrations - brand.registrations2024,
+  change: ((brand.registrations - brand.registrations2024) / brand.registrations2024) * 100,
+}));
+
+const selectedBrands = [
+  { brand: 'MG', registrations2023: 29048, registrations2024: 30770, registrations2025: 45163 },
+  { brand: 'BYD', registrations2023: 628, registrations2024: 5393, registrations2025: 25556 },
+  { brand: 'OMODA', registrations2023: 173, registrations2024: 7786, registrations2025: 13963 },
+  { brand: 'JAECOO', registrations2023: null, registrations2024: 1099, registrations2025: 9728 },
+  { brand: 'Leapmotor', registrations2023: null, registrations2024: 253, registrations2025: 2975 },
+];
+---
+
+<h2 id="comparativa-2024">Las mismas diez marcas: ¿cómo les fue frente a 2024?</h2>
+<p>El mercado español pasó de <strong>1.016.963 turismos matriculados en 2024 a 1.148.650 en 2025</strong>, un crecimiento del 12,9 % según la serie comparativa del informe de ANFAC de diciembre de 2025. La tabla utiliza sus cifras de ambos años para que el porcentaje de cada marca sea comparable. «Variación» mide unidades nuevas matriculadas, no facturación ni beneficio.</p>
+<div class="table-scroll" role="region" aria-label="Comparación de matriculaciones de 2024 y 2025 de las diez marcas líderes de 2025" tabindex="0">
+  <table>
+    <thead><tr><th scope="col">Marca</th><th scope="col">2024</th><th scope="col">2025</th><th scope="col">Variación</th><th scope="col">Puesto 2024 → 2025</th></tr></thead>
+    <tbody>
+      {comparisonRows.map((item) => <tr>
+        <th scope="row">{item.brand}</th>
+        <td>{numberFormat.format(item.registrations2024)}</td>
+        <td>{numberFormat.format(item.registrations)}</td>
+        <td>{signedNumber(item.difference)} ({signedPercentage(item.change)})</td>
+        <td>{item.rank2024}.º → {item.rank2025}.º</td>
+      </tr>)}
+    </tbody>
+  </table>
+</div>
+<p class="table-note">Fuente: <a href="https://anfac.com/wp-content/uploads/2026/01/Nota-de-Prensa-Completa-Diciembre-2025-1.pdf">ANFAC/IDEAUTO, informe de diciembre de 2025, tabla por marca</a>. La columna retrospectiva de 2024 incorpora pequeñas revisiones respecto al boletín publicado al cierre de 2024; por eso usamos una sola edición para el cálculo interanual. Los puestos de 2024 se obtienen ordenando las marcas según esa misma columna anual.</p>
+<p><strong>Renault fue la que más creció en porcentaje dentro de este top 10:</strong> sumó 19.071 matriculaciones (+29,7 %) y pasó del quinto al segundo puesto. Dacia añadió 11.011 (+20,1 %) y Volkswagen 9.641 (+14,4 %). Toyota conservó el liderazgo con 676 unidades más (+0,7 %), un avance inferior al del mercado en su conjunto. Por eso mantener el primer puesto no equivale necesariamente a ganar cuota. SEAT y Kia retrocedieron posiciones pese a matricular más turismos que en 2024.</p>
+
+<h2 id="marcas-chinas">La progresión de marcas vinculadas a fabricantes chinos</h2>
+<p>El top 10 de 2025 no muestra por sí solo toda la transformación del mercado. MG quedó justo detrás de BMW: <strong>45.163 frente a 45.867 turismos, una diferencia de 704 unidades</strong>. BYD, OMODA, JAECOO y Leapmotor también aumentaron su presencia. La selección siguiente no pretende representar a todas las marcas chinas ni sumar una cuota conjunta: compara únicamente las marcas identificadas por su nombre en los informes anuales.</p>
+<div class="table-scroll" role="region" aria-label="Evolución anual de matriculaciones de cinco marcas vinculadas a fabricantes chinos en España" tabindex="0">
+  <table>
+    <thead><tr><th scope="col">Marca</th><th scope="col">2023</th><th scope="col">2024</th><th scope="col">2025</th><th scope="col">Variación 2025/2024</th></tr></thead>
+    <tbody>
+      {selectedBrands.map((item) => <tr>
+        <th scope="row">{item.brand}</th>
+        <td>{item.registrations2023 === null ? '—' : numberFormat.format(item.registrations2023)}</td>
+        <td>{numberFormat.format(item.registrations2024)}</td>
+        <td>{numberFormat.format(item.registrations2025)}</td>
+        <td>{signedPercentage(((item.registrations2025 - item.registrations2024) / item.registrations2024) * 100)}</td>
+      </tr>)}
+    </tbody>
+  </table>
+</div>
+<p class="table-note">Fuentes: <a href="https://anfac.com/wp-content/uploads/2024/01/NP-Matriculaciones-Diciembre-2023.pdf">ANFAC, cierre de 2023</a> y <a href="https://anfac.com/wp-content/uploads/2026/01/Nota-de-Prensa-Completa-Diciembre-2025-1.pdf">ANFAC, cierre de 2025 con comparación de 2024</a>. El guion indica que la marca no figura con una cifra propia en el informe de 2023; no se interpreta como un cero certificado. Las variaciones de JAECOO y Leapmotor parten de un año inicial con pocas matriculaciones y por eso sus porcentajes son especialmente grandes.</p>
+<h3>BYD multiplicó su volumen; JAECOO y Leapmotor partían de bases pequeñas</h3>
+<p>BYD pasó de 628 turismos en 2023 a 5.393 en 2024 y 25.556 en 2025. En el último salto sumó 20.163 unidades, el mayor aumento absoluto de esta selección. JAECOO pasó de 1.099 a 9.728 y Leapmotor de 253 a 2.975 entre 2024 y 2025. Sus porcentajes, +785,2 % y +1.075,9 %, describen un despegue desde una base reducida; no significan que sus volúmenes se acerquen todavía a los de Toyota o Renault.</p>
+<h3>MG y OMODA ayudan a ver más de una fase de expansión</h3>
+<p>MG ya matriculaba 29.048 turismos en 2023. Creció a 30.770 en 2024 y alcanzó 45.163 en 2025: es una marca de origen británico que hoy pertenece al grupo chino <a href="https://news.mgmotor.eu/es/meet-our-parent-company-saic-motor/">SAIC Motor</a>, por lo que no conviene llamarla «recién llegada». OMODA pasó de 173 unidades en 2023 a 7.786 en 2024 y 13.963 en 2025. OMODA y JAECOO son marcas distintas dentro del <a href="https://www.omodajaecoo.es/nosotros/acerca-de-omoda-jaecoo/omoda">grupo Chery</a>; en las tablas de ANFAC se contabilizan por separado.</p>
+<h3>¿Y Changan? Su llegada comercial es posterior al año del ranking</h3>
+<p>Changan merece seguimiento, pero <strong>no sería correcto asignarle una progresión de ventas españolas entre 2023 y 2025</strong> en esta guía. La marca <a href="https://newsroom.changaneurope.com/changan-aterriza-en-espana-con-su-linea-de-producto-electrificada-deepal-y-el-lanzamiento-de-los-nuevos-s05-y-s07">anunció su entrada oficial en España en enero de 2026</a> con los Deepal S05 y S07. Como primer dato posterior, <a href="https://www.changaneurope.com/es/explora-changan/prensa-y-medios/details/changan-deepal-s05-el-todo-camino-de-tamano-medio-100-electrico-modelo-mas-vendido-en-junio-a-particulares">Changan comunicó 1.775 turismos acumulados en el primer semestre de 2026</a>. Es una cifra declarada por la propia marca y de solo seis meses: sirve para constatar su entrada, no para enfrentarla directamente a los totales anuales anteriores ni al top 10 de 2025.</p>
+<p>Estas cifras miden presencia comercial, no fiabilidad, seguridad, satisfacción ni coste de propiedad. Una gama más amplia y una red de venta mayor pueden impulsar las matriculaciones, pero el comprador debe contrastar cada modelo, sus condiciones y la asistencia disponible donde vive.</p>

@@ -3,10 +3,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site';
 ---
-<BaseLayout title="Sobre nosotros | Kilómetro Claro" description="Conoce quién está detrás de Kilómetro Claro y cómo preparamos herramientas y guías prácticas para conductores.">
+<BaseLayout title="Sobre nosotros | Kilómetro Claro" description="Conoce a ASV_webs, el grupo de estudiantes de Ingeniería Informática que impulsa Kilómetro Claro y crea guías y calculadoras para conductores.">
   <div class="wrap page-wrap"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Sobre nosotros' }]} />
-    <article class="editorial-content legal-content"><span class="eyebrow">Quién está detrás</span><h1>Información clara para cada kilómetro.</h1>
-      <p>ASV_webs está detrás de Kilómetro Claro, un proyecto independiente para ayudar a los conductores en España a entender mejor cuánto consumen, cuánto cuestan sus desplazamientos y qué gastos implica tener un coche.</p><p>La web reúne calculadoras gratuitas y guías prácticas para conductores. La idea es sencilla: que puedas introducir tus propios datos, ver cómo se obtiene cada resultado y usar la información para planificar con más claridad.</p><h2>Cómo trabajamos</h2><p>Explicamos las fórmulas utilizadas y distinguimos los datos personales que introduces de las referencias orientativas que aparecen en las guías. Los precios y gastos varían según el vehículo, la localidad, el proveedor y el momento; por eso recomendamos comprobar las tarifas y condiciones aplicables a tu caso.</p><p>El contenido es divulgativo y no sustituye una valoración de un profesional del automóvil, asesor financiero o administración pública. Revisamos las páginas para mantenerlas claras y corregir errores cuando los detectamos.</p><p>Para preguntas o avisos sobre una página, puedes escribir a <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+    <article class="editorial-content legal-content"><span class="eyebrow">Quién está detrás</span><h1>Somos ASV_webs, el equipo detrás de Kilómetro Claro.</h1>
+      <p>ASV_webs es un proyecto independiente impulsado por un grupo de estudiantes de Ingeniería Informática. Creamos Kilómetro Claro porque compartimos dos intereses: utilizar la tecnología para resolver problemas cotidianos y seguir aprendiendo sobre el mundo del motor, que nos apasiona.</p>
+      <p>Queremos ayudar a los conductores de España a responder preguntas que también nos hacemos nosotros: cuánto consume realmente un coche, qué cuesta un viaje o cómo influyen los gastos de uso en una decisión de compra. A partir de esas dudas preparamos herramientas y artículos que invitan a revisar los números y a adoptar hábitos de conducción más eficientes y económicos, siempre según las circunstancias de cada persona.</p>
+      <p>También escribimos sobre coches y movilidad por el interés que nos despiertan. Nos gusta comparar opciones, entender cómo cambian las tecnologías y explicar lo que descubrimos con un lenguaje cercano, sin perder de vista las fuentes ni los límites de cada dato.</p>
+      <p>La web reúne calculadoras gratuitas y guías prácticas para conductores. La idea es sencilla: que puedas introducir tus propios datos, ver cómo se obtiene cada resultado y usar la información para planificar con más claridad.</p>
+      <h2>Cómo trabajamos</h2>
+      <p>Explicamos las fórmulas utilizadas y distinguimos los datos que introduces en las calculadoras de las referencias orientativas que aparecen en las guías. Los precios y gastos varían según el vehículo, la localidad, el proveedor y el momento; por eso recomendamos comprobar las tarifas y condiciones aplicables a tu caso.</p>
+      <p>El contenido es divulgativo y no sustituye una valoración de un profesional del automóvil, asesor financiero o administración pública. Revisamos las páginas para mantenerlas claras y corregir errores cuando los detectamos.</p>
+      <p>Para preguntas o avisos sobre una página, puedes escribir a <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
     </article>
   </div>
 </BaseLayout>

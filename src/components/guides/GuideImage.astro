@@ -1,0 +1,23 @@
+---
+import { guideImages } from '../../data/guide-images';
+
+interface Props { slug: string }
+
+const image = guideImages[Astro.props.slug];
+---
+{image && (
+  <figure class="guide-image">
+    <img src={image.src} alt={image.alt} width={image.width} height={image.height} decoding="async" />
+    <figcaption>
+      {image.caption} Foto: <a href={image.source} target="_blank" rel="noopener noreferrer">{image.author} / Wikimedia Commons</a>
+      · <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es" target="_blank" rel="noopener noreferrer">CC0 1.0</a>.
+    </figcaption>
+  </figure>
+)}
+<style>
+  .guide-image{margin:2px 0 27px}
+  .guide-image img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:#e8ede8}
+  .guide-image figcaption{margin-top:9px;color:#647369;font-size:11px;line-height:1.55;text-align:left}
+  .guide-image a{color:#1d5d4e;text-decoration:underline;text-underline-offset:2px}
+  @media(max-width:760px){.guide-image{margin-bottom:23px}.guide-image img{border-radius:7px}.guide-image figcaption{font-size:10px}}
+</style>
