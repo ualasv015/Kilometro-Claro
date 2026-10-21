@@ -1,0 +1,97 @@
+<section class="analytics-consent" id="analytics-consent" aria-labelledby="analytics-consent-title" hidden>
+  <div class="analytics-consent__inner">
+    <div class="analytics-consent__copy">
+      <h2 id="analytics-consent-title">Ayúdanos a mejorar Kilómetro Claro</h2>
+      <p>Con tu permiso, Google Analytics nos ayuda a conocer qué páginas se consultan. No medimos lo que escribes en las calculadoras. Puedes aceptar, rechazar o cambiar tu elección cuando quieras. <a href="/politica-de-cookies/">Más información</a>.</p>
+    </div>
+    <div class="analytics-consent__actions">
+      <button type="button" data-analytics-choice="reject">Rechazar analítica</button>
+      <button type="button" data-analytics-choice="accept">Aceptar analítica</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const consentKey = 'kilometro-claro-analytics-consent';
+  const measurementId = 'G-305E92YSX2';
+  const banner = document.querySelector<HTMLElement>('#analytics-consent');
+  const preferencesButton = document.querySelector<HTMLButtonElement>('[data-analytics-preferences]');
+  let choice: string | null = null;
+
+  try {
+    choice = localStorage.getItem(consentKey);
+  } catch {
+    // El sitio y las calculadoras funcionan también si se bloquea el almacenamiento.
+  }
+
+  function loadAnalytics() {
+    if (document.querySelector('#ga4-script')) return;
+
+    const analyticsWindow = window as Window & { dataLayer?: unknown[][] };
+    analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+    function gtag(...args: unknown[]) { analyticsWindow.dataLayer!.push(args); }
+    gtag('js', new Date());
+    gtag('config', measurementId, {
+      page_location: location.origin + location.pathname,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+    });
+
+    const script = document.createElement('script');
+    script.id = 'ga4-script';
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.append(script);
+  }
+
+  function clearAnalyticsCookies() {
+    for (const entry of document.cookie.split(';')) {
+      const name = entry.trim().split('=')[0];
+      if (!/^_ga(?:_|$)/.test(name)) continue;
+      document.cookie = `${name}=; Max-Age=0; path=/`;
+      document.cookie = `${name}=; Max-Age=0; path=/; domain=${location.hostname}`;
+      document.cookie = `${name}=; Max-Age=0; path=/; domain=.${location.hostname}`;
+    }
+  }
+
+  if (choice === 'accept') loadAnalytics();
+  else if (choice !== 'reject' && banner) banner.hidden = false;
+
+  preferencesButton?.addEventListener('click', () => {
+    if (!banner) return;
+    banner.hidden = false;
+    banner.querySelector<HTMLButtonElement>('button')?.focus();
+  });
+
+  banner?.addEventListener('click', (event) => {
+    const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-analytics-choice]');
+    if (!button) return;
+    const nextChoice = button.dataset.analyticsChoice;
+    if (nextChoice !== 'accept' && nextChoice !== 'reject') return;
+
+    try { localStorage.setItem(consentKey, nextChoice); } catch { /* Sin almacenamiento, la elección solo afecta a esta página. */ }
+    banner.hidden = true;
+    preferencesButton?.focus();
+
+    if (nextChoice === 'accept') loadAnalytics();
+    else {
+      clearAnalyticsCookies();
+      if (document.querySelector('#ga4-script')) location.reload();
+    }
+  });
+</script>
+
+<style>
+  .analytics-consent[hidden]{display:none}
+  .analytics-consent{position:fixed;z-index:1000;right:16px;bottom:16px;left:16px;max-width:920px;margin:auto;background:#fff;border:1px solid #cbd7d0;border-radius:14px;box-shadow:0 16px 50px #17252238;color:#172522}
+  .analytics-consent__inner{display:flex;gap:24px;align-items:center;justify-content:space-between;padding:20px 24px}
+  .analytics-consent h2{font-size:1.15rem;line-height:1.25;margin:0 0 7px}
+  .analytics-consent p{font-size:.91rem;line-height:1.5;margin:0;max-width:60ch}
+  .analytics-consent a{color:#1d5d4e;text-decoration:underline;text-underline-offset:2px}
+  .analytics-consent__actions{display:flex;gap:9px;flex-shrink:0}
+  .analytics-consent button{border:2px solid #1d5d4e;border-radius:8px;padding:10px 13px;background:#1d5d4e;color:#fff;font:inherit;font-size:.87rem;font-weight:700;cursor:pointer}
+  .analytics-consent button:hover{background:#144739}
+  .analytics-consent button:focus-visible{outline:3px solid #a5d338;outline-offset:3px}
+  @media(max-width:700px){.analytics-consent__inner{display:block;padding:18px}.analytics-consent__actions{margin-top:16px}.analytics-consent button{flex:1}}
+  @media(max-width:400px){.analytics-consent__actions{flex-direction:column}}
+</style>
