@@ -3,6 +3,7 @@ import SeoHead from '../components/SeoHead.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import AnalyticsConsent from '../components/AnalyticsConsent.astro';
+import AnalyticsHead from '../components/AnalyticsHead.astro';
 import '../styles/global.css';
 const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.com'), webSiteSchema = false, ogType = 'website', noIndex = ['/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
 const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Kilómetro Claro', url: Astro.site?.toString(), inLanguage: 'es-ES' };
@@ -15,8 +16,9 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Ki
     <meta name="theme-color" content="#f7f8f5" />
     <meta name="google-site-verification" content="is6goDCFuFq3ahlPkeOApWpzaV8re1uRydzMNPc4rF4" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9101310270440999" crossorigin="anonymous" is:inline></script>
     <SeoHead title={title} description={description} canonical={canonical} noIndex={noIndex} ogType={ogType} />
+    <AnalyticsHead />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9101310270440999" crossorigin="anonymous" is:inline></script>
     {webSiteSchema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
     <slot name="head" />
   </head>

@@ -1,0 +1,55 @@
+<!-- Google tag (gtag.js): el consentimiento se define antes de cargar la etiqueta. -->
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-305E92YSX2" is:inline></script>
+<script is:inline>
+  (function () {
+    const measurementId = 'G-305E92YSX2';
+    const consentKey = 'kilometro-claro-analytics-consent';
+    const pageLocation = location.origin + location.pathname;
+    let storedChoice = null;
+
+    try { storedChoice = localStorage.getItem(consentKey); } catch { /* El sitio funciona sin almacenamiento local. */ }
+
+    if (storedChoice === 'accept') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+
+    gtag('js', new Date());
+    gtag('config', measurementId, {
+      send_page_view: false,
+      page_location: pageLocation,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+    });
+
+    function recordPageView() {
+      gtag('event', 'page_view', {
+        send_to: measurementId,
+        page_location: pageLocation,
+        page_title: document.title,
+      });
+    }
+
+    if (storedChoice === 'accept') recordPageView();
+
+    window.kilometroClaroAnalytics = {
+      accept() {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+        recordPageView();
+      },
+      reject() {
+        gtag('consent', 'update', { analytics_storage: 'denied' });
+      },
+    };
+  })();
+</script>

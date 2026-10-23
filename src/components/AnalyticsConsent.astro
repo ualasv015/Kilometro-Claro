@@ -13,35 +13,17 @@
 
 <script>
   const consentKey = 'kilometro-claro-analytics-consent';
-  const measurementId = 'G-305E92YSX2';
   const banner = document.querySelector<HTMLElement>('#analytics-consent');
   const preferencesButton = document.querySelector<HTMLButtonElement>('[data-analytics-preferences]');
+  const analytics = (window as Window & {
+    kilometroClaroAnalytics?: { accept: () => void; reject: () => void };
+  }).kilometroClaroAnalytics;
   let choice: string | null = null;
 
   try {
     choice = localStorage.getItem(consentKey);
   } catch {
     // El sitio y las calculadoras funcionan también si se bloquea el almacenamiento.
-  }
-
-  function loadAnalytics() {
-    if (document.querySelector('#ga4-script')) return;
-
-    const analyticsWindow = window as Window & { dataLayer?: unknown[][] };
-    analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
-    function gtag(...args: unknown[]) { analyticsWindow.dataLayer!.push(args); }
-    gtag('js', new Date());
-    gtag('config', measurementId, {
-      page_location: location.origin + location.pathname,
-      allow_google_signals: false,
-      allow_ad_personalization_signals: false,
-    });
-
-    const script = document.createElement('script');
-    script.id = 'ga4-script';
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-    document.head.append(script);
   }
 
   function clearAnalyticsCookies() {
@@ -54,8 +36,7 @@
     }
   }
 
-  if (choice === 'accept') loadAnalytics();
-  else if (choice !== 'reject' && banner) banner.hidden = false;
+  if (choice !== 'accept' && choice !== 'reject' && banner) banner.hidden = false;
 
   preferencesButton?.addEventListener('click', () => {
     if (!banner) return;
@@ -73,11 +54,13 @@
     banner.hidden = true;
     preferencesButton?.focus();
 
-    if (nextChoice === 'accept') loadAnalytics();
+    if (nextChoice === 'accept') analytics?.accept();
     else {
+      analytics?.reject();
       clearAnalyticsCookies();
-      if (document.querySelector('#ga4-script')) location.reload();
+      if (choice === 'accept') location.reload();
     }
+    choice = nextChoice;
   });
 </script>
 
