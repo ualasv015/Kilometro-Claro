@@ -4,6 +4,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import AnalyticsConsent from '../components/AnalyticsConsent.astro';
 import AnalyticsHead from '../components/AnalyticsHead.astro';
+import EzoicHead from '../components/EzoicHead.astro';
 import '../styles/global.css';
 const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.com'), webSiteSchema = false, ogType = 'website', noIndex = ['/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
 const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Kilómetro Claro', url: Astro.site?.toString(), inLanguage: 'es-ES' };
@@ -11,6 +12,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Ki
 <!doctype html>
 <html lang="es">
   <head>
+    <EzoicHead />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f7f8f5" />
