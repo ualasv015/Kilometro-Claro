@@ -1,0 +1,148 @@
+<section class="consent-panel" id="consent-panel" aria-labelledby="consent-title" hidden>
+  <div class="consent-panel__inner">
+    <div class="consent-panel__copy">
+      <h2 id="consent-title">Elige cómo usamos tus datos</h2>
+      <p>La web funciona sin aceptar estas opciones. Con tu permiso, usamos Google Analytics para medir visitas y Adsterra para mostrar publicidad en páginas de contenido y herramientas. Puedes elegir cada finalidad por separado y cambiarla después. <a href="/politica-de-cookies/">Más información</a>.</p>
+    </div>
+    <div class="consent-panel__choices" role="group" aria-label="Finalidades opcionales">
+      <label><input type="checkbox" data-consent-analytics /> Analítica</label>
+      <label><input type="checkbox" data-consent-advertising /> Publicidad</label>
+    </div>
+    <div class="consent-panel__actions">
+      <button type="button" data-consent-action="reject">Rechazar opcionales</button>
+      <button type="button" data-consent-action="save">Guardar selección</button>
+      <button type="button" data-consent-action="accept">Aceptar ambas</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const analyticsKey = 'kilometro-claro-analytics-consent';
+  const advertisingKey = 'kilometro-claro-advertising-consent';
+  const panel = document.querySelector<HTMLElement>('#consent-panel');
+  const preferencesButton = document.querySelector<HTMLButtonElement>('[data-consent-preferences]');
+  const analyticsCheckbox = panel?.querySelector<HTMLInputElement>('[data-consent-analytics]');
+  const advertisingCheckbox = panel?.querySelector<HTMLInputElement>('[data-consent-advertising]');
+  const analytics = (window as Window & {
+    kilometroClaroAnalytics?: { accept: () => void; reject: () => void };
+  }).kilometroClaroAnalytics;
+  const ads = (window as Window & {
+    kilometroClaroAds?: { loaded: boolean; load: () => void };
+  }).kilometroClaroAds;
+
+  function readChoice(key: string): string | null {
+    try { return localStorage.getItem(key); } catch { return null; }
+  }
+
+  let analyticsChoice = readChoice(analyticsKey);
+  let advertisingChoice = readChoice(advertisingKey);
+
+  function syncCheckboxes() {
+    if (analyticsCheckbox) analyticsCheckbox.checked = analyticsChoice === 'accept';
+    if (advertisingCheckbox) advertisingCheckbox.checked = advertisingChoice === 'accept';
+  }
+
+  function clearAnalyticsCookies() {
+    for (const entry of document.cookie.split(';')) {
+      const name = entry.trim().split('=')[0];
+      if (!/^_ga(?:_|$)/.test(name)) continue;
+      document.cookie = `${name}=; Max-Age=0; path=/`;
+      document.cookie = `${name}=; Max-Age=0; path=/; domain=${location.hostname}`;
+      document.cookie = `${name}=; Max-Age=0; path=/; domain=.${location.hostname}`;
+    }
+  }
+
+  syncCheckboxes();
+  if ((analyticsChoice !== 'accept' && analyticsChoice !== 'reject') ||
+      (advertisingChoice !== 'accept' && advertisingChoice !== 'reject')) {
+    if (panel) panel.hidden = false;
+  }
+
+  function openPreferences() {
+    if (!panel) return;
+    syncCheckboxes();
+    panel.hidden = false;
+    analyticsCheckbox?.focus();
+  }
+
+  function savePreferences(action: string | undefined) {
+    if (action !== 'accept' && action !== 'reject' && action !== 'save') return;
+    const nextAnalytics = action === 'accept' || (action === 'save' && !!analyticsCheckbox?.checked) ? 'accept' : 'reject';
+    const nextAdvertising = action === 'accept' || (action === 'save' && !!advertisingCheckbox?.checked) ? 'accept' : 'reject';
+    const reloadForRevocation =
+      (analyticsChoice === 'accept' && nextAnalytics === 'reject') ||
+      (ads?.loaded === true && nextAdvertising === 'reject');
+
+    try {
+      localStorage.setItem(analyticsKey, nextAnalytics);
+      localStorage.setItem(advertisingKey, nextAdvertising);
+    } catch {
+      // Si se bloquea el almacenamiento, la elección afecta solo a esta página.
+    }
+
+    panel.hidden = true;
+    preferencesButton?.focus();
+
+    if (nextAnalytics === 'accept' && analyticsChoice !== 'accept') analytics?.accept();
+    if (nextAnalytics === 'reject') {
+      analytics?.reject();
+      if (analyticsChoice === 'accept') clearAnalyticsCookies();
+    }
+    if (nextAdvertising === 'accept' && advertisingChoice !== 'accept') ads?.load();
+
+    analyticsChoice = nextAnalytics;
+    advertisingChoice = nextAdvertising;
+    if (reloadForRevocation) location.reload();
+  }
+
+  preferencesButton?.addEventListener('click', openPreferences);
+  panel?.addEventListener('click', (event) => {
+    const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-consent-action]');
+    savePreferences(button?.dataset.consentAction);
+  });
+
+  // El formato Popunder puede capturar clics antes de que lleguen a los controles
+  // de privacidad. Protegemos la retirada del consentimiento en fase de captura.
+  window.addEventListener('click', (event) => {
+    if (!ads?.loaded || !(event.target instanceof Element)) return;
+    if (event.target.closest('[data-consent-preferences]')) {
+      event.stopImmediatePropagation();
+      openPreferences();
+      return;
+    }
+    if (event.target.closest('#consent-panel')) {
+      event.stopImmediatePropagation();
+      const button = event.target.closest<HTMLButtonElement>('[data-consent-action]');
+      savePreferences(button?.dataset.consentAction);
+    }
+  }, true);
+
+  window.addEventListener('pointerdown', (event) => {
+    if (!ads?.loaded || !(event.target instanceof Element)) return;
+    if (event.target.closest('[data-consent-preferences]')) {
+      openPreferences();
+    } else if (event.target.closest('#consent-panel')) {
+      const button = event.target.closest<HTMLButtonElement>('[data-consent-action]');
+      savePreferences(button?.dataset.consentAction);
+    }
+  }, true);
+</script>
+
+<style>
+  .consent-panel[hidden]{display:none}
+  .consent-panel{position:fixed;z-index:1000;right:16px;bottom:16px;left:16px;max-width:920px;margin:auto;background:#fff;border:1px solid #cbd7d0;border-radius:14px;box-shadow:0 16px 50px #17252238;color:#172522}
+  .consent-panel__inner{display:grid;gap:14px;padding:19px 24px}
+  .consent-panel h2{font-size:1.15rem;line-height:1.25;margin:0 0 7px}
+  .consent-panel p{font-size:.88rem;line-height:1.5;margin:0}
+  .consent-panel a{color:#1d5d4e;text-decoration:underline;text-underline-offset:2px}
+  .consent-panel__choices{display:flex;flex-wrap:wrap;gap:10px}
+  .consent-panel__choices label{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid #d6e0d8;border-radius:8px;background:#f6f9f5;font-size:.86rem;font-weight:700;cursor:pointer}
+  .consent-panel__choices input{width:17px;height:17px;margin:0;accent-color:#1d5d4e}
+  .consent-panel__actions{display:flex;flex-wrap:wrap;gap:9px}
+  .consent-panel__actions button{border:2px solid #1d5d4e;border-radius:8px;padding:9px 12px;background:#fff;color:#1d5d4e;font:inherit;font-size:.84rem;font-weight:700;cursor:pointer}
+  .consent-panel__actions button[data-consent-action="accept"]{background:#1d5d4e;color:#fff}
+  .consent-panel__actions button:hover{background:#e8f1e8}
+  .consent-panel__actions button[data-consent-action="accept"]:hover{background:#144739}
+  .consent-panel button:focus-visible,.consent-panel input:focus-visible{outline:3px solid #a5d338;outline-offset:3px}
+  @media(max-width:700px){.consent-panel__inner{padding:17px}.consent-panel__actions button{flex:1 1 145px}.consent-panel p{font-size:.82rem}}
+</style>

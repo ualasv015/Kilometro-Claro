@@ -1,0 +1,10 @@
+<!-- Con consentimiento previo, se inserta la Social Bar al final del body. -->
+<script is:inline>
+  try {
+    if (localStorage.getItem('kilometro-claro-advertising-consent') === 'accept') {
+      window.kilometroClaroAds?.load();
+    }
+  } catch {
+    // Sin almacenamiento local, la publicidad solo se activa en la página donde se acepte.
+  }
+</script>

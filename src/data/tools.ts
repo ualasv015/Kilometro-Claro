@@ -198,4 +198,5 @@ export const categories = [
   { slug: 'comparar-coches', name: 'Comparar coches', description: 'Compara el coste total de distintas tecnologías y opciones de compra.', tools: ['coste-total-electrico-combustion'] },
   { slug: 'compra-financiacion', name: 'Compra y financiación', description: 'Estima cuotas, intereses y el coste de financiar un coche.', tools: ['simulador-financiacion-coche'] },
   { slug: 'movilidad-normativa', name: 'Movilidad y normativa', description: 'Guías prácticas sobre restricciones de circulación y movilidad en España.', tools: [] },
+  { slug: 'uso-mantenimiento', name: 'Uso y mantenimiento', description: 'Guías para conocer los mandos, símbolos y cuidados cotidianos de tu coche.', tools: [] },
 ];

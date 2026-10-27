@@ -26,10 +26,10 @@ Para que funcione en producción, publica la carpeta `dist` en un alojamiento qu
 
 ## Antes de publicar
 
-`src/data/site.ts` centraliza la identidad y los datos de contacto que aparecen en las páginas esenciales. Comprueba que siguen siendo correctos. Las políticas describen el funcionamiento actual: Analytics y AdSense no están instalados. Si se incorporan, revisa las políticas y añade la gestión de consentimiento requerida antes de activarlos. El contenido legal es una base informativa y no sustituye una revisión jurídica de tu situación concreta.
+`src/data/site.ts` centraliza la identidad y los datos de contacto que aparecen en las páginas esenciales. Comprueba que siguen siendo correctos. Google Analytics 4 y Adsterra tienen preferencias de consentimiento independientes. Los scripts de Adsterra solo se cargan tras aceptar publicidad y se excluyen de Sobre nosotros, Contacto, Privacidad, Cookies y Aviso legal. El contenido legal es una base informativa y no sustituye una revisión jurídica de tu situación concreta.
 
 La sección `/guias/` incluye una guía sobre el coste mensual de mantener un coche en España.
 
 ## Despliegue en cPanel
 
-El archivo `.cpanel.yml` copia el contenido generado de `dist/` a `$HOME/public_html/`. Antes de desplegar, genera la versión estática con `pnpm build` y añade al commit los archivos resultantes de `dist/`; esta carpeta se mantiene en Git para que cPanel pueda publicarla. Si el dominio usa otra raíz de documentos, ajusta `DEPLOYPATH` en `.cpanel.yml` a la ruta que muestre cPanel. El endpoint `contacto.php` requiere que el alojamiento tenga PHP y envío de correo habilitados.
+El archivo `.cpanel.yml` copia el contenido generado de `dist/` a `$HOME/public_html/`. Antes de copiar, elimina el antiguo `ads.txt` del destino; cuando se configure una nueva red publicitaria, su archivo en `dist/` se copiará después. Antes de desplegar, genera la versión estática con `pnpm build` y añade al commit los archivos resultantes de `dist/`; esta carpeta se mantiene en Git para que cPanel pueda publicarla. Si el dominio usa otra raíz de documentos, ajusta `DEPLOYPATH` en `.cpanel.yml` a la ruta que muestre cPanel. El endpoint `contacto.php` requiere que el alojamiento tenga PHP y envío de correo habilitados.

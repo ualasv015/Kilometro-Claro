@@ -3,4 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH="$HOME/public_html/"
     - /bin/mkdir -p "$DEPLOYPATH"
+    - /bin/rm -f "$DEPLOYPATH/ads.txt"
     - /bin/cp -R dist/. "$DEPLOYPATH"

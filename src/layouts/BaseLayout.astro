@@ -2,17 +2,20 @@
 import SeoHead from '../components/SeoHead.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import AnalyticsConsent from '../components/AnalyticsConsent.astro';
+import ConsentPreferences from '../components/ConsentPreferences.astro';
 import AnalyticsHead from '../components/AnalyticsHead.astro';
-import EzoicHead from '../components/EzoicHead.astro';
+import AdsterraHead from '../components/ads/AdsterraHead.astro';
+import AdsterraBody from '../components/ads/AdsterraBody.astro';
 import '../styles/global.css';
 const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.com'), webSiteSchema = false, ogType = 'website', noIndex = ['/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
 const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Kilómetro Claro', url: Astro.site?.toString(), inLanguage: 'es-ES' };
+const adFreePaths = new Set(['/sobre-nosotros/', '/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/']);
+const currentPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const showAds = !adFreePaths.has(currentPath);
 ---
 <!doctype html>
 <html lang="es">
   <head>
-    <EzoicHead />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f7f8f5" />
@@ -20,15 +23,16 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Ki
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <SeoHead title={title} description={description} canonical={canonical} noIndex={noIndex} ogType={ogType} />
     <AnalyticsHead />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9101310270440999" crossorigin="anonymous" is:inline></script>
     {webSiteSchema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
     <slot name="head" />
+    {showAds && <AdsterraHead />}
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <SiteHeader />
     <main id="contenido"><slot /></main>
     <SiteFooter />
-    <AnalyticsConsent />
+    <ConsentPreferences />
+    {showAds && <AdsterraBody />}
   </body>
 </html>

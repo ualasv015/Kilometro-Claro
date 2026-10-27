@@ -103,4 +103,12 @@ export const guides = [
     description: 'Datos confirmados del Mission S, posibles rivales de Ferrari, Lamborghini y McLaren, y análisis de por qué no sustituirá al 911.',
     published: true,
   },
+  {
+    slug: 'detalles-coche-que-quiza-no-conocias',
+    title: 'Seis detalles de tu coche que quizá no conocías (y para qué sirven)',
+    category: 'Uso y mantenimiento',
+    categorySlug: 'uso-mantenimiento',
+    description: 'La flecha del combustible, la recirculación, la llave oculta y otras funciones útiles: qué significan y cuáles dependen de tu modelo.',
+    published: true,
+  },
 ] as const;
