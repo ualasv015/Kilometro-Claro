@@ -9,20 +9,21 @@ const title = 'Seis detalles de tu coche que quizá no conocías (y para qué si
 const description = 'Seis detalles útiles de tu coche: flecha del combustible, recirculación, presión, llave del mando y más. Descubre cuándo sirven y si tu modelo los lleva.';
 const canonical = new URL('/guias/detalles-coche-que-quiza-no-conocias/', Astro.site ?? 'https://kilometroclaro.com');
 const publishedDate = '2026-10-27';
+const modifiedDate = '2026-10-27';
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: title,
   description,
   datePublished: publishedDate,
-  dateModified: publishedDate,
+  dateModified: modifiedDate,
   inLanguage: 'es-ES',
   mainEntityOfPage: canonical.toString(),
-  author: { '@type': 'Organization', name: 'Kilómetro Claro' },
-  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
 ---
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article">
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Detalles poco conocidos del coche' }]} />
@@ -31,7 +32,7 @@ const articleSchema = {
         <span class="eyebrow">Uso y mantenimiento · Publicada el 27 de octubre de 2026</span>
         <h1>{title}</h1>
         <p class="dek">A veces la respuesta a una duda al volante está a pocos centímetros: una flecha en el cuadro, una etiqueta en la puerta o un pequeño seguro que casi nunca miramos. Reunimos seis detalles que merece la pena reconocer antes de necesitarlos.</p>
-        <p class="byline">Por el equipo editorial de Kilómetro Claro</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
       </header>
 
       <aside class="quick-answer" aria-label="En un vistazo">

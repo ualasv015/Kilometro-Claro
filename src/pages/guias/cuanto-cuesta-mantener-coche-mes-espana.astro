@@ -15,10 +15,10 @@ const modifiedDate = '2026-10-19';
 const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
   datePublished: publishedDate, dateModified: modifiedDate, inLanguage: 'es-ES', mainEntityOfPage: canonical.toString(),
-  author: { '@type': 'Organization', name: 'Kilómetro Claro' }, publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' }, publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
 ---
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article">
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Coste mensual de un coche' }]} />
@@ -27,7 +27,7 @@ const articleSchema = {
         <span class="eyebrow">Costes del coche · Actualizada el 19 de octubre de 2026</span>
         <h1>{title}</h1>
         <p class="dek">El gasto mensual no es solo gasolina: seguro, mantenimiento, ITV e impuesto municipal también cuentan. Desglosamos un ejemplo verificable, consultamos el IVTM de cada capital provincial y distinguimos el gasto del mes del coste de propiedad.</p>
-        <p class="byline">Por el equipo editorial de Kilómetro Claro</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
       </header>
 
       <aside class="quick-answer" aria-label="Respuesta rápida">

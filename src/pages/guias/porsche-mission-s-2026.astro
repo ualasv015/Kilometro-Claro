@@ -7,33 +7,35 @@ import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
 const title = 'Porsche Mission S: qué sabemos, sus posibles rivales y su relación con el 911';
+const seoTitle = 'Porsche Mission S: qué sabemos y rivales | Kilómetro Claro';
 const description = 'Analizamos el Porsche Mission S presentado en 2026: datos confirmados, preguntas abiertas, rivales posibles y por qué no parece destinado a sustituir al 911.';
 const canonical = new URL('/guias/porsche-mission-s-2026/', Astro.site ?? 'https://kilometroclaro.com');
 const publishedDate = '2026-10-19';
+const modifiedDate = '2026-10-27';
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: title,
   description,
   datePublished: publishedDate,
-  dateModified: publishedDate,
+  dateModified: modifiedDate,
   inLanguage: 'es-ES',
   mainEntityOfPage: canonical.toString(),
-  author: { '@type': 'Organization', name: 'Kilómetro Claro' },
-  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article">
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Comparar coches', href: '/categorias/comparar-coches/' }, { label: 'Porsche Mission S' }]} />
     <article class="guide-article">
       <header class="guide-header">
-        <span class="eyebrow">Comparar coches · Publicada el 19 de octubre de 2026</span>
+        <span class="eyebrow">Comparar coches · Actualizada el 27 de octubre de 2026</span>
         <h1>{title}</h1>
         <p class="dek">Porsche ha enseñado un superdeportivo de motor central que aspira a ocupar un lugar fijo por encima del 911. Separamos el anuncio oficial de las incógnitas y analizamos con qué coches podría medirse cuando llegue a la calle.</p>
-        <p class="byline">Por el equipo editorial de Kilómetro Claro</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
       </header>
 
       <aside class="quick-answer" aria-label="Respuesta rápida">
@@ -123,11 +125,12 @@ const articleSchema = {
         <li><strong>¿Qué conservará el coche de serie?</strong> Los mandos, el puesto de conducción, la aerodinámica y hasta el nombre pueden evolucionar entre un modelo de visión y uno homologado.</li>
         <li><strong>¿Qué significará «oferta permanente»?</strong> Habrá que ver versiones, disponibilidad y continuidad real después del lanzamiento.</li>
       </ol>
+      <aside class="official-source"><strong>Qué se puede comparar hoy</strong><p>Porsche aún no ha publicado el precio, el consumo ni la propulsión definitiva del vehículo de producción. Por eso no se puede calcular ahora el coste de propiedad del Mission S; sí puedes probar escenarios generales entre tecnologías con datos propios.</p><a href="/calculadoras/coste-total-electrico-combustion/">Abrir el comparador de coste a cinco años <span aria-hidden="true">→</span></a></aside>
 
       <h2 id="conclusion">Conclusión: Porsche abre otra puerta, no cierra la del 911</h2>
       <p>El Mission S es una noticia relevante porque Porsche anuncia una plataforma de motor central para una gama permanente situada por encima del 911. La historia se cuenta mejor como una ampliación de la familia que como el final de un icono. Ferrari 849 Testarossa, Lamborghini Temerario y McLaren 750S ayudan a imaginar el terreno de juego, pero hoy solo ofrecen referencias: faltan el precio, la mecánica y las prestaciones del Porsche.</p>
       <p>Lo que más nos interesa seguir no es una futura cifra de potencia aislada, sino si la marca convierte el discurso sobre pureza de conducción en un coche capaz de sostenerlo. Cuando Porsche publique datos de producción, esta comparación podrá pasar de hipótesis razonadas a una evaluación técnica.</p>
-      <p>Seguiremos los próximos anuncios de Porsche. Cuando la marca confirme nuevos datos, revisaremos esta guía para distinguir lo que se haya hecho oficial de lo que siga siendo una previsión, e indicaremos la fecha de actualización. También compartiremos las novedades en nuestro <a href="https://www.instagram.com/kilometroclaro/?hl=es" target="_blank" rel="noopener noreferrer">Instagram</a> y en <a href="https://x.com/KilometroClaro" target="_blank" rel="noopener noreferrer">X</a>, para que puedas seguir la evolución del Mission S sin depender de rumores.</p>
+      <p>Seguiremos los próximos anuncios de Porsche. Cuando la marca confirme nuevos datos, revisaremos esta guía para distinguir lo que se haya hecho oficial de lo que siga siendo una previsión, e indicaremos la fecha de actualización. También compartiremos las novedades en nuestro <a href="https://www.instagram.com/kilometroclaro/" target="_blank" rel="noopener noreferrer">Instagram</a> y en <a href="https://x.com/KilometroClaro" target="_blank" rel="noopener noreferrer">X</a>, para que puedas seguir la evolución del Mission S sin depender de rumores.</p>
 
       <section class="faq-section" id="preguntas">
         <h2>Preguntas frecuentes</h2>
@@ -139,7 +142,7 @@ const articleSchema = {
 
       <aside class="sources">
         <h2>Fuentes y alcance</h2>
-        <p>Artículo elaborado el 19 de octubre de 2026. Los datos del Mission S proceden de Porsche; la elección de rivales y la interpretación sobre el 911 son análisis editorial de Kilómetro Claro. No hemos conducido el prototipo. Actualizaremos el análisis cuando existan especificaciones del vehículo de serie.</p>
+        <p>Primera publicación: 19 de octubre de 2026. Revisión: 27 de octubre de 2026. Los datos del Mission S proceden de Porsche; la elección de rivales y la interpretación sobre el 911 son análisis editorial de Kilómetro Claro. No hemos conducido el prototipo. La imagen que acompaña al artículo es una ilustración conceptual propia, no muestra el Mission S ni anticipa sus especificaciones.</p>
         <ul>
           <li><a href="https://newsroom.porsche.com/es_ES/producto/2026/mission-s-43527.html" target="_blank" rel="noopener noreferrer">Porsche Newsroom España: presentación oficial del Mission S, 15 de octubre de 2026</a>.</li>
           <li><a href="https://www.porsche.com/stories/design/what-is-the-porsche-mission-s/" target="_blank" rel="noopener noreferrer">Porsche: explicación del modelo de visión y su lugar en la gama, 19 de octubre de 2026</a>.</li>

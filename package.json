@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview"
+    "build": "astro check && astro build && node scripts/check-dist.mjs",
+    "preview": "astro preview",
+    "check:dist": "node scripts/check-dist.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

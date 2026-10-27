@@ -8,7 +8,7 @@ import AdsterraHead from '../components/ads/AdsterraHead.astro';
 import AdsterraBody from '../components/ads/AdsterraBody.astro';
 import AdsterraPlacements from '../components/ads/AdsterraPlacements.astro';
 import '../styles/global.css';
-const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.com'), webSiteSchema = false, ogType = 'website', noIndex = ['/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
+const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://kilometroclaro.com'), webSiteSchema = false, ogType = 'website', publishedDate, modifiedDate = publishedDate, noIndex = ['/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
 const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Kilómetro Claro', url: Astro.site?.toString(), inLanguage: 'es-ES' };
 const adFreePaths = new Set(['/sobre-nosotros/', '/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/']);
 const currentPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
@@ -22,7 +22,7 @@ const showAds = !adFreePaths.has(currentPath);
     <meta name="theme-color" content="#f7f8f5" />
     <meta name="google-site-verification" content="is6goDCFuFq3ahlPkeOApWpzaV8re1uRydzMNPc4rF4" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <SeoHead title={title} description={description} canonical={canonical} noIndex={noIndex} ogType={ogType} />
+    <SeoHead title={title} description={description} canonical={canonical} noIndex={noIndex} ogType={ogType} publishedDate={publishedDate} modifiedDate={modifiedDate} />
     <AnalyticsHead />
     {webSiteSchema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
     <slot name="head" />

@@ -12,7 +12,7 @@ export const guides = [
     title: 'Cómo calcular el consumo real de tu coche',
     category: 'Consumo y combustible',
     categorySlug: 'consumo-combustible',
-    description: 'Método de repostajes y fórmula L/100 km, con una medición propia y un protocolo para revisar resultados anómalos.',
+    description: 'Método de repostajes y fórmula L/100 km, con un viaje medido de 380 km en un Toyota Auris diésel y un protocolo para revisar anomalías.',
     published: true,
   },
   {

@@ -1,0 +1,3 @@
+Options -MultiViews
+RewriteEngine On
+RewriteRule ^herramientas/?$ /calculadoras/ [R=301,L]

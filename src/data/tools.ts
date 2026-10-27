@@ -2,7 +2,9 @@ export type Field = { name: string; label: string; unit: string; example: string
 export type Tool = {
   slug: string; title: string; shortTitle: string; description: string; category: string; categorySlug: string;
   intent: string; intro: string; explanation: string; formula: string; example: string; fields: Field[];
-  resultTitle: string; resultHint: string; related: string[]; faq: { question: string; answer: string }[];
+  resultTitle: string; resultHint: string; related: string[]; guideSlug: string;
+  editorialSections: { heading: string; paragraphs: string[] }[];
+  faq: { question: string; answer: string }[];
 };
 
 export const tools: Tool[] = [
@@ -18,7 +20,11 @@ export const tools: Tool[] = [
       { name: 'liters', label: 'Litros repostados', unit: 'L', example: '40', min: 0, step: 0.1 },
       { name: 'pricePerLiter', label: 'Precio del combustible', unit: '€/L', example: '1,65', min: 0, step: 0.01, optional: true },
     ], resultTitle: 'Tu consumo estimado', resultHint: 'La cifra depende de la distancia y el combustible que hayas introducido.',
-    related: ['coste-viaje-coche', 'coste-por-kilometro'], faq: [
+    related: ['coste-viaje-coche', 'coste-por-kilometro'], guideSlug: 'como-calcular-consumo-real-coche', editorialSections: [
+      { heading: 'Qué mide el resultado y cómo interpretarlo', paragraphs: ['El consumo en L/100 km relaciona el combustible utilizado con la distancia del mismo intervalo. No describe un valor fijo del modelo: cambia con el tipo de recorrido, el tráfico, la carga, la temperatura y la forma de conducir.', 'Una medición entre dos llenados completos es más útil si el criterio de llenado se repite. Si un repostaje fue parcial, no atribuyas solo esos litros a un tramo: acumula los repostajes y kilómetros hasta volver a completar el depósito.'] },
+      { heading: 'Caso real de 380 km entre Almería y Granada', paragraphs: ['En un Toyota Auris 1.4 D-4D de 2010, el equipo recorrió 380 km el 23 de octubre de 2026 y repostó 32,71 € de gasóleo a 1,729 €/L. El importe equivale aproximadamente a 18,92 litros y a 4,98 L/100 km.', 'Es el resultado de un trayecto concreto, no una media del modelo. La guía explica el registro, el cálculo y por qué no debe compararse directamente con otra medición hecha en un coche o recorrido diferente.'] },
+      { heading: 'Cuándo conviene repetir la medición', paragraphs: ['Si el resultado sorprende, revisa que el cuentakilómetros parcial se pusiera a cero, que anotaras litros y no euros y que los depósitos inicial y final se llenaran de forma parecida. Los intervalos cortos son especialmente sensibles a pequeñas diferencias de llenado.', 'Para comparar hábitos o temporadas, guarda varios registros válidos y calcula la media con la suma de litros dividida por la suma de kilómetros. Un único dato atípico no demuestra por sí mismo que exista una avería.'] },
+    ], faq: [
       { question: '¿Qué significa L/100 km?', answer: 'Indica cuántos litros de combustible consume el coche para recorrer 100 kilómetros. Cuanto menor sea la cifra, menos combustible necesita para esa distancia.' },
       { question: '¿Cómo obtengo un consumo más preciso?', answer: 'Mide varios depósitos entre llenados y divide el total de litros por los kilómetros totales. Así reduces el efecto de pequeñas diferencias al repostar.' },
     ],
@@ -36,7 +42,11 @@ export const tools: Tool[] = [
       { name: 'pricePerLiter', label: 'Precio del combustible', unit: '€/L', example: '1,60', min: 0, step: 0.01 },
       { name: 'passengers', label: 'Personas que comparten el gasto', unit: 'personas', example: '2', min: 1, step: 1, optional: true },
     ], resultTitle: 'Coste estimado del combustible', resultHint: 'Solo combustible; no incluye peajes, aparcamiento ni desgaste del coche.',
-    related: ['consumo-combustible', 'coste-por-kilometro'], faq: [
+    related: ['consumo-combustible', 'coste-por-kilometro'], guideSlug: 'cuanto-cuesta-viaje-coche', editorialSections: [
+      { heading: 'Qué entra en el coste del trayecto', paragraphs: ['El resultado estima únicamente el combustible: distancia, consumo y precio por litro. No suma peajes, aparcamiento, comidas, desgaste ni posibles desvíos. Añade esos conceptos aparte para no confundir el coste energético con el presupuesto completo del viaje.', 'Si marcas ida y vuelta, la distancia de ida se duplica. Comprueba que la distancia que introduces corresponde a la ruta elegida y que el consumo y precio usados se ajustan al coche y la fecha del desplazamiento.'] },
+      { heading: 'Cómo repartir el gasto entre ocupantes', paragraphs: ['El reparto divide el importe calculado por el número de personas indicado. Es una cuenta aritmética, no una recomendación sobre cómo compartir otros costes: podéis acordar por separado peajes, aparcamiento o quién paga cada partida.', 'Si varios pasajeros no recorren todo el trayecto, un reparto uniforme puede no representar lo que acordéis. En ese caso, usa el coste total como referencia y distribuidlo según los kilómetros que haga cada persona.'] },
+      { heading: 'Prepara una estimación que puedas revisar', paragraphs: ['Para comparar opciones de ruta, calcula cada una con su distancia y conserva iguales el consumo y el precio del combustible. Así puedes separar el efecto de los kilómetros del coste de un peaje o una parada.', 'La guía del coste de un viaje muestra cómo añadir peajes y aparcamiento a una estimación de combustible sin presentar esos importes como universales.'] },
+    ], faq: [
       { question: '¿La calculadora incluye peajes?', answer: 'No. El resultado estima solo el combustible. Añade por separado peajes, aparcamiento y otros gastos para conocer el presupuesto completo.' },
       { question: '¿El precio del combustible se actualiza automáticamente?', answer: 'No. Introduce el precio que quieras usar como referencia; así puedes adaptar el cálculo a tu gasolinera y fecha de viaje.' },
     ],
@@ -56,7 +66,10 @@ export const tools: Tool[] = [
       { name: 'taxes', label: 'Impuestos y tasas', unit: '€/periodo', example: '120', min: 0, step: 10 },
       { name: 'other', label: 'Otros gastos', unit: '€/periodo', example: '200', min: 0, step: 10, optional: true },
     ], resultTitle: 'Coste medio por kilómetro', resultHint: 'Introduce gastos y kilómetros correspondientes al mismo periodo.',
-    related: ['coste-viaje-coche', 'coste-anual-coche'], faq: [
+    related: ['coste-viaje-coche', 'coste-anual-coche'], guideSlug: 'cuanto-cuesta-mantener-coche-mes-espana', editorialSections: [
+      { heading: 'Elige un periodo y mantén el mismo criterio', paragraphs: ['Suma gastos y kilómetros de un intervalo coincidente, por ejemplo un año natural o doce meses completos. Si mezclas una factura mensual con kilómetros de un periodo distinto, el resultado deja de ser comparable.', 'Puedes registrar combustible, seguro, impuestos y mantenimiento, además de otros conceptos que quieras considerar. Si el objetivo es medir el coste total de propiedad, decide cómo incluir depreciación o financiación y evita contar una misma partida dos veces.'] },
+      { heading: 'Combustible no es lo mismo que coste total', paragraphs: ['Dos coches pueden tener costes energéticos parecidos y costes por kilómetro distintos si cambian el seguro, el mantenimiento, los impuestos o el aparcamiento. El indicador depende de las partidas incluidas; anota qué has sumado cuando lo compartas o lo uses para decidir.', 'Para una lectura anual, contrasta el resultado con la calculadora del coste anual y con la guía sobre los gastos de mantener un coche.'] },
+    ], faq: [
       { question: '¿Qué gastos debo incluir?', answer: 'Incluye los gastos que quieras analizar y que correspondan al periodo elegido: energía, mantenimiento, seguro e impuestos. Puedes sumar otros conceptos en el último campo.' },
       { question: '¿El cálculo incluye la depreciación?', answer: 'No por defecto. Si quieres tenerla en cuenta, puedes incorporarla como otro gasto del periodo usando una estimación propia.' },
     ],
@@ -75,7 +88,10 @@ export const tools: Tool[] = [
       { name: 'electricConsumption', label: 'Consumo eléctrico', unit: 'kWh/100 km', example: '17', min: 0, step: 0.1 },
       { name: 'electricityPrice', label: 'Precio de la electricidad', unit: '€/kWh', example: '0,20', min: 0, step: 0.01 },
     ], resultTitle: 'Comparativa de coste energético', resultHint: 'Compara la energía con los precios y consumos que hayas introducido.',
-    related: ['coste-anual-coche', 'coste-viaje-coche'], faq: [
+    related: ['coste-anual-coche', 'coste-viaje-coche'], guideSlug: 'consumo-coche-electrico-gasolina-diesel', editorialSections: [
+      { heading: 'Compara la misma distancia y el precio que pagas', paragraphs: ['La comparación utiliza energía por cada 100 km: litros por el precio del combustible y kilovatios-hora por el precio eléctrico. Para que la diferencia sea interpretable, usa consumos y precios de vehículos que realmente estés valorando y el mismo trayecto.', 'El coste por kWh puede variar entre carga doméstica, pública lenta y carga rápida. Si alternas lugares de carga, calcula escenarios separados o introduce un precio medio ponderado por la proporción de energía cargada en cada uno.'] },
+      { heading: 'Qué no resuelve una comparación energética', paragraphs: ['Un menor coste por kilómetro de energía no demuestra por sí solo que un vehículo salga más barato en conjunto. Aquí no se comparan precio de compra, financiación, seguro, mantenimiento, tiempo de recarga ni valor de reventa.', 'Para una ruta larga, ten en cuenta también la ubicación, disponibilidad y potencia de los puntos de carga. La guía de viajes en eléctrico, gasolina y diésel distingue el precio de la energía de las paradas y la planificación.'] },
+    ], faq: [
       { question: '¿Qué precio de electricidad debo introducir?', answer: 'Usa el precio efectivo por kWh que quieras comparar. Si cargas en distintos lugares o con diferentes tarifas, puedes calcular cada escenario por separado.' },
       { question: '¿La comparación indica qué coche sale más rentable?', answer: 'Solo compara el coste de energía para los datos introducidos. Para valorar el coste total también habría que incluir compra, financiación, seguro, mantenimiento y depreciación.' },
     ],
@@ -96,7 +112,10 @@ export const tools: Tool[] = [
       { name: 'parking', label: 'Aparcamiento', unit: '€/año', example: '600', min: 0, step: 10, optional: true },
       { name: 'other', label: 'Otros gastos (incluida financiación, si quieres)', unit: '€/año', example: '850', min: 0, step: 10, optional: true },
     ], resultTitle: 'Coste anual estimado', resultHint: 'El desglose depende de las partidas que incluyas.',
-    related: ['coste-por-kilometro', 'comparador-gasolina-diesel-electrico'], faq: [
+    related: ['coste-por-kilometro', 'comparador-gasolina-diesel-electrico'], guideSlug: 'cuanto-cuesta-mantener-coche-mes-espana', editorialSections: [
+      { heading: 'Revisa el periodo y las partidas incluidas', paragraphs: ['El resultado anual suma los importes que escribes; la media mensual es ese total dividido entre doce. Incluye gastos que correspondan al mismo año y revisa si una factura extraordinaria debe contabilizarse completa o distribuirse entre varios periodos.', 'El seguro puede pagarse anual o fraccionado, el mantenimiento no llega todos los meses y el IVTM depende del municipio. Convertirlos a una media mensual ayuda a presupuestar, pero no significa que vayas a pagar exactamente esa cantidad cada mes.'] },
+      { heading: 'Evita contar dos veces la compra y la financiación', paragraphs: ['Si incluyes cuotas de financiación, no vuelvas a sumar el precio completo del coche como si fuese un gasto anual. Para contemplar la depreciación, utiliza un criterio separado, por ejemplo diferencia entre precio de compra y valor de reventa estimado en el periodo.', 'El resultado depende de la distancia anual: mantener los mismos gastos y recorrer menos kilómetros eleva el coste medio por kilómetro. Para comparar años, conserva las partidas y anota los cambios de kilometraje.'] },
+    ], faq: [
       { question: '¿Debo incluir la compra o financiación del coche?', answer: 'Puedes incorporar los pagos anuales de financiación en «Otros gastos». Para reflejar el coste de compra de otra forma, decide un criterio y evita contar dos veces el mismo importe.' },
       { question: '¿Por qué se muestra también el coste por kilómetro?', answer: 'Permite relacionar los gastos anuales con la distancia recorrida y comparar periodos de uso distintos, siempre que los datos sean representativos.' },
     ],
@@ -116,7 +135,10 @@ export const tools: Tool[] = [
       { name: 'electricityPrice', label: 'Precio de la electricidad', unit: '€/kWh', example: '0,20', min: 0, step: 0.001, help: 'Usa el precio efectivo de la tarifa o del punto de carga.' },
       { name: 'lossPercent', label: 'Pérdidas de carga estimadas', unit: '%', example: '10', min: 0, max: 30, step: 0.1, optional: true, help: 'Es una estimación: puede variar según el vehículo y el equipo de carga.' },
     ], resultTitle: 'Coste estimado de la recarga', resultHint: 'Estimación orientativa. El precio real depende de la tarifa, la ubicación y las pérdidas de carga.',
-    related: ['comparador-gasolina-diesel-electrico', 'coste-total-electrico-combustion', 'coste-anual-coche'], faq: [
+    related: ['comparador-gasolina-diesel-electrico', 'coste-total-electrico-combustion', 'coste-anual-coche'], guideSlug: 'consumo-coche-electrico-gasolina-diesel', editorialSections: [
+      { heading: 'Batería útil, energía de red y nivel de carga', paragraphs: ['La capacidad útil puede ser distinta de la capacidad bruta anunciada. El porcentaje de carga actual y el objetivo determinan cuánta energía debe almacenarse; las pérdidas representan la energía adicional tomada de la red que no termina en la batería.', 'Si el vehículo muestra cuántos kWh han entrado en la batería o el cargador informa de la energía suministrada, puedes contrastar esos datos con la estimación. Las pérdidas varían con el coche, el equipo, la potencia y la temperatura; el porcentaje opcional no es una constante universal.'] },
+      { heading: 'Cómo elegir el precio por kWh', paragraphs: ['En casa, usa un precio efectivo que corresponda al periodo de carga y a los conceptos de tu tarifa que quieras contabilizar. Si cargas en horas valle y punta, una media ponderada por la energía usada ofrece más contexto que escoger el precio más bajo.', 'En recarga pública, introduce el precio que aplique el operador a ese punto. Si la tarifa añade costes por tiempo o sesión, esta herramienta no los suma automáticamente: conviértelos a un coste equivalente o añádelos aparte.'] },
+    ], faq: [
       { question: '¿La calculadora sirve para cargar en casa y en un punto público?', answer: 'Sí. Introduce el precio por kWh que corresponda al lugar de carga. Si el operador aplica una tarifa por tiempo o sesión, convierte el coste a un precio efectivo por kWh para compararlo.' },
       { question: '¿Por qué se pueden perder kWh durante la carga?', answer: 'Parte de la energía tomada de la red no termina almacenada en la batería. La proporción cambia con el coche, la potencia, la temperatura y el cargador, por lo que el porcentaje es una estimación.' },
     ],
@@ -142,7 +164,10 @@ export const tools: Tool[] = [
       { name: 'combustionAnnualOtherCosts', label: 'Otros gastos anuales del coche de combustión', unit: '€/año', example: '1500', min: 0, step: 10, help: 'Suma seguro, mantenimiento, impuestos y otros gastos que quieras comparar.' },
       { name: 'combustionResaleValue', label: 'Reventa estimada del coche de combustión al quinto año', unit: '€', example: '15000', min: 0, step: 100 },
     ], resultTitle: 'Compara el coste estimado a cinco años', resultHint: 'Estimación: no incluye financiación ni gastos que no hayas añadido. La depreciación depende del valor de reventa que introduzcas.',
-    related: ['coste-carga-coche-electrico', 'precio-electrico-auto-plus', 'simulador-financiacion-coche'], faq: [
+    related: ['coste-carga-coche-electrico', 'precio-electrico-auto-plus', 'simulador-financiacion-coche'], guideSlug: 'que-coche-comprar-segun-presupuesto', editorialSections: [
+      { heading: 'Qué significa el coste total a cinco años', paragraphs: ['El cálculo combina precio de compra, energía durante cinco años y otros gastos anuales que tú indiques; después resta el valor de reventa que estimes. No es una predicción del precio futuro del vehículo, sino una comparación de escenarios con supuestos visibles.', 'Usa precios de compra comparables y evita mezclar cuotas de financiación con el precio total financiado. Si introduces la ayuda ya descontada en el precio de compra, no vuelvas a restarla en otra parte del escenario.'] },
+      { heading: 'Prueba escenarios antes de decidir', paragraphs: ['El kilometraje anual tiene un efecto directo: cuanto más se usa el coche, más pesa la diferencia de coste energético. La reventa, el precio de la energía y los gastos anuales pueden cambiar el resultado, por lo que conviene recalcular con hipótesis alta y baja.', 'La comparación tampoco valora por sí sola autonomía, tiempos de carga, acceso a puntos, espacio, uso urbano o preferencias de conducción. Usa el total económico junto a esos criterios prácticos y consulta más de un escenario.'] },
+    ], faq: [
       { question: '¿Qué gastos se incluyen en el coste total?', answer: 'La suma incluye precio de compra, coste de energía y otros gastos anuales que introduzcas; después resta el valor de reventa estimado al quinto año. Puedes incluir seguro, mantenimiento e impuestos en los gastos anuales.' },
       { question: '¿Cómo calculo la depreciación?', answer: 'La herramienta la refleja indirectamente al restar el valor estimado de reventa al precio de compra. Conviene usar precios realistas para el modelo, kilometraje y estado previstos.' },
       { question: '¿El precio de compra debe incluir la ayuda Auto+?', answer: 'Introduce el precio que realmente pagarías después de las ayudas confirmadas. Puedes obtener una estimación inicial con la calculadora Auto+, teniendo en cuenta que la concesión no está garantizada.' },
@@ -162,7 +187,10 @@ export const tools: Tool[] = [
       { name: 'euAssembly', label: '¿El modelo tiene confirmado el montaje y acabado final en la UE?', unit: '', example: '', options: [{ value: 'yes', label: 'Sí, confirmado para este modelo' }, { value: 'no', label: 'No' }, { value: 'unknown', label: 'No lo sé' }] },
       { name: 'qualifiedBattery', label: '¿El modelo cumple los criterios europeos adicionales de batería?', unit: '', example: '', options: [{ value: 'yes', label: 'Sí, confirmado para este modelo' }, { value: 'no', label: 'No' }, { value: 'unknown', label: 'No lo sé' }] },
     ], resultTitle: 'Estima el precio con Auto+', resultHint: 'Orientativo para particulares y turismos M1 eléctricos puros; no confirma elegibilidad, disponibilidad presupuestaria ni concesión de la ayuda.',
-    related: ['coste-total-electrico-combustion', 'coste-carga-coche-electrico', 'simulador-financiacion-coche'], faq: [
+    related: ['coste-total-electrico-combustion', 'coste-carga-coche-electrico', 'simulador-financiacion-coche'], guideSlug: 'coches-baratos-espana', editorialSections: [
+      { heading: 'Una estimación no confirma que te concedan la ayuda', paragraphs: ['El resultado depende de las reglas y la convocatoria aplicables, del tipo de vehículo, del precio en factura y de los requisitos del comprador. Que el simulador calcule un importe no confirma elegibilidad, disponibilidad presupuestaria ni aprobación administrativa.', 'Antes de firmar, pide al concesionario que identifique por escrito la versión exacta del vehículo, el precio antes y después de impuestos, los descuentos comerciales y la forma en que tramitaría la solicitud. Contrasta todo con las bases oficiales vigentes.'] },
+      { heading: 'Comprueba qué precio estás introduciendo', paragraphs: ['El precio total con impuestos representa el importe de referencia antes de la ayuda; el precio sin impuestos se utiliza para los criterios que así lo establecen. No intercambies ambas cantidades ni incluyas descuentos dos veces.', 'También puede haber requisitos de montaje o componentes cuya comprobación depende de la versión concreta. Si no tienes una confirmación fiable, marca que lo desconoces y no cuentes ese porcentaje como seguro.'] },
+    ], faq: [
       { question: '¿La ayuda Auto+ está garantizada si el cálculo da una cantidad?', answer: 'No. La herramienta ofrece una estimación teórica. La concesión depende de cumplir todos los requisitos, de la convocatoria y sus fondos, y de la validación administrativa.' },
       { question: '¿Por qué hay que introducir el precio sin impuestos?', answer: 'El criterio económico del programa utiliza el precio que consta en factura sin impuestos, con extras y servicios asociados, después de aplicar descuentos comerciales.' },
       { question: '¿Cómo sé si un coche cumple el criterio europeo?', answer: 'Los porcentajes adicionales dependen de las declaraciones del fabricante y de la Lista Blanca del programa. Confirma la situación del modelo con el concesionario y la fuente oficial antes de usar esos porcentajes.' },
@@ -184,7 +212,10 @@ export const tools: Tool[] = [
       { name: 'openingFee', label: 'Comisión de apertura', unit: '€', example: '300', min: 0, step: 10, optional: true },
       { name: 'finalPayment', label: 'Cuota final', unit: '€', example: '0', min: 0, step: 100, optional: true, help: 'Déjala en 0 si todas las cuotas son iguales y no hay un pago final.' },
     ], resultTitle: 'Tu financiación estimada', resultHint: 'Estimación orientativa: comprueba TAE, comisiones, seguros vinculados y cualquier condición de la oferta.',
-    related: ['coste-anual-coche', 'coste-total-electrico-combustion', 'precio-electrico-auto-plus'], faq: [
+    related: ['coste-anual-coche', 'coste-total-electrico-combustion', 'precio-electrico-auto-plus'], guideSlug: 'que-coche-comprar-segun-presupuesto', editorialSections: [
+      { heading: 'Qué refleja el TIN y qué puede faltar', paragraphs: ['El simulador aplica el TIN anual al capital pendiente y calcula una cuota orientativa mediante amortización francesa. La TAE sirve para comparar el coste anual equivalente e incorpora determinados gastos; por eso no tiene por qué coincidir con el tipo nominal introducido.', 'La oferta real puede incluir comisión, seguros o productos vinculados, condiciones de permanencia y requisitos sobre la entrada. Añade solo los importes que correspondan a los campos y compara la información normalizada que facilite el prestamista.'] },
+      { heading: 'Cómo leer una financiación con cuota final', paragraphs: ['Una cuota final baja las mensualidades al trasladar una parte del pago al vencimiento. No elimina esa deuda: suma la cuota final, las mensualidades, la entrada y las comisiones para estimar cuánto desembolsarías en total.', 'Antes de aceptar, comprueba qué opciones ofrece el contrato al final del plazo, qué kilometraje o estado del vehículo exige y qué ocurre si no puedes pagar o refinanciar el importe residual. Esta calculadora no sustituye la oferta vinculante ni calcula todas sus condiciones.'] },
+    ], faq: [
       { question: '¿Qué diferencia hay entre TIN y TAE?', answer: 'El TIN expresa el tipo nominal aplicado al capital. La TAE incorpora además ciertos gastos y permite comparar ofertas; por eso el coste real puede diferir de esta simulación basada en TIN.' },
       { question: '¿Qué es la cuota final?', answer: 'Es un pago de mayor importe que queda al vencimiento de algunas financiaciones. Reduce las cuotas periódicas, pero debe sumarse al total que pagarás.' },
     ],

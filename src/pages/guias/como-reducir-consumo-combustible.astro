@@ -20,11 +20,11 @@ const articleSchema = {
   dateModified: modifiedDate,
   inLanguage: 'es-ES',
   mainEntityOfPage: canonical.toString(),
-  author: { '@type': 'Organization', name: 'Kilómetro Claro' },
-  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
 ---
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article">
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Reducir el consumo' }]} />
@@ -33,7 +33,7 @@ const articleSchema = {
         <span class="eyebrow">Consumo y combustible · Actualizada el 19 de octubre de 2026</span>
         <h1>{title}</h1>
         <p class="dek">Conducir de forma eficiente sirve de poco como consejo abstracto. Este protocolo te ayuda a aplicar cambios concretos y a comprobar con tus repostajes si realmente gastas menos.</p>
-        <p class="byline">Por el equipo editorial de Kilómetro Claro</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
       </header>
 
       <aside class="quick-answer" aria-label="Respuesta rápida">

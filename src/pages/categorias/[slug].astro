@@ -25,9 +25,9 @@ const categoryGuides = guides.filter((guide) => guide.categorySlug === category.
 
     {categoryGuides.length > 0 && <section class="category-section category-guides" aria-labelledby="category-guides-heading">
       <div class="category-section-heading"><span class="eyebrow">Aprende sobre el tema</span><h2 id="category-guides-heading">Guías relacionadas</h2></div>
-      <div class="guide-grid">{categoryGuides.map((guide) => <a class="category-guide-card" href={`/guias/${guide.slug}/`}>
-        <span class="eyebrow">{guide.category}</span><h3>{guide.title}</h3><p>{guide.description}</p><span class="text-link">Leer la guía <span aria-hidden="true">→</span></span>
-      </a>)}</div>
+      <div class="guide-grid">{categoryGuides.map((guide) => <article class="category-guide-card">
+        <span class="eyebrow">{guide.category}</span><h3><a href={`/guias/${guide.slug}/`}>{guide.title}</a></h3><p>{guide.description}</p><a class="text-link" href={`/guias/${guide.slug}/`} aria-label={`Leer la guía: ${guide.title}`}>Leer la guía <span aria-hidden="true">→</span></a>
+      </article>)}</div>
     </section>}
   </div>
 </BaseLayout>

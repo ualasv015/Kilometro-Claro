@@ -11,12 +11,20 @@ Configura `SITE_URL` con el dominio canónico de producción (consulta `.env.exa
 ## Añadir una calculadora
 
 1. Añade la fórmula con tipos y validación a `src/lib/calculations.ts`.
-2. Añade sus metadatos SEO, contenido original, campos, FAQ y enlaces relacionados a `src/data/tools.ts`.
+2. Añade sus metadatos SEO, contenido editorial propio, campos, FAQ, guía relacionada y enlaces a `src/data/tools.ts`.
 3. Conecta su tipo de cálculo al manejador compartido de `src/scripts/calculators.ts`.
 
-La página estática individual se genera automáticamente desde `src/pages/calculadoras/[slug].astro`. Las tarjetas, breadcrumbs, metadatos SEO, enlaces relacionados y sitemap leen el mismo registro de herramientas. Las categorías también se definen en `src/data/tools.ts`.
+La página estática individual se genera automáticamente desde `src/pages/calculadoras/[slug].astro`. Las tarjetas, breadcrumbs, metadatos SEO, secciones explicativas, enlaces relacionados y sitemap leen el mismo registro de herramientas. El índice está en `/calculadoras/`; `/herramientas/` redirige a la ruta estable nueva. Las categorías también se definen en `src/data/tools.ts`.
 
-Para una futura integración de anuncios se puede añadir un componente de anuncios y colocarlo en el layout o en ubicaciones editoriales elegidas, sin introducirlo en las calculadoras ni reservar huecos mientras no se utilice.
+Las guías se registran en `src/data/guides.ts` y sus imágenes, textos alternativos, créditos y dimensiones en `src/data/guide-images.ts`. `GuideImage.astro` sirve WebP a navegadores compatibles y conserva el JPG como alternativa. Las tarjetas Open Graph PNG están en `public/images/og/`.
+
+## SEO y revisión de la salida estática
+
+`SeoHead.astro` centraliza títulos, descripciones, canonical, robots y metadatos Open Graph/Twitter. `Breadcrumbs.astro` produce migas visibles y su `BreadcrumbList`; el `WebSite` se declara en la portada. Sitemap y robots se generan desde `src/pages/sitemap.xml.ts` y `src/pages/robots.txt.ts`.
+
+La compilación comprueba Astro y después valida la salida: títulos y descripciones únicos, un H1 y canonical por página, JSON-LD, PNG Open Graph de 1200 × 630, recursos e interlinks locales, `robots.txt` y `sitemap.xml`. También puedes ejecutar `pnpm check:dist` por separado. En Windows, `scripts/generate-social-cards.ps1` regenera las tarjetas sociales y el diagrama conceptual propio para el artículo del Porsche a partir de la salida de Astro.
+
+Los espacios publicitarios se encapsulan en componentes de `src/components/ads/`. La integración actual usa Adsterra después del consentimiento y el layout la excluye de Sobre nosotros, Contacto, Privacidad, Cookies y Aviso legal. Google AdSense y Ezoic no están integrados.
 
 ## Formulario de contacto
 

@@ -20,12 +20,12 @@ const articleSchema = {
   dateModified: modifiedDate,
   inLanguage: 'es-ES',
   mainEntityOfPage: canonical.toString(),
-  author: { '@type': 'Organization', name: 'Kilómetro Claro' },
-  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article">
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Comprar coche', href: '/categorias/compra-financiacion/' }, { label: 'Comprar según presupuesto' }]} />
@@ -34,7 +34,7 @@ const articleSchema = {
         <span class="eyebrow">Comprar coche · Revisada el 18 de octubre de 2026</span>
         <h1>{title}</h1>
         <p class="dek">Con el mismo dinero puedes elegir un urbano nuevo, un familiar usado o un eléctrico de acceso. La decisión empieza por tus trayectos y por el gasto que podrás mantener después de la compra.</p>
-        <p class="byline">Por el equipo editorial de Kilómetro Claro</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
       </header>
 
       <aside class="quick-answer" aria-label="Respuesta rápida">

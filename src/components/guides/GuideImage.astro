@@ -7,10 +7,14 @@ const image = guideImages[Astro.props.slug];
 ---
 {image && (
   <figure class="guide-image">
-    <img src={image.src} alt={image.alt} width={image.width} height={image.height} decoding="async" />
+    <picture>
+      {image.webp && <source srcset={image.webp} type="image/webp" />}
+      <img src={image.src} alt={image.alt} width={image.width} height={image.height} decoding="async" fetchpriority="high" />
+    </picture>
     <figcaption>
-      {image.caption} Foto: <a href={image.source} target="_blank" rel="noopener noreferrer">{image.author} / Wikimedia Commons</a>
-      · <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es" target="_blank" rel="noopener noreferrer">CC0 1.0</a>.
+      {image.caption}
+      {image.source && image.author && <>{' '}Foto: <a href={image.source} target="_blank" rel="noopener noreferrer">{image.author} / Wikimedia Commons</a>{' '}·{' '}<a href={image.license ?? 'https://creativecommons.org/publicdomain/zero/1.0/deed.es'} target="_blank" rel="noopener noreferrer">CC0 1.0</a>.</>}
+      {!image.source && image.author && <>{' '}Ilustración: {image.author}.</>}
     </figcaption>
   </figure>
 )}

@@ -1,14 +1,21 @@
 ---
-import { guideImages } from '../data/guide-images';
-
 const guideSlug = Astro.url.pathname.match(/^\/guias\/([^/]+)\//)?.[1];
-const defaultImage = guideSlug ? guideImages[guideSlug]?.src ?? '/og-default.svg' : '/og-default.svg';
-const { title, description, canonical, image = defaultImage, noIndex = false, ogType = 'website' } = Astro.props;
+const calculatorSlug = Astro.url.pathname.match(/^\/calculadoras\/([^/]+)\//)?.[1];
+const image = guideSlug
+  ? `/images/og/guia-${guideSlug}.png`
+  : calculatorSlug
+    ? `/images/og/calculadora-${calculatorSlug}.png`
+    : Astro.url.pathname === '/calculadoras/'
+      ? '/images/og/calculadoras.png'
+    : Astro.url.pathname === '/'
+      ? '/images/og/inicio.png'
+      : '/images/og/kilometro-claro.png';
+const { title, description, canonical, noIndex = false, ogType = 'website', publishedDate, modifiedDate } = Astro.props;
 const fullImage = new URL(image, Astro.site ?? 'https://example.com').toString();
 ---
 <title>{title}</title>
 <meta name="description" content={description} />
-{noIndex && <meta name="robots" content="noindex,follow" />}
+<meta name="robots" content={noIndex ? 'noindex,follow,max-image-preview:large' : 'index,follow,max-image-preview:large'} />
 <link rel="canonical" href={canonical} />
 <meta property="og:type" content={ogType} />
 <meta property="og:locale" content="es_ES" />
@@ -17,5 +24,15 @@ const fullImage = new URL(image, Astro.site ?? 'https://example.com').toString()
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={fullImage} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={`Kilómetro Claro: ${title}`} />
+{ogType === 'article' && publishedDate && <meta property="article:published_time" content={publishedDate} />}
+{ogType === 'article' && modifiedDate && <meta property="article:modified_time" content={modifiedDate} />}
+{ogType === 'article' && <meta property="article:author" content="https://kilometroclaro.com/sobre-nosotros/" />}
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@KilometroClaro" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullImage} />

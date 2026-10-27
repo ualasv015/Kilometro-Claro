@@ -17,11 +17,11 @@ const categoryGroups = categories.map((category) => ({
     <section class="listing-hero"><span class="eyebrow">Explora por tema</span><h1>Calculadoras y guías por categoría.</h1><p>Encuentra herramientas prácticas y explicaciones relacionadas con lo que quieres resolver.</p></section>
     <AdsterraInlineBanner />
     <div class="category-list">{categoryGroups.map(({ category, toolCount, guideCount }, index) => <>
-      <a class="category-row" href={`/categorias/${category.slug}/`}>
+      <article class="category-row">
       <span class="category-number">{String(index + 1).padStart(2, '0')}</span>
-      <span><h2>{category.name}</h2><p>{toolCount > 0 && `${toolCount} ${toolCount === 1 ? 'calculadora' : 'calculadoras'}`}{toolCount > 0 && guideCount > 0 && ' · '}{guideCount > 0 && `${guideCount} ${guideCount === 1 ? 'guía' : 'guías'}`}</p></span>
-      <span class="row-arrow" aria-hidden="true">↗</span>
-      </a>
+      <span><h2><a href={`/categorias/${category.slug}/`}>{category.name}</a></h2><p>{toolCount > 0 && `${toolCount} ${toolCount === 1 ? 'calculadora' : 'calculadoras'}`}{toolCount > 0 && guideCount > 0 && ' · '}{guideCount > 0 && `${guideCount} ${guideCount === 1 ? 'guía' : 'guías'}`}</p></span>
+      <a class="row-arrow" href={`/categorias/${category.slug}/`} aria-label={`Ver categoría: ${category.name}`}><span aria-hidden="true">→</span></a>
+      </article>
       {index === 2 && <AdsterraNativeBanner />}
     </>)}</div>
   </div>
