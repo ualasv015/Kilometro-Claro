@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
 import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 import ElectricVsFuelRoutes from '../../components/guides/ElectricVsFuelRoutes.astro';
@@ -14,6 +15,7 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 <BaseLayout title={title} description={description} canonical={canonical} ogType="article"><script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} /><div class="wrap page-wrap guide-page"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Eléctrico frente a combustión' }]} /><article class="guide-article">
   <header class="guide-header"><span class="eyebrow">Coche eléctrico · Actualizada el 19 de octubre de 2026</span><h1>{title}</h1><p class="dek">Un viaje corto entre Almería y Granada y otro largo hasta Bilbao muestran cómo cambian el gasto y las paradas cuando pasas de cargar en casa a depender de puntos públicos.</p><p class="byline">Por el equipo editorial de Kilómetro Claro</p></header>
   <aside class="quick-answer" aria-label="Respuesta rápida"><strong>Respuesta rápida</strong><p>Multiplica el consumo por el precio de la energía: L/100 km × €/L para gasolina o diésel, y kWh/100 km × €/kWh para un eléctrico. MITECO publicó el 23 de septiembre de 2026 una estimación de 9,82 €/100 km para gasolina 95, 8,20 € para gasóleo A, 3,29 € para recarga doméstica y 8,11 € para recarga rápida. Nuestros dos viajes usan otros supuestos explícitos para mostrar también la autonomía y el tiempo de recarga.</p><a class="button-primary" href="/calculadoras/comparador-gasolina-diesel-electrico/">Compara costes <span aria-hidden="true">→</span></a></aside>
+      <AdsterraInlineBanner />
       <GuideImage slug="consumo-coche-electrico-gasolina-diesel" />
   <nav class="article-toc" aria-label="Contenido de esta guía"><strong>En esta guía</strong><ul><li><a href="#unidad">Una unidad común</a></li><li><a href="#referencia">Referencia de España</a></li><li><a href="#calculo">Cálculo personalizado</a></li><li><a href="#ejemplos">Dos trayectos de ejemplo</a></li><li><a href="#granada">Almería–Granada</a></li><li><a href="#bilbao">Almería–Bilbao</a></li><li><a href="#puntos">Tipos de recarga</a></li><li><a href="#planificar">Planificación</a></li><li><a href="#limites">Qué no incluye</a></li><li><a href="#conclusion">Conclusión</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></nav>
   <p>Comparar un coche eléctrico y uno de combustión por sus cifras de consumo puede confundir: uno expresa energía en kWh y el otro combustible en litros. El coste por distancia permite comparar el gasto de energía, pero no el coste total de propiedad. Para decidir una compra también cuentan el precio de adquisición, el seguro, el mantenimiento, la financiación, la depreciación y el acceso a recarga.</p>

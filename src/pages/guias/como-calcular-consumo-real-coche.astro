@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
 import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
@@ -32,6 +33,7 @@ const articleSchema = {
         <p>Divide los litros repostados entre los kilómetros recorridos y multiplica el resultado por 100. Si recorres 620 km y vuelves a llenar con 40 litros: <strong>(40 ÷ 620) × 100 = 6,45 L/100 km</strong>.</p>
         <a class="button-primary" href="/calculadoras/consumo-combustible/">Calcular mi consumo <span aria-hidden="true">→</span></a>
       </aside>
+      <AdsterraInlineBanner />
       <GuideImage slug="como-calcular-consumo-real-coche" />
 
       <nav class="article-toc" aria-label="Contenido de esta guía"><strong>En esta guía</strong><ul><li><a href="#formula">La fórmula</a></li><li><a href="#metodo">Cómo medirlo al repostar</a></li><li><a href="#nuestra-medicion">Nuestra medición: 6,8 L/100 km</a></li><li><a href="#ejemplo">Ejemplo paso a paso</a></li><li><a href="#anomalias">Detectar una medición anómala</a></li><li><a href="#variaciones">Por qué cambia el consumo</a></li><li><a href="#ordenador">Consumo real y ordenador de a bordo</a></li><li><a href="#conclusion">Conclusión</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></nav>

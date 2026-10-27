@@ -80,7 +80,7 @@
       // Si se bloquea el almacenamiento, la elección afecta solo a esta página.
     }
 
-    panel.hidden = true;
+    if (panel) panel.hidden = true;
     preferencesButton?.focus();
 
     if (nextAnalytics === 'accept' && analyticsChoice !== 'accept') analytics?.accept();

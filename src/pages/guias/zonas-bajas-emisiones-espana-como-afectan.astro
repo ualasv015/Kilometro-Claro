@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
 import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
@@ -40,6 +41,7 @@ const articleSchema = {
         <p>Busca el distintivo de tu matrícula en la DGT, localiza la zona exacta de tu destino y consulta sus condiciones oficiales para ese vehículo y ese día. La etiqueta ambiental, por sí sola, no garantiza el acceso a todas las ZBE de España.</p>
         <a class="button-primary" href="https://www.dgt.es/nuestros-servicios/tu-vehiculo/tus-vehiculos/distintivo-ambiental/">Consultar distintivo en la DGT <span aria-hidden="true">→</span></a>
       </aside>
+      <AdsterraInlineBanner />
       <GuideImage slug="zonas-bajas-emisiones-espana-como-afectan" />
 
       <nav class="article-toc" aria-label="Contenido de esta guía">

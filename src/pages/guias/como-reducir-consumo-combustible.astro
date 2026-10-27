@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
 import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
@@ -39,6 +40,7 @@ const articleSchema = {
         <p>Empieza por la presión de los neumáticos y el mantenimiento indicado para tu coche. En marcha, anticipa, acelera progresivamente y mantén una velocidad legal y uniforme. Registra varios repostajes antes y después: la diferencia real se mide en L/100 km, no en una promesa de ahorro fijo.</p>
         <a class="button-primary" href="/calculadoras/consumo-combustible/">Calcula tu consumo <span aria-hidden="true">→</span></a>
       </aside>
+      <AdsterraInlineBanner />
       <GuideImage slug="como-reducir-consumo-combustible" />
 
       <nav class="article-toc" aria-label="Contenido de esta guía">

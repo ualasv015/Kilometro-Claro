@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ToolCard from '../components/ToolCard.astro';
+import AdsterraInlineBanner from '../components/ads/AdsterraInlineBanner.astro';
 import { tools, categories } from '../data/tools';
 import { guides } from '../data/guides';
 import { guideImages } from '../data/guide-images';
@@ -35,6 +36,7 @@ const featuredTools = featuredToolSlugs.flatMap((slug) => tools.filter((tool) =>
       </aside>
     </div>
   </section>
+  <AdsterraInlineBanner />
   {trendingGuide && trendingImage && <section class="wrap home-latest" aria-labelledby="home-latest-heading">
     <div class="latest-heading"><div><span class="section-kicker">Actualidad del motor</span><h2 id="home-latest-heading">Novedades</h2></div><span class="latest-highlight"><span aria-hidden="true"></span> EN PORTADA</span></div>
     <a class="latest-card" href={`/guias/${trendingGuide.slug}/`}>

@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CalculatorForm from '../../components/CalculatorForm.astro';
+import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
 import ToolCard from '../../components/ToolCard.astro';
 import { tools } from '../../data/tools';
 export function getStaticPaths() { return tools.map((tool) => ({ params: { slug: tool.slug }, props: { tool } })); }
@@ -17,6 +18,7 @@ const hasCostGuide = ['coste-viaje-coche', 'coste-por-kilometro', 'coste-anual-c
       <div class="trust-note"><span aria-hidden="true">◎</span><span>El cálculo se realiza en tu navegador. No guardamos los datos que introduces.</span></div>
     </section>
     <CalculatorForm tool={tool} />
+    <AdsterraInlineBanner />
     <article class="editorial-content">
       <div class="section-kicker">Cómo funciona</div><h2>Calcula con tus propios datos</h2><p>{tool.explanation}</p>
       <div class="formula-card"><span>FÓRMULA</span><p>{tool.formula}</p></div>

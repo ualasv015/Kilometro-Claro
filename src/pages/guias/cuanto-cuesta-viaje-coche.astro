@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
 import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
@@ -32,6 +33,7 @@ const articleSchema = {
         <p><strong>Coste de combustible = distancia (km) × consumo (L/100 km) ÷ 100 × precio (€/L).</strong> En nuestro ejemplo Almería-Barcelona, la ida y vuelta suma 1.544 km y el combustible estimado cuesta 163,05 €. Según el peaje y el aparcamiento elegidos, el presupuesto ilustrativo va de 163,05 € a 227,90 €.</p>
         <a class="button-primary" href="/calculadoras/coste-viaje-coche/">Calcular el coste del viaje <span aria-hidden="true">→</span></a>
       </aside>
+      <AdsterraInlineBanner />
       <GuideImage slug="cuanto-cuesta-viaje-coche" />
 
       <nav class="article-toc" aria-label="Contenido de esta guía"><strong>En esta guía</strong><ul><li><a href="#formula">La fórmula del combustible</a></li><li><a href="#ejemplo">Almería-Barcelona: datos del ejemplo</a></li><li><a href="#rutas">Con peajes o sin peajes</a></li><li><a href="#aparcamiento">Parking privado o plaza gratuita</a></li><li><a href="#comparativa">Cuatro presupuestos posibles</a></li><li><a href="#pasajeros">Reparto entre pasajeros</a></li><li><a href="#preparar">Qué revisar antes de salir</a></li><li><a href="#conclusion">Conclusión</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></nav>
