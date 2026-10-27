@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "video-001",
+  "title": "¿Qué cuesta recorrer 100 km? Gasolina vs diésel vs eléctrico",
+  "videoType": "comparison",
+  "hook": "¿Qué cuesta recorrer 100 km?",
+  "sourceUrl": "https://kilometroclaro.com/guias/consumo-coche-electrico-gasolina-diesel/",
+  "sourcePublishedAt": "2026-10-08",
+  "sourceUpdatedAt": "2026-10-19",
+  "reviewedAt": "2026-10-21",
+  "durationSeconds": 32,
+  "fps": 30,
+  "distanceKm": 100,
+  "variables": {
+    "vehicles": [
+      {
+        "id": "gasoline",
+        "label": "Gasolina",
+        "consumptionPer100Km": 6,
+        "energyUnit": "L",
+        "pricePerUnit": 1.6,
+        "priceUnit": "€/L",
+        "priceContext": "precio supuesto"
+      },
+      {
+        "id": "diesel",
+        "label": "Diésel",
+        "consumptionPer100Km": 5,
+        "energyUnit": "L",
+        "pricePerUnit": 1.5,
+        "priceUnit": "€/L",
+        "priceContext": "precio supuesto"
+      },
+      {
+        "id": "electric",
+        "label": "Eléctrico",
+        "consumptionPer100Km": 18,
+        "energyUnit": "kWh",
+        "pricePerUnit": 0.2,
+        "priceUnit": "€/kWh",
+        "priceContext": "recarga doméstica supuesta"
+      }
+    ]
+  },
+  "scenes": {
+    "hookKicker": "TRES COCHES · UNA MISMA DISTANCIA",
+    "setupTitle": "Primero, los supuestos",
+    "simulationTitle": "El contador avanza",
+    "resultTitle": "A los 100 km",
+    "contextTitle": "Importa dónde recargas",
+    "contextBody": "Aquí se usa recarga doméstica. En carga rápida, el coste puede ser distinto.",
+    "ctaTitle": "Haz la cuenta con tus cifras",
+    "ctaBody": "Calcula tu caso en kilometroclaro.com"
+  },
+  "assumptions": [
+    "Comparación hipotética del coste de energía para 100 km; no representa una media nacional.",
+    "Gasolina: 6 L/100 km y 1,60 €/L; diésel: 5 L/100 km y 1,50 €/L.",
+    "Eléctrico: 18 kWh/100 km y 0,20 €/kWh en recarga doméstica.",
+    "No incluye pérdidas de carga, peajes, aparcamiento ni otros costes del vehículo."
+  ],
+  "sources": [
+    {
+      "label": "Kilómetro Claro · guía comparativa",
+      "url": "https://kilometroclaro.com/guias/consumo-coche-electrico-gasolina-diesel/",
+      "kind": "editorial-example",
+      "accessedAt": "2026-10-21"
+    }
+  ],
+  "result": "El orden cambia si cambian los consumos o los precios.",
+  "disclaimer": "Ejemplo hipotético · solo energía · precios supuestos",
+  "cta": "Calcula tu caso en kilometroclaro.com",
+  "requiresHumanReview": true
+}

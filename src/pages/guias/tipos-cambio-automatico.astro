@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
+import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const title = 'Tipos de cambio automático | Kilómetro Claro';
+const description = 'Compara los tipos de cambio automático con ejemplos reales y descubre cuál encaja con tus trayectos, qué ventajas ofrece y qué revisar antes de comprar.';
+const canonical = new URL('/guias/tipos-cambio-automatico/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-10-27';
+const modifiedDate = '2026-10-27';
+const faq = [
+  { question: '¿Qué tipo de cambio automático es mejor?', answer: 'No hay uno mejor para todos. Un convertidor puede destacar por la suavidad a baja velocidad; un doble embrague, por sus cambios rápidos; y una CVT, por mantener una relación continua. La e-CVT híbrida responde a otra arquitectura. Compara la versión concreta y pruébala en el tipo de recorrido que haces habitualmente.' },
+  { question: '¿Qué diferencia hay entre una CVT y una e-CVT?', answer: 'La CVT convencional descrita aquí cambia la relación mediante poleas y una correa o cadena. La e-CVT de sistemas híbridos como el Toyota Hybrid System reparte potencia con motores-generadores y un tren de engranajes planetarios; no emplea esa correa para variar la relación.' },
+  { question: '¿El cambio de doble embrague es automático?', answer: 'Sí. La caja decide y ejecuta los cambios sin que el conductor accione un pedal de embrague. Sus dos embragues permiten preparar relaciones alternas. El tipo de embrague y su funcionamiento a baja velocidad dependen de la transmisión y del modelo.' },
+  { question: '¿Una caja CVT tiene marchas?', answer: 'Una CVT convencional no tiene una serie fija de relaciones como una automática escalonada. Algunos coches simulan pasos para ofrecer una sensación más familiar o para manejar levas, pero eso no transforma el mecanismo en una caja de varias marchas fijas.' },
+  { question: '¿Los coches eléctricos tienen cambio automático?', answer: 'La mayoría de los eléctricos de batería usa una relación reductora fija y no cambia entre varias marchas como un coche térmico automático. El selector puede mostrar P, R, N y D, pero eso no implica que tenga una caja automática multirrelación.' },
+  { question: '¿Un cambio automático consume siempre más?', answer: 'No se puede generalizar por el tipo de caja. El consumo depende del coche completo, su motor, peso, programación, recorrido y conducción. Para una comparación útil, consulta los datos de versiones equivalentes y, si es posible, contrasta el consumo real en trayectos parecidos.' },
+];
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Tipos de cambio automático: cómo funcionan y qué coches los montan',
+      description,
+      image: 'https://kilometroclaro.com/images/og/guia-tipos-cambio-automatico.png',
+      datePublished: publishedDate,
+      dateModified: modifiedDate,
+      inLanguage: 'es-ES',
+      mainEntityOfPage: canonical.toString(),
+      author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+      publisher: {
+        '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/',
+        logo: { '@type': 'ImageObject', url: 'https://kilometroclaro.com/logo-marca-kilometro-claro.png' },
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((item) => ({
+        '@type': 'Question', name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Comprar coche', href: '/categorias/compra-financiacion/' }, { label: 'Tipos de cambio automático' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Comprar coche · Publicada el 27 de octubre de 2026</span>
+        <h1>Tipos de cambio automático: cómo funcionan y qué coches los montan</h1>
+        <p class="dek">Convertidor de par, doble embrague, CVT y e-CVT no describen la misma tecnología. Aquí explicamos qué cambia dentro de cada caja, cómo se nota al conducir y qué modelos sirven para reconocerlas.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>Las principales transmisiones automáticas de los coches actuales se agrupan en <strong>automáticas con convertidor de par, doble embrague, CVT y e-CVT híbridas</strong>. La primera y la segunda cambian entre relaciones definidas; la CVT varía su relación de forma continua; y la e-CVT híbrida reparte la fuerza entre motor térmico y eléctricos mediante otra arquitectura. Ejemplos: BMW X5 M con M Steptronic, Hyundai i30 1.6 T-GDi 7DCT, Nissan Qashqai Xtronic y Toyota Corolla Hybrid e-CVT. El nombre comercial y el sistema exacto pueden cambiar según el motor, año y acabado.</p>
+        <a class="button-primary" href="#comparativa">Ir a la comparativa <span aria-hidden="true">↓</span></a>
+      </aside>
+      <AdsterraInlineBanner />
+      <GuideImage slug="tipos-cambio-automatico" />
+
+      <nav class="article-toc" aria-label="Contenido de esta guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#como-funciona">Qué significa cambio automático</a></li>
+          <li><a href="#convertidor">Convertidor de par</a></li>
+          <li><a href="#doble-embrague">Doble embrague</a></li>
+          <li><a href="#cvt">CVT o variador continuo</a></li>
+          <li><a href="#ecvt">e-CVT híbrida</a></li>
+          <li><a href="#comparativa">Tabla comparativa</a></li>
+          <li><a href="#eleccion">Cómo elegir según tu uso</a></li>
+          <li><a href="#errores">Confusiones frecuentes</a></li>
+          <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+
+      <p>Buscar un coche automático parece sencillo hasta que la ficha técnica empieza a hablar de DCT, CVT, e-CVT o Steptronic. Aunque todos permiten conducir sin que el usuario cambie cada relación, <strong>la forma de transmitir la fuerza y la sensación al volante pueden ser muy distintas</strong>. Entender esas diferencias ayuda a elegir con criterio, sobre todo si haces mucha ciudad, maniobras a menudo o estás comparando un híbrido con un coche de gasolina. La caja de cambios no determina qué ruedas reciben la fuerza: para eso, consulta nuestra guía de <a href="/guias/tipos-traccion-coche/">tracción delantera, trasera, total y 4x4</a>.</p>
+
+      <h2 id="como-funciona">Qué significa que un coche tenga cambio automático</h2>
+      <p>En una transmisión automática, la electrónica decide cuándo variar la relación de transmisión y ejecuta el proceso sin que el conductor tenga que seleccionar cada marcha durante la conducción normal. En la palanca o el selector suelen aparecer posiciones como P, R, N y D, aunque el diseño y las funciones exactas dependen del vehículo.</p>
+      <p>Esta guía se limita a sistemas que realizan los cambios automáticamente. No explica cajas manuales ni sistemas robotizados derivados de ellas. Tampoco conviene tomar el número de marchas como una medida directa de calidad: importan la respuesta, la programación, el motor con el que trabaja, el mantenimiento prescrito y el uso real.</p>
+
+      <h2 id="convertidor">1. Automática con convertidor de par: progresiva en las maniobras</h2>
+      <p>En una automática escalonada clásica, un <strong>convertidor hidráulico de par</strong> transmite el movimiento entre el motor y la caja mediante fluido. Dentro de la transmisión, conjuntos de engranajes planetarios y elementos de acoplamiento permiten obtener distintas relaciones. El convertidor facilita que el coche empiece a moverse con suavidad desde parado; una vez en marcha, un embrague de bloqueo puede reducir el resbalamiento para conectar de forma más directa.</p>
+      <p>Al levantar el freno, muchos modelos tienden a avanzar despacio —el llamado efecto de avance o *creep*—, lo que puede facilitar aparcar y maniobrar. La sensación habitual es de cambios escalonados, aunque las cajas modernas pueden hacerlos casi imperceptibles. No todas las transmisiones automáticas usan convertidor: hay que confirmar la tecnología de la versión concreta.</p>
+      <h3>Ejemplo real: BMW X5 M con M Steptronic</h3>
+      <p>En la documentación del BMW X5 M y X6 M presentada en 2014, BMW describe una caja M Steptronic de ocho marchas con convertidor. Es un ejemplo claro de automática escalonada de alto par; no debe extrapolarse sin más a todos los BMW ni a cualquier generación del X5. El fabricante puede combinar nombres comerciales parecidos con transmisiones distintas según modelo y motor.</p>
+      <p><strong>Puede encajar</strong> si priorizas progresividad en maniobras y una respuesta de caja tradicional. Antes de comprar un usado, comprueba qué mantenimiento prescribe el fabricante para esa transmisión y si existen facturas que lo acrediten; no des por hecho que todas comparten intervalos o especificaciones de fluido.</p>
+
+      <h2 id="doble-embrague">2. Doble embrague (DCT o DSG): dos relaciones preparadas</h2>
+      <p>Una transmisión de doble embrague utiliza dos embragues y dos líneas de engranajes coordinadas. Mientras una relación transmite la fuerza, la caja puede dejar preparada otra que previsiblemente necesitará después. Al alternar los embragues, el cambio de relación puede realizarse con rapidez y con una interrupción reducida de la entrega de potencia.</p>
+      <p>El principio está presente, con distintas denominaciones, en sistemas como <strong>DCT</strong> de Hyundai y <strong>DSG</strong> del Grupo Volkswagen. Volkswagen explica que en su DSG las marchas se distribuyen entre dos embragues; según la motorización, estos pueden ser secos o bañados en aceite. Por eso “doble embrague” identifica una familia, pero no una única caja idéntica en todos los coches.</p>
+      <h3>Ejemplo real: Hyundai i30 1.6 T-GDi de 150 CV y 7DCT</h3>
+      <p>La ficha de Hyundai España combina el motor 1.6 T-GDi de 150 CV del i30 con una transmisión DCT de siete velocidades. Es una forma concreta de encontrar esta tecnología en un compacto. La misma página indica que la gama también ofrece otras combinaciones, así que conviene mirar motor y acabado, no solo el nombre “i30”.</p>
+      <p>En una conducción fluida puede ofrecer cambios ágiles. En algunas cajas, el avance muy lento en una cuesta, una cola o un aparcamiento exige que los embragues gestionen muchas maniobras de acoplamiento; la sensación y las instrucciones varían por modelo. En tráfico denso, pruébalo en situaciones reales y consulta el manual del vehículo sobre maniobras prolongadas y mantenimiento.</p>
+
+      <h2 id="cvt">3. CVT: relación variable sin una secuencia fija de marchas</h2>
+      <p>La CVT convencional —siglas de transmisión continuamente variable— modifica la relación de transmisión de forma progresiva. En una arquitectura habitual, dos poleas de diámetro efectivo variable están conectadas por una correa metálica o una cadena. Al cambiar la posición de trabajo entre las poleas, el sistema altera la relación sin pasar por una primera, segunda o tercera marcha fija como en una caja escalonada.</p>
+      <p>La consecuencia perceptible es una aceleración continua. Si se pide mucha potencia, el motor puede quedarse un rato a un régimen alto mientras el coche gana velocidad. A algunos conductores les parece menos natural que una caja que sube marchas; otros valoran precisamente la ausencia de cambios perceptibles. Algunos fabricantes simulan “pasos” o relaciones para las levas, pero siguen siendo una estrategia de control, no necesariamente marchas fijas físicas.</p>
+      <h3>Ejemplo real: Nissan Qashqai con Xtronic</h3>
+      <p>Nissan usa el nombre Xtronic para versiones con CVT. Su documentación técnica describe el principio de poleas y correa metálica, mientras que el manual de usuario del Qashqai 2024 explica el funcionamiento de las versiones equipadas con Xtronic. La disponibilidad depende de la combinación de motor, acabado y año: comprueba la ficha del coche concreto, ya que la gama Qashqai también ha ofrecido otras soluciones de propulsión y transmisión.</p>
+      <p><strong>Antes de elegirlo</strong>, haz una prueba de aceleración desde baja velocidad y una incorporación a carretera. Además de la ficha, esa prueba permite saber si el sonido y la respuesta del motor te resultan cómodos. No concluyas que una CVT gasta menos o más solo por su arquitectura: compara consumos reales de versiones equivalentes.</p>
+
+      <h2 id="ecvt">4. e-CVT híbrida: el nombre se parece, la mecánica no</h2>
+      <p>La <strong>e-CVT de algunos híbridos</strong> no es una CVT convencional de poleas y correa. En sistemas como el Hybrid System de Toyota, un conjunto de engranajes planetarios conecta el motor de gasolina con motores-generadores eléctricos y distribuye la potencia. La gestión electrónica ajusta continuamente cómo contribuyen los motores y la batería; el conductor no percibe una secuencia convencional de cambios.</p>
+      <p>Por eso un híbrido con e-CVT puede mantener el motor térmico a un régimen que no sube en proporción directa a la velocidad del coche, especialmente al acelerar. No significa necesariamente que haya una avería: el sistema está repartiendo potencia para responder a la demanda. La sensación se entiende mejor en una prueba de conducción, que debe incluir aceleraciones y recorridos a velocidad constante.</p>
+      <h3>Ejemplo real: Toyota Corolla Hybrid</h3>
+      <p>Toyota España ofrece el Corolla Hybrid con transmisión e-CVT en distintas motorizaciones híbridas. La marca describe su sistema híbrido más reciente con motor térmico, motores-generadores, batería y transeje e-CVT. Las cifras y componentes cambian entre generaciones, carrocerías y versiones; aquí el Corolla sirve para identificar el concepto, no para afirmar que todas las e-CVT del mercado tengan exactamente la misma arquitectura.</p>
+      <p>Si estás comparando tecnologías híbridas, nuestra guía sobre <a href="/guias/coche-hibrido-enchufable-o-microhibrido/">diferencias entre microhíbridos, híbridos y enchufables</a> explica qué implica cada sistema para el uso y la recarga. En la e-CVT importa distinguir la transmisión de la etiqueta comercial “híbrido”: el nombre por sí solo no describe cómo se reparte la potencia.</p>
+
+      <h2 id="comparativa">Comparativa rápida de cambios automáticos</h2>
+      <div class="table-scroll" role="region" aria-label="Comparativa de tipos de cambio automático" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Tipo</th><th scope="col">Cómo cambia la relación</th><th scope="col">Sensación habitual</th><th scope="col">Ejemplo documentado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Convertidor de par</th><td>Engranajes planetarios y convertidor hidráulico; relaciones escalonadas.</td><td>Arranque progresivo; cambios perceptibles o muy suaves según caja.</td><td>BMW X5 M con M Steptronic de 8 marchas (documentación de 2014).</td></tr>
+            <tr><th scope="row">Doble embrague</th><td>Dos embragues y dos trenes; puede preparar la siguiente relación.</td><td>Cambios rápidos; el tacto al avanzar despacio depende de la calibración.</td><td>Hyundai i30 1.6 T-GDi 150 CV con 7DCT.</td></tr>
+            <tr><th scope="row">CVT</th><td>En el diseño habitual, relación continua mediante poleas y correa o cadena.</td><td>Aceleración sin saltos; el régimen del motor puede mantenerse alto.</td><td>Nissan Qashqai con Xtronic, según versión.</td></tr>
+            <tr><th scope="row">e-CVT híbrida</th><td>Reparto de potencia mediante sistema híbrido y engranajes planetarios en el ejemplo Toyota.</td><td>Entrega continua; el régimen del motor no siempre acompaña a la velocidad.</td><td>Toyota Corolla Hybrid con e-CVT.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Los ejemplos ilustran sistemas concretos documentados por sus fabricantes. No son una lista exhaustiva ni una recomendación de compra; las cajas, motorizaciones y denominaciones pueden cambiar por año, mercado y acabado.</p>
+
+      <h2 id="eleccion">Qué cambio automático puede encajar mejor con tu uso</h2>
+      <p>No existe una tecnología que gane en todos los escenarios. Antes de elegir, céntrate en cómo responde el coche que realmente comprarías y en su coste de propiedad:</p>
+      <ul>
+        <li><strong>Ciudad, rotondas y aparcamientos:</strong> prueba el arranque, el avance lento y las maniobras. El convertidor suele facilitar un avance progresivo, pero la calibración de cada caja es decisiva.</li>
+        <li><strong>Tráfico con paradas frecuentes:</strong> comprueba cómo dosifica el acelerador una DCT a baja velocidad y revisa las indicaciones del fabricante para pendientes o maniobras largas.</li>
+        <li><strong>Carretera y autovía:</strong> presta atención a la aceleración para adelantar, al ruido del motor y a la selección de relaciones cuando cambia la pendiente.</li>
+        <li><strong>Híbrido no enchufable:</strong> confirma si usa e-CVT u otra transmisión y realiza una prueba que incluya una incorporación y una aceleración sostenida.</li>
+        <li><strong>Compra de segunda mano:</strong> verifica la transmisión exacta mediante ficha, número de bastidor o documentación del fabricante; pide historial de mantenimiento y prueba el coche en frío y caliente.</li>
+      </ul>
+      <p>Una caja más compleja puede cambiar el presupuesto de mantenimiento, pero no se puede calcular solo por el tipo. Las piezas, mano de obra, intervalos y fluidos dependen de la transmisión concreta. Para incorporar seguro, combustible, mantenimiento e impuestos a una misma estimación, usa la <a href="/calculadoras/coste-anual-coche/">calculadora del coste anual del coche</a> y la <a href="/calculadoras/coste-por-kilometro/">calculadora de coste por kilómetro</a>. Si estás escogiendo modelo y motorización, también puedes consultar nuestra guía de <a href="/guias/que-coche-comprar-segun-presupuesto/">coches según presupuesto y tipo de uso</a>.</p>
+
+      <div class="cta-panel"><div><span class="eyebrow">Sigue comparando con tus propios datos</span><h3>Calcula cuánto te cuesta tener el coche</h3><p>Incluye el mantenimiento y los gastos de la transmisión que correspondan a la versión que estás valorando.</p></div><a class="button-primary" href="/calculadoras/coste-anual-coche/">Abrir calculadora anual <span aria-hidden="true">→</span></a></div>
+
+      <AdsterraNativeBanner />
+
+      <h2 id="electricos">¿Y los coches eléctricos?</h2>
+      <p>La mayoría de los eléctricos de batería no tiene una caja multirrelación que vaya cambiando de marcha durante la conducción. Utiliza una relación reductora fija para llevar el giro del motor eléctrico a las ruedas. El selector sigue ofreciendo posiciones como avance y marcha atrás, pero la marcha atrás puede conseguirse invirtiendo el sentido de giro del motor. Esta transmisión de una sola relación no es una CVT ni una caja automática escalonada de las cuatro familias anteriores.</p>
+      <p>Hay excepciones y desarrollos con más de una relación, por lo que “todos los eléctricos tienen una sola marcha” sería demasiado absoluto. En el artículo técnico de Audi sobre la plataforma MEB, la marca describe una transmisión de una velocidad con avance y marcha atrás. Para un modelo concreto, confirma siempre su ficha técnica.</p>
+
+      <h2 id="errores">Cuatro confusiones frecuentes al comparar transmisiones</h2>
+      <ol>
+        <li><strong>Tratar CVT y e-CVT como sinónimos.</strong> El nombre se parece, pero el principio mecánico puede ser diferente. Pregunta qué sistema utiliza el modelo.</li>
+        <li><strong>Suponer que todas las cajas de una marca son iguales.</strong> Una marca puede combinar convertidor, DCT y otras transmisiones entre modelos y generaciones.</li>
+        <li><strong>Elegir por el número de marchas.</strong> Ocho relaciones no garantizan más comodidad o menor consumo que seis; cuenta la calibración del conjunto y el uso.</li>
+        <li><strong>Dar por universal el consumo o mantenimiento.</strong> Compara datos de versiones equivalentes y sigue el plan de mantenimiento de ese coche, no una regla general de internet.</li>
+      </ol>
+      <p>Un último detalle: que una caja permita seleccionar relaciones con levas o desde el selector no cambia su arquitectura. Puede seguir siendo automática y mantener la gestión de protección electrónica del coche. Consulta el manual antes de usar un modo de selección en descensos, adelantamientos o superficies deslizantes.</p>
+
+      <h2 id="conclusion">Conclusión: compara la caja concreta, no solo su nombre</h2>
+      <p>Convertidor de par, doble embrague, CVT y e-CVT ofrecen formas diferentes de conducir un coche sin cambiar las marchas de manera convencional. Sus diferencias se perciben especialmente al iniciar la marcha, acelerar, avanzar despacio y mantener velocidad. Los ejemplos del BMW X5 M, Hyundai i30, Nissan Qashqai y Toyota Corolla ayudan a reconocer cada familia, pero no sustituyen la comprobación del motor, el año y el acabado exactos.</p>
+      <p>Si estás pensando en comprar, conduce la versión que te interesa en condiciones parecidas a tu rutina y revisa su mantenimiento documentado. El tacto al volante, el historial y el coste total durante los años de uso son más útiles para decidir que una etiqueta comercial aislada.</p>
+
+      <section class="faq-section" id="preguntas">
+        <h2>Preguntas frecuentes sobre cambios automáticos</h2>
+        {faq.map((item) => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}
+      </section>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consultamos documentación técnica y fichas oficiales para describir los mecanismos y confirmar los ejemplos de vehículos. La selección ilustra familias de transmisión; no compara fiabilidad, averías ni consumo mediante ensayos propios. Fuentes revisadas el <strong>27 de octubre de 2026</strong>:</p>
+        <ul>
+          <li><a href="https://www.press.bmwgroup.com/spain/article/attachment/T0195500ES/284837" target="_blank" rel="noopener noreferrer">BMW Group PressClub: BMW X5 M y caja M Steptronic de ocho marchas con convertidor</a>.</li>
+          <li><a href="https://www.hyundai.com/es/es/modelos/i30/prestaciones.html" target="_blank" rel="noopener noreferrer">Hyundai España: motor 1.6 T-GDi de 150 CV y transmisión DCT de siete velocidades del i30</a>.</li>
+          <li><a href="https://www.volkswagen.es/es/volkswagen-espana/glosario-tecnico/c.html" target="_blank" rel="noopener noreferrer">Volkswagen España: funcionamiento del cambio DSG y diferencias entre embragues secos y húmedos según motorización</a>.</li>
+          <li><a href="https://www2.nissan-global.com/EN/INNOVATION/TECHNOLOGY/ARCHIVE/XTRONIC_CVT/" target="_blank" rel="noopener noreferrer">Nissan: explicación técnica de la Xtronic CVT, poleas y correa metálica</a>; y <a href="https://www.nissan.es/propietarios/manuales-del-propietario/manual-del-propietario/iom/qashqai/0j12/e1/2024/conduccin-con-transmisin-xtronic-1.shtml" target="_blank" rel="noopener noreferrer">manual del propietario del Qashqai 2024 con Xtronic</a>.</li>
+          <li><a href="https://www.toyota.es/world-of-toyota/articles-news-events/quinta-generacion-motores-hibridos" target="_blank" rel="noopener noreferrer">Toyota España: componentes y funcionamiento de su sistema híbrido de quinta generación</a>; <a href="https://www.toyota.es/coches/corolla" target="_blank" rel="noopener noreferrer">ficha del Corolla Hybrid con e-CVT</a>; y <a href="https://www.toyota.es/content/dam/toyota/es/migrated/world-of-toyota/articles-news-events/como-funciona-motor-coche-hibrido-toyota-beneficios/Funcionamiento-sistema-hibrido-Toyota.pdf" target="_blank" rel="noopener noreferrer">descripción del dispositivo divisor de potencia con tren de engranajes</a>.</li>
+          <li><a href="https://www.audi.com/en/audi-technology-lexicon-7180/electric-drives-16870" target="_blank" rel="noopener noreferrer">Audi Technology Lexicon: transmisión de una velocidad en la plataforma eléctrica MEB</a>.</li>
+        </ul>
+        <p>Las fichas comerciales pueden actualizarse después de la fecha de consulta. Antes de tomar una decisión, confirma la versión y el plan de mantenimiento directamente con el fabricante o en la documentación del vehículo.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>

@@ -111,4 +111,28 @@ export const guides = [
     description: 'La flecha del combustible, la recirculación, la llave oculta y otras funciones útiles: qué significan y cuáles dependen de tu modelo.',
     published: true,
   },
+  {
+    slug: 'tipos-cambio-automatico',
+    title: 'Tipos de cambio automático: cómo funcionan y qué coches los montan',
+    category: 'Comprar coche',
+    categorySlug: 'compra-financiacion',
+    description: 'Compara convertidor de par, doble embrague, CVT y e-CVT con ejemplos de modelos reales y criterios prácticos para elegir según tus trayectos.',
+    published: true,
+  },
+  {
+    slug: 'tipos-traccion-coche',
+    title: 'Tipos de tracción del coche: delantera, trasera, total y 4x4',
+    category: 'Comprar coche',
+    categorySlug: 'compra-financiacion',
+    description: 'Compara tracción delantera, trasera, total y 4x4 con ejemplos reales. Conoce sus ventajas y límites para elegir según tus trayectos y presupuesto.',
+    published: true,
+  },
+  {
+    slug: 'tipos-luces-coche',
+    title: 'Tipos de luces del coche: halógenas, xenón, LED y láser',
+    category: 'Uso y mantenimiento',
+    categorySlug: 'uso-mantenimiento',
+    description: 'Comparamos halógenas, xenón, LED, Matrix y láser: cómo funcionan, qué alcances se han publicado y qué revisar antes de elegir o sustituir los faros.',
+    published: true,
+  },
 ] as const;

@@ -15,3 +15,7 @@ El ordenador puede abrir `http://127.0.0.1:4321/`. En el móvil usa la direcció
 **Importante en Codex:** inicia el servidor fuera del sandbox de `exec_command` (`sandbox_permissions: "require_escalated"`); un servidor iniciado dentro del sandbox puede anunciar la IP local pero no ser accesible desde el navegador ni el móvil. Si se deja en segundo plano con PowerShell, usa `Start-Process -WindowStyle Hidden` y comprueba desde el equipo anfitrión que la página responde con HTTP 200. Identifica el proceso por su línea de comandos antes de cerrar cualquier servidor que ocupe el puerto.
 
 Para desarrollo con recarga automática, sustituye `preview` por `dev` en el comando. Si Vite falla al leer dependencias por los puntos de repetición de OneDrive, sirve una compilación estática reciente con `preview`; no des por buena una URL anunciada por un servidor que muestra errores.
+
+## Logotipo de Kilómetro Claro en vídeos
+
+Usa como símbolo oficial la C lima sobre círculo verde de `public/logo-marca-kilometro-claro.png`, aportada por el usuario. En las piezas de vídeo no uses la K de `public/logo-kilometro-claro.svg`. El generador comparte este recurso mediante `social-video-generator/src/components/BrandLogo.tsx`.

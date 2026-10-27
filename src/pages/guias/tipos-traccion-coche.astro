@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
+import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const title = 'Tipos de tracción del coche | Kilómetro Claro';
+const description = 'Compara tracción delantera, trasera, total y 4x4 con ejemplos reales. Conoce sus ventajas y límites para elegir según tus trayectos y presupuesto.';
+const canonical = new URL('/guias/tipos-traccion-coche/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-10-27';
+const modifiedDate = '2026-10-27';
+const faq = [
+  { question: '¿Qué diferencia hay entre tracción total y 4x4?', answer: 'Las dos expresiones pueden describir coches que impulsan las cuatro ruedas. AWD suele referirse a sistemas que reparten fuerza automáticamente; 4x4 se asocia a menudo con vehículos preparados para salir del asfalto, a veces con reductora. No hay una frontera universal: comprueba el sistema concreto y su manual.' },
+  { question: '¿Qué tracción es mejor para conducir por ciudad?', answer: 'Para una rutina urbana normal no suele hacer falta impulsar las cuatro ruedas. La tracción delantera puede cubrir ese uso, pero la elección también depende del modelo, los neumáticos y el presupuesto. Compara versiones equivalentes y prueba el coche antes de decidir.' },
+  { question: '¿La tracción total evita patinar en nieve?', answer: 'Puede ayudar a iniciar la marcha, pero no elimina el riesgo de perder adherencia. El agarre depende de neumáticos, superficie, velocidad y maniobras. No acorta por sí sola la frenada ni sustituye neumáticos adecuados, cadenas cuando sean necesarias o una conducción suave.' },
+  { question: '¿Un coche 4x2 tiene siempre tracción delantera?', answer: 'No. “4x2” indica que dos ruedas reciben fuerza, pero no cuáles. Puede ser delantera o trasera. La ficha técnica de la versión concreta debe identificar el eje motriz.' },
+  { question: '¿La tracción total consume más combustible?', answer: 'No hay una cifra válida para todos. Componentes y masa pueden influir, pero también el diseño, la motorización, los neumáticos y el uso. Compara el dato WLTP de versiones concretas y estima el gasto con tus kilómetros y precios.' },
+  { question: '¿Se puede usar un 4x4 conectable en cualquier carretera?', answer: 'Depende del sistema. En algunos 4x4 conectables, el modo de cuatro ruedas motrices no debe usarse sobre asfalto seco con mucha adherencia porque la transmisión no compensa las distintas velocidades de los ejes. Consulta el manual: un AWD automático puede funcionar de otra forma.' },
+];
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Tracción delantera, trasera, total y 4x4: diferencias y usos',
+      description,
+      image: 'https://kilometroclaro.com/images/guides/tipos-traccion-coche.jpg',
+      datePublished: publishedDate,
+      dateModified: modifiedDate,
+      inLanguage: 'es-ES',
+      mainEntityOfPage: canonical.toString(),
+      author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+      publisher: {
+        '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/',
+        logo: { '@type': 'ImageObject', url: 'https://kilometroclaro.com/logo-marca-kilometro-claro.png' },
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((item) => ({
+        '@type': 'Question', name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Comprar coche', href: '/categorias/compra-financiacion/' }, { label: 'Tipos de tracción del coche' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Comprar coche · Publicada el 27 de octubre de 2026</span>
+        <h1>Tracción delantera, trasera, total y 4x4: qué cambia</h1>
+        <p class="dek">Qué ruedas reciben la fuerza del motor, cómo se nota al conducir y qué sistema puede encajar con tus recorridos. Con ejemplos documentados y una aclaración importante: “tracción total” y “4x4” no siempre son categorías separadas.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>En un coche de <strong>tracción delantera</strong> empujan las ruedas delanteras; en uno de <strong>tracción trasera</strong>, las posteriores. La <strong>tracción total</strong> puede enviar fuerza a ambos ejes de forma permanente o cuando el sistema lo necesita. <strong>4x4</strong> también significa que pueden impulsar las cuatro ruedas, aunque suele usarse para sistemas con más recursos para salir del asfalto, como una reductora. Los términos se solapan: compara la arquitectura y el manual de la versión concreta.</p>
+        <a class="button-primary" href="#comparativa">Ver diferencias de un vistazo <span aria-hidden="true">↓</span></a>
+      </aside>
+      <AdsterraInlineBanner />
+      <GuideImage slug="tipos-traccion-coche" />
+
+      <nav class="article-toc" aria-label="Contenido de esta guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#que-significa">Qué significa la tracción</a></li>
+          <li><a href="#delantera">Tracción delantera</a></li>
+          <li><a href="#trasera">Tracción trasera</a></li>
+          <li><a href="#total">Tracción total o AWD</a></li>
+          <li><a href="#cuatro-ruedas">4x4 para salir del asfalto</a></li>
+          <li><a href="#comparativa">Comparativa rápida</a></li>
+          <li><a href="#ejemplo">Ejemplo con versiones BMW</a></li>
+          <li><a href="#elegir">Cómo elegir según tu uso</a></li>
+          <li><a href="#errores">Errores frecuentes</a></li>
+          <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+
+      <p>Las fichas hablan de tracción delantera, propulsión trasera, AWD o 4x4. La diferencia básica es <strong>qué ruedas reciben la fuerza del motor</strong>; el nombre comercial no siempre explica cómo se reparte ni qué terreno puede afrontar. Entenderlo ayuda a elegir con criterio, sin confundir una etiqueta con una garantía de seguridad.</p>
+
+      <h2 id="que-significa">Qué significa la tracción de un coche</h2>
+      <p>El motor genera fuerza y la transmisión la lleva a una o varias ruedas. Si llega a dos, se habla habitualmente de un coche <strong>4x2</strong>: puede ser delantero o trasero. Si el sistema puede impulsar los dos ejes, estamos ante una forma de <strong>tracción a las cuatro ruedas</strong>. Lo que cambia entre vehículos es cómo se conecta esa fuerza, si el segundo eje se activa bajo demanda y qué ayudas mecánicas o electrónicas lo acompañan.</p>
+      <p>Una precisión evita muchas confusiones: técnicamente, “tracción total” y “4x4” pueden describir ambos un coche que impulsa las cuatro ruedas. En esta guía usaremos <em>AWD o tracción total</em> para los sistemas pensados principalmente para carretera, a menudo automáticos, y <em>4x4</em> para la configuración que añade recursos orientados a terreno difícil, como una caja transfer con relaciones largas y cortas. Es una distinción práctica, no una norma universal: los fabricantes usan AWD, 4WD, 4x4 y “tracción integral” con criterios que pueden solaparse.</p>
+
+      <h2 id="delantera">1. Tracción delantera: las ruedas delanteras tiran del coche</h2>
+      <p>En un vehículo de tracción delantera, las ruedas motrices también dirigen. Motor y transmisión suelen formar un conjunto compacto, habitual en turismos por su aprovechamiento del espacio. Al acelerar, el peso se desplaza hacia atrás, pero el diseño busca un equilibrio práctico entre espacio, coste y uso diario.</p>
+      <p>Como las ruedas delanteras dirigen y transmiten fuerza, exigir demasiado en una curva o sobre poco agarre puede hacer que el coche abra su trayectoria —subviraje—. La respuesta depende del diseño, los neumáticos, la velocidad y la maniobra; no es inevitable.</p>
+      <h3>Ejemplo documentado: Toyota Yaris Hybrid</h3>
+      <p>La <a href="https://www.toyota.es/coches/yaris/caracteristicas/ficha-tecnica" target="_blank" rel="noopener noreferrer">ficha técnica española del Yaris Hybrid 120 y 130</a> identifica ambas versiones como 4x2 y de tracción delantera. Es un ejemplo claro de que un coche híbrido también puede ser de dos ruedas motrices: la tecnología de propulsión —gasolina, híbrida o eléctrica— y el eje motriz son conceptos distintos. La gama y los datos pueden cambiar por año y acabado.</p>
+
+      <h2 id="trasera">2. Tracción trasera: las ruedas posteriores empujan</h2>
+      <p>En la tracción trasera, el eje posterior recibe la fuerza y las ruedas delanteras dirigen. Esta separación permite distintas soluciones de reparto y respuesta al acelerar; es común en berlinas y deportivos, aunque la carrocería no basta para saberlo: consulta la ficha.</p>
+      <p>Con poca adherencia, una aceleración brusca puede hacer que la parte trasera pierda agarre. La electrónica ayuda, pero no reemplaza neumáticos adecuados ni maniobras suaves. Prueba cómo responde el modelo concreto.</p>
+      <h3>Ejemplo: BMW 320d Berlina</h3>
+      <p>Un <a href="https://www.bmw.es/content/dam/bmw/marketES/bmw_es/brochures-pricelist-2024/Serie-3-Berlina.pdf" target="_blank" rel="noopener noreferrer">catálogo oficial de BMW España de noviembre de 2024</a> identifica el 320d Berlina de aquella gama como tracción trasera. Más adelante usamos una pareja 320d y 320d xDrive del mismo catálogo para comparar dos configuraciones de esa generación; es un ejemplo fechado, no una afirmación sobre la gama disponible hoy.</p>
+
+      <h2 id="total">3. Tracción total o AWD: fuerza en los dos ejes</h2>
+      <p>Un sistema AWD puede impulsar ambos ejes permanentemente o conectar uno cuando la electrónica lo considera necesario. Puede hacerlo mediante una transmisión mecánica o, en algunos híbridos, con un motor eléctrico trasero independiente. La etiqueta no revela por sí sola el reparto, la respuesta ni el uso previsto.</p>
+      <h3>Ejemplo: Toyota RAV4 AWD-i</h3>
+      <p>En la <a href="https://prensa.toyota.es/toyota-espana-presenta-la-sexta-generacion-del-nuevo-toyota-rav4-electrificacion-avanzada-y-pedidos-abiertos-desde-hoy/" target="_blank" rel="noopener noreferrer">gama RAV4 presentada por Toyota España en 2026</a>, el PHEV puede ser FWD o AWD-i según acabado; los HEV Advance y Spirit son FWD. Por eso hay que comprobar motorización y acabado, no solo el nombre del modelo.</p>
+      <p>El AWD puede ayudar a iniciar la marcha o acelerar en una rampa o superficie resbaladiza, pero no mejora por sí solo la frenada ni permite tomar curvas más rápido. La adherencia también depende de neumáticos, firme y velocidad. En nieve, la <a href="https://www.dgt.es/comunicacion/noticias/hielo-y-nieve-con-la-adherencia-al-limite/" target="_blank" rel="noopener noreferrer">DGT aconseja suavidad</a> con volante, acelerador y freno.</p>
+
+      <h2 id="cuatro-ruedas">4. Tracción 4x4: cuatro ruedas motrices y recursos para el terreno</h2>
+      <p>“4x4” indica que pueden impulsar las cuatro ruedas, pero no que el coche sea todoterreno. <a href="https://www.toyota.es/world-of-toyota/articles-news-events/elegir-4x4-toyota" target="_blank" rel="noopener noreferrer">Toyota diferencia</a> los 4x4 de los todoterrenos preparados para terreno difícil, que pueden añadir reductora, bloqueos, protecciones y altura libre. Neumáticos y experiencia también cuentan.</p>
+      <p>En un <strong>4x4 conectable</strong> pueden aparecer modos <strong>2H</strong> (dos ruedas, relación larga), <strong>4H</strong> (cuatro ruedas, relación larga) y <strong>4L</strong> (cuatro ruedas, reductora). <a href="https://auto.suzuki.es/actualidad/suzuki-traccion-cuatro-ruedas" target="_blank" rel="noopener noreferrer">Suzuki documenta</a> el esquema en el Jimny Pro AllGrip Pro: 4L aumenta el par disponible a baja velocidad para pendientes y terreno roto. No todos los 4x4 tienen esos modos; en algunos sistemas, usar 4H sobre asfalto seco puede forzar la transmisión. Sigue el manual.</p>
+      <p>Un AWD puede bastar para caminos sencillos, pero no equivale necesariamente a un 4x4 con reductora. Esta tampoco hace segura cualquier ruta: valora su dificultad, el estado del vehículo y tu experiencia.</p>
+
+      <h2 id="comparativa">Diferencias entre tracción delantera, trasera, total y 4x4</h2>
+      <div class="table-scroll" role="region" aria-label="Comparativa de sistemas de tracción" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Sistema</th><th scope="col">Ruedas motrices</th><th scope="col">Uso que suele encajar</th><th scope="col">Qué comprobar</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Delantera (FWD)</th><td>Las dos delanteras.</td><td>Turismo de uso diario, ciudad y carretera convencional.</td><td>Respuesta con carga, neumáticos delanteros y comportamiento en una prueba de conducción.</td></tr>
+            <tr><th scope="row">Trasera (RWD)</th><td>Las dos traseras.</td><td>Modelos que priorizan una determinada distribución mecánica o respuesta al acelerar.</td><td>Motorización y ayudas de estabilidad de la versión; tacto sobre lluvia o baja adherencia.</td></tr>
+            <tr><th scope="row">Total / AWD</th><td>Los dos ejes; el reparto y la conexión dependen del sistema.</td><td>Quien valora motricidad adicional en rampas, caminos fáciles o condiciones variables.</td><td>Si es permanente o bajo demanda, consumo homologado, peso y mantenimiento.</td></tr>
+            <tr><th scope="row">4x4 con modos y reductora</th><td>Puede impulsar las cuatro ruedas, con modos definidos según el sistema.</td><td>Uso frecuente en pistas difíciles, pendientes o terreno fuera del asfalto.</td><td>Manual, reductora, bloqueos, altura, neumáticos y límites de la ruta.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Es una orientación de uso, no una clasificación técnica que todos los fabricantes apliquen igual. FWD, RWD, AWD, 4WD y 4x4 pueden describir soluciones distintas según la marca, el modelo, la generación y el acabado.</p>
+
+      <AdsterraNativeBanner />
+
+      <h2 id="ejemplo">Ejemplo con datos: BMW 320d frente a BMW 320d xDrive</h2>
+      <p>El <a href="https://www.bmw.es/content/dam/bmw/marketES/bmw_es/brochures-pricelist-2024/Serie-3-Berlina.pdf" target="_blank" rel="noopener noreferrer">catálogo español de BMW de noviembre de 2024</a> compara dos Serie 3 Berlina 320d con 190 CV y 400 Nm, pero distinta tracción: trasera en el 320d y total en el xDrive. Son cifras homologadas, no un ensayo independiente; el equipamiento también puede influir.</p>
+      <div class="table-scroll" role="region" aria-label="Datos homologados de BMW Serie 3 Berlina 320d y 320d xDrive, catálogo de noviembre de 2024" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Dato del catálogo</th><th scope="col">320d, trasera</th><th scope="col">320d xDrive, total</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Potencia y par</th><td>190 CV · 400 Nm</td><td>190 CV · 400 Nm</td></tr>
+            <tr><th scope="row">0–100 km/h</th><td>6,9 s</td><td>7,2 s</td></tr>
+            <tr><th scope="row">Consumo combinado WLTP</th><td>4,9–5,6 l/100 km</td><td>5,2–5,9 l/100 km</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Catálogo de noviembre de 2024. Los intervalos dependen de la configuración y homologación; no predicen el consumo real ni establecen una regla para otros coches.</p>
+      <p>Esta comparación no demuestra que AWD sea siempre más lento o consuma una cantidad fija adicional; muestra por qué conviene revisar cada versión. Estima energía, seguro y mantenimiento con la <a href="/calculadoras/coste-anual-coche/">calculadora de coste anual</a> o compara gastos por distancia con la <a href="/calculadoras/coste-por-kilometro/">calculadora de coste por kilómetro</a>.</p>
+
+      <h2 id="elegir">Cómo elegir la tracción según tus trayectos</h2>
+      <p>Antes de elegir, anota tus kilómetros, tipo de carretera y frecuencia de nieve, barro o pistas difíciles. No elijas AWD solo por la lluvia ni un 4x4 para una salida ocasional sin comparar coste y mantenimiento.</p>
+      <ul>
+        <li><strong>Ciudad y autovía:</strong> una tracción delantera suele bastar; compara motor, consumo y espacio.</li>
+        <li><strong>Rampas, nieve ocasional o caminos fáciles:</strong> valora AWD si necesitas más motricidad y revisa neumáticos y funcionamiento.</li>
+        <li><strong>Pistas difíciles habituales:</strong> busca un 4x4 preparado y aprende a usar sus modos.</li>
+        <li><strong>Tracción trasera:</strong> prueba la respuesta y consulta las recomendaciones de neumáticos y control de estabilidad.</li>
+        <li><strong>Segunda mano:</strong> confirma el sistema en ficha o manual; el emblema no basta.</li>
+      </ul>
+      <p>Si estás comparando alternativas por precio y rutina, nuestra <a href="/guias/que-coche-comprar-segun-presupuesto/">guía de modelos según presupuesto y tipo de uso</a> ayuda a ordenar prioridades. En un híbrido, la presencia de un motor eléctrico en el eje trasero puede formar parte de la tracción total: lo explicamos con más contexto en la guía de <a href="/guias/coche-hibrido-enchufable-o-microhibrido/">híbridos, híbridos enchufables y microhíbridos</a>. La configuración de tracción es independiente del tipo de caja de cambios; para no confundir ambos conceptos, consulta también los <a href="/guias/tipos-cambio-automatico/">tipos de cambio automático</a>.</p>
+
+      <h2 id="errores">Errores frecuentes al comparar tracciones</h2>
+      <ol>
+        <li><strong>Pensar que “tracción total” y “4x4” siempre significan sistemas opuestos.</strong> El fabricante puede usar las etiquetas de manera distinta. Mira los componentes y el manual, no solo el nombre.</li>
+        <li><strong>Confundir más motricidad con más adherencia en cualquier maniobra.</strong> Impulsar más ruedas puede ayudar a acelerar, pero no crea agarre ilimitado al frenar o girar.</li>
+        <li><strong>Suponer que todos los 4x4 tienen reductora.</strong> Muchos sistemas AWD no la incorporan; en 4x4, comprueba la ficha y los modos disponibles.</li>
+        <li><strong>Dar por hecho que AWD no afecta al coste de uso.</strong> El efecto depende del coche completo. Compara consumos homologados y calcula con tus kilómetros; no conviertas la comparación de un solo modelo en una regla.</li>
+        <li><strong>Olvidarse de los neumáticos.</strong> Un sistema de tracción no compensa un neumático inadecuado, desgastado o con presión incorrecta. En nieve o hielo, adapta la velocidad y evita movimientos bruscos.</li>
+      </ol>
+
+      <h2 id="conclusion">Conclusión: elige por uso, no por la insignia</h2>
+      <p>Delantera y trasera impulsan dos ruedas; AWD reparte fuerza entre ejes, mientras que 4x4 suele asociarse a más recursos fuera del asfalto. Las etiquetas varían por fabricante y modelo, como muestran el Yaris, el Serie 3, el RAV4 AWD-i y el Jimny Pro.</p>
+      <p>Elige según el terreno y el coste de la versión concreta. AWD aporta motricidad adicional cuando se necesita; un 4x4 con reductora permite usos más exigentes, y un 4x2 puede bastar para el día a día. Los neumáticos, la velocidad y la experiencia también importan.</p>
+
+      <div class="cta-panel"><div><span class="eyebrow">Compara el coste de tus candidatos</span><h3>Calcula cuánto te cuesta cada coche al año</h3><p>Incluye energía, seguro, mantenimiento e impuestos con datos de las versiones que estás valorando.</p></div><a class="button-primary" href="/calculadoras/coste-anual-coche/">Estimar coste anual <span aria-hidden="true">→</span></a></div>
+
+      <section class="faq-section" id="preguntas">
+        <h2>Preguntas frecuentes sobre los tipos de tracción</h2>
+        {faq.map((item) => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}
+      </section>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Contrastamos fichas de fabricantes y recomendaciones de la DGT; no hemos realizado un ensayo propio. Fuentes consultadas el <strong>27 de octubre de 2026</strong>:</p>
+        <ul>
+          <li><a href="https://www.toyota.es/coches/yaris/caracteristicas/ficha-tecnica" target="_blank" rel="noopener noreferrer">Toyota España: ficha técnica del Yaris Hybrid.</a></li>
+          <li><a href="https://www.bmw.es/content/dam/bmw/marketES/bmw_es/brochures-pricelist-2024/Serie-3-Berlina.pdf" target="_blank" rel="noopener noreferrer">BMW España: catálogo del Serie 3 Berlina (noviembre de 2024).</a></li>
+          <li><a href="https://prensa.toyota.es/toyota-espana-presenta-la-sexta-generacion-del-nuevo-toyota-rav4-electrificacion-avanzada-y-pedidos-abiertos-desde-hoy/" target="_blank" rel="noopener noreferrer">Toyota España: versiones del RAV4 en 2026.</a></li>
+          <li><a href="https://www.toyota.es/world-of-toyota/articles-news-events/elegir-4x4-toyota" target="_blank" rel="noopener noreferrer">Toyota España: 4x4 y todoterreno.</a></li>
+          <li><a href="https://auto.suzuki.es/actualidad/suzuki-traccion-cuatro-ruedas" target="_blank" rel="noopener noreferrer">Suzuki Ibérica: modos AllGrip Pro del Jimny.</a></li>
+          <li><a href="https://www.dgt.es/comunicacion/noticias/hielo-y-nieve-con-la-adherencia-al-limite/" target="_blank" rel="noopener noreferrer">DGT: conducción sobre hielo y nieve.</a></li>
+        </ul>
+        <p>Comprueba la ficha y el manual de la versión concreta. Los valores del BMW son cifras oficiales homologadas de una gama de 2024, no mediciones propias ni reglas para otros coches.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>

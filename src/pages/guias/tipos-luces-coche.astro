@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
+import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const title = 'Tipos de luces del coche: guía | Kilómetro Claro';
+const description = 'Comparamos halógenas, xenón, LED, Matrix y láser: cómo funcionan, qué alcances se han publicado y qué revisar antes de elegir o sustituir los faros.';
+const canonical = new URL('/guias/tipos-luces-coche/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-10-27';
+const modifiedDate = '2026-10-27';
+const faq = [
+  { question: '¿Qué tipo de faro ilumina más: LED, xenón o halógeno?', answer: 'No puede responderse solo por la etiqueta. Una fuente puede generar más flujo luminoso, pero la óptica, el diseño del haz, el reglaje y el estado del faro determinan cuánta luz llega a cada zona de la carretera. En un ejemplo concreto, BMW anunció hasta 600 metros para el láser del i8 y dijo que duplicaba el alcance de su LED de serie; esa comparación no describe todos los LED.' },
+  { question: '¿Los faros Matrix LED son un tipo distinto de bombilla?', answer: 'No. Matrix LED describe una forma de distribuir y controlar la luz mediante segmentos LED. El sistema puede atenuar zonas donde detecta otros vehículos y mantener iluminadas otras partes de la carretera. Es una función adaptativa y depende de la cámara, el software, la óptica y la versión del coche.' },
+  { question: '¿Las luces láser proyectan un rayo láser sobre la carretera?', answer: 'En los sistemas de producción descritos por BMW y Audi, no. Los diodos láser excitan un material fluorescente que transforma esa energía en luz blanca para el haz de carretera. Se usan como apoyo de largo alcance, habitualmente junto a faros LED.' },
+  { question: '¿Puedo poner una bombilla LED en un faro halógeno?', answer: 'No basta con que encaje en el portalámparas. En España, la documentación del Ministerio de Industria limita los recambios LED homologados al tipo de vehículo y al tipo de faro indicados en su certificado. Comprueba la compatibilidad y homologación exactas antes de comprarla o montarla.' },
+  { question: '¿Las luces OLED sirven como faros delanteros?', answer: 'En los ejemplos de fabricantes consultados, OLED se utiliza sobre todo en pilotos traseros y firmas luminosas. No debe confundirse con un faro de carretera: los OLED traseros hacen visible el vehículo, pero no iluminan la vía por delante.' },
+];
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Luces del coche: halógenas, xenón, LED, Matrix y láser',
+      description,
+      image: 'https://kilometroclaro.com/images/og/guia-tipos-luces-coche.png',
+      datePublished: publishedDate,
+      dateModified: modifiedDate,
+      inLanguage: 'es-ES',
+      mainEntityOfPage: canonical.toString(),
+      author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+      publisher: {
+        '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/',
+        logo: { '@type': 'ImageObject', url: 'https://kilometroclaro.com/logo-marca-kilometro-claro.png' },
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((item) => ({
+        '@type': 'Question', name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Uso y mantenimiento', href: '/categorias/uso-mantenimiento/' }, { label: 'Tipos de luces del coche' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · Publicada el 27 de octubre de 2026</span>
+        <h1>Luces del coche: diferencias entre halógenas, xenón, LED y láser</h1>
+        <p class="dek">Qué tecnología ilumina la carretera, qué significan Matrix LED y las luces adaptativas, y por qué los metros anunciados no sirven para hacer un ranking universal de faros.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>En los coches actuales encontrarás principalmente faros <strong>halógenos, de xenón (HID) y LED</strong>. El láser se ha ofrecido como refuerzo del haz largo en algunos modelos, como el BMW i8; no proyecta un rayo láser directo sobre la carretera. <strong>Matrix LED, las luces de curva y los sistemas digitales describen cómo se reparte o adapta el haz</strong>, no una familia de bombillas independiente. El alcance depende del faro completo y de sus condiciones de uso: no hay una distancia única para cada tecnología.</p>
+        <a class="button-primary" href="#comparativa-alcance">Comparar tecnologías y alcance <span aria-hidden="true">↓</span></a>
+      </aside>
+      <AdsterraInlineBanner />
+      <GuideImage slug="tipos-luces-coche" />
+
+      <nav class="article-toc" aria-label="Contenido de esta guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#fuente-y-haz">Fuente de luz y tipo de haz</a></li>
+          <li><a href="#halogena">Faros halógenos</a></li>
+          <li><a href="#xenon">Xenón o HID</a></li>
+          <li><a href="#led">LED, Matrix y sistemas digitales</a></li>
+          <li><a href="#laser">Luz láser</a></li>
+          <li><a href="#incandescente">Incandescentes clásicas</a></li>
+          <li><a href="#oled">OLED y pilotos traseros</a></li>
+          <li><a href="#comparativa-alcance">Comparativa y alcance publicado</a></li>
+          <li><a href="#elegir">Qué revisar al elegir o sustituir faros</a></li>
+          <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+
+      <p>Al mirar un coche, la forma del faro puede llamar la atención antes que la tecnología que lleva dentro. Sin embargo, expresiones como <em>Full LED</em>, <em>Matrix</em>, <em>xenón</em> o <em>Laserlight</em> no siempre describen lo mismo. Algunas identifican la fuente que produce la luz; otras, la manera de dirigirla y adaptarla a la carretera.</p>
+      <p>Esta diferencia importa al comparar coches nuevos o de segunda mano, estimar el coste de una reparación y sustituir una lámpara. También evita una conclusión engañosa: que una tecnología tenga más lúmenes o una cifra publicitaria mayor no significa, por sí sola, que todo faro que la utiliza permita ver más lejos en cualquier situación.</p>
+
+      <h2 id="fuente-y-haz">Primero, una distinción: fuente luminosa y distribución del haz</h2>
+      <p>La fuente es el elemento que genera luz: una bombilla halógena, un arco de descarga de xenón, un diodo LED o, en aplicaciones concretas, un módulo láser. La óptica —reflector, lente y geometría del faro— da forma al haz. A partir de ahí, la electrónica puede variar la intensidad o la zona iluminada.</p>
+      <p>Por eso las categorías se combinan. Un faro puede ser LED y adaptativo; <strong>Matrix LED</strong> usa varios segmentos LED que se controlan por separado. Las luces de curva pueden mover el módulo o encender una fuente adicional. Estas funciones no convierten al faro en una nueva fuente de luz.</p>
+      <p>Las luces de cruce, carretera, posición, circulación diurna y antiniebla describen funciones distintas del sistema del vehículo. Pueden utilizar fuentes diferentes según la generación y el acabado. La tecnología de los pilotos traseros también puede diferir de la de los faros delanteros.</p>
+
+      <h2 id="halogena">1. Halógenas: la solución sencilla y económica</h2>
+      <p>Una bombilla halógena es una lámpara incandescente: la corriente calienta un filamento hasta que emite luz. El gas halógeno dentro de la bombilla ayuda a prolongar el funcionamiento del filamento. Es una tecnología conocida, extendida en coches de distintas épocas y relativamente sencilla de reemplazar cuando el diseño del vehículo permite acceder a la lámpara.</p>
+      <p><strong>Ventajas:</strong> coste de compra bajo, amplia disponibilidad y sustitución habitualmente más simple que la de un faro integrado. Su luz suele percibirse más cálida que la de muchos LED actuales.</p>
+      <p><strong>Limitaciones:</strong> frente a sistemas modernos, su rendimiento luminoso y eficiencia suelen ser menores, y la bombilla es una pieza consumible que puede requerir sustitución. El haz real depende mucho de la óptica, el estado de la tulipa y el reglaje: una halógena bien ajustada puede ser preferible a un faro avanzado mal orientado.</p>
+      <h3>Ejemplo documentado: Toyota Yaris Hybrid de esa generación</h3>
+      <p>El manual europeo del <a href="https://myportalcontent.toyota-europe.com/Manuals/toyota/YARIS%20HV_OM_Europe_OM52G10E.pdf" target="_blank" rel="noopener noreferrer">Toyota Yaris Hybrid</a> identifica los faros halógenos y detalla sus bombillas. Es un ejemplo de una configuración y un manual concretos: otras generaciones, mercados o acabados del Yaris pueden montar un sistema diferente.</p>
+
+      <h2 id="xenon">2. Xenón o HID: luz de descarga de alta intensidad</h2>
+      <p>En una lámpara de xenón, también llamada HID por <em>high-intensity discharge</em>, la luz se produce mediante un arco eléctrico en una cápsula de gas, no calentando un filamento. El sistema necesita componentes electrónicos de encendido y control, incluido un balasto. En un faro <strong>bi-xenón</strong>, una fuente de descarga puede participar tanto en cruce como en carretera mediante una solución óptica o una pantalla móvil; el diseño exacto depende del modelo.</p>
+      <p><strong>Ventajas:</strong> las lámparas de descarga pueden generar más flujo luminoso y eficiencia que una bombilla halógena de referencia, según la explicación técnica de <a href="https://www.hella.com/techworld/en/technical/automotive-lighting/basic-principles-of-car-lighting-technology/" target="_blank" rel="noopener noreferrer">HELLA sobre iluminación y fuentes de xenón</a>. Eso no se traduce directamente en más metros visibles: el patrón del haz y la óptica siguen siendo decisivos.</p>
+      <p><strong>Limitaciones:</strong> el encendido y el sistema eléctrico son más complejos; las lámparas y componentes pueden resultar más caros de sustituir. El estado del balasto, la lámpara, la óptica y el reglaje condiciona el rendimiento. La potencia no compensa un haz mal orientado, que puede molestar a otros conductores.</p>
+      <h3>Ejemplo documentado: BMW Serie 3 Coupé</h3>
+      <p><a href="https://www.press.bmwgroup.com/united-kingdom/article/detail/T0014061EN_GB/the-new-bmw-3-series-coup%C3%A9?language=en_GB" target="_blank" rel="noopener noreferrer">BMW describía los faros xenón como equipamiento de serie</a> en el <strong>Serie 3 Coupé presentado en 2006</strong>, con faros adaptativos disponibles. Es un ejemplo histórico; al comprar un BMW usado hay que verificar la generación y el acabado, porque la dotación cambió con el tiempo.</p>
+
+      <h2 id="led">3. LED: eficiencia y más posibilidades de control</h2>
+      <p>Un LED genera luz mediante un semiconductor. Al ser compacto, permite distribuir varios emisores dentro de un mismo faro y combinarlos con lentes, reflectores y electrónica de control. En un coche se puede encontrar en las luces diurnas, los pilotos, los faros de cruce y carretera, o en una combinación de ellos. Que una versión tenga una firma diurna LED no implica necesariamente que todos sus haces principales sean LED.</p>
+      <p><strong>Ventajas:</strong> consumo eléctrico contenido, encendido inmediato, tamaño compacto y flexibilidad para diseñar el haz. Los sistemas de mayor complejidad pueden adaptar la iluminación al trazado o a la presencia de otros vehículos. La <a href="https://www.hella.com/techworld/en/technical/automotive-lighting/led-headlights/" target="_blank" rel="noopener noreferrer">documentación técnica de HELLA sobre faros LED</a> explica que la gestión térmica es importante: aunque la luz emitida no caliente como un filamento, el propio LED genera calor que debe disiparse.</p>
+      <p><strong>Limitaciones:</strong> el conjunto puede integrar módulos, unidades de control y refrigeración, lo que complica la reparación si algo falla. Según el diseño, no siempre se cambia una bombilla individual: puede ser necesario reparar o sustituir partes del faro. La vida útil depende de temperatura, corriente, calidad de componentes y estado del conjunto; no conviene asumir que todo LED durará lo mismo que el coche.</p>
+      <h3>Ejemplo documentado: Renault Clio de quinta generación</h3>
+      <p>En la <a href="https://media.renault.com/the-all-new-renault-clio-arrives-in-france?lang=eng" target="_blank" rel="noopener noreferrer">presentación del Clio de quinta generación en 2019</a>, Renault anunció los faros LED Pure Vision desde el acabado de acceso para ese mercado. El ejemplo permite ver cómo la tecnología llegó a segmentos generalistas, aunque la disponibilidad debe comprobarse para el año, país y acabado concretos.</p>
+
+      <h3>Matrix LED y luz adaptativa: segmentos que se gestionan por separado</h3>
+      <p>En los faros <strong>Matrix LED</strong>, la unidad de control puede atenuar o apagar partes concretas del haz, en lugar de cambiar siempre entre largas y cortas como un bloque completo. Si la cámara detecta un vehículo, el sistema intenta crear una zona de sombra alrededor de él y conservar iluminación en las áreas restantes. Así puede mantener parte de la luz de carretera activa durante más tiempo, dentro de sus límites de detección y funcionamiento.</p>
+      <p><a href="https://www.audi.com/en/audi-technology-lexicon-7180/lighting-7187" target="_blank" rel="noopener noreferrer">Audi describe</a> los faros Matrix LED como un sistema que regula grupos de diodos al detectar otros vehículos. Su tecnología Digital Matrix proyecta imágenes de mayor resolución mediante microespejos; la marca también presenta micro-LED matriciales en el nuevo Q3. En la Clase S más reciente, Mercedes-Benz anuncia tecnología DIGITAL LIGHT con micro-LED y una luz de carretera ULTRA RANGE de hasta <strong>600 metros</strong>. Esta cifra pertenece a ese sistema concreto y muestra por qué el alcance no se deduce únicamente del nombre de la fuente luminosa. La gama, las funciones y su homologación varían por versión y mercado.</p>
+      <p>Los sistemas <strong>AFS o de iluminación adaptativa</strong> pueden modificar el haz según velocidad, giro o entorno, por ejemplo iluminando una curva. Esta función puede trabajar con xenón o LED, según el coche. No es sinónimo de Matrix LED: un faro puede ser direccional sin tener segmentos matriciales, o combinar varias funciones.</p>
+
+      <h2 id="laser">4. Láser: un refuerzo de largo alcance para las luces de carretera</h2>
+      <p>El nombre puede llevar a pensar en un rayo láser que sale disparado hacia la vía. No es así en los ejemplos de producción descritos por BMW y Audi: el módulo láser se utiliza dentro del faro para excitar un material fluorescente, que convierte esa energía en luz blanca. El resultado es un haz concentrado de carretera que complementa al sistema LED, no una luz de cruce que sustituya por completo todas las funciones.</p>
+      <p><a href="https://www.press.bmwgroup.com/spain/article/detail/T0201371ES/precios-para-espa%C3%B1a%3A-bmw-laserlight?language=es" target="_blank" rel="noopener noreferrer">BMW ofreció Laserlight opcional en el i8</a> y publicó un alcance de largas de hasta <strong>600 metros</strong>, el doble del declarado para los LED de serie de ese modelo. Eso permite deducir alrededor de 300 metros para aquella comparación LED concreta, pero BMW no presenta esa cifra como una regla para todos los LED. <a href="https://www.audi.com/en/audi-technology-lexicon-7180/lighting-7187" target="_blank" rel="noopener noreferrer">Audi describe</a> una solución láser asociada a Matrix LED en el <strong>e-tron GT</strong>, también con un alcance de largas en torno a 600 metros y activación condicionada por la velocidad y el entorno. Son especificaciones comunicadas por los fabricantes para sistemas concretos, no una promesa para cualquier vehículo con la palabra «láser».</p>
+      <p><strong>Ventajas:</strong> en esos sistemas, el haz de largo alcance puede extender la visión en carretera despejada y la fuente es compacta. <strong>Limitaciones:</strong> tecnología poco extendida, normalmente ligada a modelos de gama alta y a una función auxiliar; las condiciones de activación y el coste de reparación dependen del modelo. Nunca sustituye la obligación de apagar las largas cuando puedan deslumbrar.</p>
+
+      <AdsterraNativeBanner />
+
+      <h2 id="incandescente">5. Bombillas incandescentes clásicas: anteriores a las halógenas</h2>
+      <p>Antes de generalizarse la halógena, muchos coches utilizaban bombillas incandescentes convencionales de filamento de tungsteno. Son una tecnología anterior, con menor rendimiento luminoso y una vida útil más limitada que la halógena, y hoy se encuentran sobre todo en vehículos clásicos o en funciones secundarias. HELLA distingue estas bombillas de las halógenas y explica cómo el gas añadido permite que el filamento trabaje a más temperatura.</p>
+
+      <h2 id="oled">6. OLED en pilotos traseros: una tecnología distinta del faro delantero</h2>
+      <p>Los <strong>OLED</strong> son diodos orgánicos emisores de luz que algunos fabricantes han utilizado para crear superficies luminosas finas y segmentadas, especialmente en los pilotos traseros. Audi los incluye en su <a href="https://www.audi.com/en/audi-technology-lexicon-7180/lighting-7187" target="_blank" rel="noopener noreferrer">explicación de tecnologías de iluminación delantera y trasera</a>. No son una alternativa habitual a los faros de cruce o carretera: su papel principal es hacer visible la parte posterior del coche y ofrecer firmas luminosas configurables.</p>
+      <p>También hay luces de descarga distintas del xenón en usos especializados y diseños mixtos donde una función usa una tecnología y otra, una diferente. Para comparar faros delanteros de turismos, las familias relevantes siguen siendo halógena, xenón/HID y LED, con láser en aplicaciones concretas. «Luz diurna», «antiniebla» y «luz adaptativa» indican función o control, no una fuente única.</p>
+
+      <h2 id="comparativa-alcance">Comparativa: tecnología, alcance y qué significan las cifras</h2>
+      <div class="table-scroll" role="region" aria-label="Comparativa de tecnologías de iluminación del coche y alcance publicado" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Sistema</th><th scope="col">Cómo produce o distribuye la luz</th><th scope="col">Alcance publicado y lectura correcta</th><th scope="col">Ventaja y límite principal</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Halógena</th><td>Filamento incandescente con gas halógeno.</td><td>No hay una distancia única que represente a todas las halógenas; no encontramos una cifra de alcance de fabricante directamente comparable a la del i8.</td><td>Recambio sencillo y barato en muchos coches; menos eficiencia y rendimiento potencial que sistemas modernos.</td></tr>
+            <tr><th scope="row">Xenón / HID</th><td>Arco eléctrico dentro de una cápsula de descarga; usa control electrónico.</td><td>No encontramos una distancia universal comparable por tecnología. HELLA explica que sus fuentes de descarga pueden producir más flujo que las halógenas, pero los lúmenes no se convierten directamente en metros de carretera.</td><td>Flujo elevado; sistema más complejo y costoso de mantener.</td></tr>
+            <tr><th scope="row">LED</th><td>Diodos emisores controlados por módulos electrónicos y ópticas específicas.</td><td>BMW indicó que el láser del i8 duplicaba el alcance de sus LED de serie: alrededor de 300 m se deduce para esa comparación concreta, no para todos los faros LED.</td><td>Compacto, eficiente y flexible; reparación y gestión térmica más complejas según el diseño.</td></tr>
+            <tr><th scope="row">Matrix / Digital LED</th><td>Segmentos LED, microespejos o micro-LED regulan zonas del haz.</td><td>Mercedes-Benz anuncia hasta 600 m para las largas ULTRA RANGE de la Clase S más reciente. Es un dato de ese faro, no una cifra general para Matrix o LED.</td><td>Puede conservar parte de las largas sin deslumbrar; depende de sensores, software y condiciones.</td></tr>
+            <tr><th scope="row">Láser auxiliar</th><td>Diodo láser y convertidor fluorescente producen un haz blanco concentrado de largas.</td><td>BMW i8 y Audi e-tron GT: hasta aproximadamente 600 m según comunicación de fabricante para esas implementaciones.</td><td>Gran alcance declarado en carretera despejada; tecnología opcional y muy específica, no una solución universal.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Fuentes consultadas: HELLA para el flujo de lámparas de referencia; BMW y Audi para sus cifras de láser. El reglamento ONU n.º 149 fija requisitos fotométricos y de distribución para dispositivos de alumbrado, pero la tecnología por sí sola no permite asignar una distancia universal a todos los faros de una categoría. Las cifras de fabricantes son valores de sistemas concretos y no una prueba independiente en todas las condiciones.</p>
+      <p>El alcance útil cambia con la óptica, la altura y el reglaje del faro, la limpieza o envejecimiento de las lentes, la carga del coche, el perfil de la carretera y la lluvia o niebla. La velocidad también importa: cuanto más rápido circulas, menos tiempo tienes para reaccionar a lo que alcanzas a iluminar. Por eso conviene valorar un haz uniforme, el corte de cruce y la ausencia de deslumbramiento, además de una cifra máxima en metros.</p>
+
+      <h2 id="elegir">Qué revisar al comprar un coche o sustituir una lámpara</h2>
+      <ul>
+        <li><strong>Comprueba la versión exacta.</strong> Un mismo modelo puede ofrecer halógenas, LED o Matrix según el año y el acabado. Pide la ficha de equipamiento o consulta el manual del vehículo.</li>
+        <li><strong>Prueba el haz de noche si vas a comprar un usado.</strong> Observa si ilumina de forma homogénea, si ambos lados están a una altura parecida y si hay zonas oscuras, condensación o tulipas opacas.</li>
+        <li><strong>Pregunta por el coste de reparación.</strong> Una bombilla reemplazable y un faro LED integrado no siempre se reparan igual. Averigua si hay módulos o unidades de control sustituibles por separado.</li>
+        <li><strong>No elijas una bombilla de sustitución solo porque encaje.</strong> La guía de homologación del Ministerio de Industria indica que las LED de recambio deben estar homologadas para el tipo de vehículo y el tipo específico de faro señalados en su certificado. Confirma la referencia antes de instalarla.</li>
+        <li><strong>Mantén el reglaje y las ópticas.</strong> Un faro desalineado o una cubierta degradada reduce visibilidad y puede deslumbrar. Si cambias una lámpara o notas el haz bajo, pide una revisión del ajuste.</li>
+      </ul>
+      <p>El equipamiento de iluminación puede variar bastante entre versiones de una misma gama. Si estás comparando coches por presupuesto y uso, consulta nuestra <a href="/guias/que-coche-comprar-segun-presupuesto/">guía para elegir coche según tu presupuesto</a> y confirma qué faros incluye la unidad que te ofrecen. Para prever gastos de reparación y mantenimiento, puedes revisar la <a href="/calculadoras/coste-anual-coche/">calculadora del coste anual del coche</a> y el desglose de <a href="/guias/cuanto-cuesta-mantener-coche-mes-espana/">cuánto cuesta mantener un coche al mes</a>; el coste de un faro concreto deberá añadirse con un presupuesto real del taller.</p>
+
+      <h2 id="conclusion">Conclusión: el mejor faro es el que ilumina bien y está bien ajustado</h2>
+      <p>Halógenas, xenón y LED describen fuentes de luz diferentes. Matrix LED y Digital Light añaden control preciso de la distribución, mientras que el láser ha servido como apoyo de largo alcance en algunos coches concretos. Cada solución aporta ventajas, pero también condiciona el coste, la reparación y el uso disponible.</p>
+      <p>El dato de 600 metros del BMW i8 es llamativo, aunque no sirve para concluir que todos los láser superan siempre a todos los LED. Para elegir coche, compara la versión exacta, el funcionamiento real del haz y su mantenimiento. Para circular, conserva los faros limpios y regulados y utiliza las luces largas solo cuando no deslumbren a otros usuarios.</p>
+
+      <section class="faq-section" id="preguntas">
+        <h2>Preguntas frecuentes sobre las luces del coche</h2>
+        {faq.map((item) => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}
+      </section>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Hemos priorizado manuales, documentación de fabricantes, el Ministerio de Industria y una fuente técnica del sector. Las cifras de alcance se atribuyen a los fabricantes y se identifican como declaraciones de sistemas concretos; no se han mezclado lúmenes con metros ni se han tratado como ensayos independientes. Fuentes revisadas el <strong>27 de octubre de 2026</strong>:</p>
+        <ul>
+          <li><a href="https://www.hella.com/techworld/en/technical/automotive-lighting/basic-principles-of-car-lighting-technology/" target="_blank" rel="noopener noreferrer">HELLA Tech World: fundamentos de iluminación, lámparas halógenas y de descarga xenón</a>.</li>
+          <li><a href="https://www.user-manual.dacia.com/es/content/sandero-sandero-stepway/practical-advice/headlights-lights-replacing-bulbs/iluminacion" target="_blank" rel="noopener noreferrer">Dacia: manual del Sandero, configuraciones con faros halógenos y mixtos LED/halógeno</a>.</li>
+          <li><a href="https://www.press.bmwgroup.com/united-kingdom/article/detail/T0018958EN_GB/the-new-bmw-3-series-coup%C3%A9?language=en_GB" target="_blank" rel="noopener noreferrer">BMW Group PressClub: faros xenón y opción adaptativa en el Serie 3 Coupé</a>.</li>
+          <li><a href="https://media.renault.com/the-all-new-renault-clio-arrives-in-france?lang=eng" target="_blank" rel="noopener noreferrer">Renault Media: equipamiento LED Pure Vision del Clio presentado en 2019</a>.</li>
+          <li><a href="https://www.press.bmwgroup.com/spain/article/detail/T0201371ES/precios-para-espa%C3%B1a%3A-bmw-laserlight?language=es" target="_blank" rel="noopener noreferrer">BMW Group España: alcance de Laserlight en el BMW i8 y comparación con los LED de serie</a>.</li>
+          <li><a href="https://www.audi.com/en/audi-technology-lexicon-7180/lighting-7187" target="_blank" rel="noopener noreferrer">Audi MediaCenter: Matrix LED, Digital Matrix, láser y OLED; ejemplos y límites por configuración</a>.</li>
+          <li><a href="https://media.mercedes-benz.com/en/press-kit/71dc2a9c-34c7-47e0-a264-d39d89b85d4c/article/8e671658-cf56-45c3-8ba7-15e997dee179" target="_blank" rel="noopener noreferrer">Mercedes-Benz Media: nueva generación DIGITAL LIGHT con micro-LED en la Clase S</a>.</li>
+          <li><a href="https://boe.es/buscar/doc.php?id=DOUE-L-2021-81327" target="_blank" rel="noopener noreferrer">BOE / DOUE: Reglamento ONU n.º 149 sobre homologación de dispositivos y sistemas de alumbrado de carretera</a>; <a href="https://industria.gob.es/_layouts/15/HttpHandlerParticipacionPublicaAnexos.ashx?k=57304" target="_blank" rel="noopener noreferrer">Ministerio de Industria: Manual de Reformas de Vehículos, apartado de alumbrado y LED de sustitución</a>; <a href="https://industria.gob.es/_layouts/15/HttpHandlerParticipacionPublicaAnexos.ashx?k=76574" target="_blank" rel="noopener noreferrer">Guía de homologación de vehículos</a>.</li>
+        </ul>
+        <p>El equipamiento y las funciones pueden cambiar por mercado, año y acabado. Antes de comprar o sustituir una fuente luminosa, confirma la configuración y homologación de tu coche mediante su documentación y, si es necesario, un taller especializado.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>

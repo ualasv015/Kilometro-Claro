@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Cuatro tipos de cambio automático</title>
+  <desc id="desc">Infografía de Kilómetro Claro que compara convertidor de par, doble embrague, CVT y e-CVT híbrida.</desc>
+  <rect width="1600" height="900" fill="#173D34"/>
+  <circle cx="1450" cy="100" r="260" fill="none" stroke="#D7F36A" stroke-opacity=".12" stroke-width="3"/>
+  <circle cx="1450" cy="100" r="190" fill="none" stroke="#D7F36A" stroke-opacity=".12" stroke-width="3"/>
+  <text x="76" y="92" fill="#D7F36A" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">KILÓMETRO CLARO · GUÍA DE TRANSMISIONES</text>
+  <text x="76" y="163" fill="#F4F7F2" font-family="Arial, sans-serif" font-size="48" font-weight="700">Cuatro formas de cambiar automáticamente</text>
+  <text x="76" y="205" fill="#C4D4CB" font-family="Arial, sans-serif" font-size="24">La sensación al volante depende de cómo cada sistema transmite la fuerza</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(64 252)">
+      <rect width="710" height="260" rx="18" fill="#F4F7F2"/>
+      <text x="32" y="48" fill="#173D34" font-size="25" font-weight="700">1 · Convertidor de par</text>
+      <circle cx="132" cy="151" r="57" fill="none" stroke="#1D5D4E" stroke-width="10"/>
+      <circle cx="132" cy="151" r="26" fill="#D7F36A" stroke="#1D5D4E" stroke-width="7"/>
+      <path d="M78 109a66 66 0 0 1 108-1M187 192a66 66 0 0 1-110 1" fill="none" stroke="#1D5D4E" stroke-width="5" stroke-linecap="round"/>
+      <path d="m179 100 10 12-16 2M77 202l-10-12 16-2" fill="#1D5D4E"/>
+      <text x="235" y="130" fill="#173D34" font-size="20" font-weight="700">Fluido + engranajes</text>
+      <text x="235" y="164" fill="#52645B" font-size="18">Relaciones escalonadas;</text>
+      <text x="235" y="191" fill="#52645B" font-size="18">arranque progresivo.</text>
+    </g>
+    <g transform="translate(826 252)">
+      <rect width="710" height="260" rx="18" fill="#F4F7F2"/>
+      <text x="32" y="48" fill="#173D34" font-size="25" font-weight="700">2 · Doble embrague</text>
+      <circle cx="99" cy="144" r="39" fill="none" stroke="#1D5D4E" stroke-width="9"/>
+      <circle cx="165" cy="144" r="39" fill="none" stroke="#D7B841" stroke-width="9"/>
+      <path d="M78 144h108M99 120v48M165 120v48" stroke="#173D34" stroke-width="5" stroke-linecap="round"/>
+      <text x="235" y="130" fill="#173D34" font-size="20" font-weight="700">Dos embragues coordinados</text>
+      <text x="235" y="164" fill="#52645B" font-size="18">Puede preparar la siguiente</text>
+      <text x="235" y="191" fill="#52645B" font-size="18">relación antes del cambio.</text>
+    </g>
+    <g transform="translate(64 552)">
+      <rect width="710" height="260" rx="18" fill="#F4F7F2"/>
+      <text x="32" y="48" fill="#173D34" font-size="25" font-weight="700">3 · CVT convencional</text>
+      <path d="M85 115h94M85 182h94" stroke="#1D5D4E" stroke-width="9" stroke-linecap="round"/>
+      <ellipse cx="100" cy="148" rx="22" ry="48" fill="#D7F36A" stroke="#1D5D4E" stroke-width="7"/>
+      <ellipse cx="165" cy="148" rx="38" ry="48" fill="#D7F36A" stroke="#1D5D4E" stroke-width="7"/>
+      <path d="M100 100h65M100 196h65" stroke="#52645B" stroke-width="5"/>
+      <text x="235" y="130" fill="#173D34" font-size="20" font-weight="700">Poleas + correa o cadena</text>
+      <text x="235" y="164" fill="#52645B" font-size="18">La relación cambia de forma</text>
+      <text x="235" y="191" fill="#52645B" font-size="18">continua, sin pasos fijos.</text>
+    </g>
+    <g transform="translate(826 552)">
+      <rect width="710" height="260" rx="18" fill="#F4F7F2"/>
+      <text x="32" y="48" fill="#173D34" font-size="25" font-weight="700">4 · e-CVT híbrida</text>
+      <circle cx="130" cy="153" r="54" fill="none" stroke="#1D5D4E" stroke-width="8"/>
+      <circle cx="130" cy="153" r="33" fill="none" stroke="#D7B841" stroke-width="8"/>
+      <circle cx="130" cy="153" r="13" fill="#D7F36A" stroke="#173D34" stroke-width="5"/>
+      <circle cx="130" cy="99" r="10" fill="#1D5D4E"/><circle cx="183" cy="153" r="10" fill="#1D5D4E"/><circle cx="130" cy="207" r="10" fill="#1D5D4E"/><circle cx="77" cy="153" r="10" fill="#1D5D4E"/>
+      <text x="235" y="130" fill="#173D34" font-size="20" font-weight="700">Sistema híbrido planetario</text>
+      <text x="235" y="164" fill="#52645B" font-size="18">Reparte potencia; no es la</text>
+      <text x="235" y="191" fill="#52645B" font-size="18">CVT de poleas y correa.</text>
+    </g>
+  </g>
+  <text x="76" y="861" fill="#D7F36A" font-family="Arial, sans-serif" font-size="19" font-weight="700">Esquema conceptual: consulta la ficha del motor, año y acabado concretos.</text>
+</svg>

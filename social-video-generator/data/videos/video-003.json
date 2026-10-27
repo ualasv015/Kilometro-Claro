@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "video-003",
+  "title": "6 detalles de tu coche que quizá no conocías",
+  "durationSeconds": 28.966666666666665,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/detalles-coche-que-quiza-no-conocias/",
+  "sourceNote": "Funciones y ubicaciones orientativas; pueden variar según el vehículo. Consultar el manual del modelo.",
+  "requiresHumanReview": true,
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "startSeconds": 0,
+      "endSeconds": 2.7666666666666666,
+      "headline": "¿Conoces estos 6 detalles?",
+      "voiceover": "Puede que los tengas delante cada día."
+    },
+    {
+      "id": "fuel-arrow",
+      "kind": "fuel-arrow",
+      "startSeconds": 2.7666666666666666,
+      "endSeconds": 6.433333333333334,
+      "headline": "Flecha = lado del depósito",
+      "voiceover": "Si tu cuadro tiene esta flecha, te indica dónde repostar.",
+      "note": "Si tu cuadro incorpora esta flecha"
+    },
+    {
+      "id": "recirculation",
+      "kind": "recirculation",
+      "startSeconds": 6.433333333333334,
+      "endSeconds": 11.366666666666667,
+      "headline": "¿Se empaña? Prueba con aire exterior",
+      "voiceover": "La recirculación ayuda a enfriar; mantenida puede empañar los cristales.",
+      "note": "Usa los mandos según las condiciones y el manual"
+    },
+    {
+      "id": "heated-mirrors",
+      "kind": "heated-mirrors",
+      "startSeconds": 11.366666666666667,
+      "endSeconds": 15.566666666666666,
+      "headline": "¿También calienta espejos?",
+      "voiceover": "En algunos coches, este botón activa los retrovisores calefactados.",
+      "note": "Función disponible en algunos modelos"
+    },
+    {
+      "id": "tire-pressure",
+      "kind": "tire-pressure",
+      "startSeconds": 15.566666666666666,
+      "endSeconds": 19.666666666666668,
+      "headline": "Aquí está la presión recomendada",
+      "voiceover": "Busca la presión recomendada por tu coche, incluso cuando va cargado.",
+      "note": "Los valores dependen del vehículo y la carga"
+    },
+    {
+      "id": "hidden-key",
+      "kind": "hidden-key",
+      "startSeconds": 19.666666666666668,
+      "endSeconds": 22.766666666666666,
+      "headline": "Una llave dentro del mando",
+      "voiceover": "Algunos mandos esconden una llave para abrir la puerta.",
+      "note": "El mecanismo cambia según el mando"
+    },
+    {
+      "id": "child-lock",
+      "kind": "child-lock",
+      "startSeconds": 22.766666666666666,
+      "endSeconds": 26.6,
+      "headline": "Seguro infantil: mira aquí",
+      "voiceover": "Según el modelo, este seguro impide abrir la puerta desde dentro.",
+      "note": "Consulta el manual antes de accionarlo"
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "startSeconds": 26.6,
+      "endSeconds": 28.966666666666665,
+      "headline": "¿Cuál no conocías? Coméntalo ↓",
+      "voiceover": "¿Cuál no conocías? Te leemos."
+    }
+  ],
+  "socialCopy": {
+    "instagram": "¿Sabías que una pequeña flecha puede resolverte la duda al repostar? ⛽\n\nEn algunos coches, el botón de la luneta térmica activa también los retrovisores calefactados. Y la presión recomendada para los neumáticos puede estar en una etiqueta de la puerta.\n\nEn Kilómetro Claro reunimos seis detalles útiles. Comprueba siempre cómo funcionan en tu modelo.\n\n¿Cuál no conocías? ¿Qué otro detalle añadirías? 👇\n\n#KilometroClaro #ConsejosDeConduccion #Coches #SeguridadVial",
+    "x": "La flecha junto al surtidor, la pegatina de los neumáticos, la llave dentro del mando… Son detalles pequeños que pueden venirte bien. Hemos reunido 6 y explicado cuáles dependen del modelo. ¿Cuál añadirías tú? 👇 #KilometroClaro"
+  }
+}

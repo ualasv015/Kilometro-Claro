@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "video-002",
+  "title": "Toyota lidera marcas; el Dacia Sandero, modelos",
+  "durationSeconds": 30,
+  "fps": 30,
+  "periodLabel": "ENERO–DICIEMBRE · 2025",
+  "articleUrl": "https://kilometroclaro.com/guias/marcas-coches-mas-vendidas-espana-2025/",
+  "sourceLabel": "ANFAC/IDEAUTO a partir de datos de la DGT",
+  "brandRanking": [
+    {"rank": 1, "brand": "Toyota", "registrations": 96290},
+    {"rank": 2, "brand": "Renault", "registrations": 83308},
+    {"rank": 3, "brand": "Volkswagen", "registrations": 76545}
+  ],
+  "modelLeader": {
+    "brand": "Dacia",
+    "model": "Sandero",
+    "registrations": 38548,
+    "brandRank": 6,
+    "brandRegistrations": 65788
+  },
+  "growthStory": {
+    "brand": "Renault",
+    "registrations2024": 64237,
+    "registrations2025": 83308,
+    "growthPercent": 29.7,
+    "rank2024": 5,
+    "rank2025": 2
+  },
+  "editorialNote": "Son matriculaciones de turismos nuevos; el volumen no mide fiabilidad ni conveniencia.",
+  "requiresHumanReview": true
+}

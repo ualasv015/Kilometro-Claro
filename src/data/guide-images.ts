@@ -126,4 +126,25 @@ export const guideImages: Record<string, GuideImage> = {
     source: 'https://commons.wikimedia.org/wiki/File:Madrid_(39198052734).jpg',
     width: 960, height: 641,
   },
+  'tipos-cambio-automatico': {
+    src: '/images/guides/tipos-cambio-automatico.svg',
+    alt: 'Esquema comparativo de cuatro cambios automáticos: convertidor de par, doble embrague, CVT y e-CVT híbrido',
+    caption: 'Esquema editorial: cada sistema transmite la fuerza de una forma distinta. En especial, la e-CVT híbrida no funciona como una CVT de correa y poleas.',
+    author: 'Kilómetro Claro',
+    width: 1600, height: 900,
+  },
+  'tipos-traccion-coche': {
+    src: '/images/guides/tipos-traccion-coche.jpg',
+    alt: 'Esquema editorial que muestra qué ruedas reciben fuerza en un coche de tracción delantera, trasera, total AWD y 4x4',
+    caption: 'Ilustración propia de los ejes motrices en cuatro configuraciones. La denominación comercial y el funcionamiento concreto pueden variar según el fabricante.',
+    author: 'Kilómetro Claro',
+    width: 1600, height: 900,
+  },
+  'tipos-luces-coche': {
+    src: '/images/guides/tipos-luces-coche.svg',
+    alt: 'Esquema de cuatro tecnologías de faros: halógena, xenón, LED y láser, con haces ilustrativos sin escala',
+    caption: 'Esquema editorial propio. La forma y el alcance del haz dependen también de la óptica, el reglaje y la versión del vehículo; los haces no están dibujados a escala.',
+    author: 'Kilómetro Claro',
+    width: 1600, height: 900,
+  },
 };

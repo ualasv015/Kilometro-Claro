@@ -11,6 +11,8 @@ export function getStaticPaths() { return tools.map((tool) => ({ params: { slug:
 const { tool } = Astro.props;
 const related = tool.related.map((slug) => tools.find((entry) => entry.slug === slug)).filter(Boolean);
 const linkedGuide = guides.find((guide) => guide.slug === tool.guideSlug && guide.published);
+const automaticTransmissionGuide = guides.find((guide) => guide.slug === 'tipos-cambio-automatico' && guide.published);
+const tractionGuide = guides.find((guide) => guide.slug === 'tipos-traccion-coche' && guide.published);
 ---
 <BaseLayout title={`${tool.title} | Kilómetro Claro`} description={tool.description}>
   <div class="wrap page-wrap calculator-page">
@@ -31,6 +33,8 @@ const linkedGuide = guides.find((guide) => guide.slug === tool.guideSlug && guid
       <section class="faq-section"><h2>Preguntas frecuentes</h2>{tool.faq.map((item) => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</section>
     </article>
     {linkedGuide && <aside class="guide-related"><span class="eyebrow">Sigue aprendiendo</span><h2>{linkedGuide.title}</h2><p>{linkedGuide.description}</p><a href={`/guias/${linkedGuide.slug}/`}>Leer la guía relacionada <span aria-hidden="true">→</span></a></aside>}
+    {tool.slug === 'coste-anual-coche' && automaticTransmissionGuide && <aside class="guide-related"><span class="eyebrow">Coste de propiedad</span><h2>{automaticTransmissionGuide.title}</h2><p>Conoce las diferencias entre transmisiones y qué revisar en el mantenimiento de la versión que estás comparando.</p><a href={`/guias/${automaticTransmissionGuide.slug}/`}>Consultar los tipos de cambio automático <span aria-hidden="true">→</span></a></aside>}
+    {tool.slug === 'coste-anual-coche' && tractionGuide && <aside class="guide-related"><span class="eyebrow">Compara versiones</span><h2>{tractionGuide.title}</h2><p>Comprueba qué cambia entre tracción delantera, trasera, total y 4x4 antes de estimar los gastos de cada versión.</p><a href={`/guias/${tractionGuide.slug}/`}>Consultar los tipos de tracción <span aria-hidden="true">→</span></a></aside>}
     {related.length > 0 && <section class="related-section"><div class="section-heading"><div><span class="section-kicker">Sigue calculando</span><h2>Herramientas relacionadas</h2></div></div><div class="tool-grid related-grid">{related.map((relatedTool) => <ToolCard tool={relatedTool} />)}</div></section>}
   </div>
 </BaseLayout>
