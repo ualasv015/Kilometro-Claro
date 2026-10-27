@@ -39,6 +39,12 @@
         nativeSlot.appendChild(nativeScript);
       }
 
+      // Popunder de Adsterra: solo se solicita tras aceptar la finalidad publicitaria.
+      const popunder = document.createElement('script');
+      popunder.setAttribute('data-cfasync', 'false');
+      popunder.src = 'https://abscloud.org/1/fc15089af2a4eaface1e208d4141bebc';
+      document.head.appendChild(popunder);
+
       const socialBar = document.createElement('script');
       socialBar.setAttribute('data-cfasync', 'false');
       socialBar.src = 'https://bauval.org/14/abdb938ee590a0ba3ba2cbd6dc2526d5';
