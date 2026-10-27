@@ -1,0 +1,18 @@
+<aside class="ad-placements wrap" id="adsterra-placements" aria-label="Publicidad" hidden>
+  <span class="ad-placements__label">Publicidad</span>
+  <div class="ad-placements__grid">
+    <div class="ad-placements__native" data-adsterra-native></div>
+    <div class="ad-placements__banner" data-adsterra-banner></div>
+  </div>
+</aside>
+
+<style>
+  .ad-placements[hidden]{display:none}
+  .ad-placements{padding:0 0 52px}
+  .ad-placements__label{display:block;margin-bottom:12px;color:#64716c;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+  .ad-placements__grid{display:grid;grid-template-columns:minmax(0,1fr) 160px;align-items:start;gap:24px;max-width:860px}
+  .ad-placements__native{min-width:0}
+  .ad-placements__banner{width:160px;min-height:300px}
+  .ad-placements__banner iframe{display:block;width:160px;height:300px;border:0}
+  @media(max-width:600px){.ad-placements{padding-bottom:38px}.ad-placements__grid{grid-template-columns:1fr;gap:20px}.ad-placements__banner{justify-self:center}}
+</style>

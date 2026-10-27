@@ -10,6 +10,32 @@
       socialBar.setAttribute('data-cfasync', 'false');
       socialBar.src = 'https://bauval.org/14/abdb938ee590a0ba3ba2cbd6dc2526d5';
       document.body.appendChild(socialBar);
+
+      const placements = document.querySelector('#adsterra-placements');
+      if (!placements) return;
+      const nativeSlot = placements.querySelector('[data-adsterra-native]');
+      const bannerSlot = placements.querySelector('[data-adsterra-banner]');
+      if (!nativeSlot || !bannerSlot) return;
+      placements.hidden = false;
+
+      const nativeContainer = document.createElement('div');
+      nativeContainer.id = 'container-5b7379d8b616b517482d5d06d5ef19b2';
+      nativeSlot.appendChild(nativeContainer);
+      const nativeScript = document.createElement('script');
+      nativeScript.async = true;
+      nativeScript.setAttribute('data-cfasync', 'false');
+      nativeScript.src = 'https://bauval.org/21/5b7379d8b616b517482d5d06d5ef19b2';
+      nativeSlot.appendChild(nativeScript);
+
+      // El código de 160×300 puede escribir en su documento: lo aislamos en
+      // un iframe para que nunca reemplace el contenido de la página.
+      const bannerFrame = document.createElement('iframe');
+      bannerFrame.title = 'Anuncio de 160 por 300 píxeles';
+      bannerFrame.width = '160';
+      bannerFrame.height = '300';
+      bannerFrame.loading = 'lazy';
+      bannerFrame.srcdoc = `<!doctype html><html lang="es"><head><meta charset="utf-8"><style>html,body{margin:0;width:160px;height:300px;overflow:hidden}</style></head><body><script>atOptions={'key':'c8e7258bb9b8bcbb1cdf075e6ed0531f','format':'iframe','height':300,'width':160,'params':{}};</` + `script><script src="https://bauval.org/22/c8e7258bb9b8bcbb1cdf075e6ed0531f"></` + `script></body></html>`;
+      bannerSlot.appendChild(bannerFrame);
     },
   };
 </script>

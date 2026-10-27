@@ -6,6 +6,7 @@ import ConsentPreferences from '../components/ConsentPreferences.astro';
 import AnalyticsHead from '../components/AnalyticsHead.astro';
 import AdsterraHead from '../components/ads/AdsterraHead.astro';
 import AdsterraBody from '../components/ads/AdsterraBody.astro';
+import AdsterraPlacements from '../components/ads/AdsterraPlacements.astro';
 import '../styles/global.css';
 const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.com'), webSiteSchema = false, ogType = 'website', noIndex = ['/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
 const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Kilómetro Claro', url: Astro.site?.toString(), inLanguage: 'es-ES' };
@@ -30,7 +31,7 @@ const showAds = !adFreePaths.has(currentPath);
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <SiteHeader />
-    <main id="contenido"><slot /></main>
+    <main id="contenido"><slot />{showAds && <AdsterraPlacements />}</main>
     <SiteFooter />
     <ConsentPreferences />
     {showAds && <AdsterraBody />}
