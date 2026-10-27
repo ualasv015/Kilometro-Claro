@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
+import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
 import { guides } from '../../data/guides';
 const categories = [...new Set(guides.map((guide) => guide.category))];
 const categoryId = (category: string) => `tema-${category.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
@@ -13,10 +14,10 @@ const categoryId = (category: string) => `tema-${category.normalize('NFD').repla
     <AdsterraInlineBanner />
     <nav class="guide-topics" aria-label="Temas de las guías">{categories.map((category) => <a href={`#${categoryId(category)}`}>{category}<span aria-hidden="true">↓</span></a>)}</nav>
     <div class="guide-groups" aria-label="Guías de Kilómetro Claro">
-      {categories.map((category) => <section class="guide-group" id={categoryId(category)} aria-labelledby={`${categoryId(category)}-title`}>
+      {categories.map((category, index) => <><section class="guide-group" id={categoryId(category)} aria-labelledby={`${categoryId(category)}-title`}>
         <div class="guide-group-heading"><span class="eyebrow">Explora el tema</span><h2 id={`${categoryId(category)}-title`}>{category}</h2><span class="guide-count">{guides.filter((guide) => guide.category === category).length} {guides.filter((guide) => guide.category === category).length === 1 ? 'guía' : 'guías'}</span></div>
         <div class="guide-list">{guides.filter((guide) => guide.category === category).map((guide) => <a class="guide-card" href={`/guias/${guide.slug}/`}><span class="eyebrow">{guide.published ? category : `${category} · Próximamente`}</span><h3>{guide.title}</h3>{guide.published && <><p>{guide.description}</p><span class="text-link">Leer la guía <span aria-hidden="true">→</span></span></>}</a>)}</div>
-      </section>)}
+      </section>{index === 2 && <AdsterraNativeBanner />}</>)}
     </div>
   </div>
 </BaseLayout>

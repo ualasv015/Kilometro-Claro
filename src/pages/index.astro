@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ToolCard from '../components/ToolCard.astro';
 import AdsterraInlineBanner from '../components/ads/AdsterraInlineBanner.astro';
+import AdsterraNativeBanner from '../components/ads/AdsterraNativeBanner.astro';
 import { tools, categories } from '../data/tools';
 import { guides } from '../data/guides';
 import { guideImages } from '../data/guide-images';
@@ -49,6 +50,7 @@ const featuredTools = featuredToolSlugs.flatMap((slug) => tools.filter((tool) =>
     <p class="home-section-intro">Una selección de lecturas sobre hábitos de conducción, movilidad eléctrica y compra de coche. Cada guía plantea una pregunta concreta y te ayuda a distinguir los datos comprobables de los supuestos que dependen de tu caso.</p>
     <div class="guide-grid">{homeGuides.map((guide, index) => <a class="home-guide-card" href={`/guias/${guide.slug}/`}><span class="guide-card-top"><span class="guide-number">0{index + 1}</span><span class="guide-category">{guide.category}</span></span><h3>{guide.title}</h3><p>{guide.description}</p><span class="guide-arrow" aria-hidden="true">↗</span></a>)}</div>
   </section>
+  <AdsterraNativeBanner />
   <section class="wrap home-tools section-space"><div class="section-heading"><div><span class="section-kicker">Pon tus números</span><h2>Calculadoras para pasar de la idea al dato</h2></div><a class="text-link" href="/herramientas/">Todas las herramientas <span aria-hidden="true">→</span></a></div><p class="home-section-intro">Introduce tu distancia, consumo, tarifa o presupuesto según la herramienta. Puedes cambiar los valores y comparar escenarios sin crear una cuenta; los resultados son estimaciones para ayudarte a decidir, no precios cerrados.</p><div class="tool-grid">{featuredTools.map((tool) => <ToolCard tool={tool} />)}</div></section>
   <section class="category-band"><div class="wrap category-inner"><div><span class="section-kicker">Explora por tema</span><h2>Encuentra justo lo que necesitas.</h2><p class="category-intro">Reunimos guías y calculadoras relacionadas para que puedas seguir investigando un tema sin perder el contexto: consumo, costes del coche, movilidad eléctrica y compra.</p></div><div class="category-pills">{categories.map((category) => <a href={`/categorias/${category.slug}/`}>{category.name}<span aria-hidden="true">↗</span></a>)}</div></div></section>
 </BaseLayout>
