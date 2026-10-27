@@ -101,31 +101,6 @@
     savePreferences(button?.dataset.consentAction);
   });
 
-  // El formato Popunder puede capturar clics antes de que lleguen a los controles
-  // de privacidad. Protegemos la retirada del consentimiento en fase de captura.
-  window.addEventListener('click', (event) => {
-    if (!ads?.loaded || !(event.target instanceof Element)) return;
-    if (event.target.closest('[data-consent-preferences]')) {
-      event.stopImmediatePropagation();
-      openPreferences();
-      return;
-    }
-    if (event.target.closest('#consent-panel')) {
-      event.stopImmediatePropagation();
-      const button = event.target.closest<HTMLButtonElement>('[data-consent-action]');
-      savePreferences(button?.dataset.consentAction);
-    }
-  }, true);
-
-  window.addEventListener('pointerdown', (event) => {
-    if (!ads?.loaded || !(event.target instanceof Element)) return;
-    if (event.target.closest('[data-consent-preferences]')) {
-      openPreferences();
-    } else if (event.target.closest('#consent-panel')) {
-      const button = event.target.closest<HTMLButtonElement>('[data-consent-action]');
-      savePreferences(button?.dataset.consentAction);
-    }
-  }, true);
 </script>
 
 <style>
