@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
 import { guides } from '../../data/guides';
 const categories = [...new Set(guides.map((guide) => guide.category))];
 const categoryId = (category: string) => `tema-${category.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
@@ -9,6 +10,7 @@ const categoryId = (category: string) => `tema-${category.normalize('NFD').repla
   <div class="wrap page-wrap">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías' }]} />
     <section class="listing-hero"><span class="eyebrow">Guías para conductores</span><h1>Entiende lo que cuesta moverte.</h1><p>Explicaciones prácticas sobre el coche para tomar decisiones con tus propios datos.</p></section>
+    <AdsterraInlineBanner />
     <nav class="guide-topics" aria-label="Temas de las guías">{categories.map((category) => <a href={`#${categoryId(category)}`}>{category}<span aria-hidden="true">↓</span></a>)}</nav>
     <div class="guide-groups" aria-label="Guías de Kilómetro Claro">
       {categories.map((category) => <section class="guide-group" id={categoryId(category)} aria-labelledby={`${categoryId(category)}-title`}>
