@@ -103,6 +103,12 @@
 .brand-directory-related .brands-section-heading h2{margin:8px 0 0;color:var(--brand-ink);font:850 clamp(25px,3vw,34px)/1.1 Manrope,Arial,sans-serif;letter-spacing:-.055em}
 @media(max-width:700px){.brand-facts-profile{grid-template-columns:minmax(0,1fr);gap:34px}.brand-facts-copy{max-width:620px}.brand-facts-descriptor{font-size:25px}.brand-facts-copy h2{margin-top:23px}.brand-facts-bio{font-size:13px}}
 @media(max-width:600px){.brand-facts-profile{padding:4px 0}.brand-facts-heading{gap:12px;margin-bottom:19px}.brand-facts-logo,.brand-facts-monogram{width:65px;height:56px;padding:5px}.brand-facts-heading h1{font-size:clamp(38px,11vw,49px)}.brand-facts-list>div{grid-template-columns:minmax(112px,.7fr) minmax(0,1.3fr);min-height:58px;padding:11px 0}.brand-facts-list dt{font-size:10px}.brand-facts-list dd{font-size:18px}.brand-profile-page .toyota-model-section{margin-top:55px}.brand-profile-page .toyota-model-heading p{font-size:12px}.brand-profile-page .toyota-model-filters{grid-template-columns:1fr;gap:10px;margin:20px 0 17px}.brand-profile-page .toyota-model-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.brand-profile-page .toyota-model-card{min-height:130px;padding:12px;box-shadow:2px 2px 0 #d9f36a}.brand-profile-page .toyota-model-card h3{font-size:16px}.brand-profile-page .toyota-model-powertrains{gap:4px}.brand-profile-page .toyota-model-powertrains span{font-size:8px;padding:3px 6px}.brand-profile-page .brand-profile-source{font-size:10px}.brand-directory-related{margin-top:45px;padding-top:20px}.brand-directory-related .brand-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Las marcas con identidad principalmente tipográfica necesitan más ancho que los emblemas cuadrados. */
+.brand-card-logo--wide{width:86px;padding-inline:7px}
+.brand-facts-logo--wide{width:120px;height:65px;padding:10px}
+.model-detail-brandline img.brand-logo-wide{width:86px}
+@media(max-width:600px){.brand-card-logo--wide{width:76px;height:47px;padding:5px}.brand-facts-logo--wide{width:92px;height:56px;padding:6px}.brand-profile-page .brand-facts-heading{gap:9px}}
 @media(max-width:370px){.brand-profile-page .toyota-model-grid{grid-template-columns:1fr}}
 .brand-facts-profile--volkswagen{align-items:start}
 .brand-facts-profile--volkswagen .brand-facts-heading{align-items:flex-start;flex-direction:column;gap:12px}

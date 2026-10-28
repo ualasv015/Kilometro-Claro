@@ -36,7 +36,7 @@ const photoMethod = detail.image
         <div class:list={['model-detail-hero-grid', { 'model-detail-hero-grid--no-photo': !detail.image }]}>
           <div class="model-detail-hero-copy">
             <div class="model-detail-brandline">
-              <img src={brand.logo} alt={`Emblema de ${brand.name}`} width="70" height="52" fetchpriority="high" />
+                <img class:list={{ 'brand-logo-wide': brand.logoLayout === 'wide' }} src={brand.logo} alt={`Emblema de ${brand.name}`} width={brand.logoLayout === 'wide' ? '100' : '70'} height="52" fetchpriority="high" />
               <span>{brand.name} · {model.body}</span>
             </div>
             <h1>{modelName}</h1>
@@ -46,9 +46,7 @@ const photoMethod = detail.image
           {detail.image && (
             <figure class="model-detail-photo">
               <img src={detail.image.src} alt={detail.image.alt} width={detail.image.width} height={detail.image.height} fetchpriority="high" decoding="async" />
-              <figcaption>
-                Foto: <a href={detail.image.authorUrl} target="_blank" rel="noopener noreferrer">{detail.image.authorName}</a> · <a href={detail.image.sourceUrl} target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> · <a href={detail.image.licenseUrl} target="_blank" rel="noopener noreferrer">{detail.image.licenseName}</a>. Archivo redimensionado para web; se indica la licencia original.{detail.image.caption && ` ${detail.image.caption}`}
-              </figcaption>
+              <figcaption>Foto: {detail.image.authorUrl ? <a href={detail.image.authorUrl} target="_blank" rel="noopener noreferrer">{detail.image.authorName}</a> : detail.image.authorName}{detail.image.sourceTitle && <> · {detail.image.sourceUrl ? <>archivo «<a href={detail.image.sourceUrl} target="_blank" rel="noopener noreferrer">{detail.image.sourceTitle}</a>»</> : `fuente: ${detail.image.sourceTitle}`}</>}{' · licencia '}{detail.image.licenseUrl ? <a href={detail.image.licenseUrl} target="_blank" rel="noopener noreferrer">{detail.image.licenseName}</a> : detail.image.licenseName}. Imagen optimizada para web.{detail.image.caption && ` ${detail.image.caption}`}</figcaption>
             </figure>
           )}
         </div>

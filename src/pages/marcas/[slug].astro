@@ -32,8 +32,8 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
     <section class:list={['brand-facts-profile', { 'brand-facts-profile--volkswagen': brand.slug === 'volkswagen' }]} aria-label={`Información principal de ${brand.name}`}>
       <div class="brand-facts-left">
         <header class="brand-facts-heading">
-          {brand.logo
-            ? <img class="brand-facts-logo" src={brand.logo} alt={`Logotipo de ${brand.name}`} width="100" height="70" fetchpriority="high" />
+            {brand.logo
+              ? <img class:list={['brand-facts-logo', { 'brand-facts-logo--wide': brand.logoLayout === 'wide' }]} src={brand.logo} alt={`Logotipo de ${brand.name}`} width={brand.logoLayout === 'wide' ? '120' : '100'} height="70" fetchpriority="high" />
             : <span class="brand-facts-monogram" aria-hidden="true">{brand.name.slice(0, 1)}</span>}
           <h1>{brand.name}</h1>
         </header>

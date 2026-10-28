@@ -69,7 +69,7 @@ const directoryBrands = [...brands].sort((a, b) => {
           >
             <a class="brand-card-main" href={`/marcas/${brand.slug}/`}>
               <span class="brand-card-topline"><span>{brand.country}</span><span>{brand.models.length} modelos destacados</span></span>
-              <span class="brand-card-name-row">{brand.logo ? <img class="brand-card-logo" src={brand.logo} alt="" width="55" height="55" loading="lazy" /> : <span class="brand-monogram" aria-hidden="true">{brand.name.slice(0, 1)}</span>}<span><h3>{brand.name}</h3><small>{brand.descriptor}</small></span></span>
+              <span class="brand-card-name-row">{brand.logo ? <img class:list={['brand-card-logo', { 'brand-card-logo--wide': brand.logoLayout === 'wide' }]} src={brand.logo} alt="" width={brand.logoLayout === 'wide' ? '88' : '55'} height="55" loading="lazy" /> : <span class="brand-monogram" aria-hidden="true">{brand.name.slice(0, 1)}</span>}<span><h3>{brand.name}</h3><small>{brand.descriptor}</small></span></span>
               <span class="brand-card-techs" aria-label="Motorizaciones en la selección">
                 {brand.powertrains.map((powertrain) => <span>{powertrain}</span>)}
               </span>

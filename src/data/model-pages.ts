@@ -1,6 +1,17 @@
 import { volkswagenModels } from './volkswagen-model-pages';
 import { hyundaiModels } from './hyundai-model-pages';
 import { seatModels } from './seat-model-pages';
+import { modelImageData } from './model-image-data';
+import { daciaModels } from './dacia-model-pages';
+import { changanModels } from './changan-model-pages';
+import { omodaJaecooModels } from './omoda-jaecoo-model-pages';
+import { leapmotorModels } from './leapmotor-model-pages';
+import { bydModels } from './byd-model-pages';
+import { mgModels } from './mg-model-pages';
+import { peugeotModels } from './peugeot-model-pages';
+import { kiaModels } from './kia-model-pages';
+import { mercedesModels } from './mercedes-model-pages';
+import { bmwModels } from './bmw-model-pages';
 
 export type ModelVersion = {
   name: string;
@@ -34,11 +45,12 @@ export type ModelPageData = {
     caption?: string;
     width: number;
     height: number;
-    sourceUrl: string;
+    sourceTitle?: string;
+    sourceUrl?: string;
     authorName: string;
-    authorUrl: string;
+    authorUrl?: string;
     licenseName: string;
-    licenseUrl: string;
+    licenseUrl?: string;
   };
   reviewedAt: string;
 };
@@ -73,6 +85,7 @@ const photo = (
 ): NonNullable<ModelPageData['image']> => ({
   src: `/images/models/${file}`,
   alt,
+  sourceTitle: commonsFile,
   width: 1280,
   height: imageHeights[file] ?? 853,
   sourceUrl: `https://commons.wikimedia.org/wiki/File:${commonsFile}`,
@@ -749,13 +762,28 @@ const renaultModels: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>[] = [
   },
 ];
 
-export const modelPages: ModelPageData[] = [
+const modelPageRecords: ModelPageData[] = [
+  ...daciaModels,
+  ...changanModels,
+  ...omodaJaecooModels,
+  ...leapmotorModels,
+  ...bydModels,
+  ...mgModels,
+  ...peugeotModels,
+  ...kiaModels,
+  ...mercedesModels,
+  ...bmwModels,
   ...toyotaModels.map((model) => ({ ...model, brandSlug: 'toyota', reviewedAt })),
   ...renaultModels.map((model) => ({ ...model, brandSlug: 'renault', reviewedAt })),
   ...volkswagenModels,
   ...hyundaiModels,
   ...seatModels,
 ];
+
+export const modelPages: ModelPageData[] = modelPageRecords.map((model) => ({
+  ...model,
+  image: model.image ?? modelImageData[`${model.brandSlug}/${model.modelSlug}`],
+}));
 
 export const getModelPage = (brandSlug: string, modelSlug: string) =>
   modelPages.find((model) => model.brandSlug === brandSlug && model.modelSlug === modelSlug);
