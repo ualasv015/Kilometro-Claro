@@ -8,6 +8,7 @@
     "render": "tsx scripts/render.ts",
     "render-ranking": "tsx scripts/render-ranking.ts",
     "render-details": "tsx scripts/render-details.ts",
+    "render-drivetrain": "tsx scripts/render-drivetrain.ts",
     "test": "tsx --test tests/*.test.ts",
     "typecheck": "tsc --noEmit"
   },

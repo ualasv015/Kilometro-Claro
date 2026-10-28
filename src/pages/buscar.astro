@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { searchItems } from '../data/search';
+---
+
+<BaseLayout
+  title="Resultados de búsqueda | Kilómetro Claro"
+  description="Busca entre las calculadoras, guías y fichas de marcas de Kilómetro Claro."
+  canonical={new URL('/buscar/', Astro.site ?? 'https://kilometroclaro.com')}
+  noIndex={true}
+>
+  <div class="wrap search-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Buscar' }]} />
+    <header class="search-page-heading">
+      <span class="eyebrow">Explora Kilómetro Claro</span>
+      <h1>Resultados de búsqueda</h1>
+      <p id="search-summary" aria-live="polite">Busca entre nuestras guías, calculadoras y fichas de marcas.</p>
+    </header>
+
+    <form class="search-page-form" action="/buscar/" method="get" role="search">
+      <label for="search-page-input">¿Qué quieres encontrar?</label>
+      <div class="search-page-entry">
+        <input id="search-page-input" type="search" name="q" placeholder="Ej.: consumo, coche eléctrico…" autocomplete="off" />
+        <button type="submit">Buscar</button>
+      </div>
+    </form>
+
+    <section aria-label="Contenido encontrado">
+      <ul class="search-results-list" id="search-page-results"></ul>
+      <p class="search-empty" id="search-empty" hidden>No hemos encontrado resultados. Prueba con otra búsqueda.</p>
+    </section>
+  </div>
+
+  <script define:vars={{ searchItems }}>
+    const input = document.querySelector('#search-page-input');
+    const list = document.querySelector('#search-page-results');
+    const summary = document.querySelector('#search-summary');
+    const emptyMessage = document.querySelector('#search-empty');
+
+    const normalize = (value) => value
+      .toLocaleLowerCase('es')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .trim();
+
+    const renderResults = () => {
+      const query = normalize(input.value);
+      const terms = query.split(/\s+/).filter(Boolean);
+      list.replaceChildren();
+      emptyMessage.hidden = true;
+
+      if (!terms.length) {
+        summary.textContent = 'Busca entre nuestras guías, calculadoras y fichas de marcas.';
+        return;
+      }
+
+      const matches = searchItems
+        .map((item) => ({ item, searchableText: normalize(`${item.title} ${item.description} ${item.type} ${item.keywords}`) }))
+        .filter(({ searchableText }) => terms.every((term) => searchableText.includes(term)))
+        .sort((left, right) => {
+          const leftStarts = normalize(left.item.title).startsWith(query) ? 1 : 0;
+          const rightStarts = normalize(right.item.title).startsWith(query) ? 1 : 0;
+          return rightStarts - leftStarts;
+        });
+
+      summary.textContent = matches.length
+        ? `${matches.length} resultado${matches.length === 1 ? '' : 's'} para «${input.value.trim()}».`
+        : `No hay resultados para «${input.value.trim()}».`;
+      emptyMessage.hidden = matches.length > 0;
+
+      for (const { item } of matches) {
+        const li = document.createElement('li');
+        li.className = 'search-result';
+        const link = document.createElement('a');
+        const type = document.createElement('span');
+        const title = document.createElement('strong');
+        const description = document.createElement('small');
+
+        link.href = item.href;
+        type.className = `search-result-type ${item.type === 'Guía' ? 'search-result-type--guide' : item.type === 'Calculadora' ? 'search-result-type--calculator' : 'search-result-type--brand'}`;
+        type.textContent = item.type;
+        title.textContent = item.title;
+        description.textContent = item.description.length > 150
+          ? `${item.description.slice(0, 147).trimEnd()}…`
+          : item.description;
+        link.append(type, title, description);
+        li.append(link);
+        list.append(li);
+      }
+    };
+
+    input.value = new URLSearchParams(window.location.search).get('q') ?? '';
+    input.addEventListener('input', renderResults);
+    renderResults();
+  </script>
+</BaseLayout>
+
+<style>
+  .search-page { padding-block: 30px 72px; }
+  .search-page-heading { max-width: 760px; margin: 30px 0 24px; }
+  .search-page-heading h1 { margin: 8px 0; color: #172c27; font: 800 clamp(32px, 5vw, 48px)/1.08 Manrope, Arial, sans-serif; letter-spacing: -1.7px; }
+  .search-page-heading p { margin: 0; color: #536159; font-size: 15px; line-height: 1.6; }
+  .search-page-form { max-width: 720px; margin: 0 0 24px; }
+  .search-page-form label { display: block; margin-bottom: 8px; color: #172c27; font-size: 13px; font-weight: 750; }
+  .search-page-entry { display: flex; gap: 9px; }
+  .search-page-entry input { min-width: 0; flex: 1; padding: 13px 14px; border: 1px solid #b8c5bb; border-radius: 7px; color: #172c27; background: #fff; }
+  .search-page-entry input:focus-visible,.search-page-entry button:focus-visible { outline: 3px solid #9ebc48; outline-offset: 3px; }
+  .search-page-entry button { padding: 11px 17px; border: 1px solid #173d34; border-radius: 7px; background: #173d34; color: #fff; font-weight: 750; cursor: pointer; }
+  .search-page-entry button:hover { background: #245447; }
+  .search-results-list { display: grid; max-width: 850px; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  :global(.search-result a) { display: grid; gap: 7px; padding: 16px 17px; border: 1px solid #dce3dc; border-radius: 8px; background: #fff; color: #172c27; transition: border-color .16s, transform .16s, box-shadow .16s; }
+  :global(.search-result a:hover) { transform: translateY(-1px); border-color: #9bad9e; box-shadow: 3px 3px 0 #d9f36a; }
+  :global(.search-result-type) { width: fit-content; padding: 5px 8px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: .65px; line-height: 1.2; text-transform: uppercase; }
+  :global(.search-result-type--guide) { background: #173d34; color: #fff; }
+  :global(.search-result-type--calculator) { background: #d9f36a; color: #172c27; }
+  :global(.search-result-type--brand) { background: #d9f36a; color: #173d34; }
+  :global(.search-result strong) { font-size: 15px; font-weight: 850; line-height: 1.4; }
+  :global(.search-result small) { color: #536159; font-size: 13px; line-height: 1.5; }
+  .search-empty { max-width: 850px; margin: 0; padding: 17px; border: 1px solid #dce3dc; border-radius: 8px; background: #fff; color: #536159; }
+
+  @media (max-width: 600px) {
+    .search-page { padding-block: 20px 50px; }
+    .search-page-heading { margin-top: 22px; }
+    .search-page-heading p { font-size: 14px; }
+    .search-page-entry { gap: 7px; }
+    .search-page-entry input { padding: 12px 10px; font-size: 14px; }
+    .search-page-entry button { padding-inline: 13px; }
+    :global(.search-result a) { padding: 14px; }
+    :global(.search-result strong) { font-size: 14px; }
+    :global(.search-result small) { font-size: 12px; }
+  }
+</style>

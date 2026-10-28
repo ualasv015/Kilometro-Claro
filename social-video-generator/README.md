@@ -51,7 +51,17 @@ npm run render-details -- data/videos/video-003.json
 
 El MP4 se genera como [output/video-003.mp4](output/video-003.mp4). Esta versión usa esquemas vectoriales animados porque el proyecto no contiene grabaciones de un coche. Lleva la voz de `public/audio/voice-video-003.wav` a su velocidad original y subtítulos integrados; se ajustaron la duración del vídeo y los cortes de escena para seguir las pausas de la narración. Para una versión de planos reales hay que grabar el modelo elegido y confirmar las funciones en su manual antes de publicar. `requiresHumanReview` sigue activado.
 
-Las tres locuciones originales están guardadas en `public/audio/voice-video-001.wav`, `voice-video-002.wav` y `voice-video-003.wav`. Los vídeos 1 y 2 usan un ajuste leve de velocidad para encajar en su duración; la voz del vídeo 3 se mantiene a velocidad original y se adapta el montaje a ella. Los tres llevan audio AAC estéreo en el MP4 final.
+Las locuciones originales están guardadas en `public/audio/voice-video-001.wav`, `voice-video-002.wav`, `voice-video-003.wav` y `voice-video-004.wav`. Los vídeos 1 y 2 usan un ajuste leve de velocidad para encajar en su duración; los vídeos 3 y 4 conservan la voz a velocidad original y se adapta el montaje. Los renders finales llevan audio AAC.
+
+## Reel: tipos de tracción
+
+La cuarta composición compara tracción trasera, delantera, total/AWD y 4x4 en unos 93,5 segundos, siguiendo la duración de la voz original. Incluye cambios de plano cada pocos segundos, animaciones originales, subtítulos integrados y escenas recreadas en circuito cerrado.
+
+```bash
+pnpm render-drivetrain -- data/videos/video-004.json
+```
+
+El render integra `public/audio/voice-video-004.wav` a velocidad 1× y genera [output/video-004.mp4](output/video-004.mp4) y los subtítulos externos [output/video-004-es.srt](output/video-004-es.srt). El guion original para Google TTS está en `data/voiceovers/video-004-google-tts.txt`.
 
 ## Qué se ve
 

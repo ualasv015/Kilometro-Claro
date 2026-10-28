@@ -1,0 +1,174 @@
+---
+import { searchItems } from '../data/search';
+
+const { active } = Astro.props as { active?: 'guides' | 'calculators' | 'brands' };
+---
+
+<header class="max-home-header">
+  <div class="max-home-top wrap">
+    <nav class="max-home-social" aria-label="Redes sociales de Kilómetro Claro">
+      <a href="https://www.instagram.com/kilometroclaro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kilómetro Claro">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle class="social-dot" cx="17.7" cy="6.5" r="1"/></svg>
+      </a>
+      <a href="https://x.com/KilometroClaro" target="_blank" rel="noopener noreferrer" aria-label="Kilómetro Claro en X">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="x-mark" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.8 5.7 22H2.5l7.3-8.4L1.8 2h6.5l4.5 6.7L18.9 2Zm-1.1 17.8h1.7L7.3 4.1H5.5l12.3 15.7Z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@kilometro_claro" target="_blank" rel="noopener noreferrer" aria-label="Kilómetro Claro en TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="tiktok-mark" d="M19.8 7.1a6.3 6.3 0 0 1-3.9-1.4v8.1a6.2 6.2 0 1 1-5.4-6.1v3.4a2.9 2.9 0 1 0 2.1 2.8V2.1h3.3c.2 2 1.8 3.7 3.9 4v1Z"/></svg>
+      </a>
+    </nav>
+
+    <a class="max-home-logo" href="/" aria-label="Kilómetro Claro, página de inicio">
+      <img src="/logo-marca-kilometro-claro.png" alt="Kilómetro Claro" width="96" height="96" fetchpriority="high" />
+      <span aria-hidden="true">Kilómetro <strong>Claro</strong></span>
+    </a>
+
+    <div class="max-search-control" id="search-control">
+      <form class="max-search-panel" role="search" id="home-search-form" aria-label="Buscar en Kilómetro Claro">
+        <label class="max-sr-only" for="home-search-input">¿Qué quieres encontrar?</label>
+        <input id="home-search-input" type="search" name="q" placeholder="Buscar guías, calculadoras y marcas…" autocomplete="off" aria-controls="home-search-results" aria-describedby="home-search-status" disabled />
+        <button class="max-sr-only" type="submit" tabindex="-1" aria-hidden="true">Ver resultados</button>
+        <button class="max-search-toggle" id="search-toggle" type="button" aria-label="Abrir búsqueda" aria-expanded="false" aria-controls="home-search-results-panel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+        </button>
+      </form>
+
+      <section class="max-search-results-panel" id="home-search-results-panel" aria-label="Resultados de búsqueda" aria-hidden="true" inert>
+        <p class="max-search-status" id="home-search-status" aria-live="polite"></p>
+        <ul class="max-search-results" id="home-search-results"></ul>
+      </section>
+    </div>
+  </div>
+
+  <nav class="max-home-nav" aria-label="Secciones principales">
+    <a class="max-nav-guides" href="/guias/" aria-current={active === 'guides' ? 'page' : undefined}>Guías</a>
+    <a class="max-nav-calculators" href="/calculadoras/" aria-current={active === 'calculators' ? 'page' : undefined}>Calculadoras</a>
+    <a class="max-nav-brands" href="/marcas/" aria-current={active === 'brands' ? 'page' : undefined}>Marcas</a>
+  </nav>
+</header>
+
+<script define:vars={{ searchItems }}>
+  const toggle = document.querySelector('#search-toggle');
+  const control = document.querySelector('#search-control');
+  const resultsPanel = document.querySelector('#home-search-results-panel');
+  const form = document.querySelector('#home-search-form');
+  const input = document.querySelector('#home-search-input');
+  const results = document.querySelector('#home-search-results');
+  const status = document.querySelector('#home-search-status');
+
+  const normalize = (value) => value
+    .toLocaleLowerCase('es')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim();
+
+  const updateResultsVisibility = () => {
+    const hasQuery = Boolean(input.value.trim());
+    const isVisible = control.classList.contains('is-open') && hasQuery;
+    control.classList.toggle('has-query', hasQuery);
+    resultsPanel.setAttribute('aria-hidden', String(!isVisible));
+    if (isVisible) resultsPanel.removeAttribute('inert');
+    else resultsPanel.setAttribute('inert', '');
+  };
+
+  const renderResults = () => {
+    const query = normalize(input.value);
+    results.replaceChildren();
+    updateResultsVisibility();
+
+    if (!query) {
+      status.textContent = '';
+      return;
+    }
+
+    const matches = searchItems.filter((item) => normalize(`${item.title} ${item.description} ${item.type} ${item.keywords}`).includes(query)).slice(0, 8);
+    status.textContent = matches.length
+      ? `${matches.length} resultado${matches.length === 1 ? '' : 's'}${matches.length === 8 ? ' (mostrando hasta 8)' : ''}.`
+      : 'No hemos encontrado resultados. Prueba con otra palabra.';
+
+    for (const item of matches) {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      const type = document.createElement('span');
+      const title = document.createElement('strong');
+      const description = document.createElement('small');
+
+      link.href = item.href;
+      type.className = `max-result-type ${item.type === 'Guía' ? 'max-result-type--guide' : item.type === 'Calculadora' ? 'max-result-type--calculator' : 'max-result-type--brand'}`;
+      type.textContent = item.type;
+      title.textContent = item.title;
+      description.textContent = item.description.length > 96
+        ? `${item.description.slice(0, 93).trimEnd()}…`
+        : item.description;
+      link.append(type, title, description);
+      li.append(link);
+      results.append(li);
+    }
+  };
+
+  const setSearchOpen = (isOpening) => {
+    control.classList.toggle('is-open', isOpening);
+    toggle.setAttribute('aria-expanded', String(isOpening));
+    toggle.setAttribute('aria-label', isOpening ? 'Cerrar búsqueda' : 'Abrir búsqueda');
+
+    if (isOpening) {
+      input.disabled = false;
+      updateResultsVisibility();
+      window.requestAnimationFrame(() => input.focus());
+    } else {
+      updateResultsVisibility();
+      toggle.focus();
+      input.disabled = true;
+    }
+  };
+
+  toggle.addEventListener('click', () => setSearchOpen(!control.classList.contains('is-open')));
+  input.addEventListener('input', renderResults);
+  const goToSearchResults = () => {
+    const query = input.value.trim();
+    if (query) window.location.assign(`/buscar/?q=${encodeURIComponent(query)}`);
+  };
+  form.addEventListener('submit', (event) => { event.preventDefault(); goToSearchResults(); });
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') { event.preventDefault(); goToSearchResults(); }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && control.classList.contains('is-open')) setSearchOpen(false);
+  });
+</script>
+
+<style>
+  .max-home-header{position:relative;z-index:2;padding:18px 0 21px;border-bottom:3px solid #172c27;background:#173d34;color:#f8f7ef;box-shadow:0 5px 0 #d9f36a}
+  .max-home-top{position:relative;display:grid;min-height:106px;grid-template-columns:1fr auto 1fr;align-items:center}
+  .max-home-social{display:flex;align-items:center;justify-self:start;gap:10px}
+  .max-home-social a,.max-search-toggle{display:grid;width:43px;height:43px;place-items:center;border:2px solid #172c27;border-radius:12px;background:#fff;color:#172c27;box-shadow:3px 3px 0 #172c27;transition:transform .16s,box-shadow .16s,background-color .16s}
+  .max-home-social a:hover,.max-search-toggle:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #172c27;background:#d9f36a}
+  .max-home-social a:focus-visible,.max-search-toggle:focus-visible,.max-home-nav a:focus-visible,.max-search-panel a:focus-visible,.max-search-panel button:focus-visible,.max-search-panel input:focus-visible{outline:3px solid #f07842;outline-offset:4px}
+  .max-home-social svg,.max-search-toggle svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8}
+  .max-home-social .social-dot{fill:currentColor;stroke:none}.max-home-social .x-mark,.max-home-social .tiktok-mark{fill:currentColor;stroke:none}
+  .max-home-logo{grid-column:2;display:inline-flex;align-items:center;gap:13px;transform:rotate(-2deg)}
+  .max-home-logo img{display:block;width:84px;height:84px;border-radius:24px;object-fit:cover;box-shadow:5px 5px 0 #d9f36a}
+  .max-home-logo>span{color:#f8f7ef;font-size:23px;font-weight:700;letter-spacing:-1px;white-space:nowrap}.max-home-logo>span strong{color:#d9f36a;font-weight:900}
+  .max-search-control{grid-column:3;position:relative;z-index:5;justify-self:end;width:47px;height:47px;transition:width .38s cubic-bezier(.2,.8,.2,1)}
+  .max-search-control.is-open{width:min(430px,calc(100vw - 150px))}
+  .max-home-nav{display:flex;justify-content:center;align-items:center;gap:13px;margin:12px auto 0;padding:0 20px}
+  .max-home-nav a{display:inline-flex;min-width:156px;min-height:48px;justify-content:center;align-items:center;padding:10px 18px;border:2px solid #172c27;border-radius:8px;box-shadow:4px 4px 0 #172c27;font-size:14px;font-weight:850;letter-spacing:-.2px;transition:transform .16s,box-shadow .16s}
+  .max-home-nav a:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #172c27}
+  .max-nav-guides{background:#d9f36a;color:#172c27}.max-nav-calculators{background:#f8f7ef;color:#172c27}.max-nav-brands{background:#173d34;color:#fff}
+  .max-search-panel{position:absolute;inset:0;display:flex;align-items:center;width:100%;height:100%;margin:0;padding:0;border:2px solid #172c27;border-radius:12px;background:#fffef8;box-shadow:8px 8px 0 #172c27;overflow:hidden;transition:box-shadow .2s,background-color .2s}
+  .max-search-control:not(.is-open) .max-search-panel{padding:0}
+  .max-search-panel input{min-width:0;width:0;height:100%;flex:1 1 auto;padding:0;border:0;outline:0;opacity:0;color:#172c27;background:transparent;font-size:14px;pointer-events:none;transition:width .32s ease .04s,padding .32s ease .04s,opacity .18s ease}
+  .max-search-panel input::placeholder{color:#68766e}.max-search-control.is-open .max-search-panel input{width:100%;padding:0 14px;opacity:1;pointer-events:auto}
+  .max-search-toggle{width:43px;height:43px;flex:0 0 43px;place-items:center;border:0;border-left:2px solid #172c27;border-radius:0 9px 9px 0;background:#d9f36a;color:#172c27;cursor:pointer;box-shadow:none;transition:background-color .16s}
+  .max-search-control:not(.is-open) .max-search-toggle{width:43px;height:43px;border:0;border-radius:9px;background:#fff}
+  .max-search-toggle:hover,.max-search-control:not(.is-open) .max-search-toggle:hover{transform:none;box-shadow:none;background:#d9f36a}.max-search-control.is-open .max-search-panel{box-shadow:5px 5px 0 #172c27}
+  .max-search-results-panel{position:absolute;top:calc(100% + 10px);right:0;z-index:6;width:min(100%,430px);max-height:min(65vh,540px);overflow:auto;padding:16px;border:2px solid #172c27;border-radius:12px;background:#fffef8;box-shadow:7px 7px 0 #172c27;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px) scale(.985);transform-origin:top right;transition:opacity .2s ease,transform .28s cubic-bezier(.2,.8,.2,1),visibility 0s linear .28s}
+  .max-search-control.is-open.has-query .max-search-results-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) scale(1);transition-delay:.05s,.05s,0s}
+  .max-search-status{margin:12px 0 0;color:#536159;font-size:12px;line-height:1.5}.max-search-results{display:grid;gap:8px;margin:12px 0 0;padding:0;list-style:none}.max-search-results:empty{display:none}
+  :global(.max-search-results a){display:grid;gap:4px;padding:11px 12px;border:1px solid #d7ddd3;border-radius:7px;color:#172c27}:global(.max-search-results a:hover){border-color:#172c27;background:#f1f5e8}:global(.max-search-results strong){font-size:13px;font-weight:850}:global(.max-search-results small){color:#536159;font-size:11px;line-height:1.45}
+  :global(.max-result-type){width:fit-content;padding:4px 7px;border-radius:4px;font-size:9px;font-weight:900;letter-spacing:.65px;line-height:1.2;text-transform:uppercase}:global(.max-result-type--guide){background:#173d34;color:#fff}:global(.max-result-type--calculator){background:#d9f36a;color:#172c27}:global(.max-result-type--brand){background:#173d34;color:#d9f36a}
+  .max-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}
+  @media(prefers-reduced-motion:reduce){.max-search-control,.max-search-panel,.max-search-panel input,.max-search-results-panel{transition:none!important}}
+  @media(max-width:600px){.max-home-header{padding:13px 0 17px}.max-home-top{width:calc(100% - 32px);min-height:0;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;row-gap:12px}.max-home-logo{grid-column:1/-1;grid-row:1;justify-self:center;gap:8px}.max-home-logo img{width:62px;height:62px;border-radius:18px;box-shadow:3px 3px 0 #172c27}.max-home-logo>span{font-size:16px;letter-spacing:-.6px}.max-home-social{grid-column:1;grid-row:2;gap:7px}.max-home-social a{width:36px;height:36px;border-width:1.5px;border-radius:10px;box-shadow:2px 2px 0 #172c27}.max-search-control{grid-column:2;grid-row:2;width:40px;height:40px}.max-search-control.is-open{width:min(360px,calc(100vw - 180px))}.max-search-toggle,.max-search-control:not(.is-open) .max-search-toggle{width:36px;height:36px;flex-basis:36px;border-radius:8px}.max-home-social svg,.max-search-toggle svg{width:18px;height:18px}.max-home-nav{gap:9px;margin-top:10px;padding:0 15px}.max-home-nav a{min-width:0;min-height:44px;flex:1;max-width:170px;padding:9px 12px;font-size:12px;box-shadow:3px 3px 0 #172c27}.max-search-results-panel{top:calc(100% + 8px);width:min(430px,calc(100vw - 32px));padding:13px;box-shadow:5px 5px 0 #172c27}}
+  @media(max-width:360px){.max-home-top{width:calc(100% - 28px);row-gap:10px}.max-home-social{gap:6px}.max-home-social a{width:32px;height:32px}.max-search-control{width:36px;height:36px}.max-search-control.is-open{width:min(320px,calc(100vw - 180px))}.max-search-toggle,.max-search-control:not(.is-open) .max-search-toggle{width:32px;height:32px;flex-basis:32px}.max-home-logo{gap:5px}.max-home-logo img{width:54px;height:54px}.max-home-logo>span{font-size:13px;letter-spacing:-.45px}.max-search-results-panel{padding:11px}.max-home-nav{gap:7px}.max-home-nav a{padding-inline:8px;font-size:11px}}
+</style>

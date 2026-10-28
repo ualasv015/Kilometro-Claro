@@ -2,14 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://kilometroclaro.com/</loc></url>
   <url><loc>https://kilometroclaro.com/calculadoras/</loc></url>
-  <url><loc>https://kilometroclaro.com/categorias/</loc></url>
-  <url><loc>https://kilometroclaro.com/categorias/consumo-combustible/</loc></url>
-  <url><loc>https://kilometroclaro.com/categorias/costes-del-coche/</loc></url>
-  <url><loc>https://kilometroclaro.com/categorias/coche-electrico/</loc></url>
-  <url><loc>https://kilometroclaro.com/categorias/comparar-coches/</loc></url>
-  <url><loc>https://kilometroclaro.com/categorias/compra-financiacion/</loc></url>
-  <url><loc>https://kilometroclaro.com/categorias/movilidad-normativa/</loc></url>
-  <url><loc>https://kilometroclaro.com/categorias/uso-mantenimiento/</loc></url>
   <url><loc>https://kilometroclaro.com/calculadoras/consumo-combustible/</loc></url>
   <url><loc>https://kilometroclaro.com/calculadoras/coste-viaje-coche/</loc></url>
   <url><loc>https://kilometroclaro.com/calculadoras/coste-por-kilometro/</loc></url>
@@ -37,5 +29,92 @@
   <url><loc>https://kilometroclaro.com/guias/tipos-cambio-automatico/</loc></url>
   <url><loc>https://kilometroclaro.com/guias/tipos-traccion-coche/</loc></url>
   <url><loc>https://kilometroclaro.com/guias/tipos-luces-coche/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/dacia/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/byd/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mg/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/leapmotor/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/changan/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/omoda/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/jaecoo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/seat/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/peugeot/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/kia/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/bmw/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/aygo-x-cross/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/yaris/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/gr-yaris/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/yaris-cross/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/corolla/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/corolla-sedan/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/corolla-touring-sports/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/corolla-cross/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/c-hr/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/c-hr-plus/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/rav4/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/bz4x/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/mirai/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/land-cruiser-250/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/hilux/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/proace-city-verso/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/proace-verso/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/proace-city/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/proace/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/toyota/proace-max/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/i10/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/i20/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/bayon/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/kona/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/tucson/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/santa-fe/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/i30/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/i30-fastback/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/i30-cw/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/staria-hibrido/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/inster/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/ioniq-3/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/ioniq-5/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/ioniq-5-n/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/ioniq-6/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/ioniq-6-n/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/ioniq-9/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/hyundai/nexo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/twingo-e-tech/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/5-e-tech/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/4-e-tech/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/clio/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/captur/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/symbioz/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/austral/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/arkana/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/espace/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/rafale/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/megane-e-tech/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/scenic-e-tech/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/kangoo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/grand-kangoo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/trafic-combi/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/renault/trafic-spaceclass/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/polo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/id-polo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/taigo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/t-cross/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/id-cross/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/golf/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/id3-neo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/t-roc/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/t-roc-cabrio/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/golf-variant/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/tiguan/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/id4/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/tayron/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/id7/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/passat/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volkswagen/id7-tourer/</loc></url>
   <url><loc>https://kilometroclaro.com/sobre-nosotros/</loc></url>
 </urlset>

@@ -13,7 +13,7 @@ const image = guideImages[Astro.props.slug];
     </picture>
     <figcaption>
       {image.caption}
-      {image.source && image.author && <>{' '}Foto: <a href={image.source} target="_blank" rel="noopener noreferrer">{image.author} / Wikimedia Commons</a>{' '}·{' '}<a href={image.license ?? 'https://creativecommons.org/publicdomain/zero/1.0/deed.es'} target="_blank" rel="noopener noreferrer">CC0 1.0</a>.</>}
+      {image.source && image.author && <>{' '}Foto: <a href={image.source} target="_blank" rel="noopener noreferrer">{image.author} / {image.sourceName ?? 'Wikimedia Commons'}</a>{' '}·{' '}<a href={image.license ?? 'https://creativecommons.org/publicdomain/zero/1.0/deed.es'} target="_blank" rel="noopener noreferrer">{image.licenseName ?? 'CC0 1.0'}</a>.</>}
       {!image.source && image.author && <>{' '}Ilustración: {image.author}.</>}
     </figcaption>
   </figure>

@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "id": "video-004",
+  "title": "¿Qué tracción crees que usa este coche?",
+  "durationSeconds": 93.53333333333333,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/tipos-traccion-coche/",
+  "audioPolicy": "El vídeo se adapta al audio final; no cambiar velocidad ni tono de la voz generada.",
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "visual": "open-wheel",
+      "startSeconds": 0.0,
+      "endSeconds": 2.733333,
+      "kicker": "RETO RÁPIDO",
+      "headline": "¿Qué tracción crees\nque usa este coche?",
+      "narration": "¿Qué tracción crees que usa este coche?",
+      "note": "Monoplaza de competición · recreación animada",
+      "captions": [
+        {
+          "startSeconds": 0.167,
+          "endSeconds": 1.867,
+          "text": "¿Qué tracción crees que usa este coche?"
+        }
+      ]
+    },
+    {
+      "id": "answer",
+      "kind": "answer",
+      "visual": "rear-axle",
+      "startSeconds": 2.733333,
+      "endSeconds": 9.666667,
+      "kicker": "RESPUESTA",
+      "headline": "¡Exacto!\nTracción trasera",
+      "narration": "¡Exacto! Tracción trasera. Las ruedas motrices son las que reciben la fuerza del motor y empujan el coche.",
+      "note": "Motrices = reciben la fuerza del motor",
+      "captions": [
+        {
+          "startSeconds": 2.733,
+          "endSeconds": 3.367,
+          "text": "¡Exacto! Tracción trasera."
+        },
+        {
+          "startSeconds": 3.667,
+          "endSeconds": 7.467,
+          "text": "Las ruedas motrices son las que reciben la fuerza del motor"
+        },
+        {
+          "startSeconds": 7.467,
+          "endSeconds": 8.867,
+          "text": "y empujan el coche."
+        }
+      ]
+    },
+    {
+      "id": "rear-drive",
+      "kind": "rear-drive",
+      "visual": "rear-axle",
+      "startSeconds": 9.666667,
+      "endSeconds": 24.7,
+      "kicker": "TRACCIÓN TRASERA",
+      "headline": "Las ruedas de atrás empujan",
+      "narration": "En este monoplaza, empujan las dos ruedas de atrás; las delanteras dirigen. Separar impulso y dirección puede dar una respuesta más deportiva. Pero sobre mojado, un acelerón brusco puede hacer que las traseras pierdan agarre. El derrape está recreado en circuito cerrado.",
+      "note": "Las delanteras dirigen · las traseras son motrices",
+      "captions": [
+        {
+          "startSeconds": 9.667,
+          "endSeconds": 12.133,
+          "text": "En este monoplaza, empujan las dos ruedas de atrás;"
+        },
+        {
+          "startSeconds": 12.533,
+          "endSeconds": 13.533,
+          "text": "las delanteras dirigen."
+        },
+        {
+          "startSeconds": 14.1,
+          "endSeconds": 17.133,
+          "text": "Separar impulso y dirección puede dar una respuesta más deportiva."
+        },
+        {
+          "startSeconds": 17.667,
+          "endSeconds": 21.367,
+          "text": "Pero sobre mojado, un acelerón brusco puede hacer que las traseras pierdan agarre."
+        },
+        {
+          "startSeconds": 22.1,
+          "endSeconds": 23.967,
+          "text": "El derrape está recreado en circuito cerrado."
+        }
+      ]
+    },
+    {
+      "id": "front-drive",
+      "kind": "front-drive",
+      "visual": "front-axle",
+      "startSeconds": 24.7,
+      "endSeconds": 36.933333,
+      "kicker": "TRACCIÓN DELANTERA",
+      "headline": "Las ruedas de delante tiran",
+      "narration": "En la delantera, las dos de delante son motrices y también dirigen. Es la configuración más habitual en turismos: su mecánica compacta aprovecha el espacio. El peso del motor sobre ese eje puede ayudar al arrancar sobre firme resbaladizo, pero no garantiza agarre.",
+      "note": "Las mismas ruedas impulsan y dirigen",
+      "captions": [
+        {
+          "startSeconds": 24.7,
+          "endSeconds": 27.833,
+          "text": "En la delantera, las dos de delante son motrices y también dirigen."
+        },
+        {
+          "startSeconds": 28.3,
+          "endSeconds": 32.5,
+          "text": "Es la configuración más habitual en turismos: su mecánica compacta aprovecha el espacio."
+        },
+        {
+          "startSeconds": 33.1,
+          "endSeconds": 35.967,
+          "text": "El peso del motor sobre ese eje puede ayudar al arrancar sobre firme resbaladizo,"
+        },
+        {
+          "startSeconds": 35.967,
+          "endSeconds": 36.8,
+          "text": "pero no garantiza agarre."
+        }
+      ]
+    },
+    {
+      "id": "wet-comparison",
+      "kind": "wet-comparison",
+      "visual": "wet-race",
+      "startSeconds": 36.933333,
+      "endSeconds": 54.366667,
+      "kicker": "MISMO FIRME · RECREACIÓN",
+      "headline": "¿Qué cambia cuando llueve?",
+      "narration": "En este circuito mojado, el coche con tracción trasera desliza al acelerar; el de tracción delantera conserva la línea y lo adelanta. Es una recreación, no una regla: neumáticos, velocidad, firme y control de estabilidad cambian el resultado. Ninguna tracción compensa ir demasiado rápido.",
+      "note": "Neumáticos, velocidad y ayudas también cuentan",
+      "captions": [
+        {
+          "startSeconds": 36.933,
+          "endSeconds": 42.233,
+          "text": "En este circuito mojado, el coche con tracción trasera desliza al acelerar;"
+        },
+        {
+          "startSeconds": 42.633,
+          "endSeconds": 45.133,
+          "text": "el de tracción delantera conserva la línea y lo adelanta."
+        },
+        {
+          "startSeconds": 45.667,
+          "endSeconds": 47.067,
+          "text": "Es una recreación, no una regla:"
+        },
+        {
+          "startSeconds": 47.367,
+          "endSeconds": 51.167,
+          "text": "Neumáticos, velocidad, firme y control de estabilidad cambian el resultado."
+        },
+        {
+          "startSeconds": 51.6,
+          "endSeconds": 53.667,
+          "text": "Ninguna tracción compensa ir demasiado rápido."
+        }
+      ]
+    },
+    {
+      "id": "awd",
+      "kind": "awd",
+      "visual": "all-axles",
+      "startSeconds": 54.366667,
+      "endSeconds": 67.2,
+      "kicker": "AWD · TRACCIÓN TOTAL",
+      "headline": "Fuerza en los dos ejes",
+      "narration": "La tracción total o AWD puede repartir la fuerza entre ambos ejes y mover las cuatro ruedas. Según el sistema, funciona siempre o conecta un eje cuando hace falta. Ayuda a avanzar en una rampa con poca adherencia, pero no mejora por sí sola la frenada.",
+      "note": "Reparto permanente o bajo demanda, según el sistema",
+      "captions": [
+        {
+          "startSeconds": 54.367,
+          "endSeconds": 57.567,
+          "text": "La tracción total o AWD puede repartir la fuerza entre ambos ejes"
+        },
+        {
+          "startSeconds": 57.567,
+          "endSeconds": 58.867,
+          "text": "y mover las cuatro ruedas."
+        },
+        {
+          "startSeconds": 59.3,
+          "endSeconds": 60.5,
+          "text": "Según el sistema, funciona siempre"
+        },
+        {
+          "startSeconds": 60.5,
+          "endSeconds": 62.2,
+          "text": "o conecta un eje cuando hace falta."
+        },
+        {
+          "startSeconds": 62.667,
+          "endSeconds": 64.867,
+          "text": "Ayuda a avanzar en una rampa con poca adherencia,"
+        },
+        {
+          "startSeconds": 64.867,
+          "endSeconds": 66.633,
+          "text": "pero no mejora por sí sola la frenada."
+        }
+      ]
+    },
+    {
+      "id": "4x4",
+      "kind": "4x4",
+      "visual": "off-road",
+      "startSeconds": 67.2,
+      "endSeconds": 82.633333,
+      "kicker": "4x4 · TERRENO DIFÍCIL",
+      "headline": "Cuatro ruedas y, a veces, reductora",
+      "narration": "El 4x4 también puede impulsar las cuatro ruedas. Suele orientarse a terrenos difíciles; algunos sistemas añaden reductora para avanzar despacio con más fuerza en una pendiente suelta. Pero AWD y 4x4 se solapan: la frontera no es universal. Comprueba los modos y el manual.",
+      "note": "4L / reductora: solo si esa versión lo equipa",
+      "captions": [
+        {
+          "startSeconds": 67.2,
+          "endSeconds": 69.7,
+          "text": "El 4x4 también puede impulsar las cuatro ruedas."
+        },
+        {
+          "startSeconds": 70.0,
+          "endSeconds": 71.6,
+          "text": "Suele orientarse a terrenos difíciles;"
+        },
+        {
+          "startSeconds": 71.933,
+          "endSeconds": 75.133,
+          "text": "algunos sistemas añaden reductora para avanzar despacio con más fuerza"
+        },
+        {
+          "startSeconds": 75.133,
+          "endSeconds": 76.433,
+          "text": "en una pendiente suelta."
+        },
+        {
+          "startSeconds": 76.933,
+          "endSeconds": 79.0,
+          "text": "Pero AWD y 4x4 se solapan: la frontera no es universal."
+        },
+        {
+          "startSeconds": 79.2,
+          "endSeconds": 82.033,
+          "text": "Comprueba los modos y el manual."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "kind": "recap",
+      "visual": "summary",
+      "startSeconds": 82.633333,
+      "endSeconds": 93.53333333333333,
+      "kicker": "RESUMEN",
+      "headline": "¿Qué ruedas son motrices?",
+      "narration": "Resumen: delantera, mueven las dos de delante; trasera, las dos de atrás; AWD o 4x4, pueden mover las cuatro. Elige según tus rutas y la versión concreta. ¿Qué tracción lleva tu coche?",
+      "note": "Comprueba la configuración exacta en la ficha del coche",
+      "captions": [
+        {
+          "startSeconds": 82.633,
+          "endSeconds": 85.0,
+          "text": "Resumen: delantera, mueven las dos de delante;"
+        },
+        {
+          "startSeconds": 85.4,
+          "endSeconds": 86.6,
+          "text": "trasera, las dos de atrás;"
+        },
+        {
+          "startSeconds": 86.8,
+          "endSeconds": 89.367,
+          "text": "AWD o 4x4, pueden mover las cuatro."
+        },
+        {
+          "startSeconds": 89.833,
+          "endSeconds": 91.567,
+          "text": "Elige según tus rutas y la versión concreta."
+        },
+        {
+          "startSeconds": 92.033,
+          "endSeconds": 93.167,
+          "text": "¿Qué tracción lleva tu coche?"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "https://kilometroclaro.com/guias/tipos-traccion-coche/",
+    "https://www.ford.com.au/support/how-tos/owner-resources/vehicle-specifications/what-is-the-difference-between-the-different-drive-types",
+    "https://www.audi.tt/en/experience/quattro-technology/how-quattro-works/"
+  ]
+}

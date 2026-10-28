@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { brands } from '../../../data/brands';
+import { getModelPage } from '../../../data/model-pages';
+import '../../../styles/brands.css';
+import '../../../styles/model-pages.css';
+
+export function getStaticPaths() {
+  return brands.flatMap((brand) => brand.models.flatMap((model) => {
+    if (!model.pageSlug) return [];
+    const detail = getModelPage(brand.slug, model.pageSlug);
+    if (!detail) throw new Error(`Falta el contenido para la ficha ${brand.slug}/${model.pageSlug}.`);
+    return [{ params: { brand: brand.slug, model: model.pageSlug }, props: { brand, model, detail } }];
+  }));
+}
+
+const { brand, model, detail } = Astro.props;
+const modelName = model.name.startsWith(brand.name) ? model.name : `${brand.name} ${model.name}`;
+const photoMethod = detail.image
+  ? 'La fotografía y su licencia se acreditan junto a la imagen.'
+  : 'Esta ficha no incluye fotografía promocional; las especificaciones enlazan a las fuentes oficiales.';
+---
+
+<BaseLayout title={detail.title} description={detail.description}>
+  <div class="wrap page-wrap brands-page model-detail-page">
+    <Breadcrumbs items={[
+      { label: 'Inicio', href: '/' },
+      { label: 'Marcas', href: '/marcas/' },
+      { label: brand.name, href: `/marcas/${brand.slug}/` },
+      { label: model.name },
+    ]} />
+
+    <article>
+      <header class="model-detail-intro">
+        <div class:list={['model-detail-hero-grid', { 'model-detail-hero-grid--no-photo': !detail.image }]}>
+          <div class="model-detail-hero-copy">
+            <div class="model-detail-brandline">
+              <img src={brand.logo} alt={`Emblema de ${brand.name}`} width="70" height="52" fetchpriority="high" />
+              <span>{brand.name} · {model.body}</span>
+            </div>
+            <h1>{modelName}</h1>
+            <p class="model-detail-lead">{detail.intro}</p>
+            <a class="model-detail-official-link" href={detail.officialUrl} target="_blank" rel="noopener noreferrer">Consultar {model.name} en {brand.name} España</a>
+          </div>
+          {detail.image && (
+            <figure class="model-detail-photo">
+              <img src={detail.image.src} alt={detail.image.alt} width={detail.image.width} height={detail.image.height} fetchpriority="high" decoding="async" />
+              <figcaption>
+                Foto: <a href={detail.image.authorUrl} target="_blank" rel="noopener noreferrer">{detail.image.authorName}</a> · <a href={detail.image.sourceUrl} target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> · <a href={detail.image.licenseUrl} target="_blank" rel="noopener noreferrer">{detail.image.licenseName}</a>. Archivo redimensionado para web; se indica la licencia original.{detail.image.caption && ` ${detail.image.caption}`}
+              </figcaption>
+            </figure>
+          )}
+        </div>
+      </header>
+
+      <section class="model-detail-section" aria-labelledby="model-versions-title">
+        <div class="model-detail-section-heading">
+          <span class="brands-kicker">Motores y par máximo</span>
+          <h2 id="model-versions-title">Motorizaciones del {model.name} en España</h2>
+        </div>
+        <p>{detail.powertrainSummary}</p>
+        <div class="model-detail-table-wrap" role="region" aria-label={`Motorizaciones del ${modelName}`} tabindex="0">
+          <table class="model-detail-table">
+            <thead>
+              <tr>
+                <th scope="col">Versión</th>
+                <th scope="col">Potencia</th>
+                <th scope="col">Cilindrada</th>
+                <th scope="col">Par máximo</th>
+                <th scope="col">A qué corresponde</th>
+                <th scope="col">Régimen</th>
+                <th scope="col">Dato complementario</th>
+              </tr>
+            </thead>
+            <tbody>
+              {detail.versions.map((version) => (
+                <tr>
+                  <th scope="row">{version.name}</th>
+                  <td>{version.power}</td>
+                  <td>{version.displacement}</td>
+                  <td>{version.maxTorque}</td>
+                  <td>{version.torqueScope}</td>
+                  <td>{version.torqueRpm}</td>
+                  <td>{version.additionalTorque ?? version.note ?? '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="model-detail-note">El par y su régimen se refieren al elemento indicado en cada fila. En los modelos eléctricos no existe cilindrada térmica ni un régimen de par comparable. Cuando {brand.name} no publica una cifra o no aclara su alcance en la fuente consultada, lo señalamos para no presentar una estimación como dato oficial.</p>
+        {detail.specNote && <p class="model-detail-note model-detail-note--method">{detail.specNote}</p>}
+      </section>
+
+      {detail.figures && detail.figures.length > 0 && (
+        <section class="model-detail-section" aria-labelledby="model-figures-title">
+          <div class="model-detail-section-heading">
+            <span class="brands-kicker">Cifras de referencia</span>
+            <h2 id="model-figures-title">Datos publicados por {brand.name}</h2>
+          </div>
+          <dl class="model-detail-specs">
+            {detail.figures.map((figure) => <div><dt>{figure.label}</dt><dd>{figure.value}</dd></div>)}
+          </dl>
+          <p class="model-detail-note">Los datos WLTP sirven para comparar vehículos ensayados con el mismo procedimiento. El consumo, las emisiones o la autonomía reales varían con la versión, las condiciones y el uso.</p>
+        </section>
+      )}
+
+      <section class="model-detail-section model-detail-dimensions" aria-labelledby="model-facts-title">
+        <div class="model-detail-section-heading">
+          <span class="brands-kicker">En contexto</span>
+          <h2 id="model-facts-title">Datos principales</h2>
+        </div>
+        <dl class="model-detail-specs">
+          {detail.facts.map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
+        </dl>
+      </section>
+
+      <section class="model-detail-explainer" aria-labelledby="model-drive-title">
+        <span class="brands-kicker">Qué conviene saber</span>
+        <h2 id="model-drive-title">Cómo interpretar esta gama</h2>
+        <p>{detail.usageNote}</p>
+      </section>
+
+      <section class="model-detail-next" aria-labelledby="model-next-title">
+        <span class="brands-kicker">Siguiente paso</span>
+        <h2 id="model-next-title">Relaciona la ficha con tu uso</h2>
+        <p>Las cifras técnicas ayudan a comparar versiones. Para estimar el gasto real, introduce tus kilómetros, consumo y precios habituales en las herramientas de Kilómetro Claro.</p>
+        <div class="model-detail-links">
+          <a href="/calculadoras/consumo-combustible/">Calcula el consumo del coche</a>
+          <a href="/calculadoras/coste-anual-coche/">Estima el coste anual</a>
+          <a href={`/marcas/${brand.slug}/`}>Ver todos los modelos {brand.name}</a>
+        </div>
+      </section>
+
+      <footer class="model-detail-sources">
+        <h2>Fuentes y método</h2>
+        <p>Ficha revisada el {detail.reviewedAt}. Hemos priorizado el catálogo, la página técnica y la gama oficial de {brand.name} España. Los datos de cilindrada, potencia y par se muestran con el alcance que el fabricante especifica; los regímenes no publicados y las diferencias entre documentos se indican expresamente. {photoMethod} Esta página no es una prueba de conducción ni una recomendación de compra.</p>
+        <ul>
+          {detail.sources.map((item) => <li><a href={item.url} target="_blank" rel="noopener noreferrer">{item.label}</a></li>)}
+        </ul>
+      </footer>
+    </article>
+  </div>
+</BaseLayout>

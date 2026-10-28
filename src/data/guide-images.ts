@@ -5,7 +5,9 @@ export interface GuideImage {
   caption: string;
   author?: string;
   source?: string;
+  sourceName?: string;
   license?: string;
+  licenseName?: string;
   width: number;
   height: number;
 }
@@ -103,10 +105,14 @@ export const guideImages: Record<string, GuideImage> = {
     width: 960, height: 641,
   },
   'porsche-mission-s-2026': {
-    src: '/images/guides/porsche-mission-s-architecture.png',
-    alt: 'Diagrama editorial de una plataforma deportiva conceptual con motor central; no representa el Porsche Mission S',
-    caption: 'Ilustración conceptual propia basada únicamente en la arquitectura de motor central comunicada por Porsche. No representa el diseño ni las especificaciones del Mission S de producción.',
-    author: 'Kilómetro Claro',
+    src: '/images/guides/porsche-emblema-mission-s.jpg',
+    alt: 'Primer plano del escudo Porsche sobre la carrocería clara de un coche',
+    caption: 'Primer plano de un emblema Porsche. Fotografía de contexto: no muestra el Mission S ni anticipa su diseño final.',
+    author: 'Robert Schwarz',
+    source: 'https://unsplash.com/photos/a-close-up-of-a-porsche-emblem-on-a-white-car-dLXxIeMWMgA',
+    sourceName: 'Unsplash',
+    license: 'https://unsplash.com/license',
+    licenseName: 'Licencia Unsplash',
     width: 1600, height: 900,
   },
   'que-coche-comprar-segun-presupuesto': {
@@ -127,24 +133,36 @@ export const guideImages: Record<string, GuideImage> = {
     width: 960, height: 641,
   },
   'tipos-cambio-automatico': {
-    src: '/images/guides/tipos-cambio-automatico.svg',
-    alt: 'Esquema comparativo de cuatro cambios automáticos: convertidor de par, doble embrague, CVT y e-CVT híbrido',
-    caption: 'Esquema editorial: cada sistema transmite la fuerza de una forma distinta. En especial, la e-CVT híbrida no funciona como una CVT de correa y poleas.',
-    author: 'Kilómetro Claro',
+    src: '/images/guides/tipos-cambio-automatico.jpg',
+    alt: 'Selector de cambio automático con las posiciones P, R, N y D/M',
+    caption: 'Selector automático de un coche. La forma del mando no permite identificar por sí sola si la caja usa convertidor de par, doble embrague o variador.',
+    author: 'Erik Mclean',
+    source: 'https://unsplash.com/photos/close-up-of-a-cars-automatic-gear-shifter-and-control-dial-q5ki98Gqp3w',
+    sourceName: 'Unsplash',
+    license: 'https://unsplash.com/license',
+    licenseName: 'Licencia Unsplash',
     width: 1600, height: 900,
   },
   'tipos-traccion-coche': {
     src: '/images/guides/tipos-traccion-coche.jpg',
-    alt: 'Esquema editorial que muestra qué ruedas reciben fuerza en un coche de tracción delantera, trasera, total AWD y 4x4',
-    caption: 'Ilustración propia de los ejes motrices en cuatro configuraciones. La denominación comercial y el funcionamiento concreto pueden variar según el fabricante.',
-    author: 'Kilómetro Claro',
-    width: 1600, height: 900,
+    alt: 'Dos vehículos todoterreno circulan por una pista de tierra',
+    caption: 'Dos vehículos preparados para circular fuera del asfalto. La fotografía ilustra ese uso, pero no compara las capacidades de cada sistema de tracción.',
+    author: '4wheelhouse',
+    source: 'https://unsplash.com/photos/two-suvs-driving-on-a-dirt-track-pjzstPMRWvw',
+    sourceName: 'Unsplash',
+    license: 'https://unsplash.com/license',
+    licenseName: 'Licencia Unsplash',
+    width: 1600, height: 1200,
   },
   'tipos-luces-coche': {
-    src: '/images/guides/tipos-luces-coche.svg',
-    alt: 'Esquema de cuatro tecnologías de faros: halógena, xenón, LED y láser, con haces ilustrativos sin escala',
-    caption: 'Esquema editorial propio. La forma y el alcance del haz dependen también de la óptica, el reglaje y la versión del vehículo; los haces no están dibujados a escala.',
-    author: 'Kilómetro Claro',
+    src: '/images/guides/tipos-luces-coche.jpg',
+    alt: 'Un todoterreno ilumina con sus faros una pista al anochecer',
+    caption: 'Faros de un todoterreno en una pista al anochecer. El alcance y la distribución reales dependen del tipo de óptica, el reglaje y el vehículo.',
+    author: 'Neal Markham',
+    source: 'https://unsplash.com/photos/landscape-photography-of-vehicle-with-turned-on-headlights--33jqDBSmDQ',
+    sourceName: 'Unsplash',
+    license: 'https://unsplash.com/license',
+    licenseName: 'Licencia Unsplash',
     width: 1600, height: 900,
   },
 };

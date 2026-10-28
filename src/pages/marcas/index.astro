@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import MaximalistHeader from '../../components/MaximalistHeader.astro';
+import MaximalistFooter from '../../components/MaximalistFooter.astro';
+import { brands, brandsLastReviewed } from '../../data/brands';
+import '../../styles/brands.css';
+
+const powertrains = [...new Set(brands.flatMap((brand) => brand.powertrains))].sort((a, b) => a.localeCompare(b, 'es'));
+const countries = [...new Set(brands.map((brand) => brand.country))].sort((a, b) => a.localeCompare(b, 'es'));
+const salesOrder2025 = ['toyota', 'renault', 'volkswagen', 'hyundai', 'seat', 'dacia', 'kia', 'peugeot', 'mercedes-benz', 'bmw'];
+const directoryBrands = [...brands].sort((a, b) => {
+  const aRank = salesOrder2025.indexOf(a.slug);
+  const bRank = salesOrder2025.indexOf(b.slug);
+  const normalizedARank = aRank < 0 ? Number.MAX_SAFE_INTEGER : aRank;
+  const normalizedBRank = bRank < 0 ? Number.MAX_SAFE_INTEGER : bRank;
+  return normalizedARank - normalizedBRank || a.name.localeCompare(b.name, 'es');
+});
+---
+
+<BaseLayout
+  title="Marcas de coches: modelos y motores | Kilómetro Claro"
+  description="Explora fichas de marcas de coches con modelos y motorizaciones disponibles en España, contexto de cada fabricante y enlaces a sus webs oficiales."
+  hideHeader={true}
+  hideFooter={true}
+>
+  <MaximalistHeader active="brands" />
+  <div class="brands-home-surface">
+    <div class="wrap page-wrap brands-page">
+      <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Marcas' }]} />
+
+    <section class="brands-directory" id="directorio" aria-labelledby="directory-title">
+      <header class="brands-section-heading">
+        <div>
+          <span class="brands-kicker">Directorio de marcas</span>
+          <h1 id="directory-title">¿Qué marca quieres conocer?</h1>
+        </div>
+        <p>Las diez primeras siguen el orden de nuestra <a href="/guias/marcas-coches-mas-vendidas-espana-2025/">guía de ventas de 2025</a>. Después encontrarás otras marcas presentes en el mercado español. Consulta el catálogo oficial para confirmar versiones y disponibilidad.</p>
+      </header>
+
+      <div class="brand-filters" role="search" aria-label="Filtrar marcas de coches">
+        <label class="brand-search-field" for="brand-search">
+          <span>Buscar una marca o modelo</span>
+          <input id="brand-search" type="search" placeholder="Ej.: Toyota, eléctrico, Duster…" autocomplete="off" aria-controls="brand-card-grid" />
+        </label>
+        <label class="brand-country-field" for="brand-country">
+          <span>País de origen</span>
+          <select id="brand-country" aria-controls="brand-card-grid">
+            <option value="">Todos los países</option>
+            {countries.map((country) => <option value={country.toLocaleLowerCase('es')}>{country}</option>)}
+          </select>
+        </label>
+        <label class="brand-type-field" for="brand-powertrain">
+          <span>Tipo de motorización</span>
+          <select id="brand-powertrain" aria-controls="brand-card-grid">
+            <option value="">Todas las motorizaciones</option>
+            {powertrains.map((powertrain) => <option value={powertrain.toLocaleLowerCase('es')}>{powertrain}</option>)}
+          </select>
+        </label>
+      </div>
+
+      <div class="brand-card-grid" id="brand-card-grid">
+        {directoryBrands.map((brand, index) => (
+          <article
+            class={`brand-directory-card brand-card-tone-${index + 1}`}
+            data-brand-search={`${brand.name} ${brand.country} ${brand.descriptor} ${brand.powertrains.join(' ')} ${brand.models.map((model) => model.name).join(' ')}`.toLocaleLowerCase('es')}
+            data-brand-country={brand.country.toLocaleLowerCase('es')}
+            data-brand-powertrains={brand.powertrains.map((powertrain) => powertrain.toLocaleLowerCase('es')).join('|')}
+          >
+            <a class="brand-card-main" href={`/marcas/${brand.slug}/`}>
+              <span class="brand-card-topline"><span>{brand.country}</span><span>{brand.models.length} modelos destacados</span></span>
+              <span class="brand-card-name-row">{brand.logo ? <img class="brand-card-logo" src={brand.logo} alt="" width="55" height="55" loading="lazy" /> : <span class="brand-monogram" aria-hidden="true">{brand.name.slice(0, 1)}</span>}<span><h3>{brand.name}</h3><small>{brand.descriptor}</small></span></span>
+              <span class="brand-card-techs" aria-label="Motorizaciones en la selección">
+                {brand.powertrains.map((powertrain) => <span>{powertrain}</span>)}
+              </span>
+              <span class="brand-card-action">Ver ficha de marca</span>
+            </a>
+            <a class="brand-official-link" href={brand.officialUrl} target="_blank" rel="noopener noreferrer">Web oficial de {brand.name}</a>
+          </article>
+        ))}
+      </div>
+      <p class="brands-no-results" id="brand-no-results" role="status" aria-live="polite" hidden>No hay marcas que coincidan con esa búsqueda. Prueba con otro nombre, país o tipo de motor.</p>
+    </section>
+
+    <aside class="brands-method-note" aria-labelledby="brands-method-title">
+      <span class="brands-method-mark" aria-hidden="true">i</span>
+      <div>
+        <h2 id="brands-method-title">Cómo leer este directorio</h2>
+        <p>Los nombres de motorización se resumen a nivel de modelo: no todas las combinaciones están disponibles en cada acabado. La gama se contrastó con las webs oficiales el {brandsLastReviewed}; los precios, campañas, equipamientos y unidades en stock pueden cambiar y no se incluyen aquí.</p>
+      </div>
+    </aside>
+    </div>
+  </div>
+  <MaximalistFooter />
+
+  <script>
+    const search = document.querySelector<HTMLInputElement>('#brand-search');
+    const country = document.querySelector<HTMLSelectElement>('#brand-country');
+    const powertrain = document.querySelector<HTMLSelectElement>('#brand-powertrain');
+    const cards = [...document.querySelectorAll<HTMLElement>('.brand-directory-card')];
+    const emptyState = document.querySelector<HTMLElement>('#brand-no-results');
+
+    const normalize = (value: string) => value.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    const updateCards = () => {
+      const query = normalize(search?.value ?? '');
+      const selectedCountry = normalize(country?.value ?? '');
+      const selectedPowertrain = normalize(powertrain?.value ?? '');
+      let visibleCount = 0;
+
+      for (const card of cards) {
+        const matchesText = normalize(card.dataset.brandSearch ?? '').includes(query);
+        const matchesCountry = !selectedCountry || normalize(card.dataset.brandCountry ?? '') === selectedCountry;
+        const cardPowertrains = (card.dataset.brandPowertrains ?? '').split('|').map(normalize);
+        const matchesPowertrain = !selectedPowertrain || cardPowertrains.includes(selectedPowertrain);
+        const visible = matchesText && matchesCountry && matchesPowertrain;
+        card.hidden = !visible;
+        if (visible) visibleCount += 1;
+      }
+
+      if (emptyState) emptyState.hidden = visibleCount > 0;
+    };
+
+    search?.addEventListener('input', updateCards);
+    country?.addEventListener('change', updateCards);
+    powertrain?.addEventListener('change', updateCards);
+  </script>
+</BaseLayout>

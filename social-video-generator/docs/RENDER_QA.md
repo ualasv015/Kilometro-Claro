@@ -52,3 +52,14 @@ La inspección por fotogramas no equivale a una prueba en cada interfaz de Insta
 - Vídeo 3: render final con 28,966667 s de imagen y 28,971 s de audio AAC; 869 fotogramas a 30 fps. El WAV original dura 28,960 s, así que la diferencia de salida es de 0,011 s por el empaquetado AAC.
 - Los audios 1 y 2 se aceleraron ligeramente para ajustarlos a 32 y 30 segundos, conservando el tono. En respuesta a la revisión del usuario, el vídeo 3 ahora mantiene el WAV a velocidad original; se acortaron la duración y los límites de escena para ajustarlos a sus pausas.
 - `pnpm typecheck` y el render final `pnpm render-details -- data/videos/video-003.json` terminaron correctamente. Los WAV adjuntos y sus copias en `public/audio/` tienen el mismo SHA-256; el vídeo 3 reproduce el original a velocidad 1×.
+
+## Reel de tipos de tracción
+
+- `pnpm typecheck`: sin errores TypeScript.
+- `pnpm render-drivetrain -- data/videos/video-004.json`: render terminado correctamente.
+- El WAV aportado se copió a `public/audio/voice-video-004.wav`; ambos archivos tienen el mismo SHA-256. Remotion lo reproduce a velocidad 1×, sin modificar el audio.
+- `ffprobe`: H.264, AAC estéreo a 48 kHz, 1080 × 1920, 30 fps constantes y 2806 fotogramas; imagen de 93,533 s, audio empaquetado de 93,547 s y 46 124 642 bytes. H.264 se exporta a CRF 15, preset slow y GOP de 60.
+- Se quemaron 35 subtítulos y se generó `output/video-004-es.srt`. Las escenas y subtítulos se ajustaron a las pausas reales del WAV: el bloque AWD comienza a 54,367 s, tras la advertencia de lluvia.
+- Se inspeccionaron fotogramas finales a 52, 55 y 77 s: el de 52 aún muestra la advertencia de lluvia con su subtítulo; a 55 comienza AWD con el texto correspondiente; y el plano de solapamiento AWD/4x4 coincide con su explicación.
+- Se redujeron partículas y microvibraciones decorativas para limpiar la imagen, manteniendo el movimiento de los coches y los cambios de plano.
+- La escena sobre mojado mantiene la advertencia de recreación. El montaje recuerda que la tracción no garantiza adherencia ni mejora por sí sola la frenada, y que la reductora depende de la versión.

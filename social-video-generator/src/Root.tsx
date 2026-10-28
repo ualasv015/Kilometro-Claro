@@ -8,10 +8,13 @@ import {validateRankingVideo} from './content/validate-ranking';
 import {CarSales2025} from './compositions/CarSales2025';
 import hiddenDetailsRaw from '../data/videos/video-003.json';
 import {HiddenCarDetails, type HiddenDetailsSpec} from './compositions/HiddenCarDetails';
+import drivetrainRaw from '../data/videos/video-004.json';
+import {DrivetrainExplainer, type DrivetrainSpec} from './compositions/DrivetrainExplainer';
 
 const defaultSpec = validateVideoSpec(rawSpec);
 const rankingSpec = validateRankingVideo(rankingRaw);
 const hiddenDetailsSpec = hiddenDetailsRaw as unknown as HiddenDetailsSpec;
+const drivetrainSpec = drivetrainRaw as unknown as DrivetrainSpec;
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -41,6 +44,15 @@ export const RemotionRoot: React.FC = () => (
     width={1080}
     height={1920}
     defaultProps={hiddenDetailsSpec}
+  />
+  <Composition
+    id="DrivetrainExplainerReel"
+    component={DrivetrainExplainer}
+    durationInFrames={Math.round(drivetrainSpec.durationSeconds * drivetrainSpec.fps)}
+    fps={drivetrainSpec.fps}
+    width={1080}
+    height={1920}
+    defaultProps={drivetrainSpec}
   />
   </>
 );

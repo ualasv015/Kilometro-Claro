@@ -15,6 +15,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: title,
   description,
+  image: 'https://kilometroclaro.com/images/guides/porsche-emblema-mission-s.jpg',
   datePublished: publishedDate,
   dateModified: modifiedDate,
   inLanguage: 'es-ES',
@@ -27,7 +28,7 @@ const articleSchema = {
 <BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
   <div class="wrap page-wrap guide-page">
-    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Comparar coches', href: '/categorias/comparar-coches/' }, { label: 'Porsche Mission S' }]} />
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Porsche Mission S' }]} />
     <article class="guide-article">
       <header class="guide-header">
         <span class="eyebrow">Comparar coches · Actualizada el 27 de octubre de 2026</span>
@@ -39,7 +40,7 @@ const articleSchema = {
       <aside class="quick-answer" aria-label="Respuesta rápida">
         <strong>Respuesta rápida</strong>
         <p>El Mission S es, por ahora, un <strong>modelo de visión</strong> presentado el 15 de octubre de 2026. Porsche ha anunciado una futura plataforma de superdeportivos con motor central para una oferta permanente <strong>por encima del 911</strong>. No ha comunicado precio, potencia, motorización concreta ni fecha de comercialización. Por ese posicionamiento, Ferrari, Lamborghini y McLaren son referencias razonables, pero todavía no existe una comparación técnica directa.</p>
-        <a class="button-primary" href="#confirmado">Qué está confirmado <span aria-hidden="true">↓</span></a>
+        <a class="button-primary" href="#confirmado">Qué está confirmado </a>
       </aside>
       
       <GuideImage slug="porsche-mission-s-2026" />
@@ -123,7 +124,7 @@ const articleSchema = {
         <li><strong>¿Qué conservará el coche de serie?</strong> Los mandos, el puesto de conducción, la aerodinámica y hasta el nombre pueden evolucionar entre un modelo de visión y uno homologado.</li>
         <li><strong>¿Qué significará «oferta permanente»?</strong> Habrá que ver versiones, disponibilidad y continuidad real después del lanzamiento.</li>
       </ol>
-      <aside class="official-source"><strong>Qué se puede comparar hoy</strong><p>Porsche aún no ha publicado el precio, el consumo ni la propulsión definitiva del vehículo de producción. Por eso no se puede calcular ahora el coste de propiedad del Mission S; sí puedes probar escenarios generales entre tecnologías con datos propios.</p><a href="/calculadoras/coste-total-electrico-combustion/">Abrir el comparador de coste a cinco años <span aria-hidden="true">→</span></a></aside>
+      <aside class="official-source"><strong>Qué se puede comparar hoy</strong><p>Porsche aún no ha publicado el precio, el consumo ni la propulsión definitiva del vehículo de producción. Por eso no se puede calcular ahora el coste de propiedad del Mission S; sí puedes probar escenarios generales entre tecnologías con datos propios.</p><a href="/calculadoras/coste-total-electrico-combustion/">Abrir el comparador de coste a cinco años </a></aside>
 
       <h2 id="conclusion">Conclusión: Porsche abre otra puerta, no cierra la del 911</h2>
       <p>El Mission S es una noticia relevante porque Porsche anuncia una plataforma de motor central para una gama permanente situada por encima del 911. La historia se cuenta mejor como una ampliación de la familia que como el final de un icono. Ferrari 849 Testarossa, Lamborghini Temerario y McLaren 750S ayudan a imaginar el terreno de juego, pero hoy solo ofrecen referencias: faltan el precio, la mecánica y las prestaciones del Porsche.</p>

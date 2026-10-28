@@ -39,3 +39,13 @@ El proyecto no incluye tomas del vehículo real, así que este render es una ver
 ## Sincronización de voz
 
 Los archivos de voz generados son la fuente de verdad para el ritmo. No se cambia su velocidad ni tono para ajustarlos a una duración prevista: se adapta la duración del vídeo, los cortes, las animaciones y el cierre a la locución disponible. El render valida que la duración del vídeo se exprese en fotogramas enteros.
+
+## Ritmo visual para retención
+
+En los nuevos reels se priorizan los estímulos visuales: evitar mantener un plano estático durante varios segundos; alternar encuadres, ilustraciones y detalles cada 2–4 segundos cuando el texto lo permita; animar coches, ruedas, trayectorias y rótulos; y sincronizar cada cambio con la frase que representa. La intensidad visual no debe ocultar subtítulos, marca ni explicaciones de seguridad.
+
+## Reel: tipos de tracción
+
+`DrivetrainExplainerReel` sigue la locución de 93,52 segundos en un reel vertical de 93,53 segundos a 30 fps. Arranca con la pregunta «¿Qué tracción crees que usa este coche?» y un monoplaza genérico derrapando en una recreación de circuito. Después explica qué son las ruedas motrices; compara trasera y delantera; y termina diferenciando con cautela AWD/tracción total y los 4x4 que incorporan reductora. Usa cuatro planos animados en las explicaciones de tracción trasera y delantera, cortes frecuentes, cambios de escala y movimiento de cámara. La comparación sobre mojado se presenta como una ilustración, no como una regla: neumáticos, velocidad, firme y ayudas electrónicas influyen. La guía explica que las etiquetas AWD, tracción total y 4x4 pueden solaparse; se recomienda comprobar el sistema concreto.
+
+Las escenas son ilustraciones SVG propias y el símbolo C oficial permanece arriba. La locución original está en `public/audio/voice-video-004.wav` y se renderiza a velocidad 1×, sin alterar tono ni duración. Las frases aparecen en subtítulos integrados y también se exportan a `output/video-004-es.srt`. La guía y referencias usadas están listadas en `data/videos/video-004.json`.

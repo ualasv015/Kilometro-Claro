@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { brands, brandsLastReviewed } from '../../data/brands';
+import '../../styles/brands.css';
+
+export function getStaticPaths() {
+  return brands.map((brand) => ({ params: { slug: brand.slug }, props: { brand } }));
+}
+
+const { brand } = Astro.props;
+const relatedBrands = brands
+  .filter((item) => item.slug !== brand.slug)
+  .map((item) => ({
+    item,
+    score: (item.country === brand.country ? 3 : 0) + item.powertrains.filter((type) => brand.powertrains.includes(type)).length,
+  }))
+  .sort((a, b) => b.score - a.score || a.item.name.localeCompare(b.item.name, 'es'))
+  .slice(0, 4)
+  .map(({ item }) => item);
+const vehicleTypes = [...new Set(brand.models.map((model) => model.body))].sort((a, b) => a.localeCompare(b, 'es'));
+const modelPowertrains = [...new Set(brand.models.flatMap((model) => model.powertrains))].sort((a, b) => a.localeCompare(b, 'es'));
+const title = `${brand.name}: modelos, motores y origen | Kilómetro Claro`;
+const description = `Consulta el origen de ${brand.name}, sus modelos destacados y los tipos de motorización de la gama española. Incluye enlaces a las fuentes oficiales.`;
+const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilometroclaro.com');
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <div class="wrap page-wrap brands-page brand-profile-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Marcas', href: '/marcas/' }, { label: brand.name }]} />
+
+    <section class:list={['brand-facts-profile', { 'brand-facts-profile--volkswagen': brand.slug === 'volkswagen' }]} aria-label={`Información principal de ${brand.name}`}>
+      <div class="brand-facts-left">
+        <header class="brand-facts-heading">
+          {brand.logo
+            ? <img class="brand-facts-logo" src={brand.logo} alt={`Logotipo de ${brand.name}`} width="100" height="70" fetchpriority="high" />
+            : <span class="brand-facts-monogram" aria-hidden="true">{brand.name.slice(0, 1)}</span>}
+          <h1>{brand.name}</h1>
+        </header>
+        <dl class="brand-facts-list">
+          <div><dt>País</dt><dd>{brand.country}</dd></div>
+          <div><dt>Sede <span>(ciudad)</span></dt><dd>{brand.headquartersCity ?? 'No indicada'}</dd></div>
+          <div><dt>Desde <span>(año de fundación)</span></dt><dd>{brand.founded ?? 'No indicado'}</dd></div>
+        </dl>
+      </div>
+      <div class="brand-facts-copy">
+        <span class="brands-kicker">Descripción</span>
+        <p class="brand-facts-descriptor">{brand.descriptor}</p>
+        <h2>Biografía</h2>
+        <p class="brand-facts-bio">{brand.bio}</p>
+      </div>
+    </section>
+
+    <section class="toyota-model-section" aria-labelledby="brand-models-title">
+      <header class="toyota-model-heading">
+        <span class="brands-kicker">Gama en España · revisión {brandsLastReviewed}</span>
+        <h2 id="brand-models-title">Modelos {brand.name}</h2>
+        <p>{brand.marketNote} Filtra la selección por tipo de vehículo y motorización. Comprueba en la web oficial la versión y disponibilidad concretas.</p>
+      </header>
+
+      <div class="toyota-model-filters" role="group" aria-label={`Filtrar modelos ${brand.name}`}>
+        <label for="brand-body-filter">
+          <span>Tipo de coche</span>
+          <select id="brand-body-filter" aria-controls="brand-model-grid">
+            <option value="">Todos los tipos</option>
+            {vehicleTypes.map((type) => <option value={type}>{type}</option>)}
+          </select>
+        </label>
+        <label for="brand-powertrain-filter">
+          <span>Motorización</span>
+          <select id="brand-powertrain-filter" aria-controls="brand-model-grid">
+            <option value="">Todas las motorizaciones</option>
+            {modelPowertrains.map((powertrain) => <option value={powertrain}>{powertrain}</option>)}
+          </select>
+        </label>
+      </div>
+
+      <div class="toyota-model-grid" id="brand-model-grid">
+        {brand.models.map((model) => (
+          <article
+            class:list={["toyota-model-card", { "toyota-model-card--linked": model.pageSlug }]}
+            data-vehicle-type={model.body.toLocaleLowerCase('es')}
+            data-powertrains={model.powertrains.map((powertrain) => powertrain.toLocaleLowerCase('es')).join('|')}
+          >
+            <span class="toyota-model-type">{model.body}</span>
+            <h3>{model.pageSlug
+              ? <a class="toyota-model-link" href={`/marcas/${brand.slug}/${model.pageSlug}/`} aria-label={`Ver ficha del modelo ${model.name} de ${brand.name}`}>{model.name}</a>
+              : model.name}</h3>
+            <div class="toyota-model-powertrains" aria-label={`Motorizaciones de ${model.name}`}>
+              {model.powertrains.map((powertrain) => <span>{powertrain}</span>)}
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="toyota-model-empty" id="brand-model-empty" role="status" aria-live="polite" hidden>No hay modelos que coincidan con ambos filtros. Prueba otra combinación.</p>
+      <p class="brand-profile-source">La biografía se ha contrastado con <a href={brand.historyUrl ?? brand.officialUrl} target="_blank" rel="noopener noreferrer">información publicada por {brand.name}</a>. La selección de modelos y tecnologías se ha revisado en su <a href={brand.rangeUrl} target="_blank" rel="noopener noreferrer">gama oficial para España</a>.</p>
+    </section>
+
+    <section class="brand-directory-related" aria-labelledby="related-brands-title">
+      <div class="brands-section-heading">
+        <div><span class="brands-kicker">Sigue explorando</span><h2 id="related-brands-title">Más marcas del directorio</h2></div>
+        <a class="brand-official-text-link" href="/marcas/">Ver el directorio</a>
+      </div>
+      <div class="brand-related-grid">
+        {relatedBrands.map((item) => <a class="brand-related-card" href={`/marcas/${item.slug}/`}><span>{item.country}</span><strong>{item.name}</strong><small>{item.descriptor}</small></a>)}
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const bodyFilter = document.querySelector<HTMLSelectElement>('#brand-body-filter');
+    const motorFilter = document.querySelector<HTMLSelectElement>('#brand-powertrain-filter');
+    const modelCards = [...document.querySelectorAll<HTMLElement>('.toyota-model-card')];
+    const modelEmpty = document.querySelector<HTMLElement>('#brand-model-empty');
+    const normalizeFilter = (value: string) => value.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+
+    const filterBrandModels = () => {
+      const selectedType = normalizeFilter(bodyFilter?.value ?? '');
+      const selectedMotor = normalizeFilter(motorFilter?.value ?? '');
+      let visibleCount = 0;
+
+      for (const card of modelCards) {
+        const matchesType = !selectedType || normalizeFilter(card.dataset.vehicleType ?? '') === selectedType;
+        const motors = (card.dataset.powertrains ?? '').split('|').map(normalizeFilter);
+        const matchesMotor = !selectedMotor || motors.includes(selectedMotor);
+        const visible = matchesType && matchesMotor;
+        card.hidden = !visible;
+        if (visible) visibleCount += 1;
+      }
+
+      if (modelEmpty) modelEmpty.hidden = visibleCount > 0;
+    };
+
+    bodyFilter?.addEventListener('change', filterBrandModels);
+    motorFilter?.addEventListener('change', filterBrandModels);
+  </script>
+</BaseLayout>

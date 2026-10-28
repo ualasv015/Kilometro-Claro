@@ -23,7 +23,7 @@ const articleSchema = {
       '@type': 'Article',
       headline: 'Luces del coche: halógenas, xenón, LED, Matrix y láser',
       description,
-      image: 'https://kilometroclaro.com/images/og/guia-tipos-luces-coche.png',
+      image: 'https://kilometroclaro.com/images/guides/tipos-luces-coche.jpg',
       datePublished: publishedDate,
       dateModified: modifiedDate,
       inLanguage: 'es-ES',
@@ -48,7 +48,7 @@ const articleSchema = {
 <BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
   <div class="wrap page-wrap guide-page">
-    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Uso y mantenimiento', href: '/categorias/uso-mantenimiento/' }, { label: 'Tipos de luces del coche' }]} />
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Tipos de luces del coche' }]} />
     <article class="guide-article">
       <header class="guide-header">
         <span class="eyebrow">Uso y mantenimiento · Publicada el 27 de octubre de 2026</span>
@@ -60,7 +60,7 @@ const articleSchema = {
       <aside class="quick-answer" aria-label="Respuesta rápida">
         <strong>Respuesta rápida</strong>
         <p>En los coches actuales encontrarás principalmente faros <strong>halógenos, de xenón (HID) y LED</strong>. El láser se ha ofrecido como refuerzo del haz largo en algunos modelos, como el BMW i8; no proyecta un rayo láser directo sobre la carretera. <strong>Matrix LED, las luces de curva y los sistemas digitales describen cómo se reparte o adapta el haz</strong>, no una familia de bombillas independiente. El alcance depende del faro completo y de sus condiciones de uso: no hay una distancia única para cada tecnología.</p>
-        <a class="button-primary" href="#comparativa-alcance">Comparar tecnologías y alcance <span aria-hidden="true">↓</span></a>
+        <a class="button-primary" href="#comparativa-alcance">Comparar tecnologías y alcance </a>
       </aside>
       
       <GuideImage slug="tipos-luces-coche" />

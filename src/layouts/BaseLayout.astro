@@ -1,11 +1,13 @@
 ---
 import SeoHead from '../components/SeoHead.astro';
-import SiteHeader from '../components/SiteHeader.astro';
-import SiteFooter from '../components/SiteFooter.astro';
+import MaximalistHeader from '../components/MaximalistHeader.astro';
+import MaximalistFooter from '../components/MaximalistFooter.astro';
 import ConsentPreferences from '../components/ConsentPreferences.astro';
 import AnalyticsHead from '../components/AnalyticsHead.astro';
 import '../styles/global.css';
-const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://kilometroclaro.com'), webSiteSchema = false, ogType = 'website', publishedDate, modifiedDate = publishedDate, noIndex = ['/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
+import '../styles/maximalist-interiors.css';
+const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://kilometroclaro.com'), webSiteSchema = false, ogType = 'website', publishedDate, modifiedDate = publishedDate, hideHeader = false, hideFooter = false, noIndex = ['/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
+const activeSection = Astro.url.pathname.startsWith('/guias/') ? 'guides' : Astro.url.pathname.startsWith('/calculadoras/') ? 'calculators' : Astro.url.pathname.startsWith('/marcas/') ? 'brands' : undefined;
 const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Kilómetro Claro', url: Astro.site?.toString(), inLanguage: 'es-ES' };
 ---
 <!doctype html>
@@ -23,9 +25,9 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Ki
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <SiteHeader />
+    {!hideHeader && <MaximalistHeader active={activeSection} />}
     <main id="contenido"><slot /></main>
-    <SiteFooter />
+    {!hideFooter && <MaximalistFooter />}
     <ConsentPreferences />
   </body>
 </html>
