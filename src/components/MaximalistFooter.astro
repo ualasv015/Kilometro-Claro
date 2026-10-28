@@ -4,26 +4,35 @@
       <img src="/logo-marca-kilometro-claro.png" alt="" width="34" height="34" loading="lazy" />
       <span>Kilómetro <strong>Claro</strong></span>
     </a>
-    <nav class="home-footer-nav" aria-label="Privacidad e información legal">
+    <div class="home-footer-links">
+    <nav class="home-footer-nav" aria-label="Explorar Kilómetro Claro">
+      <a href="/guias/">Guías</a>
+      <a href="/calculadoras/">Calculadoras</a>
+      <a href="/marcas/">Marcas</a>
+      <a href="/sobre-nosotros/">Sobre nosotros</a>
+    </nav>
+    <nav class="home-footer-nav home-footer-legal" aria-label="Privacidad e información legal">
       <a href="/politica-de-privacidad/">Privacidad</a>
       <a href="/politica-de-cookies/">Cookies</a>
       <button type="button" data-consent-preferences>Preferencias de privacidad</button>
       <a href="/aviso-legal/">Aviso legal</a>
-      <a href="/sobre-nosotros/">Sobre nosotros</a>
       <a href="/contacto/">Contacto</a>
     </nav>
+    </div>
     <small>© {new Date().getFullYear()} Kilómetro Claro</small>
   </div>
 </footer>
 
 <style>
   .home-footer{border-top:4px solid #d9f36a;background:#173d34;color:#fff}
-  .home-footer-inner{display:flex;min-height:76px;align-items:center;justify-content:space-between;gap:20px;padding-block:13px}
+  .home-footer-inner{display:grid;grid-template-columns:auto minmax(0,1fr) auto;min-height:84px;align-items:center;gap:20px;padding-block:13px}
   .home-footer-brand{display:inline-flex;flex:none;align-items:center;gap:9px;color:#fff;font:800 13px Manrope,Arial,sans-serif;letter-spacing:-.3px}
   .home-footer-brand img{display:block;width:34px;height:34px;border-radius:10px;box-shadow:2px 2px 0 #d9f36a}.home-footer-brand strong{color:#d9f36a}
+  .home-footer-links{display:grid;justify-items:center;gap:7px}
   .home-footer-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}
   .home-footer-nav a,.home-footer-nav button{display:inline-flex;min-height:32px;align-items:center;padding:6px 9px;border:1px solid #ffffff40;border-radius:4px;background:transparent;color:#f7f8f5;font:700 9px system-ui,sans-serif;text-decoration:none;cursor:pointer}
+  .home-footer-legal a,.home-footer-legal button{min-height:27px;padding:4px 7px;color:#d7e1db;font-size:8px;font-weight:600}
   .home-footer-nav a:hover,.home-footer-nav a:focus-visible,.home-footer-nav button:hover,.home-footer-nav button:focus-visible{border-color:#d9f36a;background:#d9f36a;color:#173d34;outline:none}
   .home-footer-inner>small{flex:none;color:#c4d3cb;font-size:9px}
-  @media(max-width:600px){.home-footer-inner{width:calc(100% - 32px);flex-direction:column;gap:11px;padding-block:15px 12px}.home-footer-nav{gap:5px}.home-footer-nav a,.home-footer-nav button{min-height:30px;padding:5px 8px;font-size:8px}}
+  @media(max-width:760px){.home-footer-inner{grid-template-columns:1fr;justify-items:center;gap:12px;padding-block:16px 13px}.home-footer-links{gap:6px}.home-footer-nav{gap:5px}.home-footer-nav a,.home-footer-nav button{min-height:30px;padding:5px 8px;font-size:8px}.home-footer-legal a,.home-footer-legal button{min-height:26px;font-size:8px}}
 </style>

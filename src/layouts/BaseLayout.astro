@@ -4,11 +4,12 @@ import MaximalistHeader from '../components/MaximalistHeader.astro';
 import MaximalistFooter from '../components/MaximalistFooter.astro';
 import ConsentPreferences from '../components/ConsentPreferences.astro';
 import AnalyticsHead from '../components/AnalyticsHead.astro';
+import RelatedGuides from '../components/guides/RelatedGuides.astro';
 import '../styles/global.css';
 import '../styles/maximalist-interiors.css';
 const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://kilometroclaro.com'), webSiteSchema = false, ogType = 'website', publishedDate, modifiedDate = publishedDate, hideHeader = false, hideFooter = false, noIndex = ['/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
 const activeSection = Astro.url.pathname.startsWith('/guias/') ? 'guides' : Astro.url.pathname.startsWith('/calculadoras/') ? 'calculators' : Astro.url.pathname.startsWith('/marcas/') ? 'brands' : undefined;
-const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Kilómetro Claro', url: Astro.site?.toString(), inLanguage: 'es-ES' };
+const currentGuideSlug = Astro.url.pathname.match(/^\/guias\/([^/]+)\/$/)?.[1];
 ---
 <!doctype html>
 <html lang="es">
@@ -18,15 +19,17 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Ki
     <meta name="theme-color" content="#f7f8f5" />
     <meta name="google-site-verification" content="is6goDCFuFq3ahlPkeOApWpzaV8re1uRydzMNPc4rF4" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <SeoHead title={title} description={description} canonical={canonical} noIndex={noIndex} ogType={ogType} publishedDate={publishedDate} modifiedDate={modifiedDate} />
+    <SeoHead title={title} description={description} canonical={canonical} noIndex={noIndex} ogType={ogType} publishedDate={publishedDate} modifiedDate={modifiedDate} webSiteSchema={webSiteSchema} />
     <AnalyticsHead />
-    {webSiteSchema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
     <slot name="head" />
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     {!hideHeader && <MaximalistHeader active={activeSection} />}
-    <main id="contenido"><slot /></main>
+    <main id="contenido">
+      <slot />
+      {currentGuideSlug && <RelatedGuides slug={currentGuideSlug} />}
+    </main>
     {!hideFooter && <MaximalistFooter />}
     <ConsentPreferences />
   </body>

@@ -24,7 +24,7 @@ const publishedCount = guides.filter((guide) => guide.published).length;
         <span class="directory-kicker">Kilómetro Claro · Guías</span>
         <h1>Conduce con <em>más criterio.</em></h1>
         <p>Información útil para entender los gastos del coche, elegir con calma y resolver dudas de conducción. Cada guía parte de una pregunta concreta y la desarrolla con ejemplos y fuentes.</p>
-        <a class="directory-hero-link" href="#guia-temas">Explorar temas</a>
+        <a class="directory-hero-link" href="#guia-temas">Ver guías por tema</a>
       </div>
       <div class="directory-hero-mark" aria-label={`${publishedCount} guías publicadas`}>
         <span>LECTURAS</span>
@@ -72,7 +72,7 @@ const publishedCount = guides.filter((guide) => guide.published).length;
                     <span class="guide-catalog-label">{guide.published ? category : `${category} · Próximamente`}</span>
                     <h3><a href={`/guias/${guide.slug}/`}>{guide.title}</a></h3>
                     <p>{guide.description}</p>
-                    {guide.published && <a class="guide-catalog-link" href={`/guias/${guide.slug}/`} aria-label={`Leer la guía: ${guide.title}`}>Leer la guía</a>}
+                    {guide.published && <a class="guide-catalog-link" href={`/guias/${guide.slug}/`} aria-label={`Leer la guía: ${guide.title}`}>Leer: {guide.title}</a>}
                   </div>
                 </article>
               );

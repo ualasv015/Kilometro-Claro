@@ -6,6 +6,46 @@ const modelUrl = (slug: string) => `${volkswagen}/es/modelos/${slug}.html`;
 const configuratorUrl = (slug: string) => `${volkswagen}/es/configurador.html/__app/${slug}.app`;
 const source = (label: string, url: string) => ({ label, url });
 
+const volkswagenPhoto = (
+  file: string,
+  alt: string,
+  commonsFile: string,
+  authorName: string,
+  authorSlug: string,
+  height: number,
+  caption?: string,
+): NonNullable<ModelPageData['image']> => ({
+  src: `/images/models/${file}`,
+  alt,
+  width: 1280,
+  height,
+  caption,
+  sourceUrl: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(commonsFile)}`,
+  authorName,
+  authorUrl: `https://commons.wikimedia.org/wiki/User:${encodeURIComponent(authorSlug).replace(/%20/g, '_')}`,
+  licenseName: 'CC BY-SA 4.0',
+  licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+});
+
+const volkswagenPhotos: Record<string, NonNullable<ModelPageData['image']>> = {
+  polo: volkswagenPhoto('volkswagen-polo.jpg', 'Volkswagen Polo VI fotografiado en una exposición de automóviles.', 'Volkswagen Polo VI (2021) IMG 5322.jpg', 'Alexander Migl', 'Alexander Migl', 852),
+  'id-polo': volkswagenPhoto('volkswagen-id-polo.jpg', 'Volkswagen ID. Polo eléctrico fotografiado en una exposición de automóviles.', 'Volkswagen ID.Polo IMG 8260.jpg', 'Alexander Migl', 'Alexander Migl', 852),
+  taigo: volkswagenPhoto('volkswagen-taigo.jpg', 'Volkswagen Taigo fotografiado en una exposición de automóviles.', 'Volkswagen Taigo 1X7A0246.jpg', 'Alexander Migl', 'Alexander Migl', 721),
+  't-cross': volkswagenPhoto('volkswagen-t-cross.jpg', 'Volkswagen T-Cross de 2023 fotografiado en una exposición de automóviles.', 'Volkswagen T-Cross (2023) 1X7A1967.jpg', 'Alexander-93', 'Alexander-93', 854),
+  'id-cross': volkswagenPhoto('volkswagen-id-cross.jpg', 'Prototipo Volkswagen ID. Cross expuesto en IAA Mobility 2025, Múnich.', 'VW ID. Cross, IAA Summit 2025, Munich (20250908-P1050119).jpg', 'Matti Blume', 'Matti Blume', 960, 'La fotografía muestra el prototipo presentado en 2025; algunos detalles pueden diferir de la versión de serie.'),
+  golf: volkswagenPhoto('volkswagen-golf.jpg', 'Volkswagen Golf VIII fotografiado en una exposición de automóviles.', 'Volkswagen Golf VIII 1X7A0353.jpg', 'Alexander Migl', 'Alexander Migl', 695),
+  'id3-neo': volkswagenPhoto('volkswagen-id3-neo.jpg', 'Volkswagen ID.3 Neo fotografiado en una exposición de automóviles.', 'Volkswagen ID.3 Neo IMG 7255.jpg', 'Alexander Migl', 'Alexander Migl', 728),
+  't-roc': volkswagenPhoto('volkswagen-t-roc.jpg', 'Volkswagen T-Roc R-Line de nueva generación expuesto en Auto Zürich 2025.', 'VW T-Roc R-Line, Media Stage, Auto 2025, Zurich (20251029-P1074182).jpg', 'Matti Blume', 'Matti Blume', 960),
+  't-roc-cabrio': volkswagenPhoto('volkswagen-t-roc-cabrio.jpg', 'Volkswagen T-Roc Cabriolet fotografiado en una exposición de automóviles.', 'Volkswagen T-Roc Cabriolet (2021) 1X7A0319.jpg', 'Alexander Migl', 'Alexander Migl', 714),
+  'golf-variant': volkswagenPhoto('volkswagen-golf-variant.jpg', 'Volkswagen Golf VIII Variant, carrocería familiar, fotografiado en una exposición de automóviles.', 'Volkswagen Golf VIII Variant 1X7A0352.jpg', 'Alexander Migl', 'Alexander Migl', 697),
+  tiguan: volkswagenPhoto('volkswagen-tiguan.jpg', 'Volkswagen Tiguan de tercera generación fotografiado en una exposición de automóviles.', 'Volkswagen Tiguan III 1X7A2497.jpg', 'Alexander-93', 'Alexander-93', 905),
+  id4: volkswagenPhoto('volkswagen-id4.jpg', 'Volkswagen ID.4 eléctrico fotografiado en una exposición de automóviles.', 'Volkswagen ID.4 1X7A0360.jpg', 'Alexander Migl', 'Alexander Migl', 679),
+  tayron: volkswagenPhoto('volkswagen-tayron.jpg', 'Volkswagen Tayron europeo fotografiado en una exposición de automóviles.', 'Volkswagen Tayron (Europe) DSC 9343.jpg', 'Alexander Migl', 'Alexander Migl', 678),
+  id7: volkswagenPhoto('volkswagen-id7.jpg', 'Volkswagen ID.7 eléctrico fotografiado en una exposición de automóviles.', 'Volkswagen ID.7 1X7A1756.jpg', 'Alexander-93', 'Alexander-93', 627),
+  passat: volkswagenPhoto('volkswagen-passat.jpg', 'Volkswagen Passat Variant B9 fotografiado en una exposición de automóviles.', 'Volkswagen Passat Variant B9 1X7A1960.jpg', 'Alexander-93', 'Alexander-93', 688),
+  'id7-tourer': volkswagenPhoto('volkswagen-id7-tourer.jpg', 'Volkswagen ID.7 Tourer eléctrico fotografiado en una exposición de automóviles.', 'Volkswagen ID.7 Tourer Automesse Ludwigsburg 2024 IMG 1464.jpg', 'Alexander-93', 'Alexander-93', 791),
+};
+
 type VolkswagenModelSeed = {
   modelSlug: string;
   name: string;
@@ -57,6 +97,7 @@ const makeVolkswagenPage = (entry: VolkswagenModelSeed): Omit<ModelPageData, 'br
     facts: entry.facts,
     figures: entry.figures,
     specNote: entry.specNote,
+    image: volkswagenPhotos[entry.modelSlug],
     officialUrl,
     technicalUrl,
     sources,

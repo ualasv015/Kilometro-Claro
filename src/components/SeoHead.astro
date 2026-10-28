@@ -1,4 +1,6 @@
 ---
+import { site as siteConfig } from '../data/site';
+
 const guideSlug = Astro.url.pathname.match(/^\/guias\/([^/]+)\//)?.[1];
 const calculatorSlug = Astro.url.pathname.match(/^\/calculadoras\/([^/]+)\//)?.[1];
 const image = guideSlug
@@ -11,7 +13,40 @@ const image = guideSlug
       ? '/images/og/inicio.png'
       : '/images/og/kilometro-claro.png';
 const { title, description, canonical, noIndex = false, ogType = 'website', publishedDate, modifiedDate } = Astro.props;
-const fullImage = new URL(image, Astro.site ?? 'https://example.com').toString();
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? siteConfig.url;
+const fullImage = new URL(image, siteUrl).toString();
+const organizationId = `${siteUrl}/#organization`;
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': organizationId,
+  name: siteConfig.name,
+  url: `${siteUrl}/`,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteUrl}/logo-marca-kilometro-claro.png`,
+  },
+  sameAs: [
+    'https://www.instagram.com/kilometroclaro/',
+    'https://x.com/KilometroClaro',
+    'https://www.tiktok.com/@kilometro_claro',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'consultas y correcciones editoriales',
+    email: siteConfig.email,
+    availableLanguage: 'Spanish',
+  },
+};
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  name: siteConfig.name,
+  url: `${siteUrl}/`,
+  inLanguage: 'es-ES',
+  publisher: { '@id': organizationId },
+};
 ---
 <title>{title}</title>
 <meta name="description" content={description} />
@@ -36,3 +71,5 @@ const fullImage = new URL(image, Astro.site ?? 'https://example.com').toString()
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullImage} />
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+{Astro.props.webSiteSchema && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}

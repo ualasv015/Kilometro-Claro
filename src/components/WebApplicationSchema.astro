@@ -1,0 +1,20 @@
+---
+import { site } from '../data/site';
+
+const { tool } = Astro.props;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? site.url;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: tool.title,
+  description: tool.description,
+  url: new URL(`/calculadoras/${tool.slug}/`, `${siteUrl}/`).toString(),
+  applicationCategory: 'Calculadora web para conductores',
+  operatingSystem: 'Cualquier dispositivo con navegador web',
+  browserRequirements: 'JavaScript activado',
+  isAccessibleForFree: true,
+  inLanguage: 'es-ES',
+  provider: { '@id': `${siteUrl}/#organization` },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

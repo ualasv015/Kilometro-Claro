@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CalculatorForm from '../../components/CalculatorForm.astro';
+import WebApplicationSchema from '../../components/WebApplicationSchema.astro';
 import ToolCard from '../../components/ToolCard.astro';
 import { tools } from '../../data/tools';
 import { guides } from '../../data/guides';
@@ -13,6 +14,7 @@ const automaticTransmissionGuide = guides.find((guide) => guide.slug === 'tipos-
 const tractionGuide = guides.find((guide) => guide.slug === 'tipos-traccion-coche' && guide.published);
 ---
 <BaseLayout title={`${tool.title} | Kilómetro Claro`} description={tool.description}>
+  <WebApplicationSchema slot="head" tool={tool} />
   <div class="wrap page-wrap calculator-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Calculadoras', href: '/calculadoras/' }, { label: tool.shortTitle }]} />
     <section class="tool-hero">
@@ -27,13 +29,13 @@ const tractionGuide = guides.find((guide) => guide.slug === 'tipos-traccion-coch
       <h3>Ejemplo de cálculo</h3><p>{tool.example}</p>
       
       {tool.editorialSections.map((section) => <section class="calculator-explainer"><h3>{section.heading}</h3>{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</section>)}
-      {tool.slug === 'precio-electrico-auto-plus' && <aside class="official-source"><strong>Normativa consultada</strong><p>La estimación toma como referencia el Real Decreto 609/2026 y la convocatoria de la Línea 1 para 2026. Comprueba siempre la versión vigente y los datos confirmados de tu modelo.</p><a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-16010" target="_blank" rel="noopener noreferrer">Consultar el Real Decreto en el BOE </a></aside>}
       <section class="faq-section"><h2>Preguntas frecuentes</h2>{tool.faq.map((item) => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</section>
+      {tool.sources?.length && <section class="calculator-sources" aria-labelledby="calculator-sources-title"><h3 id="calculator-sources-title">Fuentes para contrastar</h3><p>Consulta la documentación original y confirma las condiciones aplicables a tu caso.</p><ul>{tool.sources.map((source) => <li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a><span>{source.context}</span></li>)}</ul></section>}
     </article>
-    {linkedGuide && <aside class="guide-related"><span class="eyebrow">Sigue aprendiendo</span><h2>{linkedGuide.title}</h2><p>{linkedGuide.description}</p><a href={`/guias/${linkedGuide.slug}/`}>Leer la guía relacionada </a></aside>}
+    {linkedGuide && <aside class="guide-related"><span class="eyebrow">Sigue aprendiendo</span><h2>{linkedGuide.title}</h2><p>{linkedGuide.description}</p><a href={`/guias/${linkedGuide.slug}/`}>Leer: {linkedGuide.title}</a></aside>}
     {tool.slug === 'coste-anual-coche' && automaticTransmissionGuide && <aside class="guide-related"><span class="eyebrow">Coste de propiedad</span><h2>{automaticTransmissionGuide.title}</h2><p>Conoce las diferencias entre transmisiones y qué revisar en el mantenimiento de la versión que estás comparando.</p><a href={`/guias/${automaticTransmissionGuide.slug}/`}>Consultar los tipos de cambio automático </a></aside>}
     {tool.slug === 'coste-anual-coche' && tractionGuide && <aside class="guide-related"><span class="eyebrow">Compara versiones</span><h2>{tractionGuide.title}</h2><p>Comprueba qué cambia entre tracción delantera, trasera, total y 4x4 antes de estimar los gastos de cada versión.</p><a href={`/guias/${tractionGuide.slug}/`}>Consultar los tipos de tracción </a></aside>}
     {related.length > 0 && <section class="related-section"><div class="section-heading"><div><span class="section-kicker">Sigue calculando</span><h2>Herramientas relacionadas</h2></div></div><div class="tool-grid related-grid">{related.map((relatedTool) => <ToolCard tool={relatedTool} />)}</div></section>}
   </div>
 </BaseLayout>
-<style>.guide-related,.official-source{max-width:760px;margin:24px 0 0;padding:19px 21px;background:#edf1eb;border-radius:7px}.guide-related h2{font:700 18px Manrope,Arial,sans-serif;margin:8px 0}.guide-related p,.official-source p{font-size:12px;color:#64716c;line-height:1.65;margin:6px 0 9px}.guide-related>a,.official-source>a{font-size:11px;font-weight:700;color:#1d5d4e}.guide-related>a span,.official-source>a span{padding-left:5px}.calculator-explainer{margin:28px 0 0}.calculator-explainer h3{margin-bottom:8px}.calculator-explainer p:last-child{margin-bottom:0}</style>
+<style>.guide-related,.calculator-sources{max-width:760px;margin:24px 0 0;padding:19px 21px;background:#edf1eb;border-radius:7px}.guide-related h2{font:700 18px Manrope,Arial,sans-serif;margin:8px 0}.guide-related p,.calculator-sources>p{font-size:12px;color:#64716c;line-height:1.65;margin:6px 0 9px}.guide-related>a,.calculator-sources a{font-size:11px;font-weight:700;color:#1d5d4e}.guide-related>a span{padding-left:5px}.calculator-sources h3{margin:0 0 7px;font:700 17px Manrope,Arial,sans-serif}.calculator-sources ul{display:grid;gap:10px;margin:12px 0 0;padding-left:18px}.calculator-sources li{padding-left:3px}.calculator-sources li span{display:block;margin-top:3px;color:#64716c;font-size:11px;line-height:1.55}.calculator-explainer{margin:28px 0 0}.calculator-explainer h3{margin-bottom:8px}.calculator-explainer p:last-child{margin-bottom:0}</style>

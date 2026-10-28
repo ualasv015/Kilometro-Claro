@@ -5,7 +5,7 @@ const { tool } = Astro.props;
   <span class="eyebrow">{tool.category}</span>
   <h3><a class="tool-card-title" href={`/calculadoras/${tool.slug}/`}>{tool.shortTitle}</a></h3>
   <p>{tool.description}</p>
-  <a class="text-link" href={`/calculadoras/${tool.slug}/`} aria-label={`Abrir ${tool.shortTitle}`}>Abrir calculadora</a>
+  <a class="text-link" href={`/calculadoras/${tool.slug}/`} aria-label={`Usar la calculadora: ${tool.shortTitle}`}>Usar {tool.shortTitle}</a>
 </article>
 <style>
   .tool-card{display:flex;flex-direction:column;align-items:flex-start}.tool-card h3 a{color:inherit;text-decoration:none}.tool-card h3 a:hover,.tool-card h3 a:focus-visible{text-decoration:underline;text-decoration-color:#7c9c8a;text-underline-offset:4px}.tool-card .text-link{margin-top:auto}
