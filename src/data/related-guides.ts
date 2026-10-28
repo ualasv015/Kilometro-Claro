@@ -1,4 +1,5 @@
 export const relatedGuideSlugs: Record<string, string[]> = {
+  'toyota-gr-gt': ['porsche-mission-s-2026', 'coche-hibrido-enchufable-o-microhibrido', 'tipos-cambio-automatico'],
   'cuanto-cuesta-mantener-coche-mes-espana': ['cuanto-cuesta-viaje-coche', 'como-calcular-consumo-real-coche', 'coches-baratos-espana'],
   'como-calcular-consumo-real-coche': ['como-reducir-consumo-combustible', 'cuanto-cuesta-viaje-coche', 'cuanto-cuesta-mantener-coche-mes-espana'],
   'cuanto-cuesta-viaje-coche': ['como-calcular-consumo-real-coche', 'consumo-coche-electrico-gasolina-diesel', 'cuanto-cuesta-mantener-coche-mes-espana'],
@@ -11,7 +12,7 @@ export const relatedGuideSlugs: Record<string, string[]> = {
   'nueva-normativa-dgt-octubre-2026': ['zonas-bajas-emisiones-espana-como-afectan', 'detalles-coche-que-quiza-no-conocias', 'tipos-luces-coche'],
   'marcas-coches-mas-fiables-ranking': ['marcas-coches-mas-vendidas-espana-2025', 'que-coche-comprar-segun-presupuesto', 'coches-baratos-espana'],
   'marcas-coches-mas-vendidas-espana-2025': ['marcas-coches-mas-fiables-ranking', 'que-coche-comprar-segun-presupuesto', 'coches-baratos-espana'],
-  'porsche-mission-s-2026': ['consumo-coche-electrico-gasolina-diesel', 'coche-hibrido-enchufable-o-microhibrido', 'marcas-coches-mas-vendidas-espana-2025'],
+  'porsche-mission-s-2026': ['toyota-gr-gt', 'coche-hibrido-enchufable-o-microhibrido', 'marcas-coches-mas-vendidas-espana-2025'],
   'detalles-coche-que-quiza-no-conocias': ['tipos-luces-coche', 'tipos-cambio-automatico', 'tipos-traccion-coche'],
   'tipos-cambio-automatico': ['tipos-traccion-coche', 'detalles-coche-que-quiza-no-conocias', 'marcas-coches-mas-fiables-ranking'],
   'tipos-traccion-coche': ['tipos-cambio-automatico', 'marcas-coches-mas-fiables-ranking', 'que-coche-comprar-segun-presupuesto'],

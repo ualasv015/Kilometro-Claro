@@ -14,6 +14,17 @@ export interface GuideImage {
 
 // Cada ficha de Wikimedia Commons enlazada abajo declara expresamente la licencia CC0 de la imagen.
 export const guideImages: Record<string, GuideImage> = {
+  'toyota-gr-gt': {
+    src: '/images/guides/toyota-gr-gt.jpg',
+    alt: 'Prototipo Toyota GR GT fotografiado en el circuito de Fuji',
+    caption: 'GR GT de desarrollo: la fotografía no representa una versión definitiva de producción.',
+    author: 'Toyota',
+    sourceName: 'Toyota GB',
+    source: 'https://media.toyota.co.uk/gazoo-racing-lexus-and-toyota-racing-celebrate-the-soul-of-sportscar-craftsmanship-at-the-goodwood-festival-of-speed/',
+    license: 'https://media.toyota.co.uk/gazoo-racing-lexus-and-toyota-racing-celebrate-the-soul-of-sportscar-craftsmanship-at-the-goodwood-festival-of-speed/',
+    licenseName: 'Uso editorial autorizado',
+    width: 2560, height: 1707,
+  },
   'coche-hibrido-enchufable-o-microhibrido': {
     src: '/images/guides/tipos-de-hibrido.jpg',
     webp: '/images/guides/tipos-de-hibrido.webp',

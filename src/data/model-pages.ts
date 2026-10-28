@@ -1,5 +1,6 @@
 import { volkswagenModels } from './volkswagen-model-pages';
 import { hyundaiModels } from './hyundai-model-pages';
+import { seatModels } from './seat-model-pages';
 
 export type ModelVersion = {
   name: string;
@@ -753,6 +754,7 @@ export const modelPages: ModelPageData[] = [
   ...renaultModels.map((model) => ({ ...model, brandSlug: 'renault', reviewedAt })),
   ...volkswagenModels,
   ...hyundaiModels,
+  ...seatModels,
 ];
 
 export const getModelPage = (brandSlug: string, modelSlug: string) =>

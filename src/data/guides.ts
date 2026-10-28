@@ -1,5 +1,13 @@
 export const guides = [
   {
+    slug: 'toyota-gr-gt',
+    title: 'Toyota GR GT: el V8 híbrido, su tecnología y sus rivales',
+    category: 'Comparar coches',
+    categorySlug: 'comparar-coches',
+    description: 'Explicamos la ingeniería del prototipo, sus objetivos y las diferencias frente a Porsche, Mercedes-AMG y Aston Martin, con fuentes oficiales.',
+    published: true,
+  },
+  {
     slug: 'cuanto-cuesta-mantener-coche-mes-espana',
     title: '¿Cuánto cuesta mantener un coche al mes en España?',
     category: 'Costes del coche',

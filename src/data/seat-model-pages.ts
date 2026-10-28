@@ -1,0 +1,260 @@
+import type { ModelPageData } from './model-pages';
+
+const reviewedAt = '28 de octubre de 2026';
+const seat = 'https://www.seat.es';
+const source = (label: string, url: string) => ({ label, url });
+const currentTorqueRpmNote = 'SEAT no publica el régimen en la ficha actual consultada';
+
+const image = (
+  file: string,
+  alt: string,
+  commonsFile: string,
+  authorName: string,
+  authorSlug: string,
+  licenseName: string,
+  licenseUrl: string,
+  width: number,
+  height: number,
+  caption: string,
+): NonNullable<ModelPageData['image']> => ({
+  src: `/images/models/${file}`,
+  alt,
+  caption,
+  width,
+  height,
+  sourceUrl: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(commonsFile)}`,
+  authorName,
+  authorUrl: `https://commons.wikimedia.org/wiki/User:${encodeURIComponent(authorSlug).replace(/%20/g, '_')}`,
+  licenseName,
+  licenseUrl,
+});
+
+const ccBySa4 = 'https://creativecommons.org/licenses/by-sa/4.0/';
+const ccBySa3Germany = 'https://creativecommons.org/licenses/by-sa/3.0/de/deed.es';
+
+const seatImages: Record<string, NonNullable<ModelPageData['image']>> = {
+  ibiza: image(
+    'seat-ibiza.jpg', 'SEAT Ibiza FR de la segunda actualización de la generación actual, fotografiado en exterior.',
+    'Seat Ibiza FR (V, 2. Facelift) – h 30082026.jpg', '© M 93', 'M_93',
+    'CC BY-SA 3.0 Alemania', ccBySa3Germany, 1280, 720,
+    'Fotografía de un Ibiza FR de 2026. El acabado y algunos detalles pueden variar respecto a la versión configurada en España.',
+  ),
+  arona: image(
+    'seat-arona.jpg', 'SEAT Arona de 2026 fotografiado en una exposición de automóviles.',
+    '2026 SEAT Arona Rutesheimer Autoschau 2026 IMG 6725.jpg', 'Alexander Migl', 'Alexander-93',
+    'CC BY-SA 4.0', ccBySa4, 1280, 799,
+    'Imagen de la actualización 2026; la motorización, el acabado y el equipamiento de la unidad pueden diferir.',
+  ),
+  leon: image(
+    'seat-leon.jpg', 'SEAT León de cuarta generación fotografiado en Stuttgart.',
+    'SEAT Leon Mk4 1X7A5845.jpg', 'Alexander Migl', 'Alexander-93',
+    'CC BY-SA 4.0', ccBySa4, 1280, 749,
+    'Fotografía de un León Mk4; no identifica una motorización ni un acabado concreto de la oferta española.',
+  ),
+  'leon-sportstourer': image(
+    'seat-leon-sportstourer.jpg', 'SEAT León Sportstourer de cuarta generación en Visby.',
+    'Seat León Sportstourer en Visby.jpg', 'Bene Riobó', 'Beninho',
+    'CC BY-SA 4.0', ccBySa4, 1280, 853,
+    'La imagen representa la carrocería familiar de la generación actual; los detalles de acabado pueden variar.',
+  ),
+  ateca: image(
+    'seat-ateca.jpg', 'SEAT Ateca Style fotografiado en exterior.',
+    'Seat Ateca Style – f 08062024.jpg', '© M 93', 'M_93',
+    'CC BY-SA 3.0 Alemania', ccBySa3Germany, 1280, 747,
+    'Unidad fotografiada en 2024. El acabado y el equipamiento pueden no coincidir con todas las versiones actuales.',
+  ),
+};
+
+const modelPages: ModelPageData[] = [
+  {
+    brandSlug: 'seat',
+    modelSlug: 'ibiza',
+    title: 'SEAT Ibiza: motores, consumo y datos técnicos | Kilómetro Claro',
+    description: 'Consulta la gama española del SEAT Ibiza: motores gasolina de 80, 115 y 150 CV, par máximo, dimensiones y maletero.',
+    intro: 'El Ibiza es el utilitario de cinco puertas de SEAT. La gama española consultada ofrece motores de gasolina atmosféricos y turbo, desde una versión de 80 CV hasta un 1.5 TSI de 150 CV con cambio DSG. Su tamaño contenido y sus cinco plazas lo sitúan como una alternativa para ciudad y desplazamientos cotidianos.',
+    powertrainSummary: 'La oferta publicada incluye el 1.0 MPI de 80 CV, el 1.0 TSI de 115 CV y el 1.5 TSI de 150 CV. El cambio depende de la motorización: la versión de acceso es manual, el 1.0 TSI puede combinarse con caja manual o DSG y el 1.5 TSI se ofrece con DSG.',
+    usageNote: 'En un utilitario conviene valorar más que la longitud: comprueba el espacio de las plazas traseras, el acceso al maletero y el tipo de trayecto habitual. La versión de 80 CV prioriza sencillez; las TSI turbo ofrecen más par y potencia. La ficha de SEAT indica 355 litros de maletero para las versiones mostradas, pero la disponibilidad de motores y acabados puede cambiar.',
+    versions: [
+      { name: '1.0 MPI gasolina', power: '59 kW (80 CV)', displacement: '999 cm³', maxTorque: '93 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'Cambio manual de 5 velocidades según la información de SEAT para la gama renovada.' },
+      { name: '1.0 TSI gasolina', power: '85 kW (115 CV)', displacement: '999 cm³', maxTorque: '200 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'SEAT anuncia caja manual de 6 velocidades o DSG de 7, según configuración.' },
+      { name: '1.5 TSI gasolina DSG', power: '110 kW (150 CV)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'Cambio DSG de 7 velocidades en la configuración publicada.' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'Utilitario de 5 puertas' },
+      { label: 'Plazas', value: '5' },
+      { label: 'Longitud', value: '4.070 mm' },
+      { label: 'Maletero', value: '355 litros' },
+      { label: 'Combustible', value: 'Gasolina' },
+    ],
+    figures: [
+      { label: 'Potencia disponible en la gama consultada', value: '80, 115 y 150 CV' },
+      { label: '0–100 km/h · 1.5 TSI DSG', value: '8,1 s' },
+      { label: 'Velocidad máxima · 1.5 TSI DSG', value: '220 km/h' },
+    ],
+    specNote: 'Las cifras de potencia y par proceden de las fichas actuales de los acabados de SEAT España. La ficha comercial actual muestra el par máximo, pero no el régimen; por eso no se trasladan valores de manuales de años anteriores a la gama 2026.',
+    officialUrl: `${seat}/coches/ibiza`,
+    technicalUrl: `${seat}/coches/ibiza/style`,
+    sources: [
+      source('SEAT España: Ibiza y gama disponible', `${seat}/coches/ibiza`),
+      source('Especificaciones y motores del SEAT Ibiza Style', `${seat}/coches/ibiza/style`),
+      source('Presentación oficial de los nuevos Ibiza y Arona', `${seat}/sobre-seat/noticias/coches/nuevos-seat-ibiza-y-arona`),
+    ],
+    image: seatImages.ibiza,
+    reviewedAt,
+  },
+  {
+    brandSlug: 'seat',
+    modelSlug: 'arona',
+    title: 'SEAT Arona: motores, consumo y datos técnicos | Kilómetro Claro',
+    description: 'Revisa las motorizaciones de gasolina del SEAT Arona, su potencia, par, dimensiones y capacidad de maletero en España.',
+    intro: 'El Arona es el SUV urbano de SEAT: mantiene una carrocería manejable para la ciudad, con una posición de conducción más elevada que la del Ibiza. La oferta española se centra en motores TSI de gasolina y combina distintas potencias con cambios manuales o DSG.',
+    powertrainSummary: 'La gama renovada anunciada por SEAT abarca el 1.0 TSI de 95 CV en la oferta comercial, el 1.0 TSI de 115 CV y el 1.5 TSI de 150 CV. La página técnica actual destaca versiones de 115 y 150 CV; confirma en el configurador o con un concesionario qué combinación está disponible en el momento de compra.',
+    usageNote: 'El Arona puede resultar práctico para quien quiere una carrocería elevada sin pasar a un SUV compacto grande. Antes de decidir, compara el espacio trasero, la altura de carga y el maletero con el Ibiza: SEAT anuncia 400 litros. La altura y el formato SUV no implican tracción total; las versiones mostradas son de tracción delantera.',
+    versions: [
+      { name: '1.0 TSI gasolina', power: '70 kW (95 CV)', displacement: '999 cm³', maxTorque: '175 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '1.600–3.500 rpm', note: 'La nota de SEAT sobre la gama renovada indica que esta potencia está disponible en la oferta comercial del Arona.' },
+      { name: '1.0 TSI gasolina', power: '85 kW (115 CV)', displacement: '999 cm³', maxTorque: '200 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'Disponible con caja manual o DSG en la ficha actual, según configuración.' },
+      { name: '1.5 TSI gasolina DSG', power: '110 kW (150 CV)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'Cambio DSG de 7 velocidades en la versión publicada.' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'SUV urbano de 5 puertas' },
+      { label: 'Plazas', value: '5' },
+      { label: 'Longitud', value: '4.164 mm' },
+      { label: 'Maletero', value: '400 litros' },
+      { label: 'Combustible', value: 'Gasolina' },
+    ],
+    figures: [
+      { label: 'Potencias anunciadas para la gama renovada', value: '95, 115 y 150 CV' },
+      { label: '0–100 km/h · 1.5 TSI DSG', value: '8,3 s' },
+      { label: 'Velocidad máxima · 1.5 TSI DSG', value: '212 km/h' },
+    ],
+    specNote: 'SEAT publicó el motor de 95 CV para la oferta comercial del Arona junto con el lanzamiento de la gama renovada. Las páginas actuales de acabados detallan sobre todo las variantes de 115 y 150 CV. El par de 175 Nm y su régimen para el 95 CV se toman del manual oficial del Arona de la generación de motor anterior; comprueba que la unidad concreta mantiene esa especificación antes de comprar.',
+    officialUrl: `${seat}/coches/arona`,
+    technicalUrl: `${seat}/coches/arona/style`,
+    sources: [
+      source('SEAT España: Arona', `${seat}/coches/arona`),
+      source('Especificaciones y motores del SEAT Arona Style', `${seat}/coches/arona/style`),
+      source('Presentación oficial de los nuevos Ibiza y Arona', `${seat}/sobre-seat/noticias/coches/nuevos-seat-ibiza-y-arona`),
+      source('Manual oficial del SEAT Arona: datos técnicos del 1.0 TSI', `${seat}/datamanual-manual/arona/my23_w45/es-es/ARONA_11_22_ES.pdf`),
+    ],
+    image: seatImages.arona,
+    reviewedAt,
+  },
+  {
+    brandSlug: 'seat',
+    modelSlug: 'leon',
+    title: 'SEAT León: motores TSI, TDI e híbridos | Kilómetro Claro',
+    description: 'Compara los motores gasolina, diésel, eTSI mild hybrid y e-HYBRID enchufable del SEAT León de cinco puertas en España.',
+    intro: 'El León de cinco puertas reúne la gama mecánica más variada de SEAT. Según la configuración española consultada, puede elegirse con gasolina TSI, microhibridación eTSI, diésel TDI o sistema híbrido enchufable e-HYBRID. La carrocería compacta ofrece cinco plazas y un maletero cuyo volumen cambia de forma apreciable en la versión enchufable.',
+    powertrainSummary: 'Los motores de gasolina TSI y eTSI comparten la base 1.5, pero el eTSI añade un sistema de 48 V y se comercializa como híbrido ligero; no se enchufa ni permite tratarlo como un híbrido enchufable. El 1.5 e-HYBRID sí combina un motor térmico y otro eléctrico con batería recargable. También hay dos potencias 2.0 TDI en la gama publicada.',
+    usageNote: 'La elección no depende solo de la potencia. El eTSI resulta distinto del e-HYBRID en uso y recarga: el primero no necesita conectarse, mientras que el segundo puede circular en modo eléctrico cuando está cargado. Las versiones diésel pueden encajar mejor en recorridos largos frecuentes, pero hay que considerar restricciones de circulación y patrón de uso. Compara el maletero de la carrocería y motorización exactas.',
+    versions: [
+      { name: '1.5 TSI gasolina', power: '85 kW (115 CV)', displacement: '1.498 cm³', maxTorque: '220 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'Versión de gasolina sin sistema mild hybrid.' },
+      { name: '1.5 TSI gasolina', power: '110 kW (150 CV)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'Versión de gasolina sin sistema mild hybrid.' },
+      { name: '1.5 eTSI mild hybrid', power: '85 kW (115 CV)', displacement: '1.498 cm³', maxTorque: '220 Nm', torqueScope: 'Cifra de par publicada por SEAT para la versión', torqueRpm: currentTorqueRpmNote, note: 'Hibridación ligera de 48 V; no es enchufable.' },
+      { name: '1.5 eTSI mild hybrid', power: '110 kW (150 CV)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Cifra de par publicada por SEAT para la versión', torqueRpm: currentTorqueRpmNote, note: 'Hibridación ligera de 48 V; no es enchufable.' },
+      { name: '2.0 TDI diésel', power: '85 kW (115 CV)', displacement: '1.968 cm³', maxTorque: '300 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.600–2.500 rpm', note: 'SEAT publica esta versión con cambio manual.' },
+      { name: '2.0 TDI diésel', power: '110 kW (150 CV)', displacement: '1.968 cm³', maxTorque: '360 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.600–2.750 rpm', note: 'La ficha actual muestra la versión de 150 CV; cambio y disponibilidad dependen del acabado.' },
+      { name: '1.5 e-HYBRID enchufable', power: '150 kW (204 CV)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Par máximo publicado por SEAT para esta versión; no desglosa componentes', torqueRpm: 'No publicado', note: 'Sistema híbrido enchufable; requiere recarga externa para aprovechar la conducción eléctrica.' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'Compacto de 5 puertas' },
+      { label: 'Plazas', value: '5' },
+      { label: 'Longitud', value: '4.368 mm' },
+      { label: 'Maletero', value: '380 litros en las versiones térmicas; 270 litros en el e-HYBRID publicado' },
+      { label: 'Motorizaciones', value: 'Gasolina, diésel, mild hybrid e híbrido enchufable' },
+    ],
+    figures: [
+      { label: 'Potencia de la gama consultada', value: '115–204 CV' },
+      { label: '0–100 km/h · e-HYBRID 204 CV', value: '7,7 s' },
+      { label: 'Velocidad máxima · e-HYBRID 204 CV', value: '220 km/h' },
+    ],
+    specNote: 'Las páginas actuales de SEAT publican potencia y par por acabado, pero no el régimen del par para los motores TSI/eTSI ni desglosan el par del sistema e-HYBRID. Para el 2.0 TDI se incluye el régimen que aparece en el manual técnico oficial de la generación actual (MY25); confirma siempre la ficha de la configuración concreta.',
+    officialUrl: `${seat}/coches/leon-5-puertas`,
+    technicalUrl: `${seat}/coches/leon-5-puertas/style`,
+    sources: [
+      source('SEAT España: León de cinco puertas', `${seat}/coches/leon-5-puertas`),
+      source('Versiones y motores del SEAT León', `${seat}/coches/leon-5-puertas/style`),
+      source('Manual oficial SEAT León MY25: datos técnicos', `${seat}/datamanual-manual/leon/my25_w18/es-es/LEON_04_24_ES.pdf`),
+    ],
+    image: seatImages.leon,
+    reviewedAt,
+  },
+  {
+    brandSlug: 'seat',
+    modelSlug: 'leon-sportstourer',
+    title: 'SEAT León Sportstourer: motores y datos del familiar | Kilómetro Claro',
+    description: 'Ficha del SEAT León Sportstourer en España: motores TSI, eTSI, TDI y e-HYBRID, plazas, maletero y cifras oficiales.',
+    intro: 'El León Sportstourer conserva la base técnica del compacto y añade una carrocería familiar de mayor longitud. La gama española consultada incluye motores de gasolina, diésel, mild hybrid y una alternativa híbrida enchufable. Su principal diferencia práctica frente al cinco puertas es el espacio de carga, que varía según la motorización.',
+    powertrainSummary: 'SEAT ofrece el 1.5 TSI de gasolina y el 1.5 eTSI con hibridación ligera en potencias de 115 y 150 CV, además del 2.0 TDI de 115 o 150 CV. El 1.5 e-HYBRID enchufable combina gasolina y electricidad y figura con 204 CV. La transmisión depende de cada versión.',
+    usageNote: 'La carrocería familiar puede facilitar viajes con equipaje o el uso cotidiano con objetos voluminosos. Sin embargo, el maletero oficial publicado varía: SEAT indica 620 litros en varias versiones y 470 litros en el e-HYBRID. Antes de comprar, compara la capacidad de la versión concreta y no solo la cifra máxima de la familia.',
+    versions: [
+      { name: '1.5 TSI gasolina', power: '85 kW (115 CV)', displacement: '1.498 cm³', maxTorque: '220 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'Versión de gasolina sin sistema mild hybrid.' },
+      { name: '1.5 TSI gasolina', power: '110 kW (150 CV)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'Versión de gasolina sin sistema mild hybrid.' },
+      { name: '1.5 eTSI mild hybrid', power: '85 kW (115 CV)', displacement: '1.498 cm³', maxTorque: '220 Nm', torqueScope: 'Cifra de par publicada por SEAT para la versión', torqueRpm: currentTorqueRpmNote, note: 'Hibridación ligera de 48 V; no es enchufable.' },
+      { name: '1.5 eTSI mild hybrid', power: '110 kW (150 CV)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Cifra de par publicada por SEAT para la versión', torqueRpm: currentTorqueRpmNote, note: 'Hibridación ligera de 48 V; no es enchufable.' },
+      { name: '2.0 TDI diésel', power: '85 kW (115 CV)', displacement: '1.968 cm³', maxTorque: '300 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.600–2.500 rpm', note: 'SEAT publica esta versión con cambio manual.' },
+      { name: '2.0 TDI diésel', power: '110 kW (150 CV)', displacement: '1.968 cm³', maxTorque: '360 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.600–2.750 rpm', note: 'La disponibilidad del cambio depende de la configuración.' },
+      { name: '1.5 e-HYBRID enchufable', power: '150 kW (204 CV)', displacement: '1.498 cm³', maxTorque: '330 Nm', torqueScope: 'Par máximo publicado por SEAT para esta versión; no desglosa componentes', torqueRpm: 'No publicado', note: 'Sistema híbrido enchufable con recarga externa.' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'Familiar de 5 puertas' },
+      { label: 'Plazas', value: '5' },
+      { label: 'Longitud', value: '4.642 mm' },
+      { label: 'Maletero', value: '620 litros en las versiones térmicas; 470 litros en el e-HYBRID publicado' },
+      { label: 'Motorizaciones', value: 'Gasolina, diésel, mild hybrid e híbrido enchufable' },
+    ],
+    figures: [
+      { label: 'Potencia de la gama consultada', value: '115–204 CV' },
+      { label: '0–100 km/h · e-HYBRID 204 CV', value: '7,9 s' },
+      { label: 'Velocidad máxima · e-HYBRID 204 CV', value: '220 km/h' },
+    ],
+    specNote: 'Las páginas actuales de SEAT publican potencia y par por acabado, pero no el régimen del par para los motores TSI/eTSI ni desglosan el par del sistema e-HYBRID. Para el 2.0 TDI se incluye el régimen que aparece en el manual técnico oficial de la generación actual (MY25); confirma siempre la ficha de la configuración concreta.',
+    officialUrl: `${seat}/coches/leon-sportstourer`,
+    technicalUrl: `${seat}/coches/leon-sportstourer/style`,
+    sources: [
+      source('SEAT España: León Sportstourer', `${seat}/coches/leon-sportstourer`),
+      source('Versiones y motores del León Sportstourer', `${seat}/coches/leon-sportstourer/style`),
+      source('Manual oficial SEAT León MY25: datos técnicos', `${seat}/datamanual-manual/leon/my25_w18/es-es/LEON_04_24_ES.pdf`),
+    ],
+    image: seatImages['leon-sportstourer'],
+    reviewedAt,
+  },
+  {
+    brandSlug: 'seat',
+    modelSlug: 'ateca',
+    title: 'SEAT Ateca: motores gasolina y diésel, medidas y maletero | Kilómetro Claro',
+    description: 'Consulta los motores gasolina y diésel del SEAT Ateca, sus potencias y pares publicados, dimensiones y capacidad de maletero.',
+    intro: 'El Ateca es el SUV compacto de SEAT y completa la gama de turismos junto al Arona. La selección española consultada combina motores TSI de gasolina con una alternativa 2.0 TDI diésel; el catálogo de la marca mantiene acabados Style y FR. La disponibilidad concreta de motor y caja debe confirmarse en el configurador.',
+    powertrainSummary: 'Las páginas comerciales de SEAT muestran un 1.0 EcoTSI de 115 CV, motores 1.5 TSI/EcoTSI de 150 CV y un 2.0 TDI de 150 CV. La oferta combina cajas manuales o DSG según motor y acabado. No hay que confundir las denominaciones TSI y EcoTSI con tipos distintos de combustible: las tres opciones citadas utilizan gasolina.',
+    usageNote: 'El Ateca puede ser una opción para quien necesita más espacio o una posición elevada, pero el tamaño exterior es mayor que el del Arona. SEAT publica 510 litros de maletero y cinco plazas. Si el uso es principalmente urbano, compara maniobrabilidad, consumo homologado y coste de neumáticos con un SUV más pequeño antes de elegir.',
+    versions: [
+      { name: '1.0 EcoTSI gasolina', power: '85 kW (115 CV)', displacement: '999 cm³', maxTorque: '200 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'La ficha comercial consultada lo presenta con cambio manual.' },
+      { name: '1.5 TSI / EcoTSI gasolina', power: '110 kW (150 CV)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor de gasolina', torqueRpm: currentTorqueRpmNote, note: 'Disponible con caja manual o DSG según la configuración y el acabado.' },
+      { name: '2.0 TDI diésel', power: '110 kW (150 CV)', displacement: '1.968 cm³', maxTorque: '360 Nm', torqueScope: 'Motor diésel', torqueRpm: currentTorqueRpmNote, note: 'La web comercial consultada anuncia una versión diésel de 150 CV.' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'SUV compacto de 5 puertas' },
+      { label: 'Plazas', value: '5' },
+      { label: 'Longitud', value: '4.381 mm' },
+      { label: 'Maletero', value: '510 litros' },
+      { label: 'Combustibles', value: 'Gasolina y diésel' },
+    ],
+    figures: [
+      { label: 'Potencias de la gama consultada', value: '115 y 150 CV' },
+      { label: '0–100 km/h · Ateca 150 CV', value: '9,0 s' },
+      { label: 'Velocidad máxima · Ateca 150 CV', value: '202 km/h' },
+    ],
+    specNote: 'La página oficial de SEAT publica potencia, par y prestaciones de las versiones actuales, pero no el régimen del par en la ficha comercial consultada. Por eso no se añaden rpm tomadas de manuales de otros años-modelo. La gama y las cajas disponibles pueden cambiar; verifica el configurador español antes de comprar.',
+    officialUrl: `${seat}/coches/suv-ateca`,
+    technicalUrl: `${seat}/compra-tu-seat/catalogos/ateca/style`,
+    sources: [
+      source('SEAT España: Ateca', `${seat}/coches/suv-ateca`),
+      source('Versiones, motores y equipamiento del Ateca Style', `${seat}/compra-tu-seat/catalogos/ateca/style`),
+      source('Motores y acabados del SEAT Ateca', `${seat}/coches/suv-ateca/versiones-y-equipamiento`),
+    ],
+    image: seatImages.ateca,
+    reviewedAt,
+  },
+];
+
+export const seatModels = modelPages;

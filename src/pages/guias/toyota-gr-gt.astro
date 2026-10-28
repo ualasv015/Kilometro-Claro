@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const title = 'Toyota GR GT: el V8 híbrido, su tecnología y sus rivales';
+const seoTitle = 'Toyota GR GT: motor y rivales | Kilómetro Claro';
+const description = 'Así funciona el Toyota GR GT: V8 híbrido, transeje y chasis. Comparamos sus objetivos con tres deportivos y explicamos qué falta por confirmar antes de su venta.';
+const canonical = new URL('/guias/toyota-gr-gt/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-10-28';
+const sources = {
+  global: 'https://global.toyota/en/newsroom/toyota/43622107.html',
+  spain: 'https://prensa.toyota.es/toyota-gazoo-racing-presenta-estreno-mundial-del-gr-gt-y-gr-gt3/',
+  gr: 'https://toyotagazooracing.com/gr/grgt/wp/',
+  transmission: 'https://media.gazooracing.ca/en/releases/2025/toyota-gazoo-racing-world-premieres-gr-gt---gr-gt3.html',
+  update: 'https://media.toyota.co.uk/gazoo-racing-lexus-and-toyota-racing-celebrate-the-soul-of-sportscar-craftsmanship-at-the-goodwood-festival-of-speed/',
+  press: 'https://www.roadandtrack.com/news/a73452231/toyota-gr-gt-new-details/',
+  porsche: 'https://newsroom.porsche.com/dam/jcr:be13fd23-11cf-4783-b509-a702aed10df3/pag-911-turbo-s-en.pdf.PDF',
+  amg: 'https://www.mercedes-benz.co.za/passengercars/models/coupe/amg-gt-2-door/overview.html',
+  aston: 'https://www.astonmartin.com/en/models/vantage-s',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: 'https://kilometroclaro.com/images/og/guia-toyota-gr-gt.png',
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES', mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+};
+---
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Toyota GR GT' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Comparar coches · Revisada el 28 de octubre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">El interés del GR GT está en cómo combina sus piezas: un V8 nuevo, asistencia eléctrica y una transmisión situada detrás. Analizamos qué puede aportar esa receta y qué habrá que comprobar en el coche de producción.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a> · Opinión editorial de ASV_webs</p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida: todavía es un prototipo</strong>
+        <p>El Toyota GR GT combina un V8 biturbo de 3.998 cm³ con un motor eléctrico, cambio automático de ocho marchas y propulsión trasera. Toyota España publica como <strong>objetivos de desarrollo</strong> más de 650 CV DIN, más de 850 Nm, un peso de 1.750 kg o menos y más de 320 km/h. No son especificaciones definitivas ni prestaciones homologadas. El horizonte anunciado es alrededor de 2027, sujeto a cambios. <a href={sources.spain}>Ficha del prototipo</a> y <a href={sources.global}>calendario oficial</a>.</p>
+      </aside>
+      <GuideImage slug="toyota-gr-gt" />
+      <nav class="article-toc" aria-label="Contenido de esta guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#estado">Qué ha cambiado desde 2025</a></li><li><a href="#datos">Datos y objetivos</a></li>
+          <li><a href="#motor">V8, Hot V y cárter seco</a></li><li><a href="#hibrido">Hibridación y transeje</a></li>
+          <li><a href="#chasis">Chasis y aerodinámica</a></li><li><a href="#rivales">Comparativa de deportivos</a></li>
+          <li><a href="#opinion">La opinión de ASV_webs</a></li><li><a href="#alcance">Alcance y autonomía</a></li>
+          <li><a href="#pendiente">Qué falta por saber</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="estado">Qué es el GR GT y qué ha ocurrido desde diciembre de 2025</h2>
+      <p>Toyota presentó los prototipos GR GT y GR GT3 el <strong>5 de diciembre de 2025</strong>. El primero se concibe para carretera; el segundo, para carreras de clientes bajo especificaciones FIA GT3. La marca los sitúa como proyectos insignia y vincula su desarrollo con la transmisión de conocimientos del Lexus LFA. Es la explicación oficial de su propósito, no una garantía sobre el resultado. <a href={sources.global}>Presentación de Toyota Global</a>.</p>
+      <p>La investigación se ha revisado el 28 de octubre de 2026. Entre las novedades oficiales posteriores figura el <a href={sources.update}>anuncio de su presencia dinámica sin camuflaje en Goodwood, publicado el 24 de junio de 2026</a>, que seguía identificando ambos coches como vehículos de desarrollo. No hemos localizado en las fuentes oficiales consultadas una ficha de producción que sustituya los objetivos iniciales. Presentarlo hoy como una novedad recién desvelada borraría meses de evolución pública.</p>
+      <p>También hay información periodística posterior. <a href={sources.press}>Road &amp; Track publicó el 17 de agosto de 2026 detalles de una sesión técnica en Monterey</a> y especuló sobre posibles aumentos de potencia. Esas interpretaciones no se incorporan aquí como cifras confirmadas. Un comentario recogido en una presentación, una deducción del periodista y una especificación publicada por el fabricante tienen distinto valor probatorio.</p>
+      <p>Para el lector, lo interesante es entender una decisión industrial: desarrollar un deportivo alrededor de la respuesta, la distribución de masas y la refrigeración exige algo más que instalar un motor potente. El GR GT permite examinar esas prioridades antes de que el precio o el prestigio de una marca condicionen la comparación. La <a href="/marcas/toyota/">ficha de Toyota y su gama</a> ayuda a situarlo dentro de un fabricante conocido por productos muy diferentes.</p>
+
+      <h2 id="datos">Datos confirmados, objetivos e incógnitas</h2>
+      <div class="table-scroll" role="region" aria-label="Estado de los datos del Toyota GR GT" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Estado</th><th scope="col">Qué podemos publicar</th><th scope="col">Límite</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Arquitectura anunciada</th><td>V8 biturbo híbrido; motor delantero y ruedas motrices traseras; transeje automático de ocho marchas.</td><td>Describe el proyecto, aún modificable.</td></tr>
+            <tr><th scope="row">Objetivos internos</th><td>&gt;650 CV DIN y &gt;850 Nm del sistema; ≤1.750 kg; reparto 45:55; &gt;320 km/h.</td><td>No equivalen a mediciones independientes ni homologación.</td></tr>
+            <tr><th scope="row">Horizonte de lanzamiento</th><td>Alrededor de 2027.</td><td>No es una fecha exacta de entrega en España.</td></tr>
+            <tr><th scope="row">Pendiente en las fuentes oficiales consultadas</th><td>Precio, producción, mercados definitivos, 0–100 km/h, consumo, batería y autonomía homologada.</td><td>No se completan mediante rumores o cálculos con datos de otros coches.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Fuentes: <a href={sources.spain}>Toyota España</a> y <a href={sources.global}>Toyota Global</a>. Hay una diferencia de redacción: España emplea «más de»; la tabla global dice «650 PS o más», «850 Nm o más» y «320 km/h o más». Conservamos la formulación española, sin atribuir precisión adicional a esos umbrales. PS y CV son unidades métricas equivalentes.</p>
+
+      <h2 id="motor">El V8: qué aportan el Hot V y el cárter seco</h2>
+      <p>El motor anunciado es de nueva creación. Toyota España describe un <strong>Hot V</strong>: los dos turbocompresores se alojan entre las bancadas del V8. También confirma lubricación por cárter seco. <a href={sources.spain}>Descripción técnica oficial</a>.</p>
+      <p>La lógica del Hot V se entiende siguiendo los gases. Un turbo aprovecha la energía del escape para comprimir el aire de admisión; acortar su recorrido hasta la turbina ayuda a responder antes cuando se solicita potencia. Colocarlo dentro de la V también permite concentrar el conjunto. La contrapartida de reunir componentes muy calientes es gestionar cuidadosamente aislamiento y refrigeración. La arquitectura por sí sola no demuestra ausencia de retraso ni una respuesta superior a cualquier rival.</p>
+      <p>El cárter seco separa la reserva principal de aceite de la bandeja inferior del motor. Eso permite una zona baja menos profunda y facilita instalar el propulsor a menor altura. Además, un sistema de lubricación diseñado para fuertes aceleraciones laterales debe mantener el suministro cuando el aceite se desplaza en curva o frenada. Son razones de ingeniería para utilizarlo, no una prueba de fiabilidad del GR GT que todavía no hemos realizado.</p>
+      <p>Un centro de gravedad bajo reduce el brazo con el que las fuerzas hacen balancear la carrocería. Pero no sustituye una buena suspensión, neumáticos adecuados o una puesta a punto coherente. Tampoco sabemos aún cómo responderá este V8 a pocas vueltas, cuánto variará su empuje con la temperatura o qué coste tendrá mantenerlo. Conviene separar el atractivo de la solución de su ejecución final.</p>
+
+      <h2 id="hibrido">Sistema híbrido, transmisión y transeje: ordenar las masas</h2>
+      <p>El motor eléctrico está integrado en el conjunto trasero, <strong>delante de la caja de cambios</strong>. Toyota le asigna la función de compensar caídas momentáneas de respuesta al acelerar y cambiar de marcha. La automática emplea un embrague de arranque húmedo en lugar de convertidor de par, y el transeje incorpora un diferencial autoblocante mecánico. <a href={sources.transmission}>Explicación oficial de GAZOO Racing Canadá</a>.</p>
+      <p>Un transeje reúne transmisión y diferencial. Llevar ese bloque atrás redistribuye parte del peso que, de otro modo, estaría junto al motor delantero. La consecuencia buscada es que las ruedas traseras reciban carga y puedan transmitir el empuje al suelo. No significa que un reparto concreto garantice equilibrio: el comportamiento también depende de dónde se concentran las masas, no solo del porcentaje que soporta cada eje.</p>
+      <p>El motor delantero se conecta al conjunto posterior mediante un árbol alojado dentro de un <strong>tubo de par de CFRP</strong>, plástico reforzado con fibra de carbono, según <a href={sources.spain}>Toyota España</a>. No deben confundirse el árbol que gira y el tubo que lo envuelve. Este último conecta estructuralmente ambos conjuntos; recurrir a un material rígido y ligero ayuda a controlar deformaciones sin añadir tanto peso. No es una batería ni un segundo sistema de tracción.</p>
+      <p>La asistencia eléctrica puede aportar empuje mientras el motor térmico y la transmisión completan una transición. Lo decisivo para el conductor será si ese relevo resulta previsible al dosificar el acelerador. Más par instantáneo no siempre significa mejor tacto: la calibración debe evitar saltos bruscos, especialmente cuando las ruedas traseras ya están ocupadas guiando el coche en curva.</p>
+      <p>Que tenga ocho marchas tampoco lo convierte automáticamente en un doble embrague. La descripción publicada habla de una automática con embrague húmedo de arranque. Nuestra guía de <a href="/guias/tipos-cambio-automatico/">tipos de cambio automático</a> explica por qué el número de relaciones no identifica el mecanismo. Para interpretar el papel del motor eléctrico, conviene distinguir también <a href="/guias/coche-hibrido-enchufable-o-microhibrido/">las diferentes clases de híbridos</a>.</p>
+
+      <h2 id="chasis">Chasis y aerodinámica: la velocidad necesita estabilidad</h2>
+      <p>La <a href={sources.gr}>presentación técnica de GAZOO Racing</a> destaca una estructura de aluminio y paneles de distintos materiales, incluido carbono. También describe un proceso en el que las necesidades aerodinámicas y de refrigeración condicionan las formas exteriores desde el inicio. No publica allí una cifra que permita comparar directamente carga aerodinámica o resistencia al aire con todos sus rivales.</p>
+      <p>El aluminio no hace ligero un coche por decreto. Importan el espesor, las uniones, los refuerzos y todo lo que se instala alrededor. La cifra objetivo de masa necesita una definición de pesaje antes de enfrentarse a la de otro fabricante. Algo parecido ocurre con la aerodinámica: una entrada de aire puede mejorar la refrigeración, pero también modificar la resistencia; un elemento que genera apoyo puede exigir más potencia para mantener velocidad.</p>
+      <p>Nuestra lectura es que el verdadero examen llegará al repetir esfuerzos. Frenar, acelerar y encadenar curvas durante varias vueltas revela aspectos que un único registro de velocidad no muestra: temperatura, consistencia del pedal, entrega eléctrica y conservación del agarre. En carretera se suman visibilidad, acceso, confort y facilidad para maniobrar. Una especialización deportiva solo resulta convincente si el comprador entiende sus compromisos.</p>
+      <h3>GR GT y GR GT3: relacionados, pero distintos</h3>
+      <p>La relación es de desarrollo compartido, no de fichas intercambiables. Toyota presenta al GT3 como coche de competición para clientes, basado en el GR GT; su tabla específica no anuncia el sistema híbrido del modelo de carretera. No le atribuimos por tanto la potencia conjunta ni el peso objetivo de este último. <a href={sources.global}>Ficha separada de ambos prototipos</a>.</p>
+      <p>Las exigencias de carrera y las de matriculación conducen a prioridades distintas. El comprador del coche de calle necesita una experiencia utilizable fuera del circuito; un equipo busca rendimiento repetible, servicio y adecuación a su campeonato. El parentesco puede ayudar al desarrollo, pero una futura victoria del GT3 no demostraría por sí sola que el GR GT sea el mejor deportivo para viajar.</p>
+
+      <h2 id="rivales">GR GT frente a Porsche, Mercedes-AMG y Aston Martin</h2>
+      <p>Elegimos tres referencias por arquitectura y propuesta: un híbrido con motor trasero, un V8 enchufable de tracción total y un V8 de propulsión sin hibridación. <strong>La selección es editorial; no constituye una rivalidad directa confirmada por las marcas.</strong> Las fichas se consultaron en octubre de 2026; el año documental indicado no implica que todos los coches correspondan al mismo año-modelo.</p>
+      <div class="table-scroll" role="region" aria-label="Comparativa técnica de cuatro deportivos con métodos de pesaje identificados" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Versión y referencia temporal</th><th scope="col">Motor y electrificación</th><th scope="col">Potencia y par</th><th scope="col">Tracción</th><th scope="col">Peso declarado</th><th scope="col">0–100 y velocidad máxima</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href={sources.global}>GR GT, prototipo 2025; revisión 2026</a></th><td>V8 4,0 biturbo delantero; un motor eléctrico.</td><td>&gt;650 CV y &gt;850 Nm del sistema: objetivos, formulación española.</td><td>Trasera</td><td>≤1.750 kg objetivo; base de pesaje no detallada.</td><td>0–100 no publicado; &gt;320 km/h objetivo.</td></tr>
+            <tr><th scope="row"><a href={sources.porsche}>911 Turbo S Coupé T-Hybrid; ficha 10/2025</a></th><td>Bóxer de seis cilindros 3,6 trasero; híbrido, dos eTurbo y motor en la PDK.</td><td>711 CV y 800 Nm del sistema; térmico: 640 CV.</td><td>Total</td><td>1.725 kg DIN.</td><td>2,5 s; 322 km/h.</td></tr>
+            <tr><th scope="row"><a href={sources.amg}>AMG GT 63 S E PERFORMANCE Coupé; ficha consultada 2026</a></th><td>V8 4,0 biturbo delantero; híbrido enchufable.</td><td>816 CV (600 kW) y 1.420 Nm del sistema; térmico: 612 CV (450 kW).</td><td>Total</td><td>2.195 kg en orden de marcha UE.</td><td>2,8 s; 320 km/h.</td></tr>
+            <tr><th scope="row"><a href={sources.aston}>Vantage S Coupé; ficha consultada 2026</a></th><td>V8 4,0 biturbo delantero central; sin hibridación.</td><td>680 CV y 800 Nm del motor térmico.</td><td>Trasera</td><td>1.745 kg en orden de marcha UE.</td><td>3,4 s; 325 km/h.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Fuentes oficiales enlazadas en cada fila. Porsche: modelo UE/Alemania. Mercedes-Benz: página sudafricana, que identifica expresamente su masa como UE; no se presupone idéntico equipamiento español. Aston Martin: S Coupé, no Vantage estándar ni Roadster. Todas las prestaciones son declaraciones de fabricante, no mediciones nuestras.</p>
+      <p><strong>Cómo leer los números:</strong> CV y PS representan potencia métrica; hp/bhp no son equivalentes exactos. Para Mercedes utilizamos los kW como referencia: 1 kW ≈ 1,35962 CV. No sumamos máximos de motores sin conocer su coincidencia de régimen. Tampoco mezclamos peso en seco, que omite fluidos, con masa en orden de marcha. Esta tabla no usa pesos en seco; DIN y UE siguen siendo bases diferentes, y el objetivo Toyota no está normalizado frente a ellas.</p>
+      <p>El <strong>Porsche</strong> aporta una referencia de integración híbrida y tracción total; el <strong>AMG</strong> muestra una alternativa enchufable más pesada según su propia ficha. El <strong>Vantage S</strong> permite preguntar qué añade realmente la asistencia eléctrica a una receta de V8 delantero y caja trasera. Es la comparación más cercana por disposición general, aunque precio y tacto pueden distanciarlos.</p>
+      <p>La lectura útil no es declarar un ganador con los caballos. Un 0–100 muy rápido depende también de motricidad, neumáticos y control de lanzamiento. La potencia máxima tampoco describe cuánto empuje se mantiene en uso exigente. Para el GR GT, la pregunta será si su respuesta y coherencia justifican la complejidad híbrida. En el otro extremo de los proyectos aún abiertos, nuestra guía del <a href="/guias/porsche-mission-s-2026/">Porsche Mission S y sus posibles rivales</a> muestra por qué hay que separar intención y producto final.</p>
+
+      <h2 id="opinion">¿Está Toyota salvando los deportivos? Nuestra opinión como amantes del motor</h2>
+      <p><strong>Opinión editorial de ASV_webs.</strong> Nos ilusiona que Toyota dedique ingeniería a un V8 de nueva creación, propulsión trasera y apoyo eléctrico. En la trayectoria que representan GR Yaris y GR86, y con el GR GT3 como proyecto de competición, vemos una apuesta valiosa por conservar distintas maneras de disfrutar del automóvil. Esa valoración no implica que todos esos modelos estén disponibles nuevos en España ni que compartan futuro comercial.</p>
+      <p>Hablar de «salvar el mundo de los deportivos» expresa entusiasmo, no un hecho comprobable. Ningún modelo sostiene por sí solo una cultura entera. Esta necesita coches que la gente pueda comprar y mantener, circuitos, talleres, conocimiento técnico y aficionados. Un buque insignia puede inspirar, pero su valor cultural sería mucho mayor si la experiencia adquirida ayudara también a productos menos exclusivos.</p>
+      <p>Lo que defendemos es la diversidad de soluciones. La electrificación puede servir para afinar la respuesta además de mover un coche sin quemar combustible; el atractivo mecánico no exige rechazarla. Del mismo modo, un V8 no merece aprobación automática por sonar bien. Habrá que juzgar consumo, emisiones, costes y utilidad con datos. Nos parece una propuesta prometedora porque plantea una experiencia concreta; todavía debe demostrarla.</p>
+
+      <h2 id="alcance">Alcance comercial y cultural: ¿para quién podría tener sentido?</h2>
+      <p><strong>Inferencia editorial:</strong> por su concepto y objetivos, encaja como aspiración para quien busca un deportivo de altas prestaciones, valora la ingeniería y puede asumir un uso especializado. No tenemos base para definir una franja de precio, una tirada o una lista de mercados. Tampoco sería serio recomendar una reserva en España sin condiciones comerciales verificables.</p>
+      <p>Su impacto dependerá de factores menos llamativos que la velocidad punta: disponibilidad real, servicio posventa, coste de los consumibles, posibilidad de usarlo con frecuencia y credibilidad de su comportamiento. Culturalmente podría acercar a nuevos aficionados al trabajo de GR. Comercialmente, admiración y demanda solvente son cosas distintas. Que un coche genere conversación no permite calcular cuántos se venderán.</p>
+      <h3>Autonomía de conducción: no hay una cifra que podamos calcular</h3>
+      <p>La documentación oficial citada no aporta batería, consumo y autonomía homologada suficientes para resolverlo. <strong>Híbrido no significa necesariamente enchufable</strong>, y un motor eléctrico tampoco garantiza una autonomía eléctrica anunciada. No atribuimos al GR GT kilómetros en modo eléctrico ni un consumo tomado de otro Toyota.</p>
+      <p>Incluso una estimación de autonomía total necesitaría, como mínimo, combustible utilizable y un consumo bajo condiciones definidas; después habría que considerar cómo interviene la batería. En circuito ese consumo puede apartarse mucho del de carretera. Publicar una distancia sin esos datos daría apariencia de precisión a una incógnita.</p>
+
+      <h2 id="pendiente">Qué falta antes de juzgar el coche de producción</h2>
+      <ul>
+        <li><strong>Ficha final y homologación:</strong> potencia, par, masa con método de pesaje, emisiones y consumo.</li>
+        <li><strong>Gestión híbrida:</strong> batería, potencia eléctrica y mantenimiento de prestaciones con temperaturas y carga diferentes.</li>
+        <li><strong>Pruebas independientes:</strong> tacto de dirección, frenada repetida, respuesta y confort fuera de un trazado ideal.</li>
+        <li><strong>Condiciones de compra y uso:</strong> precio, mercados, entregas, garantía, mantenimiento y reparación.</li>
+      </ul>
+      <h2>Conclusión: una arquitectura sugerente que debe pasar del objetivo al resultado</h2>
+      <p>El GR GT merece atención por cómo enlaza motor, asistencia eléctrica y distribución de masas. Para seguir su evolución, el criterio más útil es comprobar qué objetivos se convierten en especificaciones y cómo se traducen en conducción repetible. Para comprarlo, faltan datos esenciales. Nuestro entusiasmo está en la propuesta; el juicio definitivo debe esperar al coche de producción y a pruebas comparables.</p>
+
+      <section class="faq-section" id="preguntas">
+        <h2>Preguntas frecuentes</h2>
+        <details><summary>¿Los más de 650 CV corresponden solo al V8?</summary><p>No. Toyota los comunica como objetivo de potencia máxima del sistema híbrido. No permiten deducir por separado cuánto aportará el motor térmico.</p></details>
+        <details><summary>¿Tener un motor eléctrico lo convierte en tracción total?</summary><p>No. En este proyecto la máquina eléctrica está integrada en el transeje trasero y Toyota anuncia propulsión trasera. Hibridación y número de ejes motrices son características diferentes.</p></details>
+        <details><summary>¿Se puede usar la ficha del GT3 para anticipar la del GR GT?</summary><p>No. Son proyectos relacionados con fines distintos. La configuración de competición no sustituye los datos del futuro coche matriculable.</p></details>
+        <details><summary>¿Permite esta comparativa decidir cuál será más rápido en circuito?</summary><p>No. Faltan una versión definitiva del GR GT y pruebas en condiciones equivalentes. Potencia, masa y aceleración aisladas no determinan un tiempo por vuelta.</p></details>
+      </section>
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta y revisión: 28 de octubre de 2026. Redacción del equipo editorial de Kilómetro Claro; apartado subjetivo atribuido a ASV_webs. No hemos conducido el GR GT. Se distinguen arquitectura anunciada, objetivos internos, interpretación periodística y opinión propia. Las explicaciones de ingeniería describen principios generales, no resultados medidos en este coche.</p>
+        <ul>
+          <li><a href={sources.global}>Toyota Global: estreno mundial, calendario y tablas separadas de los prototipos, 5/12/2025</a>.</li>
+          <li><a href={sources.spain}>Toyota España: detalles técnicos y objetivos en CV DIN, 5/12/2025</a>.</li>
+          <li><a href={sources.gr}>GAZOO Racing: concepto, materiales y aerodinámica del GR GT</a>.</li>
+          <li><a href={sources.transmission}>GAZOO Racing Canadá: ubicación del motor eléctrico y mecanismo del transeje, 5/12/2025</a>.</li>
+          <li><a href={sources.update}>Toyota GB: actualización de Goodwood, 24/6/2026, y permiso de uso editorial de las fotografías</a>.</li>
+          <li><a href={sources.press}>Road &amp; Track: información de Monterey, 17/8/2026</a>. Se cita como contexto periodístico; sus extrapolaciones no se adoptan como especificaciones.</li>
+          <li><a href={sources.porsche}>Porsche: ficha técnica europea del 911 Turbo S Coupé T-Hybrid, edición 10/2025</a>.</li>
+          <li><a href={sources.amg}>Mercedes-Benz: ficha del AMG GT 63 S E PERFORMANCE de dos puertas</a>.</li>
+          <li><a href={sources.aston}>Aston Martin: ficha del Vantage S Coupé</a>.</li>
+        </ul>
+        <p>Imagen: Toyota / Toyota GB, GR GT de desarrollo. La página de procedencia permite expresamente uso editorial; no se presenta como imagen de un coche de producción ni como fotografía de licencia libre general.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
