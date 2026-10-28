@@ -2,8 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ToolCard from '../../components/ToolCard.astro';
-import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
-import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
 import { categories, tools } from '../../data/tools';
 
 const categoryTools = categories
@@ -21,16 +19,15 @@ const categoryTools = categories
       <h1>Calculadoras de coche para tus gastos y viajes</h1>
       <p>Introduce tus kilómetros, consumos, tarifas o gastos reales. Cada herramienta explica qué incluye el cálculo y qué datos necesitas para comparar escenarios.</p>
     </section>
-    <AdsterraInlineBanner />
+    
     <nav class="tool-category-nav" aria-label="Categorías de calculadoras">
       {categoryTools.map(({ category }) => <a href={`#${category.slug}`}>{category.name}<span aria-hidden="true">↓</span></a>)}
     </nav>
-    {categoryTools.map(({ category, tools: groupTools }, index) => <>
+    {categoryTools.map(({ category, tools: groupTools }) => <>
       <section id={category.slug} class="tool-category-group" aria-labelledby={`${category.slug}-heading`}>
         <div class="category-group-heading"><div><span class="eyebrow">Calculadoras</span><h2 id={`${category.slug}-heading`}>{category.name}</h2><p>{category.description}</p></div></div>
         <div class="tool-grid listing-grid">{groupTools.map((tool) => <ToolCard tool={tool} />)}</div>
       </section>
-      {index === 2 && <AdsterraNativeBanner />}
     </>)}
   </div>
 </BaseLayout>

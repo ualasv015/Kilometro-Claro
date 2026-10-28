@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
-import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
 import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
@@ -34,7 +32,7 @@ const articleSchema = {
         <p><strong>Coste de combustible = distancia (km) × consumo (L/100 km) ÷ 100 × precio (€/L).</strong> En nuestro ejemplo Almería-Barcelona, la ida y vuelta suma 1.544 km y el combustible estimado cuesta 163,05 €. Según el peaje y el aparcamiento elegidos, el presupuesto ilustrativo va de 163,05 € a 227,90 €.</p>
         <a class="button-primary" href="/calculadoras/coste-viaje-coche/">Calcular el coste del viaje <span aria-hidden="true">→</span></a>
       </aside>
-      <AdsterraInlineBanner />
+      
       <GuideImage slug="cuanto-cuesta-viaje-coche" />
 
       <nav class="article-toc" aria-label="Contenido de esta guía"><strong>En esta guía</strong><ul><li><a href="#formula">La fórmula del combustible</a></li><li><a href="#ejemplo">Almería-Barcelona: datos del ejemplo</a></li><li><a href="#rutas">Con peajes o sin peajes</a></li><li><a href="#aparcamiento">Parking privado o plaza gratuita</a></li><li><a href="#comparativa">Cuatro presupuestos posibles</a></li><li><a href="#pasajeros">Reparto entre pasajeros</a></li><li><a href="#preparar">Qué revisar antes de salir</a></li><li><a href="#conclusion">Conclusión</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></nav>
@@ -62,7 +60,7 @@ const articleSchema = {
       <p>El escenario gratuito presupone que encuentras una <strong>plaza pública en la que se permita aparcar sin pagar durante toda tu estancia</strong>. No significa que exista una plaza libre junto a tu destino ni que cualquier hueco en la calle sea gratuito. Comprueba señales, horarios y límites de permanencia: <a href="https://areaverda.cat/es/informacion/usuarios/no-residentes-area">AREA Barcelona explica que las plazas azules y verdes para no residentes suelen limitar el tiempo</a>, y las exclusivas para residentes no están disponibles para visitantes durante el horario regulado.</p>
       <p>Para la opción privada tomamos el <a href="https://www.telpark.com/es/ciudades/barcelona/parking-barceloneta-port-vell/">parking Barceloneta Port Vell de Telpark</a>, cuyo operador publica un <strong>máximo diario general de 37,95 €</strong>. Es la referencia de un garaje concreto, no la tarifa universal de los parkings de Barcelona. El precio final puede variar; comprueba fechas, duración y condiciones antes de reservar o entrar. Si tu estancia supera el periodo que cubra esa tarifa, calcula el importe completo.</p>
 
-      <AdsterraNativeBanner />
+      
       <h2 id="comparativa">Cuatro presupuestos para el mismo viaje</h2>
       <p>Con el combustible del ejemplo y las condiciones anteriores, el coste directo del coche queda así. Las filas con plaza pública gratuita representan una posibilidad condicionada a encontrarla y a que su uso esté permitido durante toda la visita.</p>
       <div class="table-scroll" role="region" aria-label="Comparativa de costes de viaje a Barcelona con peajes y aparcamiento" tabindex="0"><table><thead><tr><th scope="col">Ruta y aparcamiento</th><th scope="col">Combustible</th><th scope="col">Peaje ida y vuelta</th><th scope="col">Aparcamiento</th><th scope="col">Total estimado</th></tr></thead><tbody><tr><th scope="row">Sin peaje + plaza pública gratuita</th><td>163,05 €</td><td>0 €</td><td>0 €</td><td><strong>163,05 €</strong></td></tr><tr><th scope="row">Con C-32 + plaza pública gratuita</th><td>163,05 €</td><td>26,90 €</td><td>0 €</td><td><strong>189,95 €</strong></td></tr><tr><th scope="row">Sin peaje + parking privado de un día</th><td>163,05 €</td><td>0 €</td><td>37,95 €</td><td><strong>201,00 €</strong></td></tr><tr><th scope="row">Con C-32 + parking privado de un día</th><td>163,05 €</td><td>26,90 €</td><td>37,95 €</td><td><strong>227,90 €</strong></td></tr></tbody></table></div>

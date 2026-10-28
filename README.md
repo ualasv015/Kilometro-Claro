@@ -24,7 +24,7 @@ Las guías se registran en `src/data/guides.ts` y sus imágenes, textos alternat
 
 La compilación comprueba Astro y después valida la salida: títulos y descripciones únicos, un H1 y canonical por página, JSON-LD, PNG Open Graph de 1200 × 630, recursos e interlinks locales, `robots.txt` y `sitemap.xml`. También puedes ejecutar `pnpm check:dist` por separado. En Windows, `scripts/generate-social-cards.ps1` regenera las tarjetas sociales y el diagrama conceptual propio para el artículo del Porsche a partir de la salida de Astro.
 
-Los espacios publicitarios se encapsulan en componentes de `src/components/ads/`. La integración actual usa Adsterra después del consentimiento y el layout la excluye de Sobre nosotros, Contacto, Privacidad, Cookies y Aviso legal. Google AdSense y Ezoic no están integrados.
+No hay redes publicitarias integradas actualmente. La arquitectura del sitio es estática y puede ampliarse más adelante cuando se elija una solución publicitaria.
 
 ## Formulario de contacto
 
@@ -34,7 +34,7 @@ Para que funcione en producción, publica la carpeta `dist` en un alojamiento qu
 
 ## Antes de publicar
 
-`src/data/site.ts` centraliza la identidad y los datos de contacto que aparecen en las páginas esenciales. Comprueba que siguen siendo correctos. Google Analytics 4 y Adsterra tienen preferencias de consentimiento independientes. Los scripts de Adsterra solo se cargan tras aceptar publicidad y se excluyen de Sobre nosotros, Contacto, Privacidad, Cookies y Aviso legal. El contenido legal es una base informativa y no sustituye una revisión jurídica de tu situación concreta.
+`src/data/site.ts` centraliza la identidad y los datos de contacto que aparecen en las páginas esenciales. Comprueba que siguen siendo correctos. Google Analytics 4 utiliza una preferencia de consentimiento propia que puede modificarse desde el pie de página. El contenido legal es una base informativa y no sustituye una revisión jurídica de tu situación concreta.
 
 La sección `/guias/` incluye una guía sobre el coste mensual de mantener un coche en España.
 

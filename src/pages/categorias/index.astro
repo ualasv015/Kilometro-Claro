@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
-import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
 import { categories } from '../../data/tools';
 import { guides } from '../../data/guides';
 const categoryGroups = categories.map((category) => ({
@@ -15,14 +13,13 @@ const categoryGroups = categories.map((category) => ({
   <div class="wrap page-wrap">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Categorías' }]} />
     <section class="listing-hero"><span class="eyebrow">Explora por tema</span><h1>Calculadoras y guías por categoría.</h1><p>Encuentra herramientas prácticas y explicaciones relacionadas con lo que quieres resolver.</p></section>
-    <AdsterraInlineBanner />
+    
     <div class="category-list">{categoryGroups.map(({ category, toolCount, guideCount }, index) => <>
       <article class="category-row">
       <span class="category-number">{String(index + 1).padStart(2, '0')}</span>
       <span><h2><a href={`/categorias/${category.slug}/`}>{category.name}</a></h2><p>{toolCount > 0 && `${toolCount} ${toolCount === 1 ? 'calculadora' : 'calculadoras'}`}{toolCount > 0 && guideCount > 0 && ' · '}{guideCount > 0 && `${guideCount} ${guideCount === 1 ? 'guía' : 'guías'}`}</p></span>
       <a class="row-arrow" href={`/categorias/${category.slug}/`} aria-label={`Ver categoría: ${category.name}`}><span aria-hidden="true">→</span></a>
       </article>
-      {index === 2 && <AdsterraNativeBanner />}
     </>)}</div>
   </div>
 </BaseLayout>

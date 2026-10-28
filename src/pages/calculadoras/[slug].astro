@@ -2,8 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CalculatorForm from '../../components/CalculatorForm.astro';
-import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
-import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
 import ToolCard from '../../components/ToolCard.astro';
 import { tools } from '../../data/tools';
 import { guides } from '../../data/guides';
@@ -22,12 +20,12 @@ const tractionGuide = guides.find((guide) => guide.slug === 'tipos-traccion-coch
       <div class="trust-note"><span aria-hidden="true">◎</span><span>El cálculo se realiza en tu navegador. No guardamos los datos que introduces.</span></div>
     </section>
     <CalculatorForm tool={tool} />
-    <AdsterraInlineBanner />
+    
     <article class="editorial-content">
       <div class="section-kicker">Cómo funciona</div><h2>{tool.shortTitle}: método, factores y límites</h2><p>{tool.explanation}</p>
       <div class="formula-card"><span>FÓRMULA</span><p>{tool.formula}</p></div>
       <h3>Ejemplo de cálculo</h3><p>{tool.example}</p>
-      <AdsterraNativeBanner />
+      
       {tool.editorialSections.map((section) => <section class="calculator-explainer"><h3>{section.heading}</h3>{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</section>)}
       {tool.slug === 'precio-electrico-auto-plus' && <aside class="official-source"><strong>Normativa consultada</strong><p>La estimación toma como referencia el Real Decreto 609/2026 y la convocatoria de la Línea 1 para 2026. Comprueba siempre la versión vigente y los datos confirmados de tu modelo.</p><a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-16010" target="_blank" rel="noopener noreferrer">Consultar el Real Decreto en el BOE <span aria-hidden="true">↗</span></a></aside>}
       <section class="faq-section"><h2>Preguntas frecuentes</h2>{tool.faq.map((item) => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</section>

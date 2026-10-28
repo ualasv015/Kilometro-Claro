@@ -4,15 +4,9 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ConsentPreferences from '../components/ConsentPreferences.astro';
 import AnalyticsHead from '../components/AnalyticsHead.astro';
-import AdsterraHead from '../components/ads/AdsterraHead.astro';
-import AdsterraBody from '../components/ads/AdsterraBody.astro';
-import AdsterraPlacements from '../components/ads/AdsterraPlacements.astro';
 import '../styles/global.css';
 const { title, description, canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://kilometroclaro.com'), webSiteSchema = false, ogType = 'website', publishedDate, modifiedDate = publishedDate, noIndex = ['/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/'].includes(Astro.url.pathname) } = Astro.props;
 const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Kilómetro Claro', url: Astro.site?.toString(), inLanguage: 'es-ES' };
-const adFreePaths = new Set(['/sobre-nosotros/', '/contacto/', '/politica-de-privacidad/', '/politica-de-cookies/', '/aviso-legal/']);
-const currentPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
-const showAds = !adFreePaths.has(currentPath);
 ---
 <!doctype html>
 <html lang="es">
@@ -26,14 +20,12 @@ const showAds = !adFreePaths.has(currentPath);
     <AnalyticsHead />
     {webSiteSchema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
     <slot name="head" />
-    {showAds && <AdsterraHead />}
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <SiteHeader />
-    <main id="contenido"><slot />{showAds && <AdsterraPlacements />}</main>
+    <main id="contenido"><slot /></main>
     <SiteFooter />
     <ConsentPreferences />
-    {showAds && <AdsterraBody />}
   </body>
 </html>

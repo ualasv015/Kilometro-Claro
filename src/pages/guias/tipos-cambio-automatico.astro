@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
-import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
 import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
@@ -65,7 +63,7 @@ const articleSchema = {
         <p>Las principales transmisiones automáticas de los coches actuales se agrupan en <strong>automáticas con convertidor de par, doble embrague, CVT y e-CVT híbridas</strong>. La primera y la segunda cambian entre relaciones definidas; la CVT varía su relación de forma continua; y la e-CVT híbrida reparte la fuerza entre motor térmico y eléctricos mediante otra arquitectura. Ejemplos: BMW X5 M con M Steptronic, Hyundai i30 1.6 T-GDi 7DCT, Nissan Qashqai Xtronic y Toyota Corolla Hybrid e-CVT. El nombre comercial y el sistema exacto pueden cambiar según el motor, año y acabado.</p>
         <a class="button-primary" href="#comparativa">Ir a la comparativa <span aria-hidden="true">↓</span></a>
       </aside>
-      <AdsterraInlineBanner />
+      
       <GuideImage slug="tipos-cambio-automatico" />
 
       <nav class="article-toc" aria-label="Contenido de esta guía">
@@ -144,7 +142,7 @@ const articleSchema = {
 
       <div class="cta-panel"><div><span class="eyebrow">Sigue comparando con tus propios datos</span><h3>Calcula cuánto te cuesta tener el coche</h3><p>Incluye el mantenimiento y los gastos de la transmisión que correspondan a la versión que estás valorando.</p></div><a class="button-primary" href="/calculadoras/coste-anual-coche/">Abrir calculadora anual <span aria-hidden="true">→</span></a></div>
 
-      <AdsterraNativeBanner />
+      
 
       <h2 id="electricos">¿Y los coches eléctricos?</h2>
       <p>La mayoría de los eléctricos de batería no tiene una caja multirrelación que vaya cambiando de marcha durante la conducción. Utiliza una relación reductora fija para llevar el giro del motor eléctrico a las ruedas. El selector sigue ofreciendo posiciones como avance y marcha atrás, pero la marcha atrás puede conseguirse invirtiendo el sentido de giro del motor. Esta transmisión de una sola relación no es una CVT ni una caja automática escalonada de las cuatro familias anteriores.</p>

@@ -2,44 +2,36 @@
   <div class="consent-panel__inner">
     <div class="consent-panel__copy">
       <h2 id="consent-title">Elige cómo usamos tus datos</h2>
-      <p>La web funciona sin aceptar estas opciones. Con tu permiso, usamos Google Analytics para medir visitas y Adsterra para mostrar publicidad en páginas de contenido y herramientas. Puedes elegir cada finalidad por separado y cambiarla después. <a href="/politica-de-cookies/">Más información</a>.</p>
+      <p>La web funciona sin aceptar la analítica. Si das tu permiso, usamos Google Analytics para medir visitas e interacciones generales. Puedes cambiar tu elección más adelante desde el pie de página. <a href="/politica-de-cookies/">Más información</a>.</p>
     </div>
-    <div class="consent-panel__choices" role="group" aria-label="Finalidades opcionales">
+    <div class="consent-panel__choices" role="group" aria-label="Finalidad opcional">
       <label><input type="checkbox" data-consent-analytics /> Analítica</label>
-      <label><input type="checkbox" data-consent-advertising /> Publicidad</label>
     </div>
     <div class="consent-panel__actions">
-      <button type="button" data-consent-action="reject">Rechazar opcionales</button>
-      <button type="button" data-consent-action="save">Guardar selección</button>
-      <button type="button" data-consent-action="accept">Aceptar ambas</button>
+      <button type="button" data-consent-action="reject">Rechazar analítica</button>
+      <button type="button" data-consent-action="save">Guardar elección</button>
+      <button type="button" data-consent-action="accept">Aceptar analítica</button>
     </div>
   </div>
 </section>
 
 <script>
   const analyticsKey = 'kilometro-claro-analytics-consent';
-  const advertisingKey = 'kilometro-claro-advertising-consent';
   const panel = document.querySelector<HTMLElement>('#consent-panel');
   const preferencesButton = document.querySelector<HTMLButtonElement>('[data-consent-preferences]');
   const analyticsCheckbox = panel?.querySelector<HTMLInputElement>('[data-consent-analytics]');
-  const advertisingCheckbox = panel?.querySelector<HTMLInputElement>('[data-consent-advertising]');
   const analytics = (window as Window & {
     kilometroClaroAnalytics?: { accept: () => void; reject: () => void };
   }).kilometroClaroAnalytics;
-  const ads = (window as Window & {
-    kilometroClaroAds?: { loaded: boolean; load: () => void };
-  }).kilometroClaroAds;
 
   function readChoice(key: string): string | null {
     try { return localStorage.getItem(key); } catch { return null; }
   }
 
   let analyticsChoice = readChoice(analyticsKey);
-  let advertisingChoice = readChoice(advertisingKey);
 
   function syncCheckboxes() {
     if (analyticsCheckbox) analyticsCheckbox.checked = analyticsChoice === 'accept';
-    if (advertisingCheckbox) advertisingCheckbox.checked = advertisingChoice === 'accept';
   }
 
   function clearAnalyticsCookies() {
@@ -53,8 +45,7 @@
   }
 
   syncCheckboxes();
-  if ((analyticsChoice !== 'accept' && analyticsChoice !== 'reject') ||
-      (advertisingChoice !== 'accept' && advertisingChoice !== 'reject')) {
+  if (analyticsChoice !== 'accept' && analyticsChoice !== 'reject') {
     if (panel) panel.hidden = false;
   }
 
@@ -68,14 +59,10 @@
   function savePreferences(action: string | undefined) {
     if (action !== 'accept' && action !== 'reject' && action !== 'save') return;
     const nextAnalytics = action === 'accept' || (action === 'save' && !!analyticsCheckbox?.checked) ? 'accept' : 'reject';
-    const nextAdvertising = action === 'accept' || (action === 'save' && !!advertisingCheckbox?.checked) ? 'accept' : 'reject';
-    const reloadForRevocation =
-      (analyticsChoice === 'accept' && nextAnalytics === 'reject') ||
-      (ads?.loaded === true && nextAdvertising === 'reject');
+    const reloadForRevocation = analyticsChoice === 'accept' && nextAnalytics === 'reject';
 
     try {
       localStorage.setItem(analyticsKey, nextAnalytics);
-      localStorage.setItem(advertisingKey, nextAdvertising);
     } catch {
       // Si se bloquea el almacenamiento, la elección afecta solo a esta página.
     }
@@ -88,10 +75,7 @@
       analytics?.reject();
       if (analyticsChoice === 'accept') clearAnalyticsCookies();
     }
-    if (nextAdvertising === 'accept' && advertisingChoice !== 'accept') ads?.load();
-
     analyticsChoice = nextAnalytics;
-    advertisingChoice = nextAdvertising;
     if (reloadForRevocation) location.reload();
   }
 

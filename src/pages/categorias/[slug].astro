@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
-import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
 import ToolCard from '../../components/ToolCard.astro';
 import { categories, tools } from '../../data/tools';
 import { guides } from '../../data/guides';
@@ -16,12 +14,12 @@ const categoryGuides = guides.filter((guide) => guide.categorySlug === category.
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Categorías', href: '/categorias/' }, { label: category.name }]} />
     <section class="listing-hero"><span class="eyebrow">Categoría</span><h1>{category.name}</h1><p>{category.description}</p></section>
 
-    <AdsterraInlineBanner />
+    
     {categoryTools.length > 0 && <section class="category-section" aria-labelledby="category-tools-heading">
       <div class="category-section-heading"><span class="eyebrow">Calcula con tus datos</span><h2 id="category-tools-heading">Calculadoras</h2></div>
       <div class="tool-grid listing-grid">{categoryTools.map((tool) => <ToolCard tool={tool} />)}</div>
     </section>}
-    <AdsterraNativeBanner />
+    
 
     {categoryGuides.length > 0 && <section class="category-section category-guides" aria-labelledby="category-guides-heading">
       <div class="category-section-heading"><span class="eyebrow">Aprende sobre el tema</span><h2 id="category-guides-heading">Guías relacionadas</h2></div>

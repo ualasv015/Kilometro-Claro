@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import AdsterraNativeBanner from '../../components/ads/AdsterraNativeBanner.astro';
-import AdsterraInlineBanner from '../../components/ads/AdsterraInlineBanner.astro';
 import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
@@ -34,7 +32,7 @@ const articleSchema = {
         <p>Divide los litros consumidos entre los kilómetros recorridos y multiplica el resultado por 100. En nuestro viaje de 380 km, el importe y el precio por litro equivalen a unos 18,92 L: <strong>(18,92 ÷ 380) × 100 = 4,98 L/100 km</strong>.</p>
         <a class="button-primary" href="/calculadoras/consumo-combustible/">Calcular mi consumo <span aria-hidden="true">→</span></a>
       </aside>
-      <AdsterraInlineBanner />
+      
       <GuideImage slug="como-calcular-consumo-real-coche" />
 
       <nav class="article-toc" aria-label="Contenido de esta guía"><strong>En esta guía</strong><ul><li><a href="#formula">La fórmula</a></li><li><a href="#metodo">Cómo medirlo al repostar</a></li><li><a href="#nuestra-medicion">La medición del Renault Clio</a></li><li><a href="#caso-granada">Caso real: Almería–Granada</a></li><li><a href="#ejemplo">Ejemplo paso a paso</a></li><li><a href="#anomalias">Detectar una medición anómala</a></li><li><a href="#variaciones">Por qué cambia el consumo</a></li><li><a href="#ordenador">Consumo real y ordenador de a bordo</a></li><li><a href="#conclusion">Conclusión</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></nav>
@@ -76,7 +74,7 @@ const articleSchema = {
       <p class="table-note">El precio de 1,60 €/L es solo un supuesto para mostrar la operación; no representa un precio medio actual. El precio de surtidor cambia según estación, zona y fecha. Puedes consultar precios comunicados por las estaciones en el <a href="https://geoportalgasolineras.es/geoportal-instalaciones/Inicio">Geoportal de Hidrocarburos del MITECO</a>.</p>
       <p>Cuando conozcas tu consumo, la <a href="/calculadoras/coste-viaje-coche/">calculadora de coste de viaje</a> te ayuda a estimar el combustible de una ruta. Para incluir más partidas del vehículo, consulta también la <a href="/calculadoras/coste-por-kilometro/">calculadora de coste por kilómetro</a>.</p>
 
-      <AdsterraNativeBanner />
+      
       <h2 id="anomalias">Cómo detectar una medición anómala sin sacar conclusiones precipitadas</h2>
       <p>Una lectura mucho más alta o más baja que las anteriores es una <strong>señal para revisar el registro</strong>, no un diagnóstico de avería. Compara primero intervalos con recorridos parecidos. Un depósito utilizado sobre todo en ciudad y con arranques en frío no tiene por qué dar el mismo resultado que otro consumido en carretera a velocidad estable. También importa la distancia: cuanto más corto es el intervalo, más pesa cualquier diferencia al rellenar el depósito.</p>
       <div class="table-scroll" role="region" aria-label="Comprobaciones ante una medición de consumo anómala" tabindex="0"><table><thead><tr><th scope="col">Qué observas</th><th scope="col">Primera comprobación</th><th scope="col">Qué hacer después</th></tr></thead><tbody>
