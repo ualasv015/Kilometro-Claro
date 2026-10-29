@@ -114,3 +114,15 @@
 .brand-facts-profile--volkswagen .brand-facts-heading{align-items:flex-start;flex-direction:column;gap:12px}
 .brand-facts-profile--volkswagen .brand-facts-heading h1{font-size:clamp(38px,4.4vw,50px);letter-spacing:-.05em}
 @media(max-width:600px){.brand-facts-profile--volkswagen .brand-facts-heading h1{font-size:clamp(36px,10vw,43px)}}
+
+/* Miniaturas en las tarjetas: mantienen el tamaño compacto del listado original. */
+.brand-profile-page .toyota-model-card{display:grid;min-height:140px;grid-template-columns:76px minmax(0,1fr);grid-template-rows:minmax(82px,1fr) auto;gap:8px 12px;padding:10px;overflow:hidden}
+.toyota-model-photo{grid-column:1;grid-row:1;width:76px;margin:0;align-self:start}
+.toyota-model-photo img{display:block;width:76px;height:76px;aspect-ratio:1;object-fit:cover;border:1px solid #c3cdc3;border-radius:4px;background:#e9eee6}
+.toyota-model-photo figcaption{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:0 3px;margin-top:3px;color:#536258;font-size:6px;line-height:1.25}
+.toyota-model-photo figcaption a{color:#173d34;text-decoration:underline;text-underline-offset:1px}
+.toyota-model-main{grid-column:2;grid-row:1;min-width:0;align-self:start}
+.brand-profile-page .toyota-model-main h3{margin:10px 0 0;font-size:18px;overflow-wrap:anywhere}
+.brand-profile-page .toyota-model-powertrains{grid-column:1/-1;grid-row:2;align-self:end;gap:5px;margin:0}
+@media(max-width:600px){.brand-profile-page .toyota-model-card{min-height:140px;grid-template-columns:54px minmax(0,1fr);grid-template-rows:minmax(69px,1fr) auto;gap:7px 8px;padding:9px}.brand-profile-page .toyota-model-photo{width:54px}.brand-profile-page .toyota-model-photo img{width:54px;height:54px}.brand-profile-page .toyota-model-photo figcaption{font-size:6.5px;line-height:1.2;gap:0 2px}.brand-profile-page .toyota-model-main h3{margin-top:8px;font-size:15px}.brand-profile-page .toyota-model-type{padding:4px 5px;font-size:8px;letter-spacing:.15px}.brand-profile-page .toyota-model-powertrains{gap:4px}.brand-profile-page .toyota-model-powertrains span{min-height:21px;padding:3px 6px;font-size:7.5px}}
+@media(max-width:370px){.brand-profile-page .toyota-model-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.brand-profile-page .toyota-model-card{grid-template-columns:46px minmax(0,1fr);gap:6px;padding:7px}.brand-profile-page .toyota-model-photo,.brand-profile-page .toyota-model-photo img{width:46px;height:46px}.brand-profile-page .toyota-model-photo figcaption{font-size:6px;gap:0 1px}.brand-profile-page .toyota-model-main h3{font-size:13px}.brand-profile-page .toyota-model-type{font-size:7px;padding:4px 4px}.brand-profile-page .toyota-model-powertrains{gap:3px}.brand-profile-page .toyota-model-powertrains span{font-size:6.5px;padding:3px 4px}}

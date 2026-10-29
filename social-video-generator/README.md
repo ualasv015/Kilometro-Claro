@@ -53,6 +53,16 @@ El MP4 se genera como [output/video-003.mp4](output/video-003.mp4). Esta versió
 
 Las locuciones originales están guardadas en `public/audio/voice-video-001.wav`, `voice-video-002.wav`, `voice-video-003.wav` y `voice-video-004.wav`. Los vídeos 1 y 2 usan un ajuste leve de velocidad para encajar en su duración; los vídeos 3 y 4 conservan la voz a velocidad original y se adapta el montaje. Los renders finales llevan audio AAC.
 
+## Reel: directorio de marcas
+
+El Reel de 30 segundos presenta el directorio de marcas de Kilómetro Claro con una animación de pestañas, marcas, filtros, modelos y salto a la web oficial. Usa la C lima oficial en la cabecera, subtítulos integrados y la voz original de Google TTS a velocidad 1×.
+
+```bash
+pnpm render-brand-directory -- data/videos/video-005.json
+```
+
+Genera `output/video-005.mp4` y subtítulos en `output/video-005-es.srt`. El guion de Google TTS está en `data/voiceovers/video-005-google-tts.txt` y su audio fuente sin modificar en `public/audio/voice-video-005.wav`. El montaje sigue las pausas de esa locución; el cierre gráfico continúa hasta completar los 30 segundos. El directorio actual contiene modelos de 16 marcas, filtros de carrocería y motorización y enlaces a las webs oficiales; disponibilidad y versiones deben comprobarse con cada fabricante.
+
 ## Reel: tipos de tracción
 
 La cuarta composición compara tracción trasera, delantera, total/AWD y 4x4 en unos 93,5 segundos, siguiendo la duración de la voz original. Incluye cambios de plano cada pocos segundos, animaciones originales, subtítulos integrados y escenas recreadas en circuito cerrado.

@@ -12,6 +12,8 @@ import { peugeotModels } from './peugeot-model-pages';
 import { kiaModels } from './kia-model-pages';
 import { mercedesModels } from './mercedes-model-pages';
 import { bmwModels } from './bmw-model-pages';
+import { audiModels } from './audi-model-pages';
+import { mazdaModels } from './mazda-model-pages';
 
 export type ModelVersion = {
   name: string;
@@ -763,6 +765,8 @@ const renaultModels: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>[] = [
 ];
 
 const modelPageRecords: ModelPageData[] = [
+  ...audiModels,
+  ...mazdaModels,
   ...daciaModels,
   ...changanModels,
   ...omodaJaecooModels,

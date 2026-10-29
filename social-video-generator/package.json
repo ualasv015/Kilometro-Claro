@@ -9,6 +9,7 @@
     "render-ranking": "tsx scripts/render-ranking.ts",
     "render-details": "tsx scripts/render-details.ts",
     "render-drivetrain": "tsx scripts/render-drivetrain.ts",
+    "render-brand-directory": "tsx scripts/render-brand-directory.ts",
     "test": "tsx --test tests/*.test.ts",
     "typecheck": "tsc --noEmit"
   },

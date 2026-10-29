@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { brands, brandsLastReviewed } from '../../data/brands';
+import { getModelPage } from '../../data/model-pages';
 import '../../styles/brands.css';
 
 export function getStaticPaths() {
@@ -20,6 +21,11 @@ const relatedBrands = brands
   .map(({ item }) => item);
 const vehicleTypes = [...new Set(brand.models.map((model) => model.body))].sort((a, b) => a.localeCompare(b, 'es'));
 const modelPowertrains = [...new Set(brand.models.flatMap((model) => model.powertrains))].sort((a, b) => a.localeCompare(b, 'es'));
+const modelsWithImages = brand.models.map((model) => {
+  const detail = model.pageSlug ? getModelPage(brand.slug, model.pageSlug) : undefined;
+  if (!detail?.image) throw new Error(`Falta la imagen de la tarjeta ${brand.slug}/${model.pageSlug ?? model.name}.`);
+  return { ...model, image: detail.image };
+});
 const title = `${brand.name}: modelos, motores y origen | Kilómetro Claro`;
 const description = `Consulta el origen de ${brand.name}, sus modelos destacados y los tipos de motorización de la gama española. Incluye enlaces a las fuentes oficiales.`;
 const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilometroclaro.com');
@@ -53,7 +59,7 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
 
     <section class="toyota-model-section" aria-labelledby="brand-models-title">
       <header class="toyota-model-heading">
-        <span class="brands-kicker">Gama en España · revisión {brandsLastReviewed}</span>
+        <span class="brands-kicker">Gama en España · revisión {brand.reviewedAt ?? brandsLastReviewed}</span>
         <h2 id="brand-models-title">Modelos {brand.name}</h2>
         <p>{brand.marketNote} Filtra la selección por tipo de vehículo y motorización. Comprueba en la web oficial la versión y disponibilidad concretas.</p>
       </header>
@@ -76,16 +82,24 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
       </div>
 
       <div class="toyota-model-grid" id="brand-model-grid">
-        {brand.models.map((model) => (
+        {modelsWithImages.map((model) => (
           <article
             class:list={["toyota-model-card", { "toyota-model-card--linked": model.pageSlug }]}
             data-vehicle-type={model.body.toLocaleLowerCase('es')}
             data-powertrains={model.powertrains.map((powertrain) => powertrain.toLocaleLowerCase('es')).join('|')}
           >
-            <span class="toyota-model-type">{model.body}</span>
-            <h3>{model.pageSlug
-              ? <a class="toyota-model-link" href={`/marcas/${brand.slug}/${model.pageSlug}/`} aria-label={`Ver ficha del modelo ${model.name} de ${brand.name}`}>{model.name}</a>
-              : model.name}</h3>
+            <figure class="toyota-model-photo">
+              <img src={model.image.src} alt={model.image.alt} width={model.image.width} height={model.image.height} loading="lazy" decoding="async" />
+              <figcaption>
+                {model.image.authorUrl ? <a href={model.image.authorUrl} target="_blank" rel="noopener noreferrer">{model.image.authorName}</a> : model.image.authorName}
+                {model.image.sourceUrl && <> · <a href={model.image.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`Archivo original: ${model.image.sourceTitle ?? model.name}`}>Fuente</a></>}
+                {model.image.licenseUrl && <> · <a href={model.image.licenseUrl} target="_blank" rel="noopener noreferrer">{model.image.licenseName}</a></>}
+              </figcaption>
+            </figure>
+            <div class="toyota-model-main">
+              <span class="toyota-model-type">{model.body}</span>
+              <h3><a class="toyota-model-link" href={`/marcas/${brand.slug}/${model.pageSlug}/`} aria-label={`Ver ficha del modelo ${model.name} de ${brand.name}`}>{model.name}</a></h3>
+            </div>
             <div class="toyota-model-powertrains" aria-label={`Motorizaciones de ${model.name}`}>
               {model.powertrains.map((powertrain) => <span>{powertrain}</span>)}
             </div>

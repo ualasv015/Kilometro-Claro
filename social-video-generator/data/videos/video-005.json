@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "video-005",
+  "title": "Encuentra tu próximo coche en un solo lugar",
+  "durationSeconds": 30,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/marcas/",
+  "narration": "¿No sabes por dónde empezar a buscar tu próximo coche? Kilómetro Claro reúne modelos de dieciséis marcas en un mismo lugar. Toyota, Renault, Volkswagen, Hyundai y muchas más. Ve al grano: consulta sus modelos, carrocerías y motorizaciones. Y si uno te interesa, salta directamente a la web oficial de la marca. Todo en una sola web, sin mil pestañas abiertas. Entra en la sección Marcas de Kilómetro Claro y empieza a buscar.",
+  "requiresHumanReview": true,
+  "scenes": [
+    {"id":"hook","startSeconds":0,"endSeconds":3.5,"headline":"¿Buscas tu próximo coche?","visual":"A browser erupts into a cascade of tabs, then a car-search window slides in underneath.","captions":[{"startSeconds":0.15,"endSeconds":3.2,"text":"¿No sabes por dónde empezar a buscar tu próximo coche?"}]},
+    {"id":"directory","startSeconds":3.5,"endSeconds":7.8,"headline":"16 MARCAS · UN SOLO LUGAR","visual":"The browser tabs snap together into one Kilómetro Claro directory and a bold sixteen counter rises.","captions":[{"startSeconds":3.36,"endSeconds":7.62,"text":"Kilómetro Claro reúne modelos de dieciséis marcas en un mismo lugar."}]},
+    {"id":"brands","startSeconds":7.8,"endSeconds":10.75,"headline":"Las marcas que ya conoces","visual":"A fast, kinetic carousel of the directory's brand-name cards.","captions":[{"startSeconds":7.95,"endSeconds":10.7,"text":"Toyota, Renault, Volkswagen, Hyundai y muchas más."}]},
+    {"id":"models","startSeconds":10.75,"endSeconds":14.75,"headline":"Ve al grano","visual":"Model cards and clear body-style and powertrain filters flip into view.","captions":[{"startSeconds":10.7,"endSeconds":14.75,"text":"Ve al grano: consulta sus modelos, carrocerías y motorizaciones."}]},
+    {"id":"official","startSeconds":14.75,"endSeconds":21.3,"headline":"¿Te interesa? Sigue al fabricante","visual":"A model card expands and an official-brand button launches out of the directory card.","captions":[{"startSeconds":14.75,"endSeconds":20.68,"text":"Y si uno te interesa, salta directamente a la web oficial de la marca."}]},
+    {"id":"one-tab","startSeconds":21.3,"endSeconds":25,"headline":"Adiós a las mil pestañas","visual":"Loose browser tabs fold into one clean directory window.","captions":[{"startSeconds":21.17,"endSeconds":24.56,"text":"Todo en una sola web, sin mil pestañas abiertas."}]},
+    {"id":"cta","startSeconds":25,"endSeconds":30,"headline":"Empieza tu búsqueda","visual":"The directory window settles beneath the official C logo with the marcas URL and a clear call to action.","captions":[{"startSeconds":24.97,"endSeconds":28.92,"text":"Entra en la sección Marcas de Kilómetro Claro y empieza a buscar."}]}
+  ]
+}

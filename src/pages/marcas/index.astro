@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import MaximalistHeader from '../../components/MaximalistHeader.astro';
 import MaximalistFooter from '../../components/MaximalistFooter.astro';
-import { brands, brandsLastReviewed } from '../../data/brands';
+import { brands } from '../../data/brands';
 import '../../styles/brands.css';
 
 const powertrains = [...new Set(brands.flatMap((brand) => brand.powertrains))].sort((a, b) => a.localeCompare(b, 'es'));
@@ -86,7 +86,7 @@ const directoryBrands = [...brands].sort((a, b) => {
       <span class="brands-method-mark" aria-hidden="true">i</span>
       <div>
         <h2 id="brands-method-title">Cómo leer este directorio</h2>
-        <p>Los nombres de motorización se resumen a nivel de modelo: no todas las combinaciones están disponibles en cada acabado. La gama se contrastó con las webs oficiales el {brandsLastReviewed}; los precios, campañas, equipamientos y unidades en stock pueden cambiar y no se incluyen aquí.</p>
+        <p>Los nombres de motorización se resumen a nivel de modelo: no todas las combinaciones están disponibles en cada acabado. Cada ficha indica cuándo se contrastó con las fuentes oficiales; los precios, campañas, equipamientos y unidades en stock pueden cambiar y no se incluyen aquí.</p>
       </div>
     </aside>
     </div>

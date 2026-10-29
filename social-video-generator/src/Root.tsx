@@ -10,11 +10,14 @@ import hiddenDetailsRaw from '../data/videos/video-003.json';
 import {HiddenCarDetails, type HiddenDetailsSpec} from './compositions/HiddenCarDetails';
 import drivetrainRaw from '../data/videos/video-004.json';
 import {DrivetrainExplainer, type DrivetrainSpec} from './compositions/DrivetrainExplainer';
+import directoryRaw from '../data/videos/video-005.json';
+import {BrandDirectoryPromo, type BrandDirectorySpec} from './compositions/BrandDirectoryPromo';
 
 const defaultSpec = validateVideoSpec(rawSpec);
 const rankingSpec = validateRankingVideo(rankingRaw);
 const hiddenDetailsSpec = hiddenDetailsRaw as unknown as HiddenDetailsSpec;
 const drivetrainSpec = drivetrainRaw as unknown as DrivetrainSpec;
+const directorySpec = directoryRaw as unknown as BrandDirectorySpec;
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -53,6 +56,15 @@ export const RemotionRoot: React.FC = () => (
     width={1080}
     height={1920}
     defaultProps={drivetrainSpec}
+  />
+  <Composition
+    id="BrandDirectoryPromoReel"
+    component={BrandDirectoryPromo}
+    durationInFrames={Math.round(directorySpec.durationSeconds * directorySpec.fps)}
+    fps={directorySpec.fps}
+    width={1080}
+    height={1920}
+    defaultProps={directorySpec}
   />
   </>
 );

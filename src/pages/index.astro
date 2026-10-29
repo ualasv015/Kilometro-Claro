@@ -358,23 +358,27 @@ const featuredTools = [
     padding: 10px 18px;
     border: 2px solid #172c27;
     border-radius: 8px;
+    background: #f8f7ef;
+    color: #172c27;
     box-shadow: 4px 4px 0 #172c27;
     font-size: 14px;
     font-weight: 850;
     letter-spacing: -.2px;
-    transition: transform .16s, box-shadow .16s;
+    transition: transform .16s, box-shadow .16s, background-color .16s, color .16s;
   }
 
-  .max-home-nav a:hover {
+  .max-home-nav a:hover,
+  .max-home-nav a:focus-visible,
+  .max-home-nav a:active,
+  .max-home-nav a[aria-current="page"] {
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0 #172c27;
+    background: #d9f36a;
+    color: #172c27;
   }
 
   .max-home-nav a span { font-size: 17px; }
-  .max-nav-guides { background: #d9f36a; color: #172c27; }
   .max-nav-guides span { color: #173d34; }
-  .max-nav-calculators { background: #f8f7ef; color: #172c27; }
-  .max-nav-brands { background: #173d34; color: #fff; }
 
   .max-search-panel {
     position: absolute;
