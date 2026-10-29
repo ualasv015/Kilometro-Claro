@@ -19,6 +19,7 @@ type HyundaiModelSeed = {
   facts: { label: string; value: string }[];
   figures?: { label: string; value: string }[];
   specNote?: string;
+  additionalSources?: { label: string; url: string }[];
 };
 
 const hyundaiPhotoData: Record<string, NonNullable<ModelPageData['image']>> = {
@@ -103,8 +104,10 @@ const combustion = (
   maxTorque = unpublished,
   torqueRpm = unpublished,
   note?: string,
+  classification?: Pick<ModelVersion, 'type' | 'powertrainGroup'>,
 ): ModelVersion => ({
   name,
+  ...classification,
   power,
   displacement,
   maxTorque,
@@ -181,32 +184,39 @@ const seeds: HyundaiModelSeed[] = [
   {
     modelSlug: 'bayon', name: 'Hyundai BAYON',
     officialUrl: `${hyundai}/modelos/bayon.html`,
-    technicalUrl: configurator,
-    description: 'Ficha del Hyundai BAYON: SUV urbano de gasolina, transmisión y aspectos que conviene comprobar en la gama española.',
+    technicalUrl: `${hyundai}/modelos/nuevo-bayon/technical-data.html`,
+    description: 'Motores del Hyundai BAYON en España: 1.0 T-GDi de 90 y 115 CV y sistema híbrido HEV de 138 CV.',
     intro: 'El BAYON es el SUV urbano de acceso de Hyundai. Su carrocería elevada y el formato compacto buscan combinar una posición de conducción alta con unas dimensiones adecuadas para calles y aparcamientos urbanos.',
-    powertrainSummary: 'El configurador español agrupa BAYON en su oferta de gasolina e híbridos ligeros. Las fichas de Hyundai muestran motores 1.0 T-GDi y cajas manuales o DCT; acabados y potencias pueden cambiar entre la gama vigente y unidades de stock.',
-    usageNote: 'La diferencia principal frente a un utilitario como el i20 está en la altura y el planteamiento de carrocería, no necesariamente en el espacio total. Si aparcas en garaje estrecho, compara anchura, longitud y radio de giro; si buscas etiqueta ECO, confirma que la motorización concreta de la oferta sea la microhíbrida.',
-    versions: [combustion('1.0 T-GDi gasolina / híbrido ligero 48 V', 'Potencia según configuración disponible', '998 cm³', unpublished, unpublished, 'Hyundai publica versiones y cambios distintos según acabado y año-modelo.')],
-    facts: [{ label: 'Carrocería', value: 'SUV urbano de 5 puertas' }, { label: 'Combustible', value: 'Gasolina; algunas configuraciones con sistema de 48 V' }, { label: 'Transmisión', value: 'Manual o DCT, según versión' }, { label: 'Plazas', value: '5' }],
-    specNote: 'La web oficial mantiene BAYON en el configurador, pero las fichas y unidades pueden corresponder a distintas actualizaciones. No se atribuye una cifra única de potencia o par al nombre del modelo.',
+    powertrainSummary: 'La página técnica española enumera dos motores de gasolina 1.0 T-GDi, de 90 y 115 CV, y un 1.6 HEV de 138 CV. Hyundai identifica este último como híbrido no enchufable; la gama y sus datos pueden cambiar mientras termina la homologación.',
+    usageNote: 'La diferencia principal frente a un utilitario como el i20 está en la altura y el planteamiento de carrocería, no necesariamente en el espacio total. Compara dimensiones y maletero con tus necesidades y confirma en el concesionario qué motor y transmisión están realmente disponibles.',
+    versions: [
+      combustion('1.0 T-GDi 90 · 6MT / 7DCT', '90 CV (66 kW)', '998 cm³', '172 Nm', '1.500–3.500 rpm', 'Dato de par de la ficha técnica MY26 del fabricante.'),
+      combustion('1.0 T-GDi 115 · 6MT / 7DCT', '115 CV (85 kW)', '998 cm³', unpublished, unpublished, 'La página española confirma potencia y transmisiones, pero no desglosa el par por esta versión.'),
+      hybrid('1.6 HEV · sistema 138 CV', '138 CV (101 kW)', '1,6 l', 'Híbrido no enchufable; la ficha española no desglosa potencia y par de cada motor.'),
+    ],
+    facts: [{ label: 'Carrocería', value: 'SUV urbano de 5 puertas' }, { label: 'Motorizaciones', value: 'Gasolina 90/115 CV o híbrida HEV 138 CV' }, { label: 'Transmisión', value: '6MT o 7DCT en gasolina; 6DCT en HEV' }, { label: 'Plazas', value: '5' }],
+    specNote: 'Hyundai advierte que las cifras de prestaciones del BAYON no son definitivas y están pendientes de homologación. Para el 1.0 T-GDi de 90 CV, el fabricante publica 172 Nm a 1.500–3.500 rpm; no atribuimos un régimen de par a las otras motorizaciones porque su ficha española no lo desglosa.',
+    additionalSources: [source('Ficha técnica oficial Hyundai BAYON MY26', 'https://dmassets.hyundai.com/is/content/hyundaiautoever/Scheda_Tecnica_Hyundai_Bayon_MY26')],
   },
   {
     modelSlug: 'kona', name: 'Hyundai KONA',
     officialUrl: `${hyundai}/modelos/kona.html`,
-    technicalUrl: `${hyundai}/modelos/kona-electrico/autonomia-carga.html`,
+    technicalUrl: `${hyundai}/modelos/kona/rendimiento.html`,
     description: 'Compara las versiones del Hyundai KONA en España: gasolina, híbrido no enchufable y eléctrico.',
     intro: 'KONA reúne en una misma familia carrocerías SUV con motorización de gasolina, híbrida no enchufable y eléctrica. Cada alternativa responde a un uso distinto: el consumo de combustible de la versión térmica no se compara directamente con los kWh/100 km del KONA Eléctrico.',
-    powertrainSummary: 'La gama española consultada ofrece KONA gasolina y KONA Híbrido, además del KONA Eléctrico con baterías de autonomía estándar y larga. La configuración concreta, la potencia y la autonomía dependen del motor, batería, llanta y acabado.',
+    powertrainSummary: 'Hyundai España muestra KONA de gasolina con 115 y 150 CV, KONA HEV de 138 CV y dos variantes eléctricas. La gasolina de acceso usa un 1.0 T-GDi; las versiones de 150 CV llevan un 1.6 T-GDi y el HEV combina un 1.6 GDi con asistencia eléctrica.',
     usageNote: 'Si dudas entre HEV y eléctrico, estima tus kilómetros, el acceso a carga doméstica y la proporción de ciudad y carretera. El híbrido no se enchufa; el eléctrico requiere planificar la recarga en viajes largos. Compara el gasto con precios de energía que pagues realmente, no solo con cifras WLTP.',
     versions: [
-      combustion('Gasolina T-GDi', 'Potencia según acabado', '1,0 o 1,6 l, según configuración', unpublished, unpublished, 'La disponibilidad de 48 V depende de la versión.'),
-      hybrid('KONA Híbrido (HEV)', 'Potencia y par combinados según acabado', '1,6 l gasolina + motor eléctrico', 'Sistema no enchufable; la batería se recarga durante la conducción.'),
+      combustion('1.0 T-GDi 115', '115 CV (85 kW)', '998 cm³', '200 Nm', '2.000–2.500 rpm'),
+      combustion('1.6 T-GDi 150', '150 CV (110 kW)', '1.598 cm³', '250 Nm', '1.500–4.000 rpm'),
+      hybrid('1.6 GDi HEV · sistema 138 CV', '138 CV (101,5 kW)', '1.580 cm³', 'Híbrido no enchufable. El par indicado corresponde al sistema híbrido.', '265 Nm', '4.000 rpm'),
       electric('KONA Eléctrico · batería estándar', '135 CV', '48,4 kWh; autonomía WLTP según versión'),
       electric('KONA Eléctrico · batería de larga autonomía', '204 CV', '65,4 kWh; hasta 510 km WLTP en la ficha consultada'),
     ],
     facts: [{ label: 'Carrocería', value: 'SUV compacto' }, { label: 'Plazas', value: '5' }, { label: 'Tecnologías', value: 'Gasolina, HEV y eléctrico' }, { label: 'Etiqueta DGT', value: 'Depende de la motorización' }],
     figures: [{ label: 'Autonomía máxima eléctrica publicada', value: 'Hasta 510 km WLTP; depende de batería y versión' }],
-    specNote: 'Hyundai publica por separado datos del KONA de combustión, HEV y eléctrico. Las capacidades de batería y autonomías de esta ficha corresponden al KONA Eléctrico y no deben trasladarse a las otras motorizaciones.',
+    specNote: 'Las potencias se contrastan con la gama española de Hyundai. Los detalles de cilindrada y par proceden de la ficha técnica MY26 del fabricante; transmisiones y acabados disponibles pueden variar por mercado. En el híbrido se indica el par del sistema, no el del motor térmico aislado. Las capacidades y autonomías eléctricas no deben trasladarse a las otras motorizaciones.',
+    additionalSources: [source('Ficha técnica oficial Hyundai KONA MY26', 'https://dmassets.hyundai.com/is/content/hyundaiautoever/be-fr-brochure-konapdf')],
   },
   {
     modelSlug: 'tucson', name: 'Hyundai TUCSON',
@@ -218,8 +228,8 @@ const seeds: HyundaiModelSeed[] = [
     usageNote: 'Para una comparación útil, anota primero si la unidad es gasolina, híbrida o enchufable y su año-modelo. Un PHEV solo aprovecha su batería si se carga con regularidad; si no se enchufa, el gasto puede diferir mucho del dato homologado. No uses las cifras preliminares de la nueva generación para valorar una unidad actual.',
     versions: [
       combustion('Gasolina 1.6 T-GDi', 'Potencia según generación y acabado', '1.598 cm³', unpublished, unpublished),
-      hybrid('TUCSON Híbrido (HEV)', 'Potencia combinada según año-modelo', '1.6 T-GDi + motor eléctrico', 'No requiere carga externa; potencia, batería y homologación dependen de generación.'),
-      hybrid('TUCSON Híbrido enchufable (PHEV)', 'Potencia combinada según año-modelo', '1.6 T-GDi + motor eléctrico', 'Se recarga externamente; autonomía eléctrica y batería varían con la generación.'),
+      hybrid('TUCSON Híbrido (HEV)', 'Potencia combinada según año-modelo', '1.6 l T-GDi + motor eléctrico', 'No requiere carga externa; potencia, batería y homologación dependen de generación.'),
+      hybrid('TUCSON Híbrido enchufable (PHEV)', 'Potencia combinada según año-modelo', '1.6 l T-GDi + motor eléctrico', 'Se recarga externamente; autonomía eléctrica y batería varían con la generación.'),
     ],
     facts: [{ label: 'Carrocería', value: 'SUV mediano de 5 plazas' }, { label: 'Tecnologías', value: 'Gasolina, HEV y PHEV' }, { label: 'Cambio', value: 'Manual o automático según versión' }, { label: 'Disponibilidad', value: 'Confirmar año-modelo y stock con Hyundai' }],
     specNote: 'Hyundai ha publicado una nueva generación TUCSON cuya página indica que todavía no está a la venta y que sus cifras no son definitivas. Esta ficha evita mezclar esos valores preliminares con los vehículos que aparecen en el configurador actual.',
@@ -257,14 +267,19 @@ const seeds: HyundaiModelSeed[] = [
   {
     modelSlug: 'i30-fastback', name: 'Hyundai i30 Fastback',
     officialUrl: `${hyundai}/modelos/i30-fastback.html`,
-    technicalUrl: configurator,
-    description: 'Conoce el Hyundai i30 Fastback: compacto de cinco puertas con silueta descendente y disponibilidad como últimas unidades.',
-    intro: 'El i30 Fastback conserva la base de un compacto, pero adopta una línea de techo que cae hacia la parte trasera. Hyundai lo mantiene en su configurador como “últimas unidades”; por eso, esta ficha sirve para identificar la carrocería y orientar la revisión de una unidad disponible, no para presuponer que exista toda la gama de acabados.',
-    powertrainSummary: 'El i30 Fastback pertenece a la familia i30 de gasolina. Hyundai no expone en el configurador un listado técnico completo de las unidades concretas que quedan en stock, así que no atribuimos una combinación única de cilindrada, potencia y par al nombre de la carrocería.',
-    usageNote: 'La silueta Fastback puede gustar por su perfil, pero conviene probar el acceso a las plazas traseras, la visibilidad y la apertura del maletero. Pide la ficha técnica de la unidad concreta y comprueba fecha de fabricación, motor, cambio y garantía antes de compararla con un i30 de cinco puertas.',
-    versions: [combustion('Gasolina T-GDi · unidades de stock', 'Consultar unidad disponible', 'Según motor y año-modelo', unpublished, unpublished, 'Hyundai marca este modelo como últimas unidades.')],
-    facts: [{ label: 'Carrocería', value: 'Compacto de silueta fastback' }, { label: 'Combustible', value: 'Gasolina' }, { label: 'Situación', value: 'Últimas unidades en el configurador español' }, { label: 'Disponibilidad', value: 'Sujeta al stock de concesionarios' }],
-    specNote: 'No se muestran cifras heredadas de versiones antiguas como si fueran la ficha de cualquier unidad actual. Hyundai indica disponibilidad limitada; solicita el documento técnico de la versión concreta.',
+    technicalUrl: 'https://dmassets.hyundai.com/is/content/hyundaiautoever/i30_my25_2505pdf',
+    description: 'Datos del Hyundai i30 Fastback: motores T-GDi de gasolina, versión híbrida ligera de 48 V, potencia, cilindrada y par máximo.',
+    intro: 'El i30 Fastback combina la base de un compacto con una silueta de techo descendente. Hyundai España publica dos familias de motor turbo: un 1.0 T-GDi de 100 CV con cambio manual o DCT, y un 1.5 T-GDi de 140 CV con hibridación ligera de 48 V. La disponibilidad concreta de cada combinación puede variar por acabado.',
+    powertrainSummary: 'La gama oficial distingue el 1.0 T-GDi de gasolina —172 Nm con cambio manual y 200 Nm con DCT— y el 1.5 T-GDi MHEV de 48 V, con 140 CV y 253 Nm. La cilindrada y el régimen del par se contrastan con la documentación técnica del fabricante; la configuración exacta debe confirmarse en la oferta española vigente.',
+    usageNote: 'La carrocería Fastback aporta una zaga más tendida que la del i30 de cinco puertas. Antes de elegirla, prueba el acceso a las plazas traseras, la visibilidad y la abertura del maletero; la línea exterior puede cambiar la facilidad para cargar objetos altos o voluminosos.',
+    versions: [
+      combustion('1.0 T-GDi 100 · 6MT', '100 CV (74 kW)', '998 cm³', '172 Nm', '1.500–3.500 rpm', 'Gasolina, cambio manual de 6 velocidades.'),
+      combustion('1.0 T-GDi 100 · 7DCT', '100 CV (74 kW)', '998 cm³', '200 Nm', '2.000–2.500 rpm', 'Gasolina, cambio DCT de 7 velocidades.'),
+      combustion('1.5 T-GDi MHEV 140 · 7DCT', '140 CV (103 kW)', '1.498 cm³', '253 Nm', '1.500–3.000 rpm', 'Gasolina con hibridación ligera de 48 V y cambio DCT de 7 velocidades.'),
+    ],
+    facts: [{ label: 'Carrocería', value: 'Compacto de silueta fastback' }, { label: 'Plazas', value: '5' }, { label: 'Motores', value: '1.0 T-GDi gasolina y 1.5 T-GDi MHEV 48 V' }, { label: 'Potencias publicadas', value: '100 y 140 CV, según motorización' }],
+    specNote: 'La página de prestaciones de Hyundai España confirma las familias de motor y sus potencias y pares; el catálogo técnico oficial aporta cilindrada y regímenes. Los acabados y combinaciones de cambio pueden cambiar según el año-modelo.',
+    additionalSources: [{ label: 'Prestaciones del Hyundai i30 Fastback', url: `${hyundai}/modelos/i30-fastback/prestaciones.html` }],
   },
   {
     modelSlug: 'i30-cw', name: 'Hyundai i30 CW',
@@ -438,6 +453,7 @@ const makePage = (entry: HyundaiModelSeed): ModelPageData => ({
     ...(entry.technicalUrl && entry.technicalUrl !== entry.officialUrl
       ? [source(`Información técnica de ${entry.name}`, entry.technicalUrl)]
       : []),
+    ...(entry.additionalSources ?? []),
   ],
   reviewedAt,
 });

@@ -3,7 +3,6 @@ import type { ModelPageData } from './model-pages';
 const reviewedAt = '28 de octubre de 2026';
 const root = 'https://www.byd.com/es-es';
 const source = (label: string, url: string) => ({ label, url });
-const evTorque = 'No publicado de forma comparable en la ficha española consultada';
 const evRpm = 'No aplica: motor eléctrico';
 const evDisplacement = 'No aplica: propulsión eléctrica';
 

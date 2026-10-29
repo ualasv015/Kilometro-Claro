@@ -13,6 +13,9 @@
 .model-detail-section>p{max-width:850px;color:#43564a;font-size:13px;line-height:1.8}
 .model-detail-table-wrap{overflow-x:auto;margin-top:21px;border-top:2px solid var(--brand-ink);border-bottom:1px solid #aeb9ae}
 .model-detail-table{width:100%;min-width:1050px;border-collapse:collapse;text-align:left}
+.model-detail-table--motorizaciones{min-width:790px}
+.model-detail-table--motorizaciones td{min-width:115px;vertical-align:top;white-space:normal}
+.model-detail-table--motorizaciones tbody th{white-space:normal;min-width:135px}
 .model-detail-table th,.model-detail-table td{padding:15px 13px;border-bottom:1px solid #d5ddd5;color:#31493b;font-size:12px;line-height:1.5}
 .model-detail-table thead th{color:#536d5d;font-size:10px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
 .model-detail-table tbody th{color:var(--brand-ink);font-weight:900;white-space:nowrap}
@@ -42,6 +45,7 @@
 .model-detail-photo figcaption{margin-top:8px;color:#647268;font-size:9px;line-height:1.6}
 .model-detail-photo figcaption a{color:var(--brand-deep);font-weight:800;text-decoration:underline;text-underline-offset:2px}
 .model-detail-table{min-width:1050px}
+.model-detail-table--motorizaciones{min-width:790px}
 .model-detail-table--compact{min-width:540px}
 @media(max-width:850px){.model-detail-hero-grid{grid-template-columns:minmax(0,1fr);gap:24px}.model-detail-photo{max-width:640px}.model-detail-photo figcaption{font-size:9px}}
-@media(max-width:700px){.model-detail-intro{padding:4px 0 29px}.model-detail-intro h1{font-size:clamp(40px,12vw,60px)}.model-detail-lead{font-size:15px}.model-detail-section{margin-top:42px}.model-detail-table{min-width:1050px}.model-detail-table--compact{min-width:540px}.model-detail-table th,.model-detail-table td{padding:12px 9px;font-size:11px}.model-detail-specs{grid-template-columns:repeat(2,minmax(0,1fr))}.model-detail-explainer{margin-top:42px;padding-left:15px}.model-detail-next{margin-top:43px;padding:20px 0}.model-detail-links{display:grid;grid-template-columns:1fr}.model-detail-links a{min-height:45px}}
+@media(max-width:700px){.model-detail-intro{padding:4px 0 29px}.model-detail-intro h1{font-size:clamp(40px,12vw,60px)}.model-detail-lead{font-size:15px}.model-detail-section{margin-top:42px}.model-detail-table{min-width:1050px}.model-detail-table--motorizaciones{min-width:760px}.model-detail-table--compact{min-width:540px}.model-detail-table th,.model-detail-table td{padding:12px 9px;font-size:11px}.model-detail-specs{grid-template-columns:repeat(2,minmax(0,1fr))}.model-detail-explainer{margin-top:42px;padding-left:15px}.model-detail-next{margin-top:43px;padding:20px 0}.model-detail-links{display:grid;grid-template-columns:1fr}.model-detail-links a{min-height:45px}}

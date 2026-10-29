@@ -12,8 +12,18 @@ export interface GuideImage {
   height: number;
 }
 
-// Cada ficha de Wikimedia Commons enlazada abajo declara expresamente la licencia CC0 de la imagen.
+// La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'mazda-mx-5-nd-futuro-ne': {
+    src: '/images/guides/mazda-mx5-nd-escena.jpg',
+    alt: 'Mazda MX-5 ND blanco estacionado en una calle de Brujas',
+    caption: 'Mazda MX-5 ND fotografiado en Brujas en mayo de 2026. La imagen muestra la generación actual, no una versión específica del año-modelo 2027.',
+    author: '2538O',
+    source: 'https://commons.wikimedia.org/wiki/File:Mazda_MX-5_ND.jpg',
+    license: 'https://creativecommons.org/publicdomain/zero/1.0/deed.es',
+    licenseName: 'CC0 1.0',
+    width: 1280, height: 814,
+  },
   'toyota-gr-gt': {
     src: '/images/guides/toyota-gr-gt.jpg',
     alt: 'Prototipo Toyota GR GT fotografiado en el circuito de Fuji',

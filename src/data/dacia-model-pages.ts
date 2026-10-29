@@ -155,7 +155,7 @@ export const daciaModels: ModelPageData[] = [
       { name: 'Eco-G 120', power: '90 kW (120 CV)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'Motor bicombustible gasolina/GLP', torqueRpm: notPublished, note: 'Caja manual de 6 velocidades en la configuración consultada.' },
       { name: 'mild hybrid 140', power: '103 kW (140 CV)', displacement: '1,2 l; 3 cilindros', maxTorque: notPublished, torqueScope: 'Motor de gasolina con sistema mild hybrid', torqueRpm: notPublished, note: 'Hibridación ligera de 48 V; la batería no permite circular en modo eléctrico por sí sola.' },
       { name: 'hybrid 155', power: '115 kW (155 CV)', displacement: '1,8 l; 4 cilindros', maxTorque: notPublished, torqueScope: 'Sistema full hybrid; la ficha consultada no desglosa aquí el par por motor', torqueRpm: notPublished, note: 'Híbrido autorrecargable con caja automática.' },
-      { name: 'tribrid 150 4x4', power: '113 kW (150 CV)', displacement: '1,2 l; motor térmico y motor eléctrico trasero', maxTorque: notPublished, torqueScope: 'Sistema híbrido gasolina/GLP con asistencia eléctrica y tracción trasera eléctrica', torqueRpm: notPublished, note: 'También aparece en material de la marca con la denominación anterior hybrid-G 150 4x4.' },
+      { name: 'tribrid 150 4x4', type: 'Híbrido bifuel (gasolina/GLP) + eléctrico', powertrainGroup: 'multi-energy', power: '113 kW (150 CV)', displacement: '1,2 l; motor térmico y motor eléctrico trasero', maxTorque: notPublished, torqueScope: 'Sistema híbrido gasolina/GLP con asistencia eléctrica y tracción trasera eléctrica', torqueRpm: notPublished, note: 'También aparece en material de la marca con la denominación anterior hybrid-G 150 4x4.' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto de 5 puertas' },
@@ -188,9 +188,9 @@ export const daciaModels: ModelPageData[] = [
     powertrainSummary: 'La gama española propone tres motorizaciones: mild hybrid-G 140 con gasolina y GLP, hybrid 155 autorrecargable e hybrid 150 4x4. La versión 155 combina un motor de gasolina de cuatro cilindros y 1,8 litros con dos motores eléctricos; la 4x4 acciona el eje trasero mediante un motor eléctrico. La nomenclatura comercial difiere ligeramente entre el comunicado de prensa y el configurador.',
     usageNote: 'La carrocería de 4,62 metros y el maletero anunciado de hasta 600 litros sitúan al Striker como alternativa familiar, aunque la capacidad varía con la motorización y la medición. Si el coste de uso es prioritario, compara el Eco-G/mild hybrid-G con gasolina y GLP según disponibilidad local; si conduces mucho en ciudad, valora el full hybrid. La tracción total solo aporta una ventaja clara si tus rutas justifican su coste, consumo y mantenimiento.',
     versions: [
-      { name: 'mild hybrid-G 140', power: '103 kW (140 CV)', displacement: '1,2 l; 3 cilindros', maxTorque: notPublished, torqueScope: 'Motor gasolina/GLP con asistencia mild hybrid', torqueRpm: notPublished, note: 'Caja manual según las condiciones técnicas publicadas por Dacia.' },
+      { name: 'mild hybrid-G 140', type: 'Microhíbrido bifuel (gasolina + GLP)', powertrainGroup: 'mild-bifuel', power: '103 kW (140 CV)', displacement: '1,2 l; 3 cilindros', maxTorque: notPublished, torqueScope: 'Motor gasolina/GLP con asistencia mild hybrid', torqueRpm: notPublished, note: 'Caja manual según las condiciones técnicas publicadas por Dacia.' },
       { name: 'hybrid 155', power: '116 kW (155 CV comerciales)', displacement: '1,8 l; 4 cilindros', maxTorque: notPublished, torqueScope: 'Sistema full hybrid; el comunicado no ofrece un par agregado comparable', torqueRpm: notPublished, additionalTorque: 'Motor de gasolina: 109 CV; dos motores eléctricos; consumo WLTP anunciado: 4,2 l/100 km' },
-      { name: 'hybrid 150 4x4', power: '150 CV comerciales', displacement: 'Motor térmico de gasolina/GLP y motor eléctrico trasero', maxTorque: notPublished, torqueScope: 'Sistema híbrido con tracción integral', torqueRpm: notPublished, note: 'En la página de pedidos también aparece como hybrid 150 4x4; algunas páginas de gama utilizan tribrid 150 4x4.' },
+      { name: 'hybrid 150 4x4', type: 'Híbrido (gasolina + eléctrico, 48 V)', powertrainGroup: 'multi-energy', power: 'Sistema: 150 CV (110 kW); térmico: 140 CV (103 kW); eléctrico trasero: 31 CV (23 kW)', displacement: '1,2 l; 3 cilindros', maxTorque: notPublished, torqueScope: 'Sistema híbrido con tracción integral', torqueRpm: notPublished, note: 'La versión usa gasolina; Dacia reserva la bicarburación gasolina/GLP para mild hybrid-G 140.' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Crossover familiar de 5 puertas' },
@@ -203,12 +203,13 @@ export const daciaModels: ModelPageData[] = [
       { label: 'hybrid 155 · consumo WLTP anunciado', value: '4,2 l/100 km' },
       { label: 'hybrid 155 · CO₂ WLTP anunciado', value: 'Desde 95 g/km' },
     ],
-    specNote: 'El comunicado de apertura de pedidos indica tres motores y sitúa el mild hybrid-G 140 desde 22.720 €; el precio varía por acabado y condiciones. No se presenta aquí como precio permanente ni se mezclan ofertas de financiación.',
+    specNote: 'Dacia denomina hybrid 155 a un sistema que también publica con 116 kW; CV y kW no coinciden exactamente por conversión matemática, así que se conservan las cifras oficiales y la denominación comercial. En hybrid 150 4x4, Dacia publica 140 CV (103 kW) para el motor térmico delantero, 31 CV (23 kW) para el eléctrico trasero y 150 CV (110 kW) de potencia combinada. El par no se muestra en la tabla porque la fuente no especifica el régimen. El precio inicial del mild hybrid-G 140 varía por acabado y condiciones; no se presenta como precio permanente ni se mezclan ofertas de financiación.',
     officialUrl: `${dacia}/modelos-hibridos-electricos/striker.html`,
     technicalUrl: `${dacia}/modelos-hibridos-electricos/striker/configurador.html`,
     sources: [
       source('Página oficial del Dacia Striker', `${dacia}/modelos-hibridos-electricos/striker.html`),
       source('Configurador y motorizaciones disponibles', `${dacia}/modelos-hibridos-electricos/striker/configurador.html`),
+      source('Desglose técnico de las motorizaciones Striker', 'https://prensa.dacia.es/nuevo-dacia-striker-lo-mejor-de-tres-mundos/?lang=spa'),
       source('Apertura de pedidos y precios en España', 'https://prensa.dacia.es/apertura-de-pedidos-y-precios-dacia-striker/?lang=spa'),
     ],
     reviewedAt,
@@ -223,9 +224,9 @@ export const daciaModels: ModelPageData[] = [
     usageNote: 'El Bigster ofrece cinco plazas y un maletero anunciado de hasta 702 litros, pero la capacidad concreta depende del motor y del método de medición. Para escoger motor, compara tus kilómetros urbanos, la posibilidad real de repostar GLP, el tipo de cambio y si necesitas tracción total. Mild hybrid no permite circular como eléctrico; hybrid 155 y tribrid sí pueden usar energía eléctrica en ciertas condiciones, pero no se enchufan.',
     versions: [
       { name: 'mild hybrid 140', power: '103 kW (140 CV)', displacement: '1,2 l; 3 cilindros', maxTorque: notPublished, torqueScope: 'Motor de gasolina con asistencia mild hybrid', torqueRpm: notPublished, note: 'Sistema de 48 V y transmisión manual según configuración.' },
-      { name: 'mild hybrid-G 140', power: '103 kW (140 CV)', displacement: '1,2 l; 3 cilindros', maxTorque: notPublished, torqueScope: 'Motor bicombustible gasolina/GLP con asistencia mild hybrid', torqueRpm: notPublished, note: 'Caja manual en la configuración consultada.' },
+      { name: 'mild hybrid-G 140', type: 'Microhíbrido bifuel (gasolina + GLP)', powertrainGroup: 'mild-bifuel', power: '103 kW (140 CV)', displacement: '1,2 l; 3 cilindros', maxTorque: notPublished, torqueScope: 'Motor bicombustible gasolina/GLP con asistencia mild hybrid', torqueRpm: notPublished, note: 'Caja manual en la configuración consultada.' },
       { name: 'hybrid 155', power: '115 kW (155 CV comerciales)', displacement: '1,8 l; 4 cilindros', maxTorque: '172 Nm térmicos; 205 Nm eléctricos', torqueScope: 'Cifras diferenciadas por Dacia; no son acumulables', torqueRpm: notPublished, note: 'Full hybrid autorrecargable, sin toma exterior.' },
-      { name: 'tribrid 150 4x4', power: '113 kW (150 CV)', displacement: 'Motor térmico 1,2 l y motor eléctrico posterior', maxTorque: notPublished, torqueScope: 'Sistema gasolina/GLP con motor eléctrico en el eje trasero', torqueRpm: notPublished, note: 'Denominado anteriormente hybrid-G 150 4x4 en documentos de la marca.' },
+      { name: 'tribrid 150 4x4', type: 'Híbrido bifuel (gasolina/GLP) + eléctrico', powertrainGroup: 'multi-energy', power: '113 kW (150 CV)', displacement: 'Motor térmico 1,2 l y motor eléctrico posterior', maxTorque: notPublished, torqueScope: 'Sistema gasolina/GLP con motor eléctrico en el eje trasero', torqueRpm: notPublished, note: 'Denominado anteriormente hybrid-G 150 4x4 en documentos de la marca.' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV de 5 puertas' },

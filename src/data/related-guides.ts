@@ -1,5 +1,6 @@
 export const relatedGuideSlugs: Record<string, string[]> = {
-  'toyota-gr-gt': ['porsche-mission-s-2026', 'coche-hibrido-enchufable-o-microhibrido', 'tipos-cambio-automatico'],
+  'toyota-gr-gt': ['porsche-mission-s-2026', 'mazda-mx-5-nd-futuro-ne', 'coche-hibrido-enchufable-o-microhibrido'],
+  'mazda-mx-5-nd-futuro-ne': ['toyota-gr-gt', 'coche-hibrido-enchufable-o-microhibrido', 'tipos-traccion-coche'],
   'cuanto-cuesta-mantener-coche-mes-espana': ['cuanto-cuesta-viaje-coche', 'como-calcular-consumo-real-coche', 'coches-baratos-espana'],
   'como-calcular-consumo-real-coche': ['como-reducir-consumo-combustible', 'cuanto-cuesta-viaje-coche', 'cuanto-cuesta-mantener-coche-mes-espana'],
   'cuanto-cuesta-viaje-coche': ['como-calcular-consumo-real-coche', 'consumo-coche-electrico-gasolina-diesel', 'cuanto-cuesta-mantener-coche-mes-espana'],

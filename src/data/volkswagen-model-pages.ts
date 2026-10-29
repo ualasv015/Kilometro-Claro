@@ -61,13 +61,25 @@ type VolkswagenModelSeed = {
   specNote?: string;
 };
 
-const combustionVersion = (name: string, power: string, displacement: string): ModelVersion => ({
+const combustionVersion = (name: string, power: string, displacement: string, type?: string, powertrainGroup?: 'mixed'): ModelVersion => ({
   name,
+  ...(type ? { type } : {}),
+  ...(powertrainGroup ? { powertrainGroup } : {}),
   power,
   displacement,
   maxTorque: 'No publicado en las fuentes oficiales consultadas',
   torqueScope: 'Motor de combustión',
   torqueRpm: 'No publicado en las fuentes oficiales consultadas',
+});
+
+const plugInVersion = (name: string, power: string, displacement: string, note: string): ModelVersion => ({
+  name,
+  power,
+  displacement,
+  maxTorque: 'No publicado de forma desglosada por versión',
+  torqueScope: 'Motorización híbrida enchufable',
+  torqueRpm: 'No publicado',
+  note,
 });
 
 const electricVersion = (name: string, power: string, battery: string): ModelVersion => ({
@@ -181,8 +193,8 @@ const volkswagenModelSeeds: VolkswagenModelSeed[] = [
     powertrainSummary: 'El configurador español contempla gasolina, diésel, híbrido ligero y PHEV. En las versiones convencionales consultadas aparecen 1,5 y 2,0 litros; el GTE es enchufable y las variantes GTI/R utilizan gasolina de 2,0 litros. La potencia cambia ampliamente entre versiones.',
     usageNote: 'El Golf puede compararse con compactos muy distintos entre sí: desde una versión de uso diario hasta un PHEV para quien pueda cargar con frecuencia o un GTI/R de enfoque deportivo. No atribuyas a toda la gama el consumo, la etiqueta DGT ni el coste de una sola versión.',
     versions: [
-      combustionVersion('TSI / eTSI y TDI, según acabado', '85–150 kW (115–204 CV)', '1,5 o 2,0 l, según motor'),
-      combustionVersion('GTE · híbrido enchufable', '110–130 kW en configurador', '1,5 l; sistema combinado con motor eléctrico'),
+      combustionVersion('TSI / eTSI y TDI, según acabado', '85–150 kW (115–204 CV), según versión', '1,5 o 2,0 l, según motor', 'Gasolina, microhíbrido y diésel, según versión', 'mixed'),
+      plugInVersion('GTE · híbrido enchufable', '110–130 kW en configurador', '1,5 l + motor eléctrico', 'Autonomía eléctrica según versión.'),
       combustionVersion('GTI / R · gasolina', '195–245 kW (265–333 CV)', '2,0 l'),
     ],
     facts: [{ label: 'Carrocería', value: 'Compacto de 5 puertas' }, { label: 'Motorizaciones', value: 'Gasolina, diésel, MHEV y PHEV, según versión' }, { label: 'Maletero', value: 'Hasta 1.237 litros' }, { label: 'Autonomía eléctrica PHEV', value: 'Hasta 143 km WLTP, según versión' }],
@@ -212,7 +224,7 @@ const volkswagenModelSeeds: VolkswagenModelSeed[] = [
     intro: 'El nuevo T-Roc incorpora dos tecnologías híbridas con funcionamiento distinto: mild hybrid y full hybrid autorrecargable. Ambas combinan gasolina y electricidad, pero no ofrecen la misma capacidad de circulación eléctrica. La gama y la potencia dependen del acabado.',
     powertrainSummary: 'Volkswagen España identifica motores híbridos ligeros y eléctricos autorrecargables. El configurador recoge potencias de 85 a 150 kW y cilindradas de 1,5 a 2,0 litros según acabado; la oferta de acceso del modelo anuncia 85 kW (116 CV).',
     usageNote: 'Un mild hybrid no se enchufa y no se comporta como un híbrido completo; el sistema HEV autorrecargable sí puede mover el vehículo eléctricamente en determinadas situaciones. Comprueba qué tecnología equipa la unidad que estás comparando y no des por hecho que todas las versiones tienen el mismo consumo.',
-    versions: [combustionVersion('Gasolina híbrida ligera o híbrida autorrecargable', '85–150 kW (116–204 CV), según acabado', '1,5 o 2,0 l, según versión')],
+    versions: [combustionVersion('Gasolina híbrida ligera o híbrida autorrecargable', '85–150 kW (116–204 CV), según acabado', '1,5 o 2,0 l, según versión', 'Microhíbrido e híbrido autorrecargable (gasolina), según versión', 'mixed')],
     facts: [{ label: 'Carrocería', value: 'SUV compacto' }, { label: 'Tecnologías', value: 'MHEV y HEV, según versión' }, { label: 'Maletero', value: 'Hasta 475 litros' }, { label: 'Etiqueta DGT', value: 'ECO en las versiones híbridas anunciadas' }],
     figures: [{ label: 'Consumo combinado WLTP', value: '5,5–5,9 l/100 km para la versión de acceso consultada' }, { label: 'Emisiones de CO₂', value: '125–135 g/km en esa gama' }],
   },
@@ -233,13 +245,18 @@ const volkswagenModelSeeds: VolkswagenModelSeed[] = [
     modelSlug: 'golf-variant',
     name: 'Volkswagen Golf Variant',
     officialSlug: 'golf-8-variant',
+    configuratorSlug: 'golf-variant',
     description: 'Datos del Volkswagen Golf Variant: motores TSI, TDI y eTSI, potencia, consumo y capacidad del maletero.',
-    intro: 'El Golf Variant mantiene la base del compacto y alarga la carrocería para ofrecer más espacio de carga. Volkswagen España destaca una capacidad de maletero de hasta 1.642 litros y motores TSI, TDI y eTSI según configuración. La carrocería familiar no implica una única motorización ni un consumo fijo.',
-    powertrainSummary: 'La página oficial recoge versiones de gasolina y diésel y disponibilidad de híbrido ligero. Las potencias publicadas para la gama consultada van de 85 a 110 kW (115–150 CV); cilindrada y transmisión dependen de la mecánica elegida.',
+    intro: 'El Golf Variant mantiene la base del compacto y alarga la carrocería para ofrecer más espacio de carga. El configurador español incluye motores TSI, eTSI y TDI, además de las variantes de altas prestaciones R-Line y R. La carrocería familiar no implica una única motorización ni un consumo fijo.',
+    powertrainSummary: 'El configurador de Volkswagen muestra potencias desde 85 kW (115 CV) en las versiones de acceso hasta 245 kW (333 CV) en el Golf Variant R. En la gama aparecen motores de 1,5 y 2,0 litros; las combinaciones de combustible, potencia y acabado cambian entre versiones.',
     usageNote: 'El maletero amplio puede resultar útil para viajes, familias o equipaje voluminoso. Compara el volumen con los asientos en la posición que realmente usarás y revisa si el motor escogido encaja con la proporción de ciudad y carretera que haces.',
-    versions: [combustionVersion('TSI / eTSI gasolina y TDI diésel, según acabado', '85–110 kW (115–150 CV) en la gama consultada', 'Cilindrada según versión; verificar en configurador')],
-    facts: [{ label: 'Carrocería', value: 'Familiar de 5 puertas' }, { label: 'Motorizaciones', value: 'Gasolina, diésel y mild hybrid, según versión' }, { label: 'Potencia publicada', value: '85–110 kW (115–150 CV)' }, { label: 'Maletero', value: 'Hasta 1.642 litros' }],
-    specNote: 'La ficha comercial y el catálogo pueden resumir de forma distinta las motorizaciones disponibles. Confirma la combinación de motor y acabado en el configurador antes de comprar; los valores de potencia aquí no asignan una cifra individual a cada combustible.',
+    versions: [
+      combustionVersion('TSI / eTSI / TDI · acabados estándar', '85–110 kW (115–150 CV), según motor', '1,5 / 2,0 l, según versión', 'Gasolina, microhíbrido o diésel, según motor', 'mixed'),
+      combustionVersion('Golf Variant R-Line · hasta 150 kW', '150 kW (204 CV)', '1,5 / 2,0 l, según configuración', 'Gasolina, microhíbrido o diésel, según versión', 'mixed'),
+      combustionVersion('Golf Variant R · gasolina', '245 kW (333 CV)', '2,0 l', 'Gasolina'),
+    ],
+    facts: [{ label: 'Carrocería', value: 'Familiar de 5 puertas' }, { label: 'Motorizaciones', value: 'Gasolina, microhíbrido y diésel, según versión' }, { label: 'Potencia publicada', value: '85–245 kW (115–333 CV)' }, { label: 'Maletero', value: 'Hasta 1.642 litros' }],
+    specNote: 'El configurador oficial incluye las variantes R-Line de hasta 150 kW y Golf Variant R de 245 kW, omitidas en el resumen anterior. Volkswagen agrupa cilindradas y potencias por acabado; por eso la fila estándar conserva los rangos y no atribuye una cifra individual a cada combustible. El par máximo con régimen no aparece desglosado en la fuente consultada.',
   },
   {
     modelSlug: 'tiguan',
@@ -250,7 +267,7 @@ const volkswagenModelSeeds: VolkswagenModelSeed[] = [
     intro: 'El Tiguan es el SUV mediano de Volkswagen y combina motores de gasolina, diésel, híbridos ligeros y enchufables. La versión PHEV añade recorrido eléctrico con batería cargada; las alternativas de combustión no requieren conexión externa. El espacio y el motor cambian con el acabado.',
     powertrainSummary: 'El configurador español incluye motores 1,5 y 2,0 litros, mild hybrid, diésel y eHybrid. Las potencias cambian desde 96 kW en acabados de entrada hasta 195 kW en una variante deportiva; el PHEV anuncia hasta 125 km de autonomía eléctrica en la página del modelo.',
     usageNote: 'La elección entre mild hybrid, diésel y PHEV depende del recorrido y de la posibilidad de cargar. El dato de hasta 125 km eléctricos corresponde a una homologación concreta; para aprovechar el PHEV en el día a día se necesita cargarlo con regularidad.',
-    versions: [combustionVersion('Gama de combustión y mild hybrid', '96–195 kW, según acabado', '1,5 o 2,0 l, según versión'), electricVersion('eHybrid · híbrido enchufable', '110–150 kW en configurador', 'Autonomía eléctrica WLTP de hasta 125 km según la página del modelo.')],
+    versions: [combustionVersion('Gama de combustión y mild hybrid', '96–195 kW, según acabado', '1,5 o 2,0 l, según versión', 'Gasolina, diésel y microhíbrido, según versión', 'mixed'), plugInVersion('eHybrid · híbrido enchufable', '110–150 kW en configurador', '1,5 l + motor eléctrico', 'Autonomía eléctrica WLTP de hasta 125 km según la página del modelo.')],
     facts: [{ label: 'Carrocería', value: 'SUV de 5 plazas' }, { label: 'Motorizaciones', value: 'Gasolina, diésel, MHEV y PHEV' }, { label: 'Maletero', value: 'Hasta 1.650 litros' }, { label: 'Autonomía eléctrica PHEV', value: 'Hasta 125 km WLTP' }],
     figures: [{ label: 'Consumo combinado publicado', value: '0,4–6,7 l/100 km, según versión' }],
   },
@@ -276,7 +293,7 @@ const volkswagenModelSeeds: VolkswagenModelSeed[] = [
     intro: 'El Tayron se sitúa entre los SUV familiares de Volkswagen y puede configurarse con cinco o siete plazas. Su gama comprende gasolina, diésel, híbrido ligero e híbrido enchufable; el número de asientos y el maletero útil dependen de la carrocería y de la configuración interior.',
     powertrainSummary: 'Volkswagen España muestra motores de 1,5 y 2,0 litros, con mild hybrid, diésel, gasolina y PHEV según acabado. El configurador alcanza 195 kW en la variante R-Line Performance; la gama regular incluye varias potencias y tracción total en determinadas versiones.',
     usageNote: 'Si se necesitan siete plazas, comprueba el espacio con la tercera fila desplegada y el equipaje que queda. Si se valora el híbrido enchufable, ten en cuenta que la carga frecuente es clave para aprovechar su recorrido eléctrico y que la capacidad del maletero cambia con la configuración.',
-    versions: [combustionVersion('Gasolina, mild hybrid y diésel', '110–195 kW, según acabado', '1,5 o 2,0 l, según versión'), electricVersion('eHybrid · híbrido enchufable', 'Disponible según acabado', 'Volkswagen anuncia hasta 121 km de autonomía eléctrica para la versión PHEV.')],
+    versions: [combustionVersion('Gasolina, mild hybrid y diésel', '110–195 kW, según acabado', '1,5 o 2,0 l, según versión', 'Gasolina, diésel y microhíbrido, según versión', 'mixed'), plugInVersion('eHybrid · híbrido enchufable', 'Disponible según acabado', '1,5 l + motor eléctrico', 'Volkswagen anuncia hasta 121 km de autonomía eléctrica para la versión PHEV.')],
     facts: [{ label: 'Carrocería', value: 'SUV familiar de 5 o 7 plazas' }, { label: 'Motorizaciones', value: 'Gasolina, diésel, MHEV y PHEV' }, { label: 'Maletero', value: 'Hasta 885 litros, según configuración' }, { label: 'Potencia máxima de gama', value: '195 kW en R-Line Performance' }],
     figures: [{ label: 'Autonomía eléctrica PHEV', value: 'Hasta 121 km, según la página oficial' }],
   },
@@ -303,7 +320,7 @@ const volkswagenModelSeeds: VolkswagenModelSeed[] = [
     intro: 'El Passat actual se ofrece en España como familiar. La gama combina gasolina mild hybrid, diésel e híbrido enchufable, con cambios automáticos. Su largo maletero lo hace relevante para viajes y familias, aunque el volumen disponible cambia según la posición de los asientos y la motorización.',
     powertrainSummary: 'El configurador muestra motores de gasolina eTSI, diésel y PHEV de 1,5 y 2,0 litros, con potencias de 110 a 142 kW según acabado. Volkswagen publica cinco plazas y un maletero de hasta 1.780 litros.',
     usageNote: 'El diésel puede encajar con kilometrajes altos en carretera, mientras que un PHEV tiene sentido si se carga con frecuencia y los recorridos diarios caben en su autonomía eléctrica. Compara coste total y uso antes de elegir por combustible o etiqueta.',
-    versions: [combustionVersion('TSI / eTSI gasolina y TDI diésel', '110–142 kW (150–193 CV), según acabado', '1,5 o 2,0 l, según motor'), electricVersion('eHybrid · híbrido enchufable', 'Disponible según acabado', 'Batería recargable externamente; autonomía eléctrica según versión.')],
+    versions: [combustionVersion('TSI / eTSI gasolina y TDI diésel', '110–142 kW (150–193 CV), según acabado', '1,5 o 2,0 l, según motor', 'Gasolina, microhíbrido y diésel, según versión', 'mixed'), plugInVersion('eHybrid · híbrido enchufable', 'Disponible según acabado', '1,5 l + motor eléctrico', 'Batería recargable externamente; autonomía eléctrica según versión.')],
     facts: [{ label: 'Carrocería', value: 'Familiar' }, { label: 'Plazas', value: '5' }, { label: 'Motorizaciones', value: 'Gasolina MHEV, diésel y PHEV' }, { label: 'Maletero', value: 'Hasta 1.780 litros' }],
     figures: [{ label: 'Consumo combinado publicado', value: '4,9–7,4 l/100 km, según versión' }, { label: 'Autonomía eléctrica PHEV', value: 'Hasta 133 km según la página oficial' }],
   },

@@ -17,6 +17,7 @@ export function getStaticPaths() {
 
 const { brand, model, detail } = Astro.props;
 const modelName = model.name.startsWith(brand.name) ? model.name : `${brand.name} ${model.name}`;
+const hasMotorTableFormat = ['audi', 'toyota', 'renault', 'volkswagen', 'hyundai', 'seat', 'dacia', 'kia', 'peugeot'].includes(brand.slug);
 const photoMethod = detail.image
   ? 'La fotografía y su licencia se acreditan junto a la imagen.'
   : 'Esta ficha no incluye fotografía promocional; las especificaciones enlazan a las fuentes oficiales.';
@@ -59,34 +60,42 @@ const photoMethod = detail.image
         </div>
         <p>{detail.powertrainSummary}</p>
         <div class="model-detail-table-wrap" role="region" aria-label={`Motorizaciones del ${modelName}`} tabindex="0">
-          <table class="model-detail-table">
+          <table class:list={['model-detail-table', { 'model-detail-table--motorizaciones': hasMotorTableFormat }]}>
             <thead>
               <tr>
                 <th scope="col">Versión</th>
+                {hasMotorTableFormat && <th scope="col">Tipo</th>}
                 <th scope="col">Potencia</th>
                 <th scope="col">Cilindrada</th>
                 <th scope="col">Par máximo</th>
-                <th scope="col">A qué corresponde</th>
-                <th scope="col">Régimen</th>
-                <th scope="col">Dato complementario</th>
+                {!hasMotorTableFormat && <>
+                  <th scope="col">A qué corresponde</th>
+                  <th scope="col">Régimen</th>
+                  <th scope="col">Dato complementario</th>
+                </>}
               </tr>
             </thead>
             <tbody>
               {detail.versions.map((version) => (
                 <tr>
                   <th scope="row">{version.name}</th>
+                  {hasMotorTableFormat && <td>{version.type}</td>}
                   <td>{version.power}</td>
                   <td>{version.displacement}</td>
                   <td>{version.maxTorque}</td>
-                  <td>{version.torqueScope}</td>
-                  <td>{version.torqueRpm}</td>
-                  <td>{version.additionalTorque ?? version.note ?? '—'}</td>
+                  {!hasMotorTableFormat && <>
+                    <td>{version.torqueScope}</td>
+                    <td>{version.torqueRpm}</td>
+                    <td>{version.additionalTorque ?? version.note ?? '—'}</td>
+                  </>}
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p class="model-detail-note">El par y su régimen se refieren al elemento indicado en cada fila. En los modelos eléctricos no existe cilindrada térmica ni un régimen de par comparable. Cuando {brand.name} no publica una cifra o no aclara su alcance en la fuente consultada, lo señalamos para no presentar una estimación como dato oficial.</p>
+        {hasMotorTableFormat
+          ? <p class="model-detail-note">La potencia se expresa primero en CV y después en kW. En las versiones híbridas se indica si el dato corresponde al motor térmico, al eléctrico o al sistema. El par solo aparece cuando la fuente consultada publica también su régimen; por eso puede quedar en blanco. En las versiones eléctricas la cilindrada se indica con «—» y no se muestra el par.</p>
+          : <p class="model-detail-note">El par y su régimen se refieren al elemento indicado en cada fila. En los modelos eléctricos no existe cilindrada térmica ni un régimen de par comparable. Cuando {brand.name} no publica una cifra o no aclara su alcance en la fuente consultada, lo señalamos para no presentar una estimación como dato oficial.</p>}
         {detail.specNote && <p class="model-detail-note model-detail-note--method">{detail.specNote}</p>}
       </section>
 

@@ -14,9 +14,12 @@ import { mercedesModels } from './mercedes-model-pages';
 import { bmwModels } from './bmw-model-pages';
 import { audiModels } from './audi-model-pages';
 import { mazdaModels } from './mazda-model-pages';
+import { formatMotorTableVersion } from '../lib/motor-table';
 
 export type ModelVersion = {
   name: string;
+  type?: string;
+  powertrainGroup?: 'mixed' | 'mild-bifuel' | 'multi-energy';
   power: string;
   displacement: string;
   maxTorque: string;
@@ -58,6 +61,12 @@ export type ModelPageData = {
 };
 
 const reviewedAt = '28 de octubre de 2026';
+const formatKiaMotorVersion = (version: ModelVersion): ModelVersion => {
+  const formatted = formatMotorTableVersion(version);
+  return /\b(?:CV|kW)\b/i.test(formatted.power)
+    ? formatted
+    : { ...formatted, power: '—' };
+};
 const toyota = 'https://www.toyota.es';
 const byModel = (slug: string) => `${toyota}/coches/${slug}`;
 const source = (label: string, url: string) => ({ label, url });
@@ -183,13 +192,13 @@ const toyotaModels: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>[] = [
     usageNote: 'Al comparar las dos variantes, revisa también carrocería, acabado, ruedas y condiciones de homologación. La potencia combinada no se obtiene sumando sin más las potencias máximas de los motores térmico y eléctrico.',
     versions: [
       { name: 'Hybrid 140 e-CVT', power: '140 CV combinados', displacement: '1.798 cm³', maxTorque: '142 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '3.600 rpm', additionalTorque: 'Par híbrido combinado: 185 Nm' },
-      { name: 'Hybrid 200 e-CVT', power: '196 CV combinados', displacement: '1.987 cm³', maxTorque: '190 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '4.400–5.200 rpm', additionalTorque: 'Par híbrido combinado: 206 Nm' },
+      { name: 'Hybrid 200 e-CVT', power: '178 CV combinados', displacement: '1.987 cm³', maxTorque: '190 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '4.400–5.200 rpm', additionalTorque: 'Par híbrido combinado: 206 Nm' },
     ],
     facts: [{ label: 'Carrocería', value: 'Compacto de 5 puertas' }, { label: 'Plazas', value: '5' }, { label: 'Tracción', value: 'Delantera' }, { label: 'Transmisión', value: 'Automática e-CVT' }],
     figures: [{ label: 'Consumo combinado WLTP', value: '4,4–4,9 l/100 km, según versión y configuración' }],
     officialUrl: byModel('corolla'),
     technicalUrl: `${byModel('corolla')}/caracteristicas`,
-    sources: [source('Gama Toyota Corolla España', `${toyota}/coches/corolla`), source('Especificaciones técnicas Corolla Hybrid 140/200', `${toyota}/content/dam/toyota/nmsc/spain/cross-model/new-cars/catalogos-precios/pdf/14737_COR_HB_52_ES_WEB_S.pdf`)],
+    sources: [source('Gama Toyota Corolla España', `${toyota}/coches/corolla`), source('Catálogo técnico Toyota Corolla 5 puertas MY26', `${toyota}/content/dam/toyota/nmsc/spain/cross-model/new-cars/catalogos-precios/pdf/corolla/Toyota_Corolla_5P_MY26.pdf`)],
     image: photo('toyota-corolla-hatchback.jpg', 'Toyota Corolla Hybrid de cinco puertas, generación E210.', '2023_Toyota_Corolla_Hybrid_(E210)_hatchback_IMG_8513.jpg', 'Alexander Migl', 'Alexander_Migl', 'CC BY-SA 4.0'),
   },
   {
@@ -217,7 +226,7 @@ const toyotaModels: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>[] = [
     usageNote: 'El familiar puede resultar más práctico para equipaje o viajes, pero el volumen disponible depende de la versión y de cómo se mida. El catálogo MY26 indica 596 litros para Hybrid 140 y 581 litros para Hybrid 200, con diferencias asociadas al sistema y a la configuración.',
     versions: [
       { name: 'Hybrid 140 e-CVT', power: '140 CV combinados', displacement: '1.798 cm³', maxTorque: '142 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '3.600 rpm', additionalTorque: 'Par híbrido combinado: 185 Nm' },
-      { name: 'Hybrid 200 e-CVT', power: '196 CV combinados', displacement: '1.987 cm³', maxTorque: '190 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '4.400–5.200 rpm', additionalTorque: 'Par híbrido combinado: 206 Nm' },
+      { name: 'Hybrid 200 e-CVT', power: '178 CV combinados', displacement: '1.987 cm³', maxTorque: '190 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '4.400–5.200 rpm', additionalTorque: 'Par híbrido combinado: 206 Nm' },
     ],
     facts: [{ label: 'Carrocería', value: 'Familiar de 5 puertas' }, { label: 'Plazas', value: '5' }, { label: 'Maletero Hybrid 140', value: '596 litros' }, { label: 'Maletero Hybrid 200', value: '581 litros' }],
     figures: [{ label: 'Hybrid 140 · consumo WLTP', value: '4,5–4,7 l/100 km' }, { label: 'Hybrid 200 · consumo WLTP', value: '4,7–4,8 l/100 km' }],
@@ -622,15 +631,15 @@ const renaultModels: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>[] = [
     title: 'Renault Espace E-Tech full hybrid: motor y datos del SUV familiar',
     description: 'Consulta el Renault Espace E-Tech full hybrid de 200 CV, sus plazas, dimensiones, maletero y tecnología híbrida.',
     intro: 'El Espace actual es un SUV familiar que puede configurarse con cinco o siete plazas. Su sistema E-Tech full hybrid busca combinar un motor de gasolina con asistencia eléctrica sin necesidad de enchufe, con un interior cuyo espacio cambia según se seleccione la tercera fila.',
-    powertrainSummary: 'Renault España publica una motorización E-Tech full hybrid de 200 CV. La ficha nacional consultada no muestra de manera suficiente el desglose de cilindrada y par por componente, por lo que esta página conserva la potencia oficial y no completa los campos técnicos con cifras deducidas de otros modelos.',
+    powertrainSummary: 'Renault España ofrece el E-Tech full hybrid de 200 CV con un motor de gasolina turbo de tres cilindros y 1.199 cm³, apoyado por dos motores eléctricos. La potencia de 200 CV corresponde al sistema híbrido; los pares de los motores térmico y eléctrico no se suman entre sí.',
     usageNote: 'La posibilidad de elegir cinco o siete plazas es uno de los factores prácticos centrales: con la tercera fila desplegada queda menos espacio para equipaje. Comprueba la configuración real del maletero y la homologación del vehículo que estés valorando.',
-    versions: [{ name: 'E-Tech full hybrid', power: '200 CV', displacement: 'No publicado con suficiente detalle en la ficha española consultada', maxTorque: 'No publicado con suficiente detalle', torqueScope: 'La ficha nacional consultada no desglosa el dato', torqueRpm: 'No publicado' }],
+    versions: [{ name: 'E-Tech full hybrid 200', power: '200 CV (147 kW)', displacement: '1.199 cm³', maxTorque: 'No publicado de forma comparable', torqueScope: 'Sistema híbrido; Renault indica pares térmico y eléctrico no acumulables', torqueRpm: 'No publicado' }],
     facts: [{ label: 'Carrocería', value: 'SUV familiar' }, { label: 'Plazas', value: '5 o 7, según configuración' }, { label: 'Longitud', value: '4.722 mm' }, { label: 'Maletero', value: 'Hasta 692 litros en configuración de 5 plazas; varía con los asientos' }],
     figures: [{ label: 'Potencia del sistema híbrido', value: '200 CV' }, { label: 'Depósito de gasolina', value: '55 litros' }],
-    specNote: 'Renault España no ofrece en la ficha consultada una tabla completa de cilindrada, par por componente y régimen. Se mantiene la cifra oficial de potencia y se evita atribuir al modelo información de otras versiones o mercados.',
+    specNote: 'El catálogo técnico Renault España MY25 especifica un motor térmico 1.2 de 1.199 cm³ y una potencia híbrida acumulada de 147 kW (200 CV). Publica 205 Nm para cada motor, con la indicación de que no son acumulables y sin un régimen individual inequívoco; por eso no se muestran en la columna de par.',
     officialUrl: renaultModel('hibridos/espace.html'),
     technicalUrl: renaultModel('hibridos/espace/ficha-tecnica.html'),
-    sources: [source('Renault Espace en España', renaultModel('hibridos/espace.html')), source('Ficha técnica y configuraciones del Espace', renaultModel('hibridos/espace/ficha-tecnica.html'))],
+    sources: [source('Renault Espace en España', renaultModel('hibridos/espace.html')), source('Ficha técnica Renault Espace MY25', 'https://catalogo.renault.es/es/mobile/espace_rhn/ct_espace_rhn_es_may_2025.pdf'), source('Ficha técnica y configuraciones del Espace', renaultModel('hibridos/espace/ficha-tecnica.html'))],
     image: photo('renault-espace.jpg', 'Renault Espace de generación actual fotografiado en carretera.', 'Renault_Espace_(2024)_(53988865283).jpg', 'Charles', 'Charles', 'CC BY 2.0', 'https://www.flickr.com/people/charles79/'),
   },
   {
@@ -767,21 +776,21 @@ const renaultModels: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>[] = [
 const modelPageRecords: ModelPageData[] = [
   ...audiModels,
   ...mazdaModels,
-  ...daciaModels,
+  ...daciaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...changanModels,
   ...omodaJaecooModels,
   ...leapmotorModels,
   ...bydModels,
   ...mgModels,
-  ...peugeotModels,
-  ...kiaModels,
+  ...peugeotModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...kiaModels.map((model) => ({ ...model, versions: model.versions.map(formatKiaMotorVersion) })),
   ...mercedesModels,
   ...bmwModels,
-  ...toyotaModels.map((model) => ({ ...model, brandSlug: 'toyota', reviewedAt })),
-  ...renaultModels.map((model) => ({ ...model, brandSlug: 'renault', reviewedAt })),
-  ...volkswagenModels,
-  ...hyundaiModels,
-  ...seatModels,
+  ...toyotaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion), brandSlug: 'toyota', reviewedAt })),
+  ...renaultModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion), brandSlug: 'renault', reviewedAt })),
+  ...volkswagenModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...hyundaiModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...seatModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
 ];
 
 export const modelPages: ModelPageData[] = modelPageRecords.map((model) => ({

@@ -1,5 +1,13 @@
 export const guides = [
   {
+    slug: 'mazda-mx-5-nd-futuro-ne',
+    title: 'Mazda MX-5 2027 y futuro «NE»: qué sabemos de verdad',
+    category: 'Comparar coches',
+    categorySlug: 'comparar-coches',
+    description: 'Qué cambia en el MX-5 2027 y qué se ha confirmado de su sucesor: motor, objetivo de peso, cambio manual y fecha, con fuentes contrastadas.',
+    published: true,
+  },
+  {
     slug: 'toyota-gr-gt',
     title: 'Toyota GR GT: el V8 híbrido, su tecnología y sus rivales',
     category: 'Comparar coches',
