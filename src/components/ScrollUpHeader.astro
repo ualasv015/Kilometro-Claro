@@ -1,0 +1,189 @@
+<button class="scroll-up-backdrop" id="scroll-up-backdrop" type="button" aria-label="Cerrar menú" hidden></button>
+
+<header class="scroll-up-bar" id="scroll-up-bar" aria-label="Accesos rápidos" aria-hidden="true" inert>
+  <div class="scroll-up-bar-inner">
+    <button class="scroll-up-menu-toggle" id="scroll-up-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="scroll-up-menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="scroll-up-brand" href="/" aria-label="Kilómetro Claro, página de inicio">
+      <img src="/logo-marca-kilometro-claro.png" alt="" width="40" height="40" />
+      <span>Kilómetro <strong>Claro</strong></span>
+    </a>
+
+    <div class="scroll-up-search-shell">
+      <button class="scroll-up-search-toggle" id="scroll-up-search-toggle" type="button" aria-label="Abrir búsqueda" aria-expanded="false" aria-controls="scroll-up-search-form">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+      </button>
+      <form class="scroll-up-search-form" id="scroll-up-search-form" action="/buscar/" method="get" role="search" hidden>
+        <label class="scroll-up-sr-only" for="scroll-up-search-input">Buscar en Kilómetro Claro</label>
+        <input id="scroll-up-search-input" type="search" name="q" placeholder="Buscar guías, calculadoras y marcas…" autocomplete="off" />
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+
+    <nav class="scroll-up-menu" id="scroll-up-menu" aria-label="Menú de Kilómetro Claro" hidden>
+      <button class="scroll-up-menu-close" id="scroll-up-menu-close" type="button">Cerrar menú <span aria-hidden="true">×</span></button>
+      <section class="scroll-up-menu-social" aria-labelledby="scroll-up-social-title">
+        <h2 id="scroll-up-social-title">Redes sociales</h2>
+        <div>
+          <a href="https://www.instagram.com/kilometroclaro/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://x.com/KilometroClaro" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://www.tiktok.com/@kilometro_claro" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://www.youtube.com/channel/UC-akJwUKyYpnQ0ufSIEcoww" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.facebook.com/profile.php?id=61595674247179" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </section>
+      <nav class="scroll-up-menu-sections" aria-label="Secciones principales">
+        <a href="/guias/">Guías</a>
+        <a href="/calculadoras/">Calculadoras</a>
+        <a href="/marcas/">Marcas</a>
+      </nav>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const bar = document.querySelector<HTMLElement>('#scroll-up-bar');
+  const originalHeader = document.querySelector<HTMLElement>('.max-home-header');
+  const menuToggle = document.querySelector<HTMLButtonElement>('#scroll-up-menu-toggle');
+  const menu = document.querySelector<HTMLElement>('#scroll-up-menu');
+  const menuClose = document.querySelector<HTMLButtonElement>('#scroll-up-menu-close');
+  const backdrop = document.querySelector<HTMLButtonElement>('#scroll-up-backdrop');
+  const searchToggle = document.querySelector<HTMLButtonElement>('#scroll-up-search-toggle');
+  const searchForm = document.querySelector<HTMLFormElement>('#scroll-up-search-form');
+  const searchInput = document.querySelector<HTMLInputElement>('#scroll-up-search-input');
+
+  let previousY = window.scrollY;
+  let visible = false;
+  let ticking = false;
+
+  const closeMenu = (restoreFocus = false) => {
+    if (!menu || !menuToggle || !backdrop) return;
+    menu.hidden = true;
+    backdrop.hidden = true;
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir menú');
+    bar?.classList.remove('menu-open');
+    if (restoreFocus) menuToggle.focus();
+  };
+
+  const closeSearch = (restoreFocus = false) => {
+    if (!searchForm || !searchToggle) return;
+    searchForm.hidden = true;
+    searchToggle.setAttribute('aria-expanded', 'false');
+    searchToggle.setAttribute('aria-label', 'Abrir búsqueda');
+    bar?.classList.remove('search-open');
+    if (restoreFocus) searchToggle.focus();
+  };
+
+  const setVisible = (next: boolean) => {
+    if (!bar || visible === next) return;
+    visible = next;
+    bar.classList.toggle('is-visible', next);
+    bar.setAttribute('aria-hidden', String(!next));
+    if (next) {
+      bar.removeAttribute('inert');
+    } else {
+      closeMenu();
+      closeSearch();
+      if (bar.contains(document.activeElement)) (document.activeElement as HTMLElement).blur();
+      bar.setAttribute('inert', '');
+    }
+  };
+
+  const updateVisibility = () => {
+    const currentY = Math.max(0, window.scrollY);
+    const originalIsVisible = (originalHeader?.getBoundingClientRect().bottom ?? 0) > 0;
+    if (currentY < 80 || originalIsVisible) {
+      setVisible(false);
+    } else if (currentY < previousY - 3) {
+      setVisible(true);
+    } else if (currentY > previousY + 3) {
+      setVisible(false);
+    }
+    previousY = currentY;
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateVisibility);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  menuToggle?.addEventListener('click', () => {
+    if (!menu || !backdrop || !bar) return;
+    const opening = menu.hidden;
+    closeSearch();
+    menu.hidden = !opening;
+    backdrop.hidden = !opening;
+    menuToggle.setAttribute('aria-expanded', String(opening));
+    menuToggle.setAttribute('aria-label', opening ? 'Cerrar menú' : 'Abrir menú');
+    bar.classList.toggle('menu-open', opening);
+    if (opening) menu.querySelector<HTMLAnchorElement>('a')?.focus();
+  });
+
+  menuClose?.addEventListener('click', () => closeMenu(true));
+  backdrop?.addEventListener('click', () => closeMenu(true));
+
+  searchToggle?.addEventListener('click', () => {
+    if (!searchForm || !bar) return;
+    const opening = searchForm.hidden;
+    closeMenu();
+    searchForm.hidden = !opening;
+    searchToggle.setAttribute('aria-expanded', String(opening));
+    searchToggle.setAttribute('aria-label', opening ? 'Cerrar búsqueda' : 'Abrir búsqueda');
+    bar.classList.toggle('search-open', opening);
+    if (opening) searchInput?.focus();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    if (menu && !menu.hidden) closeMenu(true);
+    if (searchForm && !searchForm.hidden) closeSearch(true);
+  });
+
+  document.addEventListener('click', (event) => {
+    if (searchForm && !searchForm.hidden && !bar?.contains(event.target as Node)) closeSearch();
+  });
+</script>
+
+<style>
+  .scroll-up-backdrop[hidden],.scroll-up-menu[hidden],.scroll-up-search-form[hidden]{display:none}
+  .scroll-up-backdrop{position:fixed;inset:0;z-index:998;border:0;background:rgb(12 24 20 / 48%);cursor:pointer}
+  .scroll-up-bar{position:fixed;inset:0 0 auto;z-index:999;transform:translateY(-110%);visibility:hidden;opacity:0;pointer-events:none;border-bottom:3px solid #172c27;background:#173d34;color:#f8f7ef;box-shadow:0 5px 0 #d9f36a;transition:transform .22s ease,opacity .18s ease,visibility .22s}
+  .scroll-up-bar.is-visible{transform:translateY(0);visibility:visible;opacity:1;pointer-events:auto}
+  .scroll-up-bar-inner{position:relative;display:grid;width:min(calc(100% - 32px),1180px);min-height:64px;grid-template-columns:1fr auto 1fr;align-items:center;margin:0 auto}
+  .scroll-up-menu-toggle,.scroll-up-search-toggle{display:grid;width:42px;height:42px;place-items:center;border:2px solid #172c27;border-radius:9px;background:#fff;color:#172c27;box-shadow:3px 3px 0 #172c27;cursor:pointer;transition:transform .16s,box-shadow .16s,background-color .16s}
+  .scroll-up-menu-toggle{justify-self:start;gap:4px;align-content:center;padding:9px 10px}
+  .scroll-up-menu-toggle span{display:block;width:18px;height:2px;border-radius:2px;background:currentColor;transition:transform .16s,opacity .16s}
+  .menu-open .scroll-up-menu-toggle span:first-child{transform:translateY(6px) rotate(45deg)}
+  .menu-open .scroll-up-menu-toggle span:nth-child(2){opacity:0}
+  .menu-open .scroll-up-menu-toggle span:last-child{transform:translateY(-6px) rotate(-45deg)}
+  .scroll-up-menu-toggle:hover,.scroll-up-search-toggle:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #172c27;background:#d9f36a}
+  .scroll-up-brand{display:inline-flex;grid-column:2;align-items:center;justify-self:center;gap:9px;color:#f8f7ef;font-size:18px;font-weight:750;letter-spacing:-.5px;white-space:nowrap}
+  .scroll-up-brand img{display:block;width:40px;height:40px;object-fit:cover;border:2px solid #172c27;border-radius:11px;box-shadow:3px 3px 0 #d9f36a}
+  .scroll-up-brand strong{color:#d9f36a;font-weight:900}
+  .scroll-up-search-shell{position:relative;grid-column:3;justify-self:end}
+  .scroll-up-search-toggle svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .scroll-up-search-form{position:absolute;top:calc(100% + 11px);right:0;display:flex;width:min(440px,calc(100vw - 28px));gap:8px;padding:10px;border:2px solid #172c27;border-radius:10px;background:#fffef8;box-shadow:6px 6px 0 #172c27}
+  .scroll-up-search-form input{min-width:0;flex:1;padding:10px 11px;border:1px solid #b8c5bb;border-radius:6px;color:#172c27;background:#fff;font:inherit}
+  .scroll-up-search-form button{padding:9px 13px;border:1px solid #173d34;border-radius:6px;background:#173d34;color:#fff;font-weight:800;cursor:pointer}
+  .scroll-up-search-form input:focus-visible,.scroll-up-search-form button:focus-visible,.scroll-up-menu a:focus-visible,.scroll-up-menu button:focus-visible,.scroll-up-menu-toggle:focus-visible,.scroll-up-search-toggle:focus-visible{outline:3px solid #f07842;outline-offset:3px}
+  .scroll-up-menu{position:absolute;top:calc(100% + 10px);left:0;width:min(390px,calc(100vw - 28px));max-height:calc(100dvh - 88px);overflow:auto;padding:18px;border:2px solid #172c27;border-radius:12px;background:#fffef8;color:#172c27;box-shadow:8px 8px 0 #172c27}
+  .scroll-up-menu-close{display:flex;width:100%;justify-content:space-between;align-items:center;margin:0 0 18px;padding:0 0 12px;border:0;border-bottom:1px solid #dce3dc;background:transparent;color:#536159;font:inherit;font-size:12px;font-weight:750;cursor:pointer}
+  .scroll-up-menu-close span{color:#172c27;font-size:24px;line-height:1}
+  .scroll-up-menu-social h2{margin:0 0 10px;color:#536159;font-size:11px;font-weight:900;letter-spacing:.7px;text-transform:uppercase}
+  .scroll-up-menu-social>div{display:flex;flex-wrap:wrap;gap:8px}
+  .scroll-up-menu-social a{padding:8px 10px;border:1px solid #173d34;border-radius:6px;background:#173d34;color:#f8f7ef;font-size:12px;font-weight:750}
+  .scroll-up-menu-social a:hover{background:#d9f36a;color:#172c27}
+  .scroll-up-menu-sections{display:grid;gap:8px;margin-top:22px}
+  .scroll-up-menu-sections a{padding:13px 14px;border:2px solid #172c27;border-radius:7px;background:#fff;color:#172c27;box-shadow:3px 3px 0 #172c27;font-size:15px;font-weight:850}
+  .scroll-up-menu-sections a:hover{transform:translate(-1px,-1px);background:#d9f36a;box-shadow:4px 4px 0 #172c27}
+  .scroll-up-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}
+  @media(max-width:600px){.scroll-up-bar-inner{width:calc(100% - 28px);min-height:58px}.scroll-up-menu-toggle,.scroll-up-search-toggle{width:38px;height:38px;border-radius:8px}.scroll-up-brand{gap:7px;font-size:15px}.scroll-up-brand img{width:36px;height:36px;border-radius:9px}.scroll-up-menu{padding:15px}.scroll-up-search-form{top:calc(100% + 9px)}}
+  @media(max-width:360px){.scroll-up-bar-inner{width:calc(100% - 24px);min-height:54px}.scroll-up-menu-toggle,.scroll-up-search-toggle{width:35px;height:35px}.scroll-up-brand{gap:5px;font-size:13px;letter-spacing:-.35px}.scroll-up-brand img{width:32px;height:32px}}
+  @media(prefers-reduced-motion:reduce){.scroll-up-bar,.scroll-up-menu-toggle,.scroll-up-menu-toggle span,.scroll-up-search-toggle,.scroll-up-menu-sections a{transition:none}}
+</style>

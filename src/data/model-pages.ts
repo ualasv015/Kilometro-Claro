@@ -15,6 +15,13 @@ import { bmwModels } from './bmw-model-pages';
 import { audiModels } from './audi-model-pages';
 import { mazdaModels } from './mazda-model-pages';
 import { volvoModels } from './volvo-model-pages';
+import { dsModels } from './ds-model-pages';
+import { citroenModels } from './citroen-model-pages';
+import { skodaModels } from './skoda-model-pages';
+import { cupraModels } from './cupra-model-pages';
+import { nissanModels } from './nissan-model-pages';
+import { opelModels } from './opel-model-pages';
+import { ebroModels } from './ebro-model-pages';
 import { formatMotorTableVersion } from '../lib/motor-table';
 
 export type ModelVersion = {
@@ -775,6 +782,9 @@ const renaultModels: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>[] = [
 ];
 
 const modelPageRecords: ModelPageData[] = [
+  ...skodaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...citroenModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...dsModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...audiModels,
   ...volvoModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...mazdaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
@@ -793,6 +803,18 @@ const modelPageRecords: ModelPageData[] = [
   ...volkswagenModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...hyundaiModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...seatModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...cupraModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...nissanModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...opelModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...ebroModels.map((model) => ({
+    ...model,
+    versions: model.versions.map((version) => {
+      const formatted = formatMotorTableVersion(version);
+      return version.additionalTorque
+        ? { ...formatted, maxTorque: [formatted.maxTorque, version.additionalTorque].filter(Boolean).join('; ') }
+        : formatted;
+    }),
+  })),
 ];
 
 export const modelPages: ModelPageData[] = modelPageRecords.map((model) => ({

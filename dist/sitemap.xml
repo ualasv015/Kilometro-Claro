@@ -33,6 +33,7 @@
   <url><loc>https://kilometroclaro.com/guias/tipos-luces-coche/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ds/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/toyota/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/hyundai/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/byd/</loc></url>
@@ -40,6 +41,8 @@
   <url><loc>https://kilometroclaro.com/marcas/mg/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/leapmotor/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/changan/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/cupra/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/omoda/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/jaecoo/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/renault/</loc></url>
@@ -51,6 +54,10 @@
   <url><loc>https://kilometroclaro.com/marcas/audi/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/bmw/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/volvo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/nissan/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/opel/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ebro/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/sandero/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/sandero-stepway/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/spring/</loc></url>
@@ -58,6 +65,11 @@
   <url><loc>https://kilometroclaro.com/marcas/dacia/duster/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/striker/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/bigster/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ds/ds3/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ds/n4/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ds/ds7/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ds/n7/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ds/n8/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/toyota/aygo-x-cross/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/toyota/yaris/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/toyota/gr-yaris/</loc></url>
@@ -134,6 +146,23 @@
   <url><loc>https://kilometroclaro.com/marcas/leapmotor/c10/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/changan/deepal-s05/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/changan/deepal-s07/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/ami/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/c3/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/c3-aircross/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/c4/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/c4-x/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/c5-x/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/c5-aircross/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/berlingo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/spacetourer/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/citroen/holidays/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/cupra/raval/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/cupra/born/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/cupra/terramar/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/cupra/formentor/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/cupra/leon/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/cupra/leon-sportstourer/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/cupra/tavascan/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/omoda/omoda-5/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/omoda/omoda-5-ev/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/omoda/omoda-7-shs/</loc></url>
@@ -296,5 +325,40 @@
   <url><loc>https://kilometroclaro.com/marcas/volvo/xc60/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/volvo/xc90/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/volvo/v60/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/epiq/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/kamiq/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/elroq/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/karoq/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/enyaq/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/enyaq-coupe/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/kodiaq/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/peaq/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/fabia/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/scala/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/octavia/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/octavia-combi/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/superb/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/skoda/superb-combi/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/nissan/juke/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/nissan/qashqai/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/nissan/x-trail/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/nissan/micra/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/nissan/leaf/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/nissan/ariya/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/nissan/townstar-combi/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/nissan/primastar-combi/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/opel/corsa/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/opel/astra/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/opel/astra-sports-tourer/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/opel/frontera/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/opel/mokka/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/opel/grandland/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/opel/combo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/opel/zafira/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/opel/vivaro-combi/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ebro/s400/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ebro/s700/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ebro/s800/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ebro/s900/</loc></url>
   <url><loc>https://kilometroclaro.com/sobre-nosotros/</loc></url>
 </urlset>

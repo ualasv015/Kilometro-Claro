@@ -103,6 +103,7 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
             <div class="toyota-model-powertrains" aria-label={`Motorizaciones de ${model.name}`}>
               {model.powertrains.map((powertrain) => <span>{powertrain}</span>)}
             </div>
+            {brand.slug === 'ebro' && model.image?.caption?.includes('Chery') && <p class="toyota-model-photo-note">{model.image.caption}</p>}
           </article>
         ))}
       </div>

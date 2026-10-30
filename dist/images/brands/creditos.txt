@@ -4,6 +4,9 @@ Los logotipos se muestran únicamente para identificar a los fabricantes. Las ma
 
 Audi: Audi_logo.svg, Wikimedia Commons, dominio público por su condición de logotipo textual/simple; dibujo vectorial atribuido a Audi y vectorizado por FireDragonValo. Fuente: https://commons.wikimedia.org/wiki/File:Audi_logo.svg. El emblema Audi es una marca registrada; se utiliza únicamente para identificar al fabricante.
 Mazda: Mazda_logo_with_emblem,_new.svg, Wikimedia Commons, licencia CC0 1.0. Autor: الشيخ ماهر بن حمد المعيقلي. Fuente: https://commons.wikimedia.org/wiki/File:Mazda_logo_with_emblem,_new.svg. El emblema Mazda es una marca registrada; se utiliza únicamente para identificar al fabricante.
+Citroën: Citroen 2022.svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:Citroen_2022.svg. Emblema y marca registrada de Stellantis; se utiliza únicamente para identificar al fabricante.
+
+DS Automobiles: DS Automobiles 2009 logo.svg, Wikimedia Commons, dominio público por tratarse de un símbolo geométrico simple. Fuente: https://commons.wikimedia.org/wiki/File:DS_Automobiles_2009_logo.svg. Marca registrada de Stellantis; se utiliza únicamente para identificar al fabricante.
 
 Mercedes-Benz: Mercedes-Benz (2025).svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:Mercedes-Benz_(2025).svg. Marca registrada de Mercedes-Benz.
 BYD: BYD Auto 2022 logo.svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:BYD_Auto_2022_logo.svg. Marca registrada de BYD.
@@ -11,3 +14,13 @@ Changan: Changan icon.svg, Wikimedia Commons, autor 292Jacob, licencia CC BY-SA 
 JAECOO: Jaecoo wordmark.svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:Jaecoo_wordmark.svg. Marca registrada de Chery/JAECOO.
 Leapmotor: Leapmotor logo en.svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:Leapmotor_logo_en.svg. Marca registrada de Leapmotor.
 OMODA: Omoda wordmark.svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:Omoda_wordmark.svg. Marca registrada de Chery/OMODA.
+
+Škoda: Škoda Auto 2022 text logo.svg, Wikimedia Commons, dominio público por ser un logotipo tipográfico sencillo. Fuente: https://commons.wikimedia.org/wiki/File:%C5%A0koda_Auto_2022_text_logo.svg. La marca y el logotipo son signos distintivos de Škoda Auto y se muestran únicamente para identificar al fabricante.
+
+CUPRA: Cupra symbol.svg, Wikimedia Commons, autor SEAT S.A., dominio público por tratarse de una geometría simple. Fuente: https://commons.wikimedia.org/wiki/File:Cupra_symbol.svg. La marca y el emblema son signos distintivos de CUPRA/SEAT S.A.; se muestran únicamente para identificar al fabricante.
+
+Nissan: Nissan 2020 logo.svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:Nissan_2020_logo.svg. Marca y logotipo registrados de Nissan Motor Co.; se muestran únicamente para identificar al fabricante.
+
+Opel: Opel logo 2023.svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:Opel_logo_2023.svg. Marca y logotipo registrados de Opel/Stellantis; se muestran únicamente para identificar al fabricante.
+
+EBRO: Logotipo ebro moderno.svg, Wikimedia Commons, dominio público por tratarse de un logotipo tipográfico sencillo. Fuente: https://commons.wikimedia.org/wiki/File:Logotipo_ebro_moderno.svg. Marca registrada; se muestra únicamente para identificar al fabricante.

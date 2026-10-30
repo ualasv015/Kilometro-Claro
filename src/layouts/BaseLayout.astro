@@ -1,6 +1,7 @@
 ---
 import SeoHead from '../components/SeoHead.astro';
 import MaximalistHeader from '../components/MaximalistHeader.astro';
+import ScrollUpHeader from '../components/ScrollUpHeader.astro';
 import MaximalistFooter from '../components/MaximalistFooter.astro';
 import ConsentPreferences from '../components/ConsentPreferences.astro';
 import AnalyticsHead from '../components/AnalyticsHead.astro';
@@ -26,6 +27,7 @@ const currentGuideSlug = Astro.url.pathname.match(/^\/guias\/([^/]+)\/$/)?.[1];
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     {!hideHeader && <MaximalistHeader active={activeSection} />}
+    <ScrollUpHeader />
     <main id="contenido">
       <slot />
       {currentGuideSlug && <RelatedGuides slug={currentGuideSlug} />}
