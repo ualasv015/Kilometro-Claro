@@ -12,12 +12,21 @@ import drivetrainRaw from '../data/videos/video-004.json';
 import {DrivetrainExplainer, type DrivetrainSpec} from './compositions/DrivetrainExplainer';
 import directoryRaw from '../data/videos/video-005.json';
 import {BrandDirectoryPromo, type BrandDirectorySpec} from './compositions/BrandDirectoryPromo';
+import missionRaw from '../data/videos/video-006.json';
+import {MissionSPromo, type MissionSPromoSpec} from './compositions/MissionSPromo';
+import missionInteriorRaw from '../data/videos/video-007.json';
+import {MissionSInteriorPromo, type MissionSInteriorSpec} from './compositions/MissionSInteriorPromo';
+import missionDesignRefsRaw from '../data/videos/video-008.json';
+import {MissionSDesignRefsPromo, type MissionSDesignRefsSpec} from './compositions/MissionSDesignRefsPromo';
 
 const defaultSpec = validateVideoSpec(rawSpec);
 const rankingSpec = validateRankingVideo(rankingRaw);
 const hiddenDetailsSpec = hiddenDetailsRaw as unknown as HiddenDetailsSpec;
 const drivetrainSpec = drivetrainRaw as unknown as DrivetrainSpec;
 const directorySpec = directoryRaw as unknown as BrandDirectorySpec;
+const missionSpec = missionRaw as unknown as MissionSPromoSpec;
+const missionInteriorSpec = missionInteriorRaw as unknown as MissionSInteriorSpec;
+const missionDesignRefsSpec = missionDesignRefsRaw as unknown as MissionSDesignRefsSpec;
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -65,6 +74,33 @@ export const RemotionRoot: React.FC = () => (
     width={1080}
     height={1920}
     defaultProps={directorySpec}
+  />
+  <Composition
+    id="MissionSPromoReel"
+    component={MissionSPromo}
+    durationInFrames={Math.round(missionSpec.durationSeconds * missionSpec.fps)}
+    fps={missionSpec.fps}
+    width={1080}
+    height={1920}
+    defaultProps={missionSpec}
+  />
+  <Composition
+    id="MissionSInteriorReel"
+    component={MissionSInteriorPromo}
+    durationInFrames={Math.round(missionInteriorSpec.durationSeconds * missionInteriorSpec.fps)}
+    fps={missionInteriorSpec.fps}
+    width={1080}
+    height={1920}
+    defaultProps={missionInteriorSpec}
+  />
+  <Composition
+    id="MissionSDesignRefsReel"
+    component={MissionSDesignRefsPromo}
+    durationInFrames={Math.round(missionDesignRefsSpec.durationSeconds * missionDesignRefsSpec.fps)}
+    fps={missionDesignRefsSpec.fps}
+    width={1080}
+    height={1920}
+    defaultProps={missionDesignRefsSpec}
   />
   </>
 );

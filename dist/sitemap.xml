@@ -50,6 +50,7 @@
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/audi/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/bmw/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/sandero/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/sandero-stepway/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/spring/</loc></url>
@@ -204,21 +205,49 @@
   <url><loc>https://kilometroclaro.com/marcas/kia/sorento/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/kia/ev9/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/kia/pv5-passenger/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/cla-electrico/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/cla/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-c-electrico/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-c/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-e/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-s/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-s-larga/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/maybach-clase-s/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-a/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/gla/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/gla-electrico/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/eqa/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/glb-electrico/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/glb/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/glc-electrico/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/glc/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/glc-coupe/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/gle/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/gle-coupe/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/gls/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/maybach-gls/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/maybach-eqs-suv/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-g-electrico/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-g/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/eqe/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/eqe-suv/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/eqs/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/eqs-suv/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/cla-shooting-brake-electrico/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/cla-shooting-brake/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-c-estate/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-e-estate/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-e-all-terrain/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/cle-coupe/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/amg-gt-4-puertas/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/cle-cabrio/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/sl/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/maybach-sl/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/vle/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/eqv/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/clase-v/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/marco-polo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/marco-polo-horizon/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/mercedes-benz/amg-gt/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/audi/a1/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/audi/a2-e-tron/</loc></url>
@@ -256,5 +285,16 @@
   <url><loc>https://kilometroclaro.com/marcas/bmw/i4/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/bmw/i5/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/bmw/i7/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/ex30/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/ex30-cross-country/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/ex40/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/ec40/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/ex60/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/ex90/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/es90/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/xc40/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/xc60/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/xc90/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/volvo/v60/</loc></url>
   <url><loc>https://kilometroclaro.com/sobre-nosotros/</loc></url>
 </urlset>

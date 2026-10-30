@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "video-008",
+  "title": "Porsche Mission S: cinco guiños históricos",
+  "durationSeconds": 45.76,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/porsche-mission-s-2026/",
+  "narration": "¿Cuántos Porsche clásicos reconoces en este coche? El Mission S está lleno de guiños históricos. Los faros y las aletas recuerdan al 911. El frontal plano, al GT1. La línea del techo bajo el alerón, al 959. El ventilador trasero, al 917. Y las llantas reinterpretan el diseño del 928. Lo interesante es que no es una copia: el motor central le da otras proporciones y reúne esas referencias en un lenguaje nuevo. Eso sí: el Mission S es un modelo de visión; el coche de serie podría cambiar. ¿Cuál es tu guiño favorito? Busca Kilómetro Claro punto com y descubre la guía.",
+  "requiresHumanReview": true,
+  "imageCredit": "Imágenes oficiales: Porsche AG. Diagrama conceptual de arquitectura: Kilómetro Claro.",
+  "captions": [
+    {"startSeconds": 0.15, "endSeconds": 3.85, "text": "¿Cuántos Porsche clásicos reconoces en este coche?"},
+    {"startSeconds": 4.3, "endSeconds": 7.65, "text": "El Mission S está lleno de guiños históricos."},
+    {"startSeconds": 7.85, "endSeconds": 11.0, "text": "Los faros y las aletas recuerdan al 911."},
+    {"startSeconds": 11.2, "endSeconds": 12.35, "text": "El frontal plano, al GT1."},
+    {"startSeconds": 12.5, "endSeconds": 17.35, "text": "La línea del techo bajo el alerón, al 959."},
+    {"startSeconds": 17.6, "endSeconds": 18.9, "text": "El ventilador trasero, al 917."},
+    {"startSeconds": 19.05, "endSeconds": 24.9, "text": "Y las llantas reinterpretan el diseño del 928."},
+    {"startSeconds": 25.1, "endSeconds": 27.8, "text": "Lo interesante es que no es una copia:"},
+    {"startSeconds": 28.1, "endSeconds": 34.0, "text": "el motor central le da otras proporciones y reúne esas referencias en un lenguaje nuevo."},
+    {"startSeconds": 34.3, "endSeconds": 40.1, "text": "Eso sí: el Mission S es un modelo de visión; el coche de serie podría cambiar."},
+    {"startSeconds": 40.25, "endSeconds": 42.3, "text": "¿Cuál es tu guiño favorito?"},
+    {"startSeconds": 42.3, "endSeconds": 45.5, "text": "Busca Kilómetro Claro punto com y descubre la guía."}
+  ]
+}

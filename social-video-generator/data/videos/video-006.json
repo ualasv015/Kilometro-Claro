@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "video-006",
+  "title": "Porsche Mission S: ¿por encima del 911?",
+  "durationSeconds": 36.92,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/porsche-mission-s-2026/",
+  "narration": "¿Otro superdeportivo Porsche por encima del 911? Sí. ¿Su relevo? No: Porsche habla de una futura oferta adicional y permanente. El Mission S es el modelo de visión que adelanta esa nueva plataforma de motor central. Ferrari, Lamborghini y McLaren sirven de referencia, pero aún no son rivales confirmados. Faltan datos clave: motor definitivo, potencia, precio y fecha. Ojo con las cifras que circulan: todavía no hay ficha de producción. Busca Kilómetro Claro punto com y lee la guía completa del Mission S.",
+  "requiresHumanReview": true,
+  "imageCredit": "Imágenes oficiales de Porsche AG; diagrama conceptual propio de Kilómetro Claro.",
+  "captions": [
+    {"startSeconds": 0.34, "endSeconds": 5.1, "text": "¿Otro superdeportivo Porsche por encima del 911? Sí."},
+    {"startSeconds": 5.46, "endSeconds": 6.94, "text": "¿Su relevo? No."},
+    {"startSeconds": 7.04, "endSeconds": 11.34, "text": "Porsche habla de una futura oferta adicional y permanente."},
+    {"startSeconds": 11.48, "endSeconds": 17.0, "text": "El Mission S es el modelo de visión que adelanta esa nueva plataforma de motor central."},
+    {"startSeconds": 17.34, "endSeconds": 23.0, "text": "Ferrari, Lamborghini y McLaren sirven de referencia, pero aún no son rivales confirmados."},
+    {"startSeconds": 23.06, "endSeconds": 26.65, "text": "Faltan datos clave: motor definitivo, potencia, precio y fecha."},
+    {"startSeconds": 26.74, "endSeconds": 30.0, "text": "Ojo con las cifras que circulan: todavía no hay ficha de producción."},
+    {"startSeconds": 30.1, "endSeconds": 31.95, "text": "Busca Kilómetro Claro punto com"},
+    {"startSeconds": 32.02, "endSeconds": 36.67, "text": "y lee la guía completa del Mission S."}
+  ]
+}

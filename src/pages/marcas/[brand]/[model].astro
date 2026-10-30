@@ -16,8 +16,8 @@ export function getStaticPaths() {
 }
 
 const { brand, model, detail } = Astro.props;
-const modelName = model.name.startsWith(brand.name) ? model.name : `${brand.name} ${model.name}`;
-const hasMotorTableFormat = ['audi', 'toyota', 'renault', 'volkswagen', 'hyundai', 'seat', 'dacia', 'kia', 'peugeot'].includes(brand.slug);
+const modelName = model.name.startsWith(brand.name) || model.name.startsWith('Mercedes-AMG') || model.name.startsWith('Mercedes-Maybach') ? model.name : `${brand.name} ${model.name}`;
+const hasMotorTableFormat = ['audi', 'toyota', 'renault', 'volkswagen', 'hyundai', 'seat', 'dacia', 'kia', 'peugeot', 'mercedes-benz', 'bmw', 'byd', 'changan', 'omoda', 'jaecoo', 'leapmotor', 'mazda', 'mg', 'volvo'].includes(brand.slug);
 const photoMethod = detail.image
   ? 'La fotografía y su licencia se acreditan junto a la imagen.'
   : 'Esta ficha no incluye fotografía promocional; las especificaciones enlazan a las fuentes oficiales.';

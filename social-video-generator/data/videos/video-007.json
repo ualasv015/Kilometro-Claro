@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "video-007",
+  "title": "Porsche Mission S: un interior distinto",
+  "durationSeconds": 39.2,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/porsche-mission-s-2026/",
+  "narration": "¿Un Porsche sin pantalla central fija? En el Mission S, sí. Pero no es un coche sin pantallas: combina cinco instrumentos redondos, mandos físicos y funciones digitales. El cuentarrevoluciones central conserva su aguja analógica, con una pantalla detrás. ¿La navegación? Un soporte retráctil MagSafe permite usar el móvil como pantalla. La idea es reducir las pantallas fijas y centrar la atención en quien conduce. Eso sí: el Mission S es un modelo de visión; aún no sabemos qué llegará a producción. ¿Te convence? Busca Kilómetro Claro punto com y lee la guía.",
+  "requiresHumanReview": true,
+  "imageCredit": "Imágenes oficiales de Porsche AG; el soporte MagSafe se representa mediante un esquema gráfico.",
+  "captions": [
+    {"startSeconds": 0.26, "endSeconds": 5.1, "text": "¿Un Porsche sin pantalla central fija? En el Mission S, sí."},
+    {"startSeconds": 5.9, "endSeconds": 12.94, "text": "Pero no es un coche sin pantallas: combina cinco instrumentos redondos, mandos físicos y funciones digitales."},
+    {"startSeconds": 13.56, "endSeconds": 18.22, "text": "El cuentarrevoluciones central conserva su aguja analógica, con una pantalla detrás."},
+    {"startSeconds": 18.82, "endSeconds": 23.22, "text": "¿La navegación? Un soporte retráctil MagSafe permite usar el móvil como pantalla."},
+    {"startSeconds": 24.04, "endSeconds": 28.7, "text": "La idea es reducir las pantallas fijas y centrar la atención en quien conduce."},
+    {"startSeconds": 29.42, "endSeconds": 34.36, "text": "Eso sí: el Mission S es un modelo de visión; aún no sabemos qué llegará a producción."},
+    {"startSeconds": 35.16, "endSeconds": 38.88, "text": "¿Te convence? Busca Kilómetro Claro punto com y lee la guía."}
+  ]
+}

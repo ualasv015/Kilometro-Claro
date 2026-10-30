@@ -14,6 +14,7 @@ import { mercedesModels } from './mercedes-model-pages';
 import { bmwModels } from './bmw-model-pages';
 import { audiModels } from './audi-model-pages';
 import { mazdaModels } from './mazda-model-pages';
+import { volvoModels } from './volvo-model-pages';
 import { formatMotorTableVersion } from '../lib/motor-table';
 
 export type ModelVersion = {
@@ -775,17 +776,18 @@ const renaultModels: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>[] = [
 
 const modelPageRecords: ModelPageData[] = [
   ...audiModels,
-  ...mazdaModels,
+  ...volvoModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...mazdaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...daciaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
-  ...changanModels,
-  ...omodaJaecooModels,
-  ...leapmotorModels,
-  ...bydModels,
-  ...mgModels,
+  ...changanModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...omodaJaecooModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...leapmotorModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...bydModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...mgModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...peugeotModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...kiaModels.map((model) => ({ ...model, versions: model.versions.map(formatKiaMotorVersion) })),
-  ...mercedesModels,
-  ...bmwModels,
+  ...mercedesModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...bmwModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...toyotaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion), brandSlug: 'toyota', reviewedAt })),
   ...renaultModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion), brandSlug: 'renault', reviewedAt })),
   ...volkswagenModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),

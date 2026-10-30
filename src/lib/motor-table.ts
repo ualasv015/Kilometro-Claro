@@ -15,10 +15,10 @@ type Powertrain = 'electric' | 'hydrogen' | 'plug-in' | 'hybrid' | 'mild-hybrid'
 
 function classifyPowertrain(item: MotorTableVersion): Powertrain {
   if (item.powertrainGroup) return item.powertrainGroup;
-  const text = `${item.name} ${item.displacement} ${item.torqueScope} ${item.note ?? ''}`;
+  const text = `${item.name} ${item.type ?? ''} ${item.displacement} ${item.torqueScope} ${item.note ?? ''}`;
   if (/mirai|pila de combustible|fuel.?cell|FCV|hidrógeno/i.test(text)) return 'hydrogen';
   if (/plug.?in|\bPHEV\b|e-?hybrid|TFSI\s*e\b/i.test(text) || (/\benchufable\b/i.test(text) && !/\bno(?:\s+es)?\s+enchufable\b/i.test(text))) return 'plug-in';
-  if (/\bMHEV\b|48\s?V|\beTSI\b/i.test(text) || (/mild.?hybrid|hibridación ligera/i.test(text) && !/\b(?:sin|no es|no tiene)\s+(?:sistema\s+)?mild.?hybrid\b/i.test(text))) return 'mild-hybrid';
+  if (/\bMHEV\b|48\s?V|\beTSI\b|micro.?híbrido/i.test(text) || (/mild.?hybrid|hibridación ligera/i.test(text) && !/\b(?:sin|no es|no tiene)\s+(?:sistema\s+)?mild.?hybrid\b/i.test(text))) return 'mild-hybrid';
   if (/\bHEV\b|híbrido|híbrida|\bHSD\b/i.test(text) || (/\bhybrid\b/i.test(text) && !/mild.?hybrid/i.test(text))) return 'hybrid';
   if (/eco.?g|\bGLP\b|\bLPG\b|bifuel|bi.?fuel/i.test(text)) return 'bifuel';
   if (/e-tron|\bBEV\b|\belectric(?:al)?\b|eléctric|100\s?%\s*eléctr|bZ4x|C-HR\+/i.test(text)) return 'electric';

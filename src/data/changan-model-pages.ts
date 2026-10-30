@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '28 de octubre de 2026';
+const reviewedAt = '29 de octubre de 2026';
 const changan = 'https://www.changaneurope.com/es';
 const source = (label: string, url: string) => ({ label, url });
 const noDisplacement = 'No aplica: motor eléctrico';
@@ -17,9 +17,9 @@ export const changanModels: ModelPageData[] = [
     powertrainSummary: 'La gama eléctrica emplea un motor trasero de 200 kW en las versiones RWD y añade un motor delantero asíncrono en la 4WD Max. La versión PHEV combina un motor de gasolina atmosférico de 1.497 cm³ con un motor eléctrico y batería recargable. Los datos de par se atribuyen al motor o al sistema al que corresponden en las fichas de Changan.',
     usageNote: 'Las versiones BEV necesitan carga externa y su autonomía depende de temperatura, velocidad y recorrido. El PHEV puede cubrir parte de los trayectos con electricidad si se recarga con frecuencia, pero conserva motor térmico y depósito. Compara autonomía eléctrica homologada, consumo con batería descargada y acceso a carga doméstica; no tomes la autonomía total anunciada como una previsión de cada viaje.',
     versions: [
-      { name: 'BEV RWD Pro / RWD Max', power: '200 kW (272 CV)', displacement: noDisplacement, maxTorque: '290 Nm', torqueScope: 'Motor eléctrico trasero PMSM', torqueRpm: noRpm, additionalTorque: 'Batería LFP de 68,8 kWh; autonomía WLTP de hasta 485 km' },
-      { name: 'BEV 4WD Max', power: '320 kW (435 CV) combinados', displacement: noDisplacement, maxTorque: '290 Nm traseros + 212 Nm delanteros', torqueScope: 'Cifras de los dos motores, no un par combinado declarado', torqueRpm: noRpm, additionalTorque: 'Batería LFP de 68,8 kWh; autonomía WLTP de hasta 445 km' },
-      { name: 'PHEV Pro / Limited Edition', power: '190 kW (258 CV) de sistema', displacement: '1.497 cm³; gasolina atmosférico', maxTorque: '122 Nm térmicos; 290 Nm eléctricos', torqueScope: 'Motor de gasolina y motor eléctrico, por separado', torqueRpm: '3.000 rpm en el motor de gasolina; el régimen eléctrico no se publica', additionalTorque: 'Batería LFP de 18,42 kWh; cambio automático' },
+      { name: 'BEV RWD Pro / RWD Max', power: '272 CV (200 kW)', displacement: noDisplacement, maxTorque: '290 Nm', torqueScope: 'Motor eléctrico trasero PMSM', torqueRpm: noRpm, additionalTorque: 'Batería LFP de 68,8 kWh; autonomía WLTP de hasta 485 km' },
+      { name: 'BEV 4WD Max', power: 'Sistema: 435 CV (320 kW); trasero: 272 CV (200 kW); delantero: 163 CV (120 kW)', displacement: noDisplacement, maxTorque: '290 Nm traseros + 212 Nm delanteros', torqueScope: 'Cifras de los dos motores, no un par combinado declarado', torqueRpm: noRpm, additionalTorque: 'Batería LFP de 68,8 kWh; autonomía WLTP de hasta 445 km' },
+      { name: 'PHEV Pro / Limited Edition', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 258 CV (190 kW); térmico: 86 CV (63 kW); eléctrico: 234 CV (172 kW)', displacement: '1.497 cm³; gasolina atmosférico', maxTorque: '122 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '3.000 rpm', additionalTorque: 'Batería LFP de 18,42 kWh; cambio automático' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto de 5 puertas' },

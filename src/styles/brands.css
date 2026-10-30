@@ -117,6 +117,8 @@
 
 /* Miniaturas en las tarjetas: mantienen el tamaño compacto del listado original. */
 .brand-profile-page .toyota-model-card{display:grid;min-height:140px;grid-template-columns:76px minmax(0,1fr);grid-template-rows:minmax(82px,1fr) auto;gap:8px 12px;padding:10px;overflow:hidden}
+.brand-profile-page .toyota-model-card--no-photo{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between}
+.brand-profile-page .toyota-model-card--no-photo .toyota-model-main{width:100%}
 .toyota-model-photo{grid-column:1;grid-row:1;width:76px;margin:0;align-self:start}
 .toyota-model-photo img{display:block;width:76px;height:76px;aspect-ratio:1;object-fit:cover;border:1px solid #c3cdc3;border-radius:4px;background:#e9eee6}
 .toyota-model-photo figcaption{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:0 3px;margin-top:3px;color:#536258;font-size:6px;line-height:1.25}
