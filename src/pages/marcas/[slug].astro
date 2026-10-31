@@ -94,6 +94,7 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
                 {model.image.authorUrl ? <a href={model.image.authorUrl} target="_blank" rel="noopener noreferrer">{model.image.authorName}</a> : model.image.authorName}
                 {model.image.sourceUrl && <> · <a href={model.image.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`Archivo original: ${model.image.sourceTitle ?? model.name}`}>Fuente</a></>}
                 {model.image.licenseUrl && <> · <a href={model.image.licenseUrl} target="_blank" rel="noopener noreferrer">{model.image.licenseName}</a></>}
+                · imagen optimizada para web
               </figcaption>
             </figure>}
             <div class="toyota-model-main">

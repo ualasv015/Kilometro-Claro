@@ -1,0 +1,206 @@
+import type { ModelPageData } from './model-pages';
+
+const reviewedAt = '31 de octubre de 2026';
+const landRover = 'https://www.landrover.es';
+const rangeRover = 'https://www.rangerover.com/es-es';
+const source = (label: string, url: string) => ({ label, url });
+const model = (data: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>): ModelPageData => ({
+  brandSlug: 'land-rover',
+  reviewedAt,
+  ...data,
+});
+
+// Una ficha por familia comercial; se omiten cifras de par cuando la fuente no publica también rpm.
+export const landRoverModels: ModelPageData[] = [
+  model({
+    modelSlug: 'range-rover',
+    title: 'Range Rover: motores y versiones en España | Kilómetro Claro',
+    description: 'Consulta las motorizaciones del Range Rover en España: híbridos enchufables, diésel y gasolina microhíbridos y su futura gama eléctrica.',
+    intro: 'El Range Rover combina carrocerías de batalla estándar y larga con motores diésel y gasolina microhíbridos, híbridos enchufables y una variante eléctrica en fase de lanzamiento. Esta ficha separa cada sistema para que no se confundan las cifras del motor térmico con las del conjunto híbrido.',
+    powertrainSummary: 'En los PHEV, la potencia y el par indicados corresponden al sistema combinado cuando así lo especifica Land Rover. En los MHEV se identifica la salida del motor térmico. EV450 y EV550 aparecen en la oferta eléctrica española, sujeta a calendario de pedidos y entrega.',
+    usageNote: 'Las versiones enchufables permiten hacer trayectos cotidianos con apoyo eléctrico si se recargan con regularidad. En un SUV de este tamaño, compara también el consumo con la batería descargada, el peso remolcable y el uso previsto antes de elegir motor.',
+    versions: [
+      { name: 'P460e PHEV', type: 'Híbrido enchufable de gasolina', power: 'Sistema: 460 CV (338,3 kW)', displacement: '2.997 cm³', maxTorque: '660 Nm', torqueScope: 'Sistema híbrido', torqueRpm: '1.000–4.500 rpm' },
+      { name: 'P550e PHEV', type: 'Híbrido enchufable de gasolina', power: 'Sistema: 550 CV (404,5 kW)', displacement: '2.997 cm³', maxTorque: '800 Nm', torqueScope: 'Sistema híbrido', torqueRpm: '1.500–4.500 rpm' },
+      { name: 'D300 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 300 CV (221 kW)', displacement: '2.997 cm³', maxTorque: '650 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.500–2.500 rpm' },
+      { name: 'D350 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 350 CV (258 kW)', displacement: '2.997 cm³', maxTorque: '700 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.500–3.000 rpm' },
+      { name: 'P380 MHEV', type: 'Microhíbrido de gasolina', power: 'Térmico: 380 CV (280 kW)', displacement: '2.997 cm³', maxTorque: '550 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.000–4.500 rpm' },
+      { name: 'P540 MHEV V8', type: 'Microhíbrido de gasolina', power: 'Térmico: 537 CV (395 kW)', displacement: '4.395 cm³', maxTorque: '750 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.250–5.000 rpm' },
+      { name: 'EV450', type: 'Eléctrico', power: '450 CV (331 kW)', displacement: 'No aplica: 100 % eléctrico', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado en rpm' },
+      { name: 'EV550', type: 'Eléctrico', power: '550 CV (405 kW)', displacement: 'No aplica: 100 % eléctrico', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado en rpm' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'SUV de lujo; batalla estándar o larga' },
+      { label: 'Plazas', value: 'Cinco o siete, según carrocería' },
+      { label: 'Sistemas', value: 'MHEV, PHEV y eléctrico' },
+    ],
+    specNote: 'Las especificaciones térmicas corresponden a la ficha técnica oficial del año-modelo 2026. Las denominaciones EV450 y EV550 se muestran en el canal eléctrico español; la información de potencia se contrasta con datos técnicos de un socio autorizado de JLR y puede variar con la homologación definitiva. La disponibilidad y los plazos deben confirmarse con el configurador o concesionario.',
+    officialUrl: `${rangeRover}/range-rover/models-and-specifications.html`,
+    technicalUrl: `${landRover}/content/dam/lrdx/pdfs/es/wltp/Land-Rover-Range-Rover-TD-Insert-1L4602700000ESES01P.pdf`,
+    sources: [
+      source('Range Rover España: modelos y especificaciones', `${rangeRover}/range-rover/models-and-specifications.html`),
+      source('Land Rover España: ficha técnica Range Rover 2026', `${landRover}/content/dam/lrdx/pdfs/es/wltp/Land-Rover-Range-Rover-TD-Insert-1L4602700000ESES01P.pdf`),
+      source('Range Rover España: modelo eléctrico', `${rangeRover}/range-rover/electric.html`),
+      source('Socio autorizado JLR: datos de EV450 y EV550', 'https://avalon.landrover-vertragspartner.de/aktuelles/ab-sofort-bestellbar-der-erste-vollelektrische-range-rover'),
+    ],
+  }),
+  model({
+    modelSlug: 'range-rover-sport',
+    title: 'Range Rover Sport: motores y versiones en España | Kilómetro Claro',
+    description: 'Revisa los motores del Range Rover Sport en España: diésel y gasolina MHEV, PHEV y las variantes eléctricas anunciadas.',
+    intro: 'El Range Rover Sport ofrece una gama amplia que va del diésel microhíbrido al V8 de gasolina, con híbridos enchufables y una versión eléctrica anunciada para España. La tabla distingue la potencia térmica de la potencia combinada en los PHEV.',
+    powertrainSummary: 'Las cifras de D y P MHEV corresponden al motor térmico. En P460e y P550e, la potencia y el par son los del sistema híbrido. Para EV450 y EV550, la web española muestra la gama eléctrica; sus cifras deben entenderse como datos publicados para esta fase de lanzamiento.',
+    usageNote: 'La carrocería deportiva no elimina las diferencias de peso y consumo entre motores. Si valoras el PHEV, calcula el coste con recarga frecuente y también con la batería descargada; si haces viajes largos, compara autonomía, repostaje y carga disponible en ruta.',
+    versions: [
+      { name: 'D250 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 249 CV (183 kW)', displacement: '2.997 cm³', maxTorque: '600 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.250–2.250 rpm' },
+      { name: 'D300 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 300 CV (221 kW)', displacement: '2.997 cm³', maxTorque: '650 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.500–2.500 rpm' },
+      { name: 'D350 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 350 CV (258 kW)', displacement: '2.997 cm³', maxTorque: '700 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.500–3.000 rpm' },
+      { name: 'P380 MHEV', type: 'Microhíbrido de gasolina', power: 'Térmico: 381 CV (280 kW)', displacement: '2.997 cm³', maxTorque: '550 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.000–4.500 rpm' },
+      { name: 'P460e PHEV', type: 'Híbrido enchufable de gasolina', power: 'Sistema: 460 CV (338 kW)', displacement: '2.997 cm³', maxTorque: '660 Nm', torqueScope: 'Sistema híbrido', torqueRpm: '1.000–4.500 rpm' },
+      { name: 'P550e PHEV', type: 'Híbrido enchufable de gasolina', power: 'Sistema: 550 CV (405 kW)', displacement: '2.997 cm³', maxTorque: '800 Nm', torqueScope: 'Sistema híbrido', torqueRpm: '1.500–4.500 rpm' },
+      { name: 'P540 MHEV V8', type: 'Microhíbrido de gasolina', power: 'Térmico: 537 CV (395 kW)', displacement: '4.395 cm³', maxTorque: '750 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.250–5.000 rpm' },
+      { name: 'EV450', type: 'Eléctrico', power: '450 CV (331 kW)', displacement: 'No aplica: 100 % eléctrico', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado en rpm' },
+      { name: 'EV550', type: 'Eléctrico', power: '550 CV (405 kW)', displacement: 'No aplica: 100 % eléctrico', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado en rpm' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'SUV deportivo de cinco plazas' },
+      { label: 'Tracción', value: 'Total en las versiones recogidas' },
+      { label: 'Sistemas', value: 'MHEV, PHEV y eléctrico' },
+    ],
+    specNote: 'Las cifras térmicas se han tomado de la ficha técnica oficial del año-modelo 2026. El P380 figura como 381 CV en esa ficha pese a la denominación comercial P380. La potencia EV450/EV550 se contrasta con el canal eléctrico español y un socio autorizado de JLR; consulta el configurador para confirmar disponibilidad y homologación final.',
+    officialUrl: `${rangeRover}/range-rover-sport/models-and-specifications.html`,
+    technicalUrl: `${landRover}/content/dam/lrdx/pdfs/es/wltp/Land-Rover-Range-Rover-Sport-TD-Insert-1L4612700000ESES01P.pdf`,
+    sources: [
+      source('Range Rover Sport España: modelos y especificaciones', `${rangeRover}/range-rover-sport/models-and-specifications.html`),
+      source('Land Rover España: ficha técnica Range Rover Sport 2026', `${landRover}/content/dam/lrdx/pdfs/es/wltp/Land-Rover-Range-Rover-Sport-TD-Insert-1L4612700000ESES01P.pdf`),
+      source('Range Rover Sport España: modelo eléctrico', `${rangeRover}/range-rover-sport/electric.html`),
+      source('Socio autorizado JLR: datos de EV450 y EV550', 'https://avalon.landrover-vertragspartner.de/aktuelles/ab-sofort-bestellbar-der-erste-vollelektrische-range-rover'),
+    ],
+  }),
+  model({
+    modelSlug: 'range-rover-velar',
+    title: 'Range Rover Velar: motores y versiones en España | Kilómetro Claro',
+    description: 'Consulta las motorizaciones del Range Rover Velar: diésel microhíbrido y PHEV, cilindrada, potencia y par publicado.',
+    intro: 'El Range Rover Velar se sitúa entre el Evoque y los Range Rover de mayor tamaño. La documentación española consultada recoge dos motores diésel microhíbridos y un híbrido enchufable de gasolina; la oferta concreta puede variar con el año-modelo y el configurador.',
+    powertrainSummary: 'En D200 y D300 se muestran las cifras del motor diésel. El P400e es un híbrido enchufable: la potencia y el par reflejados corresponden al sistema cuando así lo indica la ficha técnica.',
+    usageNote: 'El PHEV tiene sentido si puedes cargarlo con frecuencia y buena parte de tus recorridos cabe en su autonomía eléctrica homologada. Para viajes frecuentes sin recarga, compara el consumo de los motores diésel con el coste de uso del sistema enchufable fuera de su tramo eléctrico.',
+    versions: [
+      { name: 'D200 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 204 CV (150 kW)', displacement: '1.998 cm³', maxTorque: '430 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.750–2.500 rpm' },
+      { name: 'D300 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 300 CV (221 kW)', displacement: '2.997 cm³', maxTorque: '650 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.500–2.500 rpm' },
+      { name: 'P400e PHEV', type: 'Híbrido enchufable de gasolina', power: 'Sistema: 404 CV (297 kW)', displacement: '1.997 cm³', maxTorque: '640 Nm', torqueScope: 'Sistema híbrido', torqueRpm: '1.500–4.400 rpm' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'SUV mediano de cinco plazas' },
+      { label: 'Sistemas', value: 'Diésel MHEV y gasolina PHEV' },
+      { label: 'Tracción', value: 'Total, según versión' },
+    ],
+    specNote: 'Las cifras corresponden a la documentación técnica española consultada para el Velar. Al tratarse de una ficha que puede preceder al año-modelo mostrado por el configurador, confirma qué versiones se pueden pedir actualmente en España.',
+    officialUrl: `${rangeRover}/range-rover-velar/models-and-specifications.html`,
+    technicalUrl: `${landRover}/content/dam/lrdx/pdfs/es/wltp/Land-Rover-Range-Rover-Velar-TD-Insert-1L5602650000ESES01P.pdf`,
+    sources: [
+      source('Range Rover Velar España: modelos y especificaciones', `${rangeRover}/range-rover-velar/models-and-specifications.html`),
+      source('Land Rover España: ficha técnica Velar', `${landRover}/content/dam/lrdx/pdfs/es/wltp/Land-Rover-Range-Rover-Velar-TD-Insert-1L5602650000ESES01P.pdf`),
+    ],
+  }),
+  model({
+    modelSlug: 'range-rover-evoque',
+    title: 'Range Rover Evoque: motores y versiones en España | Kilómetro Claro',
+    description: 'Ficha de motores del Range Rover Evoque en España: diésel MHEV y PHEV, potencia, cilindrada y par máximo con rpm.',
+    intro: 'El Range Rover Evoque es el SUV compacto de la familia Range Rover. La ficha técnica española consultada incluye dos opciones diésel microhíbridas y un híbrido enchufable de gasolina; las versiones y el equipamiento pueden depender del año-modelo.',
+    powertrainSummary: 'Las cifras D165 y D200 se refieren a sus motores diésel. En P270e, los 269 CV y 540 Nm corresponden al sistema híbrido enchufable; la cilindrada identifica el motor térmico de gasolina.',
+    usageNote: 'Por tamaño puede resultar más manejable en ciudad que los Range Rover grandes, aunque su altura y tracción pueden elevar consumo frente a un turismo. Antes de elegir el PHEV, valora si dispones de un punto de carga y cuántos kilómetros haces entre recargas.',
+    versions: [
+      { name: 'D165 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 163 CV (120 kW)', displacement: '1.998 cm³', maxTorque: '380 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.500–2.500 rpm' },
+      { name: 'D200 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 204 CV (150 kW)', displacement: '1.998 cm³', maxTorque: '430 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.750–2.500 rpm' },
+      { name: 'P270e PHEV', type: 'Híbrido enchufable de gasolina', power: 'Sistema: 269 CV (198 kW)', displacement: '1.498 cm³', maxTorque: '540 Nm', torqueScope: 'Sistema híbrido', torqueRpm: '2.000–3.250 rpm' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'SUV compacto de cinco plazas' },
+      { label: 'Sistemas', value: 'Diésel MHEV y gasolina PHEV' },
+      { label: 'Tracción', value: 'Total, según versión' },
+    ],
+    specNote: 'Datos tomados de la ficha técnica española consultada para el Evoque. Confirma en el configurador si la versión concreta sigue disponible para pedido en la fecha de compra.',
+    officialUrl: `${rangeRover}/range-rover-evoque/models-and-specifications.html`,
+    technicalUrl: `${landRover}/content/dam/lrdx/pdfs/es/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L5512650000ESES01P.pdf`,
+    sources: [
+      source('Range Rover Evoque España: modelos y especificaciones', `${rangeRover}/range-rover-evoque/models-and-specifications.html`),
+      source('Land Rover España: ficha técnica Evoque', `${landRover}/content/dam/lrdx/pdfs/es/wltp/Land-Rover-Range-Rover-Evoque-TD-Insert-1L5512650000ESES01P.pdf`),
+    ],
+  }),
+  model({
+    modelSlug: 'discovery',
+    title: 'Land Rover Discovery: motores y versiones en España | Kilómetro Claro',
+    description: 'Consulta los motores diésel microhíbridos del Land Rover Discovery, con potencia, cilindrada y par máximo según la ficha técnica.',
+    intro: 'El Discovery es el SUV familiar de mayor tamaño de la familia Discovery, con configuraciones de hasta siete plazas. La gama española consultada se basa en motores diésel de seis cilindros con hibridación ligera.',
+    powertrainSummary: 'D250 y D350 son motores diésel microhíbridos. La tabla recoge potencia y par del motor térmico, no una suma del sistema de 48 V.',
+    usageNote: 'La carrocería amplia y la posibilidad de siete plazas priorizan capacidad y viajes familiares. Al comparar versiones, ten en cuenta el peso, el uso urbano, el remolque y el consumo real; la etiqueta microhíbrida no convierte al Discovery en un híbrido enchufable.',
+    versions: [
+      { name: 'D250 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 249 CV (183 kW)', displacement: '2.997 cm³', maxTorque: '570 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.250–2.250 rpm' },
+      { name: 'D350 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 350 CV (257 kW)', displacement: '2.997 cm³', maxTorque: '700 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.500–3.000 rpm' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'SUV grande de hasta siete plazas' },
+      { label: 'Motor', value: 'Diésel de seis cilindros con tecnología MHEV' },
+      { label: 'Tracción', value: 'Total' },
+    ],
+    officialUrl: `${landRover}/discovery/discovery/models-and-specifications.html`,
+    technicalUrl: `${landRover}/discovery-wltp/`,
+    sources: [
+      source('Land Rover España: Discovery, modelos y especificaciones', `${landRover}/discovery/discovery/models-and-specifications.html`),
+      source('Land Rover España: ficha técnica Discovery', `${landRover}/discovery-wltp/`),
+    ],
+  }),
+  model({
+    modelSlug: 'discovery-sport',
+    title: 'Land Rover Discovery Sport: motores y versiones en España | Kilómetro Claro',
+    description: 'Descubre las motorizaciones del Discovery Sport en España: diésel MHEV y PHEV, potencia, cilindrada y par publicado.',
+    intro: 'El Discovery Sport es un SUV familiar compacto que puede configurarse con cinco o siete plazas, según versión. La documentación española consultada recoge motores diésel microhíbridos y un híbrido enchufable de gasolina.',
+    powertrainSummary: 'D165 y D200 son diésel MHEV; P270e es híbrido enchufable. En el PHEV, las cifras de potencia y par mostradas son del sistema combinado según la ficha técnica.',
+    usageNote: 'La tercera fila de asientos es ocasional y reduce el espacio de carga cuando está desplegada. El PHEV requiere recarga para aprovechar su conducción eléctrica; si tus viajes son largos y no cargas con frecuencia, compara el uso con un diésel.',
+    versions: [
+      { name: 'D165 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 163 CV (120 kW)', displacement: '1.998 cm³', maxTorque: '380 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.500–2.500 rpm' },
+      { name: 'D200 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 204 CV (150 kW)', displacement: '1.998 cm³', maxTorque: '430 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.750–2.500 rpm' },
+      { name: 'P270e PHEV', type: 'Híbrido enchufable de gasolina', power: 'Sistema: 269 CV (198 kW)', displacement: '1.498 cm³', maxTorque: '540 Nm', torqueScope: 'Sistema híbrido', torqueRpm: '2.000–3.250 rpm' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'SUV compacto de cinco o siete plazas, según configuración' },
+      { label: 'Sistemas', value: 'Diésel MHEV y gasolina PHEV' },
+      { label: 'Tracción', value: 'Total, según versión' },
+    ],
+    specNote: 'La gama y las cifras se basan en la documentación española consultada. Confirma plazas, motorización y disponibilidad en el configurador, ya que la combinación puede variar por acabado y año-modelo.',
+    officialUrl: `${landRover}/discovery/discovery-sport/models-and-specifications.html`,
+    technicalUrl: `${landRover}/discovery-sport-wltp/`,
+    sources: [
+      source('Land Rover España: Discovery Sport, modelos y especificaciones', `${landRover}/discovery/discovery-sport/models-and-specifications.html`),
+      source('Land Rover España: ficha técnica Discovery Sport', `${landRover}/discovery-sport-wltp/`),
+    ],
+  }),
+  model({
+    modelSlug: 'defender',
+    title: 'Land Rover Defender: motores y versiones en España | Kilómetro Claro',
+    description: 'Revisa los motores del Defender 90, 110 y 130 en España: diésel MHEV, gasolina MHEV, PHEV y V8 OCTA.',
+    intro: 'Defender reúne las carrocerías 90, 110 y 130, con distintas configuraciones de plazas y capacidades todoterreno. Esta ficha las agrupa en una familia y resume las motorizaciones para particulares que aparecen en el configurador español; Hard Top queda fuera porque se comercializa como vehículo de carga.',
+    powertrainSummary: 'La gama incluye diésel microhíbridos, gasolina microhíbridos, un híbrido enchufable y el V8 MHEV de Defender OCTA. La potencia de P300e es la combinada del sistema; para el P380 y OCTA no se muestra el par porque el material español actual no publica el régimen en rpm.',
+    usageNote: 'El Defender está pensado para combinar carretera y uso todoterreno, pero carrocería, ruedas y equipamiento cambian masa, consumo y capacidad. El PHEV precisa recarga habitual para reducir el uso de gasolina; la capacidad fuera de carretera depende también de neumáticos, protecciones y configuración.',
+    versions: [
+      { name: 'D250 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 249 CV (183 kW)', displacement: '2.997 cm³', maxTorque: '570 Nm', torqueScope: 'Motor térmico diésel', torqueRpm: '1.250–2.500 rpm' },
+      { name: 'D350 MHEV', type: 'Microhíbrido diésel', power: 'Térmico: 350 CV (258 kW)', displacement: '2.997 cm³', maxTorque: '', torqueScope: 'Motor térmico diésel', torqueRpm: 'No publicado para la versión española actual' },
+      { name: 'P380 MHEV', type: 'Microhíbrido de gasolina', power: 'Térmico: 380 CV (280 kW)', displacement: '2.997 cm³', maxTorque: '', torqueScope: 'Motor térmico de gasolina', torqueRpm: 'No publicado para la versión española actual' },
+      { name: 'P300e PHEV', type: 'Híbrido enchufable de gasolina', power: 'Sistema: 300 CV (221 kW)', displacement: '1.997 cm³', maxTorque: '400 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.750–4.500 rpm' },
+      { name: 'Defender OCTA P540 MHEV V8', type: 'Microhíbrido de gasolina', power: 'Térmico: 540 CV (397 kW)', displacement: '4,4 l', maxTorque: '', torqueScope: 'Motor térmico de gasolina', torqueRpm: 'No publicado para la versión española actual' },
+    ],
+    facts: [
+      { label: 'Carrocerías', value: 'Defender 90, 110 y 130' },
+      { label: 'Plazas', value: 'Hasta ocho, según carrocería y configuración' },
+      { label: 'Sistemas', value: 'Diésel MHEV, gasolina MHEV y PHEV' },
+    ],
+    specNote: 'La gama se comprobó en la web española en octubre de 2026. Las cifras de potencia se muestran en CV y kW; en OCTA los 397 kW son la conversión aproximada de los 540 CV publicados por JLR. La actualización de año-modelo 2027 introduce cambios en P380 y OCTA, pero la comunicación española no aporta régimen de par para esas versiones, por lo que se omite. Defender Hard Top se excluye por ser comercial y las carrocerías 90/110/130 no se cuentan como modelos separados.',
+    officialUrl: `${landRover}/defender/defender/models-and-specifications.html`,
+    technicalUrl: `${landRover}/defender-wltp/`,
+    sources: [
+      source('Land Rover España: Defender, modelos y especificaciones', `${landRover}/defender/defender/models-and-specifications.html`),
+      source('Land Rover España: ficha técnica Defender', `${landRover}/defender-wltp/`),
+      source('Defender Media España: cambios del año-modelo 2027', 'https://media.jlr.com/defender/es-es/news/2026/07/el-nuevo-defender-vertex-lidera-la-actualizacion-de-diseno-y-accesorios'),
+    ],
+  }),
+];

@@ -1,5 +1,6 @@
 export const relatedGuideSlugs: Record<string, string[]> = {
-  'toyota-gr-gt': ['porsche-mission-s-2026', 'mazda-mx-5-nd-futuro-ne', 'coche-hibrido-enchufable-o-microhibrido'],
+  'jas-tensei-honda-nsx-vtec': ['toyota-gr-gt', 'tipos-traccion-coche', 'porsche-mission-s-2026'],
+  'toyota-gr-gt': ['jas-tensei-honda-nsx-vtec', 'mazda-mx-5-nd-futuro-ne', 'porsche-mission-s-2026'],
   'mazda-mx-5-nd-futuro-ne': ['toyota-gr-gt', 'coche-hibrido-enchufable-o-microhibrido', 'tipos-traccion-coche'],
   'cuanto-cuesta-mantener-coche-mes-espana': ['cuanto-cuesta-viaje-coche', 'como-calcular-consumo-real-coche', 'coches-baratos-espana'],
   'como-calcular-consumo-real-coche': ['como-reducir-consumo-combustible', 'cuanto-cuesta-viaje-coche', 'cuanto-cuesta-mantener-coche-mes-espana'],
@@ -16,6 +17,6 @@ export const relatedGuideSlugs: Record<string, string[]> = {
   'porsche-mission-s-2026': ['toyota-gr-gt', 'coche-hibrido-enchufable-o-microhibrido', 'marcas-coches-mas-vendidas-espana-2025'],
   'detalles-coche-que-quiza-no-conocias': ['tipos-luces-coche', 'tipos-cambio-automatico', 'tipos-traccion-coche'],
   'tipos-cambio-automatico': ['tipos-traccion-coche', 'detalles-coche-que-quiza-no-conocias', 'marcas-coches-mas-fiables-ranking'],
-  'tipos-traccion-coche': ['tipos-cambio-automatico', 'marcas-coches-mas-fiables-ranking', 'que-coche-comprar-segun-presupuesto'],
+  'tipos-traccion-coche': ['jas-tensei-honda-nsx-vtec', 'tipos-cambio-automatico', 'que-coche-comprar-segun-presupuesto'],
   'tipos-luces-coche': ['detalles-coche-que-quiza-no-conocias', 'nueva-normativa-dgt-octubre-2026', 'tipos-traccion-coche'],
 };

@@ -1,5 +1,13 @@
 export const guides = [
   {
+    slug: 'jas-tensei-honda-nsx-vtec',
+    title: 'JAS Tensei, NSX sin VTEC: ¿qué gana y qué pierde?',
+    category: 'Comparar coches',
+    categorySlug: 'comparar-coches',
+    description: 'Qué implica quitar el VTEC al NSX reinterpretado por JAS, Pininfarina y Judd: diferencias, cifras en conflicto y datos que faltan.',
+    published: true,
+  },
+  {
     slug: 'mazda-mx-5-nd-futuro-ne',
     title: 'Mazda MX-5 2027 y futuro «NE»: qué sabemos de verdad',
     category: 'Comparar coches',

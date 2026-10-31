@@ -1859,7 +1859,326 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "caption": "Fotografía del Tavascan eléctrico; acabado, llantas y autonomía dependen de la versión. Redimensionada para web."
   },
-"mitsubishi/grandis": {
+  "ford/explorer-electrico": {
+    "src": "/images/models/commons/model-ford-explorer.jpg",
+    "alt": "Ford Explorer eléctrico fotografiado en Auto Zürich 2024.",
+    "width": 1280,
+    "height": 856,
+    "sourceTitle": "Ford Explorer EV Auto Zuerich 2024 DSC 6360.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Explorer_EV_Auto_Zuerich_2024_DSC_6360.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de una unidad de exposición; acabado y equipamiento pueden variar. Redimensionada para web."
+  },
+  "ford/capri": {
+    "src": "/images/models/commons/model-ford-capri.jpg",
+    "alt": "Ford Capri eléctrico fotografiado en Auto Zürich 2024.",
+    "width": 1280,
+    "height": 788,
+    "sourceTitle": "Ford Capri (2024) Auto Zuerich 2024 DSC 6382.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Capri_(2024)_Auto_Zuerich_2024_DSC_6382.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de una unidad de exposición; acabado y equipamiento pueden variar. Redimensionada para web."
+  },
+  "ford/puma-gen-e": {
+    "src": "/images/models/commons/model-ford-puma-gen-e.jpg",
+    "alt": "Ford Puma Gen-E eléctrico en una exposición de automoción de 2025.",
+    "width": 1280,
+    "height": 866,
+    "sourceTitle": "Ford Puma Gen-E IAA 2025 DSC 2052.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Puma_Gen-E_IAA_2025_DSC_2052.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La imagen muestra el modelo eléctrico; color y acabado pueden diferir. Redimensionada para web."
+  },
+  "ford/mustang-mach-e": {
+    "src": "/images/models/commons/model-ford-mustang-mach-e.jpg",
+    "alt": "Ford Mustang Mach-E expuesto en una muestra de vehículos eléctricos.",
+    "width": 1280,
+    "height": 856,
+    "sourceTitle": "Ford Mustang Mach-E X DSC 9357.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Mustang_Mach-E_X_DSC_9357.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de una unidad de exposición; batería y acabado pueden variar. Redimensionada para web."
+  },
+  "ford/puma": {
+    "src": "/images/models/commons/model-ford-puma.jpg",
+    "alt": "Ford Puma de la generación actual fotografiado en 2024.",
+    "width": 1280,
+    "height": 788,
+    "sourceTitle": "Ford Puma (2024) IMG 9869.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Puma_(2024)_IMG_9869.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La fotografía representa la generación actual; motorización y acabado pueden variar. Redimensionada para web."
+  },
+  "ford/kuga": {
+    "src": "/images/models/commons/model-ford-kuga.jpg",
+    "alt": "Ford Kuga de tercera generación fotografiado en 2024.",
+    "width": 1280,
+    "height": 807,
+    "sourceTitle": "2024 Ford Kuga (third generation) IMG 9853.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Ford_Kuga_(third_generation)_IMG_9853.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de la generación actual; motorización y acabado pueden variar. Redimensionada para web."
+  },
+  "ford/mustang": {
+    "src": "/images/models/commons/model-ford-mustang.jpg",
+    "alt": "Ford Mustang GT Fastback con motor V8 de 5,0 litros.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "2024 Ford Mustang GT 5.0 v9.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Ford_Mustang_GT_5.0_v9.jpg",
+    "authorName": "Fercavanha",
+    "licenseName": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "caption": "Imagen de un Mustang GT; la carrocería y el acabado pueden variar. Redimensionada para web."
+  },
+  "ford/bronco": {
+    "src": "/images/models/commons/model-ford-bronco.jpg",
+    "alt": "Ford Bronco Outer Banks con motor V6 EcoBoost en un entorno urbano.",
+    "width": 1280,
+    "height": 851,
+    "sourceTitle": "2023 Ford Bronco 2.7 V6 EcoBoost Outer Banks (53082690022).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Ford_Bronco_2.7_V6_EcoBoost_Outer_Banks_(53082690022).jpg",
+    "authorName": "Rutger van der Maar",
+    "licenseName": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "caption": "Fotografía de un Bronco Outer Banks; disponibilidad y configuración española dependen del stock. Redimensionada para web."
+  },
+  "ford/tourneo-courier": {
+    "src": "/images/models/commons/model-ford-tourneo-courier.jpg",
+    "alt": "Ford Tourneo Courier de segunda generación fotografiado en 2024.",
+    "width": 1280,
+    "height": 972,
+    "sourceTitle": "Ford Tourneo Courier (2nd generation) 1X7A2466.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Tourneo_Courier_(2nd_generation)_1X7A2466.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía del modelo de pasajeros; acabado y motorización pueden variar. Redimensionada para web."
+  },
+  "ford/e-tourneo-courier": {
+    "src": "/images/models/commons/model-ford-e-tourneo-courier.jpg",
+    "alt": "Ford E-Tourneo Courier eléctrico fotografiado en Auto Zürich 2025.",
+    "width": 1280,
+    "height": 1024,
+    "sourceTitle": "Ford E-Tourneo Courier Auto Zuerich 2025 DSC 3362.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_E-Tourneo_Courier_Auto_Zuerich_2025_DSC_3362.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de una unidad expuesta; acabado y equipamiento pueden variar. Redimensionada para web."
+  },
+  "ford/tourneo-connect": {
+    "src": "/images/models/commons/model-ford-tourneo-connect.jpg",
+    "alt": "Ford Tourneo Connect Active de tercera generación.",
+    "width": 1280,
+    "height": 737,
+    "sourceTitle": "Ford Tourneo Connect Active (3rd generation) IMG 8615.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Tourneo_Connect_Active_(3rd_generation)_IMG_8615.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía del Tourneo Connect Active; motorización y acabado pueden variar. Redimensionada para web."
+  },
+  "ford/tourneo-custom": {
+    "src": "/images/models/commons/model-ford-tourneo-custom.jpg",
+    "alt": "Ford Tourneo Custom de pasajeros fotografiado en 2024.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "Ford Tourneo Custom (2024) (53990911425).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Tourneo_Custom_(2024)_(53990911425).jpg",
+    "authorName": "Charles from Port Chester, New York",
+    "licenseName": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "caption": "Fotografía del vehículo de pasajeros; carrocería y motorización pueden variar. Redimensionada para web."
+  },
+  "ford/ranger": {
+    "src": "/images/models/commons/model-ford-ranger.jpg",
+    "alt": "Ford Ranger Tremor con motor diésel EcoBlue.",
+    "width": 1280,
+    "height": 814,
+    "sourceTitle": "2024 Ford Ranger Tremor EcoBlue Auto.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Ford_Ranger_Tremor_EcoBlue_Auto.jpg",
+    "authorName": "Calreyn88",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Calreyn88",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de un acabado Tremor; gama y configuración pueden variar respecto al catálogo español. Redimensionada para web."
+  },
+  "ford/ranger-raptor": {
+    "src": "/images/models/commons/model-ford-ranger-raptor.jpg",
+    "alt": "Ford Ranger Raptor con motor EcoBoost de gasolina.",
+    "width": 1280,
+    "height": 889,
+    "sourceTitle": "2023 Ford Ranger Raptor Ecoboost Auto.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Ford_Ranger_Raptor_Ecoboost_Auto.jpg",
+    "authorName": "Calreyn88",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Calreyn88",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de un Raptor de gasolina; versión y mercado pueden diferir. Redimensionada para web."
+  },
+  "ford/transit-custom-nugget": {
+    "src": "/images/models/commons/model-ford-transit-custom-nugget.jpg",
+    "alt": "Ford Transit Custom Nugget camper de generación reciente.",
+    "width": 1280,
+    "height": 855,
+    "sourceTitle": "Ford Tourneo Custom Nugget (2023) AMA Marbach 2025 DSC 8634.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Tourneo_Custom_Nugget_(2023)_AMA_Marbach_2025_DSC_8634.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de la camper Nugget; la distribución y motorización dependen de la versión. Redimensionada para web."
+  },
+  "tesla/model-3": {
+    "src": "/images/models/commons/model-tesla-model-3.jpg",
+    "alt": "Tesla Model 3 actualizado de 2024, fotografiado en color rojo.",
+    "width": 1280,
+    "height": 964,
+    "sourceTitle": "Tesla Model 3 'Highland' (2024).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tesla_Model_3_%27Highland%27_(2024).jpg",
+    "authorName": "Mliu92",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Mliu92",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de un Model 3 actualizado de 2024. El color y algunos detalles de acabado pueden diferir de las unidades actuales. Redimensionada para web."
+  },
+  "tesla/model-y": {
+    "src": "/images/models/commons/model-tesla-model-y.jpg",
+    "alt": "Tesla Model Y Premium con el rediseño fotografiado en 2026.",
+    "width": 1280,
+    "height": 657,
+    "sourceTitle": "Tesla Model Y Premium (Facelift) – f 12052026.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_Premium_(Facelift)_%E2%80%93_f_12052026.jpg",
+    "authorName": "M 93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:M_93",
+    "licenseName": "CC BY-SA 3.0 Alemania",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "caption": "Fotografía de un Model Y Premium con el rediseño de 2026; el acabado, las ruedas y el color pueden variar. Redimensionada para web."
+  },
+  "tesla/model-s": {
+    "src": "/images/models/commons/model-tesla-model-s.jpg",
+    "alt": "Tesla Model S fotografiado en 2024.",
+    "width": 1280,
+    "height": 845,
+    "sourceTitle": "2024 Tesla Model S (99028).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Tesla_Model_S_(99028).jpg",
+    "authorName": "Calreyn88",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Calreyn88",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de un Model S de 2024; el vehículo fotografiado puede diferir de las versiones y unidades disponibles actualmente. Redimensionada para web."
+  },
+  "geely/e2": {
+    "src": "/images/models/commons/model-geely-e2.jpg",
+    "alt": "Geely EX2, compacto eléctrico relacionado con el Geely E2, fotografiado en color gris.",
+    "width": 1280,
+    "height": 720,
+    "sourceTitle": "Geely EX2 E22H Pro Comet Gray 01.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Geely_EX2_E22H_Pro_Comet_Gray_01.jpg",
+    "authorName": "Ethan Llamas",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La fotografía muestra un Geely EX2, denominación utilizada en otros mercados para el compacto relacionado con el E2. El acabado y el equipamiento pueden variar."
+  },
+  "geely/e5": {
+    "src": "/images/models/commons/model-geely-e5.jpg",
+    "alt": "Geely Galaxy E5, modelo eléctrico comercializado internacionalmente como Geely E5, en color gris claro.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "Geely Galaxy E5 001.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Geely_Galaxy_E5_001.jpg",
+    "authorName": "JustAnotherCarDesigner",
+    "licenseName": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "caption": "El Geely Galaxy E5 es la denominación de origen del modelo que se comercializa como Geely E5 en España. La fotografía se tomó en China; pueden variar los detalles de mercado."
+  },
+  "geely/starray-em-i": {
+    "src": "/images/models/commons/model-geely-starray-em-i.jpg",
+    "alt": "Geely Galaxy Starship 7 EM-i en un expositor, modelo híbrido enchufable relacionado con el Starray EM-i.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "Geely Galaxy Starship 7 001.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Geely_Galaxy_Starship_7_001.jpg",
+    "authorName": "JustAnotherCarDesigner",
+    "licenseName": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "caption": "La foto muestra el Galaxy Starship 7 EM-i, modelo que Geely comercializa como STARRAY EM-i en algunos mercados. La unidad fotografiada lleva denominación y especificación de otro mercado."
+  },
+  "geely/monjaro-em-i": {
+    "src": "/images/models/commons/model-geely-monjaro-em-i.jpg",
+    "alt": "Geely Monjaro fotografiado de perfil en una calle de Moscú.",
+    "width": 1280,
+    "height": 853,
+    "sourceTitle": "Moscow, Geely Monjaro black, Apr 2026 01.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moscow,_Geely_Monjaro_black,_Apr_2026_01.jpg",
+    "authorName": "Retired electrician",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Retired_electrician",
+    "licenseName": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "caption": "La fotografía identifica la familia Monjaro, pero no confirma que la unidad sea la versión híbrida enchufable Ultra AWD ofrecida en España."
+  },
+  "tesla/model-x": {
+    "src": "/images/models/commons/model-tesla-model-x.jpg",
+    "alt": "Tesla Model X Plaid de 2023 fotografiado en el exterior.",
+    "width": 1280,
+    "height": 929,
+    "sourceTitle": "2023 Tesla Model X Plaid.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Tesla_Model_X_Plaid.jpg",
+    "authorName": "Calreyn88",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Calreyn88",
+    "licenseName": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "caption": "Fotografía de un Model X Plaid de 2023; el diseño y la versión pueden diferir de las unidades actuales. Redimensionada para web."
+  },
+  "mitsubishi/colt": {
+    "src": "/images/models/commons/model-mitsubishi-colt.jpg",
+    "alt": "Mitsubishi Colt de la generación presentada en 2023, fotografiado desde la parte trasera.",
+    "width": 1280,
+    "height": 652,
+    "sourceTitle": "Mitsubishi Colt (2023) 1X7A1657.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mitsubishi_Colt_(2023)_1X7A1657.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía del Colt de la generación actual; pueden variar el acabado, el color y la motorización. Redimensionada para web."
+  },
+  "mitsubishi/asx": {
+    "src": "/images/models/commons/model-mitsubishi-asx.jpg",
+    "alt": "Mitsubishi ASX de segunda generación en color azul, fotografiado en 2024.",
+    "width": 1280,
+    "height": 788,
+    "sourceTitle": "2024 Mitsubishi ASX Leonberg 2024 IMG 0808.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Mitsubishi_ASX_Leonberg_2024_IMG_0808.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de una unidad de la generación vigente; el acabado y el equipamiento pueden variar. Redimensionada para web."
+  },
+  "mitsubishi/grandis": {
     "src": "/images/models/commons/model-mitsubishi-grandis-2025.jpg",
     "alt": "Mitsubishi Grandis Hybrid fotografiado en Zúrich en 2025.",
     "width": 1280,
@@ -1872,7 +2191,390 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "caption": "Fotografía del Mitsubishi Grandis Hybrid de 2025; el acabado, el color y el equipamiento pueden variar según la versión."
   },
-"mercedes-benz/clase-s-larga": {
+  "mitsubishi/outlander-phev": {
+    "src": "/images/models/commons/model-mitsubishi-outlander-phev.jpg",
+    "alt": "Mitsubishi Outlander PHEV de cuarta generación, fotografiado en 2025.",
+    "width": 1280,
+    "height": 852,
+    "sourceTitle": "2025 Mitsubishi Outlander PHEV (fourth generation) IMG 3128.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_Mitsubishi_Outlander_PHEV_(fourth_generation)_IMG_3128.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de la cuarta generación; el acabado, las llantas y el equipamiento pueden diferir de los de cada versión española. Redimensionada para web."
+  },
+  "mitsubishi/eclipse-cross-ev": {
+    "src": "/images/models/commons/model-mitsubishi-eclipse-cross-ev.jpg",
+    "alt": "Mitsubishi Eclipse Cross eléctrico de segunda generación, fotografiado en 2026.",
+    "width": 1280,
+    "height": 746,
+    "sourceTitle": "Mitsubishi Eclipse Cross (second generation) Ditzingen Mobil 2026 IMG 5501.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mitsubishi_Eclipse_Cross_(second_generation)_Ditzingen_Mobil_2026_IMG_5501.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de la nueva generación eléctrica expuesta en Alemania; la imagen incluye rotulación de concesionario y puede mostrar detalles distintos a los de las unidades españolas. Redimensionada para web."
+  },
+  "porsche/718": {
+    "src": "/images/models/commons/model-porsche-718.jpg",
+    "alt": "Porsche 718 Spyder RS verde, roadster biplaza de motor central.",
+    "width": 1280,
+    "height": 770,
+    "sourceTitle": "Porsche 718 Spyder RS.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Porsche_718_Spyder_RS.jpg",
+    "authorName": "Calreyn88",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Calreyn88",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de un 718 Spyder RS; la página también describe el Cayman GT4 RS. Acabado y equipamiento pueden diferir de las unidades de inventario. Imagen redimensionada para web."
+  },
+  "porsche/911": {
+    "src": "/images/models/commons/model-porsche-911.jpg",
+    "alt": "Porsche 911 Carrera S azul de la generación 992.2.",
+    "width": 1280,
+    "height": 742,
+    "sourceTitle": "2025 Porsche 911 Carrera S.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_Porsche_911_Carrera_S.jpg",
+    "authorName": "TTTNIS",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:TTTNIS",
+    "licenseName": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "caption": "Fotografía de un 911 Carrera S 992.2; la ficha reúne varias carrocerías y motorizaciones de la familia. El acabado de la imagen puede no coincidir con todas ellas. Imagen redimensionada para web."
+  },
+  "porsche/taycan": {
+    "src": "/images/models/commons/model-porsche-taycan.jpg",
+    "alt": "Porsche Taycan eléctrico azul claro fotografiado al aire libre.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "A Porsche Taycan.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_Porsche_Taycan.jpg",
+    "authorName": "Oleg Yunakov",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Oleg_Yunakov",
+    "licenseName": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "caption": "Fotografía de un Taycan; la versión, la carrocería y el equipamiento pueden diferir de las configuraciones españolas descritas. Imagen redimensionada para web."
+  },
+  "porsche/panamera": {
+    "src": "/images/models/commons/model-porsche-panamera.jpg",
+    "alt": "Porsche Panamera 4 blanco expuesto en el Salón Internacional del Automóvil de Nueva York de 2024.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "Porsche Panamera 4 (2024) (53623960658).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Porsche_Panamera_4_(2024)_(53623960658).jpg",
+    "authorName": "Charles from Port Chester, New York",
+    "authorUrl": "https://www.flickr.com/people/charles79/",
+    "licenseName": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "caption": "Fotografía de un Panamera 4 de 2024; el acabado, las ruedas y el equipamiento pueden variar frente a las versiones actuales descritas. Imagen redimensionada para web."
+  },
+  "porsche/macan": {
+    "src": "/images/models/commons/model-porsche-macan.jpg",
+    "alt": "Porsche Macan Electric negro fotografiado en un evento de vehículos.",
+    "width": 1280,
+    "height": 853,
+    "sourceTitle": "Porsche Macan Electric XAB Jet Black Metallic 01.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Porsche_Macan_Electric_XAB_Jet_Black_Metallic_01.jpg",
+    "authorName": "Ethan Llamas",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Ethan_Llamas",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de un Macan Electric XAB; puede mostrar un acabado y equipamiento distintos a las versiones del configurador español. Imagen redimensionada para web."
+  },
+  "porsche/cayenne": {
+    "src": "/images/models/commons/model-porsche-cayenne.jpg",
+    "alt": "Porsche Cayenne Electric Turbo verde fotografiado en Ludwigsburg en octubre de 2026.",
+    "width": 1280,
+    "height": 822,
+    "sourceTitle": "Porsche Cayenne Electric Turbo IMG 8936.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Porsche_Cayenne_Electric_Turbo_IMG_8936.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de un Cayenne Electric Turbo; la ficha también incluye SUV y Coupé de gasolina e híbridos enchufables. La imagen solo representa la variante eléctrica mostrada. Redimensionada para web."
+  },
+  "lynk-co/01": {
+    "src": "/images/models/commons/model-lynk-co-01.jpg",
+    "alt": "Lynk & Co 01 híbrido enchufable expuesto en IAA Mobility 2025.",
+    "width": 1280,
+    "height": 859,
+    "sourceTitle": "2024 Lynk & Co 01 IAA 2025 DSC 2314.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Lynk_%26_Co_01_IAA_2025_DSC_2314.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de un 01 PHEV expuesto en IAA Mobility 2025; el año-modelo, el acabado y el equipamiento de la unidad pueden diferir de la oferta española actual. Redimensionada para web."
+  },
+  "lynk-co/02": {
+    "src": "/images/models/commons/model-lynk-co-02.jpg",
+    "alt": "Lynk & Co 02 eléctrico expuesto en IAA Mobility 2025.",
+    "width": 1280,
+    "height": 665,
+    "sourceTitle": "2025 Lynk & Co 02 IAA 2025 DSC 2308.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_Lynk_%26_Co_02_IAA_2025_DSC_2308.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Unidad del 02 presentada en IAA Mobility 2025; el acabado y algunos detalles de equipamiento pueden variar respecto a los configurables en España. Redimensionada para web."
+  },
+  "lynk-co/08": {
+    "src": "/images/models/commons/model-lynk-co-08.jpg",
+    "alt": "Lynk & Co 08 EM-P híbrido enchufable expuesto en IAA Mobility 2025.",
+    "width": 1280,
+    "height": 967,
+    "sourceTitle": "Lynk & Co 08 EM-P IAA 2025 DSC 2317.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lynk_%26_Co_08_EM-P_IAA_2025_DSC_2317.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía del 08 EM-P expuesto en IAA Mobility 2025; el acabado, el año-modelo y el equipamiento pueden diferir de la configuración española actual. Redimensionada para web."
+  },
+  "kgm/tivoli": {
+    "src": "/images/models/commons/model-kgm-tivoli.jpg",
+    "alt": "KGM Tívoli expuesto en una muestra de automóviles en Zúrich.",
+    "width": 1280,
+    "height": 747,
+    "sourceTitle": "KGM Tivoli DSC 2941.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KGM_Tivoli_DSC_2941.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Unidad Tívoli fotografiada en una exposición; el acabado y la configuración pueden variar respecto a la gama española."
+  },
+  "kgm/korando": {
+    "src": "/images/models/commons/model-kgm-korando.jpg",
+    "alt": "KGM Korando de generación C300, fotografiado en 2019.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "SsangYong Korando (C300; 2019).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SsangYong_Korando_(C300%3B_2019).jpg",
+    "authorName": "Jakub CA",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Jakub_CA",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La fotografía muestra una unidad C300 de 2019; el acabado y algunos detalles pueden diferir de la configuración comercial vigente."
+  },
+  "kgm/torres": {
+    "src": "/images/models/commons/model-kgm-torres.jpg",
+    "alt": "KGM Torres Hybrid expuesto en una muestra de automóviles en 2025.",
+    "width": 1280,
+    "height": 782,
+    "sourceTitle": "KGM Torres Hybrid Automesse Ludwigsburg 2025 DSC 2567.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KGM_Torres_Hybrid_Automesse_Ludwigsburg_2025_DSC_2567.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Unidad Torres Hybrid de exposición; el acabado y el equipamiento pueden variar respecto a la oferta española."
+  },
+  "kgm/torres-actyon": {
+    "src": "/images/models/commons/model-kgm-torres-actyon.jpg",
+    "alt": "KGM Actyon J120 en color cobre, variante de carrocería de la familia Torres Actyon.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "KGM Actyon J120 Royal Copper (12).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KGM_Actyon_J120_Royal_Copper_(12).jpg",
+    "authorName": "Damian B Oh",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía del Actyon J120, nombre utilizado para esta carrocería en otros mercados; la motorización de la unidad fotografiada puede diferir de la versión HEV española."
+  },
+  "kgm/torres-evx": {
+    "src": "/images/models/commons/model-kgm-torres-evx.jpg",
+    "alt": "KGM Torres EVX expuesto en Auto Zürich 2025.",
+    "width": 1280,
+    "height": 764,
+    "sourceTitle": "KGM Torres EVX Auto Zuerich 2025 DSC 3332.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KGM_Torres_EVX_Auto_Zuerich_2025_DSC_3332.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Unidad eléctrica fotografiada en 2025; el color, el acabado y el equipamiento pueden variar."
+  },
+  "kgm/rexton": {
+    "src": "/images/models/commons/model-kgm-rexton.jpg",
+    "alt": "KGM Rexton de 2024 fotografiado en una exposición de vehículos.",
+    "width": 1280,
+    "height": 1172,
+    "sourceTitle": "2024 Ssangyong Rexton Auto.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Ssangyong_Rexton_Auto.jpg",
+    "authorName": "Calreyn88",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Unidad Rexton fotografiada en 2024; los detalles de acabado pueden variar respecto a la gama española actual."
+  },
+  "kgm/musso": {
+    "src": "/images/models/commons/model-kgm-musso.jpg",
+    "alt": "SsangYong Musso Grand Q200 diésel de doble cabina en color rojo.",
+    "width": 1280,
+    "height": 800,
+    "sourceTitle": "SsangYong Musso Grand Q200 2.2L 4WD Indian Red 01.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SsangYong_Musso_Grand_Q200_2.2L_4WD_Indian_Red_01.jpg",
+    "authorName": "Ethan Llamas",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La imagen muestra un Musso Grand Q200 diésel; carrocería, caja y acabado pueden diferir de la versión comercializada actualmente en España."
+  },
+  "kgm/musso-evx": {
+    "src": "/images/models/commons/model-kgm-musso-evx.jpg",
+    "alt": "KGM Musso EV eléctrico expuesto en Auto Zürich 2025.",
+    "width": 1280,
+    "height": 961,
+    "sourceTitle": "KGM Musso EV Auto Zuerich 2025 DSC 2971.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KGM_Musso_EV_Auto_Zuerich_2025_DSC_2971.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "KGM Musso EV expuesto en 2025, la pick-up eléctrica comercializada en España como Musso EVX; acabado y detalles pueden variar."
+  },
+  "land-rover/range-rover": {
+    "src": "/images/models/commons/model-land-rover-range-rover.jpg",
+    "alt": "Land Rover Range Rover L460 fotografiado desde un ángulo frontal de tres cuartos.",
+    "width": 1280,
+    "height": 720,
+    "sourceTitle": "Land Rover Range Rover (L460) (front three-quarter view) at Grand Green Osaka.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Land_Rover_Range_Rover_(L460)_(front_three-quarter_view)_at_Grand_Green_Osaka.jpg",
+    "authorName": "Aos.1905",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La fotografía muestra una unidad L460; el acabado, el año y la carrocería pueden diferir de la configuración española actual."
+  },
+  "land-rover/range-rover-sport": {
+    "src": "/images/models/commons/model-land-rover-range-rover-sport.jpg",
+    "alt": "Land Rover Range Rover Sport L461 en acabado gris, fotografiado de frente y de lado.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "Land Rover Range Rover Sport L461 Carpathian Grey (1).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Land_Rover_Range_Rover_Sport_L461_Carpathian_Grey_(1).jpg",
+    "authorName": "Damian B Oh",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La imagen corresponde a un Range Rover Sport L461; el acabado y la motorización pueden diferir de las versiones españolas actuales."
+  },
+  "land-rover/range-rover-velar": {
+    "src": "/images/models/commons/model-land-rover-range-rover-velar.jpg",
+    "alt": "Range Rover Velar P400e Dynamic HSE expuesto en una muestra de movilidad en Japón.",
+    "width": 1280,
+    "height": 720,
+    "sourceTitle": "Range Rover Velar P400e Dynamic HSE at Japan Mobility Show Kansai 2025.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Range_Rover_Velar_P400e_Dynamic_HSE_at_Japan_Mobility_Show_Kansai_2025.jpg",
+    "authorName": "Aos.1905",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La unidad fotografiada es un P400e Dynamic HSE; la configuración, el equipamiento y el año pueden variar."
+  },
+  "land-rover/range-rover-evoque": {
+    "src": "/images/models/commons/model-land-rover-range-rover-evoque.jpg",
+    "alt": "Range Rover Evoque L551 de 2023 fotografiado en exterior.",
+    "width": 1280,
+    "height": 790,
+    "sourceTitle": "2023 Range Rover Evoque (L551) IMG 3586.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Range_Rover_Evoque_(L551)_IMG_3586.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía de un Evoque L551 de 2023; el acabado y la motorización pueden diferir de la gama vigente."
+  },
+  "land-rover/discovery": {
+    "src": "/images/models/commons/model-land-rover-discovery.jpg",
+    "alt": "Land Rover Discovery de quinta generación fotografiado de frente y de lado.",
+    "width": 1280,
+    "height": 897,
+    "sourceTitle": "Land Rover Discovery 5.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Land_Rover_Discovery_5.jpg",
+    "authorName": "Calreyn88",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La foto muestra un Discovery de quinta generación; versión, plazas y acabado pueden variar respecto a la oferta actual."
+  },
+  "land-rover/discovery-sport": {
+    "src": "/images/models/commons/model-land-rover-discovery-sport.jpg",
+    "alt": "Land Rover Discovery Sport Dynamic SE P250 de 2024, visto desde el frontal.",
+    "width": 1280,
+    "height": 720,
+    "sourceTitle": "Land Rover Discovery Sport Dynamic SE P250 (2024) (front) in Osaka.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Land_Rover_Discovery_Sport_Dynamic_SE_P250_(2024)_(front)_in_Osaka.jpg",
+    "authorName": "Aos.1905",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La unidad fotografiada es un P250 de 2024; la motorización, el acabado y las plazas pueden diferir de la gama española actual."
+  },
+  "land-rover/defender": {
+    "src": "/images/models/commons/model-land-rover-defender.jpg",
+    "alt": "Land Rover Defender 130 L663 fotografiado de frente y de lado.",
+    "width": 1280,
+    "height": 750,
+    "sourceTitle": "Land Rover Defender 130 (L663) IMG 9445.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Land_Rover_Defender_130_(L663)_IMG_9445.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La imagen muestra la carrocería Defender 130 L663; la ficha agrupa también Defender 90 y 110, cuyos detalles pueden variar."
+  },
+  "xpeng/g6": {
+    "src": "/images/models/commons/model-xpeng-g6.jpg",
+    "alt": "XPENG G6 fotografiado en marzo de 2025, vista frontal lateral.",
+    "width": 1280,
+    "height": 652,
+    "sourceTitle": "XPeng G6 – f 22032025.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:XPeng_G6_%E2%80%93_f_22032025.jpg",
+    "authorName": "M 93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:M_93",
+    "licenseName": "CC BY-SA 3.0 Alemania",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "caption": "Fotografía redimensionada para web de un XPENG G6 tomada en 2025; el año-modelo, el acabado y las especificaciones pueden diferir de la gama española actual."
+  },
+  "xpeng/g9": {
+    "src": "/images/models/commons/model-xpeng-g9.jpg",
+    "alt": "XPENG G9 expuesto en el IAA 2025, visto desde delante y de lado.",
+    "width": 1280,
+    "height": 856,
+    "sourceTitle": "XPeng G9 (2025) IAA 2025 DSC 2054.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:XPeng_G9_(2025)_IAA_2025_DSC_2054.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía redimensionada para web de una unidad expuesta en 2025; la versión, el equipamiento y el año-modelo pueden variar respecto al catálogo MY2026."
+  },
+  "xpeng/p7-plus": {
+    "src": "/images/models/commons/model-xpeng-p7-plus.jpg",
+    "alt": "XPENG P7+ de 2026 fotografiado en Stuttgart-Vaihingen.",
+    "width": 1280,
+    "height": 761,
+    "sourceTitle": "XPeng P7+ (2026) IMG 7216.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:XPeng_P7%2B_(2026)_IMG_7216.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía redimensionada para web de una unidad XPENG P7+ de 2026; el color y la versión pueden diferir de las configuraciones comercializadas en España."
+  },
+  "xpeng/l03": {
+    "src": "/images/models/commons/model-xpeng-l03.jpg",
+    "alt": "XPENG L03 Long Range Plus de 2026 fotografiado en Bangkok.",
+    "width": 1280,
+    "height": 720,
+    "sourceTitle": "2026 Xpeng L03 Long Range Plus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026_Xpeng_L03_Long_Range_Plus.jpg",
+    "authorName": "Chanokchon",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Chanokchon",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Fotografía redimensionada para web de una unidad L03 Long Range Plus tomada en Tailandia; la versión y su sistema REEV pueden diferir de la configuración anunciada para España."
+  },
+  "mercedes-benz/clase-s-larga": {
     "src": "/images/models/commons/model-mercedes-benz-clase-s.jpg",
     "alt": "Mercedes-Benz Clase S W223, berlina de la que deriva la versión larga.",
     "width": 1280,
@@ -1885,7 +2587,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía de una Clase S W223; la imagen no permite distinguir la batalla larga.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Nord794ub"
   },
-"mercedes-benz/maybach-sl": {
+  "mercedes-benz/maybach-sl": {
     "src": "/images/models/commons/model-mercedes-benz-maybach-sl.jpg",
     "alt": "Mercedes-Maybach SL 680 Monogram Series.",
     "width": 1280,
@@ -1898,7 +2600,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía del Mercedes-Maybach SL 680 Monogram Series; el acabado puede variar.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93"
   },
-"mercedes-benz/cla-shooting-brake": {
+  "mercedes-benz/cla-shooting-brake": {
     "src": "/images/models/commons/model-mercedes-benz-cla-shooting-brake-x178.jpg",
     "alt": "Mercedes-Benz CLA Shooting Brake X178 con acabado AMG Line Plus.",
     "width": 1280,
@@ -1911,7 +2613,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía del CLA Shooting Brake X178 con acabado AMG Line Plus.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:M_93"
   },
-"mercedes-benz/clase-e-estate": {
+  "mercedes-benz/clase-e-estate": {
     "src": "/images/models/commons/model-mercedes-benz-clase-e-estate-s214.jpg",
     "alt": "Mercedes-Benz E 300 de Estate S214.",
     "width": 1280,
@@ -1924,7 +2626,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía de un E 300 de Estate S214; la motorización y el acabado pueden diferir de otras versiones de la gama.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Charles_from_Port_Chester,_New_York"
   },
-"mercedes-benz/clase-c-electrico": {
+  "mercedes-benz/clase-c-electrico": {
     "src": "/images/models/editorial/model-mercedes-benz-clase-c-electrico-2026.jpg",
     "alt": "Mercedes-Benz Clase C 400 4MATIC eléctrico de nueva generación.",
     "width": 1800,
@@ -1936,7 +2638,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://media.mercedes-benz.com/en/legal/terms-of-use",
     "caption": "Fotografía oficial del Clase C eléctrico, usada con fines editoriales conforme a las condiciones de Mercedes-Benz Media."
   },
-"mercedes-benz/marco-polo-horizon": {
+  "mercedes-benz/marco-polo-horizon": {
     "src": "/images/models/commons/model-mercedes-benz-marco-polo-horizon.jpg",
     "alt": "Mercedes-Benz V 220 d Marco Polo Horizon W447.",
     "width": 1280,
@@ -1949,7 +2651,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía de una unidad Horizon W447; la distribución interior puede diferir.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Tokumeigakarinoaoshima"
   },
-"mercedes-benz/glc-electrico": {
+  "mercedes-benz/glc-electrico": {
     "src": "/images/models/commons/model-mercedes-benz-glc-electrico-2026.jpg",
     "alt": "Mercedes-Benz GLC con tecnología EQ, versión eléctrica.",
     "width": 1280,
@@ -1962,7 +2664,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía de un GLC con tecnología EQ; acabado y configuración pueden variar.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93"
   },
-"mercedes-benz/eqv": {
+  "mercedes-benz/eqv": {
     "src": "/images/models/commons/model-mercedes-benz-eqv.jpg",
     "alt": "Mercedes-Benz EQV 300 W447 fotografiado en 2023.",
     "width": 1280,
@@ -1975,7 +2677,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía de un EQV 300 W447; la configuración y el acabado pueden variar.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Charles_from_Port_Chester,_New_York"
   },
-"mercedes-benz/cla-electrico": {
+  "mercedes-benz/cla-electrico": {
     "src": "/images/models/commons/model-mercedes-benz-cla-electrico-2026.jpg",
     "alt": "Mercedes-Benz CLA eléctrico C174 fotografiado en 2025.",
     "width": 1280,
@@ -1987,7 +2689,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "caption": "Fotografía del CLA eléctrico C174; puede variar el acabado y equipamiento."
   },
-"mercedes-benz/gle-coupe": {
+  "mercedes-benz/gle-coupe": {
     "src": "/images/models/commons/model-mercedes-benz-gle-coupe-c167.jpg",
     "alt": "Mercedes-Benz GLE Coupé de generación C167.",
     "width": 1280,
@@ -1999,7 +2701,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
     "caption": "Fotografía del GLE Coupé C167; el año y el acabado pueden variar."
   },
-"mercedes-benz/gla-electrico": {
+  "mercedes-benz/gla-electrico": {
     "src": "/images/models/editorial/model-mercedes-benz-gla-electrico-2026.jpg",
     "alt": "Mercedes-Benz GLA eléctrico de nueva generación, fotografiado en ciudad.",
     "width": 1800,
@@ -2011,7 +2713,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://media.mercedes-benz.com/en/legal/terms-of-use",
     "caption": "Fotografía oficial del GLA eléctrico de nueva generación, publicada por Mercedes-Benz para uso editorial."
   },
-"mercedes-benz/clase-g-electrico": {
+  "mercedes-benz/clase-g-electrico": {
     "src": "/images/models/commons/model-mercedes-benz-clase-g-electrico.jpg",
     "alt": "Mercedes-Benz G 580 con tecnología EQ, todoterreno eléctrico.",
     "width": 1280,
@@ -2024,7 +2726,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía del G 580 con tecnología EQ; el acabado puede variar.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93"
   },
-"mercedes-benz/glb-electrico": {
+  "mercedes-benz/glb-electrico": {
     "src": "/images/models/commons/model-mercedes-benz-glb-electrico-2026.jpg",
     "alt": "Mercedes-Benz GLB 250+ con tecnología EQ, generación X244.",
     "width": 1280,
@@ -2037,7 +2739,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía del GLB eléctrico X244; acabado AMG Line.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:M_93"
   },
-"mercedes-benz/clase-c-estate": {
+  "mercedes-benz/clase-c-estate": {
     "src": "/images/models/commons/model-mercedes-benz-clase-c-estate-s206.jpg",
     "alt": "Mercedes-Benz Clase C Estate S206.",
     "width": 1280,
@@ -2050,7 +2752,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía de un Clase C Estate S206; el acabado puede variar.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93"
   },
-"mercedes-benz/marco-polo": {
+  "mercedes-benz/marco-polo": {
     "src": "/images/models/commons/model-mercedes-benz-marco-polo-2025.jpg",
     "alt": "Mercedes-Benz Marco Polo camper fotografiada en Zúrich en 2025.",
     "width": 1280,
@@ -2063,7 +2765,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Mercedes-Benz Marco Polo de 2025; el equipamiento camper puede variar según configuración.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:MB-one"
   },
-"mercedes-benz/clase-e-all-terrain": {
+  "mercedes-benz/clase-e-all-terrain": {
     "src": "/images/models/commons/model-mercedes-benz-clase-e-all-terrain-s214.jpg",
     "alt": "Mercedes-Benz E 220 d 4MATIC All-Terrain S214.",
     "width": 1280,
@@ -2076,7 +2778,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía de un E 220 d All-Terrain S214; la configuración puede variar.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Charles_from_Port_Chester,_New_York"
   },
-"mercedes-benz/maybach-eqs-suv": {
+  "mercedes-benz/maybach-eqs-suv": {
     "src": "/images/models/commons/model-mercedes-benz-maybach-eqs-suv.jpg",
     "alt": "Mercedes-Maybach EQS 680 SUV fotografiado desde la parte trasera.",
     "width": 1280,
@@ -2088,7 +2790,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "caption": "Vista trasera de un Mercedes-Maybach EQS 680 SUV; acabado y equipamiento pueden variar."
   },
-"mercedes-benz/maybach-gls": {
+  "mercedes-benz/maybach-gls": {
     "src": "/images/models/commons/model-mercedes-benz-maybach-gls-x167.jpg",
     "alt": "Mercedes-Maybach GLS 600 X167 con carrocería bitono.",
     "width": 1280,
@@ -2101,7 +2803,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Mercedes-Maybach GLS 600 X167; la combinación de colores es específica de la unidad fotografiada.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Ethan_Llamas"
   },
-"mercedes-benz/cle-cabrio": {
+  "mercedes-benz/cle-cabrio": {
     "src": "/images/models/commons/model-mercedes-benz-cle-cabrio-a236.jpg",
     "alt": "Mercedes-Benz CLE Cabrio A236.",
     "width": 1280,
@@ -2114,7 +2816,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía del CLE Cabrio A236; el acabado puede variar.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Tokumeigakarinoaoshima"
   },
-"mercedes-benz/cle-coupe": {
+  "mercedes-benz/cle-coupe": {
     "src": "/images/models/commons/model-mercedes-benz-cle-coupe-c236.jpg",
     "alt": "Mercedes-Benz CLE Coupé C236.",
     "width": 1280,
@@ -2127,7 +2829,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía del CLE Coupé C236 con acabado AMG Line.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:M_93"
   },
-"mercedes-benz/cla-shooting-brake-electrico": {
+  "mercedes-benz/cla-shooting-brake-electrico": {
     "src": "/images/models/commons/model-mercedes-benz-cla-shooting-brake-electrico-x174.jpg",
     "alt": "Mercedes-Benz CLA Shooting Brake eléctrico X174.",
     "width": 1280,
@@ -2140,7 +2842,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía del CLA Shooting Brake eléctrico X174; el acabado puede diferir.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93"
   },
-"mercedes-benz/vle": {
+  "mercedes-benz/vle": {
     "src": "/images/models/commons/model-mercedes-benz-vle-2026.jpg",
     "alt": "Mercedes-Benz VLE 300 fotografiado en IAA 2026.",
     "width": 1280,
@@ -2153,7 +2855,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía del Mercedes-Benz VLE 300 en IAA 2026; color y equipamiento pueden diferir.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:MB-one"
   },
-"mercedes-benz/amg-gt-4-puertas": {
+  "mercedes-benz/amg-gt-4-puertas": {
     "src": "/images/models/commons/model-mercedes-benz-amg-gt-4-puertas-x290.jpg",
     "alt": "Mercedes-AMG GT 4 puertas de generación X290, como referencia de la familia.",
     "width": 1280,
@@ -2166,7 +2868,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Imagen de la generación anterior X290 con motor de combustión; no representa el nuevo Mercedes-AMG GT 4 Puertas eléctrico.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Calreyn88"
   },
-"mercedes-benz/eqa": {
+  "mercedes-benz/eqa": {
     "src": "/images/models/commons/model-mercedes-benz-eqa.jpg",
     "alt": "Mercedes-Benz EQA 250 H243.",
     "width": 1280,
@@ -2179,7 +2881,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía de un EQA H243; la unidad pertenece a una versión anterior del modelo y puede diferir del restyling actual.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Tokumeigakarinoaoshima"
   },
-"mercedes-benz/clase-v": {
+  "mercedes-benz/clase-v": {
     "src": "/images/models/commons/model-mercedes-benz-clase-v-w447.jpg",
     "alt": "Mercedes-Benz Clase V 220 d larga, generación W447.",
     "width": 1280,
@@ -2192,7 +2894,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía de una Clase V W447; la longitud y el equipamiento pueden variar.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Tokumeigakarinoaoshima"
   },
-"mercedes-benz/glc-coupe": {
+  "mercedes-benz/glc-coupe": {
     "src": "/images/models/commons/model-mercedes-benz-glc-coupe-c254.jpg",
     "alt": "Mercedes-Benz GLC Coupé C254 con acabado AMG Line.",
     "width": 1280,
@@ -2205,7 +2907,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "GLC Coupé C254 fotografiado con acabado AMG Line; la configuración puede diferir.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:M_93"
   },
-"mercedes-benz/clase-a": {
+  "mercedes-benz/clase-a": {
     "src": "/images/models/commons/model-mercedes-benz-clase-a-w177.jpg",
     "alt": "Mercedes-Benz A 200 de la generación W177.",
     "width": 1280,
@@ -2218,7 +2920,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "caption": "Fotografía de un A 200 de generación W177; el acabado y el año de la unidad pueden diferir de los disponibles en España.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Charles_from_Port_Chester,_New_York"
   },
-"mercedes-benz/maybach-clase-s": {
+  "mercedes-benz/maybach-clase-s": {
     "src": "/images/models/commons/model-mercedes-benz-maybach-clase-s-2026.jpg",
     "alt": "Mercedes-Maybach Clase S W223 fotografiado en China.",
     "width": 1280,

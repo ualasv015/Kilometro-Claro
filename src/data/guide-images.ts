@@ -14,6 +14,15 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'jas-tensei-honda-nsx-vtec': {
+    src: '/images/guides/jas-tensei-presentacion-frontal.jpg',
+    alt: 'JAS Tensei azul visto desde delante y de lado en el estudio, con diseño de Pininfarina',
+    caption: 'Imagen oficial del Tensei en la presentación de Cambiano del 8 de octubre de 2026.',
+    author: 'Marco De Ponti',
+    source: 'https://jas-tensei.media/gallerie-foto/jas-tensei-presentazione-stampa/',
+    sourceName: 'Dossier de prensa de JAS Motorsport / Pininfarina',
+    width: 2560, height: 1707,
+  },
   'mazda-mx-5-nd-futuro-ne': {
     src: '/images/guides/mazda-mx5-nd-escena.jpg',
     alt: 'Mazda MX-5 ND blanco estacionado en una calle de Brujas',

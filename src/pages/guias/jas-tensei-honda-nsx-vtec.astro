@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const title = 'JAS Tensei, NSX sin VTEC: ¿qué gana y qué pierde?';
+const seoTitle = 'JAS Tensei: NSX sin VTEC | Kilómetro Claro';
+const description = 'JAS transforma un NSX de primera generación en el Tensei. Analizamos qué implica quitar el VTEC, su receta mecánica y las cifras que discrepan.';
+const canonical = new URL('/guias/jas-tensei-honda-nsx-vtec/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-10-31';
+const sources = {
+  jas: 'https://jas-tensei.it/',
+  jasMedia: 'https://jas-tensei.media/gallerie-foto/jas-tensei-presentazione-stampa/',
+  jasIntro: 'https://www.jasmotorsport.com/news/the-first-jas-supercar-tensei-rebirth-of-an-icon',
+  jasJudd: 'https://www.jasmotorsport.com/news/judd-power-to-develop-engines-for-jas-tensei-supercar-designed-by-pininfarina',
+  hondaC30a: 'https://global.honda/en/tech/engine/car/C30A_NSX_vtec_DOHC/',
+  hpX: 'https://shop.pininfarina.it/en/products/pininfarina-heritage-stampa-da-collezione-sk-honda-hp-x',
+  italdesign: 'https://www.italdesign.it/it/project/honda-nsx-tribute/',
+  italdesignWhitepaper: 'https://www.italdesign.it/en/whitepaper/honda-nsx-tribute/',
+  carAndDriver: 'https://www.caranddriver.com/news/a69957805/italdesign-honda-nsx-second-gen-revealed/',
+  carwow: 'https://www.carwow.es/honda/noticias/8365/jas-tensei-pininfarina-honda-nsx-restomod-35-unidades',
+  topGear: 'https://www.topgear.com/car-news/retro/honda-nsx-has-returned-meet-finished-v6-engined-jas-tensei',
+  motor1: 'https://www.motor1.com/news/811265/honda-nsx-tensei-restomod-judd/',
+  autocarIndia: 'https://www.autocarindia.com/car-news/jas-tensei-the-nsx-reborn-by-jas-motorsport-440972',
+  octane: 'https://www.octane-magazine.com/news/jas-tensei-pininfarina-honda-nsx-judd-v6-revealed/',
+  rush: 'https://www.rushmagazine.co.uk/post/jas-tensei-honda-nsx-restomod-judd-v6-pininfarina',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: 'https://kilometroclaro.com/images/guides/jas-tensei-presentacion-frontal.jpg',
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES', mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+};
+const faqSchema = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question', name: '¿El JAS Tensei lo fabrica Honda?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. JAS Motorsport lo construye a partir de un Honda NSX donante. JAS es socio oficial de Honda en competición desde 1998, pero anuncia el Tensei como su primer coche de carretera con marca propia.' },
+    },
+    {
+      '@type': 'Question', name: '¿Está confirmado oficialmente que el motor ya no lleva VTEC?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Varios medios, entre ellos Motor1, Top Gear y Rush, publican que se sustituyó por distribución fija. La ficha técnica pública actual de JAS no menciona expresamente esa pieza ni detalla el tren de válvulas, así que la clasificación más rigurosa es «reportado por la prensa, sin explicación técnica primaria publicada».' },
+    },
+    {
+      '@type': 'Question', name: '¿Cuánto cuesta y se puede comprar en España?',
+      acceptedAnswer: { '@type': 'Answer', text: 'La prensa informa de 880.000 euros antes de impuestos y del coche donante, pero no hemos localizado un precio público de JAS ni una condición de homologación o entrega específica para España. Se necesita una oferta directa del fabricante para conocer el coste final.' },
+    },
+  ],
+};
+---
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'JAS Tensei y VTEC' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Comparar coches · Revisada el 31 de octubre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">El JAS Tensei parte de un Honda NSX de primera generación y cambia una de sus decisiones mecánicas más reconocibles. Analizamos qué significa prescindir del VTEC y qué no permiten afirmar aún las cifras publicadas.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>El Tensei no es una nueva generación fabricada por Honda: es la primera superdeportiva de carretera de JAS Motorsport, construida a partir de un NSX donante, con diseño de Pininfarina y un V6 rehecho por Judd Power. JAS publica 3,5 litros, 420 bhp y 350 Nm. Que el motor haya perdido el VTEC lo afirman varios medios; la ficha técnica pública de JAS no describe ese cambio. Sin curva de par ni prueba del coche terminado, no puede saberse si la distribución fija mejora su respuesta o su fiabilidad.</p>
+      </aside>
+
+      <GuideImage slug="jas-tensei-honda-nsx-vtec" />
+
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#proyecto">Qué es el JAS Tensei</a></li>
+          <li><a href="#cambios">Original y transformación</a></li>
+          <li><a href="#vtec">Qué se gana y se pierde sin VTEC</a></li>
+          <li><a href="#receta">V6 atmosférico y cambio manual</a></li>
+          <li><a href="#hpx">De HP-X a Tensei</a></li>
+          <li><a href="#restomod">Qué significa partir de un donante</a></li>
+          <li><a href="#italdesign">Tensei frente a NSX Tribute</a></li>
+          <li><a href="#precio">Precio, unidades y España</a></li>
+          <li><a href="#conclusion">Conclusión</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="proyecto">¿Qué es el JAS Tensei y por qué se habla de un nuevo NSX?</h2>
+      <p>El Tensei es una reinterpretación del Honda NSX de primera generación. Cada coche parte de un NSX donante que JAS desmonta y transforma; no es un modelo de nueva generación salido de la fábrica de Honda. JAS lo presentó como su primera superdeportiva de carretera con marca propia y anunció una serie limitada a 35 unidades. El coche terminado se mostró en París en octubre de 2026.</p>
+      <figure class="guide-visual">
+        <img src="/images/guides/jas-tensei-proyecto.svg" width="1200" height="675" alt="Mapa del proyecto JAS Tensei: el NSX de primera generación es el donante; JAS coordina la transformación, Pininfarina diseña y Judd Power desarrolla el motor" loading="lazy" decoding="async" />
+        <figcaption>Mapa original de Kilómetro Claro sobre el reparto de funciones del proyecto. Es un esquema editorial, no una fotografía del Tensei.</figcaption>
+      </figure>
+      <p>Conviene separar tres relaciones distintas. JAS Motorsport lleva siendo socio oficial de Honda en competición desde 1998, según la <a href="https://www.jasmotorsport.com/" target="_blank" rel="noopener noreferrer">historia corporativa de JAS</a>. Para el Tensei, JAS dirige el proyecto y la construcción, Pininfarina diseña la carrocería y el habitáculo, y Judd Power desarrolla el motor. Esa trayectoria de carreras con Honda no convierte al Tensei en un Honda nuevo ni demuestra que Honda lo haya diseñado o fabricado. En las fuentes oficiales consultadas, JAS lo presenta como su primer coche de carretera.</p>
+      <p><a href={sources.rush} target="_blank" rel="noopener noreferrer">Rush informó el 28 de octubre</a> de que Honda habría dado su visto bueno al uso del nombre NSX y a que los clientes puedan instalar emblemas Honda. No encontramos una comunicación equivalente de Honda ni una ficha de colaboración técnica de la marca para este coche. Por eso lo atribuimos a ese medio: un permiso de marca, si se confirma, tampoco convertiría el proyecto en una nueva generación desarrollada o fabricada por Honda.</p>
+      <p>El nombre japonés <em>tensei</em> alude al renacimiento. Tiene sentido como idea de diseño, pero no implica que el coche conserve todas las piezas de fábrica. La cobertura de <a href={sources.carwow} target="_blank" rel="noopener noreferrer">Carwow</a>, <a href={sources.topGear} target="_blank" rel="noopener noreferrer">Top Gear</a>, <a href={sources.motor1} target="_blank" rel="noopener noreferrer">Motor1</a>, <a href={sources.autocarIndia} target="_blank" rel="noopener noreferrer">Autocar India</a>, <a href={sources.octane} target="_blank" rel="noopener noreferrer">Octane</a> y <a href={sources.rush} target="_blank" rel="noopener noreferrer">Rush</a> ya repasa su ficha y su aspecto. Esta guía profundiza en una pregunta menos resuelta: qué hace exactamente el VTEC del NSX y qué se puede inferir —o no— de su sustitución.</p>
+
+      <h2 id="cambios">Honda NSX original y JAS Tensei: qué cambia y qué permanece</h2>
+      <p>Para hablar de cifras sin mezclar versiones, tomamos como referencia el NSX japonés de lanzamiento con motor C30A y cambio manual de cinco marchas. Honda publica para esa configuración 280 PS a 7.300 rpm, 30,0 kg·m de par a 5.400 rpm y una zona roja que empieza a 8.000 rpm. El automático de la misma época tenía otros valores. No son cifras universales para todos los NSX de primera generación.</p>
+      <div class="table-scroll" role="region" aria-label="Comparación entre Honda NSX de lanzamiento manual y JAS Tensei" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Dato</th><th scope="col">Honda NSX C30A, manual japonés de 1990</th><th scope="col">JAS Tensei, ficha pública de JAS</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Base</th><td>Modelo de producción Honda de primera generación.</td><td>NSX de primera generación usado como donante y transformado por JAS.</td></tr>
+            <tr><th scope="row">Motor</th><td>V6 atmosférico de 3,0 litros.</td><td>V6 atmosférico de 3,5 litros, reconstruido por Judd Power.</td></tr>
+            <tr><th scope="row">Potencia publicada</th><td>280 PS (CV) a 7.300 rpm.</td><td>420 bhp (aprox. 426 CV); JAS no indica en la página el régimen de potencia máxima.</td></tr>
+            <tr><th scope="row">Par publicado</th><td>30,0 kg·m a 5.400 rpm (aprox. 294 Nm).</td><td>350 Nm; JAS no indica en la página el régimen de par máximo.</td></tr>
+            <tr><th scope="row">Distribución</th><td>DOHC VTEC.</td><td>La retirada del VTEC y el uso de distribución fija aparecen en varios medios; la ficha de JAS no detalla árboles ni distribución.</td></tr>
+            <tr><th scope="row">Cambio y tracción</th><td>Manual de cinco marchas; motor central y ruedas traseras motrices.</td><td>Manual de seis marchas y propulsión trasera, según la información publicada del proyecto.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Fuentes: <a href={sources.hondaC30a} target="_blank" rel="noopener noreferrer">Honda Global, motor C30A</a> y <a href={sources.jas} target="_blank" rel="noopener noreferrer">ficha técnica de JAS Tensei</a>. PS y CV son unidades métricas; bhp es una unidad mecánica anglosajona: 420 bhp equivalen aproximadamente a 426 CV. Las cifras proceden de fichas distintas y no son una medición comparativa en el mismo banco.</p>
+      <p>En la carrocería, JAS y Pininfarina sustituyen los paneles exteriores por fibra de carbono y reinterpretan el diseño. JAS también anuncia suspensión KW con control electrónico, elevación hidráulica del eje delantero y frenos Brembo. El proyecto conserva la arquitectura del NSX donante, pero la estructura y la puesta a punto reciben cambios; las fuentes periodísticas describen refuerzos del monocasco, aunque no hay una relación pública completa de cada pieza que se mantiene o reemplaza.</p>
+      <p>El habitáculo también se rediseña. JAS y Pininfarina describen una propuesta centrada en el conductor y configurable en cientos de combinaciones; las imágenes de presentación muestran un cuentarrevoluciones analógico flanqueado por pantallas OLED, materiales de carbono y asientos Sabelt. Es una evolución del concepto del cockpit original, no una conservación del interior de fábrica.</p>
+      <p>Hay discrepancias importantes en la ficha divulgada por terceros. La página actual de JAS indica <strong>3,5 litros, 420 bhp y 350 Nm</strong>. Top Gear informa de 3,4 litros; Rush y Motor1 publican 414 bhp o hp, y 414 Nm. Los 414 bhp se han presentado también como 420 PS: esa conversión es coherente entre unidades, pero no equivale a los 420 bhp que declara JAS. La diferencia de par, 350 frente a 414 Nm, no se explica por conversión. Para el dato principal damos prioridad a la ficha directa de JAS; no encontramos documentación técnica pública que resuelva por qué algunos medios difieren.</p>
+      <p>La ficha de JAS indica un corte a <strong>8.500 rpm</strong>, pero no dice a qué régimen llega la potencia máxima. Octane sitúa los 414 bhp a 8.200 rpm; Rush y Motor1 los publican a 8.300 rpm. También falta un peso oficial en la página técnica actual: Octane y Rush informan de 1.250 kg en seco. No lo comparamos con una masa del NSX en orden de marcha porque son bases de pesaje distintas.</p>
+
+      <h2 id="vtec">El gran cambio: ¿qué se gana y se pierde al quitar el VTEC?</h2>
+      <p>En el C30A, VTEC significa <em>Variable Valve Timing and Lift Electronic Control</em>: control electrónico de la distribución y la alzada de válvulas. No es un turbo ni un sistema que añada aire a presión. Cambia el perfil de leva que actúa sobre las válvulas según las condiciones del motor, con el objetivo de conciliar la facilidad de respuesta a bajo y medio régimen con la respiración necesaria a altas revoluciones.</p>
+      <p>La explicación técnica de <a href={sources.hondaC30a} target="_blank" rel="noopener noreferrer">Honda Global sobre el C30A</a> describe, para la admisión, dos levas exteriores de baja alzada y una leva central de mayor alzada. Los dos perfiles exteriores no son idénticos: Honda diseñó uno de ellos para favorecer el remolino de la mezcla dentro del cilindro. En el NSX manual de lanzamiento, esas alzadas eran 8,7 y 8,3 mm; el perfil alto llegaba a 10,2 mm. La leva central entraba en funcionamiento a 5.800 rpm en esa especificación manual; el automático tenía un ajuste distinto.</p>
+      <p>La conmutación desplaza la prioridad del motor: a regímenes bajos se emplea el perfil pensado para ese entorno; cuando se alcanza el umbral, el acoplamiento de los balancines hace trabajar la leva de mayor alzada y duración. El punto de cambio forma parte de la personalidad que muchos aficionados asocian al NSX, aunque el efecto no se puede reducir a un sonido o una sacudida concreta: depende de la admisión, el escape y la calibración de cada versión.</p>
+      <figure class="guide-visual">
+        <img src="/images/guides/honda-nsx-na1-motor.jpg" width="1280" height="853" alt="Vano de motor abierto en un Honda NSX NA1 manual: se ve el V6 DOHC VTEC bajo la tapa trasera" loading="lazy" decoding="async" />
+        <figcaption>Vano motor de un Honda E-NA1 manual, número de chasis NA1-1003876. Foto de 先従隗始, <a href="https://commons.wikimedia.org/wiki/File:Honda_E-NA1_NSX_(24041411101).jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>, licencia <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0</a>.</figcaption>
+      </figure>
+      <h3>Una pieza de un conjunto, no una solución mágica</h3>
+      <p>Honda explica que VTEC era solo parte de la respuesta: el C30A también utilizaba una cámara de resonancia de admisión con válvulas que cambiaban de posición a 4.800 rpm. El propio documento de Honda reconoce que, incluso con VTEC, quedaba una caída de par en cierto rango y que la cámara de admisión se desarrolló para ayudar a corregirla. Es un matiz importante: el comportamiento del motor nace de varias decisiones que trabajan juntas, no de un único mecanismo.</p>
+      <p>¿Qué se ha hecho en el Tensei? <a href={sources.jasJudd} target="_blank" rel="noopener noreferrer">JAS confirma que Judd desmonta y reconstruye los V6 de aspiración natural</a>, los lleva a 3,5 litros y los prueba en banco para calibrar potencia y par, con atención expresa a fiabilidad. La ficha pública de JAS añade cigüeñal mecanizado, pistones y bielas forjados, seis cuerpos de mariposa individuales, encendido y refrigeración actualizados y centralita con corte a 8.500 rpm. No publica los perfiles de leva, las alzadas, el calado ni una explicación del motivo concreto para eliminar VTEC.</p>
+      <p>La prensa especializada sí describe una distribución de reglaje fijo en lugar del VTEC. <a href={sources.motor1} target="_blank" rel="noopener noreferrer">Motor1</a> y <a href={sources.rush} target="_blank" rel="noopener noreferrer">Rush</a> atribuyen ese cambio al motor Judd; <a href={sources.topGear} target="_blank" rel="noopener noreferrer">Top Gear</a> también lo reporta. Por tanto, es una modificación ampliamente publicada, pero con la documentación técnica primaria hoy disponible no podemos tratarla como una explicación de Judd en primera persona.</p>
+      <h3>Posibles ventajas y compromisos: hasta dónde llega la evidencia</h3>
+      <p><strong>Lo que podría ganarse:</strong> al elegir una distribución fija, Judd puede seleccionar un perfil para el régimen y el uso objetivo del motor sin depender del cambio entre dos perfiles. También desaparecería el actuador de conmutación VTEC como parte de ese tren de válvulas. Son posibilidades de diseño, no prueba de que el motor completo sea más fiable, ligero, barato de mantener o más rápido al responder. El resto de la culata y de la mecánica también cambia.</p>
+      <p><strong>Lo que se deja atrás:</strong> el C30A podía cambiar entre perfiles y, con ello, atender de manera distinta a la zona baja y alta del cuentavueltas. Un perfil fijo exige encontrar un compromiso de calado y alzada, salvo que otras soluciones del motor cubran parte de la diferencia. Judd aumenta la cilindrada y emplea mariposas individuales, pero sin curva completa no sabemos cómo se combina todo ni cuánto mérito corresponde a cada modificación. Eliminar VTEC no significa necesariamente que el motor funcione peor; tampoco demuestra que funcione mejor.</p>
+      <p>Faltan datos para resolver la pregunta de fondo: curva de par y potencia medida bajo una norma declarada, perfil y calado de las levas, condiciones del banco, emisiones, consumo, intervalos de mantenimiento y resultados de durabilidad. JAS dice que hay pruebas en banco y validación en carretera y circuito antes de la entrega; no publica resultados que permitan valorar esas variables. No hemos encontrado una prueba independiente de conducción del coche terminado que aísle el efecto del VTEC.</p>
+
+      <h2 id="receta">V6 atmosférico y cambio manual: una receta que mantiene vivo al NSX</h2>
+      <p>El V6 continúa detrás del habitáculo, en posición central, y envía la fuerza a las ruedas posteriores. Esa disposición era una de las señas técnicas del NSX; Honda la eligió para situar el motor cerca del centro de gravedad. JAS mantiene el motor atmosférico —sin turbo ni asistencia híbrida— y combina el conjunto con una caja manual de seis marchas y diferencial autoblocante. Su <a href={sources.jas} target="_blank" rel="noopener noreferrer">ficha de componentes</a> también detalla embrague bidisco y otros cambios de transmisión.</p>
+      <p>Respecto al NSX C30A manual elegido como referencia, el Tensei suma una sexta marcha; no todos los NSX originales tenían la misma caja, y las versiones posteriores cambiaron de motor y transmisión. Conservar tres pedales y aspiración natural sostiene una relación mecánica reconocible con el original, pero no basta para anticipar el tacto del embrague, el escalonamiento o la facilidad para conducirlo en tráfico real. Eso requiere probarlo.</p>
+      <p>Para entender la función de la propulsión trasera y sus límites, consulta también nuestra guía de <a href="/guias/tipos-traccion-coche/">tracción delantera, trasera y total</a>. El sistema que impulsa las ruedas no determina por sí solo el agarre: neumáticos, reparto de masas, suspensión y ayudas electrónicas también influyen.</p>
+
+      <h2 id="hpx">Del Honda HP-X al Tensei: la historia que une a Pininfarina con el NSX</h2>
+      <p>El vínculo no comienza con el Tensei. En 1984, Honda y Pininfarina crearon el HP-X, un prototipo de motor central presentado en el Salón de Turín. <a href={sources.hpX} target="_blank" rel="noopener noreferrer">Pininfarina lo describe como un concepto experimental</a> equipado con un V6 Honda de dos litros, anterior al NSX de producción. Honda también lo sitúa entre los antecedentes que precedieron al desarrollo del primer NSX.</p>
+      <figure class="guide-visual">
+        <img src="/images/guides/honda-nsx-na1-rojo.jpg" width="1280" height="853" alt="Honda NSX E-NA1 rojo de primera generación, fotografiado con el capó trasero abierto" loading="lazy" decoding="async" />
+        <figcaption>Honda E-NA1 NA1-1003876, versión manual de primera generación. Foto de 先従隗始, <a href="https://commons.wikimedia.org/wiki/File:Honda_E-NA1_NSX_(24041411095).jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>, licencia <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0</a>. Es un NSX de producción, no el prototipo HP-X.</figcaption>
+      </figure>
+      <p>La relación entre ambos proyectos es, por tanto, histórica y de diseño. El HP-X abrió una conversación sobre un deportivo Honda de motor central; el NSX convirtió esa idea en un coche de serie; décadas después, Pininfarina vuelve a dibujar sobre una base NSX para un encargo distinto de JAS. No hay una continuidad de producto ni el Tensei es la carrocería que Honda habría fabricado si el HP-X hubiese pasado directamente a producción.</p>
+
+      <h2 id="restomod">¿Qué es un restomod y cómo se transforma un NSX en JAS Tensei?</h2>
+      <p><em>Restomod</em> es un término habitual en la prensa del automóvil para describir la restauración de un coche clásico junto con modificaciones actuales. No es una categoría técnica con una lista legal de piezas que deban conservarse. JAS presenta el Tensei como una reinterpretación propia: un donante real de primera generación recibe carrocería de carbono de diseño Pininfarina, un V6 desmontado y reconstruido por Judd, cambios de chasis, suspensión, frenos e interior.</p>
+      <figure class="guide-visual">
+        <img src="/images/guides/jas-tensei-presentacion-lateral.jpg" width="2560" height="1707" alt="Perfil lateral del JAS Tensei azul en la presentación oficial, con carrocería diseñada por Pininfarina" loading="lazy" decoding="async" />
+        <figcaption>Perfil lateral del Tensei en la presentación de Cambiano. Foto: Marco De Ponti, procedente del <a href={sources.jasMedia} target="_blank" rel="noopener noreferrer">dossier oficial de prensa</a>.</figcaption>
+      </figure>
+      <p>La palabra «donante» importa. No se parte de una carrocería vacía nueva que imite el NSX: se transforma un coche existente. Al mismo tiempo, el alcance de los cambios hace que no sea una restauración que devuelva la unidad a especificación de fábrica. JAS confirma la plataforma de NSX y los paneles de carbono; publicaciones como <a href={sources.octane} target="_blank" rel="noopener noreferrer">Octane</a> describen refuerzos de la estructura y suspensión profundamente revisada.</p>
+      <p>La información pública no identifica el año, versión y estado que tendrá cada donante ni publica una lista individual de piezas preservadas, reemplazadas o almacenadas. Para un posible comprador serían relevantes el historial y la trazabilidad del coche base, las garantías del tren mecánico y los documentos de homologación del ejemplar terminado. Esos aspectos no se resuelven con la ficha comercial general.</p>
+
+      <h2 id="italdesign">JAS Tensei frente al NSX Tribute by Italdesign: dos proyectos distintos</h2>
+      <p>El parecido de nombre y de homenaje puede hacer pensar que son rivales directos, pero parten de coches distintos. El Tensei se construye desde un NSX de primera generación, con un V6 atmosférico rehecho por Judd y diseño de Pininfarina. El <a href={sources.italdesign} target="_blank" rel="noopener noreferrer">NSX Tribute by Italdesign</a> rinde homenaje a la historia del modelo con otro encargo: Italdesign lo describe como un proyecto oficialmente reconocido por Honda, de serie muy corta, y su <a href={sources.italdesignWhitepaper} target="_blank" rel="noopener noreferrer">documentación lo distingue de un restomod</a>.</p>
+      <p>Según <a href={sources.carAndDriver} target="_blank" rel="noopener noreferrer">Car and Driver</a>, el Tribute usa coches donantes de la segunda generación y se ofrece solo con volante a la derecha. Esa generación tenía un sistema híbrido con V6 biturbo y motores eléctricos; no se compara técnicamente con el C30A atmosférico de primera generación. El Tensei es una reconstrucción profunda de una base clásica y analógica; el Tribute reinterpreta un NSX híbrido moderno. Tampoco hay que atribuir a Italdesign la eliminación del VTEC del motor Tensei: son proyectos independientes.</p>
+
+      <h2 id="precio">Precio, producción y disponibilidad en España</h2>
+      <p>JAS anuncia una producción de <strong>35 unidades</strong>. Su web actual publica especificaciones y contactos comerciales, pero no una tarifa pública ni una condición de entrega específica para España. Indica que la atención a clientes europeos se gestiona directamente con JAS. No hemos encontrado datos oficiales de homologación para matricular el Tensei en España, por lo que conviene pedir confirmación escrita antes de asumir que podrá circular aquí en una configuración concreta.</p>
+      <p>El precio que se publica en prensa es de <strong>880.000 euros</strong>, excluyendo impuestos locales y coche donante, según <a href={sources.motor1} target="_blank" rel="noopener noreferrer">Motor1</a> y el artículo más reciente de <a href={sources.rush} target="_blank" rel="noopener noreferrer">Rush</a>. Top Gear ofrece la referencia británica de 770.000 libras, más donante e IVA. Son cifras periodísticas, no un presupuesto emitido por JAS ni una tarifa con costes de importación y matriculación en España. Carwow indicó el día de la presentación que el precio no se había anunciado, así que también hay una diferencia de fecha y disponibilidad de información entre artículos.</p>
+      <p>Además del precio base, cada comprador tendría que aclarar si la cifra contempla selección de especificación, preparación del donante, impuestos, transporte, garantía y matriculación. JAS anuncia cientos de combinaciones personalizables, pero no hemos localizado una tabla pública que desglose cuánto añaden esas opciones.</p>
+
+      <h2 id="conclusion">Conclusión: ¿sigue siendo un NSX sin VTEC?</h2>
+      <p>En sentido mecánico e histórico, el Tensei sigue conectado con el NSX: parte de uno real, conserva la disposición de motor central y propulsión trasera, y rehace el V6 atmosférico junto con transmisión, carrocería y chasis. Pero no es el mismo Honda restaurado a origen ni un modelo nuevo fabricado por Honda. Es una interpretación de JAS con socios especializados.</p>
+      <p>Quitar el VTEC sacrifica una de las soluciones que distinguían al C30A y, con ella, la alternancia entre sus perfiles de válvula. Una leva fija podría simplificar ese mecanismo y enfocarse al objetivo que persigue Judd, pero las fuentes públicas no prueban una mejora de respuesta, fiabilidad o mantenimiento. La respuesta honesta a «qué gana» es que aún no se puede cuantificar; lo que pierde, como hecho de diseño reportado, es el sistema variable del NSX original.</p>
+      <p>Quien busque fidelidad técnica de fábrica probablemente preferirá un NSX sin modificar. Quien valore una reconstrucción exclusiva puede encontrar atractivo en la mezcla de motor atmosférico, cambio manual y nueva carrocería. La decisión sobre el VTEC solo se podrá juzgar bien con datos completos y una prueba del Tensei terminado.</p>
+
+      <section class="faq-section" aria-labelledby="preguntas">
+        <h2 id="preguntas">Preguntas frecuentes sobre el JAS Tensei</h2>
+        <details><summary>¿El JAS Tensei lo fabrica Honda?</summary><p>No. JAS Motorsport lo construye a partir de un Honda NSX donante. JAS es socio oficial de Honda en competición desde 1998, pero anuncia el Tensei como su primer coche de carretera con marca propia.</p></details>
+        <details><summary>¿Está confirmado oficialmente que el motor ya no lleva VTEC?</summary><p>Varios medios, entre ellos Motor1, Top Gear y Rush, publican que se sustituyó por distribución fija. La ficha técnica pública actual de JAS no menciona expresamente esa pieza ni detalla el tren de válvulas, así que la clasificación más rigurosa es «reportado por la prensa, sin explicación técnica primaria publicada».</p></details>
+        <details><summary>¿Cuánto cuesta y se puede comprar en España?</summary><p>La prensa informa de 880.000 euros antes de impuestos y del coche donante, pero no hemos localizado un precio público de JAS ni una condición de homologación o entrega específica para España. Se necesita una oferta directa del fabricante para conocer el coste final.</p></details>
+      </section>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta: 31 de octubre de 2026. Para la mecánica y el papel de las empresas se han priorizado la ficha actual y los comunicados de JAS, la documentación de Honda y las páginas de Pininfarina e Italdesign. Se revisaron además artículos de Carwow, Top Gear, Motor1, Autocar India, Octane y Rush. Cuando las cifras de terceros discrepan de la ficha actual de JAS, se prioriza la fuente primaria y se explica la diferencia. No hemos probado ni conducido el coche terminado, entrevistado a sus responsables ni verificado la homologación de una unidad española.</p>
+        <ul>
+          <li><a href={sources.jas} target="_blank" rel="noopener noreferrer">JAS Tensei: especificaciones y atención comercial actual</a>.</li>
+          <li><a href={sources.jasIntro} target="_blank" rel="noopener noreferrer">JAS: presentación de Tensei como su primer superdeportivo de carretera</a>.</li>
+          <li><a href={sources.jasJudd} target="_blank" rel="noopener noreferrer">JAS: Judd Power y el desarrollo del motor de 3,5 litros</a>.</li>
+          <li><a href={sources.jasMedia} target="_blank" rel="noopener noreferrer">JAS Motorsport / Pininfarina: dossier oficial de imágenes del Tensei</a>.</li>
+          <li><a href={sources.hondaC30a} target="_blank" rel="noopener noreferrer">Honda Global: C30A, VTEC y sistema de resonancia de admisión</a>.</li>
+          <li><a href={sources.hpX} target="_blank" rel="noopener noreferrer">Pininfarina Heritage: Honda HP-X de 1984</a>.</li>
+          <li><a href={sources.italdesign} target="_blank" rel="noopener noreferrer">Italdesign: NSX Tribute</a>.</li>
+          <li><a href={sources.motor1} target="_blank" rel="noopener noreferrer">Motor1: motor Judd, precio y cifras publicadas</a>; <a href={sources.topGear} target="_blank" rel="noopener noreferrer">Top Gear</a>; <a href={sources.rush} target="_blank" rel="noopener noreferrer">Rush, 28 de octubre de 2026</a>.</li>
+          <li><a href={sources.carwow} target="_blank" rel="noopener noreferrer">Carwow en español</a>; <a href={sources.autocarIndia} target="_blank" rel="noopener noreferrer">Autocar India</a>; <a href={sources.octane} target="_blank" rel="noopener noreferrer">Octane</a>.</li>
+        </ul>
+        <p>El mapa del proyecto es la única ilustración de la guía. Las dos imágenes del Tensei proceden del dossier oficial de prensa de JAS Motorsport / Pininfarina y acreditan a Marco De Ponti. Las dos fotos del NSX NA1 son de 先従隗始 y se reutilizan bajo CC0 1.0, con enlace a sus fichas en Wikimedia Commons.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-visual{margin:25px 0 29px}
+  .guide-visual img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:10px;background:#e8ede8}
+  .guide-visual figcaption{margin-top:9px;color:#647369;font-size:11px;line-height:1.55;text-align:left}
+  @media(max-width:760px){.guide-visual img{border-radius:7px}.guide-visual figcaption{font-size:10px}}
+</style>

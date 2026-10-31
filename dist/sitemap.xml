@@ -12,6 +12,7 @@
   <url><loc>https://kilometroclaro.com/calculadoras/precio-electrico-auto-plus/</loc></url>
   <url><loc>https://kilometroclaro.com/calculadoras/simulador-financiacion-coche/</loc></url>
   <url><loc>https://kilometroclaro.com/guias/</loc></url>
+  <url><loc>https://kilometroclaro.com/guias/jas-tensei-honda-nsx-vtec/</loc></url>
   <url><loc>https://kilometroclaro.com/guias/mazda-mx-5-nd-futuro-ne/</loc></url>
   <url><loc>https://kilometroclaro.com/guias/toyota-gr-gt/</loc></url>
   <url><loc>https://kilometroclaro.com/guias/cuanto-cuesta-mantener-coche-mes-espana/</loc></url>
@@ -32,8 +33,20 @@
   <url><loc>https://kilometroclaro.com/guias/tipos-traccion-coche/</loc></url>
   <url><loc>https://kilometroclaro.com/guias/tipos-luces-coche/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/jeep/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mini/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lexus/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/honda/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/suzuki/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/geely/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mitsubishi/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lynk-co/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/porsche/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/kgm/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/ds/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/tesla/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/toyota/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/hyundai/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/byd/</loc></url>
@@ -58,6 +71,75 @@
   <url><loc>https://kilometroclaro.com/marcas/nissan/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/opel/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/ebro/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/land-rover/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/xpeng/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/500/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/600/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/grande-panda/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/pandina/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/topolino/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/tipo-sedan/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/qubo-l/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/doblo/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/ulysse/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/fiat/ducato-camper/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/jeep/avenger/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/jeep/compass/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mini/cooper-3-puertas/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mini/cooper-electrico/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mini/cooper-5-puertas/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mini/cooper-cabrio/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mini/aceman/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mini/countryman/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mini/countryman-electrico/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lexus/lbx/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lexus/ux/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lexus/nx/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lexus/rz/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lexus/rx/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lexus/es/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lexus/lm/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lexus/tz/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/honda/jazz/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/honda/jazz-crosstar/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/honda/prelude/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/honda/civic/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/honda/hr-v/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/honda/zr-v/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/honda/cr-v/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/suzuki/e-vitara/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/suzuki/across-2026/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/suzuki/swift/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/suzuki/vitara/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/suzuki/s-cross/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/suzuki/across-anterior/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/geely/e2/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/geely/e5/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/geely/starray-em-i/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/geely/monjaro-em-i/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mitsubishi/colt/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mitsubishi/asx/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mitsubishi/grandis/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mitsubishi/outlander-phev/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/mitsubishi/eclipse-cross-ev/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lynk-co/01/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lynk-co/02/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/lynk-co/08/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/porsche/718/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/porsche/911/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/porsche/taycan/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/porsche/panamera/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/porsche/macan/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/porsche/cayenne/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/kgm/tivoli/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/kgm/korando/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/kgm/torres/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/kgm/torres-actyon/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/kgm/torres-evx/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/kgm/rexton/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/kgm/musso/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/kgm/musso-evx/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/sandero/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/sandero-stepway/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/dacia/spring/</loc></url>
@@ -70,6 +152,10 @@
   <url><loc>https://kilometroclaro.com/marcas/ds/ds7/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/ds/n7/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/ds/n8/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/tesla/model-3/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/tesla/model-y/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/tesla/model-s/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/tesla/model-x/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/toyota/aygo-x-cross/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/toyota/yaris/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/toyota/gr-yaris/</loc></url>
@@ -360,5 +446,31 @@
   <url><loc>https://kilometroclaro.com/marcas/ebro/s700/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/ebro/s800/</loc></url>
   <url><loc>https://kilometroclaro.com/marcas/ebro/s900/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/explorer-electrico/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/capri/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/puma-gen-e/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/mustang-mach-e/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/puma/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/kuga/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/mustang/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/bronco/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/tourneo-custom/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/tourneo-connect/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/tourneo-courier/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/e-tourneo-courier/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/transit-custom-nugget/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/ranger/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/ford/ranger-raptor/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/land-rover/range-rover/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/land-rover/range-rover-sport/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/land-rover/range-rover-velar/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/land-rover/range-rover-evoque/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/land-rover/discovery/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/land-rover/discovery-sport/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/land-rover/defender/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/xpeng/g6/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/xpeng/g9/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/xpeng/p7-plus/</loc></url>
+  <url><loc>https://kilometroclaro.com/marcas/xpeng/l03/</loc></url>
   <url><loc>https://kilometroclaro.com/sobre-nosotros/</loc></url>
 </urlset>

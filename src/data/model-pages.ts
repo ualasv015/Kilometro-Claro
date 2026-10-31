@@ -22,6 +22,21 @@ import { cupraModels } from './cupra-model-pages';
 import { nissanModels } from './nissan-model-pages';
 import { opelModels } from './opel-model-pages';
 import { ebroModels } from './ebro-model-pages';
+import { fordModels } from './ford-model-pages';
+import { teslaModels } from './tesla-model-pages';
+import { fiatModels } from './fiat-model-pages';
+import { jeepModels } from './jeep-model-pages';
+import { miniModels } from './mini-model-pages';
+import { lexusModels } from './lexus-model-pages';
+import { hondaModels } from './honda-model-pages';
+import { suzukiModels } from './suzuki-model-pages';
+import { geelyModels } from './geely-model-pages';
+import { mitsubishiModels } from './mitsubishi-model-pages';
+import { lynkCoModels } from './lynk-co-model-pages';
+import { porscheModels } from './porsche-model-pages';
+import { kgmModels } from './kgm-model-pages';
+import { landRoverModels } from './land-rover-model-pages';
+import { xpengModels } from './xpeng-model-pages';
 import { formatMotorTableVersion } from '../lib/motor-table';
 
 export type ModelVersion = {
@@ -782,6 +797,40 @@ const renaultModels: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>[] = [
 ];
 
 const modelPageRecords: ModelPageData[] = [
+  ...fiatModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...jeepModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...miniModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...lexusModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...hondaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...suzukiModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...geelyModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...mitsubishiModels.map((model) => ({
+    ...model,
+    versions: model.versions.map((version) => {
+      const formatted = formatMotorTableVersion(version);
+      if (!formatted.maxTorque) return formatted;
+      const torqueLabel = /GLP|bifuel/i.test(`${version.name} ${version.type ?? ''}`)
+        ? 'Motor térmico (gasolina/GLP): '
+        : 'Motor térmico: ';
+      return {
+        ...formatted,
+        maxTorque: `${torqueLabel}${formatted.maxTorque.replace(/^Térmico:\s*/i, '')}`,
+      };
+    }),
+  })),
+  ...lynkCoModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...porscheModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...kgmModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...landRoverModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...xpengModels.map((model) => ({
+    ...model,
+    versions: model.versions.map((version) => {
+      const formatted = formatMotorTableVersion(version);
+      return model.modelSlug === 'l03' && version.powertrainGroup === 'mixed'
+        ? { ...formatted, displacement: 'Térmico: 1,5 l (extensor de autonomía)' }
+        : formatted;
+    }),
+  })),
   ...skodaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...citroenModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...dsModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
@@ -815,6 +864,8 @@ const modelPageRecords: ModelPageData[] = [
         : formatted;
     }),
   })),
+  ...fordModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...teslaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
 ];
 
 export const modelPages: ModelPageData[] = modelPageRecords.map((model) => ({

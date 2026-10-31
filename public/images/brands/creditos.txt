@@ -1,5 +1,7 @@
 Logotipos de marcas
 
+Suzuki: Suzuki logo.svg, Wikimedia Commons, dominio público por tratarse de un logotipo textual sencillo. Fuente: https://commons.wikimedia.org/wiki/File:Suzuki_logo.svg. La marca y el logotipo son signos distintivos de Suzuki Motor Corporation; se muestran únicamente para identificar al fabricante.
+
 Los logotipos se muestran únicamente para identificar a los fabricantes. Las marcas y sus signos distintivos pertenecen a sus respectivos titulares.
 
 Audi: Audi_logo.svg, Wikimedia Commons, dominio público por su condición de logotipo textual/simple; dibujo vectorial atribuido a Audi y vectorizado por FireDragonValo. Fuente: https://commons.wikimedia.org/wiki/File:Audi_logo.svg. El emblema Audi es una marca registrada; se utiliza únicamente para identificar al fabricante.
@@ -24,3 +26,27 @@ Nissan: Nissan 2020 logo.svg, Wikimedia Commons. Fuente: https://commons.wikimed
 Opel: Opel logo 2023.svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:Opel_logo_2023.svg. Marca y logotipo registrados de Opel/Stellantis; se muestran únicamente para identificar al fabricante.
 
 EBRO: Logotipo ebro moderno.svg, Wikimedia Commons, dominio público por tratarse de un logotipo tipográfico sencillo. Fuente: https://commons.wikimedia.org/wiki/File:Logotipo_ebro_moderno.svg. Marca registrada; se muestra únicamente para identificar al fabricante.
+
+Ford: Ford-Logo-Vector.svg, Wikimedia Commons, imagen de marca de Ford Motor Company. Fuente: https://commons.wikimedia.org/wiki/File:Ford-Logo-Vector.svg. Marca registrada; se muestra únicamente para identificar al fabricante.
+
+Tesla: Tesla, Inc. - Logo (black script version).svg, Wikimedia Commons, autor FDRMRZUSA. Fuente: https://commons.wikimedia.org/wiki/File:Tesla,_Inc._-_Logo_(black_script_version).svg. Logotipo tipográfico sujeto también a derechos de marca; se muestra únicamente para identificar al fabricante.
+
+FIAT: FIAT logo (2020).svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:FIAT_logo_(2020).svg. Marca registrada de Stellantis; se muestra únicamente para identificar al fabricante.
+
+Jeep: Jeep logo.svg, Wikimedia Commons, imagen de texto simple y CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Fuente: https://commons.wikimedia.org/wiki/File:Jeep_logo.svg. Marca registrada de Stellantis; se muestra únicamente para identificar al fabricante.
+
+MINI: MINI logo.svg, Wikimedia Commons, logotipo tipográfico de dominio público por su simplicidad. Autoría del diseño: BMW; SVG vectorizado por CMetalCore. Fuente: https://commons.wikimedia.org/wiki/File:MINI_logo.svg. MINI es una marca registrada de BMW Group; el logotipo se muestra únicamente para identificar al fabricante.
+
+Lexus: Lexus Logo.svg, Wikimedia Commons, autor Glebushko0703, licencia CC0 1.0. Fuente: https://commons.wikimedia.org/wiki/File:Lexus_Logo.svg. Lexus es una marca registrada de Toyota Motor Corporation; el logotipo se muestra únicamente para identificar al fabricante.
+
+Honda: Honda-logo.svg, Wikimedia Commons, dominio público por su diseño tipográfico simple. Fuente: https://commons.wikimedia.org/wiki/File:Honda-logo.svg. Marca registrada de Honda Motor Co.; el logotipo se muestra únicamente para identificar al fabricante.
+
+Geely: Geely logo.svg, Wikimedia Commons, dominio público por tratarse de un logotipo tipográfico sencillo. Fuente: https://commons.wikimedia.org/wiki/File:Geely_logo.svg. Geely y su logotipo son marcas registradas; se muestra únicamente para identificar al fabricante.
+Mitsubishi: Mitsubishi logo.svg, Wikimedia Commons, dominio público como símbolo geométrico simple. Fuente: https://commons.wikimedia.org/wiki/File:Mitsubishi_logo.svg. Mitsubishi es una marca registrada; el emblema se muestra únicamente para identificar al fabricante.
+Lynk & Co: Lynk & Co 2016 logo.svg, Wikimedia Commons, dominio público por ser un logotipo tipográfico sencillo. Fuente: https://commons.wikimedia.org/wiki/File:Lynk_%26_Co_2016_logo.svg. Lynk & Co es una marca registrada; el logotipo se muestra únicamente para identificar al fabricante.
+Porsche: Porsche Wordmark Logo Black.svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:Porsche_Wordmark_Logo_Black.svg. Porsche y su logotipo son marcas registradas; se muestra únicamente para identificar al fabricante.
+KGM: KG Mobility brand logo.svg, Wikimedia Commons, logotipo tipográfico sencillo indicado como dominio público. Fuente: https://commons.wikimedia.org/wiki/File:KG_Mobility_brand_logo.svg. KGM y el logotipo son marcas registradas; se muestran únicamente para identificar al fabricante.
+
+Land Rover: Land Rover 2023.svg, Wikimedia Commons, autor Jaguar Land Rover Automotive PLC; se indica como dominio público por su geometría sencilla. Fuente: https://commons.wikimedia.org/wiki/File:Land_Rover_2023.svg. Land Rover y su logotipo son marcas registradas; el emblema se muestra únicamente para identificar al fabricante.
+
+XPENG: XPeng logo.svg, Wikimedia Commons, autor XPeng Motor; logotipo tipográfico indicado como dominio público por su diseño sencillo. Fuente: https://commons.wikimedia.org/wiki/File:XPeng_logo.svg. XPENG y su logotipo son marcas registradas; se muestran únicamente para identificar al fabricante.

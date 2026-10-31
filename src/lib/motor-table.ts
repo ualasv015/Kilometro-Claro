@@ -38,7 +38,7 @@ function formatPowerCvFirst(value: string): string {
     const match = part.trim().match(/^(.+?):\s*(\d+(?:[.,]\d+)?)\s*CV\s*\(\s*(\d+(?:[.,]\d+)?)\s*kW\s*\)$/i);
     return match ? `${match[1].trim()}: ${match[2]} CV (${match[3]} kW)` : '';
   });
-  if (scopedPowerParts.length > 1 && scopedPowerParts.every(Boolean)) return scopedPowerParts.join('; ');
+  if (scopedPowerParts.length > 0 && scopedPowerParts.every(Boolean)) return scopedPowerParts.join('; ');
   const rangePair = clean.match(/(\d+(?:[.,]\d+)?)\s*[–-]\s*(\d+(?:[.,]\d+)?)\s*kW\s*\(\s*(\d+(?:[.,]\d+)?)\s*[–-]\s*(\d+(?:[.,]\d+)?)\s*CV\s*\)/i);
   if (rangePair) {
     const suffix = clean.slice(rangePair.index! + rangePair[0].length).replace(/^[,;\s]+/, '').trim();

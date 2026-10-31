@@ -21,9 +21,10 @@ const modelName = brand.slug === 'ds'
   : model.name.startsWith(brand.name) || model.name.startsWith('Mercedes-AMG') || model.name.startsWith('Mercedes-Maybach')
     ? model.name
     : `${brand.name} ${model.name}`;
-const hasMotorTableFormat = ['audi', 'toyota', 'renault', 'volkswagen', 'hyundai', 'seat', 'dacia', 'kia', 'peugeot', 'mercedes-benz', 'bmw', 'byd', 'changan', 'omoda', 'jaecoo', 'leapmotor', 'mazda', 'mg', 'volvo', 'ds', 'citroen', 'skoda', 'cupra', 'nissan', 'opel', 'ebro'].includes(brand.slug);
+const hasMotorTableFormat = ['audi', 'toyota', 'renault', 'volkswagen', 'hyundai', 'seat', 'dacia', 'kia', 'peugeot', 'mercedes-benz', 'bmw', 'byd', 'changan', 'omoda', 'jaecoo', 'leapmotor', 'mazda', 'mg', 'volvo', 'ds', 'citroen', 'skoda', 'cupra', 'nissan', 'opel', 'ebro', 'ford', 'tesla', 'fiat', 'jeep', 'mini', 'lexus', 'honda', 'suzuki', 'geely', 'mitsubishi', 'lynk-co', 'porsche', 'kgm', 'land-rover', 'xpeng'].includes(brand.slug);
+const isIllustration = detail.image?.src.endsWith('.svg') ?? false;
 const photoMethod = detail.image
-  ? 'La fotografía y su licencia se acreditan junto a la imagen.'
+  ? isIllustration ? 'La ilustración se identifica como original y conceptual junto a la imagen.' : 'La fotografía y su licencia se acreditan junto a la imagen.'
   : 'Esta ficha no incluye fotografía promocional; las especificaciones enlazan a las fuentes oficiales.';
 ---
 
@@ -51,7 +52,7 @@ const photoMethod = detail.image
           {detail.image && (
             <figure class="model-detail-photo">
               <img src={detail.image.src} alt={detail.image.alt} width={detail.image.width} height={detail.image.height} fetchpriority="high" decoding="async" />
-              <figcaption>Foto: {detail.image.authorUrl ? <a href={detail.image.authorUrl} target="_blank" rel="noopener noreferrer">{detail.image.authorName}</a> : detail.image.authorName}{detail.image.sourceTitle && <> · {detail.image.sourceUrl ? <>archivo «<a href={detail.image.sourceUrl} target="_blank" rel="noopener noreferrer">{detail.image.sourceTitle}</a>»</> : `fuente: ${detail.image.sourceTitle}`}</>}{' · licencia '}{detail.image.licenseUrl ? <a href={detail.image.licenseUrl} target="_blank" rel="noopener noreferrer">{detail.image.licenseName}</a> : detail.image.licenseName}. Imagen optimizada para web.{detail.image.caption && ` ${detail.image.caption}`}</figcaption>
+              <figcaption>{isIllustration ? 'Ilustración editorial: ' : 'Foto: '}{detail.image.authorUrl ? <a href={detail.image.authorUrl} target="_blank" rel="noopener noreferrer">{detail.image.authorName}</a> : detail.image.authorName}{detail.image.sourceTitle && <> · {detail.image.sourceUrl ? <>archivo «<a href={detail.image.sourceUrl} target="_blank" rel="noopener noreferrer">{detail.image.sourceTitle}</a>»</> : `fuente: ${detail.image.sourceTitle}`}</>}{detail.image.licenseName && <> · licencia {detail.image.licenseUrl ? <a href={detail.image.licenseUrl} target="_blank" rel="noopener noreferrer">{detail.image.licenseName}</a> : detail.image.licenseName}</>}.{!isIllustration && ' Imagen optimizada para web.'}{detail.image.caption && ` ${detail.image.caption}`}</figcaption>
             </figure>
           )}
         </div>
@@ -69,7 +70,7 @@ const photoMethod = detail.image
               <tr>
                 <th scope="col">Versión</th>
                 {hasMotorTableFormat && <th scope="col">Tipo</th>}
-                <th scope="col">Potencia</th>
+                <th scope="col">{hasMotorTableFormat ? 'Potencia CV (kW)' : 'Potencia'}</th>
                 <th scope="col">Cilindrada</th>
                 <th scope="col">Par máximo</th>
                 {!hasMotorTableFormat && <>
@@ -86,7 +87,7 @@ const photoMethod = detail.image
                   {hasMotorTableFormat && <td>{version.type}</td>}
                   <td>{version.power}</td>
                   <td>{version.displacement}</td>
-                  <td>{version.maxTorque}</td>
+                  <td>{version.maxTorque || (brand.slug === 'mitsubishi' || brand.slug === 'lynk-co' || brand.slug === 'porsche' || brand.slug === 'kgm' || brand.slug === 'land-rover' || brand.slug === 'xpeng' ? '' : 'No publicado')}</td>
                   {!hasMotorTableFormat && <>
                     <td>{version.torqueScope}</td>
                     <td>{version.torqueRpm}</td>
@@ -98,7 +99,7 @@ const photoMethod = detail.image
           </table>
         </div>
         {hasMotorTableFormat
-          ? <p class="model-detail-note">La potencia se expresa primero en CV y después en kW. En las versiones híbridas se indica si el dato corresponde al motor térmico, al eléctrico o al sistema. El par solo aparece cuando la fuente consultada publica también su régimen; por eso puede quedar en blanco. En las versiones eléctricas la cilindrada se indica con «—» y no se muestra el par.</p>
+          ? <p class="model-detail-note">La potencia se expresa primero en CV y después en kW. En los sistemas híbridos se indica si el dato corresponde al motor térmico, al eléctrico o al conjunto. En los coches 100 % eléctricos la cilindrada se indica con «—»; en los de autonomía extendida se identifica el motor térmico. El par solo aparece cuando la fuente publica también su régimen, por eso algunas celdas quedan en blanco.</p>
           : <p class="model-detail-note">El par y su régimen se refieren al elemento indicado en cada fila. En los modelos eléctricos no existe cilindrada térmica ni un régimen de par comparable. Cuando {brand.name} no publica una cifra o no aclara su alcance en la fuente consultada, lo señalamos para no presentar una estimación como dato oficial.</p>}
         {detail.specNote && <p class="model-detail-note model-detail-note--method">{detail.specNote}</p>}
       </section>

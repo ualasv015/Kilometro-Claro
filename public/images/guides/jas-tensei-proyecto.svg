@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Quién hace el JAS Tensei</title>
+  <desc id="desc">Un NSX de primera generación es el coche donante; JAS coordina la transformación, Pininfarina diseña y Judd Power desarrolla el motor.</desc>
+  <rect width="1200" height="675" rx="24" fill="#173d34"/>
+  <text x="64" y="75" fill="#d7f36a" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="2">JAS TENSEI · MAPA DEL PROYECTO</text>
+  <text x="64" y="132" fill="#f4f7f2" font-family="Arial, sans-serif" font-size="40" font-weight="700">Tres socios, un NSX donante</text>
+  <text x="64" y="168" fill="#c4d4cb" font-family="Arial, sans-serif" font-size="20">La relación histórica de JAS con Honda es en competición; el Tensei es un coche de JAS.</text>
+  <rect x="64" y="240" width="275" height="235" rx="16" fill="#214a40" stroke="#527768" stroke-width="2"/>
+  <text x="90" y="284" fill="#d7f36a" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1">PUNTO DE PARTIDA</text>
+  <text x="90" y="339" fill="#f4f7f2" font-family="Arial, sans-serif" font-size="27" font-weight="700">Honda NSX</text>
+  <text x="90" y="375" fill="#f4f7f2" font-family="Arial, sans-serif" font-size="23">1.ª generación</text>
+  <text x="90" y="422" fill="#c4d4cb" font-family="Arial, sans-serif" font-size="17">Un coche original actúa</text>
+  <text x="90" y="448" fill="#c4d4cb" font-family="Arial, sans-serif" font-size="17">como donante.</text>
+  <path d="M356 356h48m-14-14 14 14-14 14" fill="none" stroke="#d7f36a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="420" y="240" width="315" height="235" rx="16" fill="#d7f36a"/>
+  <text x="448" y="284" fill="#173d34" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1">PROYECTO Y CONSTRUCCIÓN</text>
+  <text x="448" y="343" fill="#173d34" font-family="Arial, sans-serif" font-size="32" font-weight="700">JAS Motorsport</text>
+  <text x="448" y="394" fill="#214a40" font-family="Arial, sans-serif" font-size="19">Primera superdeportiva</text>
+  <text x="448" y="422" fill="#214a40" font-family="Arial, sans-serif" font-size="19">de carretera con marca JAS.</text>
+  <text x="448" y="458" fill="#214a40" font-family="Arial, sans-serif" font-size="15">Arluno, cerca de Milán</text>
+  <path d="M752 356h42m-14-14 14 14-14 14" fill="none" stroke="#d7f36a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="810" y="220" width="326" height="116" rx="14" fill="#214a40" stroke="#527768" stroke-width="2"/>
+  <text x="838" y="261" fill="#d7f36a" font-family="Arial, sans-serif" font-size="17" font-weight="700">DISEÑO EXTERIOR E INTERIOR</text>
+  <text x="838" y="306" fill="#f4f7f2" font-family="Arial, sans-serif" font-size="27" font-weight="700">Pininfarina</text>
+  <rect x="810" y="376" width="326" height="116" rx="14" fill="#214a40" stroke="#527768" stroke-width="2"/>
+  <text x="838" y="417" fill="#d7f36a" font-family="Arial, sans-serif" font-size="17" font-weight="700">MOTOR V6 RECONSTRUIDO</text>
+  <text x="838" y="462" fill="#f4f7f2" font-family="Arial, sans-serif" font-size="27" font-weight="700">Judd Power</text>
+  <path d="M64 540h1072" stroke="#527768" stroke-width="2"/>
+  <text x="64" y="585" fill="#c4d4cb" font-family="Arial, sans-serif" font-size="17">Esquema conceptual de Kilómetro Claro · No representa el aspecto del Tensei ni un organigrama contractual completo.</text>
+</svg>
