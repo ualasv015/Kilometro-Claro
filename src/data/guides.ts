@@ -1,5 +1,11 @@
 export const guides = [
   {
+    slug: 'volkswagen-id-polo-gti-electrico',
+    title: 'Volkswagen ID. Polo GTI: ¿conserva el espíritu de un deportivo pequeño?',
+    category: 'Comparar coches', categorySlug: 'comparar-coches',
+    description: 'Analizamos el primer GTI eléctrico: chasis, autonomía, costes, precio y diferencias frente al ID. Polo de 211 CV y sus rivales.', published: true,
+  },
+  {
     slug: 'jas-tensei-honda-nsx-vtec',
     title: 'JAS Tensei, NSX sin VTEC: ¿qué gana y qué pierde?',
     category: 'Comparar coches',

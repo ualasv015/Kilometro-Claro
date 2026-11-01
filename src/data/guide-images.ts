@@ -14,6 +14,11 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'volkswagen-id-polo-gti-electrico': {
+    src: '/images/guides/id-polo-gti-frontal.jpg', alt: 'Volkswagen ID. Polo GTI rojo visto de frente y de lado',
+    caption: 'ID. Polo GTI presentado por Volkswagen en octubre de 2026.', author: 'Volkswagen AG', sourceName: 'Volkswagen Newsroom',
+    source: 'https://www.volkswagen-newsroom.com/en/images/detail/id-polo-gti-88148', license: 'https://www.volkswagen-newsroom.com/en/images/detail/id-polo-gti-88148', licenseName: 'Uso editorial gratuito', width: 1600, height: 1067,
+  },
   'jas-tensei-honda-nsx-vtec': {
     src: '/images/guides/jas-tensei-presentacion-frontal.jpg',
     alt: 'JAS Tensei azul visto desde delante y de lado en el estudio, con diseño de Pininfarina',
