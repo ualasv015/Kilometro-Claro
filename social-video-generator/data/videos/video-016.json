@@ -1,0 +1,87 @@
+{
+  "id": "video-016",
+  "durationSeconds": 37.32,
+  "fps": 30,
+  "captions": [
+    {
+      "startSeconds": 0,
+      "endSeconds": 2.28,
+      "text": "¿Puede seguir siendo un NSX"
+    },
+    {
+      "startSeconds": 2.68,
+      "endSeconds": 3.74,
+      "text": "si le quitas el VTEC?"
+    },
+    {
+      "startSeconds": 4.36,
+      "endSeconds": 6.34,
+      "text": "El VTEC del NSX original"
+    },
+    {
+      "startSeconds": 6.64,
+      "endSeconds": 8.62,
+      "text": "cambiaba el perfil que acciona las válvulas"
+    },
+    {
+      "startSeconds": 8.62,
+      "endSeconds": 10.74,
+      "text": "para adaptar el motor a diferentes regímenes."
+    },
+    {
+      "startSeconds": 11.26,
+      "endSeconds": 13.46,
+      "text": "Ahora, varios medios publican que el Tensei"
+    },
+    {
+      "startSeconds": 13.46,
+      "endSeconds": 15.94,
+      "text": "sustituye ese sistema por una distribución fija."
+    },
+    {
+      "startSeconds": 16.58,
+      "endSeconds": 20.52,
+      "text": "Eso sí: JAS no detalla expresamente ese cambio en su ficha pública."
+    },
+    {
+      "startSeconds": 21.34,
+      "endSeconds": 22.02,
+      "text": "¿Qué se pierde?"
+    },
+    {
+      "startSeconds": 22.52,
+      "endSeconds": 24.56,
+      "text": "La posibilidad de alternar entre esos perfiles."
+    },
+    {
+      "startSeconds": 25.1,
+      "endSeconds": 25.9,
+      "text": "¿Y qué se gana?"
+    },
+    {
+      "startSeconds": 26.46,
+      "endSeconds": 28.7,
+      "text": "Sin una curva completa ni una prueba independiente,"
+    },
+    {
+      "startSeconds": 28.94,
+      "endSeconds": 30.22,
+      "text": "todavía no podemos asegurarlo."
+    },
+    {
+      "startSeconds": 30.84,
+      "endSeconds": 31.72,
+      "text": "¿Tú qué prefieres?"
+    },
+    {
+      "startSeconds": 32.14,
+      "endSeconds": 34.32,
+      "text": "¿Respetar el VTEC o reinventar el motor?"
+    },
+    {
+      "startSeconds": 35.04,
+      "endSeconds": 36.88,
+      "text": "Busca la guía en kilometroclaro.com."
+    }
+  ]
+}

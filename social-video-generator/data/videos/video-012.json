@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "video-012",
+  "title": "Mazda MX-5 2027: ¿nueva generación?",
+  "durationSeconds": 40.36,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/mazda-mx-5-nd-futuro-ne/",
+  "narration": "¿Has visto el Mazda MX-5 de 2027 y crees que es una nueva generación? Pues no. El modelo de 2027 es una actualización del MX-5 actual, conocido como ND. Entre sus novedades, Mazda España anuncia un motor 1.5 atmosférico actualizado, con 136 caballos y 155 newton metro de par. ¿Y qué pasa con el próximo MX-5? Su sucesor sigue en desarrollo. Muchos lo llaman NE, pero Mazda todavía no ha confirmado ese nombre comercial ni una fecha de lanzamiento. Así que, si lees MX-5 2027, no des por hecho que estás viendo la nueva generación. ¿Tú comprarías el actual o esperarías al siguiente? Busca la guía completa en kilometroclaro.com.",
+  "requiresHumanReview": true,
+  "imageCredit": "Mazda Motor Europe / Mazda España",
+  "captions": [
+    {
+      "startSeconds": 0.15,
+      "endSeconds": 4.4,
+      "text": "¿Has visto el Mazda MX-5 de 2027 y crees que es una nueva generación?"
+    },
+    {
+      "startSeconds": 4.94,
+      "endSeconds": 5.4,
+      "text": "Pues no."
+    },
+    {
+      "startSeconds": 5.8,
+      "endSeconds": 10.65,
+      "text": "El modelo de 2027 es una actualización del MX-5 actual, conocido como ND."
+    },
+    {
+      "startSeconds": 11.28,
+      "endSeconds": 15.4,
+      "text": "Entre sus novedades, Mazda España anuncia un motor 1.5 atmosférico actualizado,"
+    },
+    {
+      "startSeconds": 15.72,
+      "endSeconds": 18.98,
+      "text": "con 136 caballos y 155 newton metro de par."
+    },
+    {
+      "startSeconds": 19.86,
+      "endSeconds": 21.55,
+      "text": "¿Y qué pasa con el próximo MX-5?"
+    },
+    {
+      "startSeconds": 22,
+      "endSeconds": 24.95,
+      "text": "Su sucesor sigue en desarrollo. Muchos lo llaman NE,"
+    },
+    {
+      "startSeconds": 25.38,
+      "endSeconds": 28.78,
+      "text": "pero Mazda todavía no ha confirmado ese nombre comercial ni una fecha de lanzamiento."
+    },
+    {
+      "startSeconds": 29.24,
+      "endSeconds": 33.85,
+      "text": "Así que, si lees MX-5 2027, no des por hecho que estás viendo la nueva generación."
+    },
+    {
+      "startSeconds": 34.46,
+      "endSeconds": 36.95,
+      "text": "¿Tú comprarías el actual o esperarías al siguiente?"
+    },
+    {
+      "startSeconds": 37.66,
+      "endSeconds": 40.05,
+      "text": "Busca la guía completa en kilometroclaro.com."
+    }
+  ]
+}

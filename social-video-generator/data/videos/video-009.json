@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "video-009",
+  "title": "Toyota GR GT: híbrido y tracción trasera",
+  "durationSeconds": 35.36,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/toyota-gr-gt/",
+  "narration": "¿Un híbrido que empuja con las ruedas traseras? Ese es el planteamiento del Toyota GR GT. Combina un V8 biturbo delantero con un motor eléctrico integrado en la transmisión trasera. La clave: las ruedas motrices son las de atrás; las delanteras orientan el coche. Toyota busca un reparto de peso de 45 delante y 55 detrás. Pero atención: es un objetivo de desarrollo para un prototipo. Su llegada se plantea para alrededor de 2027. ¿Te convence? Busca la guía completa en Kilómetro Claro punto com.",
+  "requiresHumanReview": true,
+  "imageCredit": "Imagen oficial del prototipo: Toyota Motor Corporation / Toyota GAZOO Racing.",
+  "captions": [
+    {"startSeconds": 0.28, "endSeconds": 3.24, "text": "¿Un híbrido que empuja con las ruedas traseras?"},
+    {"startSeconds": 3.75, "endSeconds": 6.91, "text": "Ese es el planteamiento del Toyota GR GT."},
+    {"startSeconds": 7.39, "endSeconds": 9.95, "text": "Combina un V8 biturbo delantero"},
+    {"startSeconds": 10.19, "endSeconds": 13.37, "text": "con un motor eléctrico integrado en la transmisión trasera."},
+    {"startSeconds": 13.88, "endSeconds": 19.30, "text": "La clave: las ruedas motrices son las de atrás; las delanteras orientan el coche."},
+    {"startSeconds": 19.83, "endSeconds": 24.18, "text": "Toyota busca un reparto de peso de 45 delante y 55 detrás."},
+    {"startSeconds": 24.58, "endSeconds": 27.95, "text": "Pero atención: es un objetivo de desarrollo para un prototipo."},
+    {"startSeconds": 28.44, "endSeconds": 31.25, "text": "Su llegada se plantea para alrededor de 2027."},
+    {"startSeconds": 31.67, "endSeconds": 32.56, "text": "¿Te convence?"},
+    {"startSeconds": 32.56, "endSeconds": 34.93, "text": "Busca la guía completa en Kilómetro Claro punto com."}
+  ]
+}

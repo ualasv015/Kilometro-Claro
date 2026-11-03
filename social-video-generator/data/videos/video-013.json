@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "video-013",
+  "title": "Mazda MX-5: el secreto está en el peso",
+  "durationSeconds": 46.28,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/mazda-mx-5-nd-futuro-ne/",
+  "narration": "¿Y si el secreto de un deportivo divertido no fueran los caballos? El Mazda MX-5 lleva años defendiendo una receta diferente: un coche pequeño, ligero y pensado para disfrutar de las curvas. ¿Y qué pasa con su sucesor? Según la información publicada, Mazda estudia un objetivo de peso de entre aproximadamente 1.000 y 1.200 kilos. Pero atención: es una meta de desarrollo, no el peso definitivo de un coche homologado. ¿Por qué nos entusiasma? Porque menos masa puede hacer que un coche se sienta más ágil y exige menos trabajo a los frenos y neumáticos. La potencia importa, claro. Pero en un MX-5, la diversión también está en cómo responde el coche. ¿Tú qué prefieres: menos peso o más caballos? Busca la guía completa en kilometroclaro.com.",
+  "requiresHumanReview": true,
+  "imageCredit": "Mazda Motor Europe / Mazda España",
+  "captions": [
+    {
+      "startSeconds": 0.18,
+      "endSeconds": 3.95,
+      "text": "¿Y si el secreto de un deportivo divertido no fueran los caballos?"
+    },
+    {
+      "startSeconds": 4.38,
+      "endSeconds": 7.83,
+      "text": "El Mazda MX-5 lleva años defendiendo una receta diferente:"
+    },
+    {
+      "startSeconds": 8.2,
+      "endSeconds": 12.15,
+      "text": "un coche pequeño, ligero y pensado para disfrutar de las curvas."
+    },
+    {
+      "startSeconds": 12.9,
+      "endSeconds": 14.28,
+      "text": "¿Y qué pasa con su sucesor?"
+    },
+    {
+      "startSeconds": 14.9,
+      "endSeconds": 18.65,
+      "text": "Según la información publicada, Mazda estudia un objetivo de peso"
+    },
+    {
+      "startSeconds": 18.65,
+      "endSeconds": 20.9,
+      "text": "de entre aproximadamente 1.000 y 1.200 kilos."
+    },
+    {
+      "startSeconds": 21.34,
+      "endSeconds": 25.7,
+      "text": "Pero atención: es una meta de desarrollo, no el peso definitivo de un coche homologado."
+    },
+    {
+      "startSeconds": 26.35,
+      "endSeconds": 27.6,
+      "text": "¿Por qué nos entusiasma?"
+    },
+    {
+      "startSeconds": 28.1,
+      "endSeconds": 31.2,
+      "text": "Porque menos masa puede hacer que un coche se sienta más ágil"
+    },
+    {
+      "startSeconds": 31.55,
+      "endSeconds": 33.92,
+      "text": "y exige menos trabajo a los frenos y neumáticos."
+    },
+    {
+      "startSeconds": 34.44,
+      "endSeconds": 39.6,
+      "text": "La potencia importa, claro. Pero en un MX-5, la diversión también está en cómo responde el coche."
+    },
+    {
+      "startSeconds": 40.32,
+      "endSeconds": 42.95,
+      "text": "¿Tú qué prefieres: menos peso o más caballos?"
+    },
+    {
+      "startSeconds": 43.44,
+      "endSeconds": 46.05,
+      "text": "Busca la guía completa en kilometroclaro.com."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "video-020",
+  "durationSeconds": 37.32,
+  "fps": 30,
+  "captions": [
+    {
+      "startSeconds": 0,
+      "endSeconds": 5.16,
+      "text": "Este GTI eléctrico anuncia hasta 431 kilómetros de autonomía,"
+    },
+    {
+      "startSeconds": 5.36,
+      "endSeconds": 8.1,
+      "text": "pero hay algo que debes saber antes de salir de viaje."
+    },
+    {
+      "startSeconds": 8.88,
+      "endSeconds": 12.92,
+      "text": "Esa cifra es WLTP: sirve para comparar coches,"
+    },
+    {
+      "startSeconds": 13.14,
+      "endSeconds": 15.76,
+      "text": "pero no garantiza que recorras esa distancia en autopista,"
+    },
+    {
+      "startSeconds": 16.02,
+      "endSeconds": 17.42,
+      "text": "con frío o con el coche cargado."
+    },
+    {
+      "startSeconds": 18.18,
+      "endSeconds": 21.1,
+      "text": "Su batería tiene 52 kilovatios hora útiles."
+    },
+    {
+      "startSeconds": 21.6,
+      "endSeconds": 25.86,
+      "text": "Volkswagen anuncia una carga rápida del 10 al 80 % en unos 24 minutos,"
+    },
+    {
+      "startSeconds": 26.16,
+      "endSeconds": 27.14,
+      "text": "en condiciones favorables."
+    },
+    {
+      "startSeconds": 27.6,
+      "endSeconds": 30.82,
+      "text": "La autonomía y el tiempo reales dependerán del trayecto,"
+    },
+    {
+      "startSeconds": 31.16,
+      "endSeconds": 32.56,
+      "text": "la temperatura y el cargador."
+    },
+    {
+      "startSeconds": 33.28,
+      "endSeconds": 34.26,
+      "text": "¿Te irías de viaje con él?"
+    },
+    {
+      "startSeconds": 34.96,
+      "endSeconds": 36.98,
+      "text": "Busca la guía en kilometroclaro.com."
+    }
+  ]
+}

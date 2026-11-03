@@ -3,6 +3,7 @@
 .model-detail-intro{max-width:900px;padding:10px 0 37px;border-bottom:1px solid #aeb9ae}
 .model-detail-brandline{display:flex;align-items:center;gap:12px;color:#526b5b;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
 .model-detail-brandline img{width:46px;height:37px;object-fit:contain}
+.model-detail-brand-monogram{display:grid;place-items:center;width:46px;height:37px;border:1px solid #aeb9ae;border-radius:50%;color:var(--brand-ink);font:900 22px/1 Manrope,Arial,sans-serif;letter-spacing:-.06em}
 .model-detail-intro h1{margin:14px 0 15px;color:var(--brand-ink);font:900 clamp(42px,7vw,76px)/.98 Manrope,Arial,sans-serif;letter-spacing:-.075em}
 .model-detail-lead{max-width:790px;margin:0;color:#344c3e;font-size:17px;line-height:1.75}
 .model-detail-official-link{display:inline-flex;align-items:center;min-height:43px;margin-top:20px;padding:0 14px;border:1.5px solid var(--brand-ink);border-radius:5px;background:var(--brand-lime);box-shadow:3px 3px 0 var(--brand-ink);color:var(--brand-ink);font-size:11px;font-weight:900;text-decoration:none}

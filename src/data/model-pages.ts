@@ -37,6 +37,13 @@ import { porscheModels } from './porsche-model-pages';
 import { kgmModels } from './kgm-model-pages';
 import { landRoverModels } from './land-rover-model-pages';
 import { xpengModels } from './xpeng-model-pages';
+import { alfaRomeoModels } from './alfa-romeo-model-pages';
+import { evoModels } from './evo-model-pages';
+import { subaruModels } from './subaru-model-pages';
+import { polestarModels } from './polestar-model-pages';
+import { swmModels } from './swm-model-pages';
+import { smartModels } from './smart-model-pages';
+import { lanciaModels } from './lancia-model-pages';
 import { formatMotorTableVersion } from '../lib/motor-table';
 
 export type ModelVersion = {
@@ -866,6 +873,13 @@ const modelPageRecords: ModelPageData[] = [
   })),
   ...fordModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...teslaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...evoModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...alfaRomeoModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...subaruModels,
+  ...polestarModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...swmModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...smartModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...lanciaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
 ];
 
 export const modelPages: ModelPageData[] = modelPageRecords.map((model) => ({

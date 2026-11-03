@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "video-010",
+  "title": "Toyota GR GT: diseñado a partir del aire",
+  "durationSeconds": 40.88,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/toyota-gr-gt/",
+  "narration": "¿Y si el Toyota GR GT se hubiera diseñado empezando por el aire? Toyota invirtió el orden habitual: primero definió las necesidades de aerodinámica y refrigeración; después, diseñó la carrocería alrededor de ellas. ¿El motivo? Con un objetivo de velocidad punta de al menos 320 kilómetros por hora, cada forma importa: afecta a la resistencia, la estabilidad y la refrigeración. Pero ojo: es una meta de desarrollo para un prototipo, no una prestación homologada del modelo definitivo. ¿Quieres saber qué está confirmado y qué sigue en el aire? Busca la guía completa del GR GT en kilometroclaro.com.",
+  "requiresHumanReview": true,
+  "imageCredit": "Toyota Motor Corporation / Toyota GAZOO Racing",
+  "captions": [
+    {
+      "startSeconds": 0.2,
+      "endSeconds": 5.9,
+      "text": "¿Y si el Toyota GR GT se hubiera diseñado empezando por el aire?"
+    },
+    {
+      "startSeconds": 6.3,
+      "endSeconds": 8.3,
+      "text": "Toyota invirtió el orden habitual:"
+    },
+    {
+      "startSeconds": 8.6,
+      "endSeconds": 12.3,
+      "text": "primero definió las necesidades de aerodinámica y refrigeración;"
+    },
+    {
+      "startSeconds": 12.56,
+      "endSeconds": 15.9,
+      "text": "después, diseñó la carrocería alrededor de ellas."
+    },
+    {
+      "startSeconds": 16.2,
+      "endSeconds": 16.8,
+      "text": "¿El motivo?"
+    },
+    {
+      "startSeconds": 17.08,
+      "endSeconds": 21.3,
+      "text": "Con un objetivo de velocidad punta de al menos 320 kilómetros por hora,"
+    },
+    {
+      "startSeconds": 21.5,
+      "endSeconds": 22.8,
+      "text": "cada forma importa:"
+    },
+    {
+      "startSeconds": 23.0,
+      "endSeconds": 26.7,
+      "text": "afecta a la resistencia, la estabilidad y la refrigeración."
+    },
+    {
+      "startSeconds": 27.2,
+      "endSeconds": 30.42,
+      "text": "Pero ojo: es una meta de desarrollo para un prototipo,"
+    },
+    {
+      "startSeconds": 30.58,
+      "endSeconds": 33.1,
+      "text": "no una prestación homologada del modelo definitivo."
+    },
+    {
+      "startSeconds": 33.4,
+      "endSeconds": 36.4,
+      "text": "¿Quieres saber qué está confirmado y qué sigue en el aire?"
+    },
+    {
+      "startSeconds": 36.7,
+      "endSeconds": 40.6,
+      "text": "Busca la guía completa del GR GT en kilometroclaro.com."
+    }
+  ]
+}

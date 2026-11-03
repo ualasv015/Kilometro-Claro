@@ -105,11 +105,15 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
               {model.powertrains.map((powertrain) => <span>{powertrain}</span>)}
             </div>
             {brand.slug === 'ebro' && model.image?.caption?.includes('Chery') && <p class="toyota-model-photo-note">{model.image.caption}</p>}
+            {brand.slug === 'polestar' && model.pageSlug === '4-suv' && <p class="toyota-model-photo-note">La fotografía muestra el Polestar 4 Coupé, no el SUV con luneta trasera.</p>}
+            {brand.slug === 'swm' && (model.pageSlug === 'g03f' || model.pageSlug === 'g05') && <p class="toyota-model-photo-note">{model.image?.caption}</p>}
+            {brand.slug === 'smart' && model.image?.caption && <p class="toyota-model-photo-note">{model.image.caption}</p>}
           </article>
         ))}
       </div>
       <p class="toyota-model-empty" id="brand-model-empty" role="status" aria-live="polite" hidden>No hay modelos que coincidan con ambos filtros. Prueba otra combinación.</p>
       <p class="brand-profile-source">La biografía se ha contrastado con <a href={brand.historyUrl ?? brand.officialUrl} target="_blank" rel="noopener noreferrer">información publicada por {brand.name}</a>. La selección de modelos y tecnologías se ha revisado en su <a href={brand.rangeUrl} target="_blank" rel="noopener noreferrer">gama oficial para España</a>.</p>
+      {brand.marketSources?.map((source) => <p class="brand-profile-source">Referencia complementaria: <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>.</p>)}
     </section>
 
     <section class="brand-directory-related" aria-labelledby="related-brands-title">

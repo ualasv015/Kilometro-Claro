@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "video-014",
+  "title": "Mazda MX-5: ¿sobrevivirá el cambio manual?",
+  "durationSeconds": 42.88,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/mazda-mx-5-nd-futuro-ne/",
+  "narration": "¿Te imaginas un Mazda MX-5 sin cambio manual? Para muchos apasionados, una parte de la magia está ahí: embrague, palanca y tú decidiendo cuándo cambiar de marcha. Pero ¿seguirá esa receta en el próximo MX-5? Responsables de Mazda han expresado su preferencia por conservar el cambio manual. Aun así, todavía no está confirmado para el sucesor. La decisión dependerá, entre otras cosas, de la tecnología que utilice el coche y de las exigencias de emisiones. A nosotros nos encantaría que siguiera. Aunque, siendo sinceros, quizá lo más cerca que estemos de probarlo sea viendo las fotos. ¿Para ti un MX-5 tiene que ser manual? Busca la guía completa en kilometroclaro.com.",
+  "requiresHumanReview": true,
+  "imageCredit": "Mazda Motor Europe / Mazda España",
+  "captions": [
+    {
+      "startSeconds": 0.18,
+      "endSeconds": 3.16,
+      "text": "¿Te imaginas un Mazda MX-5 sin cambio manual?"
+    },
+    {
+      "startSeconds": 3.86,
+      "endSeconds": 6.65,
+      "text": "Para muchos apasionados, una parte de la magia está ahí:"
+    },
+    {
+      "startSeconds": 7,
+      "endSeconds": 10.58,
+      "text": "embrague, palanca y tú decidiendo cuándo cambiar de marcha."
+    },
+    {
+      "startSeconds": 11.08,
+      "endSeconds": 14.1,
+      "text": "Pero ¿seguirá esa receta en el próximo MX-5?"
+    },
+    {
+      "startSeconds": 15,
+      "endSeconds": 18.92,
+      "text": "Responsables de Mazda han expresado su preferencia por conservar el cambio manual."
+    },
+    {
+      "startSeconds": 19.4,
+      "endSeconds": 22.25,
+      "text": "Aun así, todavía no está confirmado para el sucesor."
+    },
+    {
+      "startSeconds": 22.78,
+      "endSeconds": 28.5,
+      "text": "La decisión dependerá, entre otras cosas, de la tecnología que utilice el coche y de las exigencias de emisiones."
+    },
+    {
+      "startSeconds": 29.1,
+      "endSeconds": 30.95,
+      "text": "A nosotros nos encantaría que siguiera."
+    },
+    {
+      "startSeconds": 31.34,
+      "endSeconds": 35.8,
+      "text": "Aunque, siendo sinceros, quizá lo más cerca que estemos de probarlo sea viendo las fotos."
+    },
+    {
+      "startSeconds": 36.62,
+      "endSeconds": 39.16,
+      "text": "¿Para ti un MX-5 tiene que ser manual?"
+    },
+    {
+      "startSeconds": 39.82,
+      "endSeconds": 42.62,
+      "text": "Busca la guía completa en kilometroclaro.com."
+    }
+  ]
+}

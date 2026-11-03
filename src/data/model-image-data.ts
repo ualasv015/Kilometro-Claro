@@ -1,6 +1,31 @@
 import type { ModelPageData } from './model-pages';
 
 export const modelImageData: Record<string, NonNullable<ModelPageData['image']>> = {
+  "lancia/gamma": {
+    "src": "/images/models/commons/model-lancia-gamma.jpg",
+    "alt": "Lancia Gamma 2026 HF eléctrico fotografiado en una calle arbolada.",
+    "width": 1280,
+    "height": 1016,
+    "sourceTitle": "Lancia Gamma 2026 HF.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lancia_Gamma_2026_HF.jpg",
+    "authorName": "GammaSUV",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La imagen muestra un Gamma HF eléctrico; el acabado y la motorización pueden diferir de otras versiones de la gama."
+  },
+  "lancia/ypsilon": {
+    "src": "/images/models/commons/model-lancia-ypsilon.jpg",
+    "alt": "Lancia Ypsilon híbrido de cuarta generación, acabado LX, fotografiado en Turín.",
+    "width": 1280,
+    "height": 791,
+    "sourceTitle": "Lancia Ypsilon (2024) Front 1 (cropped) (cropped).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lancia_Ypsilon_(2024)_Front_1_(cropped)_(cropped).jpg",
+    "authorName": "Mihnea Lazăr",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:All_names_i_want_are_taken",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "La fotografía corresponde a un Ypsilon Ibrida LX; la carrocería es común a la gama, pero el acabado y la motorización pueden variar."
+  },
   "citroen/ami": {
     "src": "/images/models/commons/model-citroen-ami.jpg",
     "alt": "Citroën Ami eléctrico en color Night Sepia.",
@@ -2932,5 +2957,109 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "caption": "Mercedes-Maybach Clase S de generación W223; el acabado y la configuración pueden diferir.",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Dinkun_Chen"
+  },
+  "evo/evo-3": {
+    "src": "/images/models/commons/model-evo-3.jpg",
+    "alt": "EVO 3 bifuel de cinco puertas fotografiado en Italia.",
+    "width": 1280,
+    "height": 939,
+    "sourceTitle": "EVO 3.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:EVO_3.jpg",
+    "authorName": "LFlycan",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:LFlycan",
+    "licenseName": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "caption": "EVO 3 1.5 bifuel fotografiado en 2024; acabado y equipamiento pueden diferir de las versiones actuales. Imagen redimensionada para su visualización web."
+  },
+  "evo/evo-cuatro": {
+    "src": "/images/models/commons/model-evo-cuatro.jpg",
+    "alt": "EVO 4, modelo comercializado en España como EVO CUATRO.",
+    "width": 1280,
+    "height": 740,
+    "sourceTitle": "EVO 4 2024.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:EVO_4_2024.jpg",
+    "authorName": "Corvettec6r",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Corvettec6r",
+    "licenseName": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "caption": "Fotografía de un EVO 4 de 2024; la carrocería, el acabado y el equipamiento pueden variar frente al CUATRO actualmente anunciado. Imagen redimensionada para su visualización web."
+  },
+  "evo/evo-5": {
+    "src": "/images/models/commons/model-evo-5.jpg",
+    "alt": "EVO 5 SUV fotografiado en Italia en 2024.",
+    "width": 1280,
+    "height": 765,
+    "sourceTitle": "EVO 5 2024.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:EVO_5_2024.jpg",
+    "authorName": "Corvettec6r",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Corvettec6r",
+    "licenseName": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "caption": "EVO 5 fotografiado en 2024; el acabado y la configuración pueden diferir de las unidades ofrecidas en España. Imagen redimensionada para su visualización web."
+  },
+  "evo/evo-6": {
+    "src": "/images/models/commons/model-evo-6.jpg",
+    "alt": "EVO 6 expuesto en el Salón del Automóvil de Turín.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "EVO 6 Salone di Torino 1.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:EVO_6_Salone_di_Torino_1.jpg",
+    "authorName": "Sequipe",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Sequipe",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "EVO 6 fotografiado en 2024; el equipamiento y los detalles de la unidad pueden variar. Imagen redimensionada para su visualización web."
+  },
+  "evo/evo-6-hev": {
+    "src": "/images/models/commons/model-evo-6-hev.jpg",
+    "alt": "Vista trasera de un EVO 6 1.5 Turbo de 2024, de la misma familia de carrocería que el 6 HEV.",
+    "width": 1280,
+    "height": 762,
+    "sourceTitle": "Evo 6 2024 rear 1.5 Turbo.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evo_6_2024_rear_1.5_Turbo.jpg",
+    "authorName": "Corvettec6r",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Corvettec6r",
+    "licenseName": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "caption": "La foto muestra un EVO 6 1.5 Turbo de 2024; ilustra la familia de carrocería, no identifica los distintivos específicos de la versión HEV. Imagen redimensionada para su visualización web."
+  },
+  "evo/evo-7": {
+    "src": "/images/models/commons/model-evo-7.jpg",
+    "alt": "EVO 7 fotografiado en Italia en 2025.",
+    "width": 1280,
+    "height": 900,
+    "sourceTitle": "DR Automobiles EVO 7.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:DR_Automobiles_EVO_7.jpg",
+    "authorName": "Calreyn88",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Calreyn88",
+    "licenseName": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "caption": "EVO 7 fotografiado en 2025; la configuración de seis o siete plazas y el acabado pueden variar. Imagen redimensionada para su visualización web."
+  },
+  "evo/evo-spazio": {
+    "src": "/images/models/commons/model-evo-spazio.jpg",
+    "alt": "EVO Spazio de siete plazas expuesto en el Salón del Automóvil de Turín.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "EVO Spazio Salone di Torino 1.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:EVO_Spazio_Salone_di_Torino_1.jpg",
+    "authorName": "Sequipe",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Sequipe",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "EVO Spazio expuesto en 2024; los colores y el equipamiento pueden diferir de la gama española actual. Imagen redimensionada para su visualización web."
+  },
+  "evo/evo-cross-4": {
+    "src": "/images/models/commons/model-evo-cross-4.jpg",
+    "alt": "Pick-up EVO CROSS4 2.0 turbodiésel de doble cabina.",
+    "width": 1280,
+    "height": 999,
+    "sourceTitle": "EVO Cross 4.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:EVO_Cross_4.jpg",
+    "authorName": "Corvettec6r",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Corvettec6r",
+    "licenseName": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "caption": "EVO Cross4 fotografiado en 2024; la unidad mostrada y su equipamiento pueden diferir de la configuración actual. Imagen redimensionada para su visualización web."
   }
 };

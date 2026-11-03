@@ -50,3 +50,28 @@ KGM: KG Mobility brand logo.svg, Wikimedia Commons, logotipo tipográfico sencil
 Land Rover: Land Rover 2023.svg, Wikimedia Commons, autor Jaguar Land Rover Automotive PLC; se indica como dominio público por su geometría sencilla. Fuente: https://commons.wikimedia.org/wiki/File:Land_Rover_2023.svg. Land Rover y su logotipo son marcas registradas; el emblema se muestra únicamente para identificar al fabricante.
 
 XPENG: XPeng logo.svg, Wikimedia Commons, autor XPeng Motor; logotipo tipográfico indicado como dominio público por su diseño sencillo. Fuente: https://commons.wikimedia.org/wiki/File:XPeng_logo.svg. XPENG y su logotipo son marcas registradas; se muestran únicamente para identificar al fabricante.
+
+Fotografías de modelos EVO (licencias CC BY 4.0 o CC BY-SA 4.0, indicadas también en las fichas):
+- EVO 3.jpg — autor LFlycan — https://commons.wikimedia.org/wiki/File:EVO_3.jpg
+- EVO 4 2024.jpg — autor Corvettec6r — https://commons.wikimedia.org/wiki/File:EVO_4_2024.jpg
+- EVO 5 2024.jpg — autor Corvettec6r — https://commons.wikimedia.org/wiki/File:EVO_5_2024.jpg
+- EVO 6 Salone di Torino 1.jpg — autor Sequipe — https://commons.wikimedia.org/wiki/File:EVO_6_Salone_di_Torino_1.jpg
+- Evo 6 2024 rear 1.5 Turbo.jpg — autor Corvettec6r — https://commons.wikimedia.org/wiki/File:Evo_6_2024_rear_1.5_Turbo.jpg
+- DR Automobiles EVO 7.jpg — autor Calreyn88 — https://commons.wikimedia.org/wiki/File:DR_Automobiles_EVO_7.jpg
+- EVO Spazio Salone di Torino 1.jpg — autor Sequipe — https://commons.wikimedia.org/wiki/File:EVO_Spazio_Salone_di_Torino_1.jpg
+- EVO Cross 4.jpg — autor Corvettec6r — https://commons.wikimedia.org/wiki/File:EVO_Cross_4.jpg
+
+Fotografías de modelos SWM (licencia CC BY-SA 4.0; imágenes redimensionadas para web y atribuidas también en cada ficha):
+- SWM G01 Pro front Poznań Motor Show 2026.jpg — autor Peżot — https://commons.wikimedia.org/wiki/File:SWM_G01_Pro_front_Pozna%C5%84_Motor_Show_2026.jpg
+- SWM Tiger front quarter.jpg — autor Great Wall Motors Shalong — https://commons.wikimedia.org/wiki/File:SWM_Tiger_front_quarter.jpg (fotografía de la familia Tiger, no necesariamente de la actualización G03F española actual)
+- SWM Tiger EDi IMG001.jpg — autor Zotyefan — https://commons.wikimedia.org/wiki/File:SWM_Tiger_EDi_IMG001.jpg
+- SWM G05 Pro 01 China 2023-04-17.jpg — autor Navigator84 — https://commons.wikimedia.org/wiki/File:SWM_G05_Pro_01_China_2023-04-17.jpg
+
+Fotografías de modelos smart (licencia CC BY-SA 4.0; redimensionadas para web y acreditadas también en cada ficha):
+- Smart Hashtag 1 IMG 7326.jpg — autor Alexander-93 — https://commons.wikimedia.org/wiki/File:Smart_Hashtag_1_IMG_7326.jpg
+- 2024 Smart hashtag3 front.jpg — autor LuvsMG481 — https://commons.wikimedia.org/wiki/File:2024_Smart_hashtag3_front.jpg (fotografía tomada en Bondi, Australia; acabado y especificación pueden diferir de la oferta española)
+- Smart Hashtag 5 Premium autoMOBIL Tübingen 2025 DSC 2755.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Smart_Hashtag_5_Premium_autoMOBIL_T%C3%BCbingen_2025_DSC_2755.jpg
+
+Fotografías de modelos Lancia (licencia CC BY-SA 4.0; redimensionadas para web y acreditadas también en cada ficha):
+- Lancia Gamma 2026 HF.jpg — autor GammaSUV — https://commons.wikimedia.org/wiki/File:Lancia_Gamma_2026_HF.jpg (imagen de Gamma HF eléctrico)
+- Lancia Ypsilon (2024) Front 1 (cropped) (cropped).jpg — autor Mihnea Lazăr — https://commons.wikimedia.org/wiki/File:Lancia_Ypsilon_(2024)_Front_1_(cropped)_(cropped).jpg (Ypsilon Ibrida LX, fotografiado en Turín)

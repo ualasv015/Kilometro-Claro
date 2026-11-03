@@ -1,0 +1,62 @@
+{
+  "id": "video-021",
+  "durationSeconds": 30.0,
+  "fps": 30,
+  "captions": [
+    {
+      "startSeconds": 0,
+      "endSeconds": 3.54,
+      "text": "¿Y si tu coche pudiera llevar parte de las luces largas encendidas"
+    },
+    {
+      "startSeconds": 3.54,
+      "endSeconds": 5.44,
+      "text": "sin deslumbrar al que viene de frente?"
+    },
+    {
+      "startSeconds": 6.34,
+      "endSeconds": 8.5,
+      "text": "Algunos faros Matrix LED intentan hacerlo"
+    },
+    {
+      "startSeconds": 8.5,
+      "endSeconds": 11.62,
+      "text": "dividiendo la luz en varias zonas que pueden controlarse por separado."
+    },
+    {
+      "startSeconds": 12.3,
+      "endSeconds": 13.82,
+      "text": "Cuando el sistema detecta otro vehículo,"
+    },
+    {
+      "startSeconds": 14.1,
+      "endSeconds": 16.7,
+      "text": "puede apagar o atenuar la zona que apunta hacia él"
+    },
+    {
+      "startSeconds": 16.7,
+      "endSeconds": 19.3,
+      "text": "y mantener iluminadas otras partes de la carretera."
+    },
+    {
+      "startSeconds": 20.2,
+      "endSeconds": 21.1,
+      "text": "Pero no es magia:"
+    },
+    {
+      "startSeconds": 21.56,
+      "endSeconds": 24.46,
+      "text": "depende de la cámara, del sistema y de las condiciones de visibilidad."
+    },
+    {
+      "startSeconds": 25.2,
+      "endSeconds": 26.5,
+      "text": "¿Tu coche lleva faros así?"
+    },
+    {
+      "startSeconds": 27.24,
+      "endSeconds": 29.58,
+      "text": "Busca la guía de luces en kilometroclaro.com."
+    }
+  ]
+}
