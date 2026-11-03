@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#102c24"/><stop offset="1" stop-color="#21503c"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#fff" stroke-opacity=".08"/>
+    </pattern>
+    <path id="housing" d="M0-128c-78 0-142 56-142 133 0 74 61 127 137 127 75 0 132-56 132-126 0-16-3-31-9-46h46v-88z"/>
+    <g id="rotor">
+      <circle r="77" fill="#102c24" stroke="currentColor" stroke-width="3"/>
+      <g fill="currentColor">
+        <path id="blade" d="M-6-9C-30-24-26-58 0-67-11-47-1-25 9-13z"/>
+        <use href="#blade" transform="rotate(45)"/><use href="#blade" transform="rotate(90)"/>
+        <use href="#blade" transform="rotate(135)"/><use href="#blade" transform="rotate(180)"/>
+        <use href="#blade" transform="rotate(225)"/><use href="#blade" transform="rotate(270)"/>
+        <use href="#blade" transform="rotate(315)"/><circle r="13"/>
+      </g>
+    </g>
+  </defs>
+  <rect width="960" height="540" fill="url(#background)"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+  <g fill="none" stroke="#a1bc9d" stroke-width="2" opacity=".5">
+    <path d="M72 123V78h44M844 78h44v45M72 417v45h44M844 462h44v-45"/>
+    <path d="M96 270h768" stroke-dasharray="5 10"/>
+  </g>
+  <rect x="378" y="247" width="204" height="46" rx="15" fill="#adc0a9"/>
+  <rect x="420" y="234" width="120" height="72" rx="16" fill="#18372b" stroke="#adc0a9" stroke-width="3"/>
+  <path d="M451 246v48m29-48v48m29-48v48" stroke="#adc0a9" stroke-width="3" opacity=".6"/>
+  <g transform="translate(306 270)" color="#ffb28e">
+    <use href="#housing" transform="scale(-1 1)" fill="#674337" stroke="currentColor" stroke-width="4"/>
+    <use href="#rotor"/>
+  </g>
+  <g transform="translate(654 270)" color="#d4f579">
+    <use href="#housing" fill="#3a5630" stroke="currentColor" stroke-width="4"/>
+    <use href="#rotor" transform="scale(-1 1)"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="24" font-weight="700" text-anchor="middle">
+    <text x="306" y="444" fill="#ffb28e">Turbina</text>
+    <text x="654" y="444" fill="#d4f579">Compresor</text>
+  </g>
+</svg>

@@ -1,5 +1,21 @@
 export const guides = [
   {
+    slug: 'por-que-tarda-turbo-responder',
+    title: '¿Por qué el turbo tarda en responder al acelerar?',
+    category: 'Uso y mantenimiento',
+    categorySlug: 'uso-mantenimiento',
+    description: 'Cómo funciona un turbocompresor, qué causa el turbo lag y cómo distinguirlo de una marcha larga o un problema del motor.',
+    published: true,
+  },
+  {
+    slug: 'levantar-pie-acelerador',
+    title: '¿Qué pasa cuando levantas el pie del acelerador? Retención y consumo',
+    category: 'Uso y mantenimiento',
+    categorySlug: 'uso-mantenimiento',
+    description: 'Cómo actúan la retención y el corte de inyección al soltar el acelerador, y qué cambia en punto muerto, híbridos y eléctricos.',
+    published: true,
+  },
+  {
     slug: 'motor-gasolina-diesel-acelerador',
     title: 'Motor gasolina y diésel: ¿qué ocurre cuando pisas el acelerador?',
     category: 'Uso y mantenimiento',

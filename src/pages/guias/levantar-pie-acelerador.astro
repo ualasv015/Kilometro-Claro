@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'levantar-pie-acelerador';
+const title = '¿Qué pasa cuando levantas el pie del acelerador? Retención y consumo';
+const seoTitle = 'Qué pasa al soltar el acelerador | Kilómetro Claro';
+const description = 'Qué sucede al soltar el acelerador: cómo las ruedas arrastran el motor, cuándo se corta la inyección y qué cambia en punto muerto, híbridos y eléctricos.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-03';
+
+const sources = {
+  idae: 'https://idae.es/eu/node/32894',
+  dgt: 'https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/nuestros_servicios/permisos-de-conducir/Accesibilidad/TeoricaAbreviada_LecturaFacil_2023-12-Interactivo.pdf',
+  bath: 'https://purehost.bath.ac.uk/ws/portalfiles/portal/220250654/Thesis_NiallTurner_FinalSubmittedNoRestriction_20210403.pdf',
+  toyotaTraining: 'https://gt4.mwp.id.au/Toyota%20Manuals/Mechanics%20Training/Toyota%20-%20Engine%20%28ODB2%29%20-%2043%20Fuel%20System%20-%20Injection%20Duration.pdf',
+  toyotaCut: 'https://patents.justia.com/patent/7415349',
+  ford: 'https://www.fordservicecontent.com/Ford_Content/catalog/motorcraft/DOBDSM2300_2_MCS6938.pdf',
+  mazda: 'https://www.mazdausa.com/static/manuals/2026/cx-5/contents/3813829899.html',
+  golf: 'https://www.volkswagen-newsroom.com/en/the-new-golf-das-auto-international-driving-presentation-2797/the-new-golf-powertrain-structure-engines-and-gearboxes-2835',
+  id4: 'https://www.volkswagen-newsroom.com/en/press-releases/brake-or-coast-the-id4s-intelligent-energy-recuperation-concept-6658',
+  toyotaHybrid: 'https://www.toyota.es/world-of-toyota/articles-news-events/como-conducir-coche-hibrido-toyota',
+  tesla: 'https://www.tesla.com/ownersmanual/model3/en_au/GUID-3DFFB071-C0F6-474D-8A45-17BE1A006365.html',
+};
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate,
+  dateModified: publishedDate,
+  inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Soltar el acelerador' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 3 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">La misma maniobra puede hacer que el coche retenga, ruede con poca resistencia o recargue parte de su batería. Todo depende de adónde va la energía que ya tiene el coche en movimiento.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>En un coche de combustión con cambio manual, si sueltas el acelerador con una marcha puesta y el embrague acoplado, las ruedas pueden arrastrar el motor. Vencer sus resistencias consume parte de la energía del movimiento y el coche tiende a perder velocidad. La centralita puede interrumpir la inyección durante esa fase. Si desacoplas el motor, desaparece esa retención y, si el motor sigue al ralentí, normalmente gasta combustible.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#retencion">Cómo las ruedas arrastran el motor</a></li>
+          <li><a href="#inyeccion">Cuándo se corta la inyección</a></li>
+          <li><a href="#embrague">Qué cambia con el embrague y el punto muerto</a></li>
+          <li><a href="#consumo">Qué sucede con el consumo</a></li>
+          <li><a href="#automaticos">Automáticos, híbridos y eléctricos</a></li>
+          <li><a href="#bajada">Cómo aprovechar la retención en una bajada</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="retencion">Por qué el coche frena al levantar el pie</h2>
+      <p>Imagina que circulas en llano hacia una glorieta. Sueltas el acelerador y dejas la marcha engranada. Al acelerar, el motor enviaba fuerza a las ruedas a través del embrague y la caja de cambios. Ahora el coche sigue en movimiento y las ruedas motrices mantienen el cigüeñal girando a través de esa misma conexión. El esfuerzo cambia de sentido. Si te interesa el primer tramo de la historia, está en la <a href="/guias/motor-gasolina-diesel-acelerador/">guía sobre lo que ocurre al pisar el acelerador</a>.</p>
+      <p>Hacer girar el motor requiere trabajo. Hay rozamiento entre piezas, se mueven gases durante la admisión y el escape, y ciertos accesorios también demandan energía. En muchos motores de gasolina, una mariposa poco abierta dificulta la admisión y aumenta el trabajo de bombeo. Al comprimir el gas se emplea energía y parte se devuelve al expandirse. La retención que sientes resulta del balance de todo el ciclo. El viento y la rodadura también restan velocidad, incluso con el motor desacoplado. <a href={sources.bath}>Universidad de Bath, medición de pérdidas con el motor arrastrado</a>.</p>
+      <figure class="retention-figure">
+        <img src="/images/guides/retencion-flujo-ruedas-motor.svg" width="960" height="540" alt="Al acelerar, el esfuerzo va del motor a las ruedas. En retención con una marcha puesta, las ruedas motrices arrastran el motor a través de la transmisión." loading="lazy" decoding="async" />
+        <figcaption>Esquema de Kilómetro Claro. Las flechas representan el sentido del esfuerzo transmitido en un coche manual con el embrague acoplado.</figcaption>
+      </figure>
+      <p>A una misma velocidad, una marcha más corta suele hacer que el motor gire más rápido y multiplica más su par de retención en las ruedas. El efecto varía con el régimen, el tipo de motor y cómo lo gestione el coche. Un gasolina y un diésel pueden retener de forma distinta aunque circulen a la misma velocidad. La relación de compresión por sí sola dice poco sobre cuál frenará más. Y si la bajada es pronunciada, la gravedad puede aportar suficiente energía para que el coche mantenga o incluso gane velocidad a pesar de la retención.</p>
+
+      <h2 id="inyeccion">Cuándo se corta la inyección y por qué el cuadro puede marcar cero</h2>
+      <p>En un motor compatible, la centralita puede suspender los pulsos de los inyectores al detectar que has soltado el acelerador y que las ruedas mantienen el motor girando con un régimen suficiente. Es el <strong>corte de inyección en deceleración</strong>. El cigüeñal y los pistones siguen moviéndose gracias a la energía del coche. El sistema puede volver a inyectar al pedir par de nuevo o al aproximarse al régimen de ralentí para que el motor siga girando por sí mismo. La temperatura y las necesidades de funcionamiento también pueden influir en la estrategia. Los umbrales dependen de la calibración de cada versión. <a href={sources.toyotaCut}>Toyota, documentación de patente sobre corte y reanudación</a>, <a href={sources.toyotaTraining}>formación técnica de Toyota sobre condiciones del corte</a> y <a href={sources.ford}>Ford, documentación de un diésel compatible</a>.</p>
+      <p>Mientras el vehículo avanza y el motor permanece en corte, el consumo instantáneo puede indicar <strong>0 L/100 km</strong>. Esa lectura describe una fase breve y depende de cómo la calcula y muestra el cuadro. El consumo medio relaciona todos los litros usados con la distancia total del periodo que estás midiendo. Aunque veas un cero al acercarte a la glorieta, en la media siguen contando el combustible de la aceleración previa y el que uses al salir. <a href={sources.mazda}>Mazda, diferencia entre indicador instantáneo y medio</a>. Puedes comprobar la media de tu coche con el <a href="/guias/como-calcular-consumo-real-coche/">método de medir el consumo entre repostajes</a>.</p>
+
+      <h2 id="embrague">Qué pasa si pisas el embrague o pones punto muerto</h2>
+      <p>Al pisar a fondo el embrague de un manual, separas el motor de la caja de cambios aunque la palanca siga en la misma marcha. En punto muerto, la caja deja de transmitir par entre motor y ruedas aunque sueltes el embrague. En ambos casos las ruedas dejan de sostener el régimen del motor y se pierde su retención. Si sigue en marcha, normalmente baja al ralentí y necesita combustible para mantenerse ahí.</p>
+      <p>También cambia la respuesta. Con una marcha adecuada y el embrague acoplado puedes volver a pedir empuje al pisar el acelerador. Con el embrague pisado hay que acoplarlo de nuevo. En punto muerto, además hay que seleccionar una marcha compatible con la velocidad. Esa diferencia importa cuando el tráfico cambia y necesitas volver a acelerar o ajustar la velocidad. <a href={sources.dgt}>DGT, manual del permiso B sobre punto muerto y conducción preventiva</a>.</p>
+
+      <h2 id="consumo">¿Consume menos con una marcha puesta que en punto muerto?</h2>
+      <p>Si comparas el mismo instante y el motor con la marcha puesta está en corte, en ese momento gasta menos combustible que si estuviera al ralentí. En un tramo completo hay otra variable: cuánto avanza el coche antes de tener que frenar o acelerar de nuevo. Con menos retención puede rodar más lejos, pero un motor que sigue al ralentí va consumiendo durante ese tiempo. La pendiente, el tráfico y la velocidad que necesitas al final del tramo cambian el resultado. Un cero en el cuadro no resuelve por sí solo la comparación.</p>
+      <p>Si ves que vas a tener que reducir la velocidad, levanta el pie con antelación en una marcha adecuada y usa el freno según lo requiera la situación. Así aprovechas la desaceleración que ya necesitas. El IDAE recomienda anticiparse y dejar rodar con la marcha engranada en las deceleraciones. <a href={sources.idae}>IDAE, reglas de conducción eficiente</a>.</p>
+
+      <h2 id="automaticos">Qué cambia en automáticos, híbridos y eléctricos</h2>
+      <p><strong>Automáticos de combustión.</strong> La caja puede mantener una relación y transmitir retención o permitir que el coche ruede con menos resistencia. Volkswagen documentó, por ejemplo, un modo Eco de Golf con DSG que desacopla la transmisión al soltar el pedal y deja el motor al ralentí. La estrategia depende de la caja y del modo seleccionado. <a href={sources.golf}>Volkswagen, función de avance por inercia del Golf DSG</a>. Puedes consultar las diferencias entre <a href="/guias/tipos-cambio-automatico/">convertidor, doble embrague y otros cambios automáticos</a>.</p>
+      <p><strong>Híbridos y eléctricos.</strong> Si el sistema decide regenerar, las ruedas hacen girar la máquina eléctrica y esta actúa como generador. Su resistencia ayuda a desacelerar y una parte de la energía acaba en la batería. La retención de un motor térmico disipa energía en sus resistencias internas. En un híbrido, el sistema también puede apagar el motor de combustión según las condiciones. <a href={sources.toyotaHybrid}>Toyota, funcionamiento del sistema híbrido al decelerar</a>. La <a href="/guias/coche-hibrido-enchufable-o-microhibrido/">guía de tipos de híbrido</a> explica qué configuraciones conviven bajo ese nombre.</p>
+      <figure class="retention-figure">
+        <img src="/images/guides/retencion-regeneracion-bateria.svg" width="960" height="540" alt="Al regenerar, las ruedas arrastran el motor eléctrico, que actúa como generador, y parte de la energía del movimiento se almacena en la batería." loading="lazy" decoding="async" />
+        <figcaption>Esquema de Kilómetro Claro. El flujo representa la recuperación cuando el sistema y la batería la permiten.</figcaption>
+      </figure>
+      <p>Levantar el pie puede dar sensaciones muy distintas según el modelo. En el ID.4 descrito por Volkswagen, el modo D prioriza el avance por inercia en determinadas circunstancias y B aumenta la recuperación al soltar. En el Model 3, Tesla documenta que la regeneración puede reducirse si la batería está fría o muy cargada. Algunos coches también combinan recuperación y freno de fricción al pisar el freno. Usa el pedal del freno cuando necesites reducir más la velocidad y consulta el manual para conocer cómo actúa tu unidad. <a href={sources.id4}>Volkswagen, avance por inercia y recuperación del ID.4</a> y <a href={sources.tesla}>Tesla, límites de la frenada regenerativa</a>.</p>
+
+      <h2 id="bajada">Cómo usar la retención en una bajada prolongada</h2>
+      <p>En un manual de combustión, ajusta la velocidad antes del descenso y selecciona una marcha compatible con ella que ayude a contener la aceleración. Si necesitas más retención, reduce solo cuando la velocidad permita engranar una marcha más corta sin llevar el motor a un régimen excesivo. La retención puede reducir cuánto tiempo necesitas mantener pisado el freno. Los frenos de servicio siguen siendo los que permiten ajustar la velocidad con precisión y detener el coche. Si la pendiente hace que el vehículo gane velocidad, frena según haga falta. Evita bajar en punto muerto. En un automático, híbrido o eléctrico consulta qué posición o modo recomienda el manual para descensos prolongados. <a href={sources.dgt}>DGT, guía de conducción preventiva y eficiente</a>.</p>
+
+      <h2 id="conclusion">Qué observar la próxima vez que sueltes el acelerador</h2>
+      <p>Al acercarte a una glorieta, fíjate en cuánto decelera el coche en una marcha adecuada y en qué momento necesitas el freno. Esa respuesta dice más sobre cómo se comporta tu coche que una lectura aislada de consumo. Si conduces un eléctrico o un híbrido, el indicador de recuperación puede ayudarte a distinguir cuándo el sistema devuelve energía a la batería. Para interpretar el comportamiento en frío, con carga alta o en pendiente, la referencia es el manual de tu versión.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del 3 de noviembre de 2026. Contrastamos el recorrido de la energía y las pérdidas del motor con ensayos de arrastre, las condiciones del corte con documentación técnica y de patente, y los ejemplos de avance por inercia y regeneración con manuales y fichas del fabricante. Usamos las recomendaciones de la DGT y del IDAE para el contexto de conducción en España. Los esquemas son originales y simplifican el flujo de energía. Los umbrales de inyección, la lectura del cuadro y la intensidad de frenado dependen de la versión y sus condiciones de uso.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .retention-figure { margin: 24px 0; }
+  .retention-figure img { display: block; width: 100%; height: auto; border-radius: 9px; }
+  .retention-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+</style>

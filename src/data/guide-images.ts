@@ -14,6 +14,20 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'por-que-tarda-turbo-responder': {
+    src: '/images/guides/turbo-respuesta-portada.svg',
+    alt: 'Ilustración de las dos caracolas de un turbocompresor, una para la turbina de escape y otra para el compresor de admisión',
+    caption: 'Los gases de escape mueven la turbina. Un eje lleva ese giro al compresor de admisión.',
+    author: 'Kilómetro Claro',
+    width: 960, height: 540,
+  },
+  'levantar-pie-acelerador': {
+    src: '/images/guides/retencion-soltar-acelerador.svg',
+    alt: 'Ilustración de un pedal de acelerador y un velocímetro',
+    caption: 'Levantar el pie cambia el esfuerzo que pasa por la transmisión.',
+    author: 'Kilómetro Claro',
+    width: 960, height: 540,
+  },
   'motor-gasolina-diesel-acelerador': {
     src: '/images/guides/gasolina-diesel-acelerador.svg',
     alt: 'Ilustración de un pedal electrónico que envía una señal a la centralita del motor',

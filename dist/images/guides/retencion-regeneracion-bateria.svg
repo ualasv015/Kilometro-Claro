@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" rx="20" fill="#173d34"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#d7f36a"/>
+    </marker>
+  </defs>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="480" y="73" fill="#fff" font-size="43" font-weight="700">Del movimiento a la batería</text>
+    <text x="480" y="123" fill="#dcebe3" font-size="28">Cuando el sistema activa la regeneración</text>
+    <g fill="#28594c">
+      <rect x="42" y="169" width="235" height="240" rx="16"/>
+      <rect x="362" y="169" width="235" height="240" rx="16"/>
+      <rect x="682" y="169" width="235" height="240" rx="16"/>
+    </g>
+    <g fill="none" stroke="#d7f36a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="159" cy="260" r="46"/><circle cx="159" cy="260" r="14"/>
+      <path d="m147 253-22-26m46 26 22-26m-34 48v31"/>
+      <circle cx="480" cy="260" r="46"/><path d="m484 228-21 36h18l-4 28 20-36h-18z"/>
+      <rect x="749" y="228" width="100" height="64" rx="9"/>
+      <path d="M849 250h10v20h-10m-78-21v22m21-22v22m21-22v22"/>
+    </g>
+    <g fill="none" stroke="#d7f36a" stroke-width="5" marker-end="url(#arrow)">
+      <path d="M287 260h65"/><path d="M607 260h65"/>
+    </g>
+    <g fill="#fff" font-size="27" font-weight="700">
+      <text x="159" y="362">Ruedas</text><text x="480" y="362">Generador</text><text x="799" y="362">Batería</text>
+    </g>
+    <text x="480" y="480" fill="#dcebe3" font-size="26">Se recupera una parte de la energía del movimiento</text>
+  </g>
+</svg>

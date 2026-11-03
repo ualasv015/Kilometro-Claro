@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'por-que-tarda-turbo-responder';
+const title = '¿Por qué el turbo tarda en responder al acelerar?';
+const seoTitle = 'Por qué tarda en responder el turbo | Kilómetro Claro';
+const description = 'Descubre cómo funciona un turbocompresor, por qué aparece el turbo lag y cómo distinguir el retraso normal de una marcha larga o un posible fallo.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-03';
+const sources = {
+  garrett: 'https://www.garrettmotion.com/turbocharger-technology/',
+  lag: 'https://www.garrettmotion.com/knowledge-center-category/turbo-replacement/turbo-lag-causes-effects-and-solutions/',
+  pedal: 'https://www.bosch-mobility.com/en/solutions/air-management/accelerator-pedal-module/',
+  ecu: 'https://www.bosch-mobility.com/en/solutions/control-units/engine-control-unit/',
+  sae: 'https://saemobilus.sae.org/papers/compressed-air-engine-exhaust-manifold-improve-engine-performance-fuel-economy-2019-26-0043',
+  boosting: 'https://www.borgwarner.com/technologies/boosting-technologies',
+  twinScroll: 'https://www.borgwarner.com/docs/default-source/iam/boosting-technologies/efr_technical_training_book.pdf?sfvrsn=dd98b63c_21',
+  electric: 'https://www.borgwarner.com/technologies/electric-boosting-technologies',
+  diesel: 'https://www.bosch-mobility.com/en/solutions/powertrain/diesel/common-rail-system-piezo/',
+  diagnostics: 'https://www.garrettmotion.com/turbo-replacement/turbo-diagnostics/',
+  ford: 'https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G2297191&Uid=G2276104&buildtype=web&countryCode=ESP&div=f&languageCode=es&moidRef=G539547&userMarket=USA&vFilteringEnabled=False&variantid=11201',
+};
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate,
+  dateModified: publishedDate,
+  inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Respuesta del turbo' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 3 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Pisas el acelerador en el carril de incorporación y el coche empieza a ganar velocidad. Un momento después notas más empuje. Entre esos dos instantes han cambiado el flujo de escape, el giro del turbo y el aire que recibe el motor.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>El turbo puede tardar en responder porque su turbina aprovecha la energía de los gases de escape. Al pedir más empuje, el conjunto necesita ganar velocidad para que el compresor aumente la presión del aire. Ese retraso se llama <em>turbo lag</em>. Una marcha larga, una reducción del cambio automático o la gestión del motor también pueden retrasar el empuje que notas.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#funcionamiento">Qué hace un turbocompresor</a></li>
+          <li><a href="#acelerar">Del pedal a la presión del turbo</a></li>
+          <li><a href="#turbo-lag">Qué es el turbo lag</a></li>
+          <li><a href="#marchas">Por qué importa la marcha</a></li>
+          <li><a href="#tecnologias">Cómo se mejora la respuesta</a></li>
+          <li><a href="#gasolina-diesel">Qué cambia entre gasolina y diésel</a></li>
+          <li><a href="#problemas">Cuándo conviene revisar el coche</a></li>
+          <li><a href="#mantenimiento">Cómo cuidar el turbo</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="funcionamiento">Qué es un turbocompresor y para qué sirve</h2>
+      <p>Un turbocompresor aprovecha parte de la energía de los gases que salen del motor. Los gases pasan por una <strong>turbina</strong> y la hacen girar. La turbina comparte un eje con el <strong>compresor</strong>, que aspira aire exterior filtrado y lo comprime. Los gases de escape y el aire fresco siguen conductos separados. Lo que pasa de un lado al otro a través del eje es el giro.</p>
+      <figure class="turbo-figure">
+        <img src="/images/guides/turbo-flujo-escape-admision.svg" width="960" height="540" alt="Los gases van del motor a la turbina y salen hacia el escape. En un circuito separado, el aire va del filtro al compresor, pasa por el intercooler si lo hay y llega al motor. El eje une turbina y compresor." loading="lazy" decoding="async" />
+        <figcaption>Esquema de Kilómetro Claro. El eje transmite el giro entre dos circuitos de gases separados.</figcaption>
+      </figure>
+      <p>Comprimir el aire también lo calienta. Muchos motores usan un <em>intercooler</em> para enfriarlo antes de que llegue a los cilindros. Con aire más denso, en el mismo cilindro puede entrar una mayor masa de aire y, con ella, más oxígeno. Cuando el motor lo permite, la centralita puede dosificar más combustible y obtener más par de la combustión. El turbo ayuda a preparar esa combustión. El par que llega a las ruedas sigue saliendo del cigüeñal y pasando por la transmisión. <a href={sources.garrett}>Garrett, funcionamiento del turbocompresor</a>.</p>
+
+      <h2 id="acelerar">Qué ocurre cuando pisas el acelerador</h2>
+      <p>En un coche moderno con pedal electrónico, un sensor informa a la centralita de cuánto has pisado. Esta interpreta la señal como una petición de par, es decir, de más fuerza de giro. Según el motor y las condiciones, coordina la entrada de aire, la inyección, el encendido y el control de la sobrealimentación. La posición del pedal por sí sola no determina la presión del turbo. <a href={sources.pedal}>Bosch, módulo del pedal</a> y <a href={sources.ecu}>Bosch, gestión del par motor</a>.</p>
+      <p>Al aumentar la carga, los gases de escape pueden aportar más energía a la turbina. Si esa energía basta para vencer las pérdidas y el trabajo del compresor, el eje acelera y puede subir la presión de admisión. A medida que hay más aire disponible, el motor puede entregar más par. Estos cambios se solapan: puedes notar que el coche empieza a acelerar antes de alcanzar la presión que pide la centralita. Y el turbo puede estar girando desde antes de que pises, aunque en ese momento aporte poca presión. <a href={sources.lag}>Garrett, causas del retraso de respuesta</a>.</p>
+
+      <h2 id="turbo-lag">Qué es el turbo lag y por qué aparece</h2>
+      <p>El <strong>turbo lag</strong> es el retraso transitorio asociado a que el sistema de sobrealimentación alcance la respuesta que se le pide. La turbina, el eje y el compresor tienen inercia y necesitan tiempo para ganar velocidad. También debe aumentar la presión en los conductos de admisión. La energía que llega a la turbina, el tamaño y diseño de las piezas y la forma en que la centralita controla el conjunto cambian cuánto se nota ese retraso. <a href={sources.lag}>Garrett, inercia y diseño del turbo</a>.</p>
+      <figure class="turbo-figure">
+        <img src="/images/guides/turbo-respuesta-presion.svg" width="960" height="540" alt="Gráfico conceptual: la presión solicitada sube cuando el conductor pide más empuje. La presión efectiva aumenta de forma progresiva a medida que responde el turbo." loading="lazy" decoding="async" />
+        <figcaption>Esquema de Kilómetro Claro. Muestra una posible subida de presión; no representa mediciones ni fija tiempos de respuesta.</figcaption>
+      </figure>
+      <p>A un régimen muy bajo puede darse otra situación: el escape aporta tan poca energía que el sistema apenas puede generar la presión que necesitas mientras el motor siga en ese punto. Si el empuje solo llega cuando suben las revoluciones, parte de la espera se debe a alcanzar unas condiciones en las que el turbo pueda trabajar con más presión. La carga también importa. Por eso no hay una cifra universal de revoluciones a la que el turbo «entre». <a href={sources.sae}>SAE International, estudio que distingue el retraso del umbral de sobrealimentación</a>.</p>
+
+      <h2 id="marchas">Por qué la marcha y las revoluciones cambian la respuesta</h2>
+      <p>Imagina una incorporación a la autovía. En una marcha larga a pocas revoluciones, puedes pedir bastante empuje y notar que el coche gana velocidad con calma. Una marcha más corta, adecuada para esa velocidad, eleva el régimen y multiplica más el par que llega a las ruedas. Puede ayudarte a tener más margen para incorporarte. Parte de la mejora viene de la transmisión y parte puede venir de cómo cambia el funcionamiento del motor y del turbo.</p>
+      <p>También importa lo que estabas haciendo antes. A las mismas revoluciones, el turbo puede venir de trabajar con poca carga en llano o de entregar presión durante una subida. En el segundo caso puede estar girando más rápido y quedar menos presión por ganar. Tras <a href="/guias/levantar-pie-acelerador/">levantar el pie del acelerador</a>, las condiciones cambian otra vez. Y en un automático, si la caja decide reducir al pisar a fondo, la selección de la marcha añade su propio tiempo. La lógica de cambio y los modos de conducción varían entre los <a href="/guias/tipos-cambio-automatico/">distintos tipos de cambio automático</a>.</p>
+
+      <h2 id="tecnologias">Cómo reducen los fabricantes el retraso</h2>
+      <ul>
+        <li><strong>Geometría variable.</strong> Unas aletas ajustan el paso de los gases hacia la turbina. Con poco caudal pueden estrechar ese paso para aprovechar mejor la energía disponible. Con más caudal pueden abrirlo para dejar pasar los gases y regular el trabajo de la turbina. <a href={sources.boosting}>BorgWarner, turbinas de geometría variable</a>.</li>
+        <li><strong>Twin-scroll.</strong> Los gases de distintos grupos de cilindros llegan por dos conductos separados a una sola turbina. Así se reduce la interferencia entre los pulsos de escape y se puede aprovechar mejor su energía. Sigue siendo un solo turbo. <a href={sources.twinScroll}>BorgWarner, manual técnico EFR</a>.</li>
+        <li><strong>Dos turbos.</strong> Pueden trabajar en paralelo o repartirse el trabajo por etapas. En un sistema de dos etapas, un turbo pequeño puede aportar presión a bajo régimen y el mayor ayudar cuando sube el caudal. La estrategia depende de cómo estén conectados y controlados. <a href={sources.boosting}>BorgWarner, sobrealimentación de dos etapas</a> y <a href={sources.sae}>SAE International, configuraciones múltiples</a>.</li>
+        <li><strong>Asistencia eléctrica.</strong> Un motor eléctrico puede acelerar el eje de un turbo o mover un compresor independiente que aporte aire mientras el turbo de escape gana velocidad. Un compresor mecánico convencional, en cambio, toma su movimiento del motor de combustión. <a href={sources.electric}>BorgWarner, turbo asistido y compresor eléctrico</a>.</li>
+      </ul>
+      <p>Estas soluciones pueden adelantar la subida de presión, cada una de una manera distinta. La respuesta que llega a las ruedas sigue dependiendo del motor, su calibración y la transmisión.</p>
+
+      <h2 id="gasolina-diesel">¿Responde igual un turbo de gasolina que uno diésel?</h2>
+      <p>El principio del turbo es el mismo en los dos. En muchos gasolina, la gestión coordina la apertura de la mariposa, la cantidad de combustible y el momento de la chispa. En un diésel moderno, la centralita ajusta cuánto combustible inyecta y cuándo, y coordina esa dosis con el aire disponible. Ambas estrategias influyen en la energía del escape que llega a la turbina. La geometría variable, habitual en diésel, también se usa en algunos gasolina. Para entender qué sentirás al acelerar, interesa conocer el diseño y la puesta a punto del motor concreto. <a href={sources.ecu}>Bosch, gestión del motor</a>, <a href={sources.diesel}>Bosch, inyección diésel</a> y <a href={sources.boosting}>BorgWarner, aplicaciones de la geometría variable</a>. La <a href="/guias/motor-gasolina-diesel-acelerador/">guía del acelerador en gasolina y diésel</a> desarrolla cómo se regula el par en cada caso.</p>
+
+      <h2 id="problemas">Cuándo una respuesta lenta merece una revisión</h2>
+      <p>Una respuesta progresiva al pedir mucho par tras circular a poca carga puede ser normal. La pista más útil es un <strong>cambio respecto al comportamiento habitual</strong> de tu coche en condiciones parecidas. Si antes empujaba con normalidad y ahora pierde potencia de forma persistente, aparece un testigo, se oye un ruido nuevo o hay humo anormal o un aumento del consumo de aceite, conviene revisarlo.</p>
+      <p>Esos síntomas tienen varias causas posibles. Una fuga en un manguito de aire o en el intercooler puede impedir que llegue al motor la presión esperada. También pueden intervenir problemas de admisión, inyección o escape. Describe al taller cuándo ocurre y qué otros síntomas has observado. Esa información ayuda a orientar las comprobaciones antes de atribuir el fallo al turbo. <a href={sources.diagnostics}>Garrett, guía de diagnóstico antes de sustituir un turbo</a>.</p>
+
+      <h2 id="mantenimiento">Cómo cuidar un motor turbo</h2>
+      <p>El eje del turbo gira sobre apoyos que necesitan lubricación. Utiliza el aceite con la viscosidad y la homologación que pide el fabricante y respeta el plan de sustitución del aceite y del filtro. Seguir esas especificaciones importa porque el aceite también protege y ayuda a refrigerar el conjunto. <a href={sources.diagnostics}>Garrett, lubricación y causas de daño</a>.</p>
+      <p>Para saber cómo apagar el motor tras un uso exigente, consulta el manual de tu versión. Como ejemplo, el manual del Ford Territory consultado indica soltar el acelerador y dejar que el motor baje al ralentí antes de apagarlo. La recomendación aplicable depende del diseño y del uso. <a href={sources.ford}>Ford, indicación de apagado para el Territory</a>.</p>
+
+      <h2 id="conclusion">Qué recordar cuando el empuje tarda en llegar</h2>
+      <p>Al acelerar, pides más par y el turbo aprovecha la energía del escape para comprimir más aire. El salto entre esa petición y la presión disponible lleva tiempo. Si en una incorporación el coche tarda en ganar velocidad, piensa primero en la marcha y en cómo venía trabajando el motor. Si ha cambiado su respuesta habitual o aparecen otros síntomas, hay motivos para que lo revise un taller.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del 3 de noviembre de 2026. Contrastamos los recorridos del aire y el escape y las causas del retraso con Garrett y el resumen público de un estudio de SAE International. Usamos documentación de Bosch para el pedal y la gestión del motor, de BorgWarner para las soluciones de sobrealimentación y de Garrett y Ford para diagnóstico y mantenimiento. Los esquemas son originales de Kilómetro Claro. La incorporación descrita es hipotética. Las fuentes no dan un tiempo, una presión ni un régimen de respuesta aplicables a todos los coches.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .turbo-figure { margin: 24px 0; }
+  .turbo-figure img { display: block; width: 100%; height: auto; border-radius: 9px; }
+  .turbo-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+</style>
