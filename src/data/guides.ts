@@ -1,5 +1,13 @@
 export const guides = [
   {
+    slug: 'motor-gasolina-diesel-acelerador',
+    title: 'Motor gasolina y diésel: ¿qué ocurre cuando pisas el acelerador?',
+    category: 'Uso y mantenimiento',
+    categorySlug: 'uso-mantenimiento',
+    description: 'Qué cambia al acelerar en un gasolina y en un diésel, desde la admisión y el encendido hasta el par, el consumo y las emisiones.',
+    published: true,
+  },
+  {
     slug: 'volkswagen-id-polo-gti-electrico',
     title: 'Volkswagen ID. Polo GTI: ¿conserva el espíritu de un deportivo pequeño?',
     category: 'Comparar coches', categorySlug: 'comparar-coches',

@@ -1,4 +1,5 @@
 export const relatedGuideSlugs: Record<string, string[]> = {
+  'motor-gasolina-diesel-acelerador': ['como-calcular-consumo-real-coche', 'tipos-cambio-automatico', 'consumo-coche-electrico-gasolina-diesel'],
   'volkswagen-id-polo-gti-electrico': ['consumo-coche-electrico-gasolina-diesel', 'tipos-traccion-coche', 'que-coche-comprar-segun-presupuesto'],
   'jas-tensei-honda-nsx-vtec': ['toyota-gr-gt', 'tipos-traccion-coche', 'porsche-mission-s-2026'],
   'toyota-gr-gt': ['jas-tensei-honda-nsx-vtec', 'mazda-mx-5-nd-futuro-ne', 'porsche-mission-s-2026'],

@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'motor-gasolina-diesel-acelerador';
+const title = 'Motor gasolina y diésel: ¿qué ocurre cuando pisas el acelerador?';
+const seoTitle = 'Motor gasolina y diésel al acelerar | Kilómetro Claro';
+const description = 'Descubre qué cambia al pisar el acelerador en un motor de gasolina y en un diésel, desde el aire y la inyección hasta el par, el consumo y las emisiones.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-03';
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate,
+  dateModified: publishedDate,
+  inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Gasolina y diésel al acelerar' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 3 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">La misma pisada puede provocar dos respuestas distintas bajo el capó. Sigue el recorrido desde la señal del pedal hasta el empuje que llega a las ruedas.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>Al pisar el acelerador pides más par. En un gasolina convencional, la centralita suele aumentar la cantidad de aire que entra y ajustar el combustible. Una bujía inicia la combustión con una chispa. En un diésel, la centralita regula el par principalmente dosificando el gasóleo y ajustando cuándo lo inyecta. El combustible se enciende al entrar en contacto con aire calentado por la compresión. En ambos motores se coordinan aire y combustible.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#pedal">Del pedal al motor</a></li>
+          <li><a href="#admision">Admisión, mariposa y turbo</a></li>
+          <li><a href="#encendido">Chispa, compresión e inyección</a></li>
+          <li><a href="#par">Par, potencia y revoluciones</a></li>
+          <li><a href="#consumo">Consumo, mantenimiento y emisiones</a></li>
+          <li><a href="#uso">Qué motor encaja con tu uso</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="pedal">Qué pasa cuando pisas el acelerador</h2>
+      <p>Imagina que sales de una glorieta y entras en el carril de aceleración de una autovía. Al principio mantienes un ritmo suave. Después pisas más para ganar velocidad antes de incorporarte. Ese cambio de posición del pedal es una señal que la unidad de control del motor, o centralita, interpreta como una petición de más par. En un coche moderno con pedal electrónico, el recorrido del pedal no equivale a una apertura fija de la mariposa ni a una cantidad fija de combustible. La centralita tiene en cuenta el régimen del motor y puede limitar la respuesta si interviene el control de tracción. <a href="https://www.bosch-mobility.com/en/solutions/air-management/accelerator-pedal-module/">Bosch, módulo del acelerador</a> y <a href="https://www.bosch-mobility.com/en/solutions/control-units/engine-control-unit/">unidad de control del motor</a>.</p>
+      <p><strong>En un gasolina convencional</strong>, si la situación lo permite, la centralita abre más la mariposa para aumentar la masa de aire que entra en los cilindros. Los inyectores ajustan la cantidad de gasolina a ese aire y a las condiciones de funcionamiento. La centralita también decide cuándo salta la chispa. Al quemarse más mezcla por ciclo, los gases ejercen más presión sobre los pistones y aumenta el par disponible. Es una secuencia simplificada. Los ajustes de aire, inyección y chispa se coordinan durante la maniobra. <a href="https://www.bosch-mobility.com/en/solutions/air-management/">Bosch, gestión del aire</a> y <a href="https://www.bosch-mobility.com/en/solutions/powertrain/gasoline/gasoline-direct-injection/">gestión de un gasolina de inyección directa</a>.</p>
+      <p><strong>En un diésel convencional</strong>, el motor suele trabajar con aire de sobra respecto al gasóleo que quema, sobre todo a carga parcial. Al pedir más par, la centralita puede aumentar el combustible por ciclo y ajustar el momento de inyección. La dosis posible depende del oxígeno disponible y de los límites del motor. En un diésel turbo, la gestión también puede pedir más presión de sobrealimentación. Si el aire adicional tarda en llegar, la inyección se ajusta a lo que el motor puede quemar en ese momento. Un sistema <em>common rail</em> mantiene el combustible a presión en un conducto común y permite dosificar cuándo y cuánto inyecta cada cilindro. <a href="https://www.bosch-mobility.com/en/solutions/powertrain/diesel/common-rail-system-solenoid/">Bosch, inyección common rail</a>.</p>
+
+      <figure class="mechanics-figure">
+        <img src="/images/guides/gasolina-diesel-control-carga.svg" width="960" height="640" alt="La centralita recibe la petición de par. En gasolina suele regular el aire y ajustar combustible y chispa. En diésel dosifica la inyección y coordina el aire disponible." loading="lazy" decoding="async" />
+        <figcaption>Esquema de Kilómetro Claro. La secuencia resume el control habitual de la carga en ambos motores.</figcaption>
+      </figure>
+
+      <h2 id="admision">Cómo entra el aire y qué papel tienen la mariposa y el turbo</h2>
+      <p>La mariposa de admisión es una placa que gira dentro del conducto por donde entra aire. En un gasolina convencional, cuando pides poco par, deja un paso más estrecho. Al abrirse, reduce la restricción y permite llenar mejor los cilindros. También se puede controlar el llenado variando cuánto se abren las válvulas de admisión. Es el principio que BMW documenta para <a href="https://www.press.bmwgroup.com/usa/article/attachment/T0017829EN_US/35298">Valvetronic</a>. El objetivo sigue siendo ajustar el aire atrapado en cada cilindro, aunque cambie la pieza que hace el trabajo.</p>
+      <p>Un diésel puede llevar una mariposa de aspecto parecido. En los diseños descritos por Pierburg, ayuda a crear la diferencia de presión necesaria para recircular gases de escape mediante la EGR y puede cerrar al apagar el motor para suavizar la parada. El régimen, el turbo y la EGR modifican la carga de aire fresco y el oxígeno disponible. Por eso dos aceleraciones a las mismas revoluciones pueden tener respuestas distintas si el turbo parte de presiones diferentes. <a href="https://www.ms-motorservice.com/int/en/technipedia/regulating-throttle-failure-749">Pierburg, funciones de la mariposa reguladora</a>.</p>
+      <p>El turbo puede estar presente en ambos combustibles. Los gases de escape mueven una turbina unida por un eje a un compresor. El compresor aumenta la densidad del aire de admisión y, en muchos sistemas, un intercooler lo enfría antes de llegar al motor. Así puede entrar más masa de aire en un cilindro del mismo tamaño y se puede quemar más combustible cuando se pide carga. La presión de admisión puede tardar en subir cuando pisas el pedal. La respuesta depende del régimen, la carga previa y de cómo se controle el turbo. <a href="https://www.garrettmotion.com/turbocharger-technology/">Garrett, funcionamiento del turbo</a>.</p>
+
+      <h2 id="encendido">Cómo se enciende el combustible y dónde se inyecta</h2>
+      <p>En el ciclo de cuatro tiempos, el pistón baja durante la admisión, sube para comprimir el contenido del cilindro, vuelve a bajar durante la expansión y sube para expulsar los gases quemados. En un gasolina de encendido por chispa, la bujía inicia un frente de llama en la mezcla cerca del final de la compresión. En un diésel convencional se comprime primero el aire, con una relación de compresión habitualmente mayor. La relación de compresión compara el volumen del cilindro con el pistón abajo y arriba. Al reducirse ese volumen, el aire se calienta y el gasóleo se autoenciende tras ser pulverizado en él cerca del final de la compresión. Los calentadores, cuando se equipan, aportan calor para facilitar el arranque en frío y pueden seguir ayudando durante el calentamiento. Su función es térmica. <a href="https://www.energy.gov/cmei/vehicles/articles/internal-combustion-engine-basics">Departamento de Energía de EE. UU., ciclo y encendido</a> y <a href="https://www.bosch-mobility.com/en/solutions/glow/">Bosch, calentadores</a>.</p>
+      <p>El tipo de inyección responde a otra pregunta: ¿dónde se introduce el combustible? En la <strong>inyección indirecta de gasolina</strong> se pulveriza en el conducto de admisión, antes de la válvula. En la <strong>directa de gasolina</strong> se pulveriza dentro de la cámara y se mezcla allí con el aire. Hay motores de gasolina que combinan ambos sistemas. En un diésel moderno de inyección directa el gasóleo también entra en la cámara principal, mientras que algunos diésel antiguos usaban una precámara para iniciar la combustión. La ubicación del inyector y el modo de encendido son dos características distintas. <a href="https://www.bosch-mobility.com/en/solutions/powertrain/gasoline/gasoline-direct-injection/">Bosch, inyección directa y combinada</a> y <a href="https://afdc.energy.gov/vehicles/how-do-diesel-cars-work">AFDC, funcionamiento del diésel</a>.</p>
+
+      <h2 id="par">Par, potencia y revoluciones al incorporarte</h2>
+      <p>El <strong>par</strong>, en Nm, mide cuánto esfuerzo de giro entrega el motor en el cigüeñal. Las <strong>revoluciones</strong>, en rpm, indican cuántas vueltas da ese eje por minuto. La <strong>potencia</strong>, en kW o CV, mide el ritmo al que el motor realiza trabajo. Para calcularla en kW, multiplica el par en Nm por las rpm y divide aproximadamente entre 9.550. Si un motor hipotético mantiene 200 Nm, entrega cerca de 42 kW a 2.000 rpm y 84 kW a 4.000 rpm. El ejemplo aísla el efecto del régimen. En un motor real el par cambia a medida que suben las revoluciones.</p>
+      <figure class="mechanics-figure">
+        <img src="/images/guides/gasolina-diesel-par-potencia.svg" width="960" height="480" alt="Ejemplo hipotético con 200 Nm constantes: a 2.000 rpm se obtienen unos 42 kW y a 4.000 rpm unos 84 kW." loading="lazy" decoding="async" />
+        <figcaption>Gráfico de Kilómetro Claro con valores hipotéticos. Las barras representan potencia, con el mismo par en los dos casos.</figcaption>
+      </figure>
+      <p>Muchos turbodiésel de turismo concentran su empuje a bajas y medias vueltas. Un gasolina atmosférico puede pedir una reducción para entrar en su zona de mayor potencia, mientras que un gasolina turbo puede ofrecer un par elevado desde abajo. En la incorporación, bajar una marcha hace girar el motor más rápido a la misma velocidad del coche y multiplica más el par en las ruedas. Si eliges dos coches, compara sus curvas, sus relaciones de cambio y su masa. El pico de par del catálogo por sí solo dice poco sobre cuánto tardarán en ganar velocidad en la marcha que llevas. <a href="/guias/tipos-cambio-automatico/">Tipos de cambio automático y cómo transmiten el empuje</a>.</p>
+
+      <h2 id="consumo">Consumo, mantenimiento y emisiones</h2>
+      <p>En condiciones comparables, un diésel puede convertir una mayor fracción de la energía del combustible en trabajo. Contribuyen su relación de compresión y la menor necesidad de estrangular el aire al circular con poca carga, lo que reduce el esfuerzo que hace el motor para aspirarlo. El gasóleo también aporta más energía por litro. En carretera, eso puede traducirse en menos litros cada 100 km. Aun así, influyen el peso, la aerodinámica, el cambio, la velocidad y los arranques en frío. Para comprobar cuánto gasta tu coche, aplica el <a href="/guias/como-calcular-consumo-real-coche/">método de medir el consumo entre repostajes</a>. <a href="https://www1.eere.energy.gov/vehiclesandfuels/pdfs/diesel_technical_primer.pdf">Departamento de Energía, eficiencia del diésel</a> y <a href="https://afdc.energy.gov/fuels/properties">AFDC, energía por volumen de combustible</a>.</p>
+      <p>El CO₂ contribuye al calentamiento global y depende de cuánto combustible quemas y de su contenido en carbono. Si quieres comparar el impacto de dos versiones en el escape, mira sus gramos de CO₂ por kilómetro además de sus litros por cada 100 km. Los NOx y las partículas afectan a la calidad del aire y exigen medidas distintas. La EGR reduce la formación de NOx al bajar la temperatura de combustión en determinadas condiciones. El filtro retiene partículas y la reducción catalítica selectiva (SCR), si se equipa, utiliza una disolución de urea para reducir los NOx en el escape. También existen filtros de partículas en motores de gasolina. <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-rating">EPA, CO₂ según combustible y consumo</a>, <a href="https://afdc.energy.gov/vehicles/how-do-diesel-cars-work">AFDC, tratamiento del escape diésel</a> y <a href="https://www.bosch-mobility.com/en/solutions/powertrain/gasoline/">Bosch, filtración en gasolina</a>.</p>
+      <p>Para valorar el mantenimiento, consulta el plan de la versión concreta. Un gasolina de chispa puede requerir sustitución periódica de bujías. En un diésel con SCR habrá que reponer AdBlue y, si equipa filtro de partículas, conviene conocer las indicaciones del fabricante sobre regeneración. El filtro necesita condiciones adecuadas para quemar el hollín acumulado. Encadenar recorridos cortos en frío puede dificultarlo. <a href="https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G2134155&amp;Uid=G2244848&amp;buildtype=web&amp;countryCode=USA&amp;div=f&amp;languageCode=en&amp;moidRef=G2129701&amp;userMarket=CAN&amp;vFilteringEnabled=False&amp;variantid=9839">Ford, ejemplo de indicaciones sobre regeneración</a>. En un usado, comprueba el historial de revisiones y que los sistemas de emisiones funcionen correctamente.</p>
+
+      <h2 id="uso">Qué motor puede encajar mejor con tu uso</h2>
+      <ul>
+        <li><strong>Trayectos urbanos cortos.</strong> Si el motor apenas se calienta entre arranques, compara el consumo en frío y las exigencias del sistema de emisiones. Un gasolina puede ser un buen punto de partida si haces poco recorrido y buscas un coche de combustión.</li>
+        <li><strong>Viajes frecuentes por carretera.</strong> Un diésel puede aprovechar su eficiencia en crucero. Compara versiones de tamaño y potencia similares y prueba cómo recuperan velocidad con la carga habitual.</li>
+        <li><strong>Pocos kilómetros al año.</strong> El gasto de combustible pesa menos en la cuenta total. Valora el precio de compra, el mantenimiento y el estado de cada unidad. Puedes introducir tus consumos y precios en la <a href="/calculadoras/coste-por-kilometro/">calculadora de coste por kilómetro</a> y revisar cómo se reparte el <a href="/guias/cuanto-cuesta-mantener-coche-mes-espana/">coste de mantener un coche</a>.</li>
+      </ul>
+
+      <h2 id="conclusion">Qué recordar al pisar el acelerador</h2>
+      <p>En un gasolina convencional, la centralita suele partir de cuánto aire admite y ajusta la gasolina y la chispa para dar el par pedido. En un diésel, el mando principal es la dosis de gasóleo y su momento de inyección, coordinados con el aire disponible para la combustión por compresión. Si estás comparando coches, prueba los dos en una incorporación y en una pendiente. Fíjate en cuánto tardan en responder y qué marcha necesitan. Eso conecta el funcionamiento del motor con lo que tú notas al volante.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta realizada el 3 de noviembre de 2026. Se contrastó documentación del Departamento de Energía de EE. UU., Bosch, Pierburg, BMW, Garrett y la EPA, enlazada junto a las explicaciones correspondientes. La guía describe motores convencionales y distingue las variantes citadas. Los diagramas son originales. El cálculo de potencia usa valores hipotéticos y la guía no asigna consumos, averías ni costes de mantenimiento a versiones concretas.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .mechanics-figure { margin: 24px 0; }
+  .mechanics-figure img { display: block; width: 100%; height: auto; border-radius: 9px; }
+  .mechanics-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+</style>

@@ -14,6 +14,13 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'motor-gasolina-diesel-acelerador': {
+    src: '/images/guides/gasolina-diesel-acelerador.svg',
+    alt: 'Ilustración de un pedal electrónico que envía una señal a la centralita del motor',
+    caption: 'El pedal electrónico envía una señal a la unidad de control del motor (ECU).',
+    author: 'Kilómetro Claro',
+    width: 960, height: 540,
+  },
   'volkswagen-id-polo-gti-electrico': {
     src: '/images/guides/id-polo-gti-frontal.jpg', alt: 'Volkswagen ID. Polo GTI rojo visto de frente y de lado',
     caption: 'ID. Polo GTI presentado por Volkswagen en octubre de 2026.', author: 'Volkswagen AG', sourceName: 'Volkswagen Newsroom',
