@@ -1,0 +1,25 @@
+{
+  "id": "video-023",
+  "title": "CVT y e-CVT: suenan igual, pero son distintas",
+  "durationSeconds": 32.24,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/tipos-cambio-automatico/",
+  "requiresHumanReview": true,
+  "audioFile": "audio/voice-video-023.wav",
+  "imageCredits": ["Sin fotografías: todas las escenas son animaciones ilustrativas propias de Kilómetro Claro."],
+  "captions": [
+    {"startSeconds": 0.0, "endSeconds": 3.06, "text": "CVT y e-CVT suenan casi igual."},
+    {"startSeconds": 3.26, "endSeconds": 4.96, "text": "Pero eso no significa que funcionen igual."},
+    {"startSeconds": 5.9, "endSeconds": 8.72, "text": "Una CVT convencional suele variar la relación de transmisión"},
+    {"startSeconds": 8.72, "endSeconds": 10.44, "text": "usando poleas y una correa o cadena."},
+    {"startSeconds": 11.04, "endSeconds": 13.1, "text": "Así puede acelerar sin pasar por marchas fijas"},
+    {"startSeconds": 13.18, "endSeconds": 14.08, "text": "como una caja tradicional."},
+    {"startSeconds": 14.98, "endSeconds": 17.24, "text": "En cambio, la e-CVT de los híbridos Toyota"},
+    {"startSeconds": 17.24, "endSeconds": 19.28, "text": "usa un conjunto de engranajes planetarios"},
+    {"startSeconds": 19.28, "endSeconds": 21.3, "text": "para repartir la potencia entre sus motores."},
+    {"startSeconds": 22.24, "endSeconds": 25.14, "text": "Al volante, ambas pueden dar una sensación de aceleración continua,"},
+    {"startSeconds": 25.2, "endSeconds": 27.46, "text": "pero por dentro utilizan soluciones diferentes."},
+    {"startSeconds": 28.14, "endSeconds": 28.9, "text": "¿Con cuál te quedarías?"},
+    {"startSeconds": 29.44, "endSeconds": 32.06, "text": "Busca la guía de cambios automáticos en kilometroclaro.com."}
+  ]
+}

@@ -1,0 +1,641 @@
+{
+  "id": "video-024",
+  "title": "Pisar el acelerador no echa más gasolina",
+  "durationSeconds": 41.0,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/motor-gasolina-diesel-acelerador/",
+  "requiresHumanReview": true,
+  "audioFile": "audio/voice-video-024.wav",
+  "imageCredits": [
+    "Sin fotografías: todo el reel es una animación ilustrativa propia de Kilómetro Claro (esquema simplificado de motores convencionales)."
+  ],
+  "captions": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 2.9,
+      "text": "Pisar el acelerador no le echa más gasolina al motor.",
+      "words": [
+        {
+          "text": "Pisar",
+          "start": 0.0
+        },
+        {
+          "text": "el",
+          "start": 0.56
+        },
+        {
+          "text": "acelerador",
+          "start": 0.74
+        },
+        {
+          "text": "no",
+          "start": 1.22
+        },
+        {
+          "text": "le",
+          "start": 1.5
+        },
+        {
+          "text": "echa",
+          "start": 1.66
+        },
+        {
+          "text": "más",
+          "start": 1.88
+        },
+        {
+          "text": "gasolina",
+          "start": 2.06
+        },
+        {
+          "text": "al",
+          "start": 2.42
+        },
+        {
+          "text": "motor.",
+          "start": 2.64
+        }
+      ]
+    },
+    {
+      "startSeconds": 3.36,
+      "endSeconds": 4.7,
+      "text": "Al menos, no directamente.",
+      "words": [
+        {
+          "text": "Al",
+          "start": 3.36
+        },
+        {
+          "text": "menos,",
+          "start": 3.46
+        },
+        {
+          "text": "no",
+          "start": 3.62
+        },
+        {
+          "text": "directamente.",
+          "start": 4.04
+        }
+      ]
+    },
+    {
+      "startSeconds": 5.3,
+      "endSeconds": 7.34,
+      "text": "El pedal envía una señal a la centralita,",
+      "words": [
+        {
+          "text": "El",
+          "start": 5.3
+        },
+        {
+          "text": "pedal",
+          "start": 5.56
+        },
+        {
+          "text": "envía",
+          "start": 5.78
+        },
+        {
+          "text": "una",
+          "start": 6.12
+        },
+        {
+          "text": "señal",
+          "start": 6.3
+        },
+        {
+          "text": "a",
+          "start": 6.64
+        },
+        {
+          "text": "la",
+          "start": 6.7
+        },
+        {
+          "text": "centralita,",
+          "start": 6.76
+        }
+      ]
+    },
+    {
+      "startSeconds": 7.72,
+      "endSeconds": 9.58,
+      "text": "que la interpreta como una petición de más par.",
+      "words": [
+        {
+          "text": "que",
+          "start": 7.72
+        },
+        {
+          "text": "la",
+          "start": 7.8
+        },
+        {
+          "text": "interpreta",
+          "start": 7.88
+        },
+        {
+          "text": "como",
+          "start": 8.3
+        },
+        {
+          "text": "una",
+          "start": 8.48
+        },
+        {
+          "text": "petición",
+          "start": 8.66
+        },
+        {
+          "text": "de",
+          "start": 9.1
+        },
+        {
+          "text": "más",
+          "start": 9.26
+        },
+        {
+          "text": "par.",
+          "start": 9.38
+        }
+      ]
+    },
+    {
+      "startSeconds": 10.38,
+      "endSeconds": 11.8,
+      "text": "En un gasolina, manda el aire:",
+      "words": [
+        {
+          "text": "En",
+          "start": 10.38
+        },
+        {
+          "text": "un",
+          "start": 10.48
+        },
+        {
+          "text": "gasolina,",
+          "start": 10.58
+        },
+        {
+          "text": "manda",
+          "start": 10.84
+        },
+        {
+          "text": "el",
+          "start": 11.4
+        },
+        {
+          "text": "aire:",
+          "start": 11.6
+        }
+      ]
+    },
+    {
+      "startSeconds": 12.2,
+      "endSeconds": 15.84,
+      "text": "la centralita abre más la mariposa, entra más aire en los cilindros,",
+      "words": [
+        {
+          "text": "la",
+          "start": 12.2
+        },
+        {
+          "text": "centralita",
+          "start": 12.3
+        },
+        {
+          "text": "abre",
+          "start": 12.86
+        },
+        {
+          "text": "más",
+          "start": 13.16
+        },
+        {
+          "text": "la",
+          "start": 13.38
+        },
+        {
+          "text": "mariposa,",
+          "start": 13.54
+        },
+        {
+          "text": "entra",
+          "start": 14.28
+        },
+        {
+          "text": "más",
+          "start": 14.46
+        },
+        {
+          "text": "aire",
+          "start": 14.7
+        },
+        {
+          "text": "en",
+          "start": 14.94
+        },
+        {
+          "text": "los",
+          "start": 15.06
+        },
+        {
+          "text": "cilindros,",
+          "start": 15.16
+        }
+      ]
+    },
+    {
+      "startSeconds": 16.08,
+      "endSeconds": 18.2,
+      "text": "los inyectores ajustan la gasolina a ese aire",
+      "words": [
+        {
+          "text": "los",
+          "start": 16.08
+        },
+        {
+          "text": "inyectores",
+          "start": 16.24
+        },
+        {
+          "text": "ajustan",
+          "start": 16.66
+        },
+        {
+          "text": "la",
+          "start": 17.08
+        },
+        {
+          "text": "gasolina",
+          "start": 17.18
+        },
+        {
+          "text": "a",
+          "start": 17.5
+        },
+        {
+          "text": "ese",
+          "start": 17.78
+        },
+        {
+          "text": "aire",
+          "start": 17.92
+        }
+      ]
+    },
+    {
+      "startSeconds": 18.48,
+      "endSeconds": 20.42,
+      "text": "y la bujía enciende la mezcla con una chispa.",
+      "words": [
+        {
+          "text": "y",
+          "start": 18.48
+        },
+        {
+          "text": "la",
+          "start": 18.56
+        },
+        {
+          "text": "bujía",
+          "start": 18.68
+        },
+        {
+          "text": "enciende",
+          "start": 19.0
+        },
+        {
+          "text": "la",
+          "start": 19.42
+        },
+        {
+          "text": "mezcla",
+          "start": 19.5
+        },
+        {
+          "text": "con",
+          "start": 19.74
+        },
+        {
+          "text": "una",
+          "start": 19.92
+        },
+        {
+          "text": "chispa.",
+          "start": 20.1
+        }
+      ]
+    },
+    {
+      "startSeconds": 21.4,
+      "endSeconds": 23.54,
+      "text": "En un diésel, el motor suele trabajar con aire de sobra.",
+      "words": [
+        {
+          "text": "En",
+          "start": 21.4
+        },
+        {
+          "text": "un",
+          "start": 21.5
+        },
+        {
+          "text": "diésel,",
+          "start": 21.62
+        },
+        {
+          "text": "el",
+          "start": 21.74
+        },
+        {
+          "text": "motor",
+          "start": 21.94
+        },
+        {
+          "text": "suele",
+          "start": 22.16
+        },
+        {
+          "text": "trabajar",
+          "start": 22.42
+        },
+        {
+          "text": "con",
+          "start": 22.72
+        },
+        {
+          "text": "aire",
+          "start": 22.96
+        },
+        {
+          "text": "de",
+          "start": 23.1
+        },
+        {
+          "text": "sobra.",
+          "start": 23.26
+        }
+      ]
+    },
+    {
+      "startSeconds": 24.04,
+      "endSeconds": 25.84,
+      "text": "Por eso la centralita inyecta más gasóleo,",
+      "words": [
+        {
+          "text": "Por",
+          "start": 24.04
+        },
+        {
+          "text": "eso",
+          "start": 24.12
+        },
+        {
+          "text": "la",
+          "start": 24.24
+        },
+        {
+          "text": "centralita",
+          "start": 24.34
+        },
+        {
+          "text": "inyecta",
+          "start": 24.82
+        },
+        {
+          "text": "más",
+          "start": 25.18
+        },
+        {
+          "text": "gasóleo,",
+          "start": 25.38
+        }
+      ]
+    },
+    {
+      "startSeconds": 26.04,
+      "endSeconds": 26.8,
+      "text": "que se enciende solo",
+      "words": [
+        {
+          "text": "que",
+          "start": 26.04
+        },
+        {
+          "text": "se",
+          "start": 26.14
+        },
+        {
+          "text": "enciende",
+          "start": 26.22
+        },
+        {
+          "text": "solo",
+          "start": 26.48
+        }
+      ]
+    },
+    {
+      "startSeconds": 26.8,
+      "endSeconds": 28.96,
+      "text": "al pulverizarse en el aire caliente por la compresión.",
+      "words": [
+        {
+          "text": "al",
+          "start": 26.8
+        },
+        {
+          "text": "pulverizarse",
+          "start": 26.84
+        },
+        {
+          "text": "en",
+          "start": 27.46
+        },
+        {
+          "text": "el",
+          "start": 27.56
+        },
+        {
+          "text": "aire",
+          "start": 27.68
+        },
+        {
+          "text": "caliente",
+          "start": 27.8
+        },
+        {
+          "text": "por",
+          "start": 28.18
+        },
+        {
+          "text": "la",
+          "start": 28.42
+        },
+        {
+          "text": "compresión.",
+          "start": 28.54
+        }
+      ]
+    },
+    {
+      "startSeconds": 29.16,
+      "endSeconds": 30.26,
+      "text": "Y si hay turbo,",
+      "words": [
+        {
+          "text": "Y",
+          "start": 29.16
+        },
+        {
+          "text": "si",
+          "start": 29.66
+        },
+        {
+          "text": "hay",
+          "start": 29.8
+        },
+        {
+          "text": "turbo,",
+          "start": 29.9
+        }
+      ]
+    },
+    {
+      "startSeconds": 30.46,
+      "endSeconds": 32.42,
+      "text": "el aire extra puede tardar un instante en llegar.",
+      "words": [
+        {
+          "text": "el",
+          "start": 30.46
+        },
+        {
+          "text": "aire",
+          "start": 30.6
+        },
+        {
+          "text": "extra",
+          "start": 30.74
+        },
+        {
+          "text": "puede",
+          "start": 31.0
+        },
+        {
+          "text": "tardar",
+          "start": 31.26
+        },
+        {
+          "text": "un",
+          "start": 31.66
+        },
+        {
+          "text": "instante",
+          "start": 31.74
+        },
+        {
+          "text": "en",
+          "start": 32.06
+        },
+        {
+          "text": "llegar.",
+          "start": 32.22
+        }
+      ]
+    },
+    {
+      "startSeconds": 33.48,
+      "endSeconds": 35.8,
+      "text": "Misma pisada, dos respuestas distintas.",
+      "words": [
+        {
+          "text": "Misma",
+          "start": 33.48
+        },
+        {
+          "text": "pisada,",
+          "start": 33.74
+        },
+        {
+          "text": "dos",
+          "start": 34.48
+        },
+        {
+          "text": "respuestas",
+          "start": 34.68
+        },
+        {
+          "text": "distintas.",
+          "start": 35.22
+        }
+      ]
+    },
+    {
+      "startSeconds": 36.42,
+      "endSeconds": 36.9,
+      "text": "¿Lo sabías?",
+      "words": [
+        {
+          "text": "¿Lo",
+          "start": 36.42
+        },
+        {
+          "text": "sabías?",
+          "start": 36.55
+        }
+      ]
+    },
+    {
+      "startSeconds": 37.46,
+      "endSeconds": 40.7,
+      "text": "Busca la guía de motores gasolina y diésel en kilometroclaro.com.",
+      "words": [
+        {
+          "text": "Busca",
+          "start": 37.46
+        },
+        {
+          "text": "la",
+          "start": 37.68
+        },
+        {
+          "text": "guía",
+          "start": 37.8
+        },
+        {
+          "text": "de",
+          "start": 37.96
+        },
+        {
+          "text": "motores",
+          "start": 38.06
+        },
+        {
+          "text": "gasolina",
+          "start": 38.32
+        },
+        {
+          "text": "y",
+          "start": 38.72
+        },
+        {
+          "text": "diésel",
+          "start": 38.9
+        },
+        {
+          "text": "en",
+          "start": 39.22
+        },
+        {
+          "text": "kilometroclaro.com.",
+          "start": 39.34
+        }
+      ]
+    }
+  ]
+}

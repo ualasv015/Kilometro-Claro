@@ -1,3 +1,9 @@
+import {AcceleratorPromo, AcceleratorPreview, AcceleratorCover, type AcceleratorSpec} from './compositions/AcceleratorPromo';
+import accRaw from '../data/videos/video-024.json';
+import {CvtVsEcvtPromo, CvtVsEcvtPreview, CvtVsEcvtCover, cvtPreviewFrames, type CvtVsEcvtSpec} from './compositions/CvtVsEcvtPromo';
+import cvtRaw from '../data/videos/video-023.json';
+import {FourByFourGripPromo, FourByFourGripPreview, FourByFourGripCover, previewFrames as gripPreviewFrames, type FourByFourGripSpec} from './compositions/FourByFourGripPromo';
+import gripRaw from '../data/videos/video-022.json';
 import React from 'react';
 import {Composition} from 'remotion';
 import rawSpec from '../data/videos/video-001.json';
@@ -102,5 +108,14 @@ export const RemotionRoot: React.FC = () => (
     height={1920}
     defaultProps={missionDesignRefsSpec}
   />
+  <Composition id="FourByFourGripReel" component={FourByFourGripPromo} durationInFrames={Math.round((gripRaw as FourByFourGripSpec).durationSeconds * (gripRaw as FourByFourGripSpec).fps)} fps={30} width={1080} height={1920} defaultProps={gripRaw as FourByFourGripSpec} />
+  <Composition id="FourByFourGripPreview" component={FourByFourGripPreview} durationInFrames={gripPreviewFrames} fps={30} width={984} height={720} />
+  <Composition id="FourByFourGripCover" component={FourByFourGripCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+  <Composition id="CvtVsEcvtReel" component={CvtVsEcvtPromo} durationInFrames={Math.round((cvtRaw as CvtVsEcvtSpec).durationSeconds * (cvtRaw as CvtVsEcvtSpec).fps)} fps={30} width={1080} height={1920} defaultProps={cvtRaw as CvtVsEcvtSpec} />
+  <Composition id="CvtVsEcvtPreview" component={CvtVsEcvtPreview} durationInFrames={cvtPreviewFrames} fps={30} width={1080} height={1060} />
+  <Composition id="CvtVsEcvtCover" component={CvtVsEcvtCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+  <Composition id="AcceleratorReel" component={AcceleratorPromo} durationInFrames={Math.round((accRaw as AcceleratorSpec).durationSeconds * (accRaw as AcceleratorSpec).fps)} fps={30} width={1080} height={1920} defaultProps={accRaw as AcceleratorSpec} />
+  <Composition id="AcceleratorPreview" component={AcceleratorPreview} durationInFrames={1230} fps={30} width={1080} height={1920} />
+  <Composition id="AcceleratorCover" component={AcceleratorCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );

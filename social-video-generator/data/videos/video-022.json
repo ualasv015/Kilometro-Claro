@@ -1,0 +1,28 @@
+{
+  "id": "video-022",
+  "title": "El error que muchos cometen con un 4x4 en la nieve",
+  "durationSeconds": 30.4,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/tipos-traccion-coche/",
+  "requiresHumanReview": true,
+  "audioFile": "audio/voice-video-022.wav",
+  "imageCredits": [
+    "suv-carretera-nevada.jpg · Leon Skibitzki (@flacko040) · Unsplash · https://unsplash.com/photos/tCjgkZVMmtQ",
+    "neumatico-nieve.jpg · Isaac Mitchell (@isaactmitchell) · Unsplash · https://unsplash.com/photos/2i12sUCeWXk",
+    "coches-distancia-nieve.jpg · Zoshua Colah (@zoshuacolah) · Unsplash · https://unsplash.com/photos/yXJrpfASlLQ",
+    "todoterreno-blanco-nieve.jpg · Zoshua Colah (@zoshuacolah) · Unsplash · https://unsplash.com/photos/R69WmKS982w"
+  ],
+  "captions": [
+    {"startSeconds": 0.0, "endSeconds": 3.56, "text": "¿Crees que por llevar un 4x4 puedes frenar antes sobre nieve?"},
+    {"startSeconds": 4.04, "endSeconds": 7.48, "text": "Cuidado: la tracción total puede ayudar al coche a avanzar"},
+    {"startSeconds": 7.48, "endSeconds": 8.66, "text": "cuando el suelo resbala,"},
+    {"startSeconds": 8.8, "endSeconds": 10.6, "text": "porque puede enviar fuerza a ambos ejes."},
+    {"startSeconds": 11.0, "endSeconds": 13.8, "text": "Pero al frenar, el agarre sigue dependiendo de los neumáticos,"},
+    {"startSeconds": 14.12, "endSeconds": 16.3, "text": "la velocidad y el estado de la carretera."},
+    {"startSeconds": 16.94, "endSeconds": 19.66, "text": "Tener cuatro ruedas motrices no crea agarre infinito."},
+    {"startSeconds": 20.18, "endSeconds": 22.14, "text": "Por eso, incluso con un 4x4,"},
+    {"startSeconds": 22.38, "endSeconds": 25.4, "text": "necesitas neumáticos adecuados y una distancia de seguridad suficiente."},
+    {"startSeconds": 26.18, "endSeconds": 27.26, "text": "¿Ya conocías esta diferencia?"},
+    {"startSeconds": 27.8, "endSeconds": 30.1, "text": "Busca la guía de tracción en kilometroclaro.com."}
+  ]
+}
