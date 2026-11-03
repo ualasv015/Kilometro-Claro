@@ -22,6 +22,7 @@ const currentGuideSlug = Astro.url.pathname.match(/^\/guias\/([^/]+)\/$/)?.[1];
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <SeoHead title={title} description={description} canonical={canonical} noIndex={noIndex} ogType={ogType} publishedDate={publishedDate} modifiedDate={modifiedDate} webSiteSchema={webSiteSchema} />
     <AnalyticsHead />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9101310270440999" crossorigin="anonymous" is:inline></script>
     <slot name="head" />
   </head>
   <body>
