@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'que-ocurre-pisar-embrague';
+const title = '¿Qué ocurre cuando pisas el embrague de un coche manual?';
+const seoTitle = 'Qué ocurre al pisar el embrague | Kilómetro Claro';
+const description = 'Qué pasa al pisar y soltar el embrague: cómo conecta el motor con la caja, qué es el punto de fricción y qué hábitos pueden acelerar su desgaste.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-04';
+const sources = {
+  ap: 'https://apracing.com/performance-upgrades/special-tuning-clutches/high-performance-cover-assemblies/principle-of-operation',
+  zf: 'https://aftermarket.zf.com/us/aftermarket-portal/our-portfolio/passenger-cars/products/clutches/',
+  schaeffler: 'https://www.schaeffler.com/remotemedien/media/_shared_media/08_media_library/01_publications/schaeffler_2/brochure/downloads_1/crb_br_en.pdf',
+  slip: 'https://aftermarket.zf.com/en/aftermarket-portal/knowledge-hub/clutch-slipping/',
+  release: 'https://aftermarket.zf.com/en/aftermarket-portal/knowledge-hub/clutch-does-not-disengage/',
+  ford: 'https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G2122828&Uid=G2231260&buildtype=web&countryCode=USA&div=f&languageCode=en&moidRef=G2119464&userMarket=BHS&vFilteringEnabled=False&variantid=9901',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Funcionamiento del embrague' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 4 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">El motor está girando, has puesto primera y las ruedas todavía están quietas. El embrague permite que esas dos velocidades se acerquen poco a poco, sin exigir que todo se mueva de golpe.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>En un manual con embrague convencional, pisar el pedal acciona un mecanismo que reduce el apriete sobre el disco. El motor queda desacoplado de la entrada de la caja. Al soltarlo, el disco vuelve a quedar apretado y transmite par. Durante la transición puede deslizar, lo que permite arrancar con suavidad y genera calor y desgaste.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#piezas">Dónde está y qué piezas tiene</a></li>
+          <li><a href="#pisar">Qué se desacopla al pisar</a></li>
+          <li><a href="#soltar">Qué sucede al soltar y en el punto de fricción</a></li>
+          <li><a href="#cambiar">Cambiar de marcha, detenerse y calarse</a></li>
+          <li><a href="#desgaste">Hábitos y desgaste</a></li>
+          <li><a href="#sintomas">Síntomas que conviene revisar</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="piezas">Para qué sirve el embrague y dónde está</h2>
+      <p>El embrague es una conexión que se puede abrir entre el motor y la caja de cambios. Aquí describimos el habitual <strong>embrague de fricción monodisco en seco</strong> de un turismo manual. Hay otros diseños y mecanismos de accionamiento. Que dos coches tengan tres pedales no significa que todas sus piezas sean iguales.</p>
+      <p>El <strong>volante motor</strong> gira unido al cigüeñal. Frente a él está el <strong>plato de presión</strong>, dentro de un conjunto que gira con el volante. Entre ambas superficies queda el <strong>disco de embrague</strong>, cuyo centro estriado se conecta al eje de entrada de la caja. Cuando el disco está firmemente sujeto, la fricción permite transmitir par, la fuerza de giro del motor. <a href={sources.ap}>AP Racing, principio de funcionamiento del conjunto</a>.</p>
+      <p>El pedal gobierna un mecanismo de desembrague. El movimiento puede viajar mediante un cable o un circuito hidráulico hasta el cojinete de desembrague, también llamado collarín. Según el diseño, hay una horquilla o un actuador hidráulico concéntrico. <a href={sources.zf}>ZF/SACHS, sistemas de accionamiento</a>.</p>
+      <figure class="clutch-figure">
+        <img src="/images/guides/embrague-disco-real.jpg" width="640" height="480" alt="Disco de embrague para un Mitsubishi 4G63 con centro estriado, muelles y tres grupos de superficies de fricción" loading="lazy" decoding="async" />
+        <figcaption>Un disco real para un Mitsubishi 4G63. Este diseño tiene zonas de fricción segmentadas; otros discos usan un revestimiento anular. Foto: <a href="https://commons.wikimedia.org/wiki/File:Clutch_disc.JPG">100yen / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Sin modificaciones.</figcaption>
+      </figure>
+
+      <h2 id="pisar">Qué ocurre cuando pisas el pedal</h2>
+      <p>En un mecanismo convencional de diafragma, el collarín actúa sobre los dedos centrales de ese resorte. Al deformarse, cambia la fuerza que mantiene el plato apretado contra el disco y permite liberar este. Con el pedal pisado a fondo y el sistema funcionando correctamente, el disco deja de quedar pinzado entre volante y plato. <a href={sources.schaeffler}>Schaeffler, cojinete y resorte de diafragma</a>.</p>
+      <p>Así puedes tener primera engranada, el coche detenido y el motor funcionando. El volante sigue girando, mientras la entrada de la caja puede permanecer quieta. Si el coche está rodando, las ruedas y partes de la transmisión siguen moviéndose. Desembragar interrumpe la conexión que transmitía par; no detiene todas las piezas ni apaga el motor.</p>
+      <figure class="clutch-figure">
+        <img src="/images/guides/embrague-acoplado-desacoplado.svg" width="960" height="600" alt="Comparación en sección simplificada: con pedal suelto, el plato aprieta el disco contra el volante y se transmite par. Con pedal a fondo, desaparece el apriete y el motor queda desacoplado del eje de entrada de la caja." loading="lazy" decoding="async" />
+        <figcaption>Esquema original de Kilómetro Claro. Las holguras están exageradas para mostrar el desacoplamiento; se omiten la carcasa y el accionamiento.</figcaption>
+      </figure>
+      <p>También se pierde la retención que el motor podía ejercer sobre las ruedas. Si sueltas el acelerador con una marcha puesta y el embrague acoplado, las ruedas pueden arrastrar el motor; al desembragar se abre ese camino. Lo explicamos en la <a href="/guias/levantar-pie-acelerador/">guía sobre retención y consumo al levantar el pie</a>.</p>
+
+      <h2 id="soltar">Qué ocurre al soltar el pedal y qué es el punto de fricción</h2>
+      <p>Al soltarlo, el mecanismo vuelve a permitir que el plato apriete el disco contra el volante. Desde parado, las superficies del lado del motor ya giran y el disco, conectado a la transmisión, empieza a ser arrastrado. Durante ese acercamiento pueden girar a velocidades distintas: es el <strong>deslizamiento controlado</strong>. Cuando el acoplamiento se completa, en funcionamiento normal dejan de deslizar entre sí. <a href={sources.ap}>AP Racing, acoplamiento y transmisión a la caja</a>.</p>
+      <p>El punto de fricción es la zona del recorrido donde el disco empieza a transmitir suficiente par para que notes una reacción. Se habla de un «punto», aunque la transición es progresiva. Con primera seleccionada, permite ir poniendo el coche en movimiento mientras el motor continúa girando. El par pasa del disco a la caja, después al grupo final y al diferencial, y llega a las ruedas motrices. Si la caja está en punto muerto, acoplar el embrague puede mover su entrada sin impulsar las ruedas.</p>
+      <p>Parte de la energía se convierte en calor mientras hay deslizamiento. Esa transición forma parte del uso normal al iniciar la marcha, pero prolongarla innecesariamente aumenta el trabajo térmico y el desgaste de los revestimientos. Una maniobra ocasional no determina por sí sola una avería. La carga, el tiempo de deslizamiento y el estado del conjunto importan. <a href={sources.slip}>ZF, deslizamiento y sobrecalentamiento</a>.</p>
+
+      <h2 id="cambiar">Qué cambia al seleccionar otra marcha y por qué puede calarse</h2>
+      <p>Al cambiar de primera a segunda, desembragar descarga la conexión con el motor para facilitar la selección de otra relación. Después, el acoplamiento progresivo ayuda a acomodar la diferencia de velocidades. El embrague por sí mismo no elige la marcha. El manual de Ford consultado insiste en pisar el pedal completamente y acoplar con suavidad. <a href={sources.ford}>Ford, precauciones del cambio manual</a>.</p>
+      <p>Al salir desde parado, soltar demasiado deprisa puede imponer al motor una carga que no logra vencer a ese régimen. Sus revoluciones caen y puede detenerse: eso es calarse. Sucede algo parecido si frenas hasta parar con una marcha engranada y mantienes el embrague completamente acoplado. Las ruedas detenidas ya no permiten que el motor siga girando a través de esa relación. Esta es la consecuencia mecánica de la conexión descrita; el control concreto de los pedales se aprende con formación práctica y las indicaciones del vehículo.</p>
+      <p>En punto muerto, en cambio, puedes tener el pedal suelto y el motor al ralentí con el coche parado, porque la caja no establece una relación que lo una a las ruedas. Y pisar el embrague no inmoviliza el coche: en una pendiente puede moverse si los frenos no lo sujetan.</p>
+
+      <h2 id="desgaste">Qué hábitos pueden acelerar el desgaste</h2>
+      <p>Deja descansar el pie fuera del pedal cuando no necesites accionarlo. Un apoyo continuo puede cargar el mecanismo de desembrague o alterar el apriete, según el sistema y la presión que ejerzas. Ford también desaconseja mantener el coche quieto en una cuesta haciendo patinar el embrague. Para sujetarlo están los frenos y las ayudas que equipe el vehículo, conforme a su manual. <a href={sources.ford}>Ford, apoyo del pie y espera en pendiente</a>.</p>
+      <p>En maniobras lentas puede hacer falta modular el acoplamiento. El problema es prolongar el deslizamiento sin necesidad, especialmente con mucho acelerador o carga. ZF relaciona el patinamiento continuo con la generación de más calor del que el conjunto puede evacuar. No existe un kilometraje universal de sustitución: el uso y el estado del sistema cambian mucho entre coches. <a href={sources.slip}>ZF, causas térmicas y desgaste de las superficies</a>.</p>
+
+      <h2 id="sintomas">Síntomas que justifican una revisión profesional</h2>
+      <p>Si las revoluciones suben sin un aumento de velocidad proporcional en condiciones comparables, puede haber patinamiento. También merecen atención la dificultad nueva para engranar, las vibraciones al acoplar y un olor anormal tras una maniobra. Anota cuándo ocurre y si ha cambiado la sensación del pedal. Evita provocar patinamiento para comprobarlo por tu cuenta.</p>
+      <p>Los síntomas pueden venir de varias piezas. ZF documenta causas de patinamiento como revestimientos desgastados o contaminados y problemas del accionamiento. Si no desembraga bien, también pueden intervenir el circuito hidráulico, el cable o componentes agarrotados. Una vibración u olor por sí solos no identifican la pieza averiada; el taller debe comprobar el conjunto. <a href={sources.slip}>ZF, diagnóstico del patinamiento</a> y <a href={sources.release}>ZF, problemas de desembrague</a>.</p>
+
+      <h2 id="automaticos">¿Los automáticos también llevan embrague?</h2>
+      <p>Algunos sí, aunque no tengan pedal. Los cambios de doble embrague automatizan su accionamiento, y otras transmisiones usan un convertidor de par que puede incorporar un embrague de bloqueo. La forma de arrancar y gestionar el deslizamiento depende de cada diseño. <a href={sources.zf}>ZF/SACHS, convertidores y embragues</a>. La <a href="/guias/tipos-cambio-automatico/">comparativa de tipos de cambio automático</a> explica sus diferencias.</p>
+
+      <h2>Qué recordar al volver al coche</h2>
+      <p>Al pisar el embrague liberas el disco; al soltarlo recuperas la conexión con el motor. El acoplamiento progresivo permite iniciar la marcha sin imponer de golpe toda la carga. Cuando ya circulas con la marcha adecuada, el pedal suelto mantiene la conexión. El acelerador regula otra parte de la historia: la <a href="/guias/motor-gasolina-diesel-acelerador/">petición de par al motor</a>.</p>
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del 4 de noviembre de 2026. Contrastamos el mecanismo con AP Racing y Schaeffler, las variantes de accionamiento y los posibles fallos con ZF/SACHS, y los hábitos de uso con un manual oficial de Ford. La explicación de arrancar y calarse aplica esos principios a un manual convencional; no procede de una prueba propia. Las fotos tienen su procedencia y licencia indicadas. El esquema simplifica el mecanismo y exagera las holguras. No fijamos duración, costes ni recorrido del pedal universales. Para mantenimiento y maniobras concretas manda el manual de la versión.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .clutch-figure { margin: 24px 0; }
+  .clutch-figure img { display: block; max-width: 100%; height: auto; margin: auto; border-radius: 9px; }
+  .clutch-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+</style>

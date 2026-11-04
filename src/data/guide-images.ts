@@ -14,6 +14,15 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'que-ocurre-pisar-embrague': {
+    src: '/images/guides/retencion-pedales-reales.jpg',
+    alt: 'Pedales de un coche manual, con el embrague a la izquierda del freno y del acelerador',
+    caption: 'El pedal izquierdo acciona el mecanismo que permite desacoplar el motor de la caja. Fotografía reducida; el encuadre de portada se adapta al contenedor.',
+    author: 'Santeri Viinamäki', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Car_pedals_20180814.jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/', licenseName: 'CC BY-SA 4.0',
+    width: 960, height: 721,
+  },
   'por-que-tarda-turbo-responder': {
     src: '/images/guides/turbo-respuesta-portada.svg',
     alt: 'Ilustración de las dos caracolas de un turbocompresor, una para la turbina de escape y otra para el compresor de admisión',

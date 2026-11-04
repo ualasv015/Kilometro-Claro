@@ -1,5 +1,12 @@
 export const guides = [
   {
+    slug: 'que-ocurre-pisar-embrague',
+    title: '¿Qué ocurre cuando pisas el embrague de un coche manual?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Cómo se separan y conectan motor y transmisión al pisar y soltar el embrague, qué es el punto de fricción y qué hábitos aumentan el desgaste.',
+    published: true,
+  },
+  {
     slug: 'por-que-tarda-turbo-responder',
     title: '¿Por qué el turbo tarda en responder al acelerar?',
     category: 'Uso y mantenimiento',

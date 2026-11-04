@@ -1,6 +1,7 @@
 export const relatedGuideSlugs: Record<string, string[]> = {
+  'que-ocurre-pisar-embrague': ['levantar-pie-acelerador', 'motor-gasolina-diesel-acelerador', 'tipos-cambio-automatico'],
   'por-que-tarda-turbo-responder': ['motor-gasolina-diesel-acelerador', 'tipos-cambio-automatico', 'levantar-pie-acelerador'],
-  'levantar-pie-acelerador': ['motor-gasolina-diesel-acelerador', 'como-calcular-consumo-real-coche', 'coche-hibrido-enchufable-o-microhibrido'],
+  'levantar-pie-acelerador': ['que-ocurre-pisar-embrague', 'motor-gasolina-diesel-acelerador', 'coche-hibrido-enchufable-o-microhibrido'],
   'motor-gasolina-diesel-acelerador': ['por-que-tarda-turbo-responder', 'tipos-cambio-automatico', 'consumo-coche-electrico-gasolina-diesel'],
   'volkswagen-id-polo-gti-electrico': ['consumo-coche-electrico-gasolina-diesel', 'tipos-traccion-coche', 'que-coche-comprar-segun-presupuesto'],
   'jas-tensei-honda-nsx-vtec': ['toyota-gr-gt', 'tipos-traccion-coche', 'porsche-mission-s-2026'],
