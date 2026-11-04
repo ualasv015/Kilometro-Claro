@@ -28,7 +28,7 @@ export type CarBrand = {
 };
 
 // Registro de familias de modelos y tipos de motor, con fecha de revisión visible en cada ficha.
-export const brandsLastReviewed = '3 de noviembre de 2026';
+export const brandsLastReviewed = '4 de noviembre de 2026';
 
 export const brands: CarBrand[] = [
   {
@@ -1361,6 +1361,69 @@ export const brands: CarBrand[] = [
     models: [
       { name: 'Gamma', pageSlug: 'gamma', body: 'Crossover fastback', powertrains: ['Híbrido', 'Eléctrico'] },
       { name: 'Ypsilon', pageSlug: 'ypsilon', body: 'Urbano premium de cinco puertas', powertrains: ['Gasolina', 'Microhíbrido', 'Eléctrico'] },
+    ],
+  },
+  {
+    slug: 'alpine',
+    name: 'Alpine',
+    logo: '/images/brands/alpine.svg',
+    logoLayout: 'wide',
+    country: 'Francia',
+    headquartersCity: 'Dieppe (base histórica de la marca)',
+    founded: 1955,
+    reviewedAt: '4 de noviembre de 2026',
+    descriptor: 'Deportivos franceses de gasolina y eléctricos, desde el biplaza A110 hasta los nuevos A290 y A390.',
+    bio: 'Alpine fue fundada en 1955 por Jean Rédélé, empresario y piloto de Dieppe. La marca se hizo conocida por sus deportivos ligeros y por su participación en rallyes y carreras de resistencia. Tras su integración en el Grupo Renault, ha retomado su actividad con una gama que combina la filosofía del A110 con nuevos modelos eléctricos. Dieppe sigue siendo una base histórica y de producción relevante para Alpine.',
+    marketNote: 'La gama española para particulares consultada el 4 de noviembre de 2026 reúne tres familias: A110, A290 y A390. El A110 ya no admite pedidos de fábrica, pero Alpine mantiene unidades nuevas en stock; A290 y A390 se ofrecen en varias versiones eléctricas configurables. Las versiones R 70 y GTS del A110 se incluyen como parte de la gama publicada, aunque la existencia de una unidad concreta debe confirmarse con Alpine Store. A110 R Ultime se omite de las fichas de venta comprobada porque no aparece en el inventario español consultado. La disponibilidad y los plazos dependen del concesionario.',
+    marketSources: [
+      { label: 'Alpine España: gama A110, A290 y A390', url: 'https://www.alpinecars.es/' },
+      { label: 'Alpine España: modelos A110 y versiones de la gama', url: 'https://www.alpinecars.es/gama.html' },
+      { label: 'Alpine España: A110 y unidades en stock', url: 'https://www.alpinecars.es/gama/a110.html' },
+      { label: 'Alpine España: configurador y versiones del A290', url: 'https://www.alpinecars.es/modelos-electricos/a290/configurador.html' },
+      { label: 'Alpine España: A390 GT y GTS', url: 'https://www.alpinecars.es/modelos-electricos/a390.html' },
+      { label: 'Alpine España: orígenes e historia de la marca', url: 'https://www.alpinecars.es/origenes-de-la-marca.html' },
+      { label: 'Alpine Media España: fundación en 1955 y fábrica de Dieppe', url: 'https://prensa.alpinecars.es/capucine-lorenzi-nombrada-directora-de-operaciones-de-la-marca-alpine/?lang=spa' },
+    ],
+    powertrains: ['Gasolina', 'Eléctrico'],
+    officialUrl: 'https://www.alpinecars.es/',
+    rangeUrl: 'https://www.alpinecars.es/gama.html',
+    historyUrl: 'https://www.alpinecars.es/origenes-de-la-marca.html',
+    models: [
+      { name: 'A110', pageSlug: 'a110', body: 'Coupé deportivo biplaza', powertrains: ['Gasolina'] },
+      { name: 'A290', pageSlug: 'a290', body: 'Compacto deportivo de cinco puertas', powertrains: ['Eléctrico'] },
+      { name: 'A390', pageSlug: 'a390', body: 'Fastback deportivo de cinco plazas', powertrains: ['Eléctrico'] },
+    ],
+  },
+  {
+    slug: 'maserati',
+    name: 'Maserati',
+    logo: '/images/brands/maserati.svg',
+    logoLayout: 'wide',
+    country: 'Italia',
+    headquartersCity: 'Módena',
+    founded: 1914,
+    reviewedAt: '4 de noviembre de 2026',
+    descriptor: 'SUV, gran turismo y deportivos italianos con motores de gasolina y versiones eléctricas Folgore.',
+    bio: 'Maserati nació en Bolonia en 1914, impulsada por los hermanos Maserati y su interés por la competición. El tridente, inspirado en la fuente de Neptuno de la ciudad, se convirtió en el emblema de la marca. Su sede actual está en Módena, donde conviven la producción, el desarrollo de deportivos y los programas de personalización. La gama actual abarca SUV, gran turismo y superdeportivos, con motores Nettuno y variantes eléctricas Folgore.',
+    marketNote: 'El catálogo español consultado el 4 de noviembre de 2026 presenta seis familias de carretera: Grecale, GranTurismo, GranCabrio, MCPura, MCPura Cielo y GT2 Stradale. MCPura Cielo cuenta con configuración propia y se recoge en una ficha separada. GT2 Stradale se incluye porque Maserati lo ofrece como modelo homologado para carretera; MCXtrema se excluye al estar destinado exclusivamente a circuito. La gama Grecale 2027 incluye opciones mild hybrid, gasolina V6 y eléctrica Folgore; GranTurismo y GranCabrio combinan V6 y versiones Folgore.',
+    marketSources: [
+      { label: 'Maserati España: catálogo de modelos', url: 'https://www.maserati.com/es/es/modelos' },
+      { label: 'Maserati España: configurador y modelos disponibles', url: 'https://www.maserati.com/es/es/shopping-tools/configurator' },
+      { label: 'Maserati España: gamas Grecale, GranTurismo y GranCabrio 2027', url: 'https://www.maserati.com/es/es/mundo-maserati/stories-of-audacity/evento-centenario-maserati-adnforum' },
+      { label: 'Maserati España: GT2 Stradale para carretera', url: 'https://www.maserati.com/es/es/modelos/gt2-stradale' },
+      { label: 'Maserati: historia oficial de la marca', url: 'https://www.maserati.com/es/es/mundo-maserati/historia' },
+    ],
+    powertrains: ['Microhíbrido de gasolina', 'Gasolina', 'Eléctrico'],
+    officialUrl: 'https://www.maserati.com/es/es',
+    rangeUrl: 'https://www.maserati.com/es/es/modelos',
+    historyUrl: 'https://www.maserati.com/es/es/mundo-maserati/historia',
+    models: [
+      { name: 'Grecale', pageSlug: 'grecale', body: 'SUV de lujo', powertrains: ['Microhíbrido', 'Gasolina', 'Eléctrico'] },
+      { name: 'GranTurismo', pageSlug: 'granturismo', body: 'Coupé gran turismo de cuatro plazas', powertrains: ['Gasolina', 'Eléctrico'] },
+      { name: 'GranCabrio', pageSlug: 'grancabrio', body: 'Descapotable gran turismo de cuatro plazas', powertrains: ['Gasolina', 'Eléctrico'] },
+      { name: 'MCPura', pageSlug: 'mcpura', body: 'Superdeportivo coupé biplaza', powertrains: ['Gasolina'] },
+      { name: 'MCPura Cielo', pageSlug: 'mcpura-cielo', body: 'Superdeportivo descapotable biplaza', powertrains: ['Gasolina'] },
+      { name: 'GT2 Stradale', pageSlug: 'gt2-stradale', body: 'Superdeportivo de motor central homologado para carretera', powertrains: ['Gasolina'] },
     ],
   },
 ];

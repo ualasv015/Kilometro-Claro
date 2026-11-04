@@ -44,6 +44,8 @@ import { polestarModels } from './polestar-model-pages';
 import { swmModels } from './swm-model-pages';
 import { smartModels } from './smart-model-pages';
 import { lanciaModels } from './lancia-model-pages';
+import { alpineModels } from './alpine-model-pages';
+import { maseratiModels } from './maserati-model-pages';
 import { formatMotorTableVersion } from '../lib/motor-table';
 
 export type ModelVersion = {
@@ -880,6 +882,8 @@ const modelPageRecords: ModelPageData[] = [
   ...swmModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...smartModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
   ...lanciaModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...alpineModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
+  ...maseratiModels.map((model) => ({ ...model, versions: model.versions.map(formatMotorTableVersion) })),
 ];
 
 export const modelPages: ModelPageData[] = modelPageRecords.map((model) => ({

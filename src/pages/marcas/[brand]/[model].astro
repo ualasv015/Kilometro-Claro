@@ -21,7 +21,7 @@ const modelName = brand.slug === 'ds'
   : model.name.startsWith(brand.name) || model.name.startsWith('Mercedes-AMG') || model.name.startsWith('Mercedes-Maybach')
     ? model.name
     : `${brand.name} ${model.name}`;
-const hasMotorTableFormat = ['audi', 'toyota', 'renault', 'volkswagen', 'hyundai', 'seat', 'dacia', 'kia', 'peugeot', 'mercedes-benz', 'bmw', 'byd', 'changan', 'omoda', 'jaecoo', 'leapmotor', 'mazda', 'mg', 'volvo', 'ds', 'citroen', 'skoda', 'cupra', 'nissan', 'opel', 'ebro', 'ford', 'tesla', 'fiat', 'jeep', 'mini', 'lexus', 'honda', 'suzuki', 'geely', 'mitsubishi', 'lynk-co', 'porsche', 'kgm', 'land-rover', 'xpeng', 'alfa-romeo', 'evo', 'subaru', 'polestar', 'swm', 'smart', 'lancia'].includes(brand.slug);
+const hasMotorTableFormat = ['audi', 'toyota', 'renault', 'volkswagen', 'hyundai', 'seat', 'dacia', 'kia', 'peugeot', 'mercedes-benz', 'bmw', 'byd', 'changan', 'omoda', 'jaecoo', 'leapmotor', 'mazda', 'mg', 'volvo', 'ds', 'citroen', 'skoda', 'cupra', 'nissan', 'opel', 'ebro', 'ford', 'tesla', 'fiat', 'jeep', 'mini', 'lexus', 'honda', 'suzuki', 'geely', 'mitsubishi', 'lynk-co', 'porsche', 'kgm', 'land-rover', 'xpeng', 'alfa-romeo', 'evo', 'subaru', 'polestar', 'swm', 'smart', 'lancia', 'alpine', 'maserati'].includes(brand.slug);
 const isIllustration = detail.image?.src.endsWith('.svg') ?? false;
 const photoMethod = detail.image
   ? isIllustration ? 'La ilustración se identifica como original y conceptual junto a la imagen.' : 'La fotografía y su licencia se acreditan junto a la imagen.'

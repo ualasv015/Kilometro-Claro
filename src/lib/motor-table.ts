@@ -117,8 +117,9 @@ function formatTorque(item: MotorTableVersion, powertrain: Powertrain): string {
 
   const regime = rpm.replace(/\s*[–-]\s*/, '–');
   const approximate = /aproximadamente|aprox\./i.test(item.torqueRpm) ? 'aprox. ' : '';
+  const from = /\bdesde\b/i.test(item.torqueRpm) ? 'desde ' : '';
   const scopeLabel = isHybrid ? (scopeIsSystem ? 'Sistema: ' : 'Térmico: ') : '';
-  return `${scopeLabel}${torque} Nm (${approximate}${regime} rpm)`;
+  return `${scopeLabel}${torque} Nm (${from}${approximate}${regime} rpm)`;
 }
 
 export function formatMotorTableVersion(item: MotorTableVersion): MotorTableVersion {
