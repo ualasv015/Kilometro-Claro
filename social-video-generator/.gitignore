@@ -2,3 +2,5 @@ node_modules/
 output/
 .cache/
 references/*.mp4
+.asr-runtime/
+.piper-runtime/

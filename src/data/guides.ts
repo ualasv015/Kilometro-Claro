@@ -1,5 +1,42 @@
 export const guides = [
   {
+    slug: 'par-motor-potencia-diferencias',
+    title: 'Par motor y potencia: ¿en qué se diferencian y qué notas al conducir?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Qué son los Nm, los kW y los CV, cómo se relacionan con las revoluciones y por qué la marcha y la curva completa importan más que una cifra máxima.',
+    published: true,
+  },
+  {
+    slug: 'acelerar-fondo-marcha-larga',
+    title: '¿Qué pasa si aceleras a fondo en una marcha demasiado larga?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Por qué una marcha larga a bajas revoluciones puede retrasar la respuesta: par, potencia, turbo, carga del motor y cuándo reducir.',
+    published: true,
+  },
+  {
+    slug: 'que-ocurre-pisar-embrague',
+    title: '¿Qué ocurre cuando pisas el embrague de un coche manual?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Cómo se separan y conectan motor y transmisión al pisar y soltar el embrague, qué es el punto de fricción y qué hábitos aumentan el desgaste.',
+    published: true,
+  },
+  {
+    slug: 'por-que-tarda-turbo-responder',
+    title: '¿Por qué el turbo tarda en responder al acelerar?',
+    category: 'Uso y mantenimiento',
+    categorySlug: 'uso-mantenimiento',
+    description: 'Cómo funciona un turbocompresor, qué causa el turbo lag y cómo distinguirlo de una marcha larga o un problema del motor.',
+    published: true,
+  },
+  {
+    slug: 'levantar-pie-acelerador',
+    title: '¿Qué pasa cuando levantas el pie del acelerador? Retención y consumo',
+    category: 'Uso y mantenimiento',
+    categorySlug: 'uso-mantenimiento',
+    description: 'Cómo actúan la retención y el corte de inyección al soltar el acelerador, y qué cambia en punto muerto, híbridos y eléctricos.',
+    published: true,
+  },
+  {
     slug: 'motor-gasolina-diesel-acelerador',
     title: 'Motor gasolina y diésel: ¿qué ocurre cuando pisas el acelerador?',
     category: 'Uso y mantenimiento',

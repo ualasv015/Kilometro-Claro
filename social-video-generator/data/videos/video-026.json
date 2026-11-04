@@ -1,0 +1,665 @@
+{
+  "id": "video-026",
+  "title": "El turbo no se enciende a unas revoluciones concretas",
+  "durationSeconds": 43.96,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/por-que-tarda-turbo-responder/",
+  "requiresHumanReview": true,
+  "audioFile": "audio/voice-video-026.wav",
+  "imageCredits": [
+    "Sin fotografías: todo el reel es una animación ilustrativa propia de Kilómetro Claro (esquema simplificado de un turbo convencional)."
+  ],
+  "captions": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 3.2,
+      "text": "El turbo no se enciende a unas revoluciones concretas.",
+      "words": [
+        {
+          "text": "El",
+          "start": 0.0
+        },
+        {
+          "text": "turbo",
+          "start": 0.36
+        },
+        {
+          "text": "no",
+          "start": 0.6
+        },
+        {
+          "text": "se",
+          "start": 0.92
+        },
+        {
+          "text": "enciende",
+          "start": 1.1
+        },
+        {
+          "text": "a",
+          "start": 1.64
+        },
+        {
+          "text": "unas",
+          "start": 1.76
+        },
+        {
+          "text": "revoluciones",
+          "start": 1.9
+        },
+        {
+          "text": "concretas.",
+          "start": 2.4
+        }
+      ]
+    },
+    {
+      "startSeconds": 3.24,
+      "endSeconds": 5.5,
+      "text": "De hecho, puede estar girando antes de que pises.",
+      "words": [
+        {
+          "text": "De",
+          "start": 3.24
+        },
+        {
+          "text": "hecho,",
+          "start": 3.5
+        },
+        {
+          "text": "puede",
+          "start": 3.88
+        },
+        {
+          "text": "estar",
+          "start": 3.98
+        },
+        {
+          "text": "girando",
+          "start": 4.18
+        },
+        {
+          "text": "antes",
+          "start": 4.52
+        },
+        {
+          "text": "de",
+          "start": 4.84
+        },
+        {
+          "text": "que",
+          "start": 5.0
+        },
+        {
+          "text": "pises.",
+          "start": 5.08
+        }
+      ]
+    },
+    {
+      "startSeconds": 6.1,
+      "endSeconds": 7.6,
+      "text": "Lo mueven los gases de escape:",
+      "words": [
+        {
+          "text": "Lo",
+          "start": 6.1
+        },
+        {
+          "text": "mueven",
+          "start": 6.28
+        },
+        {
+          "text": "los",
+          "start": 6.58
+        },
+        {
+          "text": "gases",
+          "start": 6.8
+        },
+        {
+          "text": "de",
+          "start": 7.0
+        },
+        {
+          "text": "escape:",
+          "start": 7.22
+        }
+      ]
+    },
+    {
+      "startSeconds": 8.0,
+      "endSeconds": 10.62,
+      "text": "hacen girar una turbina, unida por un eje al compresor,",
+      "words": [
+        {
+          "text": "hacen",
+          "start": 8.0
+        },
+        {
+          "text": "girar",
+          "start": 8.16
+        },
+        {
+          "text": "una",
+          "start": 8.4
+        },
+        {
+          "text": "turbina,",
+          "start": 8.56
+        },
+        {
+          "text": "unida",
+          "start": 9.2
+        },
+        {
+          "text": "por",
+          "start": 9.48
+        },
+        {
+          "text": "un",
+          "start": 9.66
+        },
+        {
+          "text": "eje",
+          "start": 9.84
+        },
+        {
+          "text": "al",
+          "start": 9.94
+        },
+        {
+          "text": "compresor,",
+          "start": 10.12
+        }
+      ]
+    },
+    {
+      "startSeconds": 10.9,
+      "endSeconds": 12.4,
+      "text": "que mete aire a presión en el motor.",
+      "words": [
+        {
+          "text": "que",
+          "start": 10.9
+        },
+        {
+          "text": "mete",
+          "start": 10.96
+        },
+        {
+          "text": "aire",
+          "start": 11.18
+        },
+        {
+          "text": "a",
+          "start": 11.38
+        },
+        {
+          "text": "presión",
+          "start": 11.52
+        },
+        {
+          "text": "en",
+          "start": 11.84
+        },
+        {
+          "text": "el",
+          "start": 11.98
+        },
+        {
+          "text": "motor.",
+          "start": 12.1
+        }
+      ]
+    },
+    {
+      "startSeconds": 13.42,
+      "endSeconds": 15.76,
+      "text": "Al pisar, puede salir más energía por el escape.",
+      "words": [
+        {
+          "text": "Al",
+          "start": 13.42
+        },
+        {
+          "text": "pisar,",
+          "start": 13.52
+        },
+        {
+          "text": "puede",
+          "start": 14.12
+        },
+        {
+          "text": "salir",
+          "start": 14.3
+        },
+        {
+          "text": "más",
+          "start": 14.5
+        },
+        {
+          "text": "energía",
+          "start": 14.74
+        },
+        {
+          "text": "por",
+          "start": 15.1
+        },
+        {
+          "text": "el",
+          "start": 15.3
+        },
+        {
+          "text": "escape.",
+          "start": 15.42
+        }
+      ]
+    },
+    {
+      "startSeconds": 16.06,
+      "endSeconds": 18.72,
+      "text": "Pero turbina, eje y compresor tienen inercia:",
+      "words": [
+        {
+          "text": "Pero",
+          "start": 16.06
+        },
+        {
+          "text": "turbina,",
+          "start": 16.36
+        },
+        {
+          "text": "eje",
+          "start": 16.9
+        },
+        {
+          "text": "y",
+          "start": 17.18
+        },
+        {
+          "text": "compresor",
+          "start": 17.4
+        },
+        {
+          "text": "tienen",
+          "start": 17.92
+        },
+        {
+          "text": "inercia:",
+          "start": 18.16
+        }
+      ]
+    },
+    {
+      "startSeconds": 19.08,
+      "endSeconds": 21.0,
+      "text": "tardan un momento en acelerar y subir la presión.",
+      "words": [
+        {
+          "text": "tardan",
+          "start": 19.08
+        },
+        {
+          "text": "un",
+          "start": 19.28
+        },
+        {
+          "text": "momento",
+          "start": 19.38
+        },
+        {
+          "text": "en",
+          "start": 19.58
+        },
+        {
+          "text": "acelerar",
+          "start": 19.76
+        },
+        {
+          "text": "y",
+          "start": 20.14
+        },
+        {
+          "text": "subir",
+          "start": 20.3
+        },
+        {
+          "text": "la",
+          "start": 20.48
+        },
+        {
+          "text": "presión.",
+          "start": 20.64
+        }
+      ]
+    },
+    {
+      "startSeconds": 21.74,
+      "endSeconds": 23.06,
+      "text": "Ese hueco es el turbo lag.",
+      "words": [
+        {
+          "text": "Ese",
+          "start": 21.74
+        },
+        {
+          "text": "hueco",
+          "start": 22.02
+        },
+        {
+          "text": "es",
+          "start": 22.3
+        },
+        {
+          "text": "el",
+          "start": 22.42
+        },
+        {
+          "text": "turbo",
+          "start": 22.54
+        },
+        {
+          "text": "lag.",
+          "start": 22.8
+        }
+      ]
+    },
+    {
+      "startSeconds": 24.02,
+      "endSeconds": 26.26,
+      "text": "Y a muy pocas vueltas, el escape apenas tiene energía.",
+      "words": [
+        {
+          "text": "Y",
+          "start": 24.02
+        },
+        {
+          "text": "a",
+          "start": 24.12
+        },
+        {
+          "text": "muy",
+          "start": 24.2
+        },
+        {
+          "text": "pocas",
+          "start": 24.36
+        },
+        {
+          "text": "vueltas,",
+          "start": 24.64
+        },
+        {
+          "text": "el",
+          "start": 24.94
+        },
+        {
+          "text": "escape",
+          "start": 25.1
+        },
+        {
+          "text": "apenas",
+          "start": 25.3
+        },
+        {
+          "text": "tiene",
+          "start": 25.64
+        },
+        {
+          "text": "energía.",
+          "start": 25.82
+        }
+      ]
+    },
+    {
+      "startSeconds": 26.98,
+      "endSeconds": 30.18,
+      "text": "Por eso, al incorporarte, una marcha más corta puede darte más margen.",
+      "words": [
+        {
+          "text": "Por",
+          "start": 26.98
+        },
+        {
+          "text": "eso,",
+          "start": 27.06
+        },
+        {
+          "text": "al",
+          "start": 27.5
+        },
+        {
+          "text": "incorporarte,",
+          "start": 27.58
+        },
+        {
+          "text": "una",
+          "start": 28.34
+        },
+        {
+          "text": "marcha",
+          "start": 28.46
+        },
+        {
+          "text": "más",
+          "start": 28.7
+        },
+        {
+          "text": "corta",
+          "start": 28.88
+        },
+        {
+          "text": "puede",
+          "start": 29.14
+        },
+        {
+          "text": "darte",
+          "start": 29.32
+        },
+        {
+          "text": "más",
+          "start": 29.58
+        },
+        {
+          "text": "margen.",
+          "start": 29.8
+        }
+      ]
+    },
+    {
+      "startSeconds": 31.08,
+      "endSeconds": 33.56,
+      "text": "Los turbos de geometría variable o con asistencia eléctrica",
+      "words": [
+        {
+          "text": "Los",
+          "start": 31.08
+        },
+        {
+          "text": "turbos",
+          "start": 31.24
+        },
+        {
+          "text": "de",
+          "start": 31.52
+        },
+        {
+          "text": "geometría",
+          "start": 31.66
+        },
+        {
+          "text": "variable",
+          "start": 32.06
+        },
+        {
+          "text": "o",
+          "start": 32.48
+        },
+        {
+          "text": "con",
+          "start": 32.68
+        },
+        {
+          "text": "asistencia",
+          "start": 32.78
+        },
+        {
+          "text": "eléctrica",
+          "start": 33.18
+        }
+      ]
+    },
+    {
+      "startSeconds": 33.56,
+      "endSeconds": 34.96,
+      "text": "pueden adelantar esa subida.",
+      "words": [
+        {
+          "text": "pueden",
+          "start": 33.56
+        },
+        {
+          "text": "adelantar",
+          "start": 33.88
+        },
+        {
+          "text": "esa",
+          "start": 34.44
+        },
+        {
+          "text": "subida.",
+          "start": 34.6
+        }
+      ]
+    },
+    {
+      "startSeconds": 35.48,
+      "endSeconds": 36.44,
+      "text": "Tú pides al instante.",
+      "words": [
+        {
+          "text": "Tú",
+          "start": 35.48
+        },
+        {
+          "text": "pides",
+          "start": 35.68
+        },
+        {
+          "text": "al",
+          "start": 35.9
+        },
+        {
+          "text": "instante.",
+          "start": 36.02
+        }
+      ]
+    },
+    {
+      "startSeconds": 36.96,
+      "endSeconds": 38.7,
+      "text": "El aire a presión llega un momento después.",
+      "words": [
+        {
+          "text": "El",
+          "start": 36.96
+        },
+        {
+          "text": "aire",
+          "start": 37.08
+        },
+        {
+          "text": "a",
+          "start": 37.18
+        },
+        {
+          "text": "presión",
+          "start": 37.28
+        },
+        {
+          "text": "llega",
+          "start": 37.58
+        },
+        {
+          "text": "un",
+          "start": 37.86
+        },
+        {
+          "text": "momento",
+          "start": 38.02
+        },
+        {
+          "text": "después.",
+          "start": 38.16
+        }
+      ]
+    },
+    {
+      "startSeconds": 39.52,
+      "endSeconds": 40.02,
+      "text": "¿Lo sabías?",
+      "words": [
+        {
+          "text": "¿Lo",
+          "start": 39.52
+        },
+        {
+          "text": "sabías?",
+          "start": 39.64
+        }
+      ]
+    },
+    {
+      "startSeconds": 40.66,
+      "endSeconds": 43.8,
+      "text": "Busca la guía de por qué tarda el turbo en kilometroclaro.com.",
+      "words": [
+        {
+          "text": "Busca",
+          "start": 40.66
+        },
+        {
+          "text": "la",
+          "start": 40.88
+        },
+        {
+          "text": "guía",
+          "start": 40.98
+        },
+        {
+          "text": "de",
+          "start": 41.16
+        },
+        {
+          "text": "por",
+          "start": 41.26
+        },
+        {
+          "text": "qué",
+          "start": 41.46
+        },
+        {
+          "text": "tarda",
+          "start": 41.62
+        },
+        {
+          "text": "el",
+          "start": 41.78
+        },
+        {
+          "text": "turbo",
+          "start": 41.98
+        },
+        {
+          "text": "en",
+          "start": 42.18
+        },
+        {
+          "text": "kilometroclaro.com.",
+          "start": 42.38
+        }
+      ]
+    }
+  ]
+}

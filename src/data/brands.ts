@@ -13,6 +13,8 @@ export type CarBrand = {
   founded?: number;
   logo?: string;
   logoLayout?: 'wide';
+  logoCrop?: boolean;
+  logoTone?: 'dark';
   descriptor: string;
   bio: string;
   marketNote: string;
@@ -1173,6 +1175,9 @@ export const brands: CarBrand[] = [
   {
     slug: 'evo',
     name: 'EVO',
+    logo: '/images/brands/evo.png',
+    logoLayout: 'wide',
+    logoTone: 'dark',
     country: 'Italia',
     headquartersCity: 'Macchia d’Isernia',
     founded: 2020,
@@ -1198,6 +1203,8 @@ export const brands: CarBrand[] = [
   {
     slug: 'alfa-romeo',
     name: 'Alfa Romeo',
+    logo: '/images/brands/alfa-romeo.jpg',
+    logoCrop: true,
     country: 'Italia',
     founded: 1910,
     reviewedAt: '3 de noviembre de 2026',
@@ -1323,6 +1330,8 @@ export const brands: CarBrand[] = [
   {
     slug: 'lancia',
     name: 'Lancia',
+    logo: '/images/brands/lancia.svg',
+    logoLayout: 'wide',
     country: 'Italia',
     headquartersCity: 'Turín (sede histórica)',
     founded: 1906,

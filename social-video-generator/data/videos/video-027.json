@@ -1,0 +1,643 @@
+{
+  "id": "video-027",
+  "title": "Cuando pisas el embrague no lo aprietas",
+  "durationSeconds": 45.12,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/que-ocurre-pisar-embrague/",
+  "requiresHumanReview": true,
+  "audioFile": "audio/voice-video-027.wav",
+  "imageCredits": [
+    "Sin fotografías: todo el reel es una animación ilustrativa propia de Kilómetro Claro (esquema simplificado de un embrague monodisco en seco)."
+  ],
+  "captions": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 2.44,
+      "text": "Cuando pisas el embrague, no lo aprietas.",
+      "words": [
+        {
+          "text": "Cuando",
+          "start": 0.0
+        },
+        {
+          "text": "pisas",
+          "start": 0.46
+        },
+        {
+          "text": "el",
+          "start": 0.82
+        },
+        {
+          "text": "embrague,",
+          "start": 0.94
+        },
+        {
+          "text": "no",
+          "start": 1.72
+        },
+        {
+          "text": "lo",
+          "start": 1.8
+        },
+        {
+          "text": "aprietas.",
+          "start": 1.94
+        }
+      ]
+    },
+    {
+      "startSeconds": 2.68,
+      "endSeconds": 4.98,
+      "text": "Al contrario: estás soltando el disco.",
+      "words": [
+        {
+          "text": "Al",
+          "start": 2.68
+        },
+        {
+          "text": "contrario:",
+          "start": 2.82
+        },
+        {
+          "text": "estás",
+          "start": 3.52
+        },
+        {
+          "text": "soltando",
+          "start": 3.74
+        },
+        {
+          "text": "el",
+          "start": 4.48
+        },
+        {
+          "text": "disco.",
+          "start": 4.64
+        }
+      ]
+    },
+    {
+      "startSeconds": 5.84,
+      "endSeconds": 8.52,
+      "text": "Con el pedal suelto, el plato de presión aprieta el disco",
+      "words": [
+        {
+          "text": "Con",
+          "start": 5.84
+        },
+        {
+          "text": "el",
+          "start": 5.9
+        },
+        {
+          "text": "pedal",
+          "start": 6.02
+        },
+        {
+          "text": "suelto,",
+          "start": 6.2
+        },
+        {
+          "text": "el",
+          "start": 6.82
+        },
+        {
+          "text": "plato",
+          "start": 6.96
+        },
+        {
+          "text": "de",
+          "start": 7.22
+        },
+        {
+          "text": "presión",
+          "start": 7.34
+        },
+        {
+          "text": "aprieta",
+          "start": 7.66
+        },
+        {
+          "text": "el",
+          "start": 8.18
+        },
+        {
+          "text": "disco",
+          "start": 8.3
+        }
+      ]
+    },
+    {
+      "startSeconds": 8.52,
+      "endSeconds": 11.3,
+      "text": "contra el volante del motor, y el par pasa a la caja.",
+      "words": [
+        {
+          "text": "contra",
+          "start": 8.52
+        },
+        {
+          "text": "el",
+          "start": 8.78
+        },
+        {
+          "text": "volante",
+          "start": 8.92
+        },
+        {
+          "text": "del",
+          "start": 9.2
+        },
+        {
+          "text": "motor,",
+          "start": 9.34
+        },
+        {
+          "text": "y",
+          "start": 9.84
+        },
+        {
+          "text": "el",
+          "start": 10.12
+        },
+        {
+          "text": "par",
+          "start": 10.24
+        },
+        {
+          "text": "pasa",
+          "start": 10.4
+        },
+        {
+          "text": "a",
+          "start": 10.84
+        },
+        {
+          "text": "la",
+          "start": 10.94
+        },
+        {
+          "text": "caja.",
+          "start": 11.02
+        }
+      ]
+    },
+    {
+      "startSeconds": 11.94,
+      "endSeconds": 15.52,
+      "text": "Al pisar, el collarín empuja el diafragma y el plato deja de apretar.",
+      "words": [
+        {
+          "text": "Al",
+          "start": 11.94
+        },
+        {
+          "text": "pisar,",
+          "start": 12.06
+        },
+        {
+          "text": "el",
+          "start": 12.7
+        },
+        {
+          "text": "collarín",
+          "start": 12.82
+        },
+        {
+          "text": "empuja",
+          "start": 13.16
+        },
+        {
+          "text": "el",
+          "start": 13.54
+        },
+        {
+          "text": "diafragma",
+          "start": 13.64
+        },
+        {
+          "text": "y",
+          "start": 14.08
+        },
+        {
+          "text": "el",
+          "start": 14.3
+        },
+        {
+          "text": "plato",
+          "start": 14.42
+        },
+        {
+          "text": "deja",
+          "start": 14.8
+        },
+        {
+          "text": "de",
+          "start": 15.06
+        },
+        {
+          "text": "apretar.",
+          "start": 15.26
+        }
+      ]
+    },
+    {
+      "startSeconds": 16.18,
+      "endSeconds": 18.56,
+      "text": "El motor sigue girando, pero desacoplado de la caja.",
+      "words": [
+        {
+          "text": "El",
+          "start": 16.18
+        },
+        {
+          "text": "motor",
+          "start": 16.32
+        },
+        {
+          "text": "sigue",
+          "start": 16.52
+        },
+        {
+          "text": "girando,",
+          "start": 16.76
+        },
+        {
+          "text": "pero",
+          "start": 17.3
+        },
+        {
+          "text": "desacoplado",
+          "start": 17.42
+        },
+        {
+          "text": "de",
+          "start": 18.06
+        },
+        {
+          "text": "la",
+          "start": 18.2
+        },
+        {
+          "text": "caja.",
+          "start": 18.28
+        }
+      ]
+    },
+    {
+      "startSeconds": 19.34,
+      "endSeconds": 22.1,
+      "text": "Al soltar, el disco vuelve a apretarse poco a poco.",
+      "words": [
+        {
+          "text": "Al",
+          "start": 19.34
+        },
+        {
+          "text": "soltar,",
+          "start": 19.46
+        },
+        {
+          "text": "el",
+          "start": 20.24
+        },
+        {
+          "text": "disco",
+          "start": 20.38
+        },
+        {
+          "text": "vuelve",
+          "start": 20.6
+        },
+        {
+          "text": "a",
+          "start": 20.98
+        },
+        {
+          "text": "apretarse",
+          "start": 21.04
+        },
+        {
+          "text": "poco",
+          "start": 21.38
+        },
+        {
+          "text": "a",
+          "start": 21.66
+        },
+        {
+          "text": "poco.",
+          "start": 21.82
+        }
+      ]
+    },
+    {
+      "startSeconds": 22.6,
+      "endSeconds": 25.86,
+      "text": "En el punto de fricción aún desliza, y el coche arranca con suavidad.",
+      "words": [
+        {
+          "text": "En",
+          "start": 22.6
+        },
+        {
+          "text": "el",
+          "start": 22.68
+        },
+        {
+          "text": "punto",
+          "start": 22.76
+        },
+        {
+          "text": "de",
+          "start": 22.92
+        },
+        {
+          "text": "fricción",
+          "start": 23.14
+        },
+        {
+          "text": "aún",
+          "start": 23.7
+        },
+        {
+          "text": "desliza,",
+          "start": 23.88
+        },
+        {
+          "text": "y",
+          "start": 24.38
+        },
+        {
+          "text": "el",
+          "start": 24.58
+        },
+        {
+          "text": "coche",
+          "start": 24.7
+        },
+        {
+          "text": "arranca",
+          "start": 24.96
+        },
+        {
+          "text": "con",
+          "start": 25.32
+        },
+        {
+          "text": "suavidad.",
+          "start": 25.48
+        }
+      ]
+    },
+    {
+      "startSeconds": 26.56,
+      "endSeconds": 28.22,
+      "text": "Ese deslizamiento genera calor.",
+      "words": [
+        {
+          "text": "Ese",
+          "start": 26.56
+        },
+        {
+          "text": "deslizamiento",
+          "start": 26.9
+        },
+        {
+          "text": "genera",
+          "start": 27.42
+        },
+        {
+          "text": "calor.",
+          "start": 27.92
+        }
+      ]
+    },
+    {
+      "startSeconds": 28.54,
+      "endSeconds": 32.0,
+      "text": "Alargarlo sin necesidad, o sujetar el coche en una cuesta con el embrague,",
+      "words": [
+        {
+          "text": "Alargarlo",
+          "start": 28.54
+        },
+        {
+          "text": "sin",
+          "start": 29.0
+        },
+        {
+          "text": "necesidad,",
+          "start": 29.2
+        },
+        {
+          "text": "o",
+          "start": 29.66
+        },
+        {
+          "text": "sujetar",
+          "start": 29.94
+        },
+        {
+          "text": "el",
+          "start": 30.32
+        },
+        {
+          "text": "coche",
+          "start": 30.48
+        },
+        {
+          "text": "en",
+          "start": 30.68
+        },
+        {
+          "text": "una",
+          "start": 30.78
+        },
+        {
+          "text": "cuesta",
+          "start": 30.92
+        },
+        {
+          "text": "con",
+          "start": 31.18
+        },
+        {
+          "text": "el",
+          "start": 31.32
+        },
+        {
+          "text": "embrague,",
+          "start": 31.4
+        }
+      ]
+    },
+    {
+      "startSeconds": 32.08,
+      "endSeconds": 33.02,
+      "text": "aumenta el desgaste.",
+      "words": [
+        {
+          "text": "aumenta",
+          "start": 32.08
+        },
+        {
+          "text": "el",
+          "start": 32.52
+        },
+        {
+          "text": "desgaste.",
+          "start": 32.62
+        }
+      ]
+    },
+    {
+      "startSeconds": 33.76,
+      "endSeconds": 36.3,
+      "text": "Y si lo sueltas de golpe al arrancar, el motor puede calarse.",
+      "words": [
+        {
+          "text": "Y",
+          "start": 33.76
+        },
+        {
+          "text": "si",
+          "start": 33.84
+        },
+        {
+          "text": "lo",
+          "start": 33.94
+        },
+        {
+          "text": "sueltas",
+          "start": 34.04
+        },
+        {
+          "text": "de",
+          "start": 34.32
+        },
+        {
+          "text": "golpe",
+          "start": 34.44
+        },
+        {
+          "text": "al",
+          "start": 34.54
+        },
+        {
+          "text": "arrancar,",
+          "start": 34.76
+        },
+        {
+          "text": "el",
+          "start": 35.36
+        },
+        {
+          "text": "motor",
+          "start": 35.46
+        },
+        {
+          "text": "puede",
+          "start": 35.62
+        },
+        {
+          "text": "calarse.",
+          "start": 35.9
+        }
+      ]
+    },
+    {
+      "startSeconds": 37.16,
+      "endSeconds": 39.56,
+      "text": "Pisar separa. Soltar une.",
+      "words": [
+        {
+          "text": "Pisar",
+          "start": 37.16
+        },
+        {
+          "text": "separa.",
+          "start": 37.38
+        },
+        {
+          "text": "Soltar",
+          "start": 38.54
+        },
+        {
+          "text": "une.",
+          "start": 39.34
+        }
+      ]
+    },
+    {
+      "startSeconds": 40.16,
+      "endSeconds": 40.66,
+      "text": "¿Lo sabías?",
+      "words": [
+        {
+          "text": "¿Lo",
+          "start": 40.16
+        },
+        {
+          "text": "sabías?",
+          "start": 40.24
+        }
+      ]
+    },
+    {
+      "startSeconds": 41.3,
+      "endSeconds": 45.0,
+      "text": "Busca la guía de qué ocurre al pisar el embrague en kilometroclaro.com.",
+      "words": [
+        {
+          "text": "Busca",
+          "start": 41.3
+        },
+        {
+          "text": "la",
+          "start": 41.52
+        },
+        {
+          "text": "guía",
+          "start": 41.66
+        },
+        {
+          "text": "de",
+          "start": 41.82
+        },
+        {
+          "text": "qué",
+          "start": 41.96
+        },
+        {
+          "text": "ocurre",
+          "start": 42.18
+        },
+        {
+          "text": "al",
+          "start": 42.56
+        },
+        {
+          "text": "pisar",
+          "start": 42.64
+        },
+        {
+          "text": "el",
+          "start": 42.92
+        },
+        {
+          "text": "embrague",
+          "start": 43.02
+        },
+        {
+          "text": "en",
+          "start": 43.34
+        },
+        {
+          "text": "kilometroclaro.com.",
+          "start": 43.64
+        }
+      ]
+    }
+  ]
+}

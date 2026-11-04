@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600">
+  <rect width="960" height="600" fill="#f1f5eb"/>
+  <g font-family="system-ui,sans-serif" fill="#173729">
+    <text x="42" y="52" font-size="32" font-weight="700">El disco queda apretado o liberado</text>
+    <text x="42" y="106" font-size="26" font-weight="700">Pedal suelto · acoplado</text>
+    <text x="42" y="351" font-size="26" font-weight="700">Pedal a fondo · desacoplado</text>
+  </g>
+  <g fill="#d8e6d0" stroke="#173729" stroke-width="2">
+    <rect x="42" y="165" width="168" height="74" rx="12"/>
+    <rect x="707" y="165" width="205" height="74" rx="12"/>
+    <rect x="42" y="407" width="168" height="74" rx="12"/>
+    <rect x="707" y="407" width="205" height="74" rx="12"/>
+  </g>
+  <g stroke="#173729" stroke-width="10"><path d="M210 202h145"/><path d="M210 444h145"/></g>
+  <g stroke="#829577" stroke-width="9"><path d="M418 202h289"/><path d="M438 444h269"/></g>
+  <g fill="#315642">
+    <rect x="355" y="137" width="42" height="130" rx="4"/>
+    <rect x="355" y="379" width="42" height="130" rx="4"/>
+  </g>
+  <g fill="#b5cf64" stroke="#4a652f" stroke-width="2">
+    <rect x="397" y="147" width="21" height="110" rx="3"/>
+    <rect x="427" y="389" width="21" height="110" rx="3"/>
+  </g>
+  <g fill="#b86642">
+    <rect x="418" y="137" width="42" height="130" rx="4"/>
+    <rect x="479" y="379" width="42" height="130" rx="4"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="23" fill="#173729" text-anchor="middle">
+    <text x="126" y="210">Motor</text><text x="808" y="197">Entrada</text><text x="808" y="224">de la caja</text>
+    <text x="126" y="452">Motor</text><text x="808" y="439">Entrada</text><text x="808" y="466">de la caja</text>
+    <text x="600" y="172" font-weight="700">Transmite par →</text>
+    <text x="614" y="414" font-size="21">Sin apriete</text>
+    <text x="294" y="298">Volante</text><text x="410" y="298">Disco</text><text x="555" y="298">Plato</text>
+  </g>
+  <g stroke="#173729" fill="none" stroke-width="2">
+    <path d="M305 280l55-17"/><path d="M410 280v-23"/><path d="M541 280l-85-17"/>
+  </g>
+  <g font-family="system-ui,sans-serif" fill="#173729" font-size="21">
+    <text x="42" y="555">Sección simplificada: holguras exageradas.</text>
+    <text x="42" y="582">El volante y el conjunto del plato siguen girando con el motor.</text>
+  </g>
+</svg>

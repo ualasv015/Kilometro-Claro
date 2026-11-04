@@ -1,5 +1,10 @@
 export const relatedGuideSlugs: Record<string, string[]> = {
-  'motor-gasolina-diesel-acelerador': ['como-calcular-consumo-real-coche', 'tipos-cambio-automatico', 'consumo-coche-electrico-gasolina-diesel'],
+  'par-motor-potencia-diferencias': ['acelerar-fondo-marcha-larga', 'por-que-tarda-turbo-responder', 'motor-gasolina-diesel-acelerador'],
+  'acelerar-fondo-marcha-larga': ['par-motor-potencia-diferencias', 'por-que-tarda-turbo-responder', 'motor-gasolina-diesel-acelerador'],
+  'que-ocurre-pisar-embrague': ['levantar-pie-acelerador', 'motor-gasolina-diesel-acelerador', 'tipos-cambio-automatico'],
+  'por-que-tarda-turbo-responder': ['par-motor-potencia-diferencias', 'acelerar-fondo-marcha-larga', 'motor-gasolina-diesel-acelerador'],
+  'levantar-pie-acelerador': ['que-ocurre-pisar-embrague', 'motor-gasolina-diesel-acelerador', 'coche-hibrido-enchufable-o-microhibrido'],
+  'motor-gasolina-diesel-acelerador': ['por-que-tarda-turbo-responder', 'tipos-cambio-automatico', 'consumo-coche-electrico-gasolina-diesel'],
   'volkswagen-id-polo-gti-electrico': ['consumo-coche-electrico-gasolina-diesel', 'tipos-traccion-coche', 'que-coche-comprar-segun-presupuesto'],
   'jas-tensei-honda-nsx-vtec': ['toyota-gr-gt', 'tipos-traccion-coche', 'porsche-mission-s-2026'],
   'toyota-gr-gt': ['jas-tensei-honda-nsx-vtec', 'mazda-mx-5-nd-futuro-ne', 'porsche-mission-s-2026'],

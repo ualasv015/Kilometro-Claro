@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" rx="20" fill="#173d34"/>
+  <g font-family="Arial, sans-serif">
+    <text x="60" y="86" fill="#d7f36a" font-size="26" font-weight="700">MECÁNICA AL VOLANTE</text>
+    <text x="60" y="164" fill="#fff" font-size="52" font-weight="700">Al soltar el acelerador</text>
+    <text x="60" y="219" fill="#dcebe3" font-size="30">Retención, inyección y consumo</text>
+  </g>
+  <g transform="translate(161 332) rotate(-17 48 60)">
+    <rect width="96" height="120" rx="22" fill="#d7f36a"/>
+    <path d="M22 30h52m-52 20h52m-52 20h52m-52 20h52" stroke="#173d34" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <path d="M212 303v-43m-14 14 14-14 14 14" fill="none" stroke="#d7f36a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M510 402a116 116 0 0 1 232 0" fill="none" stroke="#d7f36a" stroke-width="9" stroke-linecap="round"/>
+  <path d="m626 401-51-53" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="626" cy="402" r="10" fill="#fff"/>
+  <path d="M500 440h252" stroke="#dcebe3" stroke-width="4" stroke-linecap="round"/>
+</svg>

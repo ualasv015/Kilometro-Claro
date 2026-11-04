@@ -1,18 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
 const title = 'Seis detalles de tu coche que quizá no conocías (y para qué sirven)';
 const description = 'Seis detalles útiles de tu coche: flecha del combustible, recirculación, presión, llave del mando y más. Descubre cuándo sirven y si tu modelo los lleva.';
 const canonical = new URL('/guias/detalles-coche-que-quiza-no-conocias/', Astro.site ?? 'https://kilometroclaro.com');
 const publishedDate = '2026-10-27';
-const modifiedDate = '2026-10-27';
+const modifiedDate = '2026-11-04';
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: title,
   description,
+  image: new URL('/images/guides/detalles-indicador-corolla.jpg', canonical).toString(),
   datePublished: publishedDate,
   dateModified: modifiedDate,
   inLanguage: 'es-ES',
@@ -37,6 +39,7 @@ const articleSchema = {
         <strong>En un vistazo</strong>
         <p>La flecha junto al surtidor puede indicar dónde se reposta; la recirculación y el desempañado cumplen funciones distintas; la luneta térmica puede activar los espejos; una etiqueta o el manual indican la presión de las ruedas; algunos mandos esconden una llave mecánica, y el seguro infantil puede impedir abrir una puerta trasera desde dentro. <strong>No todos los coches incorporan estas funciones ni las accionan igual.</strong></p>
       </aside>
+      <GuideImage slug="detalles-coche-que-quiza-no-conocias" />
       
 
       <nav class="article-toc" aria-label="Contenido de esta guía">
@@ -74,6 +77,10 @@ const articleSchema = {
       <p>Es un detalle práctico al conducir un vehículo de alquiler, compartido o prestado: permite escoger el surtidor antes de bajar. Si no ves flecha, no deduzcas el lado por la orientación del surtidor dibujado. Mira la carrocería o consulta el manual. En un eléctrico, la ubicación de la toma de carga responde a otro diseño y no debe inferirse de este símbolo de combustible.</p>
 
       <h2 id="aire">2. El botón de recirculación no es el de desempañado</h2>
+      <figure class="detail-figure">
+        <img src="/images/guides/detalles-climatizador-real.jpg" width="960" height="720" alt="Fotografía del botón A/C iluminado en el climatizador de un coche" loading="lazy" decoding="async" />
+        <figcaption>Este botón real activa el aire acondicionado; la recirculación y el desempañado llevan otros símbolos que dependen del coche. Foto: <a href="https://commons.wikimedia.org/wiki/File:Heat_Wave_(4771656759).jpg">Michael / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. Versión reducida, sin recorte.</figcaption>
+      </figure>
       <p>La recirculación hace que el sistema vuelva a utilizar el aire del habitáculo en lugar de tomar continuamente aire del exterior. Puede ayudar a enfriar el interior con el aire acondicionado y a reducir la entrada de olores de fuera. Sin embargo, <strong>dejarla activada durante demasiado tiempo puede favorecer que se empañen los cristales</strong>. Así lo advierte el <a href="https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1620054&amp;Uid=G1620053&amp;buildType=web&amp;countryCode=USA&amp;div=f&amp;languageCode=EN&amp;userMarket=AUS&amp;vCode=&amp;vFilteringEnabled=False&amp;variantid=4639" target="_blank" rel="noopener noreferrer">manual de climatización de Ford</a>.</p>
       <p>Si comienza a perderse visibilidad por condensación, la prioridad deja de ser mantener la temperatura: selecciona el desempañado del parabrisas y sigue el procedimiento de tu coche para introducir aire exterior. El aire acondicionado, cuando el sistema puede hacerlo funcionar, también extrae humedad del aire; muchos climatizadores coordinan estas funciones automáticamente. En una <a href="https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1872209&amp;Uid=G1872208&amp;buildtype=web&amp;countryCode=USA&amp;div=f&amp;languageCode=en&amp;moidRef=G539504&amp;userMarket=nzl&amp;vFilteringEnabled=False&amp;variantid=4555" target="_blank" rel="noopener noreferrer">guía de climatización automática</a>, Ford explica que el modo de desempañado máximo toma aire exterior y activa el aire acondicionado.</p>
       <p><strong>La distinción útil:</strong> recircular puede ayudar en determinadas condiciones de refrigeración, pero no es una solución permanente para el vaho. La disposición de los iconos y la respuesta del modo «AUTO» cambian entre coches. Conviene identificar el botón de desempañado antes de salir, cuando todavía no hay que buscarlo deprisa.</p>
@@ -84,6 +91,10 @@ const articleSchema = {
 
       
       <h2 id="presion">4. La pegatina que importa más que la cifra del neumático</h2>
+      <figure class="detail-figure">
+        <img src="/images/guides/detalles-presion-etiqueta.svg" width="960" height="540" alt="Boceto de una etiqueta de presiones: compara medida de neumático y carga antes de elegir la fila correspondiente, sin mostrar valores reales" loading="lazy" decoding="async" />
+        <figcaption>Boceto original de Kilómetro Claro. Los campos son orientativos; las cifras válidas están en la etiqueta o el manual de tu vehículo.</figcaption>
+      </figure>
       <p>En el marco de la puerta del conductor, la tapa del depósito o incluso la guantera puede haber una etiqueta con medidas de neumático y presiones. Indica las cifras recomendadas <strong>para ese vehículo</strong>, que pueden variar entre las ruedas delanteras y traseras y según la carga. La <a href="https://revista.dgt.es/es/motor/noticias/2019/09SEPTIEMBRE/0930-Presion-Neumaticos.shtml" target="_blank" rel="noopener noreferrer">DGT recuerda tanto esas ubicaciones como la necesidad de revisar la presión en frío</a>.</p>
       <p>Al leerla, comprueba primero que corresponde a la medida de neumático montada y después distingue la situación de carga habitual de la de vehículo cargado, si el fabricante ofrece ambas. No copies sin más la presión de otro modelo, aunque calce neumáticos del mismo tamaño. Tampoco utilices como consigna habitual la cifra de «presión máxima» impresa en el lateral de la cubierta: <a href="https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1840223&amp;Uid=G1840216&amp;buildtype=web&amp;countryCode=USA&amp;div=f&amp;languageCode=en&amp;userMarket=usa&amp;vFilteringEnabled=False&amp;variantid=6382" target="_blank" rel="noopener noreferrer">Ford distingue expresamente ese límite de la presión recomendada por el fabricante del coche</a>.</p>
       <p>Es una comprobación sencilla antes de un viaje largo. Una presión baja puede alterar el comportamiento del vehículo, acelerar el desgaste e incrementar el consumo; una presión excesiva tampoco mejora la seguridad. Si quieres observar qué ocurre con tu gasto después de corregir la presión, registra varios repostajes comparables con nuestra <a href="/guias/como-calcular-consumo-real-coche/">guía de medición del consumo real</a> y usa la <a href="/calculadoras/consumo-combustible/">calculadora de Kilómetro Claro</a>. Una sola cifra aislada no demostraría por sí misma cuánto ha influido la presión.</p>
@@ -93,6 +104,10 @@ const articleSchema = {
       <p>El momento de averiguar si tu mando la tiene es <strong>antes</strong> de encontrarte con una pila agotada. Examina el botón o deslizador de liberación y localiza en el manual cómo se accede a la cerradura. No fuerces una pieza de plástico intentando reproducir el movimiento visto en otro coche: la carcasa, la tapa y el procedimiento cambian. La llave de emergencia permite acceder al vehículo en los modelos previstos para ello; el método para ponerlo en marcha si falla la pila es otra cuestión y también debe consultarse para el modelo concreto.</p>
 
       <h2 id="seguro">6. El pequeño seguro del canto de la puerta trasera</h2>
+      <figure class="detail-figure">
+        <img src="/images/guides/detalles-seguro-infantil.svg" width="960" height="540" alt="Boceto de una puerta trasera abierta que muestra dónde buscar un seguro infantil mecánico en su canto" loading="lazy" decoding="async" />
+        <figcaption>Boceto original de Kilómetro Claro. La posición y el sentido de accionamiento varían según el coche.</figcaption>
+      </figure>
       <p>Si una puerta trasera abre desde fuera pero no desde dentro, puede que el seguro infantil esté activado. En diversos coches con seguro infantil <strong>mecánico</strong>, se encuentra en el canto de cada puerta trasera, visible al abrirla. Hay que accionar cada lado por separado. En otros, el control es eléctrico y se maneja desde la zona del conductor. El <a href="https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1562372&amp;Uid=G1562371&amp;buildtype=web&amp;countryCode=USA&amp;div=f&amp;languageCode=en&amp;userMarket=GBR&amp;vFilteringEnabled=False&amp;variantid=7138" target="_blank" rel="noopener noreferrer">manual de Ford describe ambos sistemas</a>.</p>
       <p>Conocerlo evita dos confusiones: creer que una puerta está averiada cuando en realidad tiene el seguro puesto, o pensar que ambas puertas están protegidas porque se activó solo una. Comprueba la posición y la forma de verificación que indica tu manual; las direcciones de giro no son iguales en todos los lados ni en todos los modelos.</p>
       <p>Este mecanismo <strong>no sustituye la supervisión de los ocupantes</strong>. Una puerta con el seguro activado no puede abrirse desde dentro en las condiciones descritas por el fabricante. <a href="https://www.volkswagen.es/idhub/content/dam/onehub_pkw/importers/es/volkswagen-espana/informaci%C3%B3n-seguridad-productos/volkswagen-product-safety-information-es.pdf" target="_blank" rel="noopener noreferrer">Volkswagen advierte</a> de que no se debe dejar sin vigilancia dentro del coche a niños ni a personas que puedan necesitar ayuda.</p>
@@ -107,7 +122,7 @@ const articleSchema = {
 
       <aside class="sources">
         <h2>Fuentes y alcance de la guía</h2>
-        <p>Consultadas el 27 de octubre de 2026. Los manuales citados documentan funciones de modelos y equipamientos concretos; no certifican su presencia en cualquier coche. Kilómetro Claro no ha probado estas funciones en todos los modelos. Para operar un mando o ajustar la presión, consulta primero la documentación de tu vehículo.</p>
+        <p>Fuentes revisadas el 4 de noviembre de 2026. Los manuales citados documentan funciones de modelos y equipamientos concretos; no certifican su presencia en cualquier coche. Kilómetro Claro no ha probado estas funciones en todos los modelos. La foto de portada muestra un indicador real de Corolla; la del climatizador muestra un botón A/C, no el de recirculación. Los bocetos son originales y no sustituyen el manual. La procedencia y las licencias de las fotos aparecen en sus pies. Para operar un mando o ajustar la presión, consulta primero la documentación de tu vehículo.</p>
         <ul>
           <li><a href="https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G2301329&amp;Uid=G2301327&amp;buildtype=web&amp;countryCode=USA&amp;div=f&amp;languageCode=en&amp;moidRef=G539492&amp;userMarket=usa&amp;vFilteringEnabled=False&amp;variantid=9178" target="_blank" rel="noopener noreferrer">Ford: flecha junto al indicador de combustible</a>.</li>
           <li><a href="https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1620054&amp;Uid=G1620053&amp;buildType=web&amp;countryCode=USA&amp;div=f&amp;languageCode=EN&amp;userMarket=AUS&amp;vCode=&amp;vFilteringEnabled=False&amp;variantid=4639" target="_blank" rel="noopener noreferrer">Ford: recirculación, humedad y desempañado</a>.</li>
@@ -121,3 +136,9 @@ const articleSchema = {
     </article>
   </div>
 </BaseLayout>
+<style>
+  .detail-figure { margin: 24px 0; }
+  .detail-figure img { display: block; max-width: 100%; height: auto; margin: auto; border-radius: 9px; }
+  .detail-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+  :global(.guide-image img) { object-position: center 25%; }
+</style>

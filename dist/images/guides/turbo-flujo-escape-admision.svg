@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <marker id="hot" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="m0 0 8 4-8 4z" fill="#a44b2c"/></marker>
+    <marker id="fresh" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="m0 0 8 4-8 4z" fill="#3e6a2f"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#f1f5eb"/>
+  <text x="52" y="68" fill="#173729" font-family="system-ui, sans-serif" font-size="41" font-weight="700">Dos circuitos, un eje</text>
+  <rect x="42" y="108" width="876" height="144" rx="18" fill="#f9e3d6"/>
+  <rect x="42" y="324" width="876" height="166" rx="18" fill="#e1edce"/>
+  <g font-family="system-ui, sans-serif" font-weight="700" font-size="22">
+    <text x="68" y="145" fill="#864128">GASES DE ESCAPE</text>
+    <text x="68" y="362" fill="#385b2d">AIRE DE ADMISIÓN</text>
+  </g>
+  <g fill="#fff" stroke-width="2">
+    <g stroke="#a44b2c">
+      <rect x="66" y="162" width="174" height="68" rx="12"/>
+      <rect x="365" y="162" width="194" height="68" rx="12"/>
+      <rect x="720" y="162" width="174" height="68" rx="12"/>
+    </g>
+    <g stroke="#3e6a2f">
+      <rect x="66" y="383" width="174" height="82" rx="12"/>
+      <rect x="365" y="383" width="194" height="82" rx="12"/>
+      <rect x="625" y="383" width="141" height="82" rx="12"/>
+      <rect x="814" y="383" width="80" height="82" rx="12"/>
+    </g>
+  </g>
+  <g fill="none" stroke-width="4">
+    <g stroke="#a44b2c" marker-end="url(#hot)">
+      <path d="M249 196h103"/><path d="M568 196h138"/>
+    </g>
+    <g stroke="#3e6a2f" marker-end="url(#fresh)">
+      <path d="M249 424h103"/><path d="M568 424h44"/><path d="M773 424h31"/>
+    </g>
+    <path d="M462 230v153" stroke="#173729" stroke-width="5" stroke-dasharray="8 8"/>
+  </g>
+  <g fill="#173729" font-family="system-ui, sans-serif" text-anchor="middle" font-size="24" font-weight="650">
+    <text x="153" y="204">Motor</text>
+    <text x="462" y="204">Turbina</text>
+    <text x="807" y="204">Hacia el escape</text>
+    <text x="153" y="432">Filtro de aire</text>
+    <text x="462" y="432">Compresor</text>
+    <text x="695" y="420" font-size="20">Intercooler</text>
+    <text x="695" y="443" font-size="17">(si lo hay)</text>
+    <text x="854" y="431" font-size="19">Motor</text>
+  </g>
+  <rect x="488" y="263" width="245" height="46" rx="10" fill="#173729"/>
+  <text x="506" y="293" fill="#fff" font-family="system-ui, sans-serif" font-size="23" font-weight="650">Eje: transmite el giro</text>
+</svg>

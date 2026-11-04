@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#f1f5eb"/>
+  <text x="50" y="72" fill="#173729" font-family="system-ui,sans-serif" font-size="36" font-weight="700">Cómo leer la etiqueta de presión</text>
+  <rect x="50" y="116" width="860" height="335" rx="18" fill="#fff" stroke="#315642" stroke-width="4"/>
+  <g font-family="system-ui,sans-serif" font-size="25" fill="#173729">
+    <text x="88" y="170" font-weight="700">1. Comprueba la medida montada</text>
+    <text x="88" y="222">Busca la fila correspondiente a tu neumático</text>
+    <text x="88" y="292" font-weight="700">2. Distingue la carga</text>
+    <text x="88" y="344">Uso habitual o vehículo cargado, si se indica</text>
+    <text x="88" y="414" font-weight="700">3. Lee los valores de cada eje en tu coche</text>
+  </g>
+  <path d="M72 252h816M72 372h816" stroke="#b8c9b3" stroke-width="2"/>
+  <text x="50" y="505" fill="#59675f" font-family="system-ui,sans-serif" font-size="21">Boceto de lectura, sin cifras de presión ni etiqueta de un modelo concreto.</text>
+</svg>

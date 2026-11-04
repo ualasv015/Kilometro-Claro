@@ -4,6 +4,10 @@ Suzuki: Suzuki logo.svg, Wikimedia Commons, dominio público por tratarse de un 
 
 Los logotipos se muestran únicamente para identificar a los fabricantes. Las marcas y sus signos distintivos pertenecen a sus respectivos titulares.
 
+Alfa Romeo: AlfaRomeo Logo.jpg, autor M. Vogel, Wikimedia Commons, licencia CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). La imagen muestra el emblema instalado en la parrilla de un Alfa Romeo 147; el archivo permanece intacto y el recorte es solo visual mediante CSS. Fuente: https://commons.wikimedia.org/wiki/File:AlfaRomeo_Logo.jpg. La marca y el emblema son signos distintivos de Alfa Romeo.
+Lancia: Lancia Logo 2023.svg, fuente original Lancia Italia, autor corporativo Gruppo Stellantis N.V., Wikimedia Commons; indicado como dominio público por tratarse de un logotipo tipográfico/simple. Fuente: https://commons.wikimedia.org/wiki/File:Lancia_Logo_2023.svg. Lancia es marca registrada de Stellantis.
+EVO: Logo_EVO_128px.png, recurso gráfico del sitio oficial de Automobili EVO España: https://auto-evo.es/wp-content/uploads/2023/08/Logo_EVO_128px.png. EVO y su logotipo son marcas registradas de DR Automobiles; se muestra únicamente para identificar al fabricante. El archivo oficial no publica una licencia abierta.
+
 Audi: Audi_logo.svg, Wikimedia Commons, dominio público por su condición de logotipo textual/simple; dibujo vectorial atribuido a Audi y vectorizado por FireDragonValo. Fuente: https://commons.wikimedia.org/wiki/File:Audi_logo.svg. El emblema Audi es una marca registrada; se utiliza únicamente para identificar al fabricante.
 Mazda: Mazda_logo_with_emblem,_new.svg, Wikimedia Commons, licencia CC0 1.0. Autor: الشيخ ماهر بن حمد المعيقلي. Fuente: https://commons.wikimedia.org/wiki/File:Mazda_logo_with_emblem,_new.svg. El emblema Mazda es una marca registrada; se utiliza únicamente para identificar al fabricante.
 Citroën: Citroen 2022.svg, Wikimedia Commons. Fuente: https://commons.wikimedia.org/wiki/File:Citroen_2022.svg. Emblema y marca registrada de Stellantis; se utiliza únicamente para identificar al fabricante.

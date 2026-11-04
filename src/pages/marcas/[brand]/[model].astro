@@ -43,7 +43,7 @@ const photoMethod = detail.image
           <div class="model-detail-hero-copy">
             <div class="model-detail-brandline">
                 {brand.logo
-                  ? <img class:list={{ 'brand-logo-wide': brand.logoLayout === 'wide' }} src={brand.logo} alt={`Emblema de ${brand.name}`} width={brand.logoLayout === 'wide' ? '100' : '70'} height="52" fetchpriority="high" />
+                  ? <img class:list={{ 'brand-logo-wide': brand.logoLayout === 'wide', 'brand-logo-cropped': brand.logoCrop, 'brand-logo-dark': brand.logoTone === 'dark' }} src={brand.logo} alt={`Emblema de ${brand.name}`} width={brand.logoLayout === 'wide' ? '100' : '70'} height="52" fetchpriority="high" />
                   : <span class="model-detail-brand-monogram" aria-hidden="true">{brand.name.slice(0, 1)}</span>}
               <span>{brand.name} · {model.body}</span>
             </div>

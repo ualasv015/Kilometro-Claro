@@ -1,0 +1,674 @@
+{
+  "id": "video-025",
+  "title": "Sueltas el acelerador y el cuadro marca cero litros",
+  "durationSeconds": 46.08,
+  "fps": 30,
+  "articleUrl": "https://kilometroclaro.com/guias/levantar-pie-acelerador/",
+  "requiresHumanReview": true,
+  "audioFile": "audio/voice-video-025.wav",
+  "imageCredits": [
+    "Sin fotografías: todo el reel es una animación ilustrativa propia de Kilómetro Claro (esquema simplificado de un cambio manual convencional)."
+  ],
+  "captions": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 3.9,
+      "text": "Sueltas el acelerador y el cuadro marca cero litros a los cien.",
+      "words": [
+        {
+          "text": "Sueltas",
+          "start": 0.0
+        },
+        {
+          "text": "el",
+          "start": 0.62
+        },
+        {
+          "text": "acelerador",
+          "start": 0.76
+        },
+        {
+          "text": "y",
+          "start": 1.22
+        },
+        {
+          "text": "el",
+          "start": 1.54
+        },
+        {
+          "text": "cuadro",
+          "start": 1.66
+        },
+        {
+          "text": "marca",
+          "start": 1.92
+        },
+        {
+          "text": "cero",
+          "start": 2.18
+        },
+        {
+          "text": "litros",
+          "start": 2.68
+        },
+        {
+          "text": "a",
+          "start": 2.98
+        },
+        {
+          "text": "los",
+          "start": 3.12
+        },
+        {
+          "text": "cien.",
+          "start": 3.22
+        }
+      ]
+    },
+    {
+      "startSeconds": 3.98,
+      "endSeconds": 6.92,
+      "text": "Y es cierto: el motor puede girar sin gastar combustible.",
+      "words": [
+        {
+          "text": "Y",
+          "start": 3.98
+        },
+        {
+          "text": "es",
+          "start": 4.1
+        },
+        {
+          "text": "cierto:",
+          "start": 4.24
+        },
+        {
+          "text": "el",
+          "start": 4.86
+        },
+        {
+          "text": "motor",
+          "start": 5.02
+        },
+        {
+          "text": "puede",
+          "start": 5.2
+        },
+        {
+          "text": "girar",
+          "start": 5.48
+        },
+        {
+          "text": "sin",
+          "start": 5.78
+        },
+        {
+          "text": "gastar",
+          "start": 6.02
+        },
+        {
+          "text": "combustible.",
+          "start": 6.32
+        }
+      ]
+    },
+    {
+      "startSeconds": 7.72,
+      "endSeconds": 9.3,
+      "text": "Con una marcha puesta y el embrague suelto,",
+      "words": [
+        {
+          "text": "Con",
+          "start": 7.72
+        },
+        {
+          "text": "una",
+          "start": 7.8
+        },
+        {
+          "text": "marcha",
+          "start": 7.96
+        },
+        {
+          "text": "puesta",
+          "start": 8.22
+        },
+        {
+          "text": "y",
+          "start": 8.5
+        },
+        {
+          "text": "el",
+          "start": 8.64
+        },
+        {
+          "text": "embrague",
+          "start": 8.74
+        },
+        {
+          "text": "suelto,",
+          "start": 8.98
+        }
+      ]
+    },
+    {
+      "startSeconds": 9.32,
+      "endSeconds": 11.24,
+      "text": "son las ruedas las que arrastran el motor.",
+      "words": [
+        {
+          "text": "son",
+          "start": 9.32
+        },
+        {
+          "text": "las",
+          "start": 9.7
+        },
+        {
+          "text": "ruedas",
+          "start": 9.86
+        },
+        {
+          "text": "las",
+          "start": 10.2
+        },
+        {
+          "text": "que",
+          "start": 10.34
+        },
+        {
+          "text": "arrastran",
+          "start": 10.5
+        },
+        {
+          "text": "el",
+          "start": 10.84
+        },
+        {
+          "text": "motor.",
+          "start": 10.98
+        }
+      ]
+    },
+    {
+      "startSeconds": 11.96,
+      "endSeconds": 15.16,
+      "text": "Moverlo cuesta energía, por el rozamiento y por bombear aire.",
+      "words": [
+        {
+          "text": "Moverlo",
+          "start": 11.96
+        },
+        {
+          "text": "cuesta",
+          "start": 12.38
+        },
+        {
+          "text": "energía,",
+          "start": 12.68
+        },
+        {
+          "text": "por",
+          "start": 13.44
+        },
+        {
+          "text": "el",
+          "start": 13.58
+        },
+        {
+          "text": "rozamiento",
+          "start": 13.72
+        },
+        {
+          "text": "y",
+          "start": 14.0
+        },
+        {
+          "text": "por",
+          "start": 14.42
+        },
+        {
+          "text": "bombear",
+          "start": 14.54
+        },
+        {
+          "text": "aire.",
+          "start": 14.86
+        }
+      ]
+    },
+    {
+      "startSeconds": 15.62,
+      "endSeconds": 16.56,
+      "text": "Por eso el coche retiene.",
+      "words": [
+        {
+          "text": "Por",
+          "start": 15.62
+        },
+        {
+          "text": "eso",
+          "start": 15.7
+        },
+        {
+          "text": "el",
+          "start": 15.86
+        },
+        {
+          "text": "coche",
+          "start": 15.96
+        },
+        {
+          "text": "retiene.",
+          "start": 16.12
+        }
+      ]
+    },
+    {
+      "startSeconds": 17.12,
+      "endSeconds": 18.8,
+      "text": "Y como las ruedas lo mantienen girando,",
+      "words": [
+        {
+          "text": "Y",
+          "start": 17.12
+        },
+        {
+          "text": "como",
+          "start": 17.26
+        },
+        {
+          "text": "las",
+          "start": 17.4
+        },
+        {
+          "text": "ruedas",
+          "start": 17.54
+        },
+        {
+          "text": "lo",
+          "start": 17.76
+        },
+        {
+          "text": "mantienen",
+          "start": 17.9
+        },
+        {
+          "text": "girando,",
+          "start": 18.18
+        }
+      ]
+    },
+    {
+      "startSeconds": 18.82,
+      "endSeconds": 21.58,
+      "text": "la centralita puede cortar los inyectores. De ahí el cero.",
+      "words": [
+        {
+          "text": "la",
+          "start": 18.82
+        },
+        {
+          "text": "centralita",
+          "start": 18.86
+        },
+        {
+          "text": "puede",
+          "start": 19.4
+        },
+        {
+          "text": "cortar",
+          "start": 19.64
+        },
+        {
+          "text": "los",
+          "start": 19.9
+        },
+        {
+          "text": "inyectores.",
+          "start": 20.08
+        },
+        {
+          "text": "De",
+          "start": 20.74
+        },
+        {
+          "text": "ahí",
+          "start": 20.92
+        },
+        {
+          "text": "el",
+          "start": 21.08
+        },
+        {
+          "text": "cero.",
+          "start": 21.34
+        }
+      ]
+    },
+    {
+      "startSeconds": 22.56,
+      "endSeconds": 25.68,
+      "text": "Si pisas el embrague o pones punto muerto, el motor se desacopla:",
+      "words": [
+        {
+          "text": "Si",
+          "start": 22.56
+        },
+        {
+          "text": "pisas",
+          "start": 22.72
+        },
+        {
+          "text": "el",
+          "start": 22.92
+        },
+        {
+          "text": "embrague",
+          "start": 23.06
+        },
+        {
+          "text": "o",
+          "start": 23.58
+        },
+        {
+          "text": "pones",
+          "start": 23.66
+        },
+        {
+          "text": "punto",
+          "start": 23.8
+        },
+        {
+          "text": "muerto,",
+          "start": 24.08
+        },
+        {
+          "text": "el",
+          "start": 24.66
+        },
+        {
+          "text": "motor",
+          "start": 24.74
+        },
+        {
+          "text": "se",
+          "start": 24.96
+        },
+        {
+          "text": "desacopla:",
+          "start": 25.14
+        }
+      ]
+    },
+    {
+      "startSeconds": 25.88,
+      "endSeconds": 29.06,
+      "text": "desaparece la retención y, al ralentí, normalmente vuelve a gastar.",
+      "words": [
+        {
+          "text": "desaparece",
+          "start": 25.88
+        },
+        {
+          "text": "la",
+          "start": 26.34
+        },
+        {
+          "text": "retención",
+          "start": 26.44
+        },
+        {
+          "text": "y,",
+          "start": 26.84
+        },
+        {
+          "text": "al",
+          "start": 27.22
+        },
+        {
+          "text": "ralentí,",
+          "start": 27.36
+        },
+        {
+          "text": "normalmente",
+          "start": 27.76
+        },
+        {
+          "text": "vuelve",
+          "start": 28.36
+        },
+        {
+          "text": "a",
+          "start": 28.7
+        },
+        {
+          "text": "gastar.",
+          "start": 28.78
+        }
+      ]
+    },
+    {
+      "startSeconds": 29.8,
+      "endSeconds": 32.12,
+      "text": "Eso sí, ese cero dura un instante.",
+      "words": [
+        {
+          "text": "Eso",
+          "start": 29.8
+        },
+        {
+          "text": "sí,",
+          "start": 30.0
+        },
+        {
+          "text": "ese",
+          "start": 30.54
+        },
+        {
+          "text": "cero",
+          "start": 30.72
+        },
+        {
+          "text": "dura",
+          "start": 30.98
+        },
+        {
+          "text": "un",
+          "start": 31.2
+        },
+        {
+          "text": "instante.",
+          "start": 31.56
+        }
+      ]
+    },
+    {
+      "startSeconds": 32.48,
+      "endSeconds": 34.5,
+      "text": "La media sigue contando lo que gastaste al acelerar.",
+      "words": [
+        {
+          "text": "La",
+          "start": 32.48
+        },
+        {
+          "text": "media",
+          "start": 32.58
+        },
+        {
+          "text": "sigue",
+          "start": 32.76
+        },
+        {
+          "text": "contando",
+          "start": 33.02
+        },
+        {
+          "text": "lo",
+          "start": 33.36
+        },
+        {
+          "text": "que",
+          "start": 33.54
+        },
+        {
+          "text": "gastaste",
+          "start": 33.64
+        },
+        {
+          "text": "al",
+          "start": 33.94
+        },
+        {
+          "text": "acelerar.",
+          "start": 34.12
+        }
+      ]
+    },
+    {
+      "startSeconds": 35.5,
+      "endSeconds": 37.44,
+      "text": "Con marcha, retiene y puede no gastar.",
+      "words": [
+        {
+          "text": "Con",
+          "start": 35.5
+        },
+        {
+          "text": "marcha,",
+          "start": 35.58
+        },
+        {
+          "text": "retiene",
+          "start": 35.92
+        },
+        {
+          "text": "y",
+          "start": 36.42
+        },
+        {
+          "text": "puede",
+          "start": 36.72
+        },
+        {
+          "text": "no",
+          "start": 37.0
+        },
+        {
+          "text": "gastar.",
+          "start": 37.12
+        }
+      ]
+    },
+    {
+      "startSeconds": 38.12,
+      "endSeconds": 40.4,
+      "text": "En punto muerto, rueda más, pero suele gastar.",
+      "words": [
+        {
+          "text": "En",
+          "start": 38.12
+        },
+        {
+          "text": "punto",
+          "start": 38.22
+        },
+        {
+          "text": "muerto,",
+          "start": 38.4
+        },
+        {
+          "text": "rueda",
+          "start": 38.78
+        },
+        {
+          "text": "más,",
+          "start": 39.18
+        },
+        {
+          "text": "pero",
+          "start": 39.72
+        },
+        {
+          "text": "suele",
+          "start": 39.84
+        },
+        {
+          "text": "gastar.",
+          "start": 40.06
+        }
+      ]
+    },
+    {
+      "startSeconds": 41.34,
+      "endSeconds": 42.0,
+      "text": "¿Lo sabías?",
+      "words": [
+        {
+          "text": "¿Lo",
+          "start": 41.34
+        },
+        {
+          "text": "sabías?",
+          "start": 41.48
+        }
+      ]
+    },
+    {
+      "startSeconds": 42.24,
+      "endSeconds": 45.9,
+      "text": "Busca la guía de qué pasa al soltar el acelerador en kilometroclaro.com.",
+      "words": [
+        {
+          "text": "Busca",
+          "start": 42.24
+        },
+        {
+          "text": "la",
+          "start": 42.44
+        },
+        {
+          "text": "guía",
+          "start": 42.6
+        },
+        {
+          "text": "de",
+          "start": 42.76
+        },
+        {
+          "text": "qué",
+          "start": 42.88
+        },
+        {
+          "text": "pasa",
+          "start": 43.02
+        },
+        {
+          "text": "al",
+          "start": 43.2
+        },
+        {
+          "text": "soltar",
+          "start": 43.34
+        },
+        {
+          "text": "el",
+          "start": 43.6
+        },
+        {
+          "text": "acelerador",
+          "start": 43.72
+        },
+        {
+          "text": "en",
+          "start": 44.22
+        },
+        {
+          "text": "kilometroclaro.com.",
+          "start": 44.52
+        }
+      ]
+    }
+  ]
+}
