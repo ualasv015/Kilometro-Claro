@@ -13,7 +13,7 @@ const publishedDate = '2026-11-03';
 
 const sources = {
   idae: 'https://idae.es/eu/node/32894',
-  dgt: 'https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/nuestros_servicios/permisos-de-conducir/Accesibilidad/TeoricaAbreviada_LecturaFacil_2023-12-Interactivo.pdf',
+  dgt: 'https://www.dgt.es/muevete-con-seguridad/conviertete-en-un-buen-conductor/consejos-generales/conduccion-eficiente/',
   bath: 'https://purehost.bath.ac.uk/ws/portalfiles/portal/220250654/Thesis_NiallTurner_FinalSubmittedNoRestriction_20210403.pdf',
   toyotaTraining: 'https://gt4.mwp.id.au/Toyota%20Manuals/Mechanics%20Training/Toyota%20-%20Engine%20%28ODB2%29%20-%2043%20Fuel%20System%20-%20Injection%20Duration.pdf',
   toyotaCut: 'https://patents.justia.com/patent/7415349',
@@ -31,7 +31,7 @@ const articleSchema = {
   description,
   image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
   datePublished: publishedDate,
-  dateModified: publishedDate,
+  dateModified: '2026-11-04',
   inLanguage: 'es-ES',
   mainEntityOfPage: canonical.toString(),
   author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
@@ -39,7 +39,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate="2026-11-04">
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Soltar el acelerador' }]} />
@@ -81,10 +81,31 @@ const articleSchema = {
       <p>Mientras el vehículo avanza y el motor permanece en corte, el consumo instantáneo puede indicar <strong>0 L/100 km</strong>. Esa lectura describe una fase breve y depende de cómo la calcula y muestra el cuadro. El consumo medio relaciona todos los litros usados con la distancia total del periodo que estás midiendo. Aunque veas un cero al acercarte a la glorieta, en la media siguen contando el combustible de la aceleración previa y el que uses al salir. <a href={sources.mazda}>Mazda, diferencia entre indicador instantáneo y medio</a>. Puedes comprobar la media de tu coche con el <a href="/guias/como-calcular-consumo-real-coche/">método de medir el consumo entre repostajes</a>.</p>
 
       <h2 id="embrague">Qué pasa si pisas el embrague o pones punto muerto</h2>
+      <figure class="retention-figure">
+        <img src="/images/guides/retencion-soltar-acelerador.svg" width="960" height="540" alt="Boceto de un pie levantado del acelerador junto a un velocímetro" loading="lazy" decoding="async" />
+        <figcaption>Boceto original de Kilómetro Claro. La retención depende de la conexión entre el motor y las ruedas.</figcaption>
+      </figure>
+      <p>La <a href="/guias/que-ocurre-pisar-embrague/">guía sobre qué ocurre al pisar el embrague</a> muestra cómo el plato libera el disco y cómo vuelve a transmitir par al soltar el pedal.</p>
       <p>Al pisar a fondo el embrague de un manual, separas el motor de la caja de cambios aunque la palanca siga en la misma marcha. En punto muerto, la caja deja de transmitir par entre motor y ruedas aunque sueltes el embrague. En ambos casos las ruedas dejan de sostener el régimen del motor y se pierde su retención. Si sigue en marcha, normalmente baja al ralentí y necesita combustible para mantenerse ahí.</p>
-      <p>También cambia la respuesta. Con una marcha adecuada y el embrague acoplado puedes volver a pedir empuje al pisar el acelerador. Con el embrague pisado hay que acoplarlo de nuevo. En punto muerto, además hay que seleccionar una marcha compatible con la velocidad. Esa diferencia importa cuando el tráfico cambia y necesitas volver a acelerar o ajustar la velocidad. <a href={sources.dgt}>DGT, manual del permiso B sobre punto muerto y conducción preventiva</a>.</p>
+      <p>También cambia la respuesta. Con una marcha adecuada y el embrague acoplado puedes volver a pedir empuje al pisar el acelerador. Con el embrague pisado hay que acoplarlo de nuevo. En punto muerto, además hay que seleccionar una marcha compatible con la velocidad. Esa diferencia importa cuando el tráfico cambia y necesitas volver a acelerar o ajustar la velocidad. La DGT recuerda que bajar en punto muerto elimina la retención y obliga a usar más los frenos. <a href={sources.dgt}>DGT, conducción eficiente y control en pendientes</a>.</p>
+      <div class="retention-table">
+        <table>
+          <caption>Al soltar el acelerador en un coche de combustión con cambio manual convencional y motor en marcha</caption>
+          <thead><tr><th scope="col">Situación</th><th scope="col">Conexión con las ruedas</th><th scope="col">Qué puede ocurrir con el combustible</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Marcha engranada y embrague suelto</th><td>Las ruedas pueden arrastrar el motor y producir retención.</td><td>Puede cortarse la inyección si se cumplen las condiciones de la centralita.</td></tr>
+            <tr><th scope="row">Embrague pisado a fondo</th><td>El motor queda desacoplado; desaparece su retención.</td><td>Al estabilizarse al ralentí, normalmente necesita combustible.</td></tr>
+            <tr><th scope="row">Punto muerto y embrague suelto</th><td>La caja no transmite par entre el motor y las ruedas.</td><td>Si el motor permanece al ralentí, normalmente consume combustible.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Esta comparación describe el funcionamiento de un manual convencional. Los sistemas que apagan el motor o gestionan automáticamente el avance por inercia tienen otras estrategias. Tampoco permite deducir qué opción gastará menos durante todo un trayecto.</p>
 
       <h2 id="consumo">¿Consume menos con una marcha puesta que en punto muerto?</h2>
+      <figure class="retention-figure">
+        <img src="/images/guides/retencion-palanca-manual.jpg" width="960" height="720" alt="Primer plano de la palanca de cambios de un coche con transmisión manual" loading="lazy" decoding="async" />
+        <figcaption>Marcha engranada y punto muerto cambian la conexión entre el motor y las ruedas; la foto no identifica la posición seleccionada. Foto: <a href="https://commons.wikimedia.org/wiki/File:Handle_of_a_car_(Manual_Transmission).jpg">A Chinese ID / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Versión reducida, sin recorte.</figcaption>
+      </figure>
       <p>Si comparas el mismo instante y el motor con la marcha puesta está en corte, en ese momento gasta menos combustible que si estuviera al ralentí. En un tramo completo hay otra variable: cuánto avanza el coche antes de tener que frenar o acelerar de nuevo. Con menos retención puede rodar más lejos, pero un motor que sigue al ralentí va consumiendo durante ese tiempo. La pendiente, el tráfico y la velocidad que necesitas al final del tramo cambian el resultado. Un cero en el cuadro no resuelve por sí solo la comparación.</p>
       <p>Si ves que vas a tener que reducir la velocidad, levanta el pie con antelación en una marcha adecuada y usa el freno según lo requiera la situación. Así aprovechas la desaceleración que ya necesitas. El IDAE recomienda anticiparse y dejar rodar con la marcha engranada en las deceleraciones. <a href={sources.idae}>IDAE, reglas de conducción eficiente</a>.</p>
 
@@ -105,13 +126,18 @@ const articleSchema = {
 
       <aside class="sources">
         <h2>Fuentes y método</h2>
-        <p>Consulta del 3 de noviembre de 2026. Contrastamos el recorrido de la energía y las pérdidas del motor con ensayos de arrastre, las condiciones del corte con documentación técnica y de patente, y los ejemplos de avance por inercia y regeneración con manuales y fichas del fabricante. Usamos las recomendaciones de la DGT y del IDAE para el contexto de conducción en España. Los esquemas son originales y simplifican el flujo de energía. Los umbrales de inyección, la lectura del cuadro y la intensidad de frenado dependen de la versión y sus condiciones de uso.</p>
+        <p>Fuentes revisadas el 4 de noviembre de 2026. Contrastamos el recorrido de la energía y las pérdidas del motor con ensayos de arrastre, las condiciones del corte con documentación técnica y de patente, y los ejemplos de avance por inercia y regeneración con manuales y fichas del fabricante. La documentación de formación de Toyota se consulta en una copia alojada por un tercero; la patente describe una estrategia concreta, sin acreditar que todos los modelos la utilicen. Usamos las recomendaciones de la DGT y del IDAE para el contexto de conducción en España. Los esquemas son originales y simplifican el flujo de energía. Las dos fotografías reales proceden de Wikimedia Commons, con autoría y licencia CC BY-SA 4.0 enlazadas en sus pies. Los umbrales de inyección, la lectura del cuadro y la intensidad de frenado dependen de la versión y sus condiciones de uso; no ofrecemos valores universales ni resultados de una prueba propia.</p>
       </aside>
     </article>
   </div>
 </BaseLayout>
 
 <style>
+  .retention-table { overflow-x: auto; margin: 24px 0; }
+  .retention-table table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.6; }
+  .retention-table caption { text-align: left; margin-bottom: 10px; font-weight: 700; }
+  .retention-table th, .retention-table td { text-align: left; vertical-align: top; padding: 12px; border: 1px solid #cbd6ca; }
+  .retention-table thead { background: #e8efdf; }
   .retention-figure { margin: 24px 0; }
   .retention-figure img { display: block; width: 100%; height: auto; border-radius: 9px; }
   .retention-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }

@@ -54,6 +54,10 @@ const articleSchema = {
       </nav>
 
       <h2 id="pedal">Qué pasa cuando pisas el acelerador</h2>
+      <figure class="mechanics-figure">
+        <img src="/images/guides/gasolina-diesel-acelerador.svg" width="960" height="540" alt="Boceto de un pedal electrónico que envía una petición a la centralita del motor" loading="lazy" decoding="async" />
+        <figcaption>Boceto original de Kilómetro Claro. El pedal electrónico comunica la petición del conductor a la gestión del motor.</figcaption>
+      </figure>
       <p>Imagina que sales de una glorieta y entras en el carril de aceleración de una autovía. Al principio mantienes un ritmo suave. Después pisas más para ganar velocidad antes de incorporarte. Ese cambio de posición del pedal es una señal que la unidad de control del motor, o centralita, interpreta como una petición de más par. En un coche moderno con pedal electrónico, el recorrido del pedal no equivale a una apertura fija de la mariposa ni a una cantidad fija de combustible. La centralita tiene en cuenta el régimen del motor y puede limitar la respuesta si interviene el control de tracción. <a href="https://www.bosch-mobility.com/en/solutions/air-management/accelerator-pedal-module/">Bosch, módulo del acelerador</a> y <a href="https://www.bosch-mobility.com/en/solutions/control-units/engine-control-unit/">unidad de control del motor</a>.</p>
       <p><strong>En un gasolina convencional</strong>, si la situación lo permite, la centralita abre más la mariposa para aumentar la masa de aire que entra en los cilindros. Los inyectores ajustan la cantidad de gasolina a ese aire y a las condiciones de funcionamiento. La centralita también decide cuándo salta la chispa. Al quemarse más mezcla por ciclo, los gases ejercen más presión sobre los pistones y aumenta el par disponible. Es una secuencia simplificada. Los ajustes de aire, inyección y chispa se coordinan durante la maniobra. <a href="https://www.bosch-mobility.com/en/solutions/air-management/">Bosch, gestión del aire</a> y <a href="https://www.bosch-mobility.com/en/solutions/powertrain/gasoline/gasoline-direct-injection/">gestión de un gasolina de inyección directa</a>.</p>
       <p><strong>En un diésel convencional</strong>, el motor suele trabajar con aire de sobra respecto al gasóleo que quema, sobre todo a carga parcial. Al pedir más par, la centralita puede aumentar el combustible por ciclo y ajustar el momento de inyección. La dosis posible depende del oxígeno disponible y de los límites del motor. En un diésel turbo, la gestión también puede pedir más presión de sobrealimentación. Si el aire adicional tarda en llegar, la inyección se ajusta a lo que el motor puede quemar en ese momento. Un sistema <em>common rail</em> mantiene el combustible a presión en un conducto común y permite dosificar cuándo y cuánto inyecta cada cilindro. <a href="https://www.bosch-mobility.com/en/solutions/powertrain/diesel/common-rail-system-solenoid/">Bosch, inyección common rail</a>.</p>
@@ -106,6 +110,7 @@ const articleSchema = {
 </BaseLayout>
 
 <style>
+  :global(.guide-image img) { object-fit: contain; background: #e3e7e4; }
   .mechanics-figure { margin: 24px 0; }
   .mechanics-figure img { display: block; width: 100%; height: auto; border-radius: 9px; }
   .mechanics-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }

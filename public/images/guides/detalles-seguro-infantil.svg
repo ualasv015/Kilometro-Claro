@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#f1f5eb"/>
+  <text x="50" y="68" fill="#173729" font-family="system-ui,sans-serif" font-size="35" font-weight="700">Dónde buscar el seguro infantil</text>
+  <rect x="65" y="125" width="310" height="315" rx="18" fill="#d9e6d3" stroke="#315642" stroke-width="5"/>
+  <path d="M380 146L665 110Q697 105 697 139V434Q697 451 679 451L380 418Z" fill="#fff" stroke="#315642" stroke-width="5"/>
+  <path d="M635 145v267" stroke="#b6c7b4" stroke-width="5"/>
+  <rect x="640" y="259" width="38" height="53" rx="6" fill="#d1eb74" stroke="#315642" stroke-width="3"/>
+  <circle cx="659" cy="285" r="7" fill="#315642"/>
+  <path d="M710 285h74" stroke="#315642" stroke-width="4"/>
+  <g fill="#173729" font-family="system-ui,sans-serif">
+    <text x="790" y="269" font-size="24" font-weight="700">Canto de la</text>
+    <text x="790" y="301" font-size="24" font-weight="700">puerta</text>
+    <text x="50" y="505" font-size="20">Esquema orientativo de un seguro mecánico; algunos coches lo accionan desde el conductor.</text>
+  </g>
+</svg>
