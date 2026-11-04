@@ -1225,6 +1225,8 @@ export const brands: CarBrand[] = [
   {
     slug: 'subaru',
     name: 'Subaru',
+    logo: '/images/brands/subaru.webp',
+    logoLayout: 'wide',
     country: 'Japón',
     headquartersCity: 'Tokio',
     founded: 1953,
@@ -1251,6 +1253,8 @@ export const brands: CarBrand[] = [
   {
     slug: 'polestar',
     name: 'Polestar',
+    logo: '/images/brands/polestar.svg',
+    logoLayout: 'wide',
     country: 'Suecia',
     headquartersCity: 'Gotemburgo',
     founded: 2017,
@@ -1276,6 +1280,8 @@ export const brands: CarBrand[] = [
   {
     slug: 'swm',
     name: 'SWM',
+    logo: '/images/brands/swm.png',
+    logoLayout: 'wide',
     country: 'Italia (origen de marca); China (grupo propietario actual)',
     headquartersCity: 'Fuling, Chongqing (SWM Motors, según Shineray)',
     founded: 1971,
@@ -1304,6 +1310,7 @@ export const brands: CarBrand[] = [
   {
     slug: 'smart',
     name: 'smart',
+    logo: '/images/brands/smart.svg',
     country: 'Alemania y Suiza (origen); sociedad conjunta actual con China',
     headquartersCity: 'Ningbo (global) / Leinfelden-Echterdingen (Europa)',
     founded: 1994,

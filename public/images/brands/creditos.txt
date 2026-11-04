@@ -55,6 +55,10 @@ Land Rover: Land Rover 2023.svg, Wikimedia Commons, autor Jaguar Land Rover Auto
 
 XPENG: XPeng logo.svg, Wikimedia Commons, autor XPeng Motor; logotipo tipográfico indicado como dominio público por su diseño sencillo. Fuente: https://commons.wikimedia.org/wiki/File:XPeng_logo.svg. XPENG y su logotipo son marcas registradas; se muestran únicamente para identificar al fabricante.
 
+Polestar: Polestar Logo.svg, Wikimedia Commons, palabra-marca vectorial. Fuente: https://commons.wikimedia.org/wiki/File:Polestar_Logo.svg. Polestar es una marca registrada; el logotipo se muestra únicamente para identificar al fabricante.
+smart: logo.svg, recurso actual del sitio oficial global de smart. Fuente: https://global.smart.com/images/logo.svg. El logotipo y la marca pertenecen a smart Automobile Co., Ltd.; se muestran únicamente para identificar al fabricante.
+Subaru: logotipo-subaru.webp, recurso del sitio oficial de Subaru España. Fuente: https://www.subaru.es/images/logotipo-subaru.webp. El logotipo y la marca pertenecen a Subaru Corporation; se muestran únicamente para identificar al fabricante.
+SWM: SWM_red_RGB.png, recurso oficial del área de prensa de SWM Motors Italia. Fuente: https://swm-motors.it/wp-content/uploads/2024/08/SWM_red_RGB.png. SWM y su logotipo son marcas registradas; se muestran únicamente para identificar al fabricante.
 Fotografías de modelos EVO (licencias CC BY 4.0 o CC BY-SA 4.0, indicadas también en las fichas):
 - EVO 3.jpg — autor LFlycan — https://commons.wikimedia.org/wiki/File:EVO_3.jpg
 - EVO 4 2024.jpg — autor Corvettec6r — https://commons.wikimedia.org/wiki/File:EVO_4_2024.jpg
