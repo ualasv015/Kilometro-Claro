@@ -1,5 +1,12 @@
 export const guides = [
   {
+    slug: 'coche-patina-al-acelerar-control-traccion',
+    title: '¿Qué pasa cuando el coche patina al acelerar? Adherencia y control de tracción',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Por qué las ruedas motrices pueden girar sin acelerar igual, cómo interviene el control de tracción y en qué se diferencia del ABS y el control de estabilidad.',
+    published: true,
+  },
+  {
     slug: 'par-motor-potencia-diferencias',
     title: 'Par motor y potencia: ¿en qué se diferencian y qué notas al conducir?',
     category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',

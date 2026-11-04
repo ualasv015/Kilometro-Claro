@@ -14,6 +14,15 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'coche-patina-al-acelerar-control-traccion': {
+    src: '/images/guides/rueda-gravilla-real.jpg',
+    alt: 'Rueda trasera de un coche parado sobre gravilla suelta',
+    caption: 'Rueda y firme de gravilla reales. La foto no documenta un patinamiento ni identifica el sistema de tracción del vehículo. Versión reducida; portada y tarjeta social adaptan el encuadre.',
+    author: 'Mateusz Konieczny', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Gravel_road,_car_in_viewfield_for_scale.jpg',
+    license: 'https://creativecommons.org/publicdomain/zero/1.0/', licenseName: 'CC0 1.0',
+    width: 960, height: 720,
+  },
   'par-motor-potencia-diferencias': {
     src: '/images/guides/par-potencia-dinamometro-real.jpg',
     alt: 'Coche amarillo sobre un banco de rodillos durante una prueba de motor',

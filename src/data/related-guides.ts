@@ -1,7 +1,8 @@
 export const relatedGuideSlugs: Record<string, string[]> = {
-  'par-motor-potencia-diferencias': ['acelerar-fondo-marcha-larga', 'por-que-tarda-turbo-responder', 'motor-gasolina-diesel-acelerador'],
+  'coche-patina-al-acelerar-control-traccion': ['tipos-traccion-coche', 'par-motor-potencia-diferencias', 'que-ocurre-pisar-embrague'],
+  'par-motor-potencia-diferencias': ['acelerar-fondo-marcha-larga', 'coche-patina-al-acelerar-control-traccion', 'por-que-tarda-turbo-responder'],
   'acelerar-fondo-marcha-larga': ['par-motor-potencia-diferencias', 'por-que-tarda-turbo-responder', 'motor-gasolina-diesel-acelerador'],
-  'que-ocurre-pisar-embrague': ['levantar-pie-acelerador', 'motor-gasolina-diesel-acelerador', 'tipos-cambio-automatico'],
+  'que-ocurre-pisar-embrague': ['levantar-pie-acelerador', 'coche-patina-al-acelerar-control-traccion', 'tipos-cambio-automatico'],
   'por-que-tarda-turbo-responder': ['par-motor-potencia-diferencias', 'acelerar-fondo-marcha-larga', 'motor-gasolina-diesel-acelerador'],
   'levantar-pie-acelerador': ['que-ocurre-pisar-embrague', 'motor-gasolina-diesel-acelerador', 'coche-hibrido-enchufable-o-microhibrido'],
   'motor-gasolina-diesel-acelerador': ['por-que-tarda-turbo-responder', 'tipos-cambio-automatico', 'consumo-coche-electrico-gasolina-diesel'],
@@ -24,6 +25,6 @@ export const relatedGuideSlugs: Record<string, string[]> = {
   'porsche-mission-s-2026': ['toyota-gr-gt', 'coche-hibrido-enchufable-o-microhibrido', 'marcas-coches-mas-vendidas-espana-2025'],
   'detalles-coche-que-quiza-no-conocias': ['tipos-luces-coche', 'tipos-cambio-automatico', 'tipos-traccion-coche'],
   'tipos-cambio-automatico': ['tipos-traccion-coche', 'detalles-coche-que-quiza-no-conocias', 'marcas-coches-mas-fiables-ranking'],
-  'tipos-traccion-coche': ['volkswagen-id-polo-gti-electrico', 'jas-tensei-honda-nsx-vtec', 'tipos-cambio-automatico'],
+  'tipos-traccion-coche': ['coche-patina-al-acelerar-control-traccion', 'volkswagen-id-polo-gti-electrico', 'tipos-cambio-automatico'],
   'tipos-luces-coche': ['detalles-coche-que-quiza-no-conocias', 'nueva-normativa-dgt-octubre-2026', 'tipos-traccion-coche'],
 };

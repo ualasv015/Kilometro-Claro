@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'coche-patina-al-acelerar-control-traccion';
+const title = '¿Qué pasa cuando el coche patina al acelerar? Adherencia y control de tracción';
+const seoTitle = '¿Por qué patina el coche al acelerar? | Kilómetro Claro';
+const description = 'Qué ocurre si las ruedas motrices giran más deprisa que avanza el coche, cómo ayuda el control de tracción y qué cambia con el ABS, el firme y los neumáticos.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-04';
+const sources = {
+  slip: 'https://saemobilus.sae.org/papers/considerations-longitudinal-slip-car-tires-2013-36-0272',
+  esp: 'https://www.bosch-mobility.com/en/solutions/braking-systems/electronic-stability-program/',
+  abs: 'https://www.bosch-mobility.com/en/solutions/braking-systems/antilock-braking-system/',
+  tcs: 'https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1813568&Uid=G1710703&buildtype=web&countryCode=USA&div=f&languageCode=en&moidRef=G539572&userMarket=USA&vFilteringEnabled=True&variantid=8601',
+  indicator: 'https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G548893&Uid=G837929&buildtype=web&countryCode=USA&div=f&languageCode=en&moidRef=G539572&userMarket=irl&vFilteringEnabled=False&variantid=924',
+  tires: 'https://revista.dgt.es/es/motor/noticias/2017/0727Desgaste-neumaticos.shtml',
+  michelin: 'https://africa.michelin.com/en/auto/assistance/glossary',
+  diff: 'https://www.eaton.com/us/en-us/support/eaton-answers/limited-slip-differentials-and-electric-vehicles.html',
+  clutch: 'https://aftermarket.zf.com/en/aftermarket-portal/knowledge-hub/clutch-slipping/',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Patinamiento al acelerar' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 4 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Sales de un aparcamiento con gravilla o arrancas sobre asfalto mojado. Pides más aceleración, oyes subir el motor y el coche apenas gana velocidad. La clave está en el pequeño contacto entre los neumáticos motrices y el suelo.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>Al acelerar, la transmisión lleva par a las ruedas motrices y los neumáticos intentan empujar el firme hacia atrás para que el coche avance. Si se pide más fuerza de la que pueden transmitir en esas condiciones, las ruedas pueden girar demasiado deprisa respecto al avance real. El control de tracción puede limitar ese giro reduciendo el par, frenando alguna rueda o combinando ambas acciones, pero no crea adherencia donde falta.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#contacto">Cómo agarra el neumático</a></li>
+          <li><a href="#revoluciones">Por qué suben las revoluciones</a></li>
+          <li><a href="#factores">Firme, agua, neumáticos y carga</a></li>
+          <li><a href="#control">Qué hace el control de tracción</a></li>
+          <li><a href="#sistemas">ABS y control de estabilidad</a></li>
+          <li><a href="#ejes">Qué cambia según las ruedas motrices</a></li>
+          <li><a href="#diferencial">El papel del diferencial</a></li>
+          <li><a href="#actuar">Qué hacer y cuándo revisar</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="contacto">Qué ocurre en el contacto entre neumático y calzada</h2>
+      <p>El motor hace girar la transmisión; esta aplica par a las ruedas motrices. El <a href="/guias/par-motor-potencia-diferencias/">par del motor no es la fuerza en el asfalto</a>: entre ambos están la caja y el neumático. En la pequeña zona donde cada neumático toca el firme, la goma transmite una fuerza longitudinal. El coche puede ganar velocidad si esa fuerza útil supera las resistencias. En una salida sobre gravilla, el contacto es distinto al del asfalto seco: las piedras pueden moverse y el neumático dispone de menos agarre para convertir la petición del pedal en avance.</p>
+      <p>«Patinar» no es un interruptor que pasa de agarre total a fuerza cero. Al transmitir fuerza, un neumático deformable puede presentar un <strong>pequeño deslizamiento longitudinal</strong>: su velocidad de giro no coincide de forma perfectamente rígida con la velocidad del vehículo. Si la demanda supera lo que el contacto neumático–suelo puede sostener, ese deslizamiento puede crecer mucho y la rueda gira más deprisa sin producir un aumento equivalente de fuerza propulsora. Aun así puede transmitir cierta fuerza. La <a href={sources.slip}>investigación técnica publicada por SAE International</a> distingue el deslizamiento normal de la pérdida de contacto deslizante significativa.</p>
+      <figure class="grip-figure">
+        <img src="/images/guides/traccion-rueda-contacto.svg" width="960" height="540" alt="Esquema de una rueda motriz sobre firme de baja adherencia: el par de la transmisión hace girar la rueda y el neumático transmite una fuerza limitada a través de su contacto con el suelo" loading="lazy" decoding="async" />
+        <figcaption>Esquema original de Kilómetro Claro. Muestra la dirección de las fuerzas y un límite de adherencia, sin representar una medida ni un porcentaje de deslizamiento universal.</figcaption>
+      </figure>
+
+      <h2 id="revoluciones">Por qué el motor puede subir de vueltas y el coche no acelerar igual</h2>
+      <p>En un coche de combustión con la marcha engranada y el embrague acoplado, si una rueda motriz gana velocidad de giro al patinar, el régimen del motor puede subir con ella mientras la velocidad del coche apenas cambia. El ruido del motor y el velocímetro cuentan entonces historias distintas. La respuesta exacta depende del diferencial y de la gestión electrónica: el control de tracción puede intervenir antes de que el conductor perciba un patinamiento prolongado.</p>
+      <p>También existe otro fenómeno: un <strong>embrague que patina</strong> deja de transmitir correctamente el giro entre motor y caja. En ese caso las revoluciones pueden subir sin que las ruedas giren más deprisa sobre el asfalto. Los síntomas por sí solos no identifican la causa. <a href={sources.clutch}>ZF describe posibles causas de deslizamiento del embrague</a>; nuestra <a href="/guias/que-ocurre-pisar-embrague/">guía sobre el funcionamiento del embrague</a> explica dónde se rompe esa conexión. No intentes provocar pérdidas de adherencia para distinguir ambas situaciones.</p>
+
+      <h2 id="factores">Qué hace más fácil perder adherencia</h2>
+      <p>Importan el tipo y el estado del neumático, su presión según la carga, la temperatura, el firme y lo bruscamente que se solicita fuerza. Agua, nieve, hielo, barro o gravilla pueden reducir el agarre de maneras diferentes; un neumático apropiado para una condición no garantiza la misma respuesta en otra. La <a href={sources.tires}>DGT recomienda comprobar en frío la presión indicada para el vehículo y revisar dibujo y desgaste</a>. Una presión incorrecta puede perjudicar el comportamiento, pero no permite atribuir a ella cada patinamiento.</p>
+      <p>En mojado hay que distinguir <strong>menos adherencia</strong> de <strong>aquaplaning</strong>. El segundo ocurre cuando la rueda no logra evacuar el agua suficiente y pierde en gran medida el contacto con el pavimento; no hace falta que ocurra para que un asfalto mojado ofrezca menos agarre. La <a href={sources.tires}>DGT vincula el estado y la presión del neumático con el riesgo de aquaplaning</a>. Aquí no asignamos una velocidad crítica: depende también de la profundidad del agua, el dibujo y la superficie.</p>
+      <p>La aceleración desplaza parte de la <strong>carga vertical</strong> que soportan los neumáticos del eje delantero hacia el trasero. No cambia el peso total del coche: cambia cómo se reparte mientras acelera. Esa transferencia puede influir en la fuerza que puede transmitir cada eje, junto con neumáticos, suspensión y firme. <a href={sources.michelin}>Michelin define la transferencia longitudinal de carga</a>. Por eso una misma petición del acelerador no produce necesariamente la misma respuesta en todos los vehículos.</p>
+
+      <h2 id="control">Cómo interviene el control de tracción</h2>
+      <p>Los sensores de velocidad de rueda permiten detectar si alguna motriz gira de forma incompatible con el movimiento que el sistema espera. Según el diseño, la centralita puede reducir el par que llega desde el motor, aplicar el freno a una rueda que gira de más o combinar ambas acciones. También puede usar información de otros sensores; no existe una estrategia única. El <a href={sources.tcs}>manual de Ford consultado</a> describe la detección del giro excesivo al acelerar y la intervención sobre frenos y potencia en ese modelo.</p>
+      <figure class="grip-figure">
+        <img src="/images/guides/traccion-control-intervencion.svg" width="960" height="540" alt="Secuencia conceptual: los sensores detectan que una rueda motriz gira demasiado deprisa y el control de tracción puede reducir par o frenar esa rueda para aprovechar el agarre disponible" loading="lazy" decoding="async" />
+        <figcaption>Esquema original de Kilómetro Claro. Representa respuestas posibles del control de tracción; cada vehículo decide cuándo y cómo intervenir.</figcaption>
+      </figure>
+      <p>Un testigo que parpadea puede indicar que el control está actuando: así lo explica el <a href={sources.indicator}>manual del Ford Mondeo consultado</a>. En otros coches, el mismo testigo puede corresponder a más de una función de estabilidad. Un testigo fijo puede significar un modo desactivado o una avería según el modelo. Consulta el símbolo y el mensaje exactos en tu manual. El sistema ayuda a aprovechar el agarre disponible; si el suelo ofrece muy poco, puede no haber suficiente fuerza para arrancar o mantener la trayectoria.</p>
+
+      <h2 id="sistemas">Control de tracción, ABS y estabilidad: tres objetivos distintos</h2>
+      <div class="table-scroll" role="region" aria-label="Diferencias entre control de tracción, ABS y control de estabilidad" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Sistema</th><th scope="col">Situación principal</th><th scope="col">Qué intenta limitar</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Control de tracción</th><td>Al solicitar fuerza para avanzar</td><td>Giro excesivo de las ruedas motrices.</td></tr>
+            <tr><th scope="row">ABS</th><td>Durante una frenada</td><td>Bloqueo de ruedas al modular la presión de freno.</td></tr>
+            <tr><th scope="row">Control de estabilidad</th><td>Cuando el coche se desvía de la trayectoria solicitada</td><td>Ayuda a corregir el movimiento mediante frenos individuales y, según el sistema, gestión del motor.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>El <a href={sources.abs}>ABS descrito por Bosch</a> vigila las ruedas al frenar y reduce momentáneamente la presión si alguna amenaza con bloquearse. El <a href={sources.esp}>control de estabilidad de Bosch</a> compara la dirección solicitada con el movimiento real del coche, usando también sensores de giro y aceleración lateral. Muchos vehículos integran estas funciones y comparten sensores o frenos, pero sus objetivos no son intercambiables. Ninguno puede anular los límites de la física ni asegurar el control a cualquier velocidad.</p>
+
+      <h2 id="ejes">Qué cambia con tracción delantera, trasera o total</h2>
+      <p>En la <strong>delantera</strong> reciben par las ruedas que también dirigen. En la <strong>trasera</strong> empujan las posteriores. Una pérdida de agarre en las primeras puede comprometer tanto la motricidad como la capacidad de seguir la trayectoria elegida; en las segundas puede alterarse el comportamiento de la zaga. No son reacciones inevitables ni iguales en todos los modelos: dependen de la maniobra, la velocidad, los neumáticos y las ayudas.</p>
+      <p>La <strong>tracción total</strong> puede repartir la fuerza motriz entre ambos ejes y ayudar a salir de una rampa deslizante. Su reparto y la posibilidad de impulsar cada rueda dependen del sistema. Tampoco multiplica el agarre de los neumáticos, mejora por sí sola la frenada ni garantiza tomar una curva más rápido. La <a href="/guias/tipos-traccion-coche/">guía de tracción delantera, trasera y total</a> compara las arquitecturas y sus límites.</p>
+
+      <h2 id="diferencial">Qué papel juega el diferencial</h2>
+      <p>En una curva, las dos ruedas de un mismo eje recorren trayectos distintos y necesitan poder girar a velocidades diferentes. El <strong>diferencial</strong> permite esa diferencia. En un diferencial abierto convencional, si una rueda se apoya en una zona muy resbaladiza, el par que puede aprovechar la otra queda limitado por lo poco que admite el lado de menor agarre. La primera puede girar rápidamente mientras el coche apenas avanza. Eso no significa que «toda la potencia se vaya siempre a la rueda que patina»: el reparto real y la potencia transmitida dependen de las condiciones y del diseño. <a href={sources.diff}>Eaton explica la función y el límite del diferencial abierto</a>.</p>
+      <p>Algunos coches añaden un diferencial autoblocante o frenan selectivamente la rueda que gira de más para mejorar la motricidad. Otros emplean motores separados o distintas formas de tracción total. Estas soluciones pueden usar mejor el agarre que exista, pero no convierten gravilla, hielo o agua en asfalto seco.</p>
+
+      <h2 id="actuar">Qué hacer si notas que las ruedas pierden agarre</h2>
+      <p>Anticipa el estado de la calzada y deja margen: arranca y acelera con suavidad, adapta la velocidad y evita solicitudes bruscas de dirección o potencia cuando el firme sea incierto. Si el control de tracción interviene repetidamente, reduce la demanda y reconsidera si el terreno y los neumáticos son adecuados. No hace falta provocar el patinamiento para «comprobar» que el sistema funciona.</p>
+      <p>Como norma general, conserva activadas las ayudas. Algunos manuales contemplan un ajuste específico para salir de nieve o barro, pero su efecto y condiciones varían; sigue las indicaciones de tu modelo antes de usarlo. Si el testigo permanece encendido, aparecen ruidos o vibraciones nuevos, o la pérdida de tracción se repite en condiciones donde antes no ocurría, consulta el manual y pide una revisión. Neumáticos, sensores, embrague y transmisión requieren comprobaciones distintas: no se puede identificar la pieza afectada por una sola sensación.</p>
+
+      <h2 id="conclusion">Qué recordar al volver a acelerar</h2>
+      <p>Una rueda que patina gira demasiado deprisa para la velocidad a la que avanza el coche porque el contacto con el suelo no puede convertir toda la demanda en empuje útil. El control de tracción puede moderar esa demanda y ayudar a aprovechar el agarre restante. La medida más eficaz comienza antes: neumáticos en buen estado, presión correcta, lectura del firme y movimientos suaves. Si la respuesta del coche cambia de forma persistente, procede una revisión, no una prueba de derrape.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del 4 de noviembre de 2026. Abrimos un trabajo técnico de SAE sobre deslizamiento longitudinal; documentación de Bosch sobre ABS y estabilidad; manuales oficiales de Ford sobre el control de tracción y su testigo; información técnica de Eaton sobre el diferencial; el glosario de Michelin sobre transferencia de carga; la DGT sobre neumáticos y agua; y ZF sobre patinamiento del embrague. Contrastamos qué principios son generales y qué estrategias pertenecen a un modelo concreto. No hicimos pruebas de neumáticos, frenada ni aceleración, y no establecemos umbrales universales de deslizamiento o velocidades de aquaplaning. La fotografía muestra una rueda parada sobre gravilla; los dos esquemas son originales y cualitativos.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .grip-figure { margin: 24px 0; }
+  .grip-figure img { display: block; max-width: 100%; height: auto; margin: auto; border-radius: 9px; }
+  .grip-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+</style>
