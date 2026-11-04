@@ -4,18 +4,22 @@ import { searchItems } from '../data/search';
 import { guides } from '../data/guides';
 import { tools } from '../data/tools';
 import { guideImages } from '../data/guide-images';
+import { brands } from '../data/brands';
 
-const featuredGuide = guides.find((guide) => guide.slug === 'cuanto-cuesta-mantener-coche-mes-espana')!;
-const featuredImage = guideImages['cuanto-cuesta-mantener-coche-mes-espana'];
-const recentGuides = [
-  { slug: 'tipos-traccion-coche', compactTitle: 'Tipos de tracción' },
-  { slug: 'tipos-luces-coche', compactTitle: 'Luces del coche' },
-  { slug: 'tipos-cambio-automatico', compactTitle: 'Cambios automáticos' },
+// Pilar 1: «Cómo funciona tu coche». Una guía destacada y tres explicadores.
+const featuredGuide = guides.find((guide) => guide.slug === 'tipos-cambio-automatico')!;
+const featuredImage = guideImages['tipos-cambio-automatico'];
+const explainerGuides = [
+  { slug: 'que-ocurre-pisar-embrague', compactTitle: 'El embrague' },
+  { slug: 'por-que-tarda-turbo-responder', compactTitle: 'El turbo' },
+  { slug: 'par-motor-potencia-diferencias', compactTitle: 'Par y potencia' },
 ].map(({ slug, compactTitle }) => ({
   guide: guides.find((guide) => guide.slug === slug)!,
   image: guideImages[slug as keyof typeof guideImages],
   compactTitle,
 }));
+
+// Pilar 2: «Cuánto te cuesta». Tres calculadoras y las guías de costes.
 const featuredTools = [
   { slug: 'consumo-combustible', compactTitle: 'Consumo real' },
   { slug: 'coste-viaje-coche', compactTitle: 'Coste del viaje' },
@@ -24,11 +28,24 @@ const featuredTools = [
   tool: tools.find((tool) => tool.slug === slug)!,
   compactTitle,
 }));
+const costGuides = [
+  'cuanto-cuesta-mantener-coche-mes-espana',
+  'como-calcular-consumo-real-coche',
+  'cuanto-cuesta-viaje-coche',
+].map((slug) => guides.find((guide) => guide.slug === slug)!);
+
+// Apoyo: fichas de marcas, con las diez más vendidas en 2025 primero.
+const salesOrder2025 = ['toyota', 'renault', 'volkswagen', 'hyundai', 'seat', 'dacia', 'kia', 'peugeot', 'mercedes-benz', 'bmw'];
+const topBrands = salesOrder2025.map((slug) => brands.find((brand) => brand.slug === slug)).filter((brand): brand is NonNullable<typeof brand> => Boolean(brand));
+const modelPageCount = brands.reduce((total, brand) => total + brand.models.filter((model) => model.pageSlug).length, 0);
+
+const homeTitle = 'Cómo funciona tu coche y cuánto te cuesta | Kilómetro Claro';
+const homeDescription = 'Explicamos cómo funciona tu coche (motor, cambio, tracción) y calculamos lo que gasta con herramientas gratis. Para conductores en España.';
 ---
 
 <BaseLayout
-  title="Calculadoras de coche: consumo, viaje y coste/km | Kilómetro Claro"
-  description="Calcula el consumo de combustible, el coste de un viaje y el gasto por kilómetro. Herramientas gratuitas y guías prácticas para conductores en España."
+  title={homeTitle}
+  description={homeDescription}
   webSiteSchema={true}
   hideHeader={true}
 >
@@ -85,39 +102,40 @@ const featuredTools = [
   <section class="home-updates" aria-labelledby="home-updates-title">
     <div class="wrap home-updates-inner">
       <header class="home-updates-heading">
-        <h1 id="home-updates-title">Calcula el consumo y el coste de tu coche</h1>
-        <p>Usa la calculadora de consumo, estima cuánto cuesta un viaje y compara el gasto por kilómetro con herramientas gratuitas y guías para conductores en España.</p>
+        <h1 id="home-updates-title">Tu coche, explicado claro: cómo funciona y cuánto cuesta</h1>
+        <p>Explicamos cómo funcionan el motor, el cambio, la tracción o el turbo, y calculamos cuánto gasta tu coche en combustible, viajes y mantenimiento. Todo en <a href="/guias/">guías con fuentes</a> y <a href="/calculadoras/">calculadoras gratuitas</a> para conductores en España.</p>
       </header>
 
-      <article class="home-featured-guide">
-        <figure class="home-featured-visual">
-          <a class="home-featured-image" href={`/guias/${featuredGuide.slug}/`} aria-label={`Leer: ${featuredGuide.title}`}>
-            <img src={featuredImage.src} alt={featuredImage.alt} width={featuredImage.width} height={featuredImage.height} fetchpriority="high" />
-            <span>Guía práctica · Costes del coche</span>
-          </a>
-          {featuredImage.source && <figcaption>Imagen: <a href={featuredImage.source} target="_blank" rel="noopener noreferrer">{featuredImage.author ?? 'Fuente original'}{featuredImage.sourceName ? ` / ${featuredImage.sourceName}` : ''}</a>.</figcaption>}
-        </figure>
-        <div class="home-featured-copy">
-          <span class="home-guide-category">Guía recomendada · {featuredGuide.category}</span>
-          <h2><a href={`/guias/${featuredGuide.slug}/`}>{featuredGuide.title}</a></h2>
-          <p>{featuredGuide.description}</p>
-          <a class="home-guide-cta" href={`/guias/${featuredGuide.slug}/`}>Leer: {featuredGuide.title}</a>
-        </div>
-      </article>
-
-      <section class="home-recent-guides" aria-labelledby="home-recent-title">
+      <section class="home-recent-guides home-how" aria-labelledby="home-how-title">
         <div class="home-recent-heading">
-          <h2 id="home-recent-title">Guías para seguir explorando</h2>
+          <h2 id="home-how-title">Cómo funciona tu coche</h2>
           <a href="/guias/">Ver todas las guías </a>
         </div>
+
+        <article class="home-featured-guide">
+          <figure class="home-featured-visual">
+            <a class="home-featured-image" href={`/guias/${featuredGuide.slug}/`} aria-label={`Leer: ${featuredGuide.title}`}>
+              <img src={featuredImage.src} alt={featuredImage.alt} width={featuredImage.width} height={featuredImage.height} fetchpriority="high" />
+              <span>Guía práctica · Transmisión</span>
+            </a>
+            {featuredImage.source && <figcaption>Imagen: <a href={featuredImage.source} target="_blank" rel="noopener noreferrer">{featuredImage.author ?? 'Fuente original'}{featuredImage.sourceName ? ` / ${featuredImage.sourceName}` : ''}</a>.</figcaption>}
+          </figure>
+          <div class="home-featured-copy">
+            <span class="home-guide-category">Guía recomendada · Cambios automáticos</span>
+            <h3><a href={`/guias/${featuredGuide.slug}/`}>{featuredGuide.title}</a></h3>
+            <p>{featuredGuide.description}</p>
+            <a class="home-guide-cta" href={`/guias/${featuredGuide.slug}/`}>Leer: {featuredGuide.title}</a>
+          </div>
+        </article>
+
         <div class="home-guide-cards">
-          {recentGuides.map(({ guide, image, compactTitle }) => (
+          {explainerGuides.map(({ guide, image, compactTitle }) => (
             <article class="home-guide-card">
               <a class="home-guide-image" href={`/guias/${guide.slug}/`} aria-label={`Leer: ${guide.title}`}>
                 <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
               </a>
               <div class="home-guide-card-copy">
-                <span class="home-guide-category">{guide.category}</span>
+                <span class="home-guide-category">Cómo funciona</span>
                 <h3><a href={`/guias/${guide.slug}/`} aria-label={guide.title}><span class="home-guide-title-full">{guide.title}</span><span class="home-guide-title-mobile">{compactTitle}</span></a></h3>
                 <p>{guide.description}</p>
                 <a class="home-guide-cta" href={`/guias/${guide.slug}/`}>Leer guía </a>
@@ -125,12 +143,13 @@ const featuredTools = [
             </article>
           ))}
         </div>
+        <p class="home-section-links">También: <a href="/guias/tipos-traccion-coche/">tipos de tracción</a> · <a href="/guias/levantar-pie-acelerador/">qué pasa al levantar el pie del acelerador</a> · <a href="/guias/motor-gasolina-diesel-acelerador/">motor gasolina y diésel al acelerar</a> · <a href="/guias/tipos-luces-coche/">tipos de luces</a></p>
       </section>
 
       <section class="home-featured-tools" aria-labelledby="home-tools-title">
         <div class="home-tools-heading">
-          <h2 id="home-tools-title">Calculadoras para tus gastos</h2>
-          <a href="/calculadoras/">Ver todas</a>
+          <h2 id="home-tools-title">Cuánto te cuesta tu coche</h2>
+          <a href="/calculadoras/">Ver todas las calculadoras</a>
         </div>
         <div class="home-tool-cards">
           {featuredTools.map(({ tool, compactTitle }, index) => (
@@ -144,6 +163,25 @@ const featuredTools = [
             </article>
           ))}
         </div>
+        <p class="home-section-links">Guías de costes: {costGuides.map((guide, index) => (<><a href={`/guias/${guide.slug}/`}>{guide.title.replace(/^¿/, '').replace(/\?$/, '')}</a>{index < costGuides.length - 1 ? ' · ' : ''}</>))}</p>
+      </section>
+
+      <section class="home-brands" aria-labelledby="home-brands-title">
+        <div class="home-tools-heading">
+          <h2 id="home-brands-title">Consulta marcas y modelos</h2>
+          <a href="/marcas/">Ver las {brands.length} marcas</a>
+        </div>
+        <p>Fichas de {brands.length} marcas y {modelPageCount} modelos con los datos técnicos que publica cada fabricante, la fecha de revisión y el enlace a su web oficial. Empieza por las diez marcas más vendidas en España en 2025 y calcula después cuánto te costaría con tus propios kilómetros.</p>
+        <ul class="home-brand-chips">
+          {topBrands.map((brand) => (
+            <li><a href={`/marcas/${brand.slug}/`}>{brand.name}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="home-trust" aria-labelledby="home-trust-title">
+        <h2 id="home-trust-title">Información clara, con fuentes</h2>
+        <p>Nuestras guías citan las fuentes que usan y muestran cuándo se revisaron. Las calculadoras se resuelven en tu navegador con los datos que tú introduces. Detrás de Kilómetro Claro hay un equipo editorial que puedes conocer en <a href="/sobre-nosotros/">Sobre nosotros</a>.</p>
       </section>
     </div>
   </section>
@@ -486,9 +524,31 @@ const featuredTools = [
   :global(.max-result-type--brand) { background: #173d34; color: #d9f36a; }
 
   .home-updates { padding: clamp(24px, 3.5vw, 40px) 0 88px; background: linear-gradient(128deg, #e8f1c9 0%, #f8f7ef 46%, #dcece4 100%); color: #172c27; }
-  .home-updates-heading { max-width: 780px; margin: 0 auto 38px; text-align: center; }
-  .home-updates-heading h1 { margin: 15px 0 9px; color: #173d34; font: 900 clamp(38px, 6.2vw, 64px)/1 Manrope, Arial, sans-serif; letter-spacing: -2.5px; }
-  .home-updates-heading p { margin: 0; color: #536159; font-size: 16px; line-height: 1.6; }
+  .home-updates-heading { max-width: 860px; margin: 0 auto 38px; text-align: center; }
+  .home-updates-heading h1 { margin: 15px 0 14px; color: #173d34; font: 900 clamp(34px, 5.2vw, 56px)/1.04 Manrope, Arial, sans-serif; letter-spacing: -2.2px; text-wrap: balance; }
+  .home-updates-heading p { margin: 0 auto; max-width: 720px; color: #536159; font-size: 16px; line-height: 1.6; }
+  .home-updates-heading p a,
+  .home-section-links a,
+  .home-brands > p a,
+  .home-trust p a { color: #173d34; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .home-updates-heading p a:hover,
+  .home-section-links a:hover,
+  .home-trust p a:hover { color: #557329; }
+
+  .home-recent-guides.home-how { margin-top: 0; }
+  .home-how .home-featured-guide { margin-bottom: 15px; }
+  .home-section-links { margin: 18px 0 0; color: #536159; font-size: 13px; line-height: 1.8; }
+
+  .home-brands { margin-top: 54px; }
+  .home-brands > p { max-width: 760px; margin: 0 0 16px; color: #34483f; font-size: 14px; line-height: 1.7; }
+  .home-brand-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .home-brand-chips a { display: inline-flex; min-height: 40px; align-items: center; padding: 8px 14px; border: 2px solid #172c27; border-radius: 8px; background: #fffef8; color: #172c27; box-shadow: 3px 3px 0 #172c27; font-size: 13px; font-weight: 800; transition: transform .16s, box-shadow .16s, background-color .16s; }
+  .home-brand-chips a:hover,
+  .home-brand-chips a:focus-visible { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #172c27; background: #d9f36a; }
+
+  .home-trust { margin-top: 54px; padding: 24px 26px; border: 2px solid #172c27; border-radius: 9px; background: #fffef8; box-shadow: 5px 5px 0 #172c27; }
+  .home-trust h2 { margin: 0 0 8px; color: #173d34; font: 850 clamp(20px, 2.6vw, 26px)/1.15 Manrope, Arial, sans-serif; letter-spacing: -.6px; }
+  .home-trust p { max-width: 760px; margin: 0; color: #34483f; font-size: 14px; line-height: 1.7; }
 
   .home-featured-guide { display: grid; grid-template-columns: 1.08fr .92fr; overflow: hidden; border: 3px solid #172c27; border-radius: 12px; background: #d9f36a; box-shadow: 9px 9px 0 #172c27; transition: transform .2s ease, box-shadow .2s ease; }
   .home-featured-guide:focus-within { transform: translate(-3px,-3px); box-shadow: 12px 12px 0 #172c27; }
@@ -505,8 +565,8 @@ const featuredTools = [
   .home-featured-visual figcaption a { color: #173d34; text-decoration: underline; text-underline-offset: 2px; }
   .home-featured-copy { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(25px, 4vw, 49px); }
   .home-guide-category { display: inline-block; padding: 6px 8px; border-radius: 4px; background: #173d34; color: #fff; font-size: 9px; font-weight: 900; letter-spacing: .8px; line-height: 1.3; text-transform: uppercase; }
-  .home-featured-copy h2 { margin: 20px 0 12px; color: #173d34; font: 850 clamp(28px, 3.5vw, 43px)/1.05 Manrope, Arial, sans-serif; letter-spacing: -1.7px; }
-  .home-featured-copy h2 a:hover,.home-guide-card h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .home-featured-copy h3 { margin: 20px 0 12px; color: #173d34; font: 850 clamp(28px, 3.5vw, 43px)/1.05 Manrope, Arial, sans-serif; letter-spacing: -1.7px; }
+  .home-featured-copy h3 a:hover,.home-guide-card h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
   .home-featured-copy p { margin: 0 0 22px; color: #34483f; font-size: 14px; line-height: 1.7; }
   .home-guide-cta { display: inline-flex; min-height: 42px; align-items: center; gap: 20px; margin-top: auto; padding: 10px 13px; border: 1px solid #173d34; border-radius: 5px; background: #173d34; color: #fff; font-size: 11px; font-weight: 800; }
   .home-guide-cta:hover { background: #245447; }
@@ -601,7 +661,7 @@ const featuredTools = [
     .home-featured-image { flex: initial; aspect-ratio: 16/10; }
     .home-featured-image > span { left: 9px; bottom: 9px; max-width: calc(100% - 18px); font-size: 9px; }
     .home-featured-copy { padding: 22px 20px 23px; }
-    .home-featured-copy h2 { margin: 15px 0 9px; font-size: clamp(27px, 8vw, 35px); letter-spacing: -1px; }
+    .home-featured-copy h3 { margin: 15px 0 9px; font-size: clamp(27px, 8vw, 35px); letter-spacing: -1px; }
     .home-featured-copy p { margin-bottom: 17px; font-size: 13px; }
     .home-recent-guides { margin-top: 40px; }
     .home-recent-heading { align-items: flex-start; flex-direction: column; gap: 9px; margin-bottom: 15px; }
@@ -615,6 +675,12 @@ const featuredTools = [
     .home-guide-title-mobile,.home-tool-title-mobile,.home-tool-open-mobile { display: inline; }
     .home-guide-card h3 { margin: 0; font-size: clamp(9px,2.7vw,11px); line-height: 1.2; letter-spacing: -.15px; }
     .home-featured-tools { margin-top: 34px; }
+    .home-brands, .home-trust { margin-top: 34px; }
+    .home-section-links { margin-top: 14px; font-size: 12px; }
+    .home-brands > p, .home-trust p { font-size: 13px; }
+    .home-brand-chips { gap: 8px; }
+    .home-brand-chips a { min-height: 36px; padding: 6px 11px; font-size: 12px; box-shadow: 2px 2px 0 #172c27; }
+    .home-trust { padding: 18px 16px; box-shadow: 3px 3px 0 #172c27; }
     .home-tools-heading { align-items: baseline; gap: 8px; margin-bottom: 12px; }
     .home-tools-heading h2 { font-size: 15px; letter-spacing: -.35px; }
     .home-tools-heading > a { font-size: 9px; white-space: nowrap; }
@@ -643,7 +709,7 @@ const featuredTools = [
     .max-home-nav a { padding-inline: 8px; font-size: 11px; }
     .home-updates-inner { width: calc(100% - 32px); }
     .home-featured-copy { padding: 19px 16px 20px; }
-    .home-featured-copy h2 { font-size: 27px; }
+    .home-featured-copy h3 { font-size: 27px; }
     .home-guide-cards,.home-tool-cards { gap: 6px; }
     .home-guide-card-copy,.home-tool-card > a { padding-inline: 6px; }
     .home-guide-card h3,.home-tool-card h3 { font-size: 9px; }

@@ -90,7 +90,7 @@ function Draw-Title([System.Drawing.Graphics]$Graphics, [string]$Title, [string]
   $format = [System.Drawing.StringFormat]::new()
   $format.Trimming = [System.Drawing.StringTrimming]::EllipsisWord
   $Graphics.DrawString($Title, $titleFont, $white, $titleBox, $format)
-  $Graphics.DrawString('Consumo · viajes · gastos del coche · España', $smallFont, $muted, 68, 566)
+  $Graphics.DrawString('Cómo funciona tu coche · cuánto cuesta · España', $smallFont, $muted, 68, 566)
   $format.Dispose(); $smallFont.Dispose(); $titleFont.Dispose(); $labelFont.Dispose()
   $white.Dispose(); $lime.Dispose(); $muted.Dispose()
 }
@@ -111,7 +111,7 @@ function New-SocialCard([string]$OutputPath, [string]$Title, [string]$Label, [st
       $cropHeight = 630 / $scale
       $cropX = ($photo.Width - $cropWidth) / 2
       $cropY = ($photo.Height - $cropHeight) / 2
-      $source = [System.Drawing.RectangleF]::new([single]$cropX, [single]$cropY, [single]$cropWidth, [single]$cropHeight)
+      $source = [System.Drawing.Rectangle]::new([int][Math]::Round($cropX), [int][Math]::Round($cropY), [int][Math]::Round($cropWidth), [int][Math]::Round($cropHeight))
       $destination = [System.Drawing.Rectangle]::new(0, 0, 1200, 630)
       $graphics.DrawImage($photo, $destination, $source, [System.Drawing.GraphicsUnit]::Pixel)
       $photo.Dispose()
