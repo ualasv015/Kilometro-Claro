@@ -14,6 +14,15 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'acelerar-fondo-marcha-larga': {
+    src: '/images/guides/retencion-palanca-manual.jpg',
+    alt: 'Palanca real de un cambio manual en el interior de un coche',
+    caption: 'Una caja manual permite escoger la relación que conecta motor y ruedas. Foto reducida y recortada en portada y tarjeta social; no identifica una marcha ni un régimen concretos.',
+    author: 'A Chinese ID', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Handle_of_a_car_(Manual_Transmission).jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/', licenseName: 'CC BY-SA 4.0',
+    width: 960, height: 720,
+  },
   'detalles-coche-que-quiza-no-conocias': {
     src: '/images/guides/detalles-indicador-corolla.jpg',
     alt: 'Indicador real de combustible de un Toyota Corolla con una flecha a la izquierda del surtidor',

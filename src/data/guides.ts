@@ -1,5 +1,12 @@
 export const guides = [
   {
+    slug: 'acelerar-fondo-marcha-larga',
+    title: '¿Qué pasa si aceleras a fondo en una marcha demasiado larga?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Por qué una marcha larga a bajas revoluciones puede retrasar la respuesta: par, potencia, turbo, carga del motor y cuándo reducir.',
+    published: true,
+  },
+  {
     slug: 'que-ocurre-pisar-embrague',
     title: '¿Qué ocurre cuando pisas el embrague de un coche manual?',
     category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',

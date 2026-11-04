@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'acelerar-fondo-marcha-larga';
+const title = '¿Qué pasa si aceleras a fondo en una marcha demasiado larga?';
+const seoTitle = 'Acelerar a fondo en una marcha larga | Kilómetro Claro';
+const description = 'Por qué el coche puede responder despacio al pisar a fondo en una marcha larga: revoluciones, par en las ruedas, turbo, consumo y cuándo reducir.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-04';
+const sources = {
+  bosch: 'https://www.bosch-mobility.com/en/solutions/air-management/accelerator-pedal-module/',
+  doe: 'https://www.energy.gov/cmei/vehicles/articles/fotw-1076-april-8-2019-most-new-light-duty-vehicles-have-transmissions-least',
+  ford: 'https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1748746&Uid=G1748745&buildtype=web&countryCode=USA&div=f&languageCode=en&moidRef=G539557&userMarket=USA&vFilteringEnabled=True&variantid=4642',
+  garrett: 'https://www.garrettmotion.com/knowledge-center-category/turbo-replacement/turbo-lag-causes-effects-and-solutions/',
+  zf: 'https://aftermarket.zf.com/en/aftermarket-portal/knowledge-hub/clutch-noise/',
+  idae: 'https://www.idae.es/movilidad-sostenible/10-reglas-de-oro-de-la-conduccion-eficiente',
+  electric: 'https://www.bosch-mobility.com/en/solutions/powertrain/battery-electric/electric-drive/',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Acelerar en una marcha larga' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 4 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Vas en una marcha alta, llega una cuesta y pisas más. El motor hace ruido, pero el coche tarda en ganar velocidad. La posición del pedal solo cuenta una parte de la historia: también importan las revoluciones y la relación que conecta el motor con las ruedas.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>En un coche de combustión con cambio manual, pisar a fondo pide más par al motor, pero una marcha muy larga puede dejarlo a un régimen donde entrega poco empuje o tarda en responder. Esa relación también multiplica menos el par que llega a las ruedas que otra más corta. Si la velocidad lo permite, reducir puede mejorar la respuesta; ni el resultado ni el régimen adecuado son iguales en todos los coches.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#marcha-larga">Qué significa una marcha larga</a></li>
+          <li><a href="#pedal">Del pedal a las ruedas</a></li>
+          <li><a href="#par-potencia">Par, potencia y relación de cambio</a></li>
+          <li><a href="#turbo">La influencia del turbo</a></li>
+          <li><a href="#reducir">Qué cambia al reducir</a></li>
+          <li><a href="#carga">Carga, síntomas y consumo</a></li>
+          <li><a href="#otros">Automáticos, híbridos y eléctricos</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="marcha-larga">Qué significa llevar una marcha demasiado larga</h2>
+      <p>Piensa en una subida que empieza cuando circulas con una marcha alta y el motor gira despacio. A la misma velocidad del coche, una marcha más corta haría girar el motor más deprisa. La relación de cambio establece cuántas vueltas da el motor por cada vuelta de las ruedas, suponiendo que el embrague está acoplado y no patina. Cuanto más larga es la relación, menos vueltas necesita el motor para mantener esa velocidad.</p>
+      <p>«Demasiado larga» no equivale a una marcha concreta del selector. Puede ser adecuada para mantener una velocidad constante en llano y quedarse corta de respuesta cuando llega una pendiente, llevas pasajeros o necesitas incorporarte con margen. Depende del motor, la velocidad, el peso, la inclinación y el tiempo de reacción que necesitas. El <a href={sources.doe}>Departamento de Energía de EE. UU.</a> explica que disponer de más relaciones permite acercar la velocidad del motor a la que conviene para prestaciones o eficiencia; no propone una única marcha válida para toda situación.</p>
+      <figure class="gear-figure">
+        <img src="/images/guides/marcha-larga-comparacion.svg" width="960" height="540" alt="A la misma velocidad del coche, una marcha larga mantiene el motor a menos revoluciones y multiplica menos su par; una marcha más corta eleva las revoluciones y multiplica más el par del motor" loading="lazy" decoding="async" />
+        <figcaption>Ilustración original de Kilómetro Claro. Comparación cualitativa a igual velocidad y con dos marchas compatibles; no muestra valores ni garantiza mayor aceleración en un modelo concreto.</figcaption>
+      </figure>
+
+      <h2 id="pedal">Por qué pisar más no siempre produce una respuesta inmediata</h2>
+      <p>En un coche moderno con pedal electrónico, el sensor comunica cuánto lo has pisado. La centralita interpreta esa señal como una <strong>solicitud de par</strong>, no como una orden que pueda convertir de forma instantánea en cualquier fuerza. Coordina aire y combustible y, según el motor, encendido y sobrealimentación. <a href={sources.bosch}>Bosch describe esa petición del conductor</a> como una entrada para la gestión del motor. Puedes conocer mejor las diferencias de combustión en nuestra <a href="/guias/motor-gasolina-diesel-acelerador/">guía sobre lo que ocurre al acelerar en gasolina y diésel</a>.</p>
+      <p>Si el régimen es bajo, el motor quizá no entregue en ese instante el par que tú esperas de la posición del pedal. Y aunque lo entregue, la relación larga transforma ese giro en menos par en las ruedas que una más corta, si se compara el mismo par motor. La cuesta exige además fuerza para vencer la gravedad, y el vehículo también afronta la resistencia de rodadura y del aire. Puede que la fuerza sobrante para acelerar sea pequeña: por eso ves subir la velocidad lentamente aunque tengas el pie muy abajo.</p>
+      <figure class="gear-figure">
+        <img src="/images/guides/marcha-larga-flujo-par.svg" width="960" height="540" alt="Flujo conceptual desde la petición del pedal a la gestión del motor, el par del cigüeñal, la caja y la fuerza en las ruedas, que debe superar resistencias" loading="lazy" decoding="async" />
+        <figcaption>Esquema editorial original. El pedal pide par; el motor, la relación de cambio y las resistencias determinan la aceleración. No representa la lógica exacta de una centralita.</figcaption>
+      </figure>
+
+      <h2 id="par-potencia">Par, potencia y marcha: qué llega realmente a las ruedas</h2>
+      <p>El <strong>par motor</strong> es la fuerza de giro disponible en el cigüeñal. La <strong>potencia</strong> expresa a qué ritmo se realiza trabajo: depende tanto del par como de las revoluciones. No basta con mirar una cifra máxima de par o de potencia del catálogo para saber cuánto empujará el coche en el punto exacto donde conduces. Importa cuánto par ofrece el motor <em>a ese régimen</em>.</p>
+      <p>La caja actúa como un multiplicador. Una relación más corta suele multiplicar más el par del motor hacia las ruedas, a cambio de que el motor gire más rápido para una misma velocidad del coche. Sin embargo, al cambiar de marcha también cambias el régimen y, con él, el par que el motor puede producir. Hay pérdidas en la transmisión, límites de adherencia y resistencias en la carretera. Por eso reducir no garantiza siempre más aceleración: hay que comparar dos relaciones posibles a la velocidad real, dentro del régimen permitido. Esta relación entre transmisión, velocidad de giro y respuesta es también la base de la <a href={sources.doe}>explicación técnica del Departamento de Energía</a>.</p>
+      <p>Imagina el mismo coche a la misma velocidad justo antes de una rampa. En la marcha larga el motor gira menos y la caja multiplica menos su par. Al elegir otra más corta que sea compatible con esa velocidad, el motor pasa a girar más y cambia el par disponible; la caja lo multiplica más. El resultado puede ser una respuesta más viva, pero no hay una distancia de aceleración universal que se pueda deducir de ese dibujo.</p>
+
+      <h2 id="turbo">Qué papel juega el turbo, si el motor lo lleva</h2>
+      <p>En un motor turbo, los gases de escape impulsan una turbina conectada al compresor que introduce más aire. Tras pedir más par, el conjunto puede necesitar tiempo para aumentar su velocidad y la presión de admisión. Ese retraso transitorio es el <em>turbo lag</em>. A un régimen muy bajo también puede faltar caudal o energía de escape para alcanzar una presión elevada mientras el motor permanezca allí: es un límite del punto de funcionamiento, distinto de la demora al pasar de una carga a otra. Ambos efectos pueden coincidir. <a href={sources.garrett}>Garrett explica las causas de la respuesta del turbo</a>; nuestra guía sobre <a href="/guias/por-que-tarda-turbo-responder/">por qué el turbo tarda en responder</a> separa esos mecanismos con más detalle.</p>
+      <p>Una marcha larga puede agravar la sensación de poca respuesta aunque el turbo esté bien. La multiplicación de la caja, el par del motor a esas revoluciones, la gestión electrónica, el peso y la pendiente también cuentan. Un motor atmosférico no tiene turbo y, aun así, puede sentirse perezoso en una marcha demasiado larga.</p>
+
+      <h2 id="reducir">Qué cambia si reduces una marcha</h2>
+      <p>Reducir selecciona una relación que hace girar el motor más rápido a la velocidad actual. Puede colocarlo en una zona donde responda mejor y aumenta la multiplicación de par de la caja. En una incorporación o antes de una pendiente, esto puede dar una respuesta más previsible. Se debe escoger una relación compatible con la velocidad y con los límites de revoluciones del vehículo, sin cambios bruscos ni maniobras apresuradas. El manual de cada modelo indica las restricciones; el <a href={sources.ford}>manual de Ford consultado</a> da advertencias y pautas propias para su transmisión, que no trasladamos como cifras universales.</p>
+      <p>Si la reducción llevara el motor a un régimen excesivo, no sería la solución. Y en un motor que ya entrega suficiente fuerza en la marcha actual, tampoco hace falta cambiar solo porque exista una cuesta. Lo relevante es anticipar la demanda y mantener el control, la visibilidad y la distancia de seguridad; un adelantamiento solo procede cuando haya espacio y condiciones para hacerlo con seguridad.</p>
+
+      <h2 id="carga">¿Puede ser perjudicial exigir tanto a bajas revoluciones?</h2>
+      <p>La <strong>carga</strong> describe cuánto trabajo se le pide al motor respecto a lo que puede entregar en ese momento. Pisar mucho mientras gira muy despacio y el coche apenas acelera es una situación de demanda elevada a bajo régimen. Una aceleración puntual así no demuestra que hayas dañado nada. Pero sostenerla cuando el vehículo vibra o protesta puede ser una mala elección de marcha. El <a href={sources.ford}>manual de Ford para un cambio manual concreto</a> relaciona el funcionamiento a un régimen demasiado bajo con peor aceleración, ruido y vibración, consumo desfavorable y posibles daños. Sus límites pertenecen a ese vehículo, no a todos.</p>
+      <p>El <a href={sources.zf}>servicio técnico de ZF</a> incluye circular a baja velocidad en una marcha alta y acelerar a fondo entre las posibles causas de esfuerzos en el amortiguador torsional del embrague. Eso no convierte cualquier vibración en una avería de esa pieza. Si hay tirones, vibraciones anormales, pérdida de potencia nueva o un testigo persistente, compara con el comportamiento habitual y pide una revisión profesional. También puede tratarse de admisión, encendido, alimentación o transmisión; el síntoma solo no permite diagnosticar.</p>
+
+      <h2 id="consumo">¿Y qué pasa con el consumo?</h2>
+      <p>Menos revoluciones pueden favorecer la eficiencia en determinadas condiciones. El <a href={sources.idae}>IDAE recomienda marchas largas y conducción fluida</a> como pautas generales de conducción eficiente, siempre subordinadas a la seguridad. Mantener velocidad en llano con poca demanda es diferente de pedir una aceleración fuerte subiendo una rampa. En el segundo caso, el motor cambia de carga y puede necesitar otra relación para responder adecuadamente.</p>
+      <p>Ni «la marcha larga siempre ahorra» ni «reducir siempre ahorra» describe todos los recorridos. Para comparar consumo real habría que fijar el mismo vehículo, la misma velocidad inicial, la pendiente, la aceleración buscada y la distancia, y medir el combustible usado hasta completar la maniobra. Aquí no hay una prueba de ese tipo ni una cifra universal. Si buscas hábitos para tu uso diario, consulta también <a href="/guias/como-reducir-consumo-combustible/">cómo reducir el consumo de combustible</a>.</p>
+
+      <h2 id="otros">Qué cambia en automáticos, híbridos y eléctricos</h2>
+      <p>Un automático puede elegir otra relación cuando detecta una petición intensa del conductor; cuánto tarda y qué marcha selecciona depende del diseño, la programación, el modo de conducción y la velocidad. En algunos sistemas no hay pasos fijos como los de una caja manual. Nuestra <a href="/guias/tipos-cambio-automatico/">comparativa de cambios automáticos</a> explica por qué no todos reaccionan igual.</p>
+      <p>Un híbrido puede sumar par de un motor eléctrico, cambiar el régimen del térmico o repartir la demanda entre ambos, según la batería y su estrategia de control. En un eléctrico puro no existe el problema de pedir par a un motor de combustión demasiado bajo de vueltas. <a href={sources.electric}>Bosch describe la entrega de par desde el arranque en la propulsión eléctrica</a>. Aun así, la respuesta real también tiene límites de potencia, temperatura, adherencia y gestión electrónica. La explicación de «reducir una marcha manual» no se puede trasladar sin más a esos coches.</p>
+
+      <h2 id="conclusion">Qué recordar antes de pedir más aceleración</h2>
+      <p>Pisar a fondo expresa lo que quieres; la velocidad con que el coche responde depende de lo que el motor puede ofrecer a esas revoluciones y de cómo la transmisión lo lleva a las ruedas. En un manual de combustión, una marcha larga puede servir para mantener el ritmo y resultar inadecuada para ganar velocidad en una pendiente. Si hace falta respuesta y la velocidad lo permite, una reducción adecuada puede ayudar. Si aparecen síntomas nuevos o persistentes, no los atribuyas de entrada a la marcha: conviene revisar el vehículo y consultar su manual.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del 4 de noviembre de 2026. Abrimos documentación primaria de Bosch sobre el pedal electrónico y la propulsión eléctrica, de Garrett sobre la respuesta del turbo, de ZF sobre vibraciones del embrague, un manual oficial de Ford sobre cambio manual, la guía de eficiencia del IDAE y la explicación del Departamento de Energía de EE. UU. sobre la selección de relaciones. Contrastamos los principios mecánicos y distinguimos las advertencias de un modelo de las reglas generales. No hicimos una prueba de aceleración ni de consumo, ni conocemos un umbral de revoluciones aplicable a todos los motores. Los dos dibujos son esquemas cualitativos originales; la fotografía de portada identifica fuente y licencia en su pie.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .gear-figure { margin: 24px 0; }
+  .gear-figure img { display: block; max-width: 100%; height: auto; margin: auto; border-radius: 9px; }
+  .gear-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+</style>
