@@ -1,5 +1,12 @@
 export const guides = [
   {
+    slug: 'par-motor-potencia-diferencias',
+    title: 'Par motor y potencia: ¿en qué se diferencian y qué notas al conducir?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Qué son los Nm, los kW y los CV, cómo se relacionan con las revoluciones y por qué la marcha y la curva completa importan más que una cifra máxima.',
+    published: true,
+  },
+  {
     slug: 'acelerar-fondo-marcha-larga',
     title: '¿Qué pasa si aceleras a fondo en una marcha demasiado larga?',
     category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',

@@ -14,6 +14,15 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'par-motor-potencia-diferencias': {
+    src: '/images/guides/par-potencia-dinamometro-real.jpg',
+    alt: 'Coche amarillo sobre un banco de rodillos durante una prueba de motor',
+    caption: 'Un banco de rodillos permite medir el comportamiento del conjunto en condiciones controladas. Esta foto no es una prueba realizada por Kilómetro Claro ni corresponde a la curva hipotética del artículo. Se adapta el encuadre en portada y tarjeta social.',
+    author: 'AdamNavrotny', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:4x4_Dynamometer.jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/3.0/', licenseName: 'CC BY-SA 3.0',
+    width: 800, height: 533,
+  },
   'acelerar-fondo-marcha-larga': {
     src: '/images/guides/retencion-palanca-manual.jpg',
     alt: 'Palanca real de un cambio manual en el interior de un coche',

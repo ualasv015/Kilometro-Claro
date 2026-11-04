@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'par-motor-potencia-diferencias';
+const title = 'Par motor y potencia: ¿en qué se diferencian y qué notas al conducir?';
+const seoTitle = 'Par motor y potencia: diferencias | Kilómetro Claro';
+const description = 'Aprende a leer los Nm, kW y CV de un coche: la relación con las revoluciones, la curva del motor, las marchas y la fuerza que llega a las ruedas.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-04';
+const sources = {
+  torque: 'https://openstax.org/books/university-physics-volume-1/pages/10-6-torque',
+  rotation: 'https://openstax.org/books/university-physics-volume-1/pages/10-8-work-and-power-for-rotational-motion',
+  power: 'https://openstax.org/books/university-physics-volume-1/pages/7-4-power',
+  units: 'https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9',
+  gears: 'https://www.energy.gov/cmei/vehicles/articles/fotw-1076-april-8-2019-most-new-light-duty-vehicles-have-transmissions-least',
+  turbo: 'https://www.garrettmotion.com/knowledge-center-category/turbo-replacement/turbo-lag-causes-effects-and-solutions/',
+  electric: 'https://www.bosch-mobility.com/en/solutions/powertrain/battery-electric/electric-drive/',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Par motor y potencia' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 4 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Dos coches anuncian la misma potencia y, al salir de una curva, uno parece responder antes. La ficha no miente: una cifra máxima no explica a qué revoluciones se obtiene ni cómo la caja convierte el giro del motor en fuerza en las ruedas.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>El <strong>par</strong> expresa la capacidad de producir giro en un eje; la <strong>potencia</strong> indica la rapidez con que ese giro puede realizar trabajo. En un eje, la potencia depende del par y de las revoluciones. Al conducir importan además la marcha, las pérdidas, el peso, la adherencia y las resistencias. Por eso ni los Nm ni los CV máximos predicen por sí solos cómo acelerará un coche.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#par">Qué es el par motor</a></li>
+          <li><a href="#potencia">Qué es la potencia</a></li>
+          <li><a href="#relacion">Par, potencia y revoluciones</a></li>
+          <li><a href="#marchas">De la caja a las ruedas</a></li>
+          <li><a href="#curva">Cómo leer una curva</a></li>
+          <li><a href="#conducir">Qué se nota al conducir</a></li>
+          <li><a href="#motores">Distintos tipos de motor</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="par">Qué es el par motor y qué significan los Nm</h2>
+      <p>Imagina que aflojas una tuerca con una llave. Aplicar fuerza lejos del eje suele facilitar el giro más que aplicar la misma fuerza muy cerca. Esa combinación de fuerza y brazo es el <strong>par</strong>, también llamado momento de fuerza. En una ficha de coche se expresa habitualmente en <strong>newton metro (Nm)</strong>. Es la magnitud del giro que puede entregar el motor en su eje, normalmente el cigüeñal en un motor de combustión. La explicación de la llave es una analogía, no una representación de cómo actúa cada cilindro. <a href={sources.torque}>OpenStax, Universidad Rice, define el par y su unidad</a>.</p>
+      <figure class="torque-figure">
+        <img src="/images/guides/par-potencia-llave.svg" width="960" height="540" alt="Una mano aplica una fuerza perpendicular al extremo de una llave; la distancia hasta el eje de la tuerca forma el brazo que determina el par" loading="lazy" decoding="async" />
+        <figcaption>Ilustración original de Kilómetro Claro. La llave sirve para visualizar fuerza y brazo; no equipara el par de una herramienta con la aceleración de un vehículo.</figcaption>
+      </figure>
+      <p>El par anunciado para un motor es un valor en un punto de giro, no la fuerza que empuja directamente al coche. Entre el cigüeñal y el asfalto están el embrague o convertidor, la caja, el grupo final, el diferencial y los neumáticos. Además, una ficha suele destacar el <em>par máximo</em> y el régimen —o intervalo de regímenes— donde se alcanza. Fuera de esa zona puede ser distinto.</p>
+
+      <h2 id="potencia">Qué es la potencia y qué significan kW y CV</h2>
+      <p>La potencia mide <strong>la rapidez con la que se realiza trabajo o se transfiere energía</strong>. Dos personas pueden levantar el mismo peso a la misma altura; si una tarda menos, desarrolla más potencia durante esa tarea. En el Sistema Internacional se mide en vatios y las fichas de coches suelen usar <strong>kilovatios (kW)</strong>. En España también se muestran <strong>caballos de vapor (CV)</strong>. <a href={sources.power}>OpenStax explica la potencia como energía por unidad de tiempo</a>.</p>
+      <p>Un CV métrico equivale aproximadamente a <strong>0,7355 kW</strong>; por tanto, un kW son aproximadamente 1,36 CV. Son unidades distintas para expresar la misma magnitud. El <em>hp</em> anglosajón habitual equivale aproximadamente a 0,7457 kW y no debe confundirse sin conversión con el CV. El <a href={sources.units}>NIST publica ambas equivalencias</a>. Cuando compares fichas, convierte primero a una misma unidad y comprueba si se refieren al motor, al sistema completo o a las ruedas.</p>
+
+      <h2 id="relacion">Cómo se relacionan par, potencia y revoluciones</h2>
+      <p>En un eje que gira, <strong>potencia = par × velocidad angular</strong>. Como el cuadro muestra revoluciones por minuto, se puede escribir de forma práctica: <strong>potencia (kW) ≈ par (Nm) × régimen (rpm) / 9.550</strong>. El divisor convierte revoluciones por minuto y vatios a esas unidades; el redondeo explica el «aproximadamente». <a href={sources.rotation}>OpenStax presenta la relación física para el giro</a>.</p>
+      <p>Prueba un ejemplo <strong>enteramente hipotético</strong>: si un eje entregara 200 Nm a 3.000 rpm, su potencia en ese punto sería unos 62,8 kW, equivalentes a unos 85,4 CV. No son los datos de un coche ni un resultado medido. Si el régimen aumentara, la potencia podría crecer aunque el par comenzara a bajar. También podría descender si el par cae lo bastante. Por eso el máximo de par y el de potencia pueden aparecer a revoluciones diferentes.</p>
+      <p>La fórmula describe la potencia mecánica en <em>ese eje y en ese instante</em>. No calcula la aceleración en carretera. Para eso hay que conocer cómo se transmite el giro, la masa que se mueve y las fuerzas que se oponen al avance.</p>
+
+      <h2 id="marchas">Por qué las marchas cambian lo que llega a las ruedas</h2>
+      <p>La caja y el grupo final cambian la proporción entre las vueltas del motor y las de las ruedas. Una marcha más corta suele multiplicar más el par del motor, pero lo obliga a girar a más rpm para una misma velocidad del coche. Una larga hace lo contrario. Por eso <strong>par motor y par en las ruedas son cifras distintas</strong>; tampoco conviene comparar motores por sus Nm máximos sin tener en cuenta la transmisión. El <a href={sources.gears}>Departamento de Energía de EE. UU.</a> explica que más relaciones permiten adaptar mejor la velocidad de las ruedas al régimen conveniente del motor.</p>
+      <p>La fuerza que puede ejercer una rueda sobre el suelo depende del par que le llega y del radio efectivo del neumático. De esa fuerza hay que restar, entre otras cosas, la pendiente, la rodadura y la resistencia del aire. Las pérdidas mecánicas reducen lo que llega respecto a lo que sale del motor; si falta adherencia, una parte no se convierte en avance útil. La masa determina cuánto cambia la velocidad ante la fuerza neta. Esas son las razones por las que la potencia máxima no basta para predecir una recuperación o una aceleración concreta.</p>
+      <p>Al reducir una marcha a la misma velocidad cambian <em>a la vez</em> la multiplicación y el régimen del motor, por lo que también puede cambiar el par que produce. Una reducción compatible con la velocidad puede mejorar la respuesta, pero no lo garantiza siempre ni debe llevar el motor fuera de sus límites. En la guía sobre <a href="/guias/acelerar-fondo-marcha-larga/">acelerar a fondo en una marcha demasiado larga</a> seguimos ese recorrido desde el pedal hasta el asfalto.</p>
+
+      <h2 id="curva">Cómo leer una curva de par y potencia</h2>
+      <p>Busca el eje horizontal: muestra el régimen en rpm. Las líneas muestran cuánto par y cuánta potencia hay en cada punto; suelen usar escalas verticales distintas, una en Nm y otra en kW o CV. Mira primero dónde comienza y termina el intervalo representado, después la zona donde el par se mantiene alto y, finalmente, a qué régimen llega la potencia máxima. La altura aparente de dos líneas con escalas diferentes no indica que una magnitud «supere» a la otra.</p>
+      <figure class="torque-figure">
+        <img src="/images/guides/par-potencia-curvas-hipoteticas.svg" width="960" height="540" alt="Gráfica hipotética: el par alcanza 180 Nm entre 3.000 y 4.000 rpm; la potencia calculada con la fórmula sigue aumentando hasta unos 83,8 kW a 5.000 rpm y luego baja" loading="lazy" decoding="async" />
+        <figcaption>Curvas hipotéticas de Kilómetro Claro, no mediciones de un motor. En cada uno de los seis puntos la potencia se calculó como Nm × rpm / 9.550; las líneas solo conectan visualmente las muestras. Los ejes verticales tienen escalas distintas.</figcaption>
+      </figure>
+      <p>En el dibujo, el par sube hasta 180 Nm a 3.000 rpm, se mantiene en ese valor a 4.000 y baja a 160 Nm a 5.000. Aun así, la potencia pasa de unos 56,5 a 75,4 y 83,8 kW respectivamente, porque las vueltas aumentan. Así se ve por qué un máximo de par no tiene que coincidir con el de potencia. Son puntos inventados para enseñar la relación matemática, no una curva de banco. Una gráfica real debe identificar versión, unidad, condiciones de medición y si los datos corresponden al motor o a las ruedas.</p>
+
+      <h2 id="conducir">Qué puede notar el conductor al acelerar o subir una pendiente</h2>
+      <p>Imagina una incorporación a la autovía en un coche manual de combustión. En una marcha larga a bajas vueltas, el motor puede estar lejos de la zona donde da la respuesta que necesitas y la caja multiplica menos su par. Si eliges con antelación una marcha más corta, compatible con esa velocidad, puede responder con más decisión. Es una inferencia mecánica, no una medición de un modelo concreto ni una invitación a incorporarte sin espacio suficiente.</p>
+      <p>En una subida ocurre algo parecido: parte de la fuerza de las ruedas se dedica a vencer la gravedad. Dos coches que anuncian los mismos CV pueden responder de forma diferente porque tienen curvas distintas, otras relaciones de cambio, diferente masa o gestión electrónica. Un automático puede reducir por sí mismo y añadir el tiempo de esa decisión. En nuestra guía de <a href="/guias/tipos-cambio-automatico/">tipos de cambio automático</a> se explican sus diseños.</p>
+
+      <h2 id="motores">Gasolina, diésel, híbridos y eléctricos: qué cambia</h2>
+      <p>La forma de la curva depende del diseño, no solo del combustible. Un gasolina atmosférico, uno turbo y un diésel pueden alcanzar sus máximos en zonas distintas. La sobrealimentación modifica cuánto aire llega al motor y puede alterar el par disponible según el régimen y la carga; también puede haber un retraso transitorio tras pedir más aceleración. <a href={sources.turbo}>Garrett distingue factores de respuesta y umbral de sobrealimentación</a>; nuestra guía de <a href="/guias/por-que-tarda-turbo-responder/">por qué tarda en responder el turbo</a> desarrolla esa diferencia. No todos los diésel tienen más par que todos los gasolina.</p>
+      <p>Un motor eléctrico puede entregar mucho par desde muy baja velocidad de giro, pero su par máximo no se mantiene necesariamente a cualquier velocidad: la potencia, el inversor, la batería, la temperatura y la programación imponen límites. <a href={sources.electric}>Bosch describe la entrega inicial de par de su sistema eléctrico</a>, una característica del sistema citado y no una curva universal. En un híbrido, la cifra «combinada» de potencia debe proceder del fabricante: sumar sin más las potencias máximas de los motores puede ser erróneo si no se alcanzan simultáneamente.</p>
+
+      <h2 id="errores">Tres frases sobre par y potencia que conviene matizar</h2>
+      <ul>
+        <li><strong>«El par es aceleración y la potencia es velocidad máxima».</strong> La aceleración depende de la fuerza neta en las ruedas y la masa. La velocidad máxima depende de la potencia disponible frente a las resistencias, además de desarrollos y límites del vehículo. Las dos magnitudes del motor intervienen en la respuesta.</li>
+        <li><strong>«Más Nm significa que acelera más».</strong> Hay que conocer a qué rpm aparecen, cómo los multiplica la transmisión y qué masa mueve el coche. Incluso dos motores con igual par máximo pueden tener curvas muy distintas.</li>
+        <li><strong>«Con los mismos CV, dos coches aceleran igual».</strong> La cifra máxima no describe la potencia utilizable durante todo el recorrido de aceleración. Las marchas, el peso, la tracción, la gestión y las resistencias pueden cambiar el resultado.</li>
+      </ul>
+
+      <h2 id="conclusion">Cómo interpretar la ficha sin quedarse con una cifra</h2>
+      <p>Lee el par y la potencia junto a sus revoluciones. Si hay curvas, mira el tramo que usarás al circular y no solo los picos. Después considera la caja, el peso y el tipo de propulsión. Así entenderás por qué un coche puede sentirse enérgico al recuperar en una marcha y menos dispuesto en otra, sin confundir una sensación con una prueba comparativa. Para elegir entre dos vehículos concretos aún hacen falta datos comparables y, si es posible, una prueba independiente identificada.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del 4 de noviembre de 2026. Abrimos las secciones de física de OpenStax sobre par, trabajo y potencia rotacional; el NIST para la equivalencia entre CV métricos, hp y vatios; el Departamento de Energía de EE. UU. para la función de las relaciones de cambio; Garrett para la respuesta del turbo; y Bosch para la propulsión eléctrica. La fórmula usa el redondeo habitual de 9.549,3 a 9.550. Los puntos de la gráfica y el ejemplo numérico son hipotéticos, calculados con esa fórmula y sin asignarlos a ningún coche. No hemos medido aceleraciones ni curvas de vehículos. La fotografía de portada muestra un banco real y lleva autor y licencia en el pie; no es el origen de la curva ilustrada.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .torque-figure { margin: 24px 0; }
+  .torque-figure img { display: block; max-width: 100%; height: auto; margin: auto; border-radius: 9px; }
+  .torque-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+</style>
