@@ -1,3 +1,5 @@
+import {LiftOffPromo, LiftOffPreview, LiftOffCover, type LiftOffSpec} from './compositions/LiftOffPromo';
+import liftRaw from '../data/videos/video-025.json';
 import {AcceleratorPromo, AcceleratorPreview, AcceleratorCover, type AcceleratorSpec} from './compositions/AcceleratorPromo';
 import accRaw from '../data/videos/video-024.json';
 import {CvtVsEcvtPromo, CvtVsEcvtPreview, CvtVsEcvtCover, cvtPreviewFrames, type CvtVsEcvtSpec} from './compositions/CvtVsEcvtPromo';
@@ -176,6 +178,9 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="AcceleratorReel" component={AcceleratorPromo} durationInFrames={Math.round((accRaw as AcceleratorSpec).durationSeconds * (accRaw as AcceleratorSpec).fps)} fps={30} width={1080} height={1920} defaultProps={accRaw as AcceleratorSpec} />
   <Composition id="AcceleratorPreview" component={AcceleratorPreview} durationInFrames={1230} fps={30} width={1080} height={1920} />
   <Composition id="AcceleratorCover" component={AcceleratorCover} durationInFrames={1} fps={30} width={1080} height={1920} />
+  <Composition id="LiftOffReel" component={LiftOffPromo} durationInFrames={Math.round((liftRaw as LiftOffSpec).durationSeconds * (liftRaw as LiftOffSpec).fps)} fps={30} width={1080} height={1920} defaultProps={liftRaw as LiftOffSpec} />
+  <Composition id="LiftOffPreview" component={LiftOffPreview} durationInFrames={1382} fps={30} width={1080} height={1920} />
+  <Composition id="LiftOffCover" component={LiftOffCover} durationInFrames={1} fps={30} width={1080} height={1920} />
   </>
 );
 
