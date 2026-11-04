@@ -5,6 +5,7 @@ import MaximalistHeader from '../../components/MaximalistHeader.astro';
 import MaximalistFooter from '../../components/MaximalistFooter.astro';
 import { brands } from '../../data/brands';
 import '../../styles/brands.css';
+import '../../styles/maximalist-listings.css';
 
 const powertrains = [...new Set(brands.flatMap((brand) => brand.powertrains))].sort((a, b) => a.localeCompare(b, 'es'));
 const countries = [...new Set(brands.map((brand) => brand.country))].sort((a, b) => a.localeCompare(b, 'es'));
@@ -26,14 +27,28 @@ const directoryBrands = [...brands].sort((a, b) => {
 >
   <MaximalistHeader active="brands" />
   <div class="brands-home-surface">
-    <div class="wrap page-wrap brands-page">
+    <div class="wrap page-wrap brands-page maximalist-directory">
       <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Marcas' }]} />
+
+    <header class="directory-hero directory-hero--brands">
+      <div class="directory-hero-copy">
+        <span class="directory-kicker">Kilómetro Claro · Marcas</span>
+        <h1>Marcas de coches.<br /><em>Modelos y motores.</em></h1>
+        <p>Explora fabricantes presentes en España, conoce su historia y consulta sus modelos y motorizaciones. Cada ficha enlaza con la marca para que puedas comprobar la gama y su disponibilidad actual.</p>
+        <a class="directory-hero-link" href="#directorio">Buscar una marca</a>
+      </div>
+      <div class="directory-hero-mark" aria-label={`${brands.length} marcas en el directorio`}>
+        <span>FABRICANTES</span>
+        <strong>{String(brands.length).padStart(2, '0')}</strong>
+        <small>EN ESPAÑA</small>
+      </div>
+    </header>
 
     <section class="brands-directory" id="directorio" aria-labelledby="directory-title">
       <header class="brands-section-heading">
         <div>
           <span class="brands-kicker">Directorio de marcas</span>
-          <h1 id="directory-title">¿Qué marca quieres conocer?</h1>
+          <h2 id="directory-title">¿Qué marca quieres conocer?</h2>
         </div>
         <p>Las diez primeras siguen el orden de nuestra <a href="/guias/marcas-coches-mas-vendidas-espana-2025/">guía de ventas de 2025</a>. Después encontrarás otras marcas presentes en el mercado español. Consulta el catálogo oficial para confirmar versiones y disponibilidad.</p>
       </header>
@@ -69,7 +84,7 @@ const directoryBrands = [...brands].sort((a, b) => {
           >
             <a class="brand-card-main" href={`/marcas/${brand.slug}/`}>
               <span class="brand-card-topline"><span>{brand.country}</span><span>{brand.models.length} modelos destacados</span></span>
-              <span class="brand-card-name-row">{brand.logo ? <img class:list={['brand-card-logo', { 'brand-card-logo--wide': brand.logoLayout === 'wide' }]} src={brand.logo} alt="" width={brand.logoLayout === 'wide' ? '88' : '55'} height="55" loading="lazy" /> : <span class="brand-monogram" aria-hidden="true">{brand.name.slice(0, 1)}</span>}<span><h3>{brand.name}</h3><small>{brand.descriptor}</small></span></span>
+              <span class="brand-card-name-row">{brand.logo ? <img class:list={['brand-card-logo', { 'brand-card-logo--wide': brand.logoLayout === 'wide', 'brand-card-logo--cropped': brand.logoCrop, 'brand-card-logo--dark': brand.logoTone === 'dark' }]} src={brand.logo} alt="" width={brand.logoLayout === 'wide' ? '88' : '55'} height="55" loading="lazy" /> : <span class="brand-monogram" aria-hidden="true">{brand.name.slice(0, 1)}</span>}<span><h3>{brand.name}</h3><small>{brand.descriptor}</small></span></span>
               <span class="brand-card-techs" aria-label="Motorizaciones en la selección">
                 {brand.powertrains.map((powertrain) => <span>{powertrain}</span>)}
               </span>

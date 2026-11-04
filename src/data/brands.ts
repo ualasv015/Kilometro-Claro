@@ -13,6 +13,8 @@ export type CarBrand = {
   founded?: number;
   logo?: string;
   logoLayout?: 'wide';
+  logoCrop?: boolean;
+  logoTone?: 'dark';
   descriptor: string;
   bio: string;
   marketNote: string;
@@ -1173,6 +1175,9 @@ export const brands: CarBrand[] = [
   {
     slug: 'evo',
     name: 'EVO',
+    logo: '/images/brands/evo.png',
+    logoLayout: 'wide',
+    logoTone: 'dark',
     country: 'Italia',
     headquartersCity: 'Macchia d’Isernia',
     founded: 2020,
@@ -1198,6 +1203,8 @@ export const brands: CarBrand[] = [
   {
     slug: 'alfa-romeo',
     name: 'Alfa Romeo',
+    logo: '/images/brands/alfa-romeo.jpg',
+    logoCrop: true,
     country: 'Italia',
     founded: 1910,
     reviewedAt: '3 de noviembre de 2026',
@@ -1221,8 +1228,6 @@ export const brands: CarBrand[] = [
     country: 'Japón',
     headquartersCity: 'Tokio',
     founded: 1953,
-    logo: '/images/brands/subaru.png',
-    logoLayout: 'wide',
     reviewedAt: '3 de noviembre de 2026',
     descriptor: 'SUV y familiares con motores bóxer e híbridos e-Boxer, junto a una gama eléctrica en expansión.',
     bio: 'Subaru Corporation se estableció en 1953 y tiene su sede en Ebisu, Tokio. La compañía fabrica automóviles y también desarrolla actividad aeroespacial. En sus coches, la marca ha hecho reconocibles el motor bóxer y la tracción Symmetrical AWD; en España combina modelos e-Boxer con una nueva gama de SUV eléctricos.',
@@ -1249,7 +1254,6 @@ export const brands: CarBrand[] = [
     country: 'Suecia',
     headquartersCity: 'Gotemburgo',
     founded: 2017,
-    logo: '/images/brands/polestar.svg',
     reviewedAt: '3 de noviembre de 2026',
     descriptor: 'Gama de coches eléctricos de altas prestaciones y diseño escandinavo.',
     bio: 'Polestar es una marca sueca de automóviles eléctricos de altas prestaciones. Su gama actual combina fastbacks, SUV y un gran turismo, con una filosofía de diseño minimalista y una apuesta por la electrificación. La marca se presentó como fabricante independiente en 2017 y mantiene su sede en Gotemburgo.',
@@ -1275,8 +1279,6 @@ export const brands: CarBrand[] = [
     country: 'Italia (origen de marca); China (grupo propietario actual)',
     headquartersCity: 'Fuling, Chongqing (SWM Motors, según Shineray)',
     founded: 1971,
-    logo: '/images/brands/swm.webp',
-    logoLayout: 'wide',
     reviewedAt: '3 de noviembre de 2026',
     descriptor: 'SUV familiares de gasolina y un modelo eléctrico de autonomía extendida, comercializados en España por Shineray SWM.',
     bio: 'SWM nació en Italia en 1971 como fabricante de motocicletas. Shineray adquirió la marca en 2014 y, en 2016, la incorporó a su nueva línea de automóviles de pasajeros, SWM Motors. La actividad actual combina esa raíz italiana con la estructura industrial del grupo chino Shineray: la compañía sitúa su centro de diseño en Milán, el de investigación y desarrollo en Chongqing y su sede de SWM Motors en Fuling, también en Chongqing.',
@@ -1305,7 +1307,6 @@ export const brands: CarBrand[] = [
     country: 'Alemania y Suiza (origen); sociedad conjunta actual con China',
     headquartersCity: 'Ningbo (global) / Leinfelden-Echterdingen (Europa)',
     founded: 1994,
-    logo: '/images/brands/smart.svg',
     reviewedAt: '3 de noviembre de 2026',
     descriptor: 'Marca de movilidad eléctrica nacida en Europa y hoy gestionada mediante una sociedad conjunta de Mercedes-Benz y Geely.',
     bio: 'La historia moderna de smart arrancó en 1994, cuando Daimler-Benz y Swatch fundaron Micro Compact Car AG para desarrollar un coche urbano de pequeñas dimensiones. El primer smart city-coupé se presentó en 1997 y llegó a producción en 1998. La estructura actual cambió en 2019: smart Automobile Co., Ltd. se constituyó como una empresa conjunta al 50 % de Mercedes-Benz AG y Geely. Su sede global está en Ningbo, China, mientras smart Europe GmbH coordina la actividad europea desde Leinfelden-Echterdingen, Alemania. La gama ha pasado de los microcoches urbanos a una familia de SUV eléctricos.',
@@ -1329,6 +1330,8 @@ export const brands: CarBrand[] = [
   {
     slug: 'lancia',
     name: 'Lancia',
+    logo: '/images/brands/lancia.svg',
+    logoLayout: 'wide',
     country: 'Italia',
     headquartersCity: 'Turín (sede histórica)',
     founded: 1906,
