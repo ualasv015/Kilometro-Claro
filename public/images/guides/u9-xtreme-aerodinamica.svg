@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="t d">
+  <title id="t">Compromiso aerodinámico a gran velocidad</title>
+  <desc id="d">Esquema conceptual de un coche genérico que muestra avance, resistencia del aire, apoyo aerodinámico y neumáticos sobre el asfalto.</desc>
+  <rect width="960" height="520" rx="16" fill="#f0f5ed"/>
+  <text x="42" y="66" fill="#173d34" font-family="Arial,sans-serif" font-size="28" font-weight="700">Potencia, aire y contacto con el suelo</text>
+  <path d="M60 408H900" stroke="#546b59" stroke-width="7"/>
+  <path d="M220 345h520l-67-73H350l-60 73Z" fill="#173d34"/>
+  <path d="M365 275h280l-42-57H420Z" fill="#4f7564"/>
+  <circle cx="329" cy="400" r="42" fill="#182420" stroke="#d7f36a" stroke-width="10"/>
+  <circle cx="639" cy="400" r="42" fill="#182420" stroke="#d7f36a" stroke-width="10"/>
+  <path d="M754 316h124" stroke="#a94b3e" stroke-width="8" marker-end="url(#red)"/>
+  <path d="M186 315H70" stroke="#23745d" stroke-width="8" marker-end="url(#green)"/>
+  <path d="M482 120v72" stroke="#567d3d" stroke-width="8" marker-end="url(#olive)"/>
+  <defs><marker id="red" markerWidth="12" markerHeight="12" refX="8" refY="6" orient="auto"><path d="m0 0 10 6-10 6" fill="none" stroke="#a94b3e" stroke-width="2"/></marker><marker id="green" markerWidth="12" markerHeight="12" refX="8" refY="6" orient="auto"><path d="m0 0 10 6-10 6" fill="none" stroke="#23745d" stroke-width="2"/></marker><marker id="olive" markerWidth="12" markerHeight="12" refX="8" refY="6" orient="auto"><path d="m0 0 10 6-10 6" fill="none" stroke="#567d3d" stroke-width="2"/></marker></defs>
+  <g font-family="Arial,sans-serif" font-size="18" font-weight="700"><text x="47" y="290" fill="#23745d">Avance</text><text x="730" y="287" fill="#a94b3e">Resistencia</text><text x="505" y="144" fill="#567d3d">Apoyo</text></g>
+  <text x="43" y="482" fill="#5b6c60" font-family="Arial,sans-serif" font-size="15">Ilustración conceptual original · No representa la carrocería ni las fuerzas medidas del U9 Xtreme.</text>
+</svg>

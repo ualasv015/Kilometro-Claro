@@ -95,7 +95,7 @@ function Draw-Title([System.Drawing.Graphics]$Graphics, [string]$Title, [string]
   $white.Dispose(); $lime.Dispose(); $muted.Dispose()
 }
 
-function New-SocialCard([string]$OutputPath, [string]$Title, [string]$Label, [string]$PhotoPath, [System.Drawing.Image]$Logo) {
+function New-SocialCard([string]$OutputPath, [string]$Title, [string]$Label, [string]$PhotoPath, [System.Drawing.Image]$Logo, [string]$PhotoNote = '') {
   $bitmap = [System.Drawing.Bitmap]::new(1200, 630, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
   $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
   $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
@@ -142,6 +142,14 @@ function New-SocialCard([string]$OutputPath, [string]$Title, [string]$Label, [st
   }
 
   Draw-Title $graphics $Title $Label $hasPhoto $Logo
+  if ($PhotoNote) {
+    $noteFont = [System.Drawing.Font]::new('Segoe UI', 17, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
+    $noteBrush = New-Brush '#F5F7F2'
+    $noteBackdrop = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(190, 10, 28, 23))
+    $graphics.FillRectangle($noteBackdrop, 58, 112, 445, 42)
+    $graphics.DrawString($PhotoNote, $noteFont, $noteBrush, 69, 121)
+    $noteBackdrop.Dispose(); $noteBrush.Dispose(); $noteFont.Dispose()
+  }
   $bitmap.Save($OutputPath, [System.Drawing.Imaging.ImageFormat]::Png)
   $graphics.Dispose(); $bitmap.Dispose()
 }
@@ -168,7 +176,8 @@ Get-ChildItem (Join-Path $distRoot 'guias') -Directory | ForEach-Object {
   $imageMatch = [regex]::Match($html, '<figure class="guide-image".*?<img[^>]+src="([^"]+)"', [System.Text.RegularExpressions.RegexOptions]::Singleline)
   $photo = $null
   if ($imageMatch.Success) { $photo = Join-Path $publicRoot $imageMatch.Groups[1].Value.TrimStart('/').Replace('/', [System.IO.Path]::DirectorySeparatorChar) }
-  $routes += @{ Html = $page; Image = "guia-$($_.Name).png"; Label = 'Guía para conductores'; Photo = $photo }
+  $note = if ($_.Name -eq 'yangwang-u9-xtreme-500-kmh-record') { 'FOTO DE ARCHIVO · U9 CONVENCIONAL' } else { '' }
+  $routes += @{ Html = $page; Image = "guia-$($_.Name).png"; Label = 'Guía para conductores'; Photo = $photo; Note = $note }
 }
 
 foreach ($route in $routes) {
@@ -179,7 +188,7 @@ foreach ($route in $routes) {
   $title = [regex]::Replace($title, '\s+', ' ')
   $publicOutput = Join-Path $ogPublic $route.Image
   $distOutput = Join-Path $ogDist $route.Image
-  New-SocialCard $publicOutput $title $route.Label $route.Photo $logo
+  New-SocialCard $publicOutput $title $route.Label $route.Photo $logo $route.Note
   Copy-Item -LiteralPath $publicOutput -Destination $distOutput -Force
 }
 

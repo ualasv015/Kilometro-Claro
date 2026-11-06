@@ -1,4 +1,5 @@
 export const relatedGuideSlugs: Record<string, string[]> = {
+  'yangwang-u9-xtreme-500-kmh-record': ['par-motor-potencia-diferencias', 'coche-patina-al-acelerar-control-traccion', 'toyota-gr-gt'],
   'coche-patina-al-acelerar-control-traccion': ['tipos-traccion-coche', 'par-motor-potencia-diferencias', 'que-ocurre-pisar-embrague'],
   'par-motor-potencia-diferencias': ['acelerar-fondo-marcha-larga', 'coche-patina-al-acelerar-control-traccion', 'por-que-tarda-turbo-responder'],
   'acelerar-fondo-marcha-larga': ['par-motor-potencia-diferencias', 'por-que-tarda-turbo-responder', 'motor-gasolina-diesel-acelerador'],
@@ -8,7 +9,7 @@ export const relatedGuideSlugs: Record<string, string[]> = {
   'motor-gasolina-diesel-acelerador': ['por-que-tarda-turbo-responder', 'tipos-cambio-automatico', 'consumo-coche-electrico-gasolina-diesel'],
   'volkswagen-id-polo-gti-electrico': ['consumo-coche-electrico-gasolina-diesel', 'tipos-traccion-coche', 'que-coche-comprar-segun-presupuesto'],
   'jas-tensei-honda-nsx-vtec': ['toyota-gr-gt', 'tipos-traccion-coche', 'porsche-mission-s-2026'],
-  'toyota-gr-gt': ['jas-tensei-honda-nsx-vtec', 'mazda-mx-5-nd-futuro-ne', 'porsche-mission-s-2026'],
+  'toyota-gr-gt': ['yangwang-u9-xtreme-500-kmh-record', 'jas-tensei-honda-nsx-vtec', 'porsche-mission-s-2026'],
   'mazda-mx-5-nd-futuro-ne': ['toyota-gr-gt', 'coche-hibrido-enchufable-o-microhibrido', 'tipos-traccion-coche'],
   'cuanto-cuesta-mantener-coche-mes-espana': ['cuanto-cuesta-viaje-coche', 'como-calcular-consumo-real-coche', 'coches-baratos-espana'],
   'como-calcular-consumo-real-coche': ['como-reducir-consumo-combustible', 'cuanto-cuesta-viaje-coche', 'cuanto-cuesta-mantener-coche-mes-espana'],

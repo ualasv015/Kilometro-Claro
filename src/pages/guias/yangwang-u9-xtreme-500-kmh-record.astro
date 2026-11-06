@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'yangwang-u9-xtreme-500-kmh-record';
+const title = 'Yangwang U9 Xtreme: cómo superó los 500 km/h y qué significa su récord';
+const seoTitle = 'Yangwang U9 Xtreme: récord de 500 km/h | Kilómetro Claro';
+const description = 'Cómo alcanzó el Yangwang U9 Xtreme 503,17 km/h, qué verificaron FIA y Guinness, qué se sabe del accidente y por qué importan las reglas.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-06';
+const sources = {
+  fia: 'https://api.fia.com/news/yangwang-u9-xtreme-surpasses-500-kmh-speed-achievement-recognised-fia',
+  guinness: 'https://www.guinnessworldrecords.com/world-records/791227-highest-speed-achieved-by-an-electric-car-in-a-single-direction-run',
+  byd: 'https://www.byd.com/za/news-list/yangwang-u9-xtreme-is-the-worlds-fastest-production-car-with-top-speed-of-496kmh',
+  bydTech: 'https://media.byd.com/focus-technique-de-la-yangwang-u9-a-la-yangwang-u9-xtreme-detentrice-du-record-mondial-de-vitesse/?lang=fra',
+  giti: 'https://lam.giti.com/en/news/twice-in-a-year-giti-tires-enable-yangwang-u9x-to-set-of-new-land-speed-record-to-become-the-fastest-car-on-the-planet',
+  nasa: 'https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/drag-equation/',
+  crashPost: 'https://www.sina.cn/news/detail/5360844764611156.html',
+  crashReport: 'https://news.mydrivers.com/1/1162/1162890.htm',
+  ssc: 'https://www.sscnorthamerica.com/model/records',
+  ssc2022: 'https://www.sscnorthamerica.com/news/ssc-tuatara-achieves-new-top-speed',
+  bugatti: 'https://newsroom.bugatti.com/api/en/press-releases/pdf/bugatti-breaks-the-300-mph-barrier',
+  koenigsegg: 'https://www.koenigsegg.com/history',
+  jesko: 'https://www.koenigsegg.com/index.php/model/jesko-absolut',
+  hennessey: 'https://www.globenewswire.com/news-release/2025/04/16/3062509/0/en/Hennessey-Finalizes-Testing-of-2031-HP-Venom-F5-Evolution-Hypercar.html',
+  rimac: 'https://www.rimac-automobili.com/bendingphysics/episode-0.php',
+  rimacR: 'https://www.rimac-automobili.com/NeveraR/',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Yangwang U9 Xtreme y los 500 km/h' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Comparar coches · 6 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Una carretera cerrada en el desierto, cuatro motores eléctricos y una cifra que exige leer la letra pequeña: 503,17 km/h. Así fue la pasada y así se distingue un hito real de un título demasiado amplio.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>El <strong>Yangwang U9 Xtreme</strong>, conducido por Marc Basseng, alcanzó <strong>503,17 km/h el 1 de noviembre de 2026</strong> en un tramo cerrado de la carretera E11 de Abu Dabi. La FIA reconoció la velocidad y Guinness registró dos marcas de coche de producción <strong>en una sola dirección</strong>, una de ellas para eléctricos. No es una media de dos pasadas opuestas ni el récord absoluto de velocidad terrestre. El logro combina potencia eléctrica, control del chasis, neumáticos específicos y un trazado preparado; la configuración completa de la unidad de prueba y los criterios detallados de producción no se han publicado en las fuentes consultadas.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#dia">La pasada de Abu Dabi</a></li>
+          <li><a href="#coche">Qué es el U9 Xtreme</a></li>
+          <li><a href="#ingenieria">Cómo llegó a 500 km/h</a></li>
+          <li><a href="#accidente">El accidente y las fuerzas G</a></li>
+          <li><a href="#reglas">Qué récord tiene realmente</a></li>
+          <li><a href="#rivales">La carrera entre fabricantes</a></li>
+          <li><a href="#utilidad">Utilidad y prestigio</a></li>
+          <li><a href="#futuro">Límites y futuro</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="dia">El día que el U9 Xtreme superó los 500 km/h</h2>
+      <p>La escena transcurrió el <strong>1 de noviembre de 2026</strong> en Al Dhafra, Abu Dabi. Las autoridades cerraron unos 10 kilómetros de la carretera Sheikh Khalifa Bin Zayed International Road, la E11, y el equipo utilizó una recta de siete kilómetros para las pasadas. En la segunda de aquel día, el piloto alemán <strong>Marc Basseng</strong> llevó el Yangwang U9 Xtreme hasta <strong>503,17 km/h</strong>. La <a href={sources.fia}>FIA publicó el reconocimiento</a> el 6 de noviembre y <a href={sources.guinness}>Guinness detalló la categoría y la verificación</a>.</p>
+      <p>Un día antes se habían realizado dos pasadas que llegaron, según la FIA, a un máximo de 490 km/h. El equipo ajustó aerodinámica, suspensión y presiones de neumáticos antes de regresar a la carretera el 1 de noviembre. Ese detalle ayuda a entender el récord: no basta con disponer de potencia. El coche debe mantenerse estable, los neumáticos deben soportar las cargas y el piloto necesita espacio para acelerar y después reducir la velocidad. La nota de la FIA no publica una distancia de frenado de esta pasada.</p>
+      <figure class="editorial-figure">
+        <img src="/images/guides/u9-xtreme-velocidad-segundo.svg" width="960" height="430" alt="Escala de cero a 140 metros: a 503,17 km/h se recorren 139,77 metros en un segundo si se mantiene la velocidad" loading="lazy" decoding="async" />
+        <figcaption>Ilustración original de Kilómetro Claro. Conversión: 503,17 ÷ 3,6 = 139,77 m/s. No representa una distancia de frenado ni la longitud de la zona de medición.</figcaption>
+      </figure>
+      <p>La cifra equivale a casi <strong>140 metros por segundo</strong>. Es una forma de imaginar la escala: durante un segundo a velocidad constante, el coche cubriría más de la longitud de un campo de fútbol. La comparación es solo espacial; no dice cuánto tardó en alcanzar la punta ni cuánto necesitó para detenerse.</p>
+
+      <h2 id="coche">Qué es el Yangwang U9 Xtreme y qué sabemos de la unidad de récord</h2>
+      <p>Yangwang es la marca de lujo del grupo chino BYD. El U9 Xtreme deriva del U9 convencional, un hiperdeportivo eléctrico de cuatro motores. <a href={sources.byd}>BYD anunció para el Xtreme una serie limitada a un máximo de 30 unidades ofrecidas a clientes</a>. Que exista esa oferta permite hablar de una versión de producción limitada en las categorías citadas; no demuestra que el coche que rodó en Abu Dabi fuese idéntico en cada pieza a una unidad entregada a un comprador. No encontramos una ficha pública completa de la unidad de noviembre ni una lista exhaustiva de las diferencias respecto a los coches de cliente.</p>
+      <p>La versión Xtreme introduce, según <a href={sources.bydTech}>la explicación técnica de BYD</a>, una arquitectura de <strong>1.200 V</strong> frente a los 800 V del U9 convencional; cuatro motores de hasta 30.000 rpm y 555 kW cada uno; una batería Blade LFP preparada para descargas de alta potencia; neumáticos semislick específicos y una puesta a punto del sistema de suspensión DiSus-X. BYD habla de más de 3.000 CV métricos de potencia combinada. Es una especificación declarada por el fabricante, no una medición de potencia en banco independiente que hayamos encontrado.</p>
+      <p>La FIA identifica a <strong>Giti Tire</strong> como colaborador de los neumáticos de altas prestaciones. <a href={sources.giti}>Giti describió el GitiSport e.GTR2 Pro</a> utilizado en la marca de 496,22 km/h de 2025. Para Abu Dabi, las fuentes oficiales consultadas mencionan neumáticos desarrollados con Giti y ajustes de presión, pero no publican un inventario detallado que permita afirmar que cada neumático y cada compuesto eran exactamente los mismos que en Papenburg. Tampoco publican las presiones finales ni la carga de batería de la pasada.</p>
+
+      <h2 id="ingenieria">Cómo pudo alcanzar esa velocidad</h2>
+      <h3>Cuatro motores, batería y temperatura</h3>
+      <p>Cada motor eléctrico puede aportar fuerza a su rueda y la electrónica distribuir el par según la adherencia disponible. Esa arquitectura ayuda a acelerar de forma controlada y a aprovechar la potencia, aunque a velocidad punta el reto principal deja de ser arrancar con fuerza: se necesita suficiente potencia <em>sostenida</em> para vencer el aire y las demás pérdidas. Nuestra <a href="/guias/par-motor-potencia-diferencias/">guía de par y potencia</a> explica por qué una cifra de par por sí sola no predice la velocidad máxima; la <a href="/guias/coche-patina-al-acelerar-control-traccion/">guía de adherencia</a> muestra qué pasa si la fuerza supera lo que admiten los neumáticos.</p>
+      <p>La batería debe suministrar corriente, los inversores alimentan los motores y todos esos componentes generan calor. BYD atribuye a la arquitectura de 1.200 V, a la batería de alta descarga y a su gestión térmica la capacidad de sostener el esfuerzo. Es plausible por principios eléctricos que, a igual potencia y en condiciones comparables, elevar la tensión permita reducir corriente en ciertos tramos del sistema y sus pérdidas resistivas; <strong>no calculamos el ahorro térmico real de este coche</strong> porque faltan resistencias, temperaturas, mapas de eficiencia y datos de la pasada. El fabricante tampoco ha publicado una curva de potencia medida durante el intento.</p>
+      <h3>El aire y el equilibrio del coche</h3>
+      <p>La <a href={sources.nasa}>ecuación de resistencia de NASA</a> aproxima la fuerza aerodinámica como D = ½·ρ·Cd·A·v², con densidad del aire, coeficiente de resistencia, área de referencia y velocidad relativa al aire. Si estos factores permanecieran constantes, duplicar la velocidad cuadruplicaría esa fuerza. Como potencia es fuerza por velocidad, la potencia necesaria <em>solo para vencer esa resistencia</em> crecería aproximadamente con el cubo. En un coche real cambian el viento, el flujo, la refrigeración y otros factores; la regla no permite deducir la potencia exacta del U9 Xtreme.</p>
+      <p>Reducir resistencia facilita ganar velocidad, pero un coche demasiado descargado aerodinámicamente puede perder estabilidad o agarre. El apoyo aerodinámico también suele costar resistencia. La FIA relata que el equipo modificó la aerodinámica tras las pasadas del 31 de octubre, sin publicar el ángulo final del alerón ni coeficientes medidos. No podemos convertir esos ajustes en una cifra de carga vertical. La dirección del viento y la pendiente son otras variables que importan especialmente cuando solo se registra una dirección.</p>
+      <figure class="editorial-figure">
+        <img src="/images/guides/u9-xtreme-aerodinamica.svg" width="960" height="520" alt="Esquema conceptual de un coche que avanza mientras el aire se opone al movimiento y el apoyo aerodinámico actúa hacia el suelo" loading="lazy" decoding="async" />
+        <figcaption>Esquema editorial original: el vehículo dibujado es genérico. Las flechas indican conceptos, no magnitudes ni la configuración aerodinámica real del U9 Xtreme.</figcaption>
+      </figure>
+      <h3>Neumáticos, asfalto y tres fases distintas</h3>
+      <p>A esa velocidad, una rueda gira miles de veces por minuto y su estructura debe resistir cargas, calor y deformaciones sin perder la forma de contacto necesaria. Giti documenta el desarrollo de un neumático específico para el proyecto de 2025; la FIA confirma su participación en 2026. La superficie de la E11 se preparó y se cerró al tráfico. No sabemos a partir de los documentos consultados la temperatura exacta del firme ni el viento durante la pasada definitiva, así que evitamos atribuirles una ganancia cuantificada.</p>
+      <p>Conviene separar <strong>aceleración, velocidad punta y frenada</strong>. Un coche puede ser extraordinario de 0 a 100 km/h sin sostener 500 km/h; también puede alcanzar una punta elevada sin repetirla durante kilómetros. Después debe desacelerar dentro del espacio disponible. Una velocidad máxima certificada no es una prueba de distancia de frenado, resistencia en circuito o comportamiento cotidiano.</p>
+
+      <h2 id="accidente">El accidente de las pruebas: qué se sabe y qué no</h2>
+      <p>El desarrollo tuvo un episodio distinto del récord. En un <a href={sources.crashPost}>mensaje publicado el 2 de noviembre</a>, Hu Xiaoqing, directiva de Yangwang, presentó una entrevista con <strong>Jiang Wen</strong>, probador de BYD, sobre una prueba de alta velocidad realizada en China. <a href={sources.crashReport}>La cobertura china que relata la entrevista</a> sitúa el objetivo de aquella prueba entre 420 y 450 km/h y atribuye al piloto una estimación de unos 360 km/h en el primer contacto con una barrera. El coche habría golpeado después el otro lado. El medio informa de que el piloto fue examinado en el hospital sin lesiones graves.</p>
+      <p><strong>No hemos verificado la fecha exacta ni el lugar preciso de ese accidente.</strong> El 2 de noviembre es la fecha de difusión de la entrevista, no necesariamente la del choque. Tampoco encontramos telemetría independiente, informe de investigación, velocidad de impacto certificada ni causa técnica establecida. El relato describe una pérdida de estabilidad, pero no permite atribuirla a un fallo de suspensión, neumático, aerodinámica o pilotaje. Ocurrió en China y el registro de 503,17 km/h se hizo en Abu Dabi, con otro conductor. No hay base para afirmar que la misma unidad dañada estableciese después el récord.</p>
+      <h3>¿Qué fuerzas G puede generar un impacto a esa velocidad?</h3>
+      <p>La velocidad antes de un choque no basta para calcular las fuerzas que experimenta una persona. Hacen falta el cambio de velocidad, su dirección, el tiempo o la distancia durante los impactos, la trayectoria del habitáculo y la respuesta del asiento y los cinturones. Además, una <strong>desaceleración media</strong> no describe el pico que puede aparecer durante una fracción de segundo.</p>
+      <p>Como <strong>ejemplo puramente hipotético, ajeno al accidente</strong>, supongamos un objeto que pasa de 100 m/s a cero en dos segundos con desaceleración uniforme. La fórmula a = Δv/Δt da 50 m/s²; al dividir por 9,81 m/s² resulta aproximadamente <strong>5,1 g de desaceleración media</strong>. Si el intervalo fuera distinto, el resultado cambiaría. Un choque real puede incluir varios contactos y direcciones; esta cuenta no determina las fuerzas G reales ni lo que soportó Jiang Wen.</p>
+
+      <h2 id="reglas">¿Es el coche de producción más rápido del mundo? Depende de la prueba</h2>
+      <p><a href={sources.guinness}>Guinness registra expresamente</a> la mayor velocidad de un coche de producción y de un coche eléctrico de producción <strong>en una pasada en un solo sentido</strong>. Señala que empleó el velocímetro del vehículo y un sistema VBOX calibrado, y que un representante de la FIA revisó los datos y dio confirmación escrita. <a href={sources.fia}>La FIA dice que reconoce la marca</a>; en la documentación pública que consultamos no se detalla una homologación separada bajo una categoría de récord terrestre de media sobre distancia. Por eso describimos exactamente el reconocimiento publicado, sin transformarlo en otro título.</p>
+      <p>Una <strong>media de pasadas en sentidos opuestos</strong> trata de compensar parte del efecto de viento y pendiente. No elimina toda diferencia entre vehículos, trazados o condiciones, pero impide que una sola pasada favorable decida la clasificación. SSC publica <a href={sources.ssc}>455,3 km/h como media bidireccional del Tuatara en Florida en enero de 2021</a>, verificada con equipo de Racelogic. Comparar sus 455,3 con los 503,17 de Yangwang como si fueran el mismo procedimiento sería engañoso. También hay que distinguir el récord absoluto de velocidad terrestre, que incluye vehículos especialmente construidos y no está limitado a coches de producción.</p>
+      <div class="table-scroll" role="region" aria-label="Marcas de velocidad con reglas diferentes" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Coche</th><th scope="col">Marca, fecha y lugar</th><th scope="col">Medición y alcance</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Yangwang U9 Xtreme</th><td>503,17 km/h · 1 nov 2026 · E11, Abu Dabi</td><td>Punta en una dirección; FIA la reconoce y Guinness la registra para producción y producción eléctrica en esa modalidad.</td></tr>
+            <tr><th scope="row">Yangwang U9 Xtreme</th><td>496,22 km/h · 14 sep 2025 · ATP Papenburg</td><td>Punta anunciada por BYD y Giti; antecedente del mismo modelo, no media bidireccional documentada aquí.</td></tr>
+            <tr><th scope="row">Bugatti Chiron Super Sport 300+</th><td>490,484 km/h · 2 ago 2019 · Ehra-Lessien</td><td>Punta en una dirección publicada por Bugatti; la marca describe una unidad previa a producción.</td></tr>
+            <tr><th scope="row">SSC Tuatara</th><td>455,3 km/h · ene 2021 · Florida</td><td>Media de dos sentidos publicada por SSC; medición de Racelogic.</td></tr>
+            <tr><th scope="row">Koenigsegg Agera RS</th><td>447,19 km/h · 4 nov 2017 · Nevada</td><td>Media de dos sentidos publicada por Koenigsegg; antecedente histórico, no rival de una pasada única.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Fuentes: FIA y Guinness para 2026; BYD y Giti para 2025; comunicados de Bugatti, SSC y Koenigsegg para sus marcas. Son modalidades distintas, no una clasificación común. La página pública de Guinness consultada no detalla todos los requisitos de número de unidades, homologación y equivalencia entre coche de prueba y coche de cliente; BYD comunica un máximo de 30 unidades ofrecidas.</p>
+      <p>Hay otro matiz histórico: <a href={sources.ssc2022}>SSC publicó 474,8 km/h de punta en 2022</a> para el Tuatara, con medición de Racelogic, pero esa cifra de una pasada no sustituye su media bidireccional de 2021. Del mismo modo, la marca de Bugatti se realizó con un vehículo que la propia <a href={sources.bugatti}>marca llamó previo a producción</a>. Las definiciones de «serie», «carretera» y «récord» no se pueden intercambiar sin examinar el reglamento de cada entidad.</p>
+
+      <h2 id="rivales">Las otras marcas en la carrera por la velocidad</h2>
+      <p>El <strong>SSC Tuatara</strong> conserva en su comunicación la referencia de 455,3 km/h de media en dos sentidos y publicó los 474,8 km/h de una pasada posterior. <strong>Bugatti</strong> llevó el Chiron Super Sport 300+ a 490,484 km/h en 2019; su comunicado especifica la preparación de la unidad previa a producción y una recta de 8,8 km. Ambas marcas son útiles para entender la evolución, siempre con el método al lado de la cifra.</p>
+      <p>El <strong>Koenigsegg Jesko Absolut</strong> está diseñado para velocidad punta, según su <a href={sources.jesko}>ficha oficial</a>, pero en las fuentes consultadas no hallamos una pasada máxima certificada comparable a la de Abu Dabi. Koenigsegg sí documenta para ese modelo marcas de <em>0–400–0 km/h</em>; es una prueba de aceleración y frenada, no un registro de velocidad máxima. <strong>Hennessey</strong> describe el Venom F5 como <a href={sources.hennessey}>diseñado para superar 300 mph</a>; un objetivo de ingeniería no demuestra que haya alcanzado esa velocidad. No encontramos en su información oficial consultada una media de dos sentidos o una pasada certificada por encima de los 503,17 km/h.</p>
+      <p><strong>Rimac</strong> comunica una punta de <a href={sources.rimac}>412 km/h para el Nevera medida en Papenburg</a>. Para el <a href={sources.rimacR}>Nevera R anuncia 430 km/h con supervisión del fabricante</a>; su ficha también destaca cifras de aceleración. Esas prestaciones no deben sumarse ni ordenarse como si fueran pruebas idénticas. En la propia gama de Bugatti, la velocidad publicada para el Chiron Super Sport 300+ tampoco se puede atribuir automáticamente a un sucesor. A fecha de esta consulta, no hemos encontrado un resultado posterior que invalide la marca de una dirección de Yangwang publicada hoy.</p>
+
+      <h2 id="utilidad">¿Laboratorio útil o batalla de prestigio?</h2>
+      <p>La cifra funciona como escaparate para una marca; el propio <a href={sources.fia}>comunicado de la FIA</a> la presenta como hito tecnológico. Hay, además, problemas técnicos reales que resolver: gestión del calor, entrega eléctrica estable, neumáticos y estabilidad aerodinámica. Giti describe un <a href={sources.giti}>neumático desarrollado con Yangwang</a> y BYD detalla motores, batería y suspensión del Xtreme. Son ejemplos concretos de trabajo de ingeniería, no prueba de que un coche familiar vaya a recibir el mismo neumático, motor o calibración.</p>
+      <p>El beneficio para otros vehículos exige demostrar una transferencia: identificar qué componente se adoptó, en qué modelo y qué resultado obtuvo. No encontramos documentación que permita atribuir un ahorro de energía, una mejora de seguridad o una reducción de coste en coches de gran serie a la pasada de noviembre. La investigación puede generar aprendizajes, pero la utilidad pública de cada uno tendrá que comprobarse. Además, un hiperdeportivo de hasta 30 unidades no representa las condiciones de uso, presupuesto y mantenimiento de la mayoría de conductores españoles.</p>
+
+      <h2 id="futuro">Hasta dónde puede llegar un coche de producción</h2>
+      <p>Superar de nuevo la cifra no depende únicamente de añadir motores o ampliar una batería. El aire reclama cada vez más potencia, los neumáticos tienen límites de carga y temperatura, la refrigeración compite por espacio con una carrocería de baja resistencia y la estabilidad debe conservarse sobre un trazado suficientemente largo y preparado. El piloto también necesita margen para acelerar y frenar. Son restricciones físicas y operativas tanto para coches eléctricos como de combustión, aunque la manera de entregar energía y expulsar calor sea distinta.</p>
+      <p>Los objetivos anunciados por Koenigsegg o Hennessey mantienen abierta la carrera, pero no fijan una fecha ni una velocidad futura inevitable. El próximo resultado tendrá valor comparativo si publica con claridad el método: dirección o direcciones, instrumento calibrado, trazado, condiciones, especificación de la unidad y criterio de producción. Una velocidad repetible y bien documentada explica más que una cifra aislada.</p>
+
+      <h2 id="conclusion">Qué demuestra la barrera de los 500 km/h</h2>
+      <p>El U9 Xtreme ha demostrado que un eléctrico presentado como serie limitada puede alcanzar una punta superior a 500 km/h en una carretera cerrada. La FIA reconoce los 503,17 km/h y Guinness los registra en categorías explícitas de <strong>una sola dirección</strong>. Es un logro de potencia, control, neumáticos y preparación del entorno. Quedan abiertas la comparación bajo reglas de dos sentidos, la especificación completa del coche de prueba frente a las unidades de cliente y los datos técnicos del accidente chino. Saber dónde termina la medición y dónde empieza la interpretación hace la marca más interesante, no menos.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del <strong>6 de noviembre de 2026</strong>. Abrimos las páginas enlazadas y separamos mediciones verificadas, declaraciones de fabricantes e inferencias físicas. No hemos presenciado la prueba, examinado telemetría bruta ni reconstruido el accidente. La página de Guinness presenta «Dubai» en su campo geográfico resumido, pero su descripción y la FIA sitúan el tramo E11 en Al Dhafra, Abu Dabi; usamos esa localización detallada. Las cifras de potencia y las características de la unidad proceden del fabricante salvo indicación contraria.</p>
+        <ul>
+          <li><a href={sources.fia}>FIA: resultado, piloto, trazado y secuencia de pasadas</a>; <a href={sources.guinness}>Guinness: categorías, VBOX y revisión de datos</a>.</li>
+          <li><a href={sources.byd}>BYD: versión Xtreme y serie limitada</a>; <a href={sources.bydTech}>BYD: explicación técnica</a>; <a href={sources.giti}>Giti: neumático del intento de 2025</a>.</li>
+          <li><a href={sources.crashPost}>Publicación de Hu Xiaoqing del 2 de noviembre</a> y <a href={sources.crashReport}>relato periodístico de la entrevista de Jiang Wen</a>. Ni el mensaje ni el artículo son una investigación pericial del choque.</li>
+          <li><a href={sources.ssc}>SSC: media de 2021</a>, <a href={sources.ssc2022}>SSC: pasada de 2022</a>, <a href={sources.bugatti}>Bugatti: 2019</a>, <a href={sources.koenigsegg}>Koenigsegg: Agera RS y Jesko</a>, <a href={sources.hennessey}>Hennessey: objetivo del F5</a> y <a href={sources.rimac}>Rimac: Nevera</a>.</li>
+          <li><a href={sources.nasa}>NASA: ecuación aerodinámica</a>. Los dos esquemas son originales y conceptuales. La fotografía de portada, <a href="https://commons.wikimedia.org/wiki/File:Yangwang_U9_005.jpg">Zoerides / Wikimedia Commons, CC0</a>, muestra deliberadamente un U9 convencional, no el Xtreme ni la prueba de récord.</li>
+        </ul>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .editorial-figure { margin: 25px 0; }
+  .editorial-figure img { display: block; width: 100%; height: auto; border-radius: 9px; }
+  .editorial-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.55; }
+</style>

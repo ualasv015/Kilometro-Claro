@@ -14,6 +14,15 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'yangwang-u9-xtreme-500-kmh-record': {
+    src: '/images/guides/yangwang-u9-convencional.jpg',
+    alt: 'Yangwang U9 convencional gris aparcado, visto de frente y de lado',
+    caption: 'Fotografía real de un U9 convencional, base de la versión Xtreme; no muestra el coche que realizó la pasada de Abu Dabi. Copia reducida para la web.',
+    author: 'Zoerides', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Yangwang_U9_005.jpg',
+    license: 'https://creativecommons.org/publicdomain/zero/1.0/', licenseName: 'CC0 1.0',
+    width: 1280, height: 960,
+  },
   'coche-patina-al-acelerar-control-traccion': {
     src: '/images/guides/rueda-gravilla-real.jpg',
     alt: 'Rueda trasera de un coche parado sobre gravilla suelta',

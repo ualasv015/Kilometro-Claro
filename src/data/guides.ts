@@ -1,5 +1,12 @@
 export const guides = [
   {
+    slug: 'yangwang-u9-xtreme-500-kmh-record',
+    title: 'Yangwang U9 Xtreme: cómo superó los 500 km/h y qué significa su récord',
+    category: 'Comparar coches', categorySlug: 'comparar-coches',
+    description: 'La pasada de 503,17 km/h reconocida por la FIA y Guinness: ingeniería, accidente de pruebas y por qué no equivale a una media en dos sentidos.',
+    published: true,
+  },
+  {
     slug: 'coche-patina-al-acelerar-control-traccion',
     title: '¿Qué pasa cuando el coche patina al acelerar? Adherencia y control de tracción',
     category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
