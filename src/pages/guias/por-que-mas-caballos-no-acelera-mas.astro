@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'por-que-mas-caballos-no-acelera-mas';
+const title = '¿Por qué un coche con más caballos no siempre acelera más?';
+const seoTitle = 'Más caballos, ¿acelera más? | Kilómetro Claro';
+const description = 'Dos BMW muestran por qué más CV no garantizan un mejor 0–100. Explicamos peso, potencia útil, marchas, agarre y cómo comparar las pruebas.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-08';
+const sources = {
+  i4: 'https://www.bmw.es/es/coches-bmw/bmw-i/i4/datos-tecnicos.html',
+  m3: 'https://www.bmw.es/es/all-models/m-series/m3-series/datos-tecnicos-bmw-m3-berlina.html',
+  physics: 'https://openstax.org/books/university-physics-volume-1/pages/10-8-work-and-power-for-rotational-motion',
+  units: 'https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8',
+  energy: 'https://www.energy.gov/documents/chapter9-ldengines-vehiclespdf',
+  traction: 'https://www.bosch-mobility.com/en/company/milestones/',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Más caballos y aceleración' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 8 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Un coche anuncia más potencia, pero otro llega antes a 100 km/h. No hay contradicción: la ficha destaca un máximo, mientras la aceleración depende de la masa, de la fuerza que efectivamente llega al suelo y de todo lo que sucede durante la maniobra.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>Más caballos <strong>pueden</strong> ayudar a acelerar, pero no garantizan un tiempo menor. El dato anunciado suele ser la potencia máxima del motor o del sistema, no el empuje constante en las ruedas. Importan cuántos kilos se mueven, el régimen y las marchas, las pérdidas, el agarre y el procedimiento con que se mide el 0–100.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía"><strong>En esta guía</strong><ul>
+        <li><a href="#potencia">Qué miden los caballos</a></li><li><a href="#ejemplo">Un ejemplo real</a></li>
+        <li><a href="#masa">Masa y relación peso potencia</a></li><li><a href="#curva">Potencia durante la aceleración</a></li>
+        <li><a href="#agarre">Neumáticos y tracción</a></li><li><a href="#medicion">Qué prueba se compara</a></li>
+      </ul></nav>
+
+      <h2 id="potencia">¿Qué significa la potencia que anuncia una marca?</h2>
+      <p>La cifra en <strong>CV</strong> o <strong>kW</strong> suele describir el máximo que el fabricante declara para el motor de combustión o, en un eléctrico, para el sistema de propulsión. En un motor de combustión ese máximo aparece a un régimen determinado. En la ficha del M3 de este artículo, por ejemplo, BMW sitúa 390 kW a 6.250 rpm; el motor no entrega necesariamente 390 kW mientras espera a bajas vueltas en una marcha larga. En un eléctrico, la potencia máxima también puede depender del régimen y de límites de batería, inversor, temperatura o programación.</p>
+      <p>Potencia y par están relacionados: en un eje que gira, la potencia es el par multiplicado por su velocidad angular. Por eso no basta comparar los Nm máximos de dos motores. La <a href="/guias/par-motor-potencia-diferencias/">guía de par y potencia</a> explica esa relación con una curva y sus unidades. El <a href={sources.physics}>manual universitario de OpenStax</a> presenta la fórmula física; el <a href={sources.units}>NIST</a> confirma que un CV métrico equivale aproximadamente a 0,7355 kW. El «hp» anglosajón no es exactamente un CV.</p>
+      <p>Además, hay que localizar <em>dónde</em> se mide. La potencia oficial del motor o sistema no es la que un banco de rodillos encuentra en las ruedas: caja, diferencial y otros componentes introducen pérdidas. Una cifra a las ruedas depende también del método de ensayo; no se puede comparar directamente con una cifra oficial del motor. La potencia máxima sigue siendo útil para conocer el potencial del coche, pero no cuenta por sí sola cuánto empuje habrá en cada metro de la aceleración.</p>
+      <figure class="power-figure"><img src="/images/guides/mas-caballos-flujo.svg" width="960" height="480" loading="lazy" decoding="async" alt="Diagrama: la potencia del motor pasa por la transmisión y las ruedas; el agarre limita el empuje que acelera la masa, mientras las resistencias se oponen"/><figcaption>Ilustración original de Kilómetro Claro. Recorrido cualitativo de la energía mecánica; no muestra valores ni el diseño de un coche concreto.</figcaption></figure>
+
+      <h2 id="ejemplo">Un ejemplo real: más CV y un 0–100 más lento</h2>
+      <p>Las fichas de <strong>BMW España consultadas el 8 de noviembre de 2026</strong> ofrecen un contraste especialmente claro. Hemos elegido dos versiones concretas con tracción total y tomado de ambas la cifra de <strong>0–100 km/h sin «rollout»</strong>. Los datos son declarados por el fabricante; Kilómetro Claro no ha cronometrado estos coches.</p>
+      <div class="table-scroll"><table><thead><tr><th scope="col">Versión</th><th scope="col">Potencia máxima</th><th scope="col">Peso en vacío CE</th><th scope="col">Tracción</th><th scope="col">0–100 declarado</th></tr></thead><tbody>
+        <tr><th scope="row"><a href={sources.i4}>BMW i4 M60 xDrive</a></th><td>400 kW (544 CV)</td><td>2.290 kg</td><td>Integral</td><td>3,9 s</td></tr>
+        <tr><th scope="row"><a href={sources.m3}>BMW M3 Competition M xDrive Berlina</a></th><td>390 kW (530 CV)</td><td>1.865 kg</td><td>Integral</td><td>3,5 s</td></tr>
+      </tbody></table></div>
+      <p>El i4 anuncia <strong>14 CV más</strong>, pero el M3 declara <strong>0,4 s menos</strong>. BMW define en ambas fichas el peso en vacío CE como vehículo de serie, sin extras, con conductor de 75 kg y, para el de combustión, depósito al 90 %. Eso permite comparar las masas declaradas con una base común, aunque el equipamiento opcional o la carga de un vehículo concreto pueden cambiarlas. La diferencia de peso, <strong>425 kg</strong>, es un factor plausible en el resultado; la tabla no aísla su contribución frente a neumáticos, calibración, curva de potencia o transmisión.</p>
+      <figure class="power-figure"><img src="/images/guides/mas-caballos-bmw-comparacion.svg" width="960" height="480" loading="lazy" decoding="async" alt="Las fichas BMW España dan 544 CV, 2.290 kg y 3,9 s para el i4 M60; 530 CV, 1.865 kg y 3,5 s para el M3 Competition M xDrive"/><figcaption>Visualización editorial original de las fichas oficiales enlazadas en la tabla, consultadas el 8 de noviembre de 2026. Las barras solo representan los tiempos declarados; no demuestran una causa mecánica.</figcaption></figure>
+
+      <h2 id="masa">¿Qué revela la relación peso potencia?</h2>
+      <p>Piensa en dos carros de supermercado a los que aplicas la misma fuerza: el más cargado cambia de velocidad con más dificultad. En un coche, la masa total que debe acelerarse también importa. Una referencia rápida es dividir el <strong>peso en vacío en kg entre la potencia máxima en CV</strong>. Con las cifras anteriores, el i4 queda en aproximadamente <strong>4,21 kg/CV</strong> (2.290 ÷ 544) y el M3 en <strong>3,52 kg/CV</strong> (1.865 ÷ 530). Un número menor suele apuntar a mayor potencial de aceleración si lo demás fuera comparable.</p>
+      <p>Ese cociente no predice un tiempo. Usa picos de potencia, no la potencia media disponible durante la maniobra; tampoco incorpora marchas, adherencia, resistencias, cambios de relación ni inercia de componentes giratorios. Incluso el dato de masa puede variar entre norma, equipamiento y carga. Si una ficha incluye conductor y otra no, primero hay que igualar el criterio. Por eso la relación peso potencia ayuda a plantear preguntas, no a anunciar un 0–100 calculado.</p>
+
+      <h2 id="curva">La curva y las marchas: lo que ocurre entre salida y meta</h2>
+      <p>En un motor de combustión, el conductor pide aceleración, la caja fija una relación y el régimen sube a medida que aumenta la velocidad. El motor atraviesa varios puntos de su curva de par y potencia. Una marcha corta multiplica más el par que llega al eje de las ruedas, a cambio de más revoluciones y de acabar antes su rango útil. Una larga multiplica menos y puede dejar al motor lejos de la zona favorable. De ahí que <a href="/guias/acelerar-fondo-marcha-larga/">acelerar a fondo en una marcha demasiado larga</a> no siempre dé una respuesta inmediata.</p>
+      <p>Al cambiar de marcha, el régimen salta a otra zona de la curva; durante la maniobra puede interrumpirse o modularse el empuje. El tiempo, las relaciones, el control electrónico y las pérdidas de la transmisión forman parte del resultado. En un turbo de combustión también puede influir la respuesta transitoria al pedir carga: nuestra guía sobre <a href="/guias/por-que-tarda-turbo-responder/">por qué tarda en responder un turbo</a> distingue ese retraso del efecto de una marcha larga. Ninguna de estas piezas se deduce de un único valor máximo de CV.</p>
+      <p>El i4 eléctrico del ejemplo usa dos motores y una relación de una velocidad; el M3 usa un seis cilindros de combustión y ocho relaciones automáticas, según sus fichas. No podemos atribuir la diferencia de cuatro décimas a una de esas características sin una prueba controlada que las separe. Tampoco se suman sin más las potencias máximas de los motores de un híbrido: la cifra combinada es la que declara el fabricante bajo las condiciones del sistema. Que algunos eléctricos ofrezcan mucho par desde muy baja velocidad no significa que mantengan su máximo a cualquier velocidad ni que siempre ganen una salida.</p>
+
+      <h2 id="agarre">Al salir desde parado, los neumáticos también ponen un techo</h2>
+      <p>Imagina una rueda sobre asfalto seco y otra sobre una superficie deslizante. Aunque el motor tenga potencia de sobra, solo acelerará con la fuerza que el contacto neumático suelo pueda transmitir. Si se pide más de la que admite el firme, la rueda motriz puede patinar; el control de tracción reduce o redistribuye la demanda según el sistema. <a href={sources.traction}>Bosch describe la función del control de tracción</a> y nuestra guía de <a href="/guias/coche-patina-al-acelerar-control-traccion/">patinamiento al acelerar</a> explica cómo se nota y qué límites tiene.</p>
+      <p>El tipo y el estado del neumático, su temperatura, la presión, el firme y el reparto de carga cambian el agarre disponible. Una tracción total puede repartir la demanda entre más ruedas y ayudar en determinadas salidas, pero no crea adherencia ilimitada ni garantiza vencer a cualquier tracción delantera o trasera. En una arrancada, el límite puede ser el agarre; una vez en marcha, otros factores ganan peso.</p>
+
+      <h2 id="medicion">¿Sirve el 0–100 para saber cuál recupera mejor?</h2>
+      <p>No necesariamente. El <strong>0–100 km/h</strong> incluye una salida desde parado, donde agarre y estrategia de arranque pueden ser decisivos. Una recuperación, por ejemplo al aumentar la velocidad para incorporarse con margen, empieza con el coche ya rodando: cambian la marcha disponible, el régimen, las resistencias y la posible demora de un cambio automático. A velocidad mayor, la resistencia del aire crece de forma aproximada con el cuadrado de la velocidad si densidad, área frontal y coeficiente aerodinámico se mantienen; la potencia necesaria para vencerla crece aún más deprisa. No equivale a decir que «la aerodinámica decide siempre»: también actúan rodadura, pendiente y sistema de propulsión. El <a href={sources.energy}>análisis técnico del Departamento de Energía de EE. UU.</a> incluye estos elementos en la fuerza de tracción necesaria.</p>
+      <p>Antes de comparar cronómetros, comprueba <strong>la misma distancia y el mismo procedimiento</strong>. Cero a 60 mph termina aproximadamente a 96,6 km/h y no es cero a 100. Además de su 0–100 normal, BMW publica para estos modelos una cifra con «1-foot rollout»: el reloj empieza después de que el vehículo haya recorrido un pie (30,48 cm). Da tiempos menores y no se debe enfrentar con un registro tomado desde el inicio. Las fichas muestran 3,4 s para el i4 y 3,2 s para el M3 con ese método; la tabla anterior usa 3,9 y 3,5 s, respectivamente, sin él.</p>
+      <p>Una prueba independiente puede aportar condiciones reales y repetición, pero debe identificarse como tal y compararse con otra hecha de modo semejante. Temperatura, viento, pendiente, superficie, estado de batería, combustible, carga, neumáticos y uso de funciones de lanzamiento pueden alterar el resultado. Las cifras de fabricante son una referencia útil de sus versiones bajo su procedimiento, no una promesa de repetirlas en cualquier carretera. No intentes comprobarlas en vías públicas: además de las normas de circulación, falta un entorno controlado.</p>
+
+      <h2 id="conclusion">Qué mirar al comparar dos coches</h2>
+      <p>Empieza por potencia y unidad, pero sigue con la masa medida bajo el mismo criterio, el tipo de tracción, neumáticos, transmisión y régimen en el que el motor entrega esa potencia. Decide si te interesa una salida 0–100 o una recuperación a una velocidad concreta y busca resultados del mismo tipo y método. El ejemplo BMW enseña que <strong>más caballos máximos pueden convivir con un 0–100 declarado peor</strong>; por sí solo no dice que un coche sea más rápido en todas las situaciones ni permite repartir las causas entre sus componentes.</p>
+
+      <aside class="sources"><h2>Fuentes y método</h2><p>Consulta del <strong>8 de noviembre de 2026</strong>. Abrimos las fichas técnicas vigentes de <a href={sources.i4}>BMW España para el i4 M60 xDrive</a> y <a href={sources.m3}>BMW España para el M3 Competition M xDrive Berlina</a>; transcribimos potencia, peso en vacío CE, tracción y 0–100 sin «rollout», y calculamos 2.290/544 y 1.865/530, redondeando a dos decimales. Comprobamos en ambas fichas la definición del peso y la cifra alternativa con «rollout». Usamos <a href={sources.physics}>OpenStax</a> para la relación par potencia, <a href={sources.units}>NIST</a> para unidades, el <a href={sources.energy}>Departamento de Energía estadounidense</a> para resistencias y pérdidas, y <a href={sources.traction}>Bosch</a> para el control de tracción. No hicimos pruebas propias ni encontramos en estas fuentes una descomposición causal del tiempo de los dos BMW. La foto de portada es real y se acredita en su pie; los dos esquemas son originales. Los precios, autonomías y prestaciones de otras versiones no se extrapolan.</p></aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>.power-figure{margin:24px 0}.power-figure img{display:block;max-width:100%;height:auto;margin:auto;border-radius:9px}.power-figure figcaption{margin-top:8px;color:#59675f;font-size:12px;line-height:1.5}</style>

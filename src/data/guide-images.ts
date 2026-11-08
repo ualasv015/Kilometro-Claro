@@ -14,6 +14,15 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'por-que-mas-caballos-no-acelera-mas': {
+    src: '/images/guides/mas-caballos-bmw-m3-real.jpg',
+    alt: 'BMW M3 Competition M xDrive negro fotografiado de frente',
+    caption: 'Un BMW M3 Competition M xDrive real. La fotografía ilustra el modelo; no documenta una prueba de aceleración. Copia reducida a 1.280 píxeles para esta guía.',
+    author: 'Tokumeigakarinoaoshima', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:The_frontview_of_BMW_M3_Competition_M_xDrive_(G80).jpg',
+    license: 'https://creativecommons.org/publicdomain/zero/1.0/', licenseName: 'CC0 1.0',
+    width: 1280, height: 960,
+  },
   'yangwang-u9-xtreme-500-kmh-record': {
     src: '/images/guides/yangwang-u9-convencional.jpg',
     alt: 'Yangwang U9 convencional gris aparcado, visto de frente y de lado',

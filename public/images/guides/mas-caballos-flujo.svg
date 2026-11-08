@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="title desc">
+  <title id="title">Del motor al asfalto</title><desc id="desc">Esquema cualitativo del recorrido de potencia: motor o sistema eléctrico, transmisión, ruedas y fuerza útil limitada por el agarre; masa y resistencias se oponen a la aceleración.</desc>
+  <rect width="960" height="480" rx="20" fill="#173d34"/>
+  <text x="48" y="67" fill="#f3f7f0" font-family="Arial,sans-serif" font-size="34" font-weight="700">Del dato de potencia al empuje real</text>
+  <text x="48" y="105" fill="#c4d4cb" font-family="Arial,sans-serif" font-size="18">Esquema cualitativo · no representa un modelo concreto</text>
+  <g font-family="Arial,sans-serif" font-size="24" font-weight="700" text-anchor="middle">
+    <rect x="48" y="168" width="178" height="110" rx="15" fill="#d7f36a"/><text x="137" y="214" fill="#173d34">Motor o</text><text x="137" y="244" fill="#173d34">sistema</text>
+    <rect x="293" y="168" width="178" height="110" rx="15" fill="#f3f7f0"/><text x="382" y="231" fill="#173d34">Transmisión</text>
+    <rect x="538" y="168" width="160" height="110" rx="15" fill="#f3f7f0"/><text x="618" y="231" fill="#173d34">Ruedas</text>
+    <rect x="765" y="168" width="147" height="110" rx="15" fill="#d7f36a"/><text x="839" y="214" fill="#173d34">Empuje</text><text x="839" y="244" fill="#173d34">útil</text>
+  </g>
+  <g stroke="#d7f36a" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M231 223h44m-13-13 13 13-13 13M476 223h44m-13-13 13 13-13 13M703 223h44m-13-13 13 13-13 13"/></g>
+  <g font-family="Arial,sans-serif" font-size="18" fill="#c4d4cb" text-anchor="middle"><text x="382" y="322">relación y pérdidas</text><text x="618" y="322">límite de adherencia</text><text x="839" y="322">acelera la masa</text></g>
+  <path d="M110 370h740" stroke="#8aa99a" stroke-width="2"/>
+  <text x="48" y="411" fill="#f3f7f0" font-family="Arial,sans-serif" font-size="18">El aire, la rodadura y la pendiente también restan fuerza neta.</text>
+  <text x="48" y="447" fill="#aebfb5" font-family="Arial,sans-serif" font-size="15">Ilustración original de Kilómetro Claro · 2026</text>
+</svg>

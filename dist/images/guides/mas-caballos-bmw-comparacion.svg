@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="title desc">
+  <title id="title">Más caballos y menos tiempo no siempre coinciden</title><desc id="desc">Comparación de fichas oficiales BMW España: i4 M60 xDrive 544 CV, 2290 kg y 3,9 segundos; M3 Competition M xDrive Berlina 530 CV, 1865 kg y 3,5 segundos de cero a cien kilómetros por hora.</desc>
+  <rect width="960" height="480" rx="20" fill="#f2f5ed"/>
+  <text x="42" y="58" fill="#173d34" font-family="Arial,sans-serif" font-size="32" font-weight="700">Un ejemplo real en las fichas BMW España</text>
+  <text x="42" y="94" fill="#42564b" font-family="Arial,sans-serif" font-size="17">Mismo fabricante · 0–100 km/h sin rollout · peso en vacío CE</text>
+  <g font-family="Arial,sans-serif" fill="#173d34"><text x="42" y="160" font-size="24" font-weight="700">i4 M60 xDrive</text><text x="42" y="195" font-size="19">544 CV · 2.290 kg · tracción total</text><text x="42" y="264" font-size="24" font-weight="700">M3 Competition M xDrive Berlina</text><text x="42" y="299" font-size="19">530 CV · 1.865 kg · tracción total</text></g>
+  <g font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="end"><text x="911" y="187" fill="#42564b">3,9 s</text><text x="911" y="291" fill="#173d34">3,5 s</text></g>
+  <rect x="525" y="154" width="265" height="35" rx="7" fill="#9fb4a5"/><rect x="525" y="258" width="238" height="35" rx="7" fill="#49a276"/>
+  <path d="M42 338h870" stroke="#c2cec3" stroke-width="2"/>
+  <text x="42" y="377" fill="#173d34" font-family="Arial,sans-serif" font-size="18">La proporción kg/CV calculada es 4,21 frente a 3,52.</text>
+  <text x="42" y="411" fill="#42564b" font-family="Arial,sans-serif" font-size="16">La barra representa tiempo, no atribuye causalidad al peso.</text>
+  <text x="42" y="447" fill="#66796b" font-family="Arial,sans-serif" font-size="14">Ilustración editorial de Kilómetro Claro · fichas BMW consultadas el 8/11/2026</text>
+</svg>

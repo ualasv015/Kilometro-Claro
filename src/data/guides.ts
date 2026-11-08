@@ -7,6 +7,13 @@ export const guides = [
     published: true,
   },
   {
+    slug: 'por-que-mas-caballos-no-acelera-mas',
+    title: '¿Por qué un coche con más caballos no siempre acelera más?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'La potencia máxima no decide sola un 0–100: masa, marchas, neumáticos y condiciones. Un ejemplo real con dos BMW y cifras comparables.',
+    published: true,
+  },
+  {
     slug: 'coche-patina-al-acelerar-control-traccion',
     title: '¿Qué pasa cuando el coche patina al acelerar? Adherencia y control de tracción',
     category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
