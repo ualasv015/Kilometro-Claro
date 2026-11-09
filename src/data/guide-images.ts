@@ -14,6 +14,33 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'renault-5-turbo-3e-electrico': {
+    src: '/images/guides/renault-5-turbo-3e-paris-2026-real.jpg',
+    alt: 'Prototipo de ingeniería Renault 5 Turbo 3E expuesto en París en octubre de 2026, visto de frente y de lado',
+    caption: 'Prototipo de ingeniería del Turbo 3E en el Salón de París de 2026; aún no es una unidad de cliente. Fotografía reducida a 1.280 píxeles.',
+    author: 'Y.Leclercq', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Renault_R5_Turbo_3E_-_Paris_(01).jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/', licenseName: 'CC BY-SA 4.0',
+    width: 1280, height: 723,
+  },
+  'por-que-motor-consume-mas-en-frio': {
+    src: '/images/guides/motor-frio-coche-nevado-real.jpg',
+    alt: 'Coche real aparcado y cubierto de nieve tras una nevada',
+    caption: 'El frío exterior puede acentuar las pérdidas, aunque un arranque en frío también ocurre con tiempo templado. Foto reducida a 1.280 píxeles; no documenta el consumo de este coche.',
+    author: 'Gregory Karastergios', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Car_covered_in_snow,_2022-01-17.jpg',
+    license: 'https://creativecommons.org/publicdomain/zero/1.0/', licenseName: 'CC0 1.0',
+    width: 1280, height: 853,
+  },
+  'frenada-regenerativa-coche-electrico': {
+    src: '/images/guides/regeneracion-volkswagen-id4-real.jpg',
+    alt: 'Volkswagen ID.4 gris fotografiado de frente y de lado mientras está aparcado',
+    caption: 'Volkswagen ID.4 real. La foto ilustra uno de los modelos cuyo funcionamiento se explica en el texto; no documenta una frenada ni identifica su versión técnica. Copia reducida a 1.280 píxeles.',
+    author: 'Vauxford', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:2022_Volkswagen_ID.4.jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/', licenseName: 'CC BY-SA 4.0',
+    width: 1280, height: 748,
+  },
   'por-que-mas-caballos-no-acelera-mas': {
     src: '/images/guides/mas-caballos-bmw-m3-real.jpg',
     alt: 'BMW M3 Competition M xDrive negro fotografiado de frente',

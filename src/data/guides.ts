@@ -1,9 +1,30 @@
 export const guides = [
   {
+    slug: 'renault-5-turbo-3e-electrico',
+    title: 'Renault 5 Turbo 3E: la leyenda del rally se vuelve eléctrica',
+    category: 'Comparar coches', categorySlug: 'comparar-coches',
+    description: 'Historia del Renault 5 Turbo y claves del Turbo 3E eléctrico: motores en las ruedas traseras, prestaciones anunciadas, precio y llegada a España.',
+    published: true,
+  },
+  {
+    slug: 'por-que-motor-consume-mas-en-frio',
+    title: '¿Por qué un motor consume más combustible en frío?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Qué ocurre con el aceite, la combustión y las emisiones al arrancar en frío, y por qué los trayectos cortos elevan el consumo medio.',
+    published: true,
+  },
+  {
     slug: 'yangwang-u9-xtreme-500-kmh-record',
     title: 'Yangwang U9 Xtreme: cómo superó los 500 km/h y qué significa su récord',
     category: 'Comparar coches', categorySlug: 'comparar-coches',
     description: 'La pasada de 503,17 km/h reconocida por la FIA y Guinness: ingeniería, accidente de pruebas y por qué no equivale a una media en dos sentidos.',
+    published: true,
+  },
+  {
+    slug: 'frenada-regenerativa-coche-electrico',
+    title: '¿Qué ocurre al regenerar energía en un coche eléctrico?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Cómo recupera energía un eléctrico al desacelerar, qué papel tienen el motor, la batería y los frenos, y por qué la regeneración tiene límites.',
     published: true,
   },
   {

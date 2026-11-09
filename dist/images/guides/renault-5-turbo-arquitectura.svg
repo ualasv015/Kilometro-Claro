@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1170" role="img" aria-labelledby="titulo descripcion">
+  <title id="titulo">Dos formas de mover las ruedas traseras</title>
+  <desc id="descripcion">Comparación en vista superior. El Renault 5 Turbo de calle de 1980 llevaba un motor central trasero de gasolina con turbocompresor que impulsaba las ruedas traseras. El Turbo 3E anunciado lleva batería bajo el piso y un motor eléctrico en cada rueda trasera. Esquema simplificado y sin escala.</desc>
+  <rect width="900" height="1170" fill="#eaf0e9"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="42" y="68" fill="#173d34" font-size="47" font-weight="700">Dos formas de mover</text>
+    <text x="42" y="122" fill="#173d34" font-size="47" font-weight="700">las ruedas traseras</text>
+
+    <rect x="30" y="156" width="840" height="456" rx="24" fill="#fff"/>
+    <text x="62" y="214" fill="#173d34" font-size="39" font-weight="700">Renault 5 Turbo</text>
+    <text x="62" y="254" fill="#53675e" font-size="29">Versión de calle · 1980</text>
+    <text x="177" y="310" fill="#53675e" font-size="25">↑ delante</text>
+    <rect x="147" y="326" width="274" height="232" rx="54" fill="#e0e8e0" stroke="#49665b" stroke-width="4"/>
+    <rect x="111" y="353" width="36" height="63" rx="9" fill="#476459"/>
+    <rect x="421" y="353" width="36" height="63" rx="9" fill="#476459"/>
+    <rect x="103" y="463" width="44" height="72" rx="9" fill="#d7f36a" stroke="#173d34" stroke-width="3"/>
+    <rect x="421" y="463" width="44" height="72" rx="9" fill="#d7f36a" stroke="#173d34" stroke-width="3"/>
+    <rect x="197" y="362" width="68" height="52" rx="13" fill="#afbeb3"/>
+    <rect x="303" y="362" width="68" height="52" rx="13" fill="#afbeb3"/>
+    <rect x="193" y="451" width="182" height="76" rx="14" fill="#d7f36a" stroke="#173d34" stroke-width="3"/>
+    <text x="284" y="481" fill="#173d34" text-anchor="middle" font-size="25" font-weight="700">MOTOR</text>
+    <text x="284" y="510" fill="#173d34" text-anchor="middle" font-size="23">de gasolina</text>
+    <path d="M193 491H148 M375 491H420" stroke="#173d34" stroke-width="6"/>
+    <text x="497" y="382" fill="#173d34" font-size="31" font-weight="700">Motor detrás</text>
+    <text x="497" y="421" fill="#173d34" font-size="31">de los asientos</text>
+    <text x="497" y="478" fill="#173d34" font-size="31">Con turbocompresor</text>
+    <text x="497" y="535" fill="#173d34" font-size="31" font-weight="700">Impulsa las dos</text>
+    <text x="497" y="573" fill="#173d34" font-size="31" font-weight="700">ruedas traseras</text>
+
+    <rect x="30" y="630" width="840" height="456" rx="24" fill="#fff"/>
+    <text x="62" y="688" fill="#173d34" font-size="39" font-weight="700">Renault 5 Turbo 3E</text>
+    <text x="62" y="728" fill="#53675e" font-size="29">Proyecto eléctrico anunciado</text>
+    <text x="177" y="784" fill="#53675e" font-size="25">↑ delante</text>
+    <rect x="147" y="800" width="274" height="232" rx="54" fill="#e0e8e0" stroke="#49665b" stroke-width="4"/>
+    <rect x="111" y="827" width="36" height="63" rx="9" fill="#476459"/>
+    <rect x="421" y="827" width="36" height="63" rx="9" fill="#476459"/>
+    <rect x="103" y="937" width="44" height="72" rx="9" fill="#d7f36a" stroke="#173d34" stroke-width="3"/>
+    <rect x="421" y="937" width="44" height="72" rx="9" fill="#d7f36a" stroke="#173d34" stroke-width="3"/>
+    <rect x="197" y="836" width="68" height="52" rx="13" fill="#afbeb3"/>
+    <rect x="303" y="836" width="68" height="52" rx="13" fill="#afbeb3"/>
+    <rect x="195" y="907" width="178" height="86" rx="14" fill="#9fd4bc" stroke="#173d34" stroke-width="3"/>
+    <text x="284" y="943" fill="#173d34" text-anchor="middle" font-size="24" font-weight="700">BATERÍA</text>
+    <text x="284" y="973" fill="#173d34" text-anchor="middle" font-size="22">bajo el piso</text>
+    <circle cx="125" cy="973" r="13" fill="#173d34"/><circle cx="443" cy="973" r="13" fill="#173d34"/>
+    <text x="497" y="856" fill="#173d34" font-size="31" font-weight="700">Batería bajo</text>
+    <text x="497" y="895" fill="#173d34" font-size="31">el piso</text>
+    <text x="497" y="952" fill="#173d34" font-size="31" font-weight="700">Un motor eléctrico</text>
+    <text x="497" y="990" fill="#173d34" font-size="31">en cada rueda trasera</text>
+    <text x="497" y="1044" fill="#173d34" font-size="29">Las dos impulsan el coche</text>
+
+    <text x="450" y="1137" fill="#53675e" text-anchor="middle" font-size="25">Vista superior simplificada · Componentes sin escala</text>
+  </g>
+</svg>

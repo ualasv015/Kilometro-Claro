@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'frenada-regenerativa-coche-electrico';
+const title = '¿Qué ocurre al regenerar energía en un coche eléctrico?';
+const seoTitle = 'Frenada regenerativa: cómo funciona | Kilómetro Claro';
+const description = 'Qué pasa al soltar el acelerador o frenar en un eléctrico: cómo se recupera energía, cuándo intervienen los frenos y por qué la batería limita el proceso.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-09';
+const sources = {
+  doe: 'https://afdc.energy.gov/vehicles/how-do-all-electric-cars-work',
+  bosch: 'https://www.bosch-mobility.com/en/solutions/braking-systems/regenerative-braking-systems/',
+  vw: 'https://www.volkswagen-newsroom.com/en/press-releases/brake-or-coast-the-id4s-intelligent-energy-recuperation-concept-6658',
+  tesla: 'https://www.tesla.com/ownersmanual/model3/en_us/GUID-3DFFB071-C0F6-474D-8A45-17BE1A006365.html',
+  hyundai: 'https://ownersmanual.hyundai.com/full_webhelp/ce1/2025/en_us/topic_cfn_2w2_mvb.html',
+  phev: 'https://afdc.energy.gov/vehicles/electric-basics-phev?os=i',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Frenada regenerativa' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 9 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Al desacelerar, un eléctrico puede convertir parte del movimiento en electricidad y guardarla en la batería. El mismo proceso opone resistencia al giro y ayuda a frenar. Lo que se recupera depende del coche y de lo que la batería puede aceptar en ese momento.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida"><strong>Respuesta rápida</strong><p>Cuando el sistema lo permite, las ruedas arrastran el motor eléctrico, que actúa como <strong>generador</strong>. La electrónica dirige la electricidad hacia la batería y el esfuerzo de generación contribuye a reducir la velocidad. Al soltar el acelerador puede haber regeneración o avance por inercia; al pisar el freno algunos modelos combinan regeneración y frenos de fricción. No se recupera toda la energía.</p></aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía"><strong>En esta guía</strong><ul>
+        <li><a href="#recorrido">El recorrido de la energía</a></li><li><a href="#acelerador">Al levantar el acelerador</a></li><li><a href="#freno">Al pisar el freno</a></li><li><a href="#pedal">Conducción con un solo pedal</a></li><li><a href="#limites">Límites de la recuperación</a></li><li><a href="#situaciones">Ciudad, carretera y bajadas</a></li><li><a href="#hibridos">Eléctricos e híbridos</a></li>
+      </ul></nav>
+
+      <h2 id="recorrido">¿Cómo se transforma movimiento en electricidad?</h2>
+      <p>Cuando aceleras, la batería entrega energía eléctrica, la electrónica de potencia la adapta y el motor crea giro para mover las ruedas. En una desaceleración regenerativa ocurre parte del recorrido en sentido contrario: el movimiento del vehículo sigue haciendo girar las ruedas; a través de la transmisión estas hacen girar la máquina eléctrica, que entonces funciona como generador. La electrónica controla la conversión y la batería de alta tensión almacena la parte que puede recibir. El <a href={sources.doe}>Departamento de Energía de Estados Unidos</a> identifica motor, batería, electrónica y transmisión como componentes del sistema.</p>
+      <p>Una analogía útil es la dinamo de una bicicleta: al obtener electricidad del movimiento, aparece una resistencia al giro. La máquina de un coche es distinta y está controlada electrónicamente, pero el principio ayuda a entender por qué <strong>recuperar energía también desacelera</strong>. No crea energía nueva: transforma una parte de la energía que ya tenía el coche por moverse. La que se pierde en neumáticos, aire, transmisión, motor, electrónica y batería termina principalmente como calor. Por ello, acelerar para regenerar después nunca devuelve íntegra la energía gastada.</p>
+      <figure class="regen-figure"><img src="/images/guides/regeneracion-flujo-energia.svg" width="960" height="540" alt="Al acelerar la energía va de batería a motor y ruedas; al regenerar, parte del movimiento vuelve desde las ruedas al motor generador, la electrónica y la batería, con pérdidas" loading="lazy" decoding="async"/><figcaption>Ilustración original de Kilómetro Claro. Flechas simplificadas: representan una situación en la que el vehículo puede regenerar; la energía recuperada es solo una parte de la que intervino al acelerar.</figcaption></figure>
+      <p>La foto siguiente muestra una unidad eléctrica abierta. Se distinguen piezas que giran y bobinados, pero no permite ver una frenada ni seguir la electricidad dentro de un coche concreto.</p>
+      <figure class="regen-figure regen-figure--mechanism"><img src="/images/guides/regeneracion-unidad-electrica-real.jpg" width="960" height="1280" alt="Sección real de una unidad eléctrica de vehículo con rotor metálico, bobinados de cobre y engranajes visibles" loading="lazy" decoding="async"/><figcaption>Unidad eléctrica real expuesta, distinta del ID.4 de portada; fotografía reducida a 960 píxeles. «<a href="https://commons.wikimedia.org/wiki/File:Inverter_motor_gearbox_1.jpg">Inverter motor gearbox 1</a>», de RudolfSimon / Wikimedia Commons · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</figcaption></figure>
+
+      <h2 id="acelerador">¿Qué pasa cuando levantas el pie del acelerador?</h2>
+      <p>No hay una respuesta única para todos los eléctricos. El <a href={sources.vw}>ID.4 descrito por Volkswagen</a> da prioridad en posición D a rodar por inercia en la mayoría de las situaciones al soltar el pedal; en B suele aumentar la recuperación y la retención, aunque no llega a detenerse solo con esa función. Sus asistentes y perfiles pueden modificar la respuesta. El <a href={sources.tesla}>manual del Model 3 de Tesla</a>, en cambio, describe que al levantar el acelerador el coche reduce velocidad mediante regeneración y devuelve la energía disponible a la batería. Son ejemplos de estrategias de esos modelos y documentos, no una regla de marca aplicable a cualquier versión.</p>
+      <p>Si el coche avanza casi libremente, conserva durante más tiempo su energía de movimiento y puede evitar una conversión innecesaria cuando no hay que frenar todavía. Si necesitas bajar la velocidad, regenerar puede aprovechar parte de la energía que de otro modo se disiparía. <strong>El modo de máxima retención no es automáticamente el de menor consumo</strong>: cuentan el tráfico, el relieve, el diseño del coche y tu anticipación. La guía sobre <a href="/guias/levantar-pie-acelerador/">qué ocurre al levantar el pie del acelerador</a> compara también este comportamiento con la retención de un motor de combustión y el corte de inyección.</p>
+
+      <h2 id="freno">¿Pisar el freno activa la regeneración o los frenos normales?</h2>
+      <p>Según el diseño, puede activar <strong>ambas cosas</strong>. En una frenada combinada, también llamada <em>blended braking</em>, el conductor pide una deceleración con el pedal y el sistema asigna a la máquina eléctrica la parte que puede proporcionar y almacenar. Si hace falta más capacidad, intervienen los frenos de fricción de las ruedas. En algunos vehículos también se emplean para funciones de estabilidad, a baja velocidad o cuando la recuperación está limitada. <a href={sources.bosch}>Bosch explica que el generador y los frenos de fricción se complementan</a>; Volkswagen describe esa transición en el ID.4 citado.</p>
+      <p>Los frenos de fricción convierten principalmente el movimiento en calor, mientras la regeneración puede enviar una parte a la batería. No presupongas que el pedal solo acciona discos y pastillas ni que cada toque del freno recarga. El reparto puede cambiar durante una misma frenada. Tampoco se debe sustituir la distancia de seguridad por la confianza en la retención eléctrica: usa el pedal cuando la situación requiera reducir velocidad o detenerte, como indica el manual de tu vehículo.</p>
+      <figure class="regen-figure"><img src="/images/guides/regeneracion-frenos-combinados.svg" width="960" height="540" alt="La petición del pedal puede repartirse entre un motor generador que envía energía a la batería y frenos de fricción que transforman movimiento en calor" loading="lazy" decoding="async"/><figcaption>Ilustración original de Kilómetro Claro. El esquema muestra una arquitectura de frenada combinada, sin proporciones fijas y sin atribuirla a todos los eléctricos.</figcaption></figure>
+
+      <h2 id="pedal">¿Qué significa conducir con un solo pedal?</h2>
+      <p>En ciertos modos, soltar el acelerador produce suficiente retención para controlar muchas reducciones de velocidad e incluso, según el modelo y las condiciones, detener el coche. El conductor sigue teniendo dos pedales: «un solo pedal» describe el uso habitual del acelerador para modular avance y desaceleración, <strong>no elimina el freno</strong>. El <a href={sources.hyundai}>manual del Hyundai IONIQ 6 de 2025 para i-PEDAL</a> dice que ayuda a acelerar, decelerar y detener, pero advierte que el coche puede no llegar a pararse según la pendiente, el firme, la carga u otras condiciones. Indica usar el pedal del freno cuando sea necesario.</p>
+      <p>Conviene conocer cómo está configurado tu coche antes de contar con una deceleración determinada. Un modo puede reiniciarse al cambiar de posición o quedar limitado por otras funciones. En suelo resbaladizo, sigue las instrucciones del manual: la retención sobre las ruedas motrices también necesita adherencia. El hecho de que un modelo se detenga con una función específica no convierte esa capacidad en universal para todos los eléctricos.</p>
+
+      <h2 id="limites">¿Por qué no recupera toda la energía y cuándo disminuye?</h2>
+      <p>La primera limitación es física: en cada paso hay pérdidas. También hay límites de potencia de generación, de electrónica y de batería. Si la batería está llena o casi llena, le queda menos margen para aceptar carga; si está fría, puede admitirla con más restricciones. El <a href={sources.tesla}>manual del Model 3</a> documenta ambos casos y avisa de que la deceleración regenerativa puede variar. Ese mismo modelo puede, si está configurado para ello, aplicar frenos convencionales al soltar el acelerador cuando la regeneración se reduce. Por tanto, sentir una retención parecida no prueba que toda ella se esté convirtiendo en electricidad.</p>
+      <p>La velocidad también importa. A velocidades muy bajas, la potencia mecánica disponible para recuperar cae junto con la velocidad de giro si el par de frenado se mantiene limitado; un sistema puede necesitar fricción para completar la parada. A velocidades altas puede alcanzarse otro límite de potencia o temperatura. El agarre de los neumáticos, el eje que regenera y la estabilidad del coche pueden obligar a moderar la fuerza de retención. Esos umbrales son propios de cada diseño, de modo que no existe un porcentaje universal de recuperación ni una distancia adicional de autonomía garantizada.</p>
+
+      <h2 id="situaciones">¿Ayuda más en ciudad, carretera o bajadas?</h2>
+      <p>En ciudad hay más ocasiones de reducir velocidad: cruces, glorietas y tráfico variable. Cuando la deceleración iba a ocurrir de todas formas, recuperar parte de esa energía puede reducir el consumo neto. En una carretera llana a velocidad sostenida hay menos frenadas que aprovechar. Si anticipas una reducción y puedes dejar rodar el coche con seguridad, conservar movimiento puede ser preferible a convertir energía en electricidad y después volver a usarla para acelerar. Volkswagen justifica así la prioridad del avance por inercia en el modo D del ID.4 descrito.</p>
+      <p>En una bajada, la gravedad aporta energía al movimiento y la regeneración puede ayudar a controlar la velocidad y cargar la batería. Si inicias el descenso con la batería muy cargada o el sistema está frío, la retención recuperativa puede ser menor. No supongas que sustituirá a los frenos durante toda la pendiente: sigue el manual, adapta la velocidad y frena cuando corresponda. La energía recuperada en la bajada tampoco compensa sin pérdidas toda la que hizo falta para subir.</p>
+
+      <h2 id="beneficios">¿Aumenta la autonomía y desgasta menos los frenos?</h2>
+      <p>Puede contribuir a ambas cosas, con condiciones. Recuperar parte de una energía que de otro modo acabaría como calor reduce la energía neta que debe salir de la batería en ese trayecto. Pero la autonomía final depende también de velocidad, climatización, temperatura, desnivel, neumáticos y conducción. Evitar una aceleración innecesaria suele ser más eficiente que realizarla y regenerar inmediatamente después: cada conversión añade pérdidas. Para situarlo en el uso diario, consulta la guía sobre <a href="/guias/consumo-coche-electrico-gasolina-diesel/">consumo de coches eléctricos frente a gasolina y diésel</a>.</p>
+      <p>Cuando la máquina eléctrica cubre parte de las desaceleraciones, discos y pastillas pueden usarse menos. Eso no significa que los frenos de fricción desaparezcan ni que se pueda saltar su mantenimiento. El manual de Tesla advierte incluso de posible óxido o corrosión si se usan poco, y describe una función que aplica los frenos para retirar agua de los discos. Revisa el sistema según el plan del fabricante y atiende a cualquier cambio de tacto o aviso del vehículo.</p>
+
+      <h2 id="hibridos">¿Funciona igual en un híbrido?</h2>
+      <p>Un híbrido con máquina eléctrica capaz de generar puede recuperar energía al desacelerar, pero no todos tienen el mismo tamaño de batería, la misma arquitectura ni los mismos modos. En un híbrido no enchufable la batería se alimenta, entre otras vías posibles, mediante recuperación y gestión del motor de combustión. Un enchufable también admite carga exterior; el <a href={sources.phev}>Departamento de Energía estadounidense</a> explica que puede recuperar energía durante la frenada. Nuestra <a href="/guias/coche-hibrido-enchufable-o-microhibrido/">guía de tipos de híbrido</a> ayuda a distinguir configuraciones. La palabra «híbrido» por sí sola no permite predecir la fuerza de retención ni cuánto se recupera.</p>
+
+      <h2 id="conclusion">Qué observar al conducir</h2>
+      <p>Si al levantar el pie el coche desacelera, puede estar regenerando; consulta el indicador de energía y el modo activo para saber qué informa tu modelo. Si rueda casi libre, quizá está priorizando la inercia. Al frenar, el sistema puede combinar generación y fricción sin que se note el cambio. La idea útil es sencilla: <strong>la frenada regenerativa rescata una parte del movimiento cuando hay oportunidad y capacidad para guardarla</strong>. La intensidad, el reparto y la respuesta con batería llena, en frío o sobre firme deslizante se comprueban siempre en el manual de tu versión.</p>
+
+      <aside class="sources"><h2>Fuentes y método</h2><p>Consulta del <strong>9 de noviembre de 2026</strong>. Abrimos la explicación de componentes del <a href={sources.doe}>Departamento de Energía de EE. UU.</a>, la documentación de <a href={sources.bosch}>Bosch</a> sobre combinación de generación y fricción, el comunicado técnico de <a href={sources.vw}>Volkswagen sobre el ID.4</a> y los manuales del <a href={sources.tesla}>Tesla Model 3</a> y de <a href={sources.hyundai}>Hyundai i-PEDAL</a>. Para híbridos enchufables contrastamos la ficha del <a href={sources.phev}>Departamento de Energía</a>. Los ejemplos describen los modelos, documentos y modos citados; no hemos medido energía recuperada, distancia de frenado ni autonomía, ni extrapolamos sus límites a todas las versiones. La foto de portada y la de la unidad eléctrica son fotografías reales de Wikimedia Commons con créditos y licencias en sus pies. Los dos esquemas son originales, simplificados y sin cifras de eficiencia.</p></aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>.regen-figure{margin:24px 0}.regen-figure img{display:block;max-width:100%;height:auto;margin:auto;border-radius:9px}.regen-figure--mechanism img{max-width:600px}.regen-figure figcaption{margin-top:8px;color:#59675f;font-size:12px;line-height:1.5}</style>
