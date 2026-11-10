@@ -1,5 +1,19 @@
 export const guides = [
   {
+    slug: 'renault-8-gordini-concept-electrico',
+    title: 'Renault 8 Gordini Concept: la Gorde vuelve como cupé eléctrico',
+    category: 'Comparar coches', categorySlug: 'comparar-coches',
+    description: 'Qué recupera del Gordini de 1964, cómo cambia su mecánica y por qué el concept eléctrico de 270 CV no se venderá.',
+    published: true,
+  },
+  {
+    slug: 'peugeot-e-t16-concept-electrico',
+    title: 'Peugeot E-T16 Concept: el 205 Turbo 16 mira al futuro eléctrico',
+    category: 'Comparar coches', categorySlug: 'comparar-coches',
+    description: 'Qué hereda del 205 Turbo 16, cómo funcionan sus tres motores y qué está confirmado sobre los 816 CV y su posible producción.',
+    published: true,
+  },
+  {
     slug: 'renault-5-turbo-3e-electrico',
     title: 'Renault 5 Turbo 3E: la leyenda del rally se vuelve eléctrica',
     category: 'Comparar coches', categorySlug: 'comparar-coches',

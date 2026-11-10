@@ -14,6 +14,24 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'renault-8-gordini-concept-electrico': {
+    src: '/images/guides/renault-8-gordini-concept-paris-real.jpg',
+    alt: 'Renault 8 Gordini Concept eléctrico expuesto en el Salón de París de 2026, visto de frente y de lado',
+    caption: 'El ejemplar único Renault 8 Gordini Concept expuesto en París en 2026. Fotografía real reducida a 1.280 píxeles.',
+    author: 'Y.Leclercq', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Renault_8_Gordini_concept_(01).jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/', licenseName: 'CC BY-SA 4.0',
+    width: 1280, height: 853,
+  },
+  'peugeot-e-t16-concept-electrico': {
+    src: '/images/guides/peugeot-e-t16-concept-2026-real.jpg',
+    alt: 'Peugeot E-T16 Concept expuesto de perfil en el Salón de París de 2026',
+    caption: 'El E-T16 expuesto en París en 2026 es un concept car, no una unidad de producción. Fotografía reducida a 1.280 píxeles.',
+    author: '2cv2026', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Peugeot_E-T16_Concept_2026.jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/', licenseName: 'CC BY-SA 4.0',
+    width: 1280, height: 676,
+  },
   'renault-5-turbo-3e-electrico': {
     src: '/images/guides/renault-5-turbo-3e-paris-2026-real.jpg',
     alt: 'Prototipo de ingeniería Renault 5 Turbo 3E expuesto en París en octubre de 2026, visto de frente y de lado',
