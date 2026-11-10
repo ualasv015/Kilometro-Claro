@@ -1,5 +1,19 @@
 export const guides = [
   {
+    slug: 'que-es-diferencial-coche',
+    title: '¿Qué hace el diferencial de un coche y cómo funciona en una curva?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Por qué las ruedas giran a distinta velocidad en una curva, cómo funciona un diferencial abierto y qué cambian los autoblocantes, el 4x4 y los eléctricos.',
+    published: true,
+  },
+  {
+    slug: 'renault-5-turbo-3e-peugeot-e-t16-renault-8-gordini',
+    title: 'Renault 5 Turbo 3E, Peugeot E-T16 y Renault 8 Gordini: ¿cuál conserva mejor el espíritu de rally?',
+    category: 'Comparar coches', categorySlug: 'comparar-coches',
+    description: 'Tres homenajes eléctricos al rally francés comparados por historia, diseño, mecánica, estado comercial y relación con los aficionados.',
+    published: true,
+  },
+  {
     slug: 'renault-8-gordini-concept-electrico',
     title: 'Renault 8 Gordini Concept: la Gorde vuelve como cupé eléctrico',
     category: 'Comparar coches', categorySlug: 'comparar-coches',

@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'que-es-diferencial-coche';
+const title = '¿Qué hace el diferencial de un coche y cómo funciona en una curva?';
+const seoTitle = '¿Qué hace el diferencial de un coche? | Kilómetro Claro';
+const description = 'Descubre por qué las ruedas giran a distinta velocidad en una curva, cómo funciona el diferencial abierto y qué cambian el autoblocante y la tracción total.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-10';
+const sources = {
+  open: 'https://automotive.eaton.com/gb/en-gb/products/differentials-traction-control/open-differential.html',
+  lsd: 'https://www.eaton.com/ca/en-gb/products/differentials-traction-control/limited-slip-differentials.html',
+  lock: 'https://www.eaton.com/us/en-us/products/differentials-traction-control/locking-differentials.html',
+  manual: 'https://www.eaton.com/content/dam/eaton/products/differentials-traction-control/Eaton-differentials-owners-manual.pdf',
+  thesis: 'https://upcommons.upc.edu/bitstream/handle/2099.1/18062/Report_vFinal.pdf',
+  bosch: 'https://www.bosch-mobility.com/en/solutions/braking-systems/electronic-stability-program/',
+  vw: 'https://www.volkswagen-newsroom.com/en/the-new-golf-r-2432/4motion-all-wheel-drive-in-the-golf-r-2451',
+  renault: 'https://www.renault.es/electricos/r5-turbo-3e/especificaciones.html',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'El diferencial del coche' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 10 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Al entrar en una rotonda, la rueda exterior dibuja un arco mayor que la interior. Si las dos reciben movimiento del mismo motor, ¿cómo consiguen recorrer distancias distintas sin pelearse entre sí? Ahí interviene el diferencial.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>El diferencial forma parte de la transmisión: lleva el giro a dos ruedas motrices y permite que cada una gire a una velocidad diferente. Así, en una curva, la exterior puede recorrer más camino que la interior. Un diferencial abierto resuelve muy bien esa necesidad cotidiana, aunque tiene un límite cuando una rueda pierde mucho agarre.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#curva">La rotonda y los dos recorridos</a></li>
+          <li><a href="#donde">Dónde se encuentra</a></li>
+          <li><a href="#abierto">Cómo funciona el diferencial abierto</a></li>
+          <li><a href="#agarre">Qué ocurre si una rueda patina</a></li>
+          <li><a href="#tipos">Autoblocantes y bloqueos</a></li>
+          <li><a href="#arquitecturas">Delantera, trasera y total</a></li>
+          <li><a href="#electricos">Qué cambia en un eléctrico</a></li>
+          <li><a href="#mantenimiento">Ruidos y mantenimiento</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="curva">Por qué las dos ruedas no recorren la misma distancia en una rotonda</h2>
+      <p>Imagina un coche que sigue la curva de una rotonda. Las dos ruedas de un mismo eje giran alrededor de un centro aproximado, pero no pasan por el mismo sitio: la interior sigue un arco de menor radio y la exterior otro de mayor radio. Si sus neumáticos tienen un tamaño de rodadura comparable y ruedan sin un deslizamiento importante, la rueda que recorre más distancia en el mismo tiempo necesita dar más vueltas. No se trata de que «empuje más» por estar fuera, sino de una diferencia de <strong>velocidad de giro</strong>.</p>
+      <p>En un eje motriz convencional ambas ruedas reciben fuerza desde una transmisión común. Unirlas de forma rígida para que siempre den exactamente las mismas vueltas obligaría a que alguna deslizase al girar sobre suelo adherente. El coche todavía podría tomar la curva, como ocurre con determinados ejes bloqueados, pero aparecerían esfuerzos, arrastre de neumáticos y una respuesta distinta. El diferencial permite la diferencia de velocidades que pide la geometría del giro. <a href={sources.open}>Eaton explica esta función básica</a>.</p>
+      <figure class="diff-figure">
+        <img src="/images/guides/diferencial-curva-rotonda.svg" width="960" height="540" alt="Esquema superior simplificado de un coche de propulsión trasera en curva: la rueda exterior sigue un arco más largo y ambas ruedas se conectan por palieres a un diferencial" loading="lazy" decoding="async" />
+        <figcaption>Ilustración editorial original de Kilómetro Claro. Vista cualitativa de un <strong>eje trasero motriz</strong>; los arcos indican recorridos diferentes, no radios ni velocidades medidos. La posición dibujada del diferencial corresponde solo a este esquema.</figcaption>
+      </figure>
+
+      <h2 id="donde">Dónde está el diferencial y cómo se conecta con las ruedas</h2>
+      <p>En un esquema sencillo, el movimiento sale del motor, pasa por la caja de cambios y llega al conjunto de transmisión final. Allí, el diferencial recibe el giro y lo entrega a dos semiejes o <strong>palieres</strong>, que conducen el movimiento a las ruedas motrices. La transmisión final también puede cambiar la relación de giro antes de llegar a las ruedas; «grupo final» y «diferencial» no describen exactamente la misma función, aunque compartan carcasa.</p>
+      <p>En muchos coches de tracción delantera, el diferencial va integrado en el conjunto de caja y transmisión delantera. En una propulsión trasera convencional suele encontrarse entre las ruedas posteriores, alimentado por un árbol de transmisión si el motor y la caja están delante. Existen también motores centrales, eléctricos con unidades compactas y otras disposiciones. Por eso, buscar siempre una «bola» bajo la zaga no sirve para reconocerlo. Las ruedas no motrices pueden girar independientemente sobre sus propios apoyos sin necesitar un diferencial para recibir fuerza del motor.</p>
+      <p>La foto de portada muestra una sección real de un diferencial de Porsche Cayenne. Permite ver que hay engranajes dentro de una carcasa, pero no debe usarse como plano de todas las transmisiones. En la siguiente fotografía aparece otro conjunto desmontado: la forma, los apoyos y las conexiones cambian según el vehículo.</p>
+      <figure class="diff-figure">
+        <img src="/images/guides/diferencial-engranajes-real.jpg" width="1280" height="960" alt="Piezas reales de un diferencial desmontado: carcasa, engranajes, eje y rodamientos dispuestos sobre una superficie" loading="lazy" decoding="async" />
+        <figcaption>Diferencial real desmontado; la fotografía muestra piezas, no el orden de montaje ni un procedimiento de reparación. Foto: <a href="https://commons.wikimedia.org/wiki/File:Differential_with_gears_and_bearings.jpg" target="_blank" rel="noopener noreferrer">BiH / Wikimedia Commons</a> · <a href="https://commons.wikimedia.org/wiki/File:Differential_with_gears_and_bearings.jpg#Licensing" target="_blank" rel="noopener noreferrer">dominio público declarado por su autor</a>. Copia reducida a 1.280 píxeles.</figcaption>
+      </figure>
+
+      <h2 id="abierto">Cómo funciona un diferencial abierto en recta y en curva</h2>
+      <p>En un diferencial abierto clásico, una carcasa impulsada por la transmisión lleva pequeños engranajes llamados <strong>satélites</strong>. Estos engranan con otros unidos a las dos salidas, los <strong>planetarios</strong> laterales. Cuando el coche avanza recto y las ruedas tienen condiciones similares, las dos salidas pueden girar a la misma velocidad: los satélites acompañan al conjunto sin necesitar compensar una diferencia entre ellas. En una curva, giran también sobre su propio eje y permiten que una salida acelere respecto al conjunto mientras la otra gira más despacio. Las ruedas siguen conectadas con la transmisión.</p>
+      <p><strong>Velocidad de giro no es par.</strong> La rueda exterior puede dar más vueltas sin recibir por ello «toda la potencia». En el modelo ideal de un diferencial abierto simétrico, sin pérdidas y en condiciones comparables, el par en las dos salidas es aproximadamente igual, aunque sus velocidades difieran. En una pieza real intervienen rozamientos, inercias y la situación de los neumáticos; esa regla es una simplificación mecánica, no una medida exacta para cualquier instante. Un <a href={sources.thesis}>trabajo académico de dinámica del vehículo</a> distingue el modelo ideal de par igual de los efectos de fricción interna.</p>
+      <p>La idea ayuda a entender por qué el diferencial no «decide mandar más fuerza» al lado exterior simplemente por estar en una curva. El camino que puede seguir cada rueda y la fuerza que el suelo puede aceptar son preguntas distintas. Si te interesa la relación entre fuerza de giro y movimiento, nuestra <a href="/guias/par-motor-potencia-diferencias/">guía de par motor y potencia</a> separa esos conceptos sin convertir un único dato de ficha en una promesa de aceleración.</p>
+
+      <h2 id="agarre">Qué ocurre si una rueda pierde adherencia</h2>
+      <p>Supón que una rueda motriz queda sobre una zona muy deslizante y la otra sobre asfalto firme. La primera puede empezar a girar mucho más deprisa que el coche. Como el diferencial abierto ideal transmite un par parecido a ambos lados, el par útil del lado con buen agarre queda limitado por lo poco que puede sostener el neumático del lado resbaladizo. Por eso puede costar arrancar incluso cuando una rueda parece tener suelo suficiente. <a href={sources.open}>Eaton señala este límite del diferencial abierto</a>.</p>
+      <p>Decir que «todo el par se va a la rueda que patina» oculta lo importante: la rueda con agarre no recibe necesariamente cero par, y la otra tampoco convierte todo el giro en avance. El resultado depende del agarre real, las pérdidas, las ayudas y la arquitectura del coche. Un control de tracción puede reducir la demanda de par y, en algunos diseños, frenar la rueda que gira de más; así cambia la resistencia que encuentra ese lado y puede ayudar a que el otro aproveche mejor su adherencia. <a href={sources.bosch}>Bosch incluye la función de tracción entre las ayudas de su sistema de estabilidad</a>. La <a href="/guias/coche-patina-al-acelerar-control-traccion/">guía sobre qué pasa cuando el coche patina al acelerar</a> explica el contacto neumático–suelo y las intervenciones posibles. No hace falta provocar patinamientos para observar este principio.</p>
+
+      <h2 id="tipos">Qué aporta un autoblocante y en qué se diferencia de un bloqueo</h2>
+      <p>Un <strong>diferencial de deslizamiento limitado</strong>, llamado también autoblocante en muchos contextos, mantiene cierta capacidad de que las ruedas giren a velocidades distintas, pero puede generar una diferencia de par entre las salidas. Según el diseño, recurre a discos de fricción, engranajes helicoidales o mecanismos controlados. Su objetivo es aprovechar mejor el agarre disponible cuando un lado tiene menos capacidad de transmitir fuerza. <a href={sources.lsd}>Eaton describe las familias de discos y de engranajes helicoidales</a>, y advierte que su capacidad de transferencia tiene límites. No crea adherencia ni garantiza salir de cualquier superficie.</p>
+      <p>Un <strong>bloqueo completo</strong> une las salidas para que ambas ruedas del eje giren a la misma velocidad mientras está acoplado. Puede ayudar en situaciones de muy baja tracción, pero durante una curva sobre suelo adherente esa igualdad de velocidad obliga a compensar la diferencia de recorridos con deslizamiento y puede alterar la dirección o cargar la transmisión. <a href={sources.lock}>Eaton distingue el bloqueo de un diferencial abierto</a>. Su modo de conexión, límites de velocidad y condiciones de uso pertenecen al manual del vehículo concreto.</p>
+      <p>También existen soluciones que <strong>frenan selectivamente</strong> una rueda para imitar parte del efecto sobre la motricidad, y diferenciales con embragues gobernados por electrónica. Que un fabricante anuncie «bloqueo electrónico» no demuestra por sí solo que haya un autoblocante mecánico. Para comparar dos coches, conviene averiguar qué pieza o intervención de frenos hay realmente y cuándo actúa.</p>
+
+      <h2 id="arquitecturas">¿Cuántos diferenciales puede tener un coche?</h2>
+      <p>En una tracción delantera habitual hay un diferencial para las dos ruedas delanteras motrices. En una propulsión trasera habitual lo hay para las posteriores. Una <a href="/guias/tipos-traccion-coche/">tracción total</a> puede necesitar diferencias de velocidad entre las ruedas de cada eje y, si ambos ejes están conectados mecánicamente, también debe resolver las diferencias de giro entre el delantero y el trasero. Eso puede hacerse con un diferencial central, con embragues de acoplamiento o con otras arquitecturas. No hay una cuenta fija de «tres diferenciales» para todo 4x4.</p>
+      <p>Un ejemplo concreto: <a href={sources.vw}>Volkswagen describe en un Golf R una conexión variable del eje trasero mediante embrague multidisco</a>. Ese embrague cumple una función de reparto entre ejes distinta de la que realiza un diferencial entre la rueda izquierda y la derecha. Otros vehículos pueden mantener otro tipo de acoplamiento, reductora o bloqueos. La etiqueta AWD o 4x4 no sustituye la descripción técnica del sistema.</p>
+
+      <h2 id="electricos">¿Un coche eléctrico necesita diferencial?</h2>
+      <p>Depende de cuántas ruedas mueva cada motor y de cómo se conecten. Si un motor eléctrico impulsa dos ruedas de un mismo eje por una transmisión común, sigue haciendo falta permitir sus diferentes velocidades en una curva; puede haber un diferencial junto al reductor. La propulsión eléctrica por sí sola no elimina esa necesidad geométrica.</p>
+      <p>En cambio, si cada rueda motriz dispone de un motor y un control propios, no hace falta un diferencial mecánico <em>entre esas dos ruedas</em> para repartir el giro de un único eje de salida. <a href={sources.renault}>Renault especifica dos motores eléctricos en las ruedas traseras del Renault 5 Turbo 3E</a>, un ejemplo de esa arquitectura; nuestra <a href="/guias/renault-5-turbo-3e-electrico/">guía del Turbo 3E</a> explica el proyecto y sus límites comerciales. La gestión independiente puede regular el par de cada lado, pero no todos los eléctricos tienen motores por rueda ni realizan vectorización de par. Un eléctrico con un motor por eje puede prescindir de una unión mecánica entre ejes y conservar diferenciales para las ruedas de cada uno.</p>
+
+      <h2 id="mantenimiento">Ruidos, fugas y mantenimiento: cuándo conviene revisarlo</h2>
+      <p>Un zumbido que cambia con la velocidad, un golpe al pasar de acelerar a retener, una vibración o una fuga cerca del conjunto de transmisión justifican comprobar el coche si son nuevos o persistentes. No son síntomas exclusivos del diferencial: neumáticos, rodamientos de rueda, juntas, palieres y otras piezas pueden producir sensaciones parecidas. Una inspección profesional debe localizar el origen antes de decidir una reparación.</p>
+      <p>El lubricante, los retenes y los requisitos de un posible autoblocante dependen del diseño. Un diferencial integrado en una caja delantera y otro separado en un eje trasero no tienen por qué compartir aceite, especificación ni intervalo de servicio. El <a href={sources.manual}>manual de diferenciales Eaton</a> distingue lubricantes según el mecanismo y remite al intervalo del fabricante del eje o vehículo. Consulta el plan de mantenimiento y el manual de tu versión; aquí no damos una cifra universal de kilómetros ni recomendamos abrir o bloquear el conjunto para hacer una prueba casera.</p>
+
+      <h2 id="conclusion">La idea que explica la curva y también el patinamiento</h2>
+      <p>El diferencial permite que dos ruedas motrices conectadas a una transmisión común recorran una curva a velocidades diferentes. Esa libertad resuelve el giro cotidiano, pero en un diferencial abierto también ayuda a entender por qué una rueda con muy poco agarre puede limitar el empuje disponible en la otra. Autoblocantes, bloqueos, frenos selectivos y motores independientes resuelven compromisos distintos: para saber cómo responde un coche concreto hay que conocer su arquitectura y las condiciones del suelo.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del 10 de noviembre de 2026. Abrimos la <a href={sources.open}>explicación de Eaton sobre el diferencial abierto</a>, sus páginas sobre <a href={sources.lsd}>deslizamiento limitado</a> y <a href={sources.lock}>bloqueo</a>, y su <a href={sources.manual}>manual de mantenimiento</a>; un <a href={sources.thesis}>trabajo académico de dinámica de diferenciales</a> para contrastar la simplificación de par igual y sus pérdidas; la documentación de <a href={sources.bosch}>Bosch sobre estabilidad y tracción</a>; y las fichas oficiales del <a href={sources.vw}>Golf R</a> y del <a href={sources.renault}>Renault 5 Turbo 3E</a> como ejemplos de arquitecturas, sin extrapolarlas a toda una marca. El esquema de la rotonda es original, cualitativo y representa solo un eje trasero motriz. Las fotografías proceden de Wikimedia Commons con atribución y derechos indicados en cada pie; no realizamos pruebas ni mediciones de par, adherencia o desgaste.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .diff-figure { margin: 24px 0; }
+  .diff-figure img { display: block; max-width: 100%; height: auto; margin: auto; border-radius: 9px; }
+  .diff-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+</style>

@@ -14,6 +14,21 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'que-es-diferencial-coche': {
+    src: '/images/guides/diferencial-porsche-seccion-real.jpg',
+    alt: 'Diferencial real seccionado de un Porsche Cayenne, con los engranajes visibles dentro de la carcasa',
+    caption: 'Diferencial de un Porsche Cayenne expuesto en sección. Es una pieza real de una arquitectura concreta, no el esquema universal de todos los coches. Fotografía reducida a 1.280 píxeles.',
+    author: 'DrJunge', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Differentialgetriebe2.jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/3.0/', licenseName: 'CC BY-SA 3.0',
+    width: 1280, height: 960,
+  },
+  'renault-5-turbo-3e-peugeot-e-t16-renault-8-gordini': {
+    src: '/images/guides/tres-electricos-portada-fotomontaje.jpg',
+    alt: 'Fotomontaje horizontal de tres fotografías: Renault 5 Turbo 3E a la izquierda, Peugeot E-T16 Concept en el centro y Renault 8 Gordini Concept a la derecha',
+    caption: 'Fotomontaje editorial generado a partir de tres fotografías reales de los coches expuestos por separado en París en 2026. Los vehículos no posaron juntos; créditos y licencias de las imágenes originales a continuación.',
+    width: 1672, height: 941,
+  },
   'renault-8-gordini-concept-electrico': {
     src: '/images/guides/renault-8-gordini-concept-paris-real.jpg',
     alt: 'Renault 8 Gordini Concept eléctrico expuesto en el Salón de París de 2026, visto de frente y de lado',

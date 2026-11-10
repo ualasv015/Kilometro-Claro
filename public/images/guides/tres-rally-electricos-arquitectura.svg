@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="700" viewBox="0 0 1080 700" role="img" aria-labelledby="title desc">
+  <title id="title">Tres homenajes eléctricos: qué ruedas empujan</title>
+  <desc id="desc">Vista superior simplificada. El Renault 5 Turbo 3E tiene un motor en cada rueda trasera. El Peugeot E-T16 Concept tiene uno delante y dos detrás, con tracción total. El Renault 8 Gordini Concept mueve las ruedas traseras mediante un motor eléctrico cuya posición no ha sido comunicada.</desc>
+  <style>
+    text{font-family:Arial,sans-serif;fill:#183c38}.main{font-size:27px;font-weight:700}.sub{font-size:16px}.heading{font-size:20px;font-weight:700}.label{font-size:16px;font-weight:700}.note{font-size:14px}.body{fill:#dfe9f1;stroke:#2f5965;stroke-width:3}.wheel{fill:#233d43}.drive{fill:#a4cd43}.motor{fill:#ec8a3c;stroke:#844017;stroke-width:2}.panel{fill:#fff;stroke:#c8d8cf;stroke-width:2}.link{stroke:#ec8a3c;stroke-width:4;stroke-linecap:round}
+  </style>
+  <rect width="1080" height="700" fill="#edf4ee"/>
+  <text x="34" y="47" class="main">Tres eléctricos, dos maneras de mover las ruedas</text>
+  <text x="34" y="76" class="sub">Esquema de arquitectura comunicada por cada fabricante · sin escala</text>
+
+  <g transform="translate(28 105)">
+    <rect class="panel" width="324" height="527" rx="16"/>
+    <text x="20" y="37" class="heading">Renault 5 Turbo 3E</text>
+    <text x="20" y="63" class="sub">Propulsión trasera</text>
+    <rect class="body" x="84" y="104" width="156" height="286" rx="43"/>
+    <path d="M104 137h116M104 350h116" stroke="#6b9ba8" stroke-width="4"/>
+    <rect class="wheel" x="65" y="149" width="24" height="55" rx="7"/><rect class="wheel" x="235" y="149" width="24" height="55" rx="7"/>
+    <rect class="drive" x="65" y="305" width="24" height="55" rx="7"/><rect class="drive" x="235" y="305" width="24" height="55" rx="7"/>
+    <circle class="motor" cx="77" cy="332" r="16"/><circle class="motor" cx="247" cy="332" r="16"/>
+    <text x="77" y="338" text-anchor="middle" class="label">M</text><text x="247" y="338" text-anchor="middle" class="label">M</text>
+    <text x="162" y="133" text-anchor="middle" class="note">DELANTE</text>
+    <text x="162" y="379" text-anchor="middle" class="note">DETRÁS</text>
+    <text x="20" y="432" class="label">2 motores, uno por rueda</text>
+    <text x="20" y="458" class="sub">trasera. Batería bajo el piso.</text>
+    <text x="20" y="487" class="note">Serie limitada anunciada.</text>
+  </g>
+
+  <g transform="translate(378 105)">
+    <rect class="panel" width="324" height="527" rx="16"/>
+    <text x="20" y="37" class="heading">Peugeot E-T16 Concept</text>
+    <text x="20" y="63" class="sub">Tracción total</text>
+    <rect class="body" x="84" y="104" width="156" height="286" rx="43"/>
+    <path d="M104 137h116M104 350h116" stroke="#6b9ba8" stroke-width="4"/>
+    <rect class="drive" x="65" y="149" width="24" height="55" rx="7"/><rect class="drive" x="235" y="149" width="24" height="55" rx="7"/>
+    <rect class="drive" x="65" y="305" width="24" height="55" rx="7"/><rect class="drive" x="235" y="305" width="24" height="55" rx="7"/>
+    <circle class="motor" cx="162" cy="178" r="19"/><text x="162" y="185" text-anchor="middle" class="label">M</text>
+    <path class="link" d="M143 178H93M181 178h50"/>
+    <circle class="motor" cx="120" cy="331" r="18"/><circle class="motor" cx="204" cy="331" r="18"/>
+    <text x="120" y="337" text-anchor="middle" class="label">M</text><text x="204" y="337" text-anchor="middle" class="label">M</text>
+    <path class="link" d="M102 331H91M222 331h11"/>
+    <text x="162" y="133" text-anchor="middle" class="note">DELANTE</text>
+    <text x="162" y="379" text-anchor="middle" class="note">DETRÁS</text>
+    <text x="20" y="432" class="label">1 delante + 2 detrás</text>
+    <text x="20" y="458" class="sub">Reparto variable anunciado.</text>
+    <text x="20" y="487" class="note">Concept; sin serie confirmada.</text>
+  </g>
+
+  <g transform="translate(728 105)">
+    <rect class="panel" width="324" height="527" rx="16"/>
+    <text x="20" y="37" class="heading">Renault 8 Gordini</text>
+    <text x="20" y="63" class="sub">Concept · propulsión trasera</text>
+    <rect class="body" x="84" y="104" width="156" height="286" rx="43"/>
+    <path d="M104 137h116M104 350h116" stroke="#6b9ba8" stroke-width="4"/>
+    <rect class="wheel" x="65" y="149" width="24" height="55" rx="7"/><rect class="wheel" x="235" y="149" width="24" height="55" rx="7"/>
+    <rect class="drive" x="65" y="305" width="24" height="55" rx="7"/><rect class="drive" x="235" y="305" width="24" height="55" rx="7"/>
+    <text x="162" y="133" text-anchor="middle" class="note">DELANTE</text>
+    <text x="162" y="379" text-anchor="middle" class="note">DETRÁS</text>
+    <text x="20" y="432" class="label">1 motor eléctrico</text>
+    <text x="20" y="458" class="sub">Posición no anunciada.</text>
+    <text x="20" y="487" class="note">Ejemplar único; no se venderá.</text>
+  </g>
+
+  <rect class="drive" x="37" y="655" width="22" height="18" rx="4"/><text x="68" y="669" class="note">Rueda motriz</text>
+  <circle class="motor" cx="205" cy="664" r="11"/><text x="224" y="669" class="note">Motor situado donde se conoce</text>
+  <text x="1043" y="669" text-anchor="end" class="note">Kilómetro Claro · dibujo editorial</text>
+</svg>

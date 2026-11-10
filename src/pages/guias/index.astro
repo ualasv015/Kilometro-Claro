@@ -5,7 +5,11 @@ import { guides } from '../../data/guides';
 import { guideImages } from '../../data/guide-images';
 import '../../styles/maximalist-listings.css';
 
-const categories = [...new Set(guides.map((guide) => guide.category))];
+const categories = [...new Set(guides.map((guide) => guide.category))].sort((a, b) => {
+  if (a === 'Comparar coches') return -1;
+  if (b === 'Comparar coches') return 1;
+  return 0;
+});
 const categoryId = (category: string) => `tema-${category.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 const categoryGroups = categories.map((category) => ({
   category,
