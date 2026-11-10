@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="760" viewBox="0 0 960 760" role="img" aria-labelledby="title desc">
+  <title id="title">Dos arquitecturas con tracción total</title>
+  <desc id="desc">Vista superior esquemática del Peugeot 205 Turbo 16 de calle, con motor central trasero y transmisión a ambos ejes, y del Peugeot E-T16 Concept, con batería central, un motor eléctrico delantero y dos traseros. Dibujo sin escala.</desc>
+  <style>
+    text{font-family:Arial,sans-serif;fill:#173d34} .heading{font-size:27px;font-weight:700}.sub{font-size:17px}.panel-title{font-size:22px;font-weight:700}.small{font-size:15px}.label{font-size:18px;font-weight:700}.body{fill:#f7faf5;stroke:#36594c;stroke-width:3}.wheel{fill:#173d34}.motor{fill:#d7f36a;stroke:#698a21;stroke-width:2}.battery{fill:#cfe3db;stroke:#537a6b;stroke-width:2}.shaft{stroke:#d2583d;stroke-width:7;stroke-linecap:round;fill:none}.arrow{fill:#d2583d}
+  </style>
+  <rect width="960" height="760" fill="#edf4ee"/>
+  <text x="36" y="47" class="heading">Dos formas de mover las cuatro ruedas</text>
+  <text x="36" y="75" class="sub">Vista superior simplificada · morro arriba · elementos sin escala</text>
+  <rect x="28" y="100" width="440" height="596" rx="18" fill="#fff" stroke="#c4d9c9" stroke-width="2"/>
+  <rect x="492" y="100" width="440" height="596" rx="18" fill="#fff" stroke="#c4d9c9" stroke-width="2"/>
+  <text x="48" y="138" class="panel-title">205 Turbo 16 · calle, 1984</text>
+  <text x="512" y="138" class="panel-title">E-T16 Concept · 2026</text>
+  <text x="48" y="163" class="small">Gasolina · transmisión mecánica</text>
+  <text x="512" y="163" class="small">Batería · tres motores eléctricos</text>
+
+  <rect x="169" y="190" width="158" height="430" rx="54" class="body"/>
+  <rect x="142" y="265" width="28" height="76" rx="8" class="wheel"/><rect x="326" y="265" width="28" height="76" rx="8" class="wheel"/>
+  <rect x="142" y="490" width="28" height="76" rx="8" class="wheel"/><rect x="326" y="490" width="28" height="76" rx="8" class="wheel"/>
+  <path d="M248 505 V301 M170 301 H326 M170 528 H326" class="shaft"/>
+  <rect x="185" y="437" width="126" height="75" rx="10" class="motor"/>
+  <text x="248" y="465" text-anchor="middle" class="label">Motor</text>
+  <text x="248" y="487" text-anchor="middle" class="small">central trasero</text>
+  <text x="248" y="595" text-anchor="middle" class="small">Tracción total</text>
+  <text x="48" y="667" class="small">Una transmisión lleva el par a ambos ejes.</text>
+
+  <rect x="632" y="190" width="160" height="430" rx="54" class="body"/>
+  <rect x="605" y="265" width="28" height="76" rx="8" class="wheel"/><rect x="792" y="265" width="28" height="76" rx="8" class="wheel"/>
+  <rect x="605" y="490" width="28" height="76" rx="8" class="wheel"/><rect x="792" y="490" width="28" height="76" rx="8" class="wheel"/>
+  <rect x="651" y="262" width="122" height="55" rx="9" class="motor"/>
+  <text x="712" y="286" text-anchor="middle" class="label">1 motor</text><text x="712" y="306" text-anchor="middle" class="small">delantero</text>
+  <path d="M633 299 H605 M773 299 H820" class="shaft"/>
+  <rect x="652" y="350" width="120" height="95" rx="10" class="battery"/>
+  <text x="712" y="389" text-anchor="middle" class="label">Batería</text><text x="712" y="412" text-anchor="middle" class="small">85 kWh*</text>
+  <rect x="637" y="492" width="65" height="62" rx="9" class="motor"/><rect x="722" y="492" width="65" height="62" rx="9" class="motor"/>
+  <text x="669" y="519" text-anchor="middle" class="small">Motor</text><text x="669" y="539" text-anchor="middle" class="small">trasero</text>
+  <text x="754" y="519" text-anchor="middle" class="small">Motor</text><text x="754" y="539" text-anchor="middle" class="small">trasero</text>
+  <path d="M637 525 H605 M787 525 H820" class="shaft"/>
+  <text x="712" y="595" text-anchor="middle" class="small">Tracción total</text>
+  <text x="512" y="667" class="small">Reparto de par variable; Peugeot no publica</text>
+  <text x="512" y="688" class="small">la potencia individual de cada motor.</text>
+
+  <rect x="28" y="714" width="904" height="30" rx="7" fill="#173d34"/>
+  <text x="42" y="735" style="font:15px Arial,sans-serif;fill:#fff">Kilómetro Claro · esquema editorial · *capacidad declarada, sin desglose bruto/útil</text>
+</svg>

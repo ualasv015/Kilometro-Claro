@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="650" viewBox="0 0 960 650" role="img" aria-labelledby="title desc">
+  <title id="title">Dos Gordini, dos épocas</title>
+  <desc id="desc">Esquema simplificado que compara la berlina Renault 8 Gordini de cuatro puertas, motor de gasolina trasero y propulsión trasera con el cupé eléctrico biplaza Renault 8 Gordini Concept, también de propulsión trasera. Renault no ha publicado la posición del motor eléctrico.</desc>
+  <style>
+    text{font-family:Arial,sans-serif;fill:#183b37}.title{font-size:28px;font-weight:700}.heading{font-size:22px;font-weight:700}.body{font-size:17px}.small{font-size:15px}.wheel{fill:#173d34}.car{fill:#2959b8;stroke:#173d34;stroke-width:3}.stripe{stroke:#fff;stroke-width:5}.line{stroke:#c7d8df;stroke-width:3}.accent{fill:#d7f36a;stroke:#57751d;stroke-width:2}
+  </style>
+  <rect width="960" height="650" fill="#edf4ee"/>
+  <text x="32" y="49" class="title">Dos Gordini, dos épocas</text>
+  <text x="32" y="77" class="body">Una silueta cambia; las ruedas traseras siguen empujando.</text>
+  <rect x="28" y="105" width="438" height="487" rx="16" fill="#fff" stroke="#c4d9c9" stroke-width="2"/>
+  <rect x="494" y="105" width="438" height="487" rx="16" fill="#fff" stroke="#c4d9c9" stroke-width="2"/>
+  <text x="48" y="145" class="heading">Renault 8 Gordini · 1964</text>
+  <text x="514" y="145" class="heading">Gordini Concept · 2026</text>
+  <text x="48" y="174" class="body">Berlina de cuatro puertas</text>
+  <text x="514" y="174" class="body">Cupé de dos puertas · dos plazas</text>
+
+  <path d="M58 296 L83 270 L132 265 L160 219 L326 219 L361 265 L414 272 L439 295 L439 347 L58 347 Z" class="car"/>
+  <path d="M166 221 L162 265 L355 265 L322 221 Z" fill="#b8d9e7" stroke="#173d34" stroke-width="2"/>
+  <path d="M259 222 L259 264 M182 267 L182 340 M319 267 L319 340" stroke="#173d34" stroke-width="3"/>
+  <path d="M217 225 L217 260 M229 225 L229 260" class="stripe"/>
+  <circle cx="142" cy="346" r="29" class="wheel"/><circle cx="355" cy="346" r="29" class="wheel"/>
+  <circle cx="142" cy="346" r="13" fill="#d7f36a"/><circle cx="355" cy="346" r="13" fill="#d7f36a"/>
+  <rect x="49" y="396" width="369" height="62" rx="10" class="accent"/>
+  <text x="67" y="421" class="body">Motor de gasolina trasero</text>
+  <text x="67" y="445" class="body">Ruedas motrices: las traseras</text>
+  <text x="49" y="499" class="small">El motor está detrás del habitáculo.</text>
+  <text x="49" y="523" class="small">La versión de calle dio paso a coches</text>
+  <text x="49" y="547" class="small">preparados para rally y copa.</text>
+
+  <path d="M516 306 L547 277 L614 274 L649 231 Q707 207 766 229 L825 273 L887 280 L908 307 L908 347 L516 347 Z" class="car"/>
+  <path d="M651 235 Q707 216 762 234 L814 273 L614 273 Z" fill="#b8d9e7" stroke="#173d34" stroke-width="2"/>
+  <path d="M718 228 L718 272 M695 279 L695 341" stroke="#173d34" stroke-width="3"/>
+  <path d="M660 236 L652 270 M675 231 L668 270" class="stripe"/>
+  <circle cx="603" cy="346" r="29" class="wheel"/><circle cx="817" cy="346" r="29" class="wheel"/>
+  <circle cx="603" cy="346" r="13" fill="#d7f36a"/><circle cx="817" cy="346" r="13" fill="#d7f36a"/>
+  <rect x="515" y="396" width="369" height="62" rx="10" class="accent"/>
+  <text x="533" y="421" class="body">Un motor eléctrico anunciado</text>
+  <text x="533" y="445" class="body">Ruedas motrices: las traseras</text>
+  <text x="515" y="499" class="small">Posición del motor y de la batería:</text>
+  <text x="515" y="523" class="small">no publicadas por Renault.</text>
+  <text x="515" y="547" class="small">Ejemplar único; sin venta prevista.</text>
+
+  <rect x="28" y="607" width="904" height="29" rx="6" fill="#173d34"/>
+  <text x="42" y="627" style="font:15px Arial,sans-serif;fill:#fff">Kilómetro Claro · esquema conceptual simplificado y sin escala; no reproduce cotas reales</text>
+</svg>
