@@ -1,5 +1,12 @@
 export const guides = [
   {
+    slug: 'que-hace-abs-frenar-fuerte',
+    title: '¿Qué hace el ABS cuando frenas fuerte y por qué vibra el pedal?',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Cómo detecta el ABS una rueda que amenaza con bloquearse, por qué puede vibrar el pedal y qué cambia en la dirección y la distancia de frenado.',
+    published: true,
+  },
+  {
     slug: 'que-es-diferencial-coche',
     title: '¿Qué hace el diferencial de un coche y cómo funciona en una curva?',
     category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',

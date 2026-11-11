@@ -14,6 +14,15 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'que-hace-abs-frenar-fuerte': {
+    src: '/images/guides/abs-disco-freno-real.jpg',
+    alt: 'Disco y pinza de freno reales visibles tras los radios de la llanta de un coche',
+    caption: 'Disco y pinza de freno reales. La fotografía no muestra una intervención del ABS ni permite identificar el sistema de ese vehículo. Copia reducida a 1.280 píxeles.',
+    author: 'Envy fstop', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Disc_brakes.jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/', licenseName: 'CC BY-SA 4.0',
+    width: 1280, height: 853,
+  },
   'que-es-diferencial-coche': {
     src: '/images/guides/diferencial-porsche-seccion-real.jpg',
     alt: 'Diferencial real seccionado de un Porsche Cayenne, con los engranajes visibles dentro de la carcasa',

@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'que-hace-abs-frenar-fuerte';
+const title = '¿Qué hace el ABS cuando frenas fuerte y por qué vibra el pedal?';
+const seoTitle = '¿Qué hace el ABS al frenar fuerte? | Kilómetro Claro';
+const description = 'Qué ocurre entre pedal, sensores y ruedas cuando actúa el ABS, por qué vibra el pedal y cuándo la distancia de frenado puede no acortarse.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-11';
+const sources = {
+  bosch: 'https://www.bosch-mobility.com/en/solutions/braking-systems/antilock-braking-system/',
+  sensor: 'https://www.bosch-mobility.com/en/solutions/sensors/wheel-speed-sensor/',
+  dgt: 'https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/conoce_la_dgt/conocimiento-e-investigacion/Efectividad-Sistemas-de-Seguridad_V20221108-accesible-Con-Meta.pdf',
+  hella: 'https://www.hella.com/techworld/es/informacion-tecnica/electricidad-y-electronica-del-automovil/unidades-de-control-abs-esp-para-la-dinamica-de-frenado-y-de-conduccion/',
+  hyundai: 'https://ownersmanual.hyundai.com/full_webhelp/LX3/2026/en_US/idf9ee78afe4a.html',
+  warnings: 'https://ownersmanual.hyundai.com/full_webhelp/NE1a/2025/en_US/warning_indicator_lights.html',
+  esp: 'https://www.bosch-mobility.com/en/solutions/braking-systems/electronic-stability-program/',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Cómo actúa el ABS' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 11 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Aparece un imprevisto, frenas con fuerza y el pedal empieza a golpear suavemente contra el pie. También puedes oír un zumbido o chasquidos. En un coche equipado con ABS, esas sensaciones pueden acompañar a un sistema que está regulando la frenada de las ruedas para evitar que se bloqueen.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>ABS significa sistema antibloqueo de frenos. Si una rueda amenaza con dejar de girar durante una frenada, sus sensores y unidad de control ordenan al módulo hidráulico que ajuste la presión de ese freno. La rueda puede volver a rodar y conservar más capacidad de responder a la dirección, siempre dentro del agarre disponible. La modulación puede sentirse como pulsaciones en el pedal; no garantiza detenerse antes ni esquivar un obstáculo.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#bloqueo">Rueda que gira o rueda bloqueada</a></li>
+          <li><a href="#circuito">Del pedal al módulo hidráulico</a></li>
+          <li><a href="#vibracion">Por qué vibra el pedal</a></li>
+          <li><a href="#distancia">Distancia y capacidad de dirección</a></li>
+          <li><a href="#emergencia">Qué hacer al frenar de emergencia</a></li>
+          <li><a href="#ayudas">ABS, tracción y estabilidad</a></li>
+          <li><a href="#testigo">Qué indica el testigo ABS</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="bloqueo">Qué significa que una rueda se bloquee</h2>
+      <p>Al pisar el freno, las pastillas aprietan el disco —o actúa el mecanismo correspondiente si ese eje usa otro tipo de freno— y la rueda pierde velocidad de giro. Para que el coche reduzca su velocidad, el neumático debe transmitir al firme una fuerza en sentido contrario al avance. Si la rueda llega a pararse mientras el vehículo todavía se mueve, su zona de contacto <strong>desliza</strong> sobre la calzada. Una rueda así tiene mucha menos capacidad de responder a una orden de dirección, sobre todo si es delantera. Que siga girando no crea agarre infinito: frenado y giro comparten la adherencia que permitan neumático, superficie y condiciones.</p>
+      <p>La <a href={sources.dgt}>ficha técnica de la DGT sobre el ABS</a> explica que su objetivo principal es conservar la posibilidad de dirigir el vehículo durante una frenada intensa. Esa posibilidad no asegura una esquiva. Si la velocidad es excesiva, la superficie ofrece poco agarre o ya no queda espacio, el coche puede continuar hacia el obstáculo pese a que las ruedas no estén bloqueadas. Un giro brusco del volante mientras se frena al límite también puede desestabilizarlo; el <a href={sources.hyundai}>manual de Hyundai consultado</a> pide movimientos moderados.</p>
+      <figure class="abs-figure">
+        <img src="/images/guides/abs-rueda-gira-bloqueada.svg" width="960" height="540" alt="Esquema comparativo simplificado: una rueda gira al frenar y puede conservar respuesta al volante; otra bloqueada desliza; el ABS vigila el giro y regula la presión" loading="lazy" decoding="async" />
+        <figcaption>Ilustración original y cualitativa de Kilómetro Claro. No representa distancias de frenado, porcentajes de agarre ni el comportamiento de una superficie concreta; la rueda que sigue girando tampoco garantiza que el coche pueda esquivar.</figcaption>
+      </figure>
+
+      <h2 id="circuito">Cómo sabe el ABS que debe intervenir y qué cambia en el freno</h2>
+      <p>El recorrido empieza en el pedal: el conductor solicita frenada y el sistema genera presión para actuar sobre los frenos. Cerca de las ruedas, los <strong>sensores de velocidad</strong> informan de cómo gira cada una. La unidad electrónica observa esas señales y reconoce cuándo una rueda se desacelera de un modo que anuncia bloqueo; no necesita esperar a que permanezca inmóvil. <a href={sources.sensor}>Bosch describe sus sensores de giro sin contacto</a>. La forma exacta de detectar y decidir depende de la generación del sistema y del vehículo: no hay aquí una velocidad de activación universal.</p>
+      <p>La orden llega al <strong>módulo hidráulico</strong>, con válvulas que modifican la presión que llega a cada freno y una bomba de retorno en sistemas como el descrito por Bosch. Si una rueda amenaza con bloquearse, el sistema puede reducir la presión en ese circuito; cuando recupera giro, vuelve a aumentarla. También puede mantenerla durante una fase de regulación. <a href={sources.bosch}>Bosch explica la secuencia de reducción y recuperación</a>, y <a href={sources.hella}>HELLA distingue los estados de aumentar, mantener y reducir presión</a>. Esta regulación se repite mientras las condiciones lo requieran, pero su ritmo, tacto y distribución por ruedas no son idénticos en todos los coches.</p>
+      <p>La fotografía siguiente muestra una <strong>unidad hidráulica real de ABS</strong> fuera del vehículo. Ayuda a identificar que no todo sucede bajo el pedal: entre la decisión electrónica y el freno de cada rueda hay conductos y válvulas. La imagen no muestra el sistema funcionando ni autoriza a identificar cada conexión de un modelo concreto.</p>
+      <figure class="abs-figure">
+        <img src="/images/guides/abs-modulo-hidraulico-real.jpg" width="1280" height="960" alt="Unidad hidráulica real de ABS desmontada, con bloque metálico, conexiones y motor eléctrico visible" loading="lazy" decoding="async" />
+        <figcaption>Unidad hidráulica de ABS fotografiada fuera del coche. Foto: <a href="https://commons.wikimedia.org/wiki/File:ABS_HCU_April_2018.jpg">Samf4u / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Copia reducida a 1.280 píxeles; no representa una instalación universal.</figcaption>
+      </figure>
+
+      <h2 id="vibracion">Por qué puede vibrar el pedal y escucharse un ruido</h2>
+      <p>Al abrir y cerrar válvulas, mover fluido y accionar la bomba, algunos sistemas transmiten pulsaciones al pedal y hacen ruido. <a href={sources.bosch}>Bosch indica que el pedal puede pulsar según el sistema</a>; el <a href={sources.hyundai}>manual de Hyundai</a> también describe sonidos y sensaciones como normales cuando su ABS entra en acción. La sensación puede sorprender porque el pie sigue apretando mientras el coche modifica la presión de una o varias ruedas. <strong>No significa por sí sola que el freno haya fallado.</strong></p>
+      <p>Tampoco toda vibración del pedal es ABS. Un temblor que aparece en frenadas suaves, persiste cuando ya no se está frenando intensamente, se acompaña de un ruido nuevo continuo o cambia el comportamiento habitual merece una revisión. No podemos atribuirlo a discos, neumáticos, sensores o transmisión sin examinar el vehículo. Importa el contexto: un breve pulso durante una frenada intensa sobre firme resbaladizo y un pedal que vibra a diario en condiciones normales no son la misma observación.</p>
+
+      <h2 id="distancia">¿El ABS siempre reduce la distancia de frenado?</h2>
+      <p><strong>No hay una respuesta válida para todas las superficies.</strong> La prioridad del ABS es evitar el bloqueo y conservar capacidad de dirección. La <a href={sources.dgt}>DGT señala</a> que en muchas circunstancias también acorta la distancia, por ejemplo frente a una rueda bloqueada sobre firme mojado, pero que esa no es su promesa universal. El <a href={sources.hyundai}>manual de Hyundai</a> advierte de que, en calzadas sueltas o irregulares, la distancia de un vehículo con ABS puede ser mayor que la de otro con un sistema convencional en esas condiciones. Eso no convierte la frenada sin ABS en una técnica preferible: hay que considerar también la pérdida de capacidad de dirección, el vehículo, los neumáticos y el suelo exacto.</p>
+      <p>Sobre nieve suelta o gravilla, una rueda bloqueada puede interactuar con el material de una manera distinta a una que conserva el giro; no se puede extrapolar a nieve compacta, hielo, asfalto seco o mojado. Tampoco se puede comparar dos coches cualesquiera y atribuir todos los metros al ABS: cambian neumáticos, masa, carga, velocidad inicial y estado del firme. Por eso no damos cifras ni prometemos una distancia concreta. <strong>Poder orientar las ruedas y conseguir detener el coche son capacidades relacionadas, pero no equivalentes.</strong> El tiempo de reacción del conductor y el espacio disponible siguen existiendo antes y durante la frenada.</p>
+
+      <h2 id="emergencia">Qué hacer si tienes que frenar de emergencia con ABS</h2>
+      <p>Si surge un peligro real y tu coche dispone de ABS operativo, la <a href={sources.dgt}>DGT recomienda pisar el freno con firmeza y mantener la presión</a> aunque se perciba vibración. El <a href={sources.hyundai}>manual de Hyundai consultado</a> también indica no bombear el pedal ni intentar reproducir a mano la regulación. Sujeta el volante, mira la vía disponible y, si hace falta modificar la trayectoria, hazlo de forma controlada y conforme al agarre que quede. No sueltes el pedal solo porque pulsa. Para detalles de tu modelo —incluidas otras ayudas de frenada y los avisos del cuadro— consulta su manual.</p>
+      <p>La recomendación se refiere a una <strong>frenada de emergencia real con un ABS operativo</strong>; no es una invitación a probarlo en una calle o carretera abierta. El margen se gana antes del imprevisto: distancia de seguridad, velocidad adecuada a la visibilidad y al firme, y neumáticos en buen estado. La guía sobre <a href="/guias/levantar-pie-acelerador/">retención al levantar el acelerador</a> explica otra forma de desacelerar, pero la retención no sustituye a los frenos cuando hay que detenerse ante un obstáculo.</p>
+
+      <h2 id="ayudas">ABS, control de tracción y estabilidad: tres tareas distintas</h2>
+      <div class="table-scroll" role="region" aria-label="Diferencias entre ABS, control de tracción y control de estabilidad" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Ayuda</th><th scope="col">Cuándo interviene principalmente</th><th scope="col">Qué intenta evitar o corregir</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">ABS</th><td>Al frenar</td><td>Bloqueo de las ruedas mediante regulación de la presión.</td></tr>
+            <tr><th scope="row">Control de tracción</th><td>Al pedir fuerza para avanzar</td><td>Giro excesivo de las ruedas motrices; puede reducir par o actuar sobre frenos según el diseño.</td></tr>
+            <tr><th scope="row">Control de estabilidad</th><td>Cuando la trayectoria real se aparta de la solicitada</td><td>Ayuda a corregirla, por ejemplo frenando ruedas concretas y gestionando el motor.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><a href={sources.esp}>Bosch describe</a> sistemas de estabilidad que integran funciones de ABS y control de tracción, por lo que pueden compartir sensores, frenos y unidad de control. Eso no vuelve idénticas sus tareas. La <a href="/guias/coche-patina-al-acelerar-control-traccion/">guía sobre el coche que patina al acelerar</a> trata la falta de motricidad y las intervenciones del control de tracción. Un <a href="/guias/que-es-diferencial-coche/">diferencial</a> resuelve otra necesidad: permitir distintas velocidades de giro entre ruedas motrices en una curva. Ninguna de esas tecnologías fabrica adherencia ni convierte una maniobra peligrosa en segura.</p>
+
+      <h2 id="testigo">Qué puede indicar que se encienda el testigo del ABS</h2>
+      <p>Una iluminación breve al poner el contacto puede formar parte de la comprobación inicial; si el testigo permanece encendido o aparece durante la marcha, consulta el aviso exacto del manual y pide una revisión. En el <a href={sources.warnings}>manual de Hyundai consultado</a>, el testigo de ABS fijo puede señalar un fallo del sistema antibloqueo mientras el frenado hidráulico sigue operativo. Ese ejemplo <strong>no demuestra que todos los coches con un testigo de ABS conserven exactamente la misma frenada</strong>.</p>
+      <p>Si se enciende también un testigo de freno, de líquido de frenos o aparece un mensaje de avería, la situación puede ser más seria. <a href={sources.warnings}>Hyundai advierte</a> que la combinación de avisos puede implicar un funcionamiento anormal de la distribución de frenada. Sigue las instrucciones de tu vehículo, detente en un lugar seguro cuando así lo indique y busca asistencia profesional. No diagnostiques un sensor concreto ni sigas circulando como si el estado de los frenos fuese conocido solo por el color de una luz. <a href={sources.hella}>HELLA describe</a> la lectura de fallos y la inspección del sistema como parte del diagnóstico técnico.</p>
+
+      <h2 id="conclusion">Qué recordar cuando el pedal empieza a pulsar</h2>
+      <p>El ABS observa el giro de las ruedas y ajusta la presión de freno para reducir el riesgo de bloqueo. La vibración puede ser una consecuencia normal de esa regulación durante una frenada intensa. En una emergencia con el sistema operativo, mantén la presión según la DGT y el manual del coche; no intentes bombear el pedal. La ayuda conserva posibilidades de dirección dentro del agarre disponible, pero no asegura detenerse antes, esquivar el peligro o compensar una velocidad excesiva.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del <strong>11 de noviembre de 2026</strong>. Abrimos la explicación técnica de <a href={sources.bosch}>Bosch sobre el ABS</a> y sus <a href={sources.sensor}>sensores de velocidad de rueda</a>; el <a href={sources.dgt}>estudio de la DGT sobre sistemas de seguridad, apartado ABS</a>, que distingue dirección y distancia y recomienda mantener la presión; la documentación de <a href={sources.hella}>HELLA sobre el módulo hidráulico</a>; el <a href={sources.hyundai}>manual de un Hyundai de 2026</a> para sensaciones, uso y límites en suelo suelto; sus <a href={sources.warnings}>indicaciones de testigos</a>; y la explicación de <a href={sources.esp}>Bosch sobre estabilidad</a>. Separamos principios generales de avisos que pertenecen a un modelo. No hicimos pruebas ni asignamos distancias, frecuencias de actuación o umbrales universales. La portada es una foto real de frenos, no de una intervención ABS; la otra fotografía muestra una unidad desmontada y el esquema es original y cualitativo.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .abs-figure { margin: 24px 0; }
+  .abs-figure img { display: block; max-width: 100%; height: auto; margin: auto; border-radius: 9px; }
+  .abs-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+</style>
