@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Tres caminos para transmitir la fuerza en un automático</title>
+  <desc id="desc">Esquema editorial cualitativo de convertidor, doble embrague y CVT de poleas; ninguna fila representa todos los modelos.</desc>
+  <rect width="960" height="600" rx="20" fill="#123c32"/>
+  <text x="40" y="47" fill="#f3f8ed" font-family="Arial, sans-serif" font-size="27" font-weight="700">Del motor a las ruedas: tres soluciones</text>
+  <text x="40" y="76" fill="#c9decf" font-family="Arial, sans-serif" font-size="16">Esquema simplificado · el control de cada coche puede variar</text>
+  <g font-family="Arial, sans-serif" font-size="17" text-anchor="middle">
+    <g transform="translate(0 101)">
+      <rect x="28" y="0" width="904" height="132" rx="14" fill="#eaf2e8"/>
+      <text x="50" y="29" fill="#1b493a" font-weight="700" text-anchor="start">CONVERTIDOR + CAJA</text>
+      <rect x="47" y="55" width="154" height="46" rx="9" fill="#d7f36a"/><text x="124" y="84" fill="#18362b">Motor</text>
+      <path d="M204 78h55m0 0-12-9m12 9-12 9" fill="none" stroke="#1b493a" stroke-width="4"/>
+      <rect x="274" y="55" width="199" height="46" rx="9" fill="#c3ded0"/><text x="373" y="84" fill="#18362b">Fluido: convertidor</text>
+      <path d="M477 78h43m0 0-12-9m12 9-12 9" fill="none" stroke="#1b493a" stroke-width="4"/>
+      <rect x="534" y="55" width="201" height="46" rx="9" fill="#c3ded0"/><text x="635" y="84" fill="#18362b">Engranajes</text>
+      <path d="M739 78h42m0 0-12-9m12 9-12 9" fill="none" stroke="#1b493a" stroke-width="4"/>
+      <rect x="795" y="55" width="115" height="46" rx="9" fill="#d7f36a"/><text x="852" y="84" fill="#18362b">Ruedas</text>
+    </g>
+    <g transform="translate(0 244)">
+      <rect x="28" y="0" width="904" height="132" rx="14" fill="#eaf2e8"/>
+      <text x="50" y="29" fill="#1b493a" font-weight="700" text-anchor="start">DOBLE EMBRAGUE</text>
+      <rect x="47" y="55" width="154" height="46" rx="9" fill="#d7f36a"/><text x="124" y="84" fill="#18362b">Motor</text>
+      <path d="M204 78h55m0 0-12-9m12 9-12 9" fill="none" stroke="#1b493a" stroke-width="4"/>
+      <rect x="274" y="55" width="199" height="46" rx="9" fill="#c3ded0"/><text x="373" y="84" fill="#18362b">Dos embragues</text>
+      <path d="M477 78h43m0 0-12-9m12 9-12 9" fill="none" stroke="#1b493a" stroke-width="4"/>
+      <rect x="534" y="55" width="201" height="46" rx="9" fill="#c3ded0"/><text x="635" y="84" fill="#18362b">Dos conjuntos</text>
+      <path d="M739 78h42m0 0-12-9m12 9-12 9" fill="none" stroke="#1b493a" stroke-width="4"/>
+      <rect x="795" y="55" width="115" height="46" rx="9" fill="#d7f36a"/><text x="852" y="84" fill="#18362b">Ruedas</text>
+    </g>
+    <g transform="translate(0 387)">
+      <rect x="28" y="0" width="904" height="132" rx="14" fill="#eaf2e8"/>
+      <text x="50" y="29" fill="#1b493a" font-weight="700" text-anchor="start">CVT DE POLEAS</text>
+      <rect x="47" y="55" width="154" height="46" rx="9" fill="#d7f36a"/><text x="124" y="84" fill="#18362b">Motor</text>
+      <path d="M204 78h55m0 0-12-9m12 9-12 9" fill="none" stroke="#1b493a" stroke-width="4"/>
+      <rect x="274" y="55" width="199" height="46" rx="9" fill="#c3ded0"/><text x="373" y="84" fill="#18362b" font-size="15">Arranque según modelo</text>
+      <path d="M477 78h43m0 0-12-9m12 9-12 9" fill="none" stroke="#1b493a" stroke-width="4"/>
+      <rect x="534" y="55" width="201" height="46" rx="9" fill="#c3ded0"/><text x="635" y="84" fill="#18362b" font-size="15">Poleas + correa/cadena</text>
+      <path d="M739 78h42m0 0-12-9m12 9-12 9" fill="none" stroke="#1b493a" stroke-width="4"/>
+      <rect x="795" y="55" width="115" height="46" rx="9" fill="#d7f36a"/><text x="852" y="84" fill="#18362b">Ruedas</text>
+    </g>
+  </g>
+  <text x="40" y="558" fill="#d8e9dd" font-family="Arial, sans-serif" font-size="16">La e-CVT híbrida de Toyota no usa esta correa: combina engranajes planetarios y máquinas eléctricas.</text>
+  <text x="40" y="581" fill="#b6d0bd" font-family="Arial, sans-serif" font-size="13">Ilustración original de Kilómetro Claro · recorridos funcionales, no planos técnicos</text>
+</svg>

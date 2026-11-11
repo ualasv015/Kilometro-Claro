@@ -1,5 +1,12 @@
 export const guides = [
   {
+    slug: 'que-ocurre-dentro-cambio-automatico',
+    title: '¿Qué ocurre dentro de un cambio automático? Convertidor, doble embrague y CVT',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Cómo transmiten la fuerza un convertidor, una caja de doble embrague y una CVT, por qué pueden detenerse sin calarse y qué revisar en tu coche.',
+    published: true,
+  },
+  {
     slug: 'que-hace-abs-frenar-fuerte',
     title: '¿Qué hace el ABS cuando frenas fuerte y por qué vibra el pedal?',
     category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',

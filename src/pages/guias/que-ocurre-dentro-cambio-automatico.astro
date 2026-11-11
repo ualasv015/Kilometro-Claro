@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'que-ocurre-dentro-cambio-automatico';
+const title = '¿Qué ocurre dentro de un cambio automático? Así funcionan sus principales tipos';
+const seoTitle = '¿Qué ocurre dentro de un cambio automático? | Kilómetro Claro';
+const description = 'Convertidor, doble embrague y CVT: descubre cómo llevan la fuerza a las ruedas, por qué no se calan al parar y qué significan P, R, N y D.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-11';
+const sources = {
+  zf: 'https://www.zf.com/products/en/cars/products_65854.html',
+  vw: 'https://www.volkswagen-newsroom.com/en/the-new-polo-gti-driving-presentation-2512/key-technologies-explained-in-brief-2570',
+  bosch: 'https://www.bosch-mobility.com/en/solutions/transmission-technology/pushbelt/',
+  toyota: 'https://global.toyota/en/detail/7889139',
+  hyundai: 'https://ownersmanual.hyundai.com/full_webhelp/US4/2025/en_GN/ida8543d9b65c.html',
+  dct: 'https://ownersmanual.hyundai.com/full_webhelp/NX4/2025/en_GN/id_glz_xft_4wb.html',
+  oil: 'https://aftermarket.zf.com/sg/aftermarket-portal/faq/faq-oils/',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Dentro de un cambio automático' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 11 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">El selector marca D, sueltas el freno y el coche empieza a avanzar. ¿Cómo pasa la fuerza del motor a las ruedas y por qué el motor no se cala al parar? La respuesta cambia según lo que haya dentro de la transmisión.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>«Automático» indica que no tienes que accionar un pedal de embrague ni elegir cada relación en la conducción habitual. No identifica una pieza única. Una caja puede iniciar la marcha con un convertidor que transmite fuerza a través de fluido, gestionar uno o dos embragues por sí misma, o variar continuamente la relación con poleas. En ciertos híbridos, una e-CVT reparte potencia entre motor térmico y máquinas eléctricas de otra manera. Por eso también cambia la forma en que cada coche puede detenerse sin calar su motor de combustión.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#transmision">Del motor a las ruedas</a></li>
+          <li><a href="#convertidor">Convertidor de par</a></li>
+          <li><a href="#doble-embrague">Doble embrague</a></li>
+          <li><a href="#cvt">CVT y e-CVT</a></li>
+          <li><a href="#parado">Por qué no se cala al parar</a></li>
+          <li><a href="#selector">P, R, N y D</a></li>
+          <li><a href="#sensaciones">Qué se nota al conducir</a></li>
+          <li><a href="#mantenimiento">Mantenimiento y avisos</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="transmision">Para qué sirve la transmisión: del motor a las ruedas</h2>
+      <p>Piensa en dos ruedas dentadas de distinto tamaño: una vuelta del eje de entrada no tiene por qué convertirse en una vuelta del eje de salida. Al elegir una relación, la transmisión adapta la velocidad de giro y el par disponible en las ruedas. Una relación corta suele multiplicar más el par a costa de que el motor gire más veces por cada vuelta de rueda; una larga hace lo contrario. El recorrido simplificado es <strong>motor → elemento de acoplamiento → mecanismo que establece la relación → transmisión final → ruedas</strong>. La <a href="/guias/par-motor-potencia-diferencias/">guía de par y potencia</a> explica por qué ese par en la rueda no equivale sin más al dato máximo del motor.</p>
+      <p>En un coche manual, el conductor pisa el embrague para interrumpir la conexión y mueve la palanca para elegir una marcha. En uno automático, mecanismos y controles realizan esas tareas o consiguen un resultado funcional parecido. <strong>Que no haya pedal no significa que no existan embragues.</strong> Tampoco todos los vehículos eléctricos usan una caja convencional de varias marchas: muchos emplean una reducción fija entre motor eléctrico y ruedas, aunque muestren una D en el selector.</p>
+      <figure class="automatic-figure">
+        <img src="/images/guides/cambio-automatico-tres-caminos.svg" width="960" height="600" alt="Esquema de tres recorridos simplificados: motor, convertidor y engranajes; motor, dos embragues y engranajes; motor, elemento de arranque y poleas de una CVT; todos terminan en las ruedas" loading="lazy" decoding="async" />
+        <figcaption>Esquema editorial original de Kilómetro Claro. Compara principios, no piezas a escala ni todas las variantes. La CVT dibujada usa poleas; la e-CVT híbrida de Toyota citada más abajo sigue otro camino.</figcaption>
+      </figure>
+
+      <h2 id="convertidor">Cómo funciona un automático con convertidor de par</h2>
+      <p>Imagina un ventilador que empuja aire hacia otro ventilador. En un convertidor, la comparación sirve para visualizar el principio, pero el medio real es <strong>fluido</strong> dentro de una carcasa: una parte impulsada por el motor mueve el fluido y este transmite fuerza a otra parte conectada con la entrada de la caja. También interviene un estátor que redirige el flujo y ayuda a multiplicar el par en determinadas fases del arranque. No es una unión rígida permanente. El motor y la entrada de la caja pueden girar a velocidades distintas cuando el convertidor trabaja con deslizamiento.</p>
+      <p>Eso explica el semáforo: con D seleccionada y el coche sujeto por el freno, el motor térmico puede seguir girando al ralentí aunque las ruedas estén quietas. La diferencia de velocidades se admite en el convertidor y se disipa energía en forma de calor. La caja situada detrás <strong>sí contiene relaciones</strong>, a menudo obtenidas mediante trenes de engranajes y elementos de acoplamiento; el convertidor no es por sí solo toda la caja. Durante la marcha, un embrague de bloqueo puede reducir el deslizamiento al conectar de forma más directa, pero sus condiciones de actuación dependen del modelo. <a href={sources.zf}>ZF describe sus circuitos hidrodinámicos y embragues de bloqueo</a>.</p>
+      <figure class="automatic-figure">
+        <img src="/images/guides/cambio-automatico-convertidor-real.jpg" width="3008" height="2000" alt="Convertidor de par real abierto en sección, expuesto en un museo, con sus componentes internos visibles" loading="lazy" decoding="async" />
+        <figcaption>Convertidor de par real abierto en sección, fotografiado en el museo Porsche de Stuttgart; no representa una caja completa ni todas sus variantes. Foto: <a href="https://commons.wikimedia.org/wiki/File:Torque-converter-cutbox-model.jpg">BerndB / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</figcaption>
+      </figure>
+
+      <h2 id="doble-embrague">Cómo funciona una caja de doble embrague</h2>
+      <p>Ahora imagina dos caminos paralelos hacia las ruedas. Cada uno tiene su propio embrague y un conjunto de relaciones. En una caja de doble embrague, uno puede estar transmitiendo fuerza mientras el otro deja preparada una relación que probablemente se usará después. Cuando llega el momento, el control coordina la apertura y el cierre de ambos embragues. <a href={sources.vw}>Volkswagen explica esta organización en su DSG</a>. Preparar una relación no asegura que todas las decisiones sean instantáneas: si el conductor pide otra marcha distinta de la prevista, la caja puede tener que cambiar de plan.</p>
+      <p>Los embragues pueden ser secos o bañados en aceite según el diseño, y la gestión de arranque también cambia. Al detenerse, los embragues pueden abrirse o modularse para que el motor no quede obligado a girar a la velocidad de unas ruedas inmóviles. El conductor no pisa ningún pedal para ello. Si quieres entender qué significa físicamente separar esas partes, consulta <a href="/guias/que-ocurre-pisar-embrague/">qué ocurre al pisar el embrague de un coche manual</a>; la función de desacoplar se parece, aunque los controles y componentes de una caja automática no son necesariamente iguales.</p>
+      <p>La foto de portada muestra un <strong>DSG abierto en sección</strong>: es una caja real, no el mecanismo que va dentro de todos los automáticos. Según la calibración, un doble embrague puede sentirse ágil en carretera y menos progresivo al avanzar a paso muy lento. Un manual de <a href={sources.dct}>Hyundai para una DCT concreta</a> advierte de calentamiento en maniobras repetidas en pendiente; es una advertencia de ese sistema, no una regla idéntica para todas las cajas.</p>
+
+      <h2 id="cvt">Cómo funciona una CVT y por qué una e-CVT puede ser distinta</h2>
+      <p>Una <strong>CVT de poleas</strong> modifica la relación sin pasar de una rueda dentada fija a otra. Dos poleas con mitades cónicas aprietan una correa metálica o una cadena. Al variar su diámetro efectivo, cambia cuántas vueltas da el eje de salida por cada vuelta del de entrada. <a href={sources.bosch}>Bosch explica el recorrido de su correa metálica entre las poleas</a>. La conexión del motor para arrancar o detenerse se resuelve mediante un elemento adicional que depende de la transmisión concreta; la correa y las poleas, por sí solas, no explican cómo se mantiene un motor térmico al ralentí con el coche parado.</p>
+      <p>Al acelerar, una CVT puede mantener el motor a un régimen relativamente estable mientras aumenta la velocidad del vehículo. Algunas programaciones simulan escalones para ofrecer una sensación de cambio. Ese sonido sostenido no demuestra por sí mismo una avería: hay que compararlo con el funcionamiento normal del modelo y con cualquier síntoma nuevo.</p>
+      <p><strong>e-CVT no describe necesariamente una CVT de poleas.</strong> En el sistema híbrido de <a href={sources.toyota}>Toyota documentado por el fabricante</a>, un engranaje planetario reparte el trabajo del motor térmico entre el camino mecánico hacia las ruedas y un generador; otro motor eléctrico también puede impulsar el coche. El control coordina las velocidades de esas máquinas para conseguir un efecto continuo. No hay una correa entre poleas que haga aquí el mismo trabajo. Otros fabricantes pueden usar soluciones híbridas diferentes, así que el nombre comercial no basta para identificar las piezas. Nuestra <a href="/guias/coche-hibrido-enchufable-o-microhibrido/">guía de tipos de híbrido</a> ayuda a situar el papel de la batería y del motor eléctrico.</p>
+
+      <h2 id="parado">¿Por qué un automático puede detenerse sin calarse?</h2>
+      <p>Un motor de combustión encendido necesita poder seguir girando. En un manual con una marcha engranada y el embrague acoplado, detener por completo las ruedas fuerza a detener el motor. En un automático, el sistema evita esa unión rígida en las condiciones adecuadas: el <strong>convertidor</strong> admite diferencia de giro mediante el fluido; una <strong>caja de doble embrague</strong> puede desacoplar sus embragues; y una <strong>CVT de poleas</strong> usa la solución de arranque y desacoplamiento que tenga integrada ese modelo. En un <strong>híbrido</strong> como el sistema Toyota citado, el motor térmico puede apagarse al detenerse mientras el sistema eléctrico gestiona la propulsión y su siguiente arranque. Esto no implica que permanezca encendido, ni que siempre se apague en cualquier situación.</p>
+      <div class="table-scroll" role="region" aria-label="Comparación de mecanismos de transmisión automática" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Arquitectura</th><th scope="col">Cómo adapta la relación</th><th scope="col">Cómo puede parar sin calar el motor térmico</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Convertidor y caja escalonada</th><td>La caja selecciona relaciones definidas.</td><td>El fluido del convertidor permite velocidades distintas entre motor y caja.</td></tr>
+            <tr><th scope="row">Doble embrague</th><td>Alterna conjuntos de relaciones con dos embragues.</td><td>El control puede abrir los embragues al detenerse.</td></tr>
+            <tr><th scope="row">CVT de poleas</th><td>Varía el radio de trabajo de las poleas.</td><td>Depende de su elemento de arranque y desacoplamiento concreto.</td></tr>
+            <tr><th scope="row">e-CVT del Toyota citado</th><td>Coordina motor térmico, generador y motor eléctrico mediante un reparto planetario.</td><td>El motor térmico puede apagarse; el sistema eléctrico gestiona la salida.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">La tabla describe principios documentados, no el control exacto de cualquier vehículo ni todas las cajas que se venden bajo cada nombre.</p>
+
+      <h2 id="selector">Qué significan P, R, N y D</h2>
+      <p><strong>P</strong> suele ser estacionamiento: en muchas cajas bloquea mecánicamente una parte de la transmisión mediante un mecanismo de aparcamiento. <strong>R</strong> selecciona marcha atrás, <strong>N</strong> deja la transmisión en punto muerto y <strong>D</strong> es la posición habitual para avanzar, con gestión automática del movimiento o de las relaciones. El <a href={sources.hyundai}>manual de Hyundai consultado</a> distingue P del freno de estacionamiento y exige accionar este último al aparcar ese vehículo. Consulta el manual del tuyo para saber el procedimiento exacto, las condiciones para cambiar de posición y el significado de B, S, L o M si aparecen. No todos los selectores permiten las mismas acciones en movimiento o con el motor apagado.</p>
+
+      <h2 id="sensaciones">Qué puede notar el conductor en cada sistema</h2>
+      <p>Un convertidor puede ofrecer un inicio progresivo y, en algunos coches, un avance lento al soltar el freno. Un doble embrague puede cambiar de relación con rapidez, pero su tacto al aparcar depende de cómo gestione el deslizamiento. Una CVT de poleas puede acelerar sin saltos claros de régimen; una e-CVT híbrida puede hacer que el motor térmico funcione a un régimen que no sigue directamente la velocidad. Son <strong>tendencias, no promesas</strong>. La programación, el motor, el modo elegido y el estado del vehículo importan tanto como la familia de transmisión. Para comparar versiones y ejemplos comerciales concretos, consulta la guía de <a href="/guias/tipos-cambio-automatico/">tipos de cambio automático y qué coches los montan</a>.</p>
+      <p>Al pedir una aceleración intensa, una caja escalonada puede reducir una o varias relaciones; una CVT puede elegir otra relación continua. El resultado depende del margen de revoluciones y de la demanda del motor. Nuestra guía sobre <a href="/guias/acelerar-fondo-marcha-larga/">acelerar a fondo en una marcha larga</a> explica por qué cambiar de relación puede mejorar la respuesta sin prometer un tiempo de reacción universal.</p>
+
+      <h2 id="mantenimiento">Mantenimiento y señales que conviene revisar</h2>
+      <p>La misma palabra «automático» no define el fluido ni el intervalo de mantenimiento. Hay cajas con especificaciones de aceite, filtros y procedimientos distintos. <a href={sources.oil}>ZF remite a las instrucciones del fabricante del vehículo</a> y explica que sus recomendaciones se refieren a sus propias transmisiones. Para tu coche, busca el manual y el plan de mantenimiento de la versión y caja exactas; no copies una cifra de kilómetros de otro modelo ni añadas un fluido solo porque se anuncie como «válido para automáticos».</p>
+      <p>Un tirón aislado no permite diagnosticar una avería. Si aparecen <strong>tirones persistentes, retrasos nuevos al seleccionar D o R, ruidos, fugas, olor anormal o avisos de temperatura o transmisión</strong>, anota cuándo suceden, consulta los mensajes del manual y pide una revisión profesional. El manual de <a href={sources.dct}>Hyundai DCT</a> describe avisos de temperatura que exigen una respuesta específica; sigue las indicaciones de tu vehículo, no un procedimiento genérico. Una inspección es necesaria para distinguir un problema de mantenimiento, control, embrague, convertidor u otra pieza. No hay un coste o una reparación deducible solo por el síntoma.</p>
+
+      <h2>Qué conviene recordar</h2>
+      <p>Cuando ves D, sabes cómo usar el coche, pero aún no sabes qué mecanismo hay entre motor y ruedas. Para entender tu transmisión, identifica la caja de la versión concreta en la ficha y el manual, pregunta cómo arranca y cómo se desacopla al parar, y revisa qué mantenimiento prescribe. Eso te permitirá interpretar mejor su tacto y detectar cambios respecto a su funcionamiento habitual sin confundir un convertidor, dos embragues, una CVT de poleas y una e-CVT híbrida.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del <strong>11 de noviembre de 2026</strong>. Abrimos documentación primaria de <a href={sources.zf}>ZF sobre el convertidor y su bloqueo</a>, <a href={sources.vw}>Volkswagen sobre la arquitectura DSG</a>, <a href={sources.bosch}>Bosch sobre poleas y correa CVT</a> y <a href={sources.toyota}>Toyota sobre su sistema híbrido de reparto planetario</a>. Contrastamos posiciones del selector con un <a href={sources.hyundai}>manual de Hyundai</a>, avisos de una DCT concreta con <a href={sources.dct}>otro manual de Hyundai</a> y el mantenimiento con las <a href={sources.oil}>preguntas técnicas de ZF</a>. Separamos principios mecánicos de ejemplos de modelo y evitamos inferir intervalos, consumos, tiempos de cambio o averías. La portada y la foto del convertidor proceden de las fichas de Wikimedia Commons indicadas en sus pies; el diagrama es original y deliberadamente simplificado.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .automatic-figure { margin: 25px 0; }
+  .automatic-figure img { display: block; width: 100%; height: auto; border-radius: 9px; }
+  .automatic-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.55; }
+</style>

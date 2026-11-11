@@ -14,6 +14,15 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'que-ocurre-dentro-cambio-automatico': {
+    src: '/images/guides/cambio-automatico-dsg-real.jpg',
+    alt: 'Fotografía de una transmisión DSG de doble embrague abierta en sección, con el conjunto central y la carcasa a la vista',
+    caption: 'Caja DSG real abierta en sección. Muestra una arquitectura de doble embrague; no representa todas las transmisiones automáticas.',
+    author: 'Matti Blume', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:VW_DSG_transmission_DTMB.jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/2.5/', licenseName: 'CC BY-SA 2.5',
+    width: 2816, height: 1760,
+  },
   'que-hace-abs-frenar-fuerte': {
     src: '/images/guides/abs-disco-freno-real.jpg',
     alt: 'Disco y pinza de freno reales visibles tras los radios de la llanta de un coche',
