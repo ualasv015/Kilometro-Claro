@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'diesel-circular-despues-2035';
+const title = 'Tengo un diésel: ¿podré seguir circulando después de 2035?';
+const seoTitle = 'Diésel después de 2035: ¿podré circular? | Kilómetro Claro';
+const description = 'La norma europea de 2035 afecta a coches nuevos, pero tu diésel puede tener restricciones locales. Consulta etiqueta, ZBE, ITV y reglas de compraventa.';
+const canonical = new URL(`/guias/${slug}/`, Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-11';
+const sources = {
+  rule: 'https://eur-lex.europa.eu/eli/reg/2019/631/2025-07-09/eng',
+  council: 'https://www.consilium.europa.eu/en/policies/road-transport/',
+  proposal: 'https://www.europarl.europa.eu/RegData/docs_autres_institutions/commission_europeenne/com/2025/0995/COM_COM%282025%290995_EN.pdf',
+  file: 'https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0420(COD)',
+  councilProgress: 'https://www.consilium.europa.eu/en/meetings/env/2026/06/25/',
+  zbeLaw: 'https://www.boe.es/buscar/pdf/2021/BOE-A-2021-8447-consolidado.pdf',
+  zbeDecree: 'https://www.boe.es/eli/es/rd/2022/12/27/1052/con/20261106',
+  dgt: 'https://www.dgt.es/nuestros-servicios/tu-vehiculo/tus-vehiculos/distintivo-ambiental/',
+  dgtData: 'https://www.dgt.es/nuestros-servicios/tu-vehiculo/informacion-y-datos-de-tu-vehiculo/index.html',
+  madrid: 'https://www.madrid.es/portales/munimadrid/es/Inicio/Movilidad-y-transportes/Zonas-de-Bajas-Emisiones/Zona-de-Bajas-Emisiones-de-Especial-Proteccion/Preguntas-frecuentes-sobre-Madrid-Zona-de-Bajas-Emisiones-ZBE-/?vgnextchannel=8b51edf0f70ab710VgnVCM2000001f4a900aRCRD&vgnextoid=9dec1d96b08ed710VgnVCM1000001d4a900aRCRD',
+  centro: 'https://www.madrid.es/portales/munimadrid/es/Inicio/Movilidad-y-transportes/Zonas-de-Bajas-Emisiones/Zona-de-Bajas-Emisiones-de-Especial-Proteccion/Informacion-general/Zona-de-Bajas-Emisiones-de-Especial-Proteccion-ZBEDEP-Distrito-Centro-Informacion-general/?vgnextchannel=d0e1edf0f70ab710VgnVCM2000001f4a900aRCRD&vgnextfmt=default&vgnextoid=2d88c49556fbb710VgnVCM2000001f4a900aRCRD',
+  itv: 'https://www.boe.es/eli/es/rd/2017/10/23/920/con',
+  used: 'https://www.dgt.es/nuestros-servicios/tu-vehiculo/vas-a-comprar-o-vender-un-vehiculo-de-segunda-mano/comprar-un-vehiculo-de-segunda-mano/',
+  report: 'https://www.dgt.es/nuestros-servicios/tu-vehiculo/tus-vehiculos/informe-de-un-vehiculo/index.html',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL(`/images/og/guia-${slug}.png`, canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Diésel después de 2035' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Movilidad y normativa · Actualizada el <time datetime="2026-11-11">11 de noviembre de 2026</time></span>
+        <h1>{title}</h1>
+        <p class="dek">Si ya tienes un coche diésel, la fecha de 2035 no es una orden europea para entregarlo ni para dejar de conducirlo. Sí puedes encontrarte restricciones de acceso a una calle o zona concreta antes de esa fecha: la respuesta depende de tu vehículo y de dónde circules.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>La norma europea vigente fija objetivos de CO₂ para la flota de <strong>coches nuevos</strong>, incluido un objetivo del 100 % de reducción desde 2035 frente al nivel de 2021. No retira automáticamente los diésel ya matriculados ni impide por sí sola su compraventa usada. Para saber si puedes usar el tuyo, comprueba su <a href={sources.dgt}>clasificación ambiental en la DGT</a>, la ITV y la ordenanza de cada ZBE de tu ruta. Hay una propuesta europea de cambio para los coches nuevos, pero sigue en trámite.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía"><strong>En esta guía</strong><ul>
+        <li><a href="#fecha">De dónde sale 2035</a></li><li><a href="#diferencias">Nuevo, usado y circulación</a></li><li><a href="#zbe">Restricciones locales</a></li><li><a href="#etiqueta">Cómo consultar tu etiqueta</a></li><li><a href="#itv">ITV y compraventa</a></li><li><a href="#compra">¿Conviene comprar un diésel?</a></li><li><a href="#comprobar">Lista de comprobación</a></li>
+      </ul></nav>
+
+      <h2 id="fecha">De dónde sale la fecha de 2035</h2>
+      <p>El <a href={sources.rule}>Reglamento (UE) 2019/631, en su versión consolidada</a>, establece objetivos de emisiones medias de CO₂ para los <strong>turismos y vehículos comerciales ligeros nuevos matriculados en la Unión</strong>. Es una obligación dirigida a los fabricantes y a su flota nueva, no una fecha de caducidad de cada coche que ya tiene dueño. Respecto al objetivo de 2021, la reducción vigente para turismos nuevos es del 55 % entre 2030 y 2034 y del 100 % desde 2035. En las furgonetas ligeras, el objetivo intermedio vigente es del 50 %. El <a href={sources.council}>Consejo de la UE resume esas fechas y distingue las categorías</a>.</p>
+      <p>Decir «prohibición de circular en 2035» cambia el sujeto de la norma: el texto se refiere al promedio de emisiones de vehículos <em>nuevos</em> y a objetivos que los fabricantes deben cumplir. Tampoco es exacto convertir directamente ese porcentaje en una cuota de coches diésel permitidos. El CO₂, gas de efecto invernadero, se mide aquí para la homologación y el cumplimiento de objetivos de flota; los NOx y las partículas que motivan muchas medidas de calidad del aire son contaminantes distintos.</p>
+      <figure class="diesel-figure"><img src="/images/guides/diesel-2035-linea-tiempo.svg" width="1000" height="390" alt="Línea temporal: objetivo vigente de CO2 para turismos nuevos de menos 55 por ciento entre 2030 y 2034 y menos 100 por ciento desde 2035; propuesta de menos 90 por ciento aún en trámite" loading="lazy" decoding="async" /><figcaption>Esquema original de Kilómetro Claro. Porcentajes de reducción de CO₂ para la flota nueva comparados con el objetivo de 2021; la propuesta aún no modifica la norma vigente.</figcaption></figure>
+      <p>El 16 de diciembre de 2025, la Comisión presentó la <a href={sources.proposal}>propuesta COM(2025) 995</a>. Plantea mantener el 55 % para turismos en 2030, rebajar del 50 % al 40 % el objetivo intermedio de furgonetas y situar en el 90 % la reducción de emisiones de escape desde 2035 para ambas, con mecanismos de compensación ligados a combustibles renovables y acero de bajas emisiones. El «10 % restante» describe un margen de emisiones y créditos de cumplimiento, <strong>no un permiso automático para vender un 10 % de diésel</strong>.</p>
+      <p>A fecha de actualización, el <a href={sources.file}>expediente 2025/0420(COD) del Parlamento</a> registra la votación en comisión del 4 de noviembre de 2026, pero no una aprobación final de Parlamento y Consejo ni la publicación de una nueva norma. Su ficha aún muestra el estado «pendiente de decisión de comisión» y una sesión plenaria indicativa en diciembre: el registro de evento y el rótulo de estado no están sincronizados. El <a href={sources.councilProgress}>Consejo seguía examinando los puntos principales</a>. Por tanto, no usamos esa propuesta como ley en vigor ni damos por cerrado su contenido o fecha de aplicación final.</p>
+
+      <h2 id="diferencias">Comprar nuevo, conservar el tuyo o venderlo usado: cuatro asuntos</h2>
+      <div class="table-scroll" role="region" aria-label="Diferencias entre coches nuevos y ya matriculados" tabindex="0"><table><thead><tr><th scope="col">Situación</th><th scope="col">Qué norma debes mirar</th><th scope="col">Qué no implica 2035 por sí solo</th></tr></thead><tbody>
+        <tr><th scope="row">Ya tienes un diésel matriculado</th><td>ITV, documentación, seguro y normas de las zonas a las que accedes.</td><td>No hay retirada automática por el objetivo europeo de CO₂ para nuevos.</td></tr>
+        <tr><th scope="row">Entras en una ZBE</th><td>Ordenanza, perímetro, horario, clasificación y posibles autorizaciones.</td><td>La etiqueta no concede acceso universal.</td></tr>
+        <tr><th scope="row">Compras o vendes uno usado</th><td>Requisitos de transmisión de la DGT y condiciones de uso posteriores.</td><td>La norma de flota nueva no prohíbe por sí sola la operación.</td></tr>
+        <tr><th scope="row">Buscas un coche nuevo</th><td>Oferta homologada y objetivos europeos de flota aplicables.</td><td>Una propuesta aún no equivale a una regla comercial vigente.</td></tr>
+      </tbody></table></div>
+      <figure class="diesel-figure"><img src="/images/guides/diesel-2035-dos-caminos.svg" width="1000" height="530" alt="Dos caminos: un diésel ya matriculado requiere ITV, distintivo y ordenanza local; un coche nuevo requiere revisar oferta y regulación europea vigente" loading="lazy" decoding="async" /><figcaption>Diagrama editorial original de Kilómetro Claro. Separa las preguntas que afectan al propietario de las que afectan a la venta de coches nuevos.</figcaption></figure>
+
+      <h2 id="zbe">Qué restricciones pueden afectarte antes o después de 2035</h2>
+      <p>La <a href={sources.zbeLaw}>Ley 7/2021</a> define las zonas de bajas emisiones como ámbitos delimitados con restricciones de acceso, circulación o estacionamiento para mejorar el aire y reducir emisiones. El <a href={sources.zbeDecree}>Real Decreto 1052/2022</a> fija requisitos mínimos. La delimitación concreta, las categorías afectadas, el calendario y las excepciones se aplican según las reglas locales. Por eso la fecha europea de 2035 no sustituye a la ordenanza de la ciudad que visitas.</p>
+      <p><strong>Ejemplo comprobado el 11 de noviembre de 2026:</strong> la <a href={sources.madrid}>página oficial de Madrid ZBE</a> explica que la zona general afecta a vehículos clasificados «A» o sin distintivo y recoge un régimen transitorio condicionado desde abril de 2026 para determinados vehículos A. No es una exención general de todos los turismos antiguos. En la <a href={sources.centro}>zona de especial protección Distrito Centro</a>, un turismo B o C no puede entrar simplemente para atravesarla; existen supuestos de acceso vinculados, por ejemplo, al estacionamiento en un aparcamiento adherido. Hay diferencias también entre las calles del perímetro y el interior. Antes de tomar esa ruta hay que consultar ámbito, motivo de entrada, autorización y señalización actualizados.</p>
+      <p>Otros municipios pueden establecer reglas distintas, y una misma ciudad puede tener varias zonas. Nuestra <a href="/guias/zonas-bajas-emisiones-espana-como-afectan/">guía de ZBE en España</a> permite localizar el mapa oficial y orientarte en la consulta por municipio. El resultado del mapa también debe verificarse en la web municipal antes de circular.</p>
+
+      <h2 id="etiqueta">Cómo saber qué distintivo tiene tu diésel</h2>
+      <ol><li>Ten a mano la matrícula y entra en la <a href={sources.dgt}>consulta oficial del distintivo ambiental de la DGT</a>.</li><li>Comprueba la clasificación que figura para <em>esa matrícula</em>: sin distintivo, B, C u otra que corresponda al vehículo concreto. La consulta es gratuita.</li><li>Revisa en la <a href={sources.dgtData}>información de tu vehículo en miDGT o la sede de la DGT</a> los datos técnicos y la fecha de ITV; contrasta cualquier discrepancia documental.</li><li>Busca el destino exacto en la ordenanza municipal: perímetro, horario, tipo de vehículo, residencia, aparcamiento y posibles permisos.</li></ol>
+      <p>El distintivo se relaciona con la norma Euro y con el potencial contaminante, pero no es una lectura directa de la cifra Euro impresa en un documento ni debe adjudicarse solo por año de matrícula. Un diésel <strong>sin distintivo</strong> no queda automáticamente inhabilitado para toda España; una ordenanza puede restringirlo en zonas concretas. Una <strong>B</strong> o una <strong>C</strong> tampoco son pases nacionales: comprueba las condiciones del destino, como muestra Madrid Centro. Si no sabes qué clasificación tiene tu coche, consultar el registro es mejor que suponerla por antigüedad.</p>
+
+      <h2 id="itv">¿Podré seguir pasando la ITV?</h2>
+      <p>El <a href={sources.itv}>Real Decreto 920/2017</a> sigue regulando la inspección técnica y su periodicidad según la categoría y edad del vehículo. La ITV verifica su aptitud técnica conforme a los controles que le correspondan, incluidos los de emisiones aplicables. No aparece en esa norma una fecha que impida por ser diésel superar la ITV a partir de 2035. El resultado depende del estado del coche y de los requisitos de inspección vigentes cuando toque pasarla.</p>
+      <p>Una ITV favorable no anula las restricciones de una ZBE, del mismo modo que una limitación de acceso local no invalida por sí sola una ITV favorable. Mantén al día también el permiso de circulación y el seguro. Si se plantean cambios futuros de inspección, habrá que comprobar que hayan sido aprobados y desde cuándo se aplican; no conviene planificar a partir de rumores.</p>
+
+      <h2 id="segunda-mano">¿Podré comprar o vender un diésel de segunda mano?</h2>
+      <p>Sí, la regla europea de CO₂ de turismos nuevos no establece por sí misma una prohibición de compraventa de diésel ya matriculados. La <a href={sources.used}>DGT explica el procedimiento de compra y cambio de titularidad</a>, que debe tramitarse en el plazo indicado tras firmar el contrato. No confundas posibilidad de transmitir el coche con la utilidad que tendrá para su comprador en los desplazamientos que necesite hacer.</p>
+      <p>Antes de pagar, solicita un <a href={sources.report}>informe de la DGT</a> para revisar incidencias administrativas, ITV, kilometraje anotado, cargas y otros datos disponibles. Contrasta permiso de circulación, tarjeta ITV, mantenimiento y estado de los sistemas de emisiones. Comprueba la clasificación ambiental con la matrícula y simula las rutas habituales del comprador, incluidas ZBE que atraviese. Un coche con ITV caducada no puede circular para llevarlo a inspección por sus propios medios según recuerda la DGT. No existe una depreciación universal que podamos atribuir a 2035: precio y facilidad de reventa dependerán de mercado, estado y posibilidades de uso.</p>
+
+      <h2 id="combustible">Qué pasa con el gasóleo, las piezas y el mantenimiento</h2>
+      <p>Ni el reglamento europeo de emisiones de flota nueva ni las normas españolas consultadas fijan una fecha general en 2035 para que desaparezca el gasóleo destinado a vehículos existentes. Eso permite distinguir una obligación legal presente de una predicción sobre oferta y precios futuros. La disponibilidad de carburante, recambios y servicios durante muchos años depende de decisiones industriales y comerciales que hoy no se pueden prometer para cada modelo o localidad.</p>
+      <p>Para seguir usando el coche, respeta el plan de mantenimiento y atiende los avisos de emisiones de tu vehículo. En un diésel con filtro de partículas, el uso repetido en recorridos breves puede dificultar ciertas regeneraciones, aunque no implica una avería inevitable; lo explicamos en la <a href="/guias/diesel-trayectos-cortos-filtro-particulas/">guía sobre trayectos cortos y filtro de partículas</a>. El estado real de un usado importa más que una promesa genérica sobre la tecnología.</p>
+
+      <h2 id="compra">¿Sigue teniendo sentido comprar un diésel?</h2>
+      <p>Depende de tus viajes, presupuesto, horizonte de propiedad y acceso necesario a ciudades concretas. Si haces recorridos frecuentes por carretera, compara versiones equivalentes y su consumo real. Si predominan los trayectos urbanos cortos, considera el calentamiento, el mantenimiento del sistema de emisiones y las zonas a las que entras. Nuestra <a href="/guias/motor-gasolina-diesel-acelerador/">comparación de motores de gasolina y diésel</a> explica las diferencias mecánicas, y la <a href="/calculadoras/coste-total-electrico-combustion/">calculadora de coste total</a> ayuda a comparar supuestos propios con datos actualizados. No hay un kilometraje anual que haga rentable cualquier diésel.</p>
+      <p>Si el vehículo es de ocasión, incluye su historial, averías pendientes, precio de compra y posible coste de adaptar tus rutas. Si es nuevo, mira la oferta real y la norma que esté en vigor en el momento de comprar. El futuro resultado de la propuesta europea aún no permite prometer qué versiones diésel ofrecerá cada marca en 2035.</p>
+
+      <h2 id="comprobar">Qué hacer hoy: seis comprobaciones</h2>
+      <ol><li>Consulta el distintivo por matrícula en la DGT.</li><li>Marca las zonas a las que accedes habitualmente, no solo la ciudad donde vives.</li><li>Lee las páginas municipales y la ordenanza vigente para sus perímetros, horarios y calendarios.</li><li>Comprueba si existe una autorización aplicable a tu situación y cómo se solicita.</li><li>Mantén ITV, seguro y documentación al día, sin asumir que sustituyen un permiso de acceso.</li><li>Si vas a comprar, compara estado y costes con datos del momento y revisa la posible ruta de reventa.</li></ol>
+
+      <h2 id="conclusion">La respuesta para quien ya tiene un diésel</h2>
+      <p>El objetivo europeo de 2035 se dirige a las emisiones de vehículos nuevos; no obliga por sí mismo a retirar tu coche diésel ni cierra su mercado de ocasión. Tu capacidad de utilizarlo en una ruta concreta se decide con las reglas de circulación, la clasificación del vehículo y su estado técnico. Comprueba esos tres elementos cada vez que cambien tu destino o las normas, especialmente si una ZBE forma parte del recorrido.</p>
+
+      <h2 id="fuentes">Fuentes y método</h2>
+      <p><strong>Consulta: 11 de noviembre de 2026.</strong> Contrastamos el <a href={sources.rule}>Reglamento (UE) 2019/631 consolidado</a> con el <a href={sources.council}>resumen del Consejo</a>; leímos el <a href={sources.proposal}>texto de la propuesta COM(2025) 995</a> y su <a href={sources.file}>expediente legislativo</a> para separar norma vigente, voto de comisión y tramitación. Para España revisamos la <a href={sources.zbeLaw}>Ley 7/2021</a>, el <a href={sources.zbeDecree}>Real Decreto 1052/2022</a> y el <a href={sources.itv}>Real Decreto 920/2017</a>. Para trámites y clasificación usamos la <a href={sources.dgt}>DGT</a> y para el ejemplo municipal las páginas oficiales de <a href={sources.madrid}>Madrid ZBE</a> y <a href={sources.centro}>Distrito Centro</a>, consultadas también el 11 de noviembre de 2026.</p>
+      <p>El expediente europeo registra una votación de comisión el 4 de noviembre, pero aún muestra un rótulo de estado anterior. No hemos inferido de ello una aprobación definitiva. Los textos consolidados y las páginas municipales pueden actualizarse; las restricciones concretas deben verificarse de nuevo antes de viajar. No hemos encontrado una medida general vigente que establezca el fin del gasóleo para los coches ya matriculados, ni datos suficientes para predecir precios o disponibilidad futura de piezas.</p>
+    </article>
+  </div>
+</BaseLayout>

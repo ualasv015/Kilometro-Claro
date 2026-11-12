@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'diesel-trayectos-cortos-filtro-particulas';
+const title = '¿Por qué un diésel puede dar problemas con trayectos cortos? Filtro de partículas y regeneración';
+const seoTitle = 'Diésel y trayectos cortos: el filtro | Kilómetro Claro';
+const description = 'Por qué los recorridos breves pueden dificultar la regeneración del filtro de partículas diésel, qué significa un aviso y cuándo consultar el manual.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-11';
+const sources = {
+  epa: 'https://www.epa.gov/sites/default/files/2016-03/documents/420f10027.pdf',
+  ford: 'https://www.fordservicecontent.com/Ford_Content/Catalog/owner_information/CG3851en-202206-20220620100059.pdf',
+  vwAdvice: 'https://www.volkswagen.co.uk/en/need-help/need-help-faqs/technology.html',
+  vwWarning: 'https://www.volkswagen.co.uk/en/owners-and-services/my-car/warning-light/diesel-particulate-filter.html',
+  boschSensor: 'https://www.bosch-mobility.com/en/solutions/sensors/differential-pressure-sensor/',
+  egr: 'https://www.ms-motorservice.com/int/en/technipedia/troubleshooting-in-exhaust-gas-recirculation-system-on-otto-and-diesel-engines-22',
+  scr: 'https://www.bosch-mobility.com/en/solutions/exhaust-gas-treatment/exhaust-gas-treatment-with-double-injection-technology/',
+  afdc: 'https://afdc.energy.gov/vehicles/how-do-diesel-cars-work',
+  gpf: 'https://www.epa.gov/system/files/documents/2023-04/420d23003.pdf',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Diésel, trayectos cortos y filtro de partículas' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 11 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Sales de casa, haces un recado, aparcas y apagas el motor. Al día siguiente, repites. En algunos diésel modernos, esa rutina puede dejar poco tiempo para que el escape alcance y mantenga las condiciones necesarias para limpiar el hollín del filtro de partículas. No significa que un trayecto corto ocasional cause una avería.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>El filtro de partículas diésel retiene parte del material sólido del escape, sobre todo hollín. Para reducir ese hollín, el sistema necesita condiciones apropiadas de temperatura y funcionamiento. Encadenar viajes breves con el motor frío y apagarlo una y otra vez puede impedir o interrumpir ciertas regeneraciones en algunos vehículos. La gestión varía por modelo: no existe una distancia ni una velocidad que sirva para todos. Si aparece un aviso, identifica el mensaje exacto y sigue el manual de tu coche.</p>
+      </aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#filtro">Qué retiene el filtro</a></li>
+          <li><a href="#regeneracion">Qué significa regenerar</a></li>
+          <li><a href="#trayectos">Por qué influyen los trayectos</a></li>
+          <li><a href="#interrumpir">Qué pasa al interrumpirlo</a></li>
+          <li><a href="#senales">Señales y avisos</a></li>
+          <li><a href="#testigo">Qué hacer con el testigo</a></li>
+          <li><a href="#sistemas">EGR, DPF y AdBlue</a></li>
+          <li><a href="#mantenimiento">Aceite y mantenimiento</a></li>
+          <li><a href="#eleccion">¿Conviene un diésel?</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="filtro">Qué hace el filtro de partículas de un diésel</h2>
+      <p>Los gases salen del motor por el sistema de escape y atraviesan, entre otros componentes según el diseño, un filtro con paredes porosas. Una parte de las partículas sólidas queda retenida en ellas; el gas continúa hacia la salida. Se suele hablar de <strong>DPF</strong> por sus siglas inglesas o de <strong>FAP</strong> en español. Son nombres útiles para orientarse, aunque no describen por sí solos la composición, ubicación, aditivos o estrategia de todos los filtros. La <a href={sources.epa}>EPA explica la retención física de partículas</a>. El filtro no elimina por esa acción los óxidos de nitrógeno (NOx) ni el CO₂.</p>
+      <p>Imagina el filtro como varios caminos estrechos cuyas paredes dejan pasar el gas y retienen material. A medida que se acumula hollín, el sistema debe vigilar su carga y mantener una circulación adecuada. Entre las formas de monitorizarla, <a href={sources.boschSensor}>Bosch describe sensores de diferencia de presión</a> que comparan el paso antes y después del filtro. La centralita puede combinar esa información con otros datos del vehículo. No basta mirar un tubo desde fuera para saber cuánto hollín contiene. También existen filtros de partículas en <a href={sources.gpf}>algunos motores de gasolina</a>; aquí nos centramos en el diésel.</p>
+      <figure class="diesel-figure">
+        <img src="/images/guides/diesel-filtro-particulas-flujo.svg" width="960" height="560" alt="Esquema: los gases de escape atraviesan paredes porosas del filtro que retienen hollín; con regeneración adecuada se reduce hollín, mientras parte de la ceniza permanece" loading="lazy" decoding="async" />
+        <figcaption>Ilustración original y cualitativa de Kilómetro Claro. Muestra el paso de gases, la retención de hollín y su reducción durante una regeneración; no dibuja todo el escape ni sugiere que desaparezca toda la ceniza.</figcaption>
+      </figure>
+
+      <h2 id="regeneracion">Qué significa que el filtro se regenere</h2>
+      <p>Regenerar es <strong>reducir el hollín acumulado mediante oxidación</strong> cuando se dan condiciones adecuadas. No es vaciar el filtro como se vacía una bolsa. La <a href={sources.epa}>EPA distingue la regeneración pasiva</a>, que aprovecha las condiciones del escape durante el funcionamiento, y la activa, en la que el sistema aporta o gestiona calor adicional. En esta última, la electrónica puede modificar el funcionamiento del motor y del escape para elevar la temperatura. La estrategia exacta, el momento de inicio y la duración dependen del vehículo. Un procedimiento de regeneración en taller o una función estacionaria prevista por un fabricante es otra cosa: requiere indicaciones concretas y no debe improvisarse en la calle o en el garaje.</p>
+      <p><strong>Hollín y ceniza no son lo mismo.</strong> El primero procede de la combustión y puede oxidarse en las condiciones previstas. La ceniza incluye residuos no combustibles, entre ellos los asociados al lubricante y a determinados aditivos, y puede permanecer en el filtro después de una regeneración normal. La <a href={sources.epa}>EPA advierte de esa acumulación a largo plazo</a>. Por eso una regeneración completada no equivale a un filtro nuevo ni garantiza que una avería o una carga de ceniza se haya resuelto. La revisión, limpieza o sustitución, si llegasen a ser necesarias, dependen del diagnóstico y del sistema concreto.</p>
+      <figure class="diesel-figure diesel-figure--portrait">
+        <img src="/images/guides/diesel-filtro-particulas-hollin-real.jpg" width="2281" height="2551" alt="Interior real de un filtro de partículas desmontado con superficie oscurecida por hollín" loading="lazy" decoding="async" />
+        <figcaption>Filtro de partículas real de metal sinterizado cargado de hollín, fotografiado fuera del coche. El color no permite medir por sí solo su carga ni diagnosticar la causa. Foto: <a href="https://commons.wikimedia.org/wiki/File:DPF_vor_Reinigung.JPG">Michael KR / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</figcaption>
+      </figure>
+
+      <h2 id="trayectos">Por qué la temperatura y los trayectos cortos importan</h2>
+      <p>Al iniciar un viaje con el coche frío, motor y escape todavía están calentándose. Si el desplazamiento termina pronto, puede faltar tiempo para alcanzar o sostener algunas condiciones que favorecen la oxidación del hollín. La conducción con paradas frecuentes también cambia la carga y la temperatura del escape. El manual del <a href={sources.ford}>Ford Kuga diésel documentado, edición británica de 2022</a>, menciona expresamente los recorridos cortos y los arranques y paradas frecuentes entre los usos que pueden requerir trayectos ocasionales más favorables para la regeneración. <a href={sources.vwAdvice}>Volkswagen UK plantea un criterio parecido</a> para quienes hacen muchos viajes breves con tráfico denso.</p>
+      <p>La situación no depende solo del reloj o del contador de kilómetros. Influyen la temperatura exterior, el tiempo desde el último arranque, el perfil de carga, la pendiente, el estado del motor y del escape, y la estrategia de control. Un recorrido urbano puede permitir una regeneración en unas condiciones y no en otras; un viaje largo tampoco garantiza resolver un filtro saturado o un fallo de sensores. La <a href="/guias/por-que-motor-consume-mas-en-frio/">guía sobre consumo del motor en frío</a> explica otra consecuencia de repetir arranques: recorrer una gran parte de cada viaje en fase de calentamiento. Consumo en frío y regeneración del filtro están relacionados con la temperatura, pero son procesos distintos.</p>
+
+      <h2 id="interrumpir">¿Qué pasa si apagas el coche durante una regeneración?</h2>
+      <p>Una parada ocasional durante una limpieza no permite concluir que el filtro se haya averiado. La gestión puede volver a intentar la regeneración cuando se cumplan sus condiciones. El problema potencial es un <strong>patrón repetido</strong>: si se acumula hollín entre intentos y estos no alcanzan su objetivo, la carga puede aumentar hasta que el coche pida una acción o una revisión. El manual de Ford Kuga citado advierte que ignorar la necesidad de regeneración cuando el sistema la indica puede llegar a impedir las regeneraciones normales y requerir servicio. Esa descripción corresponde al vehículo y documento consultados, no a una secuencia idéntica en cada diésel.</p>
+      <p>No uses esta explicación para dejar el coche al ralentí tras cada recado ni para alargar cualquier viaje sin motivo. Algunos procedimientos estacionarios existen, pero están previstos para vehículos y condiciones concretas. También pueden generar un escape muy caliente; el <a href={sources.ford}>manual de Ford</a> incluye precauciones específicas. Una conducción normal y el seguimiento de avisos son una base más fiable que intentar reconocer y «forzar» una regeneración por intuición.</p>
+
+      <h2 id="senales">Cómo saber si el coche está regenerando o muestra un aviso</h2>
+      <p>En ciertos modelos puede cambiar el sonido del motor, subir el ralentí, funcionar un ventilador tras apagarlo o variar el consumo instantáneo. Son <strong>pistas posibles, no una prueba</strong>: el ventilador también puede activarse por temperatura del motor o climatización, y un consumo distinto admite muchas causas. Algunas pantallas muestran expresamente «limpieza del filtro»; otras no indican nada durante una regeneración normal. El <a href={sources.ford}>Ford Kuga descrito</a> contempla un mensaje de limpieza normal y otros mensajes distintos de filtro sobrecargado. Antes de actuar, lee el texto y los testigos concretos, no solo una sensación.</p>
+      <p>Un testigo de filtro, uno de motor y varios avisos simultáneos pueden requerir respuestas diferentes. <a href={sources.vwWarning}>Volkswagen UK distingue</a> entre un aviso ámbar aislado de filtro de partículas y situaciones con más de un testigo, para las que indica pedir asistencia. Esa página explica un procedimiento de conducción para sus vehículos, pero ni su velocidad ni su tiempo son una receta para cualquier marca. Busca la sección correspondiente del manual de tu coche, identifica qué aviso aparece y comprueba si pide conducir en condiciones determinadas, acudir al taller o detenerse con seguridad.</p>
+
+      <h2 id="testigo">Qué hacer si se enciende el testigo del filtro</h2>
+      <p><strong>Primero, lee el mensaje completo y el manual del modelo y año.</strong> Si el fabricante pide un trayecto para favorecer la limpieza y el coche funciona normalmente, sigue sus condiciones solo cuando sea seguro y legal circular así. No superes límites de velocidad ni fuerces revoluciones para cumplir una recomendación de otro vehículo. En el ejemplo del Ford Kuga de 2022, el manual asocia determinados mensajes de sobrecarga con una conducción más favorable para la limpieza y reserva otros avisos para revisión. Esos pasos no se trasladan automáticamente a un diésel distinto.</p>
+      <p>Si el aviso persiste, se suman testigos de avería, el coche pierde respuesta o el manual pide asistencia, consulta un taller cualificado sin demorar la acción indicada. Una lectura de averías y la comprobación del sistema son necesarias para saber si el problema es carga de hollín, ceniza, un sensor, la gestión del motor u otra causa. No desconectes ni retires los sistemas de emisiones. Tampoco des por resuelto un aviso porque hayas hecho kilómetros: la confirmación debe venir del propio vehículo o de una revisión.</p>
+
+      <h2 id="sistemas">EGR, filtro de partículas y AdBlue: tres tareas distintas</h2>
+      <div class="table-scroll" role="region" aria-label="Función de EGR, filtro de partículas y SCR" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Sistema</th><th scope="col">Qué hace principalmente</th><th scope="col">Qué no significa</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">EGR</th><td>Devuelve una parte de los gases a la admisión en condiciones determinadas para reducir la formación de NOx durante la combustión.</td><td>No es el filtro de hollín.</td></tr>
+            <tr><th scope="row">DPF o FAP</th><td>Retiene partículas del escape y gestiona la reducción del hollín acumulado.</td><td>No elimina por filtración todo el CO₂ ni sustituye al tratamiento de NOx.</td></tr>
+            <tr><th scope="row">SCR con AdBlue</th><td>Dosifica una disolución de urea en el escape para ayudar al catalizador a reducir NOx.</td><td>Reponer AdBlue no regenera por sí mismo el DPF.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><a href={sources.egr}>Motorservice explica la EGR</a>; <a href={sources.scr}>Bosch describe la dosificación de AdBlue en un SCR</a>; y el <a href={sources.afdc}>Departamento de Energía de EE. UU. representa estos componentes en un diésel equipado con ellos</a>. Su disposición y presencia cambian entre vehículos. Nuestra <a href="/guias/motor-gasolina-diesel-acelerador/">guía sobre las diferencias entre gasolina y diésel</a> amplía cómo se genera el empuje y por qué las emisiones no se resumen en el consumo de combustible.</p>
+
+      <h2 id="mantenimiento">El recorrido no es el único factor: aceite y estado del coche</h2>
+      <p>El filtro trabaja junto al motor, sus sensores y el resto del escape. Un mantenimiento fuera de especificación o un fallo que altere la combustión y las señales de control también puede cambiar la cantidad de partículas o la capacidad de regenerar. Utiliza el <strong>aceite aprobado y los intervalos de revisión</strong> que indique el fabricante para tu motor: la ceniza no se quema como el hollín. La <a href={sources.epa}>EPA relaciona parte de la ceniza con materiales no combustibles procedentes del aceite y de aditivos</a>, pero su boletín trata principalmente filtros instalados o mantenidos en el contexto estadounidense; no fija un plazo de limpieza para tu turismo.</p>
+      <p>Si un taller propone limpiar o sustituir el filtro, pide que explique qué ha medido, qué avisos registra el coche y si hay una causa anterior que siga presente. Una regeneración forzada, una limpieza fuera del vehículo y una sustitución son procedimientos diferentes. Ninguno se deduce solo de hacer recorridos cortos o de ver el filtro oscuro. Deben decidirse según el diagnóstico y la documentación técnica de ese motor y sistema de escape.</p>
+
+      <h2 id="eleccion">¿Conviene un diésel si solo haces recorridos cortos?</h2>
+      <p>Si además te preocupa cuánto tiempo podrás utilizarlo, separa la mecánica de las normas de circulación: la guía <a href="/guias/diesel-circular-despues-2035/">¿podré seguir circulando con mi diésel después de 2035?</a> explica qué regula la UE y cómo revisar las ZBE de tu ruta.</p>
+      <p>Si tu uso habitual es aparcar antes de que el coche se caliente y rara vez haces otros trayectos, conviene revisar si la transmisión y el sistema de emisiones del modelo que valoras encajan con esa rutina. <a href={sources.vwAdvice}>Volkswagen UK llega a sugerir considerar gasolina, híbrido o eléctrico</a> para quien solo hace viajes breves en tráfico denso. Es un consejo del fabricante para ese patrón de uso, no una orden de cambiar de coche ni una garantía de que las alternativas sean mejores en todos los aspectos. El estado de un usado, sus revisiones, el acceso a recarga y las restricciones locales también importan.</p>
+      <p>La decisión económica necesita comparar precio de compra, combustible, seguro, impuestos, mantenimiento y valor del vehículo. No existe un kilometraje anual universal a partir del cual el diésel compense. Para ordenar tus propios datos, utiliza el <a href="/calculadoras/comparador-gasolina-diesel-electrico/">comparador de gasolina, diésel y eléctrico</a> y el <a href="/guias/como-calcular-consumo-real-coche/">método para medir tu consumo real</a>. Esas cuentas no diagnostican el filtro ni sustituyen la revisión de un coche concreto.</p>
+
+      <h2 id="conclusion">Qué recordar antes de apagar el motor</h2>
+      <p>El filtro retiene partículas mientras circulas y necesita gestionar el hollín acumulado. Un viaje corto aislado no equivale a una avería; repetir viajes breves y fríos puede dificultar las condiciones de regeneración en algunos diésel. La respuesta útil no es buscar una cifra mágica de velocidad, minutos o kilómetros: conoce el manual de tu vehículo, atiende sus avisos y mantén motor y escape conforme al plan de mantenimiento. Si el aviso persiste o pide servicio, solicita una revisión.</p>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Consulta del <strong>11 de noviembre de 2026</strong>. Abrimos el <a href={sources.epa}>boletín técnico de la EPA sobre operación y mantenimiento del DPF</a>, que describe filtración, regeneración y ceniza (su contexto principal son filtros y mantenimiento en EE. UU.); el <a href={sources.ford}>manual británico del Ford Kuga diésel, edición de 2022</a>, para el ejemplo de trayectos y mensajes; las páginas de <a href={sources.vwAdvice}>Volkswagen UK sobre trayectos breves</a> y <a href={sources.vwWarning}>su testigo DPF</a>; y documentación de <a href={sources.boschSensor}>Bosch sobre presión diferencial</a>, <a href={sources.egr}>Motorservice sobre EGR</a>, <a href={sources.scr}>Bosch sobre SCR/AdBlue</a>, <a href={sources.afdc}>AFDC sobre el escape diésel</a> y <a href={sources.gpf}>EPA sobre filtros de gasolina</a>. Contrastamos principios generales con instrucciones de modelos concretos. No hicimos pruebas propias ni inferimos intervalos, temperaturas, costes o umbrales universales. La portada y la foto del filtro cargado son fotografías reales con procedencia y derechos en sus pies; el diagrama es original y no representa todos los diseños.</p>
+      </aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .diesel-figure { margin: 25px 0; }
+  .diesel-figure img { display: block; max-width: 100%; width: 100%; height: auto; border-radius: 9px; }
+  .diesel-figure--portrait img { max-width: 680px; margin: auto; }
+  .diesel-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.55; }
+</style>

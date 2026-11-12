@@ -14,6 +14,24 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'diesel-circular-despues-2035': {
+    src: '/images/guides/diesel-2035-trafico-madrid-real.jpg',
+    alt: 'Tráfico real circulando por la glorieta de Cuatro Caminos en Madrid',
+    caption: 'Tráfico en Cuatro Caminos, Madrid, en 2021. Una fotografía de circulación no permite conocer la etiqueta ni las condiciones de acceso de cada coche.',
+    author: 'Nicolas Vigier', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Glorieta_de_Cuatro_Caminos,_Madrid_2021-01-15_-_51026782961.jpg',
+    license: 'https://creativecommons.org/publicdomain/zero/1.0/', licenseName: 'CC0 1.0',
+    width: 960, height: 641,
+  },
+  'diesel-trayectos-cortos-filtro-particulas': {
+    src: '/images/guides/diesel-filtro-particulas-portada-real.jpg',
+    alt: 'Motor diésel Nissan M9R abierto en sección junto a un filtro de partículas también seccionado, expuestos en una galería',
+    caption: 'Motor diésel Nissan M9R y filtro de partículas reales en una exposición. La foto muestra las piezas, no una regeneración en marcha.',
+    author: 'Hatsukari715', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Nissan_M9R_Engine_01.JPG',
+    license: 'https://commons.wikimedia.org/wiki/File:Nissan_M9R_Engine_01.JPG#Licensing', licenseName: 'Dominio público declarado por su autor',
+    width: 2624, height: 2383,
+  },
   'que-ocurre-dentro-cambio-automatico': {
     src: '/images/guides/cambio-automatico-dsg-real.jpg',
     alt: 'Fotografía de una transmisión DSG de doble embrague abierta en sección, con el conjunto central y la carcasa a la vista',

@@ -1,5 +1,19 @@
 export const guides = [
   {
+    slug: 'diesel-circular-despues-2035',
+    title: 'Tengo un diésel: ¿podré seguir circulando después de 2035?',
+    category: 'Movilidad y normativa', categorySlug: 'movilidad-normativa',
+    description: 'Qué dice realmente la norma europea de 2035, cómo afectan las ZBE a un diésel ya matriculado y qué comprobar antes de circular o comprar uno usado.',
+    published: true,
+  },
+  {
+    slug: 'diesel-trayectos-cortos-filtro-particulas',
+    title: '¿Por qué un diésel puede dar problemas con trayectos cortos? Filtro de partículas y regeneración',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Qué ocurre en el filtro de partículas al repetir recorridos breves, cómo se regenera y qué hacer si aparece un aviso según el manual de tu coche.',
+    published: true,
+  },
+  {
     slug: 'que-ocurre-dentro-cambio-automatico',
     title: '¿Qué ocurre dentro de un cambio automático? Convertidor, doble embrague y CVT',
     category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',

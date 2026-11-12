@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Cómo retiene hollín un filtro de partículas y qué cambia al regenerar</title>
+  <desc id="desc">Dos escenas esquemáticas muestran el gas que sale del motor, atraviesa paredes porosas del filtro y deja hollín; durante la regeneración parte del hollín se oxida, pero la ceniza permanece.</desc>
+  <rect width="960" height="560" rx="20" fill="#163f34"/>
+  <text x="38" y="46" fill="#f7f9f3" font-family="Arial,sans-serif" font-size="27" font-weight="700">Dentro del filtro: hollín y regeneración</text>
+  <text x="38" y="75" fill="#cce0d2" font-family="Arial,sans-serif" font-size="16">Recorrido simplificado de los gases de un diésel con DPF</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="30" y="99" width="900" height="192" rx="16" fill="#edf3eb"/>
+    <text x="52" y="133" fill="#173f33" font-size="21" font-weight="700">1 · Al circular, las partículas quedan retenidas</text>
+    <rect x="55" y="170" width="140" height="67" rx="10" fill="#d7f36a"/>
+    <text x="125" y="211" fill="#173f33" font-size="20" text-anchor="middle">Motor</text>
+    <path d="M204 203h81m0 0-15-11m15 11-15 11" fill="none" stroke="#2c6554" stroke-width="5"/>
+    <text x="247" y="186" fill="#38594c" font-size="15" text-anchor="middle">Escape</text>
+    <rect x="296" y="160" width="390" height="89" rx="12" fill="#d9e8df" stroke="#2c6554" stroke-width="3"/>
+    <path d="M365 172v65m80-65v65m80-65v65m80-65v65" stroke="#547a68" stroke-width="9" stroke-linecap="round"/>
+    <g fill="#38463e"><circle cx="341" cy="190" r="6"/><circle cx="393" cy="219" r="6"/><circle cx="419" cy="185" r="5"/><circle cx="500" cy="210" r="6"/><circle cx="579" cy="187" r="5"/></g>
+    <text x="491" y="274" fill="#38594c" font-size="15" text-anchor="middle">Paredes porosas · hollín retenido</text>
+    <path d="M696 203h73m0 0-15-11m15 11-15 11" fill="none" stroke="#2c6554" stroke-width="5"/>
+    <rect x="782" y="170" width="123" height="67" rx="10" fill="#d7f36a"/>
+    <text x="843" y="198" fill="#173f33" font-size="17" text-anchor="middle">Salida de</text>
+    <text x="843" y="218" fill="#173f33" font-size="17" text-anchor="middle">gases</text>
+    <rect x="30" y="307" width="900" height="189" rx="16" fill="#edf3eb"/>
+    <text x="52" y="340" fill="#173f33" font-size="21" font-weight="700">2 · Al regenerar, se reduce el hollín acumulado</text>
+    <rect x="55" y="377" width="220" height="67" rx="10" fill="#d7f36a"/>
+    <text x="165" y="405" fill="#173f33" font-size="17" text-anchor="middle">Condiciones térmicas</text>
+    <text x="165" y="426" fill="#173f33" font-size="17" text-anchor="middle">adecuadas</text>
+    <path d="M286 409h84m0 0-15-11m15 11-15 11" fill="none" stroke="#2c6554" stroke-width="5"/>
+    <rect x="382" y="367" width="312" height="88" rx="12" fill="#d9e8df" stroke="#2c6554" stroke-width="3"/>
+    <path d="M445 379v63m71-63v63m71-63v63m57-63v63" stroke="#547a68" stroke-width="9" stroke-linecap="round"/>
+    <g fill="#866b49"><circle cx="472" cy="425" r="4"/><circle cx="552" cy="394" r="4"/><circle cx="619" cy="425" r="4"/></g>
+    <text x="538" y="479" fill="#38594c" font-size="15" text-anchor="middle">Menos hollín · parte de la ceniza permanece</text>
+    <path d="M704 409h63m0 0-15-11m15 11-15 11" fill="none" stroke="#2c6554" stroke-width="5"/>
+    <rect x="779" y="377" width="126" height="67" rx="10" fill="#d7f36a"/>
+    <text x="842" y="405" fill="#173f33" font-size="16" text-anchor="middle">Gases de</text>
+    <text x="842" y="426" fill="#173f33" font-size="16" text-anchor="middle">oxidación</text>
+    <text x="38" y="530" fill="#d6e9dc" font-size="14">Esquema cualitativo de Kilómetro Claro. No representa el escape completo ni elimina todos los contaminantes.</text>
+  </g>
+</svg>
