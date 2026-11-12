@@ -59,6 +59,21 @@ Polestar: Polestar Logo.svg, Wikimedia Commons, palabra-marca vectorial. Fuente:
 smart: logo.svg, recurso actual del sitio oficial global de smart. Fuente: https://global.smart.com/images/logo.svg. El logotipo y la marca pertenecen a smart Automobile Co., Ltd.; se muestran únicamente para identificar al fabricante.
 Subaru: logotipo-subaru.webp, recurso del sitio oficial de Subaru España. Fuente: https://www.subaru.es/images/logotipo-subaru.webp. El logotipo y la marca pertenecen a Subaru Corporation; se muestran únicamente para identificar al fabricante.
 SWM: SWM_red_RGB.png, recurso oficial del área de prensa de SWM Motors Italia. Fuente: https://swm-motors.it/wp-content/uploads/2024/08/SWM_red_RGB.png. SWM y su logotipo son marcas registradas; se muestran únicamente para identificar al fabricante.
+Fotografías de modelos BYD (licencias indicadas en cada ficha; imágenes redimensionadas para web):
+- BYD Atto 2 MYLE Festival 2025 DSC 9561.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:BYD_Atto_2_MYLE_Festival_2025_DSC_9561.jpg
+- BYD Atto 2 DM-i IMG 6075.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:BYD_Atto_2_DM-i_IMG_6075.jpg
+- BYD Atto 3 Evo IMG 7846.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:BYD_Atto_3_Evo_IMG_7846.jpg
+- BYD Dolphin (Global version) IMG 9507.jpg — autor Alexander-93 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:BYD_Dolphin_(Global_version)_IMG_9507.jpg
+- 2026 BYD Dolphin G DM-i Comfort front view 01.png — autor AutoMotoVlog — CC BY 3.0 — https://commons.wikimedia.org/wiki/File:2026_BYD_Dolphin_G_DM-i_Comfort_front_view_01.png
+- BYD Dolphin Surf IAA 2025 DSC 2031.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:BYD_Dolphin_Surf_IAA_2025_DSC_2031.jpg
+- BYD Seal, IAA Open Space 2023, Munich (P1120203).jpg — autor Matti Blume — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:BYD_Seal,_IAA_Open_Space_2023,_Munich_(P1120203).jpg
+- BYD Seal DM-i 012.jpg — autor JustAnotherCarDesigner — CC0 — https://commons.wikimedia.org/wiki/File:BYD_Seal_DM-i_012.jpg (imagen de la familia Seal DM-i comercializada en China)
+- BYD Seal 6 DM-i Touring IAA 2025 DSC 1926.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:BYD_Seal_6_DM-i_Touring_IAA_2025_DSC_1926.jpg
+- BYD Seal U EV DSC 8762.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:BYD_Seal_U_EV_DSC_8762.jpg
+- BYD Seal U DM-i DSC 9308.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:BYD_Seal_U_DM-i_DSC_9308.jpg
+- 2024 BYD Sealion 7 Performance AWD (Thailand) rear view.png — autor iMoD Official — CC BY 3.0 — https://commons.wikimedia.org/wiki/File:2024_BYD_Sealion_7_Performance_AWD_(Thailand)_rear_view.png
+- 2024 BYD Tang GIMS 2024 1X7A2258.jpg — autor Alexander-93 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:2024_BYD_Tang_GIMS_2024_1X7A2258.jpg
+
 Fotografías de modelos EVO (licencias CC BY 4.0 o CC BY-SA 4.0, indicadas también en las fichas):
 - EVO 3.jpg — autor LFlycan — https://commons.wikimedia.org/wiki/File:EVO_3.jpg
 - EVO 4 2024.jpg — autor Corvettec6r — https://commons.wikimedia.org/wiki/File:EVO_4_2024.jpg
@@ -79,6 +94,7 @@ Fotografías de modelos smart (licencia CC BY-SA 4.0; redimensionadas para web y
 - Smart Hashtag 1 IMG 7326.jpg — autor Alexander-93 — https://commons.wikimedia.org/wiki/File:Smart_Hashtag_1_IMG_7326.jpg
 - 2024 Smart hashtag3 front.jpg — autor LuvsMG481 — https://commons.wikimedia.org/wiki/File:2024_Smart_hashtag3_front.jpg (fotografía tomada en Bondi, Australia; acabado y especificación pueden diferir de la oferta española)
 - Smart Hashtag 5 Premium autoMOBIL Tübingen 2025 DSC 2755.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Smart_Hashtag_5_Premium_autoMOBIL_T%C3%BCbingen_2025_DSC_2755.jpg
+- Smart 2 - 02.jpg — autor Y. Leclercq — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Smart_2_-_02.jpg (fotografía de presentación en el Salón del Automóvil de París 2026; redimensionada a 1280 × 853 px)
 
 Fotografías de modelos Lancia (licencia CC BY-SA 4.0; redimensionadas para web y acreditadas también en cada ficha):
 - Lancia Gamma 2026 HF.jpg — autor GammaSUV — https://commons.wikimedia.org/wiki/File:Lancia_Gamma_2026_HF.jpg (imagen de Gamma HF eléctrico)
@@ -100,3 +116,52 @@ Fotografías de modelos Maserati:
 - Maserati MCPura.jpg — autora Belliniska — CC0 — https://commons.wikimedia.org/wiki/File:Maserati_MCPura.jpg
 - Maserati MCPURA Cielo.jpg — autor Alexandre Prevot — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Maserati_MCPURA_Cielo.jpg
 - Maserati GT2 Stradale.jpg — autor Alexandre Prevot — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Maserati_GT2_Stradale.jpg
+
+Fotografías de modelos Volkswagen (licencia CC BY-SA 4.0; redimensionadas para web y acreditadas también en cada ficha):
+- Volkswagen Polo VI (2021) IMG 5322.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Volkswagen_Polo_VI_(2021)_IMG_5322.jpg
+- Volkswagen ID.Polo IMG 8260.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Volkswagen_ID.Polo_IMG_8260.jpg
+- Volkswagen Taigo 1X7A0246.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Volkswagen_Taigo_1X7A0246.jpg
+- Volkswagen T-Cross (2023) 1X7A1967.jpg — autor Alexander-93 — https://commons.wikimedia.org/wiki/File:Volkswagen_T-Cross_(2023)_1X7A1967.jpg
+- VW ID. Cross, IAA Summit 2025, Munich (20250908-P1050119).jpg — autor Matti Blume — https://commons.wikimedia.org/wiki/File:VW_ID._Cross,_IAA_Summit_2025,_Munich_(20250908-P1050119).jpg (fotografía de un prototipo)
+- Volkswagen Golf VIII 1X7A0353.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Volkswagen_Golf_VIII_1X7A0353.jpg
+- Volkswagen ID.3 Neo IMG 7255.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Volkswagen_ID.3_Neo_IMG_7255.jpg
+- VW T-Roc R-Line, Media Stage, Auto 2025, Zurich (20251029-P1074182).jpg — autor Matti Blume — https://commons.wikimedia.org/wiki/File:VW_T-Roc_R-Line,_Media_Stage,_Auto_2025,_Zurich_(20251029-P1074182).jpg
+- Volkswagen T-Roc Cabriolet (2021) 1X7A0319.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Volkswagen_T-Roc_Cabriolet_(2021)_1X7A0319.jpg
+- Volkswagen Golf VIII Variant 1X7A0352.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Volkswagen_Golf_VIII_Variant_1X7A0352.jpg
+- Volkswagen Tiguan III 1X7A2497.jpg — autor Alexander-93 — https://commons.wikimedia.org/wiki/File:Volkswagen_Tiguan_III_1X7A2497.jpg
+- Volkswagen ID.4 1X7A0360.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Volkswagen_ID.4_1X7A0360.jpg
+- Volkswagen Tayron (Europe) DSC 9343.jpg — autor Alexander Migl — https://commons.wikimedia.org/wiki/File:Volkswagen_Tayron_(Europe)_DSC_9343.jpg
+- Volkswagen ID.7 1X7A1756.jpg — autor Alexander-93 — https://commons.wikimedia.org/wiki/File:Volkswagen_ID.7_1X7A1756.jpg
+- Volkswagen Passat Variant B9 1X7A1960.jpg — autor Alexander-93 — https://commons.wikimedia.org/wiki/File:Volkswagen_Passat_Variant_B9_1X7A1960.jpg
+- Volkswagen ID.7 Tourer Automesse Ludwigsburg 2024 IMG 1464.jpg — autor Alexander-93 — https://commons.wikimedia.org/wiki/File:Volkswagen_ID.7_Tourer_Automesse_Ludwigsburg_2024_IMG_1464.jpg
+- Hyundai Ioniq 3 N Line - Avant.jpg — autor Y.Leclercq — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_3_N_Line_-_Avant.jpg — imagen redimensionada a 1280 × 853 px.
+- Volkswagen ID. Tiguan 04.jpg — autor Y.Leclercq — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Volkswagen_ID._Tiguan_04.jpg — imagen redimensionada a 1280 × 853 px.
+
+Fotografías de modelos Changan (imágenes con licencias Creative Commons, redimensionadas para web y atribuidas también en cada ficha):
+- Changan Deepal S05, IAA Summit 2025, Munich (20250908-P1049890).jpg — autor Matti Blume — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Changan_Deepal_S05,_IAA_Summit_2025,_Munich_(20250908-P1049890).jpg
+- Changan Deepal S07 at GJAW 2025 in Indonesia.jpg — autor Sulthan Naufal — CC BY 4.0 — https://commons.wikimedia.org/wiki/File:Changan_Deepal_S07_at_GJAW_2025_in_Indonesia.jpg
+
+Fotografías de modelos Jeep (imágenes con licencias Creative Commons, redimensionadas para web y atribuidas también en cada ficha):
+- 2023 Jeep Avenger front view.png — autor Autosdeprimera — CC BY 3.0 — https://commons.wikimedia.org/wiki/File:2023_Jeep_Avenger_front_view.png
+- Jeep Compass e (J4U) Auto Zuerich 2025 DSC 3001.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Jeep_Compass_e_(J4U)_Auto_Zuerich_2025_DSC_3001.jpg
+
+Fotografías de modelos KGM (imágenes con licencias Creative Commons, redimensionadas para web y atribuidas también en cada ficha):
+- KGM Tivoli DSC 2941.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:KGM_Tivoli_DSC_2941.jpg
+- SsangYong Korando (C300; 2019).jpg — autor Jakub CA — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:SsangYong_Korando_(C300%3B_2019).jpg
+- KGM Torres Hybrid Automesse Ludwigsburg 2025 DSC 2567.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:KGM_Torres_Hybrid_Automesse_Ludwigsburg_2025_DSC_2567.jpg
+- KGM Actyon J120 Royal Copper (12).jpg — autor Damian B Oh — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:KGM_Actyon_J120_Royal_Copper_(12).jpg
+- KGM Torres EVX Auto Zuerich 2025 DSC 3332.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:KGM_Torres_EVX_Auto_Zuerich_2025_DSC_3332.jpg
+- 2024 Ssangyong Rexton Auto.jpg — autor Calreyn88 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:2024_Ssangyong_Rexton_Auto.jpg
+- SsangYong Musso Grand Q200 2.2L 4WD Indian Red 01.jpg — autor Ethan Llamas — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:SsangYong_Musso_Grand_Q200_2.2L_4WD_Indian_Red_01.jpg
+- KGM Musso EV Auto Zuerich 2025 DSC 2971.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:KGM_Musso_EV_Auto_Zuerich_2025_DSC_2971.jpg
+
+Fotografías de modelos MG (imágenes redimensionadas para web; atribución y licencia indicadas también en cada ficha):
+- MG Cyberster, BAS 24, Brussels (P1170240).jpg — autor Matti Blume — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:MG_Cyberster,_BAS_24,_Brussels_(P1170240).jpg
+- 2024 MG HS.jpg — autor Calreyn88 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:2024_MG_HS.jpg
+- MG ZS China.jpg — autor Dinkun Chen — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:MG_ZS_China.jpg
+- 2024 MG 3 Trophy Hybrid.jpg — autor Calreyn88 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:2024_MG_3_Trophy_Hybrid.jpg
+- MG4 EV, Worms (P1180575).jpg — autor Matti Blume — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:MG4_EV,_Worms_(P1180575).jpg
+- MGS5 EV Automesse Ludwigsburg 2025 DSC 2557.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:MGS5_EV_Automesse_Ludwigsburg_2025_DSC_2557.jpg
+- (SGP-Singapore) Showcar MGS6 EV No-plate 2026-01-09.jpg — autor S5A-0043 — CC BY 4.0 — https://commons.wikimedia.org/wiki/File:(SGP-Singapore)_Showcar_MGS6_EV_No-plate_2026-01-09.jpg
+- MG S9 PHEV IMG 6929.jpg — autor Alexander Migl — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:MG_S9_PHEV_IMG_6929.jpg
+- MG4 EV Urban — imagen facilitada por el usuario; el usuario confirmó permiso de uso en Kilómetro Claro.
