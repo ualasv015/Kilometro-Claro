@@ -9,6 +9,17 @@
     ad_personalization: 'denied',
     analytics_storage: 'denied',
   });
+
+  // Si el visitante ya aceptó la publicidad personalizada, la concedemos antes de cargar AdSense.
+  try {
+    if (localStorage.getItem('kilometro-claro-ads-consent') === 'accept') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+      });
+    }
+  } catch { /* Sin almacenamiento local, la publicidad sigue no personalizada. */ }
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-305E92YSX2" is:inline></script>
 <script is:inline>

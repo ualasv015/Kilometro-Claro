@@ -2,24 +2,27 @@
   <div class="consent-panel__inner">
     <div class="consent-panel__copy">
       <h2 id="consent-title">Elige cómo usamos tus datos</h2>
-      <p>La web funciona sin aceptar la analítica. Si das tu permiso, usamos Google Analytics para medir visitas e interacciones generales. Puedes cambiar tu elección más adelante desde el pie de página. <a href="/politica-de-cookies/">Más información</a>.</p>
+      <p>La web funciona aunque lo rechaces todo. La analítica nos ayuda a medir visitas generales. Si aceptas la publicidad personalizada, Google AdSense puede mostrar anuncios según tu navegación; si no, verás anuncios no personalizados. Puedes cambiar tu elección desde el pie de página. <a href="/politica-de-cookies/">Más información</a>.</p>
     </div>
-    <div class="consent-panel__choices" role="group" aria-label="Finalidad opcional">
+    <div class="consent-panel__choices" role="group" aria-label="Finalidades opcionales">
       <label><input type="checkbox" data-consent-analytics /> Analítica</label>
+      <label><input type="checkbox" data-consent-ads /> Publicidad personalizada</label>
     </div>
     <div class="consent-panel__actions">
-      <button type="button" data-consent-action="reject">Rechazar analítica</button>
+      <button type="button" data-consent-action="reject">Rechazar todo</button>
       <button type="button" data-consent-action="save">Guardar elección</button>
-      <button type="button" data-consent-action="accept">Aceptar analítica</button>
+      <button type="button" data-consent-action="accept">Aceptar todo</button>
     </div>
   </div>
 </section>
 
 <script>
   const analyticsKey = 'kilometro-claro-analytics-consent';
+  const adsKey = 'kilometro-claro-ads-consent';
   const panel = document.querySelector<HTMLElement>('#consent-panel');
   const preferencesButton = document.querySelector<HTMLButtonElement>('[data-consent-preferences]');
   const analyticsCheckbox = panel?.querySelector<HTMLInputElement>('[data-consent-analytics]');
+  const adsCheckbox = panel?.querySelector<HTMLInputElement>('[data-consent-ads]');
   const analytics = (window as Window & {
     kilometroClaroAnalytics?: { accept: () => void; reject: () => void };
   }).kilometroClaroAnalytics;
@@ -28,24 +31,45 @@
     try { return localStorage.getItem(key); } catch { return null; }
   }
 
+  function storeChoice(key: string, value: string) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // Si se bloquea el almacenamiento, la elección afecta solo a esta página.
+    }
+  }
+
   let analyticsChoice = readChoice(analyticsKey);
+  let adsChoice = readChoice(adsKey);
 
   function syncCheckboxes() {
     if (analyticsCheckbox) analyticsCheckbox.checked = analyticsChoice === 'accept';
+    if (adsCheckbox) adsCheckbox.checked = adsChoice === 'accept';
   }
 
-  function clearAnalyticsCookies() {
+  function clearCookies(pattern: RegExp) {
     for (const entry of document.cookie.split(';')) {
       const name = entry.trim().split('=')[0];
-      if (!/^_ga(?:_|$)/.test(name)) continue;
+      if (!pattern.test(name)) continue;
       document.cookie = `${name}=; Max-Age=0; path=/`;
       document.cookie = `${name}=; Max-Age=0; path=/; domain=${location.hostname}`;
       document.cookie = `${name}=; Max-Age=0; path=/; domain=.${location.hostname}`;
     }
   }
 
+  function setAdConsent(granted: boolean) {
+    // gtag está definido en AnalyticsHead.astro, antes de cargar la etiqueta.
+    const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+    const value = granted ? 'granted' : 'denied';
+    gtag?.('consent', 'update', {
+      ad_storage: value,
+      ad_user_data: value,
+      ad_personalization: value,
+    });
+  }
+
   syncCheckboxes();
-  if (analyticsChoice !== 'accept' && analyticsChoice !== 'reject') {
+  if (!['accept', 'reject'].includes(analyticsChoice ?? '') || !['accept', 'reject'].includes(adsChoice ?? '')) {
     if (panel) panel.hidden = false;
   }
 
@@ -53,19 +77,19 @@
     if (!panel) return;
     syncCheckboxes();
     panel.hidden = false;
-    analyticsCheckbox?.focus();
+    (analyticsCheckbox ?? adsCheckbox)?.focus();
   }
 
   function savePreferences(action: string | undefined) {
     if (action !== 'accept' && action !== 'reject' && action !== 'save') return;
     const nextAnalytics = action === 'accept' || (action === 'save' && !!analyticsCheckbox?.checked) ? 'accept' : 'reject';
-    const reloadForRevocation = analyticsChoice === 'accept' && nextAnalytics === 'reject';
+    const nextAds = action === 'accept' || (action === 'save' && !!adsCheckbox?.checked) ? 'accept' : 'reject';
+    const reloadForRevocation =
+      (analyticsChoice === 'accept' && nextAnalytics === 'reject') ||
+      (adsChoice === 'accept' && nextAds === 'reject');
 
-    try {
-      localStorage.setItem(analyticsKey, nextAnalytics);
-    } catch {
-      // Si se bloquea el almacenamiento, la elección afecta solo a esta página.
-    }
+    storeChoice(analyticsKey, nextAnalytics);
+    storeChoice(adsKey, nextAds);
 
     if (panel) panel.hidden = true;
     preferencesButton?.focus();
@@ -73,9 +97,18 @@
     if (nextAnalytics === 'accept' && analyticsChoice !== 'accept') analytics?.accept();
     if (nextAnalytics === 'reject') {
       analytics?.reject();
-      if (analyticsChoice === 'accept') clearAnalyticsCookies();
+      if (analyticsChoice === 'accept') clearCookies(/^_ga(?:_|$)/);
     }
+
+    if (nextAds === 'accept') {
+      setAdConsent(true);
+    } else {
+      setAdConsent(false);
+      if (adsChoice === 'accept') clearCookies(/^(?:__gads|__gpi|__gpi_optout|__gsas)$/);
+    }
+
     analyticsChoice = nextAnalytics;
+    adsChoice = nextAds;
     if (reloadForRevocation) location.reload();
   }
 
