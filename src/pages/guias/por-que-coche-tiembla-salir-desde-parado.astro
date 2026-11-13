@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'por-que-coche-tiembla-salir-desde-parado';
+const title = '¿Por qué el coche tiembla al salir desde parado? Causas y qué observar';
+const seoTitle = `${title} | Kilómetro Claro`;
+const description = 'Por qué puede vibrar el coche al iniciar la marcha: acoplamiento del embrague, soportes, motor y transmisión. Qué observar antes de acudir al taller.';
+const canonical = new URL(`/guias/${slug}/`, 'https://kilometroclaro.com');
+const publishedDate = '2026-11-12';
+const sources = {
+  ap: 'https://apracing.com/performance-upgrades/special-tuning-clutches/high-performance-cover-assemblies/principle-of-operation',
+  valeo: 'https://www.valeoservice.com/en-com/techassist/technical-library/technical-documents/diagnostics-clutch-chattering-and-jerky-functioning?country=AU_Australia',
+  zfSlip: 'https://aftermarket.zf.com/en/aftermarket-portal/knowledge-hub/clutch-slipping/',
+  zfRelease: 'https://aftermarket.zf.com/en/aftermarket-portal/knowledge-hub/clutch-does-not-disengage/',
+  zfMount: 'https://aftermarket.zf.com/en/aftermarket-portal/our-portfolio/passenger-cars/products/driveline-components/',
+  schaeffler: 'https://vehiclelifetimesolutions.schaeffler.com/medias/BR-0011-en.PDF?context=bWFzdGVyfGRvY3VtZW50c3w0ODIxNzc4fGFwcGxpY2F0aW9uL3BkZnxkb2N1bWVudHMvaDY4L2gxYS85Mzc4NjE0NTc1MTM0LnBkZnw2ZjVlNTdmMWM4MWU2ZTUzOTQxZDI5NGJkMGI3MWZhMGYzYmIyMmQzZjg5Y2ViOGYwNDA4MjA2NzNkMmQ1MzQ4',
+  zfConverter: 'https://www.zf.com/products/en/cars/products_65854.html',
+  vw: 'https://www.volkswagen.co.uk/en/owners-and-services/my-car/warning-light.html',
+};
+const articleSchema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  image: new URL(`/images/og/guia-${slug}.png`, canonical).toString(),
+  datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={publishedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Por qué tiembla al salir' }]} />
+    <article class="guide-article">
+      <header class="guide-header">
+        <span class="eyebrow">Uso y mantenimiento · 12 de noviembre de 2026</span>
+        <h1>{title}</h1>
+        <p class="dek">Seleccionas primera, comienzas a soltar el embrague y, antes de avanzar con suavidad, el coche da pequeños tirones. La sensación tiene varias explicaciones posibles; importa cuándo y cómo se repite.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+      <aside class="quick-answer" aria-label="Respuesta rápida"><strong>Respuesta rápida</strong><p>En un manual, la vibración puede aparecer durante el acoplamiento progresivo del embrague: una salida poco coordinada puede causar un tirón aislado. Si se repite con una maniobra habitual o empeora, también pueden intervenir el embrague, el volante motor, los soportes, el funcionamiento del motor o la transmisión. La sensación por sí sola no identifica la pieza.</p></aside>
+      <GuideImage slug={slug} />
+      <nav class="article-toc" aria-label="Contenido de la guía"><strong>En esta guía</strong><ul>
+        <li><a href="#acoplamiento">Qué ocurre al soltar el embrague</a></li>
+        <li><a href="#maniobra">¿Puede ser la forma de salir?</a></li>
+        <li><a href="#embrague-volante">Embrague y volante motor</a></li>
+        <li><a href="#otras-causas">Soportes, motor y transmisión</a></li>
+        <li><a href="#otras-tecnologias">Automáticos, híbridos y eléctricos</a></li>
+        <li><a href="#taller">Qué observar y cuándo revisarlo</a></li>
+      </ul></nav>
+
+      <h2 id="acoplamiento">Qué ocurre cuando sueltas el embrague</h2>
+      <p>Imagina dos lados que aún no giran a la misma velocidad. El motor mantiene en movimiento el volante motor; las ruedas están paradas y la entrada de la caja, con primera engranada y el pedal pisado, puede estar quieta. En un turismo manual con embrague convencional de fricción, al levantar el pedal el plato empieza a apretar el disco contra el volante. El disco comunica el giro a la caja y, a través de la transmisión, a las ruedas. <a href={sources.ap}>AP Racing explica la secuencia mecánica de ese conjunto</a>.</p>
+      <p>La zona donde notas que el coche comienza a reaccionar se llama <strong>punto de fricción</strong>. No es un interruptor: durante un instante las superficies pueden deslizar una sobre otra mientras se acercan sus velocidades. Ese deslizamiento controlado permite iniciar la marcha gradualmente. Mantener el embrague en esa zona el tiempo necesario para una maniobra normal forma parte de su funcionamiento; prolongar innecesariamente el deslizamiento bajo mucha carga genera más calor. La <a href="/guias/que-ocurre-pisar-embrague/">guía sobre qué ocurre al pisar y soltar el embrague</a> muestra las piezas con más detalle.</p>
+      <figure class="judder-figure"><img src="/images/guides/tiembla-salir-flujo.svg" width="960" height="370" alt="Esquema del flujo de giro desde el motor, por volante y embrague que se acopla progresivamente, hasta caja y ruedas" loading="lazy" decoding="async" /><figcaption>Esquema original de Kilómetro Claro. Representa un manual convencional de forma conceptual: no muestra la geometría real de las piezas ni sus velocidades.</figcaption></figure>
+
+      <h2 id="maniobra">¿Puede deberse a la forma de iniciar la marcha?</h2>
+      <p>Sí. Si el embrague se acopla demasiado deprisa para el par que está entregando el motor, la carga llega de golpe, bajan las revoluciones y pueden aparecer sacudidas o incluso calarse. Una coordinación poco familiar entre pedal de embrague y acelerador puede dar una salida irregular, sobre todo al aprender, al cambiar de coche o en una pendiente. La respuesta también depende de la carga y de cómo entrega par ese motor; el <a href="/guias/par-motor-potencia-diferencias/">par motor</a> ayuda a entender por qué no todos se sienten igual.</p>
+      <p>Un tirón aislado en una maniobra no prueba que haya una avería. Tampoco es razonable atribuir al conductor un temblor que aparece de forma nueva, se repite en circunstancias parecidas o crece con el tiempo. No hace falta repetir salidas a propósito para averiguarlo: basta con recordar lo que ocurre en el uso habitual y comunicar el patrón. Si el coche es reciente para ti, el manual puede explicar sus ayudas de arranque y sus particularidades.</p>
+
+      <h2 id="embrague-volante">¿Puede estar relacionado con el embrague o el volante motor?</h2>
+      <p>El acoplamiento exige que las superficies transmitan fuerza de forma suficientemente regular. Desgaste, contaminación del revestimiento por aceite o determinadas irregularidades del conjunto pueden hacer que el contacto sea desigual y se perciba un traqueteo al iniciar la marcha. <a href={sources.valeo}>Valeo reúne distintas causas de vibración y tirones al acoplar</a> y señala que el origen no siempre está en el propio embrague. La foto siguiente muestra un disco real; su forma concreta no sirve para diagnosticar el disco de otro coche.</p>
+      <figure class="judder-figure"><img src="/images/guides/embrague-disco-real.jpg" width="640" height="480" alt="Fotografía de un disco de embrague real de Mitsubishi 4G63, con centro estriado y superficies de fricción segmentadas" loading="lazy" decoding="async" /><figcaption>Disco para Mitsubishi 4G63. Foto: <a href="https://commons.wikimedia.org/wiki/File:Clutch_disc.JPG">100yen / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Sin modificaciones.</figcaption></figure>
+      <p>El volante motor está entre el cigüeñal y el embrague. Algunos coches equipan <strong>volante bimasa</strong>: dos masas unidas por un mecanismo que ayuda a amortiguar las oscilaciones de giro antes de que lleguen a la caja. <a href={sources.schaeffler}>Schaeffler explica esa función</a>. Hay vehículos con volante de una sola masa y otras configuraciones. Una vibración no demuestra que el bimasa esté dañado; incluso cuando lo lleva, se deben contrastar otras causas antes de sustituir piezas.</p>
+      <p>Conviene separar tres sensaciones. <strong>Vibrar al salir</strong> describe sacudidas durante el acoplamiento. <strong>Patinar el embrague</strong> significa que, ya acoplado o cuando debería estarlo, el motor sube de revoluciones sin el avance proporcional; <a href={sources.zfSlip}>ZF documenta causas posibles de ese patinamiento</a>. <strong>Dificultad para engranar</strong> significa que la marcha entra mal y puede relacionarse con un desembrague incompleto u otros problemas; <a href={sources.zfRelease}>ZF trata ese fallo por separado</a>. Pueden coexistir, pero ninguno es sinónimo de los otros. Tampoco debe confundirse con el <a href="/guias/coche-patina-al-acelerar-control-traccion/">patinamiento de las ruedas sobre el asfalto</a>.</p>
+
+      <h2 id="otras-causas">Soportes, motor y transmisión: ¿qué más puede temblar?</h2>
+      <p>El motor y la caja no flotan libremente: se sujetan a la estructura mediante soportes que limitan sus movimientos y reducen la transmisión de vibración a la carrocería. Al empezar a mover el coche cambia la carga sobre ese conjunto. Un soporte deteriorado puede dejar pasar más sacudidas o contribuir al movimiento que notas. <a href={sources.zfMount}>ZF describe la función de los soportes del motor y la transmisión</a>. Que el coche vibre al ralentí tampoco demuestra por sí solo que uno esté roto.</p>
+      <figure class="judder-figure"><img src="/images/guides/tiembla-salir-soportes.svg" width="960" height="400" alt="Esquema del motor y la transmisión apoyados en dos soportes sobre la carrocería" loading="lazy" decoding="async" /><figcaption>Esquema original de Kilómetro Claro. La posición y el número de soportes son ilustrativos; varían según el vehículo.</figcaption></figure>
+      <p>Un motor que gira de forma irregular puede hacer más difícil una salida suave y transmitir pulsaciones al resto del coche. También hay componentes de la transmisión que, al recibir par, pueden generar ruidos o movimientos anormales. Valeo incluye en su diagnóstico las condiciones del motor y elementos de sujeción además del embrague. El taller tendrá que localizar cuándo aparece la vibración y comprobar el sistema pertinente, sin deducir una pieza a partir de una sola sensación.</p>
+      <p>El momento importa: si vibra con el coche parado y el motor al ralentí, la explicación puede ser distinta a la de un temblor limitado al punto de fricción. Si solo se nota a cierta velocidad, al frenar o al girar, el patrón orienta hacia otros sistemas. Esta comparación sirve para describir el síntoma, no para descartarlos ni diagnosticarlos desde casa. Anota también si aparece en primera, en marcha atrás o en ambas.</p>
+
+      <h2 id="otras-tecnologias">¿Y si el coche es automático, híbrido o eléctrico?</h2>
+      <p>Un automático también puede dar tirones al comenzar a moverse, pero no necesariamente tiene un pedal ni el embrague manual descrito arriba. Según la arquitectura puede gestionar un embrague automatizado, dos embragues, un convertidor de par u otro sistema. <a href={sources.zfConverter}>ZF muestra cómo un convertidor participa en el arranque</a>; nuestra guía de cambios automáticos compara las arquitecturas. Por ello, copiar el diagnóstico de un manual para cualquier automático sería un error.</p>
+      <p>En un híbrido, el motor térmico puede arrancar o detenerse durante la marcha y su transición puede sentirse de manera diferente según el diseño, el estado de carga y las condiciones de uso. Un eléctrico puro no tiene ese acoplamiento de un embrague manual de combustión, aunque también puede vibrar por otros motivos. La observación útil sigue siendo la misma: localizar el momento, la frecuencia y los avisos. Para decidir qué es normal en una versión concreta, consulta su manual; no hay una explicación única para todos los híbridos y eléctricos.</p>
+
+      <h2 id="taller">Qué información conviene llevar al taller y cuándo revisarlo</h2>
+      <p>Describe lo que ya has observado sin provocar más tirones. Una frase como «tiembla al empezar a soltar el embrague, sobre todo en marcha atrás y con el motor caliente» orienta mucho más que «creo que es el bimasa». Estos datos suelen ser útiles:</p>
+      <ul>
+        <li>Desde cuándo sucede, si apareció de golpe y si ha empeorado.</li>
+        <li>Si ocurre en frío, en caliente o en ambos casos; y si también vibra al ralentí.</li>
+        <li>Si se presenta en primera, marcha atrás o con otras relaciones.</li>
+        <li>Si lo has notado en llano, pendiente o con el coche cargado.</li>
+        <li>Si hay ruido distinto al habitual, olor, avisos en el cuadro, falta de respuesta o dificultad para seleccionar marchas.</li>
+      </ul>
+      <p>Una sacudida aislada al aprender la maniobra se puede observar sin convertirla en diagnóstico. Si el temblor es repetido, nuevo o cada vez más intenso, pide una revisión profesional. Hazlo antes si se acompaña de olor anormal, ruidos importantes, pérdida de potencia, cambios difíciles o un testigo. Ante un aviso que indique detenerse, sigue el manual de tu coche y detente donde sea seguro; las instrucciones cambian según el símbolo y el modelo. <a href={sources.vw}>Volkswagen, por ejemplo, distingue acciones para sus distintos avisos</a>. No manipules embrague, soportes ni transmisión sin formación y medios adecuados.</p>
+
+      <h2>La idea que conviene recordar</h2>
+      <p>Al salir desde parado, el embrague de un manual une progresivamente dos lados que giran a distinta velocidad. Un acoplamiento brusco puede explicar un tirón ocasional. Un temblor persistente merece una revisión porque embrague, volante, soportes, motor y transmisión pueden producir sensaciones parecidas. Lo más útil para el taller es un relato preciso de cuándo ocurre y qué otros síntomas lo acompañan, no una pieza elegida de antemano.</p>
+      <aside class="sources"><h2>Fuentes y método</h2><p>Consulta del 12 de noviembre de 2026. Revisamos la descripción del mecanismo de <a href={sources.ap}>AP Racing</a>, el boletín de diagnóstico de <a href={sources.valeo}>Valeo</a>, las notas de <a href={sources.zfSlip}>ZF sobre patinamiento</a>, <a href={sources.zfRelease}>desembrague</a> y <a href={sources.zfMount}>soportes</a>, la explicación del bimasa de <a href={sources.schaeffler}>Schaeffler</a> y las indicaciones de avisos de <a href={sources.vw}>Volkswagen</a>. Contrastamos cada mecanismo con la situación de salida de un manual convencional; no realizamos una prueba propia ni inferimos frecuencia de averías, vida útil, costes o una causa concreta a partir del síntoma. Los automáticos, híbridos y eléctricos requieren la documentación de su versión. La portada y la foto del disco indican autor y licencia; los dos esquemas son originales y simplifican las piezas.</p></aside>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .judder-figure { margin: 24px 0; }
+  .judder-figure img { display: block; max-width: 100%; height: auto; margin: auto; border-radius: 9px; }
+  .judder-figure figcaption { margin-top: 8px; color: #59675f; font-size: 12px; line-height: 1.5; }
+</style>

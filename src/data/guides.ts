@@ -1,5 +1,12 @@
 export const guides = [
   {
+    slug: 'por-que-coche-tiembla-salir-desde-parado',
+    title: '¿Por qué el coche tiembla al salir desde parado? Causas y qué observar',
+    category: 'Uso y mantenimiento', categorySlug: 'uso-mantenimiento',
+    description: 'Por qué puede vibrar el coche al iniciar la marcha, qué distingue un tirón ocasional de un problema persistente y qué contar al taller.',
+    published: true,
+  },
+  {
     slug: 'diesel-circular-despues-2035',
     title: 'Tengo un diésel: ¿podré seguir circulando después de 2035?',
     category: 'Movilidad y normativa', categorySlug: 'movilidad-normativa',

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="370" viewBox="0 0 960 370" role="img" aria-labelledby="title desc">
+  <title id="title">Cómo se transmite el giro al salir desde parado</title>
+  <desc id="desc">Esquema del motor, volante, embrague, caja y ruedas con flechas de transmisión del giro. El disco se acopla progresivamente.</desc>
+  <rect width="960" height="370" rx="24" fill="#f4f8f0"/>
+  <text x="480" y="47" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#173e2d">Al iniciar la marcha, el giro llega poco a poco a las ruedas</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle" fill="#173e2d" font-size="21" font-weight="700">
+    <rect x="38" y="105" width="155" height="104" rx="15" fill="#d7eccd" stroke="#357550" stroke-width="3"/><text x="115" y="165">Motor</text>
+    <rect x="224" y="105" width="145" height="104" rx="15" fill="#d7eccd" stroke="#357550" stroke-width="3"/><text x="296" y="150">Volante</text><text x="296" y="176">motor</text>
+    <rect x="400" y="105" width="155" height="104" rx="15" fill="#dff0ab" stroke="#5c7d2d" stroke-width="3"/><text x="478" y="150">Embrague</text><text x="478" y="176">acoplando</text>
+    <rect x="586" y="105" width="145" height="104" rx="15" fill="#d7eccd" stroke="#357550" stroke-width="3"/><text x="658" y="165">Caja</text>
+    <rect x="762" y="105" width="160" height="104" rx="15" fill="#d7eccd" stroke="#357550" stroke-width="3"/><text x="842" y="165">Ruedas</text>
+  </g>
+  <g stroke="#427b38" stroke-width="6" fill="none" stroke-linecap="round"><path d="M199 157h17m159 0h17m169 0h17m159 0h17"/></g>
+  <g fill="#427b38"><path d="m216 157-12-9v18zm176 0-12-9v18zm186 0-12-9v18zm176 0-12-9v18z"/></g>
+  <rect x="52" y="257" width="856" height="76" rx="15" fill="#fff" stroke="#d4dfca"/>
+  <text x="480" y="286" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#173e2d">En la zona de fricción, el lado del motor ya gira y el de las ruedas empieza a moverse.</text>
+  <text x="480" y="316" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#173e2d">El deslizamiento controlado permite acercar sus velocidades.</text>
+</svg>

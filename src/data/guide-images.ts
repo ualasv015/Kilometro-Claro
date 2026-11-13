@@ -14,6 +14,15 @@ export interface GuideImage {
 
 // La procedencia y licencia de cada imagen se indican en su ficha.
 export const guideImages: Record<string, GuideImage> = {
+  'por-que-coche-tiembla-salir-desde-parado': {
+    src: '/images/guides/tiembla-salir-embrague-real.jpg',
+    alt: 'Fotografía real de un plato de presión de embrague con el resorte de diafragma visible',
+    caption: 'Plato de presión real de un embrague de accionamiento por tracción. Es un diseño concreto, no una pieza idéntica en todos los coches. Versión de 960 píxeles, sin otras modificaciones.',
+    author: 'Panoha', sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Pull_type_clutch.jpg',
+    license: 'https://creativecommons.org/licenses/by-sa/3.0/', licenseName: 'CC BY-SA 3.0',
+    width: 960, height: 720,
+  },
   'diesel-circular-despues-2035': {
     src: '/images/guides/diesel-2035-trafico-madrid-real.jpg',
     alt: 'Tráfico real circulando por la glorieta de Cuatro Caminos en Madrid',

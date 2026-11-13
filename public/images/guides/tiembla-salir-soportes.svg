@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-labelledby="title desc">
+  <title id="title">Los soportes conectan el conjunto motor y transmisión con la carrocería</title>
+  <desc id="desc">Esquema simplificado de motor y transmisión suspendidos sobre dos soportes con la carrocería debajo.</desc>
+  <rect width="960" height="400" rx="24" fill="#f4f8f0"/>
+  <text x="480" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#173e2d">El conjunto se mueve bajo carga; los soportes limitan y aíslan</text>
+  <rect x="208" y="100" width="305" height="118" rx="18" fill="#d7eccd" stroke="#357550" stroke-width="4"/>
+  <text x="360" y="164" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" fill="#173e2d">Motor</text>
+  <rect x="520" y="119" width="231" height="99" rx="18" fill="#dff0ab" stroke="#5c7d2d" stroke-width="4"/>
+  <text x="635" y="176" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#173e2d">Transmisión</text>
+  <path d="M285 218v39m385-39v39" stroke="#58785d" stroke-width="8"/>
+  <rect x="244" y="257" width="82" height="34" rx="10" fill="#8ba69a"/>
+  <rect x="629" y="257" width="82" height="34" rx="10" fill="#8ba69a"/>
+  <rect x="106" y="298" width="748" height="29" rx="10" fill="#426b54"/>
+  <g font-family="Arial,sans-serif" font-size="18" text-anchor="middle" fill="#173e2d"><text x="285" y="354">Soporte</text><text x="670" y="354">Soporte</text><text x="480" y="385">Carrocería (representación simplificada)</text></g>
+</svg>
