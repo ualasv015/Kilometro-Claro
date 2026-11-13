@@ -1,0 +1,337 @@
+PRECIOS PENDIENTES
+Última actualización: 13 de noviembre de 2026.
+
+Criterio: se conservan únicamente los precios que no se pudieron asociar con seguridad a una versión vigente, los marcados como no encontrados y las referencias antiguas o contradictorias. Los importes añadidos desde precios-pendientes-resueltos.txt se muestran como referencias de catálogo de terceros (Coches.net, Diariomotor o Carwow), nunca como tarifas oficiales. Revisa las notas de cada ficha antes de comparar o publicar un precio como definitivo.
+
+MARCA: Peugeot
+  MODELO: 3008
+    MOTORIZACIÓN SIN PRECIO:
+      - Plug-in Hybrid 225 e-DCS7: la lista recibida no encuentra precio actual; solo cita una referencia antigua de Carwow.
+  MODELO: 5008
+    MOTORIZACIÓN SIN PRECIO:
+      - Plug-in Hybrid 225 e-DCS7: la lista recibida no encuentra precio actual; solo cita una referencia de diciembre de 2025.
+
+MARCA: BMW
+  MODELO: Serie 1
+    MOTORIZACIÓN SIN PRECIO:
+      - 123 xDrive gasolina MHEV: no encontrado en las fuentes; no trasladar el precio del M135 xDrive.
+  MODELO: X1
+    MOTORIZACIÓN SIN PRECIO:
+      - xDrive23d diésel MHEV: no encontrado; la referencia xDrive20d no es equivalente.
+  MODELO: X4
+    MOTORIZACIONES SIN ASOCIACIÓN SEGURA:
+      - xDrive20d xLine, M40d, M y M Competition: la ficha actual no contiene estas versiones para asociar sus importes.
+      - Eléctrico 40 xDrive y 50 xDrive: la fuente los incluye en el apartado X4, pero no corresponden a las versiones de la ficha; confirmar el modelo antes de asignar.
+  MODELO: X5
+    PRECIO BASE SIN ASOCIACIÓN SEGURA:
+      - La fuente da 95.437 € para xDrive30d xLine, motorización que no aparece en la ficha actual. No usar ese importe como precio base del listado de versiones actual.
+  MODELO: i5
+    MOTORIZACIÓN SIN PRECIO:
+      - Touring: la fuente no distingue cuál de sus filas corresponde a la carrocería Touring; no extrapolar el importe de Berlina.
+
+MARCA: Alfa Romeo
+  MODELO: Junior
+    MOTORIZACIÓN SIN PRECIO:
+      - Elettrica Veloce 280: sin precio individual localizado.
+  MODELO: Stelvio
+    MOTORIZACIÓN SIN PRECIO:
+      - 2.2 Diésel 210 CV Q4 Veloce: la fuente la denomina 2.1 TD; confirmar que es la misma versión antes de asignar el precio.
+
+MARCA: Audi
+  MODELO: A1
+    PRECIO BASE Y MOTORIZACIONES SIN PRECIO:
+      - 25 TFSI 95 CV: no encontrado.
+      - 30 TFSI: la fuente indica 116 CV, frente a los 110 CV de la ficha; confirmar la equivalencia y el acabado allstreet antes de asignar.
+  MODELO: A3
+    MOTORIZACIONES SIN PRECIO:
+      - 40 TFSI e y 45 TFSI e Sedán: la fuente no encuentra precios para esta carrocería.
+      - allstreet e-hybrid 204 CV: la fuente mezcla dos importes/configuraciones y no permite asignar una versión inequívoca.
+  MODELO: A6
+    MOTORIZACIONES SIN PRECIO:
+      - RS 6 Avant 600 CV y RS 6 Avant performance 630 CV: no encontrado.
+  MODELO: A6 e-tron
+    MOTORIZACIONES SIN ASOCIACIÓN SEGURA:
+      - Performance y quattro: las potencias de la fuente (381 y 462 CV) no coinciden con las versiones de la ficha (367 y 428 CV).
+  MODELO: Q3
+    MOTORIZACIONES SIN ASOCIACIÓN SEGURA:
+      - 35 TFSI MHEV y 35 TDI: la fuente no separa Q3 y Q3 Sportback, por lo que no se pueden asignar precios por carrocería.
+  MODELO: Q4 e-tron
+    MOTORIZACIONES SIN PRECIO:
+      - quattro performance 340 CV: no encontrado.
+      - Sportback: la fuente solo ofrece precios para SUV; no extrapolar.
+  MODELO: Q6 e-tron
+    MOTORIZACIONES SIN ASOCIACIÓN SEGURA:
+      - La fuente ofrece 292, 326 y 462 CV, frente a 252, 306 y 387 CV de las versiones de esta ficha; confirmar equivalencias antes de asignar.
+
+MARCA: Citroën
+  MODELO: C5 X
+    PRECIO BASE Y MOTORIZACIONES SIN PRECIO:
+      - Hybrid 145 y Plug-in Hybrid 180/225: no se ha encontrado un precio vigente asociado a una versión disponible para pedido.
+
+MARCA: CUPRA
+  MODELO: Tavascan
+    MOTORIZACIÓN SIN ASOCIACIÓN SEGURA:
+      - 58 kWh, 190 CV: la fuente la describe como 4x4; la ficha la identifica como motor trasero. No asignar hasta confirmar la versión.
+
+MARCA: DS Automobiles
+  MODELO: DS 3
+    MOTORIZACIONES SIN ASOCIACIÓN SEGURA:
+      - HYBRID 145: la fuente usa la denominación 1.2 MHEV Pallas; confirmar equivalencia antes de asociar el precio.
+      - E-TENSE 156: no encontrado.
+  MODELO: DS 7
+    MOTORIZACIÓN SIN ASOCIACIÓN SEGURA:
+      - BlueHDi 130 automático: la fuente no especifica el cambio y la fila consultada podría corresponder a otra edición.
+
+MARCA: EBRO
+  MODELO: s700
+    MOTORIZACIONES SIN PRECIO VIGENTE VERIFICADO:
+      - 1.6 TGDI gasolina DCT7 y 1.5 TGDI PHEV 1DHT: la fuente encontrada lleva fecha de noviembre de 2025; confirmar que sigue vigente antes de añadir.
+
+MARCA: Fiat
+  Revisión del 13/11/2026: PVP base del configurador oficial aplicado a Tipo Sedán, Qubo L 5 plazas, Pandina, 500, 600 y Grande Panda. Estas entradas solo reflejan lo que sigue sin verificar.
+  MODELO: Qubo L
+    MOTORIZACIONES SIN PRECIO INDIVIDUAL:
+      - 1.5 Diésel 130 MT: el configurador agrupa el precio de acceso de 31.900 € para cinco plazas y no lo desglosa por motorización.
+      - Eléctrico 100 kW (136 CV), Talla M POP: PVP de catálogo individual sin verificar; la oferta al contado de 30.785 € hasta 30/11/2026 exige financiación mínima de 36 meses, entregar un vehículo y aprobación financiera. La página de producto todavía indica «próximamente».
+  MODELO: Doblò
+    MOTORIZACIONES SIN PRECIO:
+      - Modelo completo: sin PVP base. No aparece en el configurador de turismos.
+      - 1.5 Diésel 130 manual: no encontrado.
+      - E-Doblò 50 kWh: no encontrado.
+  MODELO: Ulysse
+    MOTORIZACIONES SIN PRECIO:
+      - Modelo completo: sin PVP base. No aparece en el configurador de turismos.
+      - E-Ulysse 50 y 75 kWh: no encontrado.
+
+MARCA: Jeep
+  Revisión del 13/11/2026: precios de catálogo del configurador oficial; se mantienen como pendientes las motorizaciones o acabados sin desglose verificable.
+  MODELO: Compass
+    MOTORIZACIONES SIN PRECIO INDIVIDUAL:
+      - Full Electric Long Range FWD, 96 kWh y 231 CV: el configurador muestra 50.600 € para dos motores y no desglosa el precio del Long Range; no se usa la referencia de terceros.
+      - 4xe Full Electric AWD, 375 CV: el configurador indica desde 56.849 € para Upland/Overland, sin precio individual por acabado.
+
+MARCA: Ford
+  MODELO: E-Tourneo Custom
+    MOTORIZACIÓN SIN PRECIO:
+      - Eléctrico: no encontrado.
+  MODELO: Tourneo Connect
+    MOTORIZACIONES SIN ASOCIACIÓN SEGURA:
+      - 1.5 EcoBoost: la fuente indica 114 CV, frente a 115 CV en la ficha.
+      - 2.0 EcoBlue: la fuente indica 102 CV, mientras que la ficha agrupa versiones de 102–122 CV.
+  MODELO: Transit Custom Nugget
+    MOTORIZACIONES SIN PRECIO:
+      - 2.0 EcoBlue 150 manual y 170 automático: no encontrado.
+  MODELO: Ranger
+    MOTORIZACIONES SIN PRECIO:
+      - 2.0 EcoBlue 170 manual/automático 4x4 y 2.0 EcoBlue 205 e-AWD: no encontrado.
+  MODELO: Ranger Raptor
+    MOTORIZACIÓN SIN PRECIO:
+      - 3.0 V6 292 CV: no encontrado. La cifra de 2.0 EcoBlue 210 CV procede de la ficha Ranger y no se asigna al Raptor.
+
+MARCA: Geely
+  Revisión del 13/11/2026: PVP publicados para los acabados Pro; las ofertas financiadas y campañas de Auto+/CAE se mantienen condicionadas y separadas.
+  MODELO: E5
+    OFERTA FINANCIADA PENDIENTE DE ACLARACIÓN:
+      - Pro: páginas oficiales muestran 24.585 €, 25.485 € y 29.115 € con condiciones financieras distintas. Confirmar con Geely cuál sigue vigente antes de publicar un precio financiado.
+    MOTORIZACIONES SIN PRECIO:
+      - Pro+: no encontrado.
+      - Max+: la fuente solo muestra un acabado Max; no confirmar equivalencia con Max+.
+  MODELO: Starray EM-i
+    OFERTA FINANCIADA PENDIENTE DE ACLARACIÓN:
+      - Pro: la página específica de oferta publica 25.215 € financiando y TAE 10,29 %, mientras que la portada oficial conserva 28.240 € y TAE 0,99 %. No mostrar importe financiado como vigente hasta que Geely aclare la discrepancia.
+    MOTORIZACIONES SIN PRECIO:
+      - Pro+: no encontrado.
+      - Max+: la fuente solo muestra un acabado Max; no confirmar equivalencia con Max+.
+  MODELO: Monjaro EM-i
+    PVP BASE PENDIENTE:
+      - Ultra AWD: no se encontró un precio regular sin campaña ni ayuda Auto+. Los 37.990 € publicados son un PVPR promocional que incluye 2.250 € de Auto+ condicionado.
+  MODELO: E2
+    APERTURA DE PEDIDOS Y DISPONIBILIDAD POR CONFIRMAR:
+      - La página de producto y la de ofertas permiten solicitar presupuesto y publican 20.990 € al contado para PRO; la portada oficial todavía muestra «Resérvalo ahora». Confirmar apertura de pedidos, plazo de entrega y disponibilidad en la red oficial.
+    MOTORIZACIONES SIN PRECIO INDIVIDUAL:
+      - PRO+ y MAX+: no se encontraron importes al contado individualizados en la oferta oficial consultada.
+
+MARCA: Honda
+  Revisión del 13/11/2026: PVP de referencia y ofertas al contado vigentes hasta 30/11/2026 se mantienen separados.
+  MODELO: HR-V
+    OFERTA AL CONTADO SIN ASOCIACIÓN SEGURA:
+      - Elegance: la ficha de especificaciones publica 31.310 € y Honda Options publica 31.210 €; ambas indican vigencia hasta 30/11/2026. Confirmar el importe aplicable antes de asignarlo.
+  MODELO: Prelude
+    DISPONIBILIDAD Y PRECIO PENDIENTES:
+      - Limited Edition: no aparece en la ficha ni en el configurador actual; confirmar disponibilidad como coche nuevo y PVP antes de publicarla como versión activa.
+  MODELO: e:Ny1
+    DISPONIBILIDAD Y PVP PENDIENTES:
+      - No aparece en la gama ni en el configurador actuales; confirmar venta de unidades nuevas y PVP antes de incorporarlo al directorio.
+
+MARCA: Lexus
+  Revisión del 13/11/2026: ofertas temporales vigentes separadas del PVP; no presentar precios de campaña como catálogo.
+  MODELO: LBX
+    MOTORIZACIÓN SIN PVP INDIVIDUAL:
+      - Hybrid 136 E-Four: el configurador solo permite verificar el PVP de acceso 4x2; no asignarlo a E-Four.
+  MODELO: UX
+    MOTORIZACIÓN SIN PRECIO:
+      - UX 300h E-Four: el configurador consultado publica los precios 4x2, sin desglose verificable para E-Four.
+  MODELO: NX
+    PENDIENTE DE DISPONIBILIDAD Y PVP:
+      - NX MY27: Lexus anunció preventa para otoño de 2026, pero el configurador consultado continúa mostrando MY26.
+  MODELO: RZ
+    PENDIENTE DE DENOMINACIÓN Y PRECIO:
+      - Versión eléctrica de 408 CV: la ficha actual denomina RZ 550e F SPORT, mientras que la tarifa 2027 denomina RZ 500e F SPORT a la versión de 70.900 €. Confirmar versión y disponibilidad antes de asignar precio.
+  MODELO: RX
+    PVP INDIVIDUALES PENDIENTES POR DISCREPANCIA:
+      - RX 450h+ Executive: tarifa MY27 92.900 €; página y oferta actual indican 86.400 € al contado, y la oferta la denomina Executive MY27.
+      - RX 450h+ F DESIGN: tarifa MY27 94.900 €; página actual 95.250 €.
+      - RX 500h F SPORT: tarifa MY27 111.300 €; página actual 112.650 €.
+  MODELO: TZ
+    PENDIENTE DE CONFIGURADOR Y DISPONIBILIDAD:
+      - TZ 450e Executive: tarifa de prensa publica 88.000 €, pero no hay «Precio Catálogo desde» verificable en configurador.
+      - TZ 550e Luxury / Luxury bitono: tarifa publica 103.000 € / 105.000 €, pero la ficha indica que el 550e Long Range está próximamente disponible.
+  MODELO: LM
+    OFERTA INDIVIDUAL VIGENTE PENDIENTE:
+      - No se localizó; la página oficial dirige a solicitar una oferta. No reutilizar promociones caducadas.
+
+MARCA: Maserati
+  MODELOS: MCPura, MCPura Cielo y GT2 Stradale
+    MOTORIZACIONES SIN PRECIO:
+      - No se encontraron importes de catálogo para las versiones de estas fichas.
+
+MARCA: MG
+  MODELO: MG HS
+    MOTORIZACIÓN SIN PRECIO:
+      - 1.5T gasolina: no encontrado.
+
+MARCA: MINI
+  PVP DE CATÁLOGO (CONFIGURADOR): no encontrado en las páginas de configuración consultadas el 13/11/2026. Las cifras oficiales publicadas son ofertas al contado con condiciones hasta el 31/12/2026 y no sustituyen al PVP permanente.
+  MODELO: Cooper 3 puertas
+    MOTORIZACIONES SIN PVP DE CATÁLOGO INDIVIDUAL:
+      - Cooper One 122 CV, Cooper C 156 CV, Cooper S 204 CV y John Cooper Works 231 CV.
+  MODELO: Cooper eléctrico
+    MOTORIZACIONES SIN PVP DE CATÁLOGO INDIVIDUAL:
+      - Cooper E 184 CV, Cooper SE 218 CV y John Cooper Works Electric 258 CV.
+  MODELO: Cooper 5 puertas
+    MOTORIZACIONES SIN PVP DE CATÁLOGO INDIVIDUAL:
+      - Cooper One 122 CV, Cooper C 156 CV y Cooper S 204 CV.
+  MODELO: Cooper Cabrio
+    MOTORIZACIONES SIN PVP DE CATÁLOGO INDIVIDUAL:
+      - Cooper C Cabrio 163 CV, Cooper S Cabrio 204 CV y John Cooper Works Cabrio 231 CV.
+  MODELO: Aceman
+    MOTORIZACIONES SIN PVP DE CATÁLOGO INDIVIDUAL:
+      - Aceman E 184 CV, Aceman SE 218 CV y John Cooper Works Aceman 258 CV.
+  MODELO: Countryman
+    MOTORIZACIONES SIN PVP DE CATÁLOGO INDIVIDUAL:
+      - Countryman C 156 CV, Countryman D diésel 150 CV, Countryman S ALL4 204 CV y John Cooper Works Countryman ALL4 300 CV.
+  MODELO: Countryman eléctrico
+    MOTORIZACIONES SIN PVP DE CATÁLOGO INDIVIDUAL:
+      - Countryman E 204 CV y Countryman SE ALL4 313 CV.
+
+MARCA: Mitsubishi
+  MODELO: Colt
+    MOTORIZACIÓN SIN PRECIO:
+      - 160 HEV Kaiteki+: la tarifa oficial de octubre solo publica el precio de Kaiteki; no extrapolar los 27.550 € de ese acabado.
+    OFERTA WEBSTORE SIN ACABADO CONFIRMADO:
+      - 160 HEV: la tienda oficial muestra 27.050 € al contado y 25.850 € financiando hasta el 30/11/2026; la tarjeta no indica acabado y la financiación está sujeta a aprobación. Confirmar antes de asociar a Kaiteki.
+  MODELO: ASX
+    OFERTA WEBSTORE SIN ACABADO CONFIRMADO:
+      - 120T: la tienda oficial muestra 24.300 € al contado y 22.300 € financiando hasta el 30/11/2026, sin indicar acabado; financiación sujeta a aprobación. No asignar a Motion, Kaiteki o Black Edition.
+  MODELO: Grandis
+    OFERTAS WEBSTORE SIN ACABADO CONFIRMADO:
+      - 130T MHEV: 28.650 € al contado y 26.650 € financiando hasta el 30/11/2026; la tarjeta no indica acabado y la financiación está sujeta a aprobación.
+      - 180 HEV: ofertas de 30.450 € / 28.450 € y 31.650 € / 29.650 € (al contado / financiando) hasta el 30/11/2026; la tienda no indica acabado y la financiación está sujeta a aprobación.
+  MODELO: Outlander PHEV
+    OFERTAS WEBSTORE SIN ACABADO CONFIRMADO:
+      - 46.950 € al contado y 41.150 € financiando, con 1.800 € condicionados a Auto+; el acabado no aparece en la tarjeta y la financiación está sujeta a aprobación.
+      - 42.050 € al contado y 35.800 € financiando, con hasta 2.250 € de Auto+ condicionado; el acabado no aparece en la tarjeta y la financiación está sujeta a aprobación. Ambas ofertas figuran hasta el 30/11/2026.
+  MODELO: Eclipse Cross EV
+    OFERTA VIGENTE SIN CONFIRMAR:
+      - No aparece entre los vehículos de la Webstore actual; no se ha localizado una oferta activa asociada a una unidad nueva.
+
+MARCA: Lynk & Co
+  PVP SIN AYUDA PENDIENTE DE ACLARACIÓN:
+    - 01 Core/More (40.995 €/44.995 €), 02 Core/More (35.495 €/39.495 €) y 08 Core/More (52.995 €/56.995 €): el configurador oficial declara que sus precios incluyen el Plan Auto+, sujeto a aprobación definitiva y disponibilidad de fondos, mientras que la página de ofertas llama PVP a los mismos importes. Confirmar con Lynk & Co el importe aplicable si no se concede la ayuda; no inferirlo ni sumar una cuantía sin respuesta oficial.
+
+MARCA: Nissan
+  MODELO: LEAF
+    MOTORIZACIÓN SIN ASOCIACIÓN SEGURA:
+      - 75 kWh: la fuente indica 217 CV y la ficha 218 CV; confirmar que se trata de la misma versión antes de asociar 41.695 €.
+
+MARCA: Škoda
+  MODELO: Enyaq
+    MOTORIZACIÓN SIN ASOCIACIÓN SEGURA:
+      - 60 · 61 kWh: la fuente presenta 44.722 € y una fila de 44.222 €; confirmar cuál corresponde a la versión actual.
+  MODELO: Enyaq Coupé
+    MOTORIZACIONES SIN PRECIO:
+      - Gama completa: no encontrado.
+  MODELO: Peaq
+    MOTORIZACIÓN SIN PRECIO:
+      - 91 kWh, motor dual, 286 CV: no encontrado.
+  MODELO: Kodiaq
+    MOTORIZACIÓN SIN ASOCIACIÓN SEGURA:
+      - 2.0 TDI 193 4x4: la fuente indica 193 CV, frente a 194 CV en la ficha.
+      - PHEV 272 CV: no corresponde a una versión publicada en esta ficha.
+  MODELO: Octavia
+    MOTORIZACIONES SIN PRECIO:
+      - Full Hybrid 136 y 170 CV: no encontrado; la fuente indica entregas previstas para 2027.
+      - RS 265 CV: la fuente lo muestra por debajo del 2.0 TSI 204 CV; confirmar antes de publicar.
+  MODELO: Octavia Combi
+    MOTORIZACIONES SIN PRECIO:
+      - 2.0 TSI 204 4x4: no encontrado.
+      - Full Hybrid 136 y 170 CV: no encontrado; entregas previstas para 2027.
+      - RS 265 CV: importe y orden de precios por confirmar.
+  MODELO: Superb
+    MOTORIZACIONES SIN ASOCIACIÓN SEGURA:
+      - 2.0 TSI 4x4: la fuente indica 265 CV, frente a 266 CV en la ficha.
+      - 2.0 TDI 4x4: la fuente indica 193 CV, frente a 194 CV en la ficha.
+  MODELO: Superb Combi
+    MOTORIZACIONES SIN PRECIO O ASOCIACIÓN SEGURA:
+      - 1.5 TSI iV PHEV 272 CV: no encontrado.
+      - 2.0 TSI 4x4 y 2.0 TDI 4x4: discrepancia de potencia entre la fuente y la ficha.
+
+MARCA: smart
+  MODELO: #1
+    MOTORIZACIONES SIN PRECIO:
+      - Pure+ y Pro+: no encontrado.
+  MODELO: #2
+    MOTORIZACIONES SIN PRECIO:
+      - Gama: no consta un precio actual en las fuentes recibidas.
+  MODELO: #3
+    MOTORIZACIÓN SIN PRECIO:
+      - Pro+: no encontrado.
+  MODELO: #5
+    MOTORIZACIONES SIN PRECIO:
+      - Pro+: no encontrado; la fuente lista «Pro», no «Pro+».
+
+MARCA: Subaru
+  MODELO: Outback
+    MOTORIZACIÓN SIN PRECIO:
+      - 2.5i GLP: no encontrado.
+  MODELO: Uncharted
+    MOTORIZACIONES SIN ASOCIACIÓN SEGURA:
+      - Active 58 kWh y Field 77 kWh: la fuente no identifica las tracciones o autonomía con el mismo detalle que esta ficha.
+  MODELO: Solterra
+    MOTORIZACIONES SIN ASOCIACIÓN SEGURA:
+      - La fuente presenta importes y potencias incoherentes con los acabados consultados; verificar antes de asignar.
+  MODELO: E-Outback
+    MOTORIZACIÓN SIN PRECIO:
+      - Limited AWD: no encontrado.
+
+MARCA: Suzuki
+  Revisión del 13/11/2026: precios oficiales de campaña al contado separados del PVP anterior a campaña; vigencia indicada para matriculación hasta el 31/12/2026.
+  MODELO: Across
+    DISPONIBILIDAD POR UNIDAD PENDIENTE:
+      - Generación anterior: Suzuki la mantiene como unidades limitadas con oferta de 55.535 €; confirmar que un concesionario dispone de una unidad nueva concreta. No confundir con el nuevo Across GLX.
+  MODELO: e VITARA
+    CONDICIONES DE AYUDA PENDIENTES:
+      - El precio publicado descuenta 3.375 € del Programa Auto+; Suzuki indica que las bases siguen pendientes de publicación en el BOE. Confirmar elegibilidad antes de considerar definitivo el precio neto.
+  MODELO: Swace
+    DISPONIBILIDAD Y PRECIO PENDIENTES:
+      - No aparece en la gama ni en la solicitud de oferta vigentes. Confirmar si queda alguna unidad nueva en stock y su precio antes de incorporarlo al directorio.
+
+MARCA: SWM
+  MODELOS: G03F y G05
+    MOTORIZACIONES SIN PRECIO:
+      - No se encontraron tablas de precios para las versiones de estas fichas.
+
+MARCA: XPENG
+  MODELO: L03 REEV
+    MOTORIZACIÓN SIN ASOCIACIÓN SEGURA:
+      - PowerX Long Range: la fuente la etiqueta como híbrido enchufable 242 CV y no confirma que sea la versión REEV de 37,25 kWh de esta ficha.

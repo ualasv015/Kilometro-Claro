@@ -1,9 +1,9 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '13 de noviembre de 2026';
 const jeep = 'https://www.jeep.es';
 const source = (label: string, url: string) => ({ label, url });
-const notPublished = 'No desglosado en la ficha española consultada';
+const notPublished = '';
 
 type PhotoLicense = 'CC BY 3.0' | 'CC BY-SA 4.0';
 
@@ -42,13 +42,13 @@ export const jeepModels: ModelPageData[] = [
     title: 'Jeep Avenger: motorizaciones y datos técnicos en España | Kilómetro Claro',
     description: 'Compara las versiones gasolina, e-Hybrid, 4xe y eléctricas del Jeep Avenger vendido en España, con potencias y cilindradas verificadas.',
     intro: 'El Avenger es el SUV más pequeño de Jeep y reúne varias formas de propulsión bajo una misma carrocería urbana: gasolina, e-Hybrid, 4xe híbrido con tracción total y eléctrico de batería. Aquí separamos las mecánicas para que el nombre comercial no oculte las diferencias de uso, potencia y recarga.',
-    powertrainSummary: 'La ficha técnica española MY27 consultada distingue cuatro configuraciones. El motor de gasolina 1.2 T3 entrega 100 CV; el e-Hybrid anuncia 110 CV de sistema y el 4xe híbrido, 145 CV combinados. El eléctrico desarrolla 156 CV y usa una batería de 54 kWh brutos (51 kWh netos). En las dos versiones híbridas se indican por separado las potencias térmica y eléctrica que Jeep publica; no sumamos esas cifras como si su máximo se alcanzara simultáneamente.',
+    powertrainSummary: 'La ficha técnica española MY27 distingue cuatro configuraciones: gasolina 1.2 de 100 CV, e-Hybrid de 110 CV, 4xe híbrido de 145 CV y eléctrico de 156 CV. En las versiones híbridas Jeep publica la potencia combinada y, además, la potencia del motor térmico y de los eléctricos; esas cifras describen componentes y sistema, y no deben sumarse como si todos alcanzaran su máximo a la vez.',
     usageNote: 'La elección cambia más que el tipo de combustible. El 1.2 de gasolina lleva cambio manual y tracción delantera; el e-Hybrid asocia hibridación ligera y transmisión automática; el 4xe añade un motor eléctrico trasero para ofrecer tracción total sin ser enchufable; el eléctrico necesita recarga externa y no tiene motor térmico. La autonomía WLTP del Avenger eléctrico varía por configuración y se anuncia entre 389 y 400 km. Comprueba el acabado y la ficha vinculada al pedido, porque equipamiento, homologación y disponibilidad pueden variar.',
     versions: [
       { name: '1.2 GSE T3 100 MT FWD', type: 'Gasolina', power: '100 CV (74 kW)', displacement: '1.199 cm³', maxTorque: '205 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '1.750 rpm' },
-      { name: '1.2 e-Hybrid 110 DCT6 FWD', type: 'Híbrido ligero de gasolina', power: 'Sistema: 110 CV (81 kW); térmico: 100 CV (74 kW); eléctrico: 28 CV (21 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'La ficha no atribuye el par al motor térmico o al sistema', torqueRpm: notPublished },
-      { name: '1.2 4xe Hybrid 145 DCT6 eAWD', type: 'Híbrido de gasolina con tracción total', power: 'Sistema: 145 CV (107 kW); térmico: 136 CV (100 kW); eléctrico delantero: 28 CV (21 kW); eléctrico trasero: 28 CV (21 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'La ficha no atribuye el par al motor térmico o al sistema', torqueRpm: notPublished },
-      { name: 'Full Electric 54 kWh', type: 'Eléctrico', power: '156 CV (115 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: notPublished },
+      { name: '1.2 e-Hybrid 110 DCT6 FWD', type: 'Híbrido no enchufable · MHEV gasolina 48 V', powertrainGroup: 'mild-hybrid', power: 'Sistema: 110 CV (81 kW); térmico: 100 CV (74 kW); eléctrico: 28 CV (21 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'La ficha no aclara a qué subsistema corresponde el par máximo', torqueRpm: notPublished },
+      { name: '1.2 4xe Hybrid 145 DCT6 eAWD', type: 'Híbrido no enchufable · gasolina 4xe eAWD', power: 'Sistema: 145 CV (107 kW); térmico: 136 CV (100 kW); eléctrico delantero: 28 CV (21 kW); eléctrico trasero: 28 CV (21 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'La ficha no aclara a qué subsistema corresponde el par máximo', torqueRpm: notPublished },
+      { name: 'Full Electric 54 kWh', type: 'Eléctrico', power: '156 CV (115 kW)', displacement: '—', maxTorque: '260 Nm', torqueScope: 'Motor eléctrico', torqueRpm: '1.750 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV urbano de cinco puertas' },
@@ -61,7 +61,7 @@ export const jeepModels: ModelPageData[] = [
       { label: 'Batería del Full Electric', value: '54 kWh brutos; 51 kWh netos' },
       { label: 'Consumo eléctrico homologado', value: '15,5–15,9 kWh/100 km' },
     ],
-    specNote: 'El catálogo MY27 presenta para los híbridos una sola fila de par máximo y régimen, pero no identifica expresamente si corresponde al motor térmico o al conjunto. Por rigor no trasladamos esa cifra a la columna de par de esas versiones. La ficha española del eléctrico publica 260 Nm, pero no un régimen; se omite en la tabla conforme al criterio de mostrar solo pares con régimen verificable.',
+    specNote: 'La tabla técnica del catálogo oficial Avenger MY27 (edición de mayo de 2026) publica 205 Nm a 1.750 rpm para el gasolina y 260 Nm a 1.750 rpm para el eléctrico. En las dos versiones híbridas también aparece un par y un régimen, pero Jeep no identifica si la cifra se refiere al motor térmico o al conjunto; por eso se omite en esas filas. Las potencias de los híbridos distinguen sistema, motor térmico y motores eléctricos.',
     officialUrl: `${jeep}/nuevo-jeep-avenger/gasolina-hibrido`,
     technicalUrl: `${jeep}/content/dam/jeep/es/models/pdf/Avenger-MY27.pdf`,
     sources: [
@@ -93,11 +93,11 @@ export const jeepModels: ModelPageData[] = [
     powertrainSummary: 'Jeep España anuncia 145 CV para el Compass e-Hybrid, desglosados en 136 CV de gasolina y un motor eléctrico de 21 kW. El Plug-In Hybrid ofrece 225 CV combinados. Las versiones Full Electric desarrollan 213 o 231 CV; la nueva variante Compass 4xe Full Electric alcanza 375 CV. La ficha MY26 detalla la cilindrada del e-Hybrid, mientras que la página comercial vigente del Plug-In Hybrid no publica cilindrada ni desglosa qué parte de sus 225 CV corresponde a cada motor.',
     usageNote: 'El e-Hybrid emplea una pequeña batería de 48 V y no se conecta a un cargador; su motor eléctrico apoya al de gasolina. El Plug-In Hybrid sí se enchufa y Jeep declara hasta 90–92 km de autonomía eléctrica WLTP, por lo que su consumo real depende mucho de cargarlo y de la longitud de los trayectos. Las versiones de batería prescinden del motor térmico: la estándar anuncia 74 kWh y hasta 500 km WLTP, la Long Range 96 kWh y hasta 674 km, y el Compass 4xe combina 375 CV con tracción total. Son valores homologados o comerciales que deben compararse con la misma metodología y versión.',
     versions: [
-      { name: '1.2 e-Hybrid 145 DCT6 FWD', type: 'Híbrido ligero de gasolina (48 V)', power: 'Sistema: 145 CV (106 kW); térmico: 136 CV (100 kW); eléctrico: 28 CV (21 kW)', displacement: '1.199 cm³', maxTorque: '230 Nm térmico; 50 Nm eléctrico', torqueScope: 'Jeep publica por separado el par térmico y eléctrico', torqueRpm: notPublished },
-      { name: 'Plug-In Hybrid 225 FWD', type: 'Híbrido enchufable de gasolina', power: 'Sistema: 225 CV (165,5 kW)', displacement: 'No publicada en la ficha española vigente', maxTorque: '350 Nm', torqueScope: 'Sistema híbrido enchufable', torqueRpm: notPublished },
-      { name: 'Full Electric Standard Range FWD', type: 'Eléctrico', power: '213 CV (157 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: notPublished },
-      { name: 'Full Electric Long Range FWD', type: 'Eléctrico', power: '231 CV (170 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: notPublished },
-      { name: '4xe Full Electric AWD', type: 'Eléctrico con tracción total', power: '375 CV (280 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Sistema eléctrico', torqueRpm: notPublished },
+      { name: '1.2 e-Hybrid 145 DCT6 FWD', type: 'Híbrido no enchufable · MHEV gasolina 48 V', powertrainGroup: 'mild-hybrid', power: 'Sistema: 145 CV (106 kW); térmico: 136 CV (100 kW); eléctrico: 28 CV (21 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'Jeep publica 230 Nm térmicos y 50 Nm eléctricos, pero no sus regímenes; se omiten de la tabla', torqueRpm: notPublished },
+      { name: 'Plug-In Hybrid 225 FWD', type: 'Híbrido enchufable · gasolina', power: 'Sistema: 225 CV (165,5 kW)', displacement: 'No publicada en la ficha española vigente', maxTorque: notPublished, torqueScope: 'La ficha publica 350 Nm, pero no el régimen; se omite de la tabla', torqueRpm: notPublished },
+      { name: 'Full Electric Standard Range FWD', type: 'Eléctrico', power: '213 CV (157 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Jeep publica 345 Nm, pero no el régimen; se omite de la tabla', torqueRpm: notPublished },
+      { name: 'Full Electric Long Range FWD', type: 'Eléctrico', power: '231 CV (170 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Jeep publica 345 Nm, pero no el régimen; se omite de la tabla', torqueRpm: notPublished },
+      { name: '4xe Full Electric AWD', type: 'Eléctrico · tracción total', power: '375 CV (280 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Jeep publica 345 Nm, pero no el régimen; se omite de la tabla', torqueRpm: notPublished },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto de cinco puertas' },
@@ -111,7 +111,7 @@ export const jeepModels: ModelPageData[] = [
       { label: 'Full Electric Long Range', value: '96 kWh; hasta 674 km WLTP' },
       { label: '4xe Full Electric', value: '96,1 kWh netos; 4x4 eléctrico de 375 CV' },
     ],
-    specNote: 'La ficha técnica de Compass MY26 fue consultada para el volumen del motor e-Hybrid y sus potencias separadas. Para el Plug-In Hybrid se prioriza la página española vigente, que ya anuncia 225 CV, batería de 17,9 kWh y 350 Nm; una ficha anterior de 195 CV no se ha trasladado a la gama actual. Jeep no indica el régimen del par en las páginas comerciales de estas versiones, así que la columna queda vacía. Las potencias en kW del híbrido enchufable se convierten desde los 225 CV publicados.',
+    specNote: 'Se priorizan las páginas y fichas españolas actuales: Jeep detalla el e-Hybrid 145 como sistema de 136 CV de gasolina más un motor eléctrico de 21 kW, y el Plug-In Hybrid como sistema de 225 CV y batería de 17,9 kWh. En estas páginas no identifica la cilindrada del PHEV ni publica el régimen de los pares, así que no se asignan datos inferidos a esas celdas. Las páginas de los Compass eléctricos publican 345 Nm, pero sin régimen; ese dato tampoco se incluye en la tabla. La ficha MY26, que corresponde a la generación anterior, no se usa para completar el nuevo Compass.',
     officialUrl: `${jeep}/nuevo-jeep-compass/e-hybrid`,
     technicalUrl: `${jeep}/pdfs/compass-my26`,
     sources: [
@@ -120,7 +120,6 @@ export const jeepModels: ModelPageData[] = [
       source('Jeep Compass Plug-In Hybrid: ficha comercial vigente', `${jeep}/nuevo-jeep-compass/plugin-e-hybrid`),
       source('Jeep Compass Full Electric: autonomía estándar y Long Range', `${jeep}/nuevo-jeep-compass/full-electric`),
       source('Jeep Compass 4xe Full Electric: versión de 375 CV', `${jeep}/nuevo-jeep-compass/4xe-electrico`),
-      source('Jeep Compass MY26: ficha técnica española', `${jeep}/content/dam/jeep/es/models/pdf/Compass-MY26.pdf`),
     ],
     image: photo(
       'compass',

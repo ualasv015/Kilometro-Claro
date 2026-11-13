@@ -1,0 +1,10 @@
+Mercedes-Benz | mercedes-benz
+Audi | audi
+BMW | bmw
+Volvo | volvo
+Škoda | skoda
+Nissan | nissan
+Opel | opel
+EBRO | ebro
+Ford | ford
+Land Rover | land-rover

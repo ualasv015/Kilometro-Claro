@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '31 de octubre de 2026';
+const reviewedAt = '8 de noviembre de 2026';
 const kgm = 'https://kgm.com.es';
 const source = (label: string, url: string) => ({ label, url });
 
@@ -10,22 +10,21 @@ export const kgmModels: ModelPageData[] = [
     modelSlug: 'tivoli',
     title: 'KGM Tívoli: motores gasolina y GLP, potencia y ficha técnica | Kilómetro Claro',
     description: 'Consulta las versiones del KGM Tívoli en España, sus motores 1.5 gasolina, potencias, transmisión y datos técnicos oficiales.',
-    intro: 'El Tívoli es el SUV urbano de KGM. En la gama española consultada ofrece el motor turbo G15T con 135 o 163 CV, cambio manual o automático según potencia y versiones bifuel de gasolina y GLP. La marca también confirmó en julio de 2026 una variante 163 CV manual con tracción 4x4, aunque no aparece en el configurador consultado; conviene confirmar su disponibilidad con un concesionario.',
-    powertrainSummary: 'El G15T de 1.497 cm³ se ofrece con 135 CV o 163 CV. Para ambas potencias, el configurador muestra versiones de gasolina y gasolina + GLP; el motor de 135 CV es manual y el de 163 CV puede ser manual o automático. KGM España también anuncia el 163 CV manual con tracción 4x4, combinación que no figura en el configurador actual.',
-    usageNote: 'La web de KGM identifica las variantes de GLP por separado en su configurador, pero no publica cifras de par específicas para ellas. La ficha técnica distingue el régimen de par de los cambios manuales 4x2 y 4x4; por eso solo mostramos el dato de la variante manual 4x4, que coincide además con la información actual de la página del modelo.',
+    intro: 'El Tívoli es el SUV urbano de KGM. En el configurador español consultado, el motor turbo G15T aparece con 135 o 163 CV y tracción delantera; según la potencia, se combina con cambio manual o automático y también se ofrece en versiones bifuel de gasolina y GLP.',
+    powertrainSummary: 'El motor G15T de 1.497 cm³ desarrolla 135 o 163 CV. La gama configurable muestra gasolina y gasolina/GLP con 135 CV y cambio manual; con 163 CV hay versiones manuales y automáticas en ambos combustibles. Todas las combinaciones visibles en el configurador son 4x2.',
+    usageNote: 'KGM identifica las variantes bifuel en el configurador, pero no publica cifras de par diferenciadas para ellas. En las versiones de gasolina, la documentación técnica presenta discrepancias sobre el régimen de par de algunas combinaciones; por prudencia, solo se muestra el dato que puede asignarse sin ambigüedad a la versión automática.',
     versions: [
-      { name: 'G15T 135 · manual 6 velocidades · 4x2', type: 'Gasolina', power: '135 CV (99 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Motor de combustión', torqueRpm: '' },
-      { name: 'G15T 135 · gasolina + GLP · manual · 4x2', type: 'Gasolina + GLP', power: '135 CV (99 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
-      { name: 'G15T 163 · manual 6 velocidades · 4x2', type: 'Gasolina', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Motor de combustión', torqueRpm: '' },
-      { name: 'G15T 163 · manual 6 velocidades · 4x4', type: 'Gasolina', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–4.000 rpm' },
-      { name: 'G15T 163 · gasolina + GLP · manual · 4x2', type: 'Gasolina + GLP', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
-      { name: 'G15T 163 · automático 6 velocidades · 4x2', type: 'Gasolina', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '260 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–4.000 rpm' },
-      { name: 'G15T 163 · gasolina + GLP · automático · 4x2', type: 'Gasolina + GLP', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
+      { name: 'G15T 135 · manual 6 velocidades · 4x2', type: 'Gasolina', powertrainGroup: 'petrol', power: '135 CV (99 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Motor de combustión', torqueRpm: '' },
+      { name: 'G15T 135 · gasolina/GLP · manual 6 velocidades · 4x2', type: 'GLP · bifuel gasolina/GLP', powertrainGroup: 'bifuel', power: '135 CV (99 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
+      { name: 'G15T 163 · manual 6 velocidades · 4x2', type: 'Gasolina', powertrainGroup: 'petrol', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Motor de combustión', torqueRpm: '' },
+      { name: 'G15T 163 · gasolina/GLP · manual 6 velocidades · 4x2', type: 'GLP · bifuel gasolina/GLP', powertrainGroup: 'bifuel', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
+      { name: 'G15T 163 · automático 6 velocidades · 4x2', type: 'Gasolina', powertrainGroup: 'petrol', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '260 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–4.000 rpm' },
+      { name: 'G15T 163 · gasolina/GLP · automático 6 velocidades · 4x2', type: 'GLP · bifuel gasolina/GLP', powertrainGroup: 'bifuel', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV urbano de cinco plazas' },
       { label: 'Motor', value: 'Gasolina turbo de inyección directa G15T' },
-      { label: 'Tracción', value: '4x2 en el configurador; KGM también ha anunciado el 163 CV manual con tracción 4x4' },
+      { label: 'Tracción', value: '4x2 en las combinaciones que muestra el configurador actual' },
       { label: 'Combustible alternativo', value: 'Kit de GLP disponible para configuraciones concretas' },
     ],
     figures: [
@@ -34,7 +33,7 @@ export const kgmModels: ModelPageData[] = [
       { label: 'Longitud', value: '4.255 mm' },
       { label: 'Maletero', value: 'Hasta 427 litros, según KGM España' },
     ],
-    specNote: 'La nota de prensa de KGM España de julio de 2026 confirma el Tívoli 163 CV manual con opción 4x4; como esa combinación no aparece en el configurador consultado, indicamos que se debe confirmar su disponibilidad. La ficha técnica de KGM especifica 280 Nm a 1.500–4.000 rpm para el 163 CV manual 4x4, dato que coincide con la información de la página actual del modelo. Para las versiones manuales 4x2 existe una discrepancia: la ficha técnica asigna 1.500–3.000 rpm y la página de producto publica 1.500–4.000 rpm de forma general para el cambio manual, sin desglosarlo por potencia o tracción; por prudencia no mostramos ese par en las filas 4x2. Las fuentes coinciden en 260 Nm a 1.500–4.000 rpm para el automático. KGM no da una cifra diferenciada de par para las configuraciones de GLP, así que esas celdas quedan vacías.',
+    specNote: 'El configurador español consultado el 8 de noviembre de 2026 ofrece el Tívoli con tracción 4x2; no incluimos la variante 4x4 anunciada en comunicaciones anteriores porque no figura entre las configuraciones actualmente seleccionables. La ficha técnica y la página de producto discrepan sobre el régimen de par de las versiones manuales 4x2 y no lo desglosan de forma consistente por potencia, por lo que esas celdas quedan vacías. Para el cambio automático, la marca publica 260 Nm entre 1.500 y 4.000 rpm. KGM no indica una cifra diferenciada de par para las variantes de GLP.',
     officialUrl: `${kgm}/tivoli`,
     technicalUrl: `${kgm}/configurador/tivoli`,
     sources: [
@@ -54,12 +53,12 @@ export const kgmModels: ModelPageData[] = [
     powertrainSummary: 'El motor G15T desarrolla 149 CV con cambio manual y 163 CV con cambio automático. KGM muestra también versiones bifuel de 149 CV manual 4x2 y de 163 CV automáticas 4x2 y 4x4. La oferta visible no combina el motor de 149 CV con tracción total.',
     usageNote: 'Las variantes de GLP están identificadas por separado en el configurador, pero KGM no ofrece una ficha técnica con par diferenciada para ellas. La ficha técnica oficial actualmente servida publica 280 Nm entre 1.500 y 3.000 rpm para los motores G15T de 149 y 163 CV; no extendemos ese dato a las versiones bifuel sin una cifra específica del fabricante.',
     versions: [
-      { name: 'G15T 149 · manual 6 velocidades · 4x2', type: 'Gasolina', power: '149 CV (109 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–3.000 rpm' },
-      { name: 'G15T 149 · gasolina + GLP · manual · 4x2', type: 'Gasolina + GLP', power: '149 CV (109 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
-      { name: 'G15T 163 · automático 6 velocidades · 4x2', type: 'Gasolina', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–3.000 rpm' },
-      { name: 'G15T 163 · gasolina + GLP · automático · 4x2', type: 'Gasolina + GLP', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
-      { name: 'G15T 163 · automático 6 velocidades · 4x4', type: 'Gasolina', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–3.000 rpm' },
-      { name: 'G15T 163 · gasolina + GLP · automático · 4x4', type: 'Gasolina + GLP', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
+      { name: 'G15T 149 · manual 6 velocidades · 4x2', type: 'Gasolina', powertrainGroup: 'petrol', power: '149 CV (109 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–3.000 rpm' },
+      { name: 'G15T 149 · gasolina/GLP · manual 6 velocidades · 4x2', type: 'GLP · bifuel gasolina/GLP', powertrainGroup: 'bifuel', power: '149 CV (109 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
+      { name: 'G15T 163 · automático 6 velocidades · 4x2', type: 'Gasolina', powertrainGroup: 'petrol', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–3.000 rpm' },
+      { name: 'G15T 163 · gasolina/GLP · automático 6 velocidades · 4x2', type: 'GLP · bifuel gasolina/GLP', powertrainGroup: 'bifuel', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
+      { name: 'G15T 163 · automático 6 velocidades · 4x4', type: 'Gasolina', powertrainGroup: 'petrol', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–3.000 rpm' },
+      { name: 'G15T 163 · gasolina/GLP · automático 6 velocidades · 4x4', type: 'GLP · bifuel gasolina/GLP', powertrainGroup: 'bifuel', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema bifuel', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto de cinco plazas' },
@@ -94,9 +93,9 @@ export const kgmModels: ModelPageData[] = [
     powertrainSummary: 'Las versiones de gasolina montan el G15T 1.5 turbo de 163 CV; la ficha española recoge cambio manual con tracción delantera o automático con tracción total. El Torres HEV combina el motor de gasolina de 1.497 cm³ con un sistema eléctrico y declara 204 CV de potencia conjunta.',
     usageNote: 'La cifra de 204 CV del HEV corresponde al sistema híbrido completo y no a la potencia aislada del motor térmico. KGM publica 300 Nm para el HEV, pero no indica régimen; por eso el dato no se muestra en la columna de par. En el motor de gasolina, la ficha publica 280 Nm entre 1.500 y 4.000 rpm.',
     versions: [
-      { name: 'G15T 163 · manual 6 velocidades · 4x2', type: 'Gasolina', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–4.000 rpm' },
-      { name: 'G15T 163 · automático · 4x4', type: 'Gasolina', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–4.000 rpm' },
-      { name: 'HEV G15T · automático · 4x2', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 204 CV (150 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
+      { name: 'G15T 163 · manual 6 velocidades · 4x2', type: 'Gasolina', powertrainGroup: 'petrol', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–4.000 rpm' },
+      { name: 'G15T 163 · automático 6 velocidades · 4x4', type: 'Gasolina', powertrainGroup: 'petrol', power: '163 CV (120 kW)', displacement: '1.497 cm³', maxTorque: '280 Nm', torqueScope: 'Motor de combustión', torqueRpm: '1.500–4.000 rpm' },
+      { name: 'HEV G15T · híbrido no enchufable · automático · 4x2', type: 'Híbrido no enchufable · HEV gasolina', powertrainGroup: 'hybrid', power: 'Sistema: 204 CV (150 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV de cinco plazas' },
@@ -129,7 +128,7 @@ export const kgmModels: ModelPageData[] = [
     powertrainSummary: 'El configurador español muestra el HEV G15T 2WD con 204 CV (150 kW) de potencia conjunta. La ficha técnica identifica un motor de gasolina 1.497 cm³ combinado con propulsión eléctrica. No se publica el régimen asociado a los 300 Nm de par del sistema.',
     usageNote: 'Se indica la potencia del sistema híbrido y la cilindrada del motor térmico por separado. El par combinado de 300 Nm no aparece en la tabla porque la ficha no publica rpm; no debe compararse directamente con un dato de par térmico que sí incluya su régimen.',
     versions: [
-      { name: 'HEV G15T · automático · 4x2', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 204 CV (150 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
+      { name: 'HEV G15T · híbrido no enchufable · automático · 4x2', type: 'Híbrido no enchufable · HEV gasolina', powertrainGroup: 'hybrid', power: 'Sistema: 204 CV (150 kW)', displacement: '1.497 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV coupé de cinco plazas' },
@@ -162,7 +161,7 @@ export const kgmModels: ModelPageData[] = [
     powertrainSummary: 'El motor eléctrico entrega 152 kW, equivalentes a 207 CV. La batería LFP actual tiene 80,6 kWh y KGM homologa hasta 503 km en ciclo combinado WLTP. La cifra de par de 339 Nm se publica sin un régimen de giro, por lo que no se muestra en la tabla de motorizaciones.',
     usageNote: 'La autonomía es un valor homologado y puede variar con la velocidad, la temperatura, el relieve y el uso de climatización. El configurador español consultado ofrece tracción delantera; la ficha se centra en esa versión de pasajeros y no en el Torres EVX Van, que KGM presenta dentro de su oferta profesional.',
     versions: [
-      { name: 'EVX 4x2 · motor síncrono delantero', type: 'Eléctrico de batería', power: '207 CV (152 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: '' },
+      { name: 'EVX · eléctrico · 4x2 · motor síncrono delantero', type: 'Eléctrico', powertrainGroup: 'electric', power: '207 CV (152 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV eléctrico de cinco plazas' },
@@ -195,7 +194,7 @@ export const kgmModels: ModelPageData[] = [
     powertrainSummary: 'El cuatro cilindros turbodiésel de 2.157 cm³ desarrolla 202 CV (148,6 kW) y 441 Nm entre 1.600 y 2.600 rpm según la ficha técnica española específica del Rexton. KGM ofrece el mismo sistema mecánico con diferentes acabados, no con distintas potencias.',
     usageNote: 'La ficha técnica describe una tracción total conectable y cambio automático de ocho relaciones. El número de plazas, los elementos de equipamiento y la configuración de tracción pueden variar por acabado y disponibilidad; confirma la unidad concreta con KGM España.',
     versions: [
-      { name: 'D22 DTR 4WD · automático de 8 velocidades', type: 'Diésel', power: '202 CV (148,6 kW)', displacement: '2.157 cm³', maxTorque: '441 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.600–2.600 rpm' },
+      { name: 'D22 DTR 4WD · automático de 8 velocidades', type: 'Diésel', powertrainGroup: 'diesel', power: '202 CV (148,6 kW)', displacement: '2.157 cm³', maxTorque: '441 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.600–2.600 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV grande de siete plazas' },
@@ -229,8 +228,8 @@ export const kgmModels: ModelPageData[] = [
     powertrainSummary: 'El motor turbodiésel D22 DTR de 2.157 cm³ ofrece 202 CV (148,6 kW). El cambio manual desarrolla 400 Nm entre 1.400 y 2.800 rpm; el automático, 441 Nm entre 1.600 y 2.600 rpm.',
     usageNote: 'KGM lista el Musso en su gama y permite solicitar versiones con carrocería corta o larga. La web advierte que las promociones indicadas para el Musso se dirigen a profesionales y excluyen IVA e impuesto de matriculación; conviene confirmar expresamente una oferta para compra particular y su precio final.',
     versions: [
-      { name: 'D22 DTR · manual 6 velocidades · 4WD', type: 'Diésel', power: '202 CV (148,6 kW)', displacement: '2.157 cm³', maxTorque: '400 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.400–2.800 rpm' },
-      { name: 'D22 DTR · automático 6 velocidades · 4WD', type: 'Diésel', power: '202 CV (148,6 kW)', displacement: '2.157 cm³', maxTorque: '441 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.600–2.600 rpm' },
+      { name: 'D22 DTR · manual 6 velocidades · 4WD', type: 'Diésel', powertrainGroup: 'diesel', power: '202 CV (148,6 kW)', displacement: '2.157 cm³', maxTorque: '400 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.400–2.800 rpm' },
+      { name: 'D22 DTR · automático 6 velocidades · 4WD', type: 'Diésel', powertrainGroup: 'diesel', power: '202 CV (148,6 kW)', displacement: '2.157 cm³', maxTorque: '441 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.600–2.600 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Pick-up de doble cabina y cinco plazas' },
@@ -264,8 +263,8 @@ export const kgmModels: ModelPageData[] = [
     powertrainSummary: 'La versión 4x2 entrega 207 CV (152 kW) desde su motor delantero. La 4x4 combina dos motores de 207 CV (152 kW) cada uno y declara 238 CV (175 kW) de potencia conjunta. La batería tiene 80,6 kWh; KGM publica par de 339 Nm para 4x2 y 630 Nm para 4x4, pero sin régimen, por lo que esos pares no se trasladan a la tabla.',
     usageNote: 'La potencia conjunta de la versión AWD no es la suma aritmética de la potencia nominal de ambos motores. KGM publica 175 kW (238 CV) de potencia conjunta en su nota de prensa sobre el Musso EVX; la ficha técnica española especifica 152 kW (207 CV) para cada motor eléctrico. Autonomía y capacidad de carga varían según tracción y acabado; las promociones de KGM deben revisarse con el concesionario.',
     versions: [
-      { name: 'Musso EVX 4x2 · motor delantero', type: 'Eléctrico de batería', power: '207 CV (152 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico delantero', torqueRpm: '' },
-      { name: 'Musso EVX 4x4 · doble motor', type: 'Eléctrico de batería, motor delantero y trasero', power: 'Sistema: 238 CV (175 kW); delantero: 207 CV (152 kW); trasero: 207 CV (152 kW)', displacement: '—', maxTorque: '', torqueScope: 'Sistema eléctrico', torqueRpm: '' },
+      { name: 'Musso EVX · eléctrico · 4x2 · motor delantero', type: 'Eléctrico', powertrainGroup: 'electric', power: '207 CV (152 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico delantero', torqueRpm: '' },
+      { name: 'Musso EVX · eléctrico · 4x4 · doble motor', type: 'Eléctrico', powertrainGroup: 'electric', power: 'Sistema: 238 CV (175 kW); delantero: 207 CV (152 kW); trasero: 207 CV (152 kW)', displacement: '—', maxTorque: '', torqueScope: 'Sistema eléctrico', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Pick-up eléctrico de doble cabina y cinco plazas' },

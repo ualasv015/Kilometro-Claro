@@ -1,8 +1,18 @@
 import type { ModelPageData, ModelVersion } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '11 de noviembre de 2026';
 const root = 'https://www.skoda.es';
 const source = (label: string, url: string) => ({ label, url });
+
+function classifyPowertrain(type: string, name: string): ModelVersion['powertrainGroup'] {
+  const value = `${type} ${name}`;
+  if (/PHEV|enchufable/i.test(value)) return 'plug-in';
+  if (/MHEV|microhíbrido/i.test(value)) return 'mild-hybrid';
+  if (/full.?hybrid|híbrido no enchufable|\bHEV\b/i.test(value)) return 'hybrid';
+  if (/diésel|diesel|\bTDI\b/i.test(value)) return 'diesel';
+  if (/eléctrico|electric/i.test(value)) return 'electric';
+  return 'petrol';
+}
 
 const motor = (
   name: string,
@@ -13,7 +23,7 @@ const motor = (
   torqueScope = '',
   torqueRpm = '',
   note?: string,
-): ModelVersion => ({ name, type, power, displacement, maxTorque, torqueScope, torqueRpm, ...(note ? { note } : {}) });
+): ModelVersion => ({ name, type, power, displacement, maxTorque, torqueScope, torqueRpm, powertrainGroup: classifyPowertrain(type, name), ...(note ? { note } : {}) });
 
 type SkodaDraft = Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>;
 
@@ -33,7 +43,7 @@ const drafts: SkodaDraft[] = [
     specNote: 'La documentación española consultada distingue las capacidades brutas de batería. En la tabla se muestra la potencia declarada por Škoda; no se añade par porque la fuente no especifica las revoluciones a las que se obtiene.',
     officialUrl: `${root}/modelos/epiq/epiq`,
     technicalUrl: 'https://comunicacion.skoda.es/2026/09/15/el-skoda-epiq-amplia-su-gama-con-una-nueva-version-de-acceso-desde-18-500-euros/',
-    sources: [source('Gama oficial Škoda España', `${root}/modelos/gama`), source('Škoda España: Epiq 40 y Epiq 55', 'https://comunicacion.skoda.es/2026/09/15/el-skoda-epiq-amplia-su-gama-con-una-nueva-version-de-acceso-desde-18-500-euros/')],
+    sources: [source('Gama oficial Škoda España', `${root}/modelos/gama`), source('Škoda España: Epiq 40 y Epiq 55', 'https://comunicacion.skoda.es/2026/09/15/el-skoda-epiq-amplia-su-gama-con-una-nueva-version-de-acceso-desde-18-500-euros/'), source('Škoda: presentación del Epiq y fabricación en Navarra', 'https://comunicacion.skoda.es/2026/10/30/skoda-presenta-el-nuevo-epiq-en-navarra-donde-se-fabrica-el-primer-modelo-de-la-marca-producido-en-espana/')],
   },
   {
     modelSlug: 'kamiq',
@@ -93,35 +103,35 @@ const drafts: SkodaDraft[] = [
     title: 'Škoda Enyaq: motores eléctricos, batería y tracción',
     description: 'Ficha del Škoda Enyaq con sus versiones eléctricas 60, 85, 85x y RS, potencia y capacidad de batería según la documentación de España.',
     intro: 'El Enyaq es el SUV eléctrico familiar de Škoda. En la gama española conviven versiones de tracción trasera, una variante 4x4 de doble motor y el RS, con diferencias de potencia y tamaño de batería.',
-    powertrainSummary: 'El configurador español consultado recoge las versiones 60 de 150 kW (204 CV), 85 de 210 kW (286 CV), 85x de 210 kW (286 CV) y RS de 250 kW (340 CV). Sus baterías brutas son de 63, 82 y 84 kWh, según versión.',
+    powertrainSummary: 'La gama española actualizada recoge las versiones 60 de 140 kW (190 CV) y 61 kWh, 85 de 210 kW (286 CV) y 82 kWh, 85x de 210 kW (286 CV) y RS de 250 kW (340 CV). Las dos últimas montan batería de 82 y 84 kWh, respectivamente.',
     usageNote: 'La denominación 85x indica tracción total mediante dos motores; 85 y 60 son de tracción trasera. La batería y el acabado afectan a la autonomía homologada, el peso y la velocidad de carga. Compara siempre una misma combinación de carrocería, llanta y acabado.',
     versions: [
-      motor('60 · 63 kWh', 'Eléctrico', '204 CV (150 kW)', '—'),
+      motor('60 · 61 kWh', 'Eléctrico', '190 CV (140 kW)', '—'),
       motor('85 · 82 kWh', 'Eléctrico', '286 CV (210 kW)', '—'),
       motor('85x · 82 kWh · tracción total', 'Eléctrico', '286 CV (210 kW)', '—'),
       motor('RS · 84 kWh · tracción total', 'Eléctrico', '340 CV (250 kW)', '—'),
     ],
-    facts: [{ label: 'Carrocería', value: 'SUV eléctrico' }, { label: 'Baterías brutas', value: '63, 82 u 84 kWh, según versión' }, { label: 'Plazas', value: '5' }, { label: 'Tracción', value: 'Trasera o total, según versión' }],
-    specNote: 'Las denominaciones 60, 85 y 85x se conservan para identificar las variantes del fabricante. En eléctricos se indica «—» en cilindrada y no se muestra el par porque la tabla técnica no proporciona las revoluciones a las que se obtiene.',
+    facts: [{ label: 'Carrocería', value: 'SUV eléctrico' }, { label: 'Baterías brutas', value: '61, 82 u 84 kWh, según versión' }, { label: 'Plazas', value: '5' }, { label: 'Tracción', value: 'Trasera o total, según versión' }],
+    specNote: 'La gama española actualizada identifica la versión de acceso 60 con batería de 61 kWh y 140 kW (190 CV); se sustituyen los datos anteriores de 63 kWh y 204 CV. En eléctricos se indica «—» en cilindrada y no se muestra el par porque la tabla técnica no proporciona las revoluciones a las que se obtiene.',
     officialUrl: `${root}/modelos/enyaq/enyaq`,
     technicalUrl: `${root}/_doc/28280876-c980-403d-82d4-6a305e01cc42`,
-    sources: [source('Škoda España: Enyaq', `${root}/modelos/enyaq/enyaq`), source('Configurador y especificaciones del Enyaq', `${root}/_doc/28280876-c980-403d-82d4-6a305e01cc42`), source('Škoda: versiones de tracción total', 'https://comunicacion.skoda.es/2026/02/24/la-gama-de-modelos-skoda-4x4-conduccion-segura-en-cualquier-condicion-climatica-y-en-terrenos-dificiles/')],
+    sources: [source('Škoda España: Enyaq y versión 60 actual', `${root}/modelos/enyaq/enyaq`), source('Configurador y especificaciones del Enyaq', `${root}/_doc/28280876-c980-403d-82d4-6a305e01cc42`), source('Škoda: versiones de tracción total', 'https://comunicacion.skoda.es/2026/02/24/la-gama-de-modelos-skoda-4x4-conduccion-segura-en-cualquier-condicion-climatica-y-en-terrenos-dificiles/')],
   },
   {
     modelSlug: 'enyaq-coupe',
     title: 'Škoda Enyaq Coupé: motores eléctricos y versiones',
     description: 'Conoce las motorizaciones eléctricas del Škoda Enyaq Coupé comercializado en España, con potencia, batería y tipo de tracción.',
     intro: 'El Enyaq Coupé comparte la base técnica eléctrica del Enyaq, pero combina el formato SUV con una línea de techo más inclinada. La gama española incluye acabados Selection, Sportline y RS, con variantes de batería y tracción diferentes.',
-    powertrainSummary: 'La gama consultada incluye las versiones 60, 85, 85x y RS, con potencias de 150, 210 y 250 kW. La batería varía entre 63, 82 y 84 kWh brutos. La denominación 85x y el RS corresponden a configuraciones de tracción total.',
+    powertrainSummary: 'La gama española actualizada incluye el 60 de 140 kW (190 CV) y 61 kWh, el 85 de 210 kW (286 CV), el 85x de 210 kW (286 CV) y el RS de 250 kW (340 CV). Las versiones 85, 85x y RS usan baterías de 82, 82 y 84 kWh; 85x y RS tienen tracción total.',
     usageNote: 'La carrocería Coupé puede alterar la autonomía frente a un Enyaq SUV equivalente. Antes de comparar, comprueba si la cifra WLTP pertenece al mismo motor, batería, llantas y nivel de equipamiento; el nombre comercial por sí solo no garantiza que la configuración sea idéntica.',
     versions: [
-      motor('60 · 63 kWh', 'Eléctrico', '204 CV (150 kW)', '—'),
+      motor('60 · 61 kWh', 'Eléctrico', '190 CV (140 kW)', '—'),
       motor('85 · 82 kWh', 'Eléctrico', '286 CV (210 kW)', '—'),
       motor('85x · 82 kWh · tracción total', 'Eléctrico', '286 CV (210 kW)', '—'),
       motor('RS · 84 kWh · tracción total', 'Eléctrico', '340 CV (250 kW)', '—'),
     ],
-    facts: [{ label: 'Carrocería', value: 'SUV coupé eléctrico' }, { label: 'Baterías brutas', value: '63, 82 u 84 kWh, según versión' }, { label: 'Plazas', value: '5' }, { label: 'Tracción', value: 'Trasera o total, según versión' }],
-    specNote: 'La página comercial española anuncia la versión 60 de 150 kW y el catálogo técnico de la familia Enyaq documenta 60, 85, 85x y RS. Las potencias y baterías se presentan por variante; no se atribuye un par eléctrico sin un régimen publicado.',
+    facts: [{ label: 'Carrocería', value: 'SUV coupé eléctrico' }, { label: 'Baterías brutas', value: '61, 82 u 84 kWh, según versión' }, { label: 'Plazas', value: '5' }, { label: 'Tracción', value: 'Trasera o total, según versión' }],
+    specNote: 'La página comercial española actualiza la versión 60 a 140 kW (190 CV) y 61 kWh. Las potencias y baterías se presentan por variante; no se atribuye un par eléctrico sin un régimen publicado.',
     officialUrl: `${root}/modelos/enyaq-coupe-iv/enyaq-coupe`,
     technicalUrl: `${root}/_doc/28280876-c980-403d-82d4-6a305e01cc42`,
     sources: [source('Škoda España: Enyaq Coupé', `${root}/modelos/enyaq-coupe-iv/enyaq-coupe`), source('Configurador y especificaciones de la familia Enyaq', `${root}/_doc/28280876-c980-403d-82d4-6a305e01cc42`), source('Škoda: versiones de tracción total', 'https://comunicacion.skoda.es/2026/02/24/la-gama-de-modelos-skoda-4x4-conduccion-segura-en-cualquier-condicion-climatica-y-en-terrenos-dificiles/')],
@@ -131,10 +141,10 @@ const drafts: SkodaDraft[] = [
     title: 'Škoda Kodiaq: motorizaciones gasolina, híbrida enchufable y diésel',
     description: 'Revisa los motores del Škoda Kodiaq en España: gasolina microhíbrida, gasolina, híbrido enchufable, diésel y RS.',
     intro: 'El Kodiaq es el SUV grande de Škoda y puede configurarse con cinco o siete plazas. Su gama destaca por la variedad mecánica: combina gasolina microhíbrida, gasolina con tracción total, híbrido enchufable y diésel.',
-    powertrainSummary: 'El configurador español consultado enumera seis motorizaciones: 1.5 TSI mHEV de 150 CV, 2.0 TSI de 204 CV, 1.5 TSI iV PHEV de 204 CV, 2.0 TDI de 150 y 193 CV, y 2.0 TSI RS de 265 CV. La tracción y el cambio varían por versión.',
+    powertrainSummary: 'La gama española consultada ofrece el 1.5 TSI mHEV de 160 CV, el 2.0 TSI de 204 CV, el 1.5 TSI iV PHEV de 204 CV, diésel 2.0 TDI de 150 y 193 CV y el RS 2.0 TSI de 265 CV. Škoda anunció aparte un PHEV de 200 kW (272 CV), con motor de gasolina de 130 kW y eléctrico de 85 kW; como todavía no aparece en el configurador español consultado, no se cuenta entre las versiones de venta verificadas.',
     usageNote: 'Para uso urbano frecuente, el iV enchufable puede circular en eléctrico si se recarga con regularidad; en viajes largos, conserva el motor de gasolina. Las opciones TDI están orientadas a quien recorre muchos kilómetros, mientras que las versiones 4x4 o RS añaden capacidades que no todos los conductores necesitan. Compara el coste total con tu kilometraje y acceso a carga.',
     versions: [
-      motor('1.5 TSI mHEV 150', 'Microhíbrido (gasolina)', '150 CV (110 kW)', '1.498 cm³', '250 Nm', 'Motor de gasolina', '1.500–3.500 rpm'),
+      motor('1.5 TSI mHEV 160', 'Microhíbrido (gasolina)', '160 CV (118 kW)', '1.498 cm³'),
       motor('2.0 TSI 204 4x4', 'Gasolina', '204 CV (150 kW)', '1.984 cm³'),
       motor('1.5 TSI iV PHEV 204', 'Híbrido enchufable (gasolina + eléctrico)', 'Sistema: 204 CV (150 kW); térmico: 150 CV (110 kW); eléctrico: 116 CV (85 kW)', '1.498 cm³', '250 Nm', 'Motor térmico de gasolina', '1.500–4.000 rpm'),
       motor('2.0 TDI 150', 'Diésel', '150 CV (110 kW)', '1.968 cm³', '360 Nm', 'Motor diésel', '1.600–2.750 rpm'),
@@ -142,46 +152,48 @@ const drafts: SkodaDraft[] = [
       motor('2.0 TSI RS 265 4x4', 'Gasolina', '265 CV (195 kW)', '1.984 cm³'),
     ],
     facts: [{ label: 'Carrocería', value: 'SUV grande' }, { label: 'Plazas', value: '5 o 7, según configuración' }, { label: 'Batería enchufable', value: 'Disponible en el Kodiaq iV' }, { label: 'Tracción', value: 'Delantera o total, según motor' }],
-    specNote: 'En el Kodiaq PHEV se separa la potencia del sistema de la térmica y eléctrica que publica el fabricante. Se muestra únicamente el par térmico con su régimen; no se extrapola el par combinado. El configurador incluye el motor RS, pero no se publica aquí su régimen de par.',
+    specNote: 'En el Kodiaq PHEV se separa la potencia del sistema de la térmica y eléctrica que publica el fabricante. El PHEV de 272 CV se ha anunciado, pero no se incluye en la tabla de motores disponibles mientras no aparezca en el configurador español. Se muestra únicamente el par térmico publicado con su régimen; no se extrapola el par combinado. El configurador incluye el motor RS, pero no se publica aquí su régimen de par.',
     officialUrl: `${root}/modelos/kodiaq/kodiaq`,
     technicalUrl: `${root}/_doc/a20d25a1-6a15-42b2-b1bf-b244e70e2388`,
-    sources: [source('Škoda España: Kodiaq', `${root}/modelos/kodiaq/kodiaq`), source('Configurador español del Kodiaq', `${root}/_doc/a20d25a1-6a15-42b2-b1bf-b244e70e2388`), source('Ficha técnica del Kodiaq', `${root}/_doc/2b085e42-11b6-4bfb-893c-6d49d55ccb12`), source('Škoda España: Kodiaq RS', `${root}/modelos/kodiaq/kodiaq-rs`)],
+    sources: [source('Škoda España: Kodiaq y oferta 1.5 TSI mHEV actualizada', `${root}/modelos/kodiaq/kodiaq`), source('Configurador español del Kodiaq', `${root}/_doc/a20d25a1-6a15-42b2-b1bf-b244e70e2388`), source('Ficha técnica del Kodiaq', `${root}/_doc/2b085e42-11b6-4bfb-893c-6d49d55ccb12`), source('Škoda España: Kodiaq RS', `${root}/modelos/kodiaq/kodiaq-rs`), source('Škoda: anuncio del nuevo Kodiaq PHEV de 200 kW, 22 de octubre de 2026', 'https://comunicacion.skoda.es/2026/10/22/la-gama-skoda-kodiaq-se-amplia-con-el-nuevo-acabado-laurin-klement-y-un-sistema-de-propulsion-hibrido-enchufable-de-200-kw/')],
   },
   {
     modelSlug: 'peaq',
     title: 'Škoda Peaq: motores eléctricos, batería y versiones',
-    description: 'Consulta las versiones eléctricas del Škoda Peaq para España, con motor dual, potencias de 286 y 299 CV y batería de 91 kWh.',
-    intro: 'El Peaq es el SUV eléctrico de mayor tamaño de Škoda y puede llevar cinco o siete plazas. La página española de motores muestra dos configuraciones con batería de 91 kWh y motor dual, orientadas a combinar espacio familiar con desplazamientos de larga distancia.',
-    powertrainSummary: 'La comparación de motores de Škoda España recoge versiones de 286 CV (210 kW) y 299 CV (220 kW), ambas con motor dual y batería bruta de 91 kWh. La batería neta se cifra en 86 kWh. El catálogo de precios y acabados puede cambiar por disponibilidad.',
+    description: 'Consulta las versiones eléctricas del Škoda Peaq para España, con tracción trasera o total, potencias de 286 y 299 CV y batería de 91 kWh.',
+    intro: 'El Peaq es el SUV eléctrico de mayor tamaño de Škoda y puede llevar cinco o siete plazas. La lista oficial de precios recoge configuraciones de tracción trasera y total con batería de 91 kWh, orientadas a combinar espacio familiar con desplazamientos de larga distancia.',
+    powertrainSummary: 'La lista oficial española de precios recoge tres configuraciones con batería bruta de 91 kWh: tracción trasera de 286 CV, motor dual de 286 CV y motor dual de 299 CV. La batería neta se cifra en 86 kWh. Los acabados y las combinaciones pueden cambiar según disponibilidad.',
     usageNote: 'En un SUV eléctrico grande, la ocupación, el equipaje, la velocidad y la temperatura influyen especialmente en la autonomía real. Si necesitas siete plazas, comprueba también el maletero disponible con todos los asientos desplegados: la configuración interior altera mucho la capacidad de carga.',
     versions: [
+      motor('91 kWh · tracción trasera · 286', 'Eléctrico', '286 CV (210 kW)', '—'),
       motor('91 kWh · motor dual · 286', 'Eléctrico', '286 CV (210 kW)', '—'),
       motor('91 kWh · motor dual · 299', 'Eléctrico', '299 CV (220 kW)', '—'),
     ],
-    facts: [{ label: 'Carrocería', value: 'SUV eléctrico grande' }, { label: 'Plazas', value: '5 o 7, según configuración' }, { label: 'Batería', value: '91 kWh brutos (86 kWh netos)' }, { label: 'Tracción', value: 'Total, doble motor' }],
-    specNote: 'La página española de motores presenta dos potencias para el Peaq con motor dual. La potencia y el par se refieren al sistema eléctrico; se omite el par en la tabla de cinco campos porque la fuente no publica un régimen en rpm.',
+    facts: [{ label: 'Carrocería', value: 'SUV eléctrico grande' }, { label: 'Plazas', value: '5 o 7, según configuración' }, { label: 'Batería', value: '91 kWh brutos (86 kWh netos)' }, { label: 'Tracción', value: 'Trasera o total, según versión' }],
+    specNote: 'La lista oficial española de precios documenta una configuración trasera de 286 CV y dos configuraciones con motor dual. La potencia y el par se refieren al sistema eléctrico; se omite el par en la tabla de cinco campos porque la fuente no publica un régimen en rpm.',
     officialUrl: `${root}/modelos/peaq/peaq`,
     technicalUrl: `${root}/modelos/peaq/peaq/peaq-engines`,
     sources: [source('Škoda España: Peaq', `${root}/modelos/peaq/peaq`), source('Comparador de motores del Peaq', `${root}/modelos/peaq/peaq/peaq-engines`), source('Lista de precios de Peaq', `${root}/modelos/peaq/peaq/peaq-pricelist`)],
   },
   {
     modelSlug: 'fabia',
-    title: 'Škoda Fabia: motores gasolina de 80 a 150 CV',
-    description: 'Ficha de motores del Škoda Fabia en España: MPI y TSI de 80, 95, 115 y 150 CV, cilindrada y par publicado.',
+    title: 'Škoda Fabia: motores gasolina de 80 a 177 CV',
+    description: 'Ficha de motores del Škoda Fabia en España: MPI y TSI de 80, 95, 115, 150 y 177 CV, cilindrada y par publicado.',
     intro: 'El Fabia es el utilitario de cinco puertas de Škoda. Sus dimensiones compactas facilitan el uso urbano, mientras que la gama TSI permite elegir más potencia para circular con frecuencia fuera de la ciudad.',
-    powertrainSummary: 'La ficha técnica española del Fabia enumera un 1.0 MPI de 80 CV, dos 1.0 TSI de 95 y 115 CV y un 1.5 TSI de 150 CV. El 1.0 MPI es atmosférico; los TSI son turboalimentados.',
+    powertrainSummary: 'La gama combina el 1.0 MPI de 80 CV y los 1.0 TSI de 95 y 115 CV con el 1.5 TSI de 150 CV y la edición limitada Fabia 130, cuyo 1.5 TSI entrega 177 CV. MPI es atmosférico; TSI, turboalimentado.',
     usageNote: 'El MPI de 80 CV es la alternativa sencilla de acceso y el 1.5 TSI de 150 CV prioriza la respuesta. Los 1.0 TSI ocupan el centro de la gama. Para uso principalmente urbano, conviene valorar precio, consumo homologado y frecuencia de trayectos cortos; en autovía, compara también el régimen y la caja de cambios de la unidad concreta.',
     versions: [
       motor('1.0 MPI 80', 'Gasolina', '80 CV (59 kW)', '999 cm³', '93 Nm', 'Motor de gasolina', '3.700–3.900 rpm'),
       motor('1.0 TSI 95', 'Gasolina', '95 CV (70 kW)', '999 cm³', '175 Nm', 'Motor de gasolina', '1.600–3.500 rpm'),
       motor('1.0 TSI 115', 'Gasolina', '115 CV (85 kW)', '999 cm³', '200 Nm', 'Motor de gasolina', '2.000–3.500 rpm'),
       motor('1.5 TSI 150', 'Gasolina', '150 CV (110 kW)', '1.498 cm³', '250 Nm', 'Motor de gasolina', '1.500–3.500 rpm'),
+      motor('Fabia 130 · 1.5 TSI 177', 'Gasolina', '177 CV (130 kW)', '1.498 cm³', '250 Nm', 'Motor de gasolina', '1.500–4.000 rpm'),
     ],
     facts: [{ label: 'Carrocería', value: 'Utilitario de 5 puertas' }, { label: 'Plazas', value: '5' }, { label: 'Motores', value: 'Gasolina MPI y TSI' }, { label: 'Tracción', value: 'Delantera' }],
-    specNote: 'Las potencias y los pares se transcriben de la ficha técnica de Škoda España. La disponibilidad por acabado y caja de cambios puede variar; la tabla agrupa por motor y no cuenta las transmisiones como motores distintos.',
+    specNote: 'Las potencias y los pares se transcriben de la documentación de Škoda España. El Fabia 130 es una edición limitada de 177 CV, con motor 1.5 TSI y 250 Nm entre 1.500 y 4.000 rpm. La disponibilidad por acabado y caja de cambios puede variar; la tabla agrupa por motor y no cuenta las transmisiones como motores distintos.',
     officialUrl: `${root}/modelos/fabia/fabia`,
     technicalUrl: `${root}/_doc/edc2e091-6379-4408-b517-db6f08dbf674`,
-    sources: [source('Škoda España: Fabia', `${root}/modelos/fabia/fabia`), source('Ficha técnica oficial del Fabia', `${root}/_doc/edc2e091-6379-4408-b517-db6f08dbf674`)],
+    sources: [source('Škoda España: Fabia', `${root}/modelos/fabia/fabia`), source('Ficha técnica oficial del Fabia', `${root}/_doc/edc2e091-6379-4408-b517-db6f08dbf674`), source('Škoda España: ficha y motor del Fabia 130', `${root}/modelos/fabia/fabia-130/fabia-130-motor`), source('Škoda: lanzamiento del Fabia 130', 'https://comunicacion.skoda.es/2026/03/04/skoda-presenta-en-madrid-el-nuevo-fabia-130-el-fabia-de-serie-mas-potente-de-la-gama/')],
   },
   {
     modelSlug: 'scala',

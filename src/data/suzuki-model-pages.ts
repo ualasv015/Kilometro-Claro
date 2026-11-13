@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '13 de noviembre de 2026';
 const suzuki = 'https://auto.suzuki.es';
 const source = (label: string, url: string) => ({ label, url });
 
@@ -37,13 +37,13 @@ export const suzukiModels: ModelPageData[] = [
     modelSlug: 'e-vitara',
     title: 'Suzuki e VITARA: versiones eléctricas y ficha técnica | Kilómetro Claro',
     description: 'Consulta las versiones eléctricas del Suzuki e VITARA para España: batería, potencia, tracción, cilindrada y datos oficiales del fabricante.',
-    intro: 'El e VITARA es el primer SUV eléctrico de batería de Suzuki. La gama española ofrece dos capacidades de batería y tres combinaciones de potencia y tracción: dos versiones 2WD y una configuración 4WD ALLGRIP-e.',
-    powertrainSummary: 'Suzuki declara baterías de 49 y 61 kWh. La versión de 49 kWh entrega 144 CV (106 kW), la de 61 kWh y tracción 2WD desarrolla 174 CV (128 kW), y la versión 61 kWh ALLGRIP-e alcanza 184 CV (135 kW) combinados. La documentación consultada no indica las revoluciones a las que se entrega el par; por coherencia, no trasladamos esa cifra a la tabla.',
+    intro: 'El e VITARA es el primer SUV eléctrico de batería de Suzuki. La gama española combina baterías de 49 y 61 kWh con versiones de tracción delantera y una alternativa de dos motores ALLGRIP-e.',
+    powertrainSummary: 'Suzuki publica 106 kW (144 CV) para el eAxle delantero asociado a la batería de 49 kWh y 128 kW (174 CV) con la de 61 kWh en 2WD. La variante 4WD combina un eAxle delantero de 128 kW y otro trasero de 48 kW; la marca declara 135 kW (184 CV) y 307 Nm para el conjunto. En las dos versiones 2WD anuncia 193 Nm. La documentación consultada no publica las rpm de entrega de esos pares, por lo que no se incluyen en la columna Par máximo.',
     usageNote: 'La autonomía depende de la batería, la tracción, la temperatura y el recorrido. Suzuki homologa hasta 426 km combinados WLTP en la versión 2WD de 61 kWh y hasta 395 km en la 4WD. La ficha técnica también ofrece valores urbanos, que no deben confundirse con la autonomía combinada. Antes de comparar ofertas, comprueba la capacidad de batería y la tracción exactas.',
     versions: [
-      { name: '49 kWh 2WD', type: 'Eléctrico de batería', power: '144 CV (106 kW)', displacement: '—', maxTorque: '—', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado en la ficha técnica consultada' },
-      { name: '61 kWh 2WD', type: 'Eléctrico de batería', power: '174 CV (128 kW)', displacement: '—', maxTorque: '—', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado en la ficha técnica consultada' },
-      { name: '61 kWh 4WD ALLGRIP-e', type: 'Eléctrico de batería con dos motores', power: '184 CV (135 kW)', displacement: '—', maxTorque: '—', torqueScope: 'Sistema eléctrico combinado', torqueRpm: 'No publicado en la ficha técnica consultada' },
+      { name: '49 kWh 2WD eAxle', type: 'Eléctrico', power: '144 CV (106 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico delantero', torqueRpm: 'No publicado por Suzuki' },
+      { name: '61 kWh 2WD eAxle', type: 'Eléctrico', power: '174 CV (128 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico delantero', torqueRpm: 'No publicado por Suzuki' },
+      { name: '61 kWh 4WD ALLGRIP-e', type: 'Eléctrico', power: '184 CV (135 kW)', displacement: '—', maxTorque: '', torqueScope: 'Dos motores eléctricos, potencia y par combinados', torqueRpm: 'No publicado por Suzuki' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV eléctrico' },
@@ -52,11 +52,13 @@ export const suzukiModels: ModelPageData[] = [
       { label: 'Batería', value: '49 o 61 kWh' },
     ],
     figures: [{ label: 'Autonomía combinada WLTP', value: '344–426 km, según versión' }],
-    specNote: 'La ficha técnica de Suzuki especifica las cifras de par en Nm, pero no publica las revoluciones por minuto a las que se alcanzan; por eso no aparecen en la columna Par máximo. La gama y las cifras pueden variar por acabado o actualización del modelo.',
+    specNote: 'Suzuki publica 193 Nm para las configuraciones 2WD y 307 Nm combinados para ALLGRIP-e, pero no indica el régimen en rpm. Se omiten de la tabla conforme al criterio de esta ficha. La autonomía y el precio dependen de batería, acabado y condiciones de la ayuda anunciada.',
     officialUrl: `${suzuki}/modelos/electrico/evitara`,
     technicalUrl: 'https://auto.suzuki.es/storage/files/7aed7g3ctgpjy8uhr57e4wz1ctqlcffsadod9ljm.pdf',
     sources: [
       source('Suzuki España: e VITARA', `${suzuki}/modelos/electrico/evitara`),
+      source('Suzuki España: motores, baterías y autonomía del e VITARA', `${suzuki}/modelos/etiqueta-cero/evitara`),
+      source('Suzuki España: anuncio del e VITARA y sus versiones', `${suzuki}/actualidad/evitara-lanzamiento`),
       source('Suzuki España: ficha técnica del e VITARA', 'https://auto.suzuki.es/storage/files/7aed7g3ctgpjy8uhr57e4wz1ctqlcffsadod9ljm.pdf'),
     ],
     image: photo(
@@ -75,14 +77,14 @@ export const suzukiModels: ModelPageData[] = [
   {
     brandSlug: 'suzuki',
     modelSlug: 'across-2026',
-    title: 'Suzuki Across 2026: sistema híbrido enchufable y ficha técnica | Kilómetro Claro',
-    description: 'Ficha del nuevo Suzuki Across 2026 para España: motor 2.5 PHEV, potencia térmica y eléctrica, cilindrada, par y tracción E-Four.',
+    title: 'Suzuki Across: sistema híbrido enchufable y ficha técnica | Kilómetro Claro',
+    description: 'Ficha del nuevo Suzuki Across para España: motor 2.5 PHEV, potencia térmica y eléctrica, cilindrada, par y tracción E-Four.',
     intro: 'El nuevo Across es un SUV híbrido enchufable con tracción total electrónica E-Four. La versión española combina un motor de gasolina de 2,5 litros, motores eléctricos y una batería de 22,7 kWh; Suzuki publica 308 CV para el sistema completo.',
-    powertrainSummary: 'El motor térmico A25A-FXS entrega 143 CV (105 kW) y 227 Nm entre 3.200 y 3.300 rpm. La ficha técnica añade un motor eléctrico delantero de 206 CV (151,4 kW), otro trasero de 55 CV (40,7 kW) y 308,7 CV (227 kW) de potencia máxima del sistema. Suzuki redondea esta última cifra a 308 CV en la página comercial. Las potencias corresponden a componentes y sistema; no deben sumarse entre sí.',
+    powertrainSummary: 'La ficha técnica española identifica el motor de gasolina A25A-FXS de 2.487 cm³: 143 CV (105 kW) a 4.800 rpm y 227 Nm entre 3.200 y 3.300 rpm. Añade un motor eléctrico delantero de 206 CV (151,4 kW) y otro trasero de 55 CV (40,7 kW). La potencia máxima del sistema es 308,7 CV (227 kW), redondeada a 308 CV en la página comercial. Las cifras de los motores no se suman para calcular la potencia conjunta.',
     usageNote: 'La batería de 22,7 kWh permite recorrer hasta 128 km en modo eléctrico según el dato publicado por Suzuki. Para aprovechar la parte enchufable en desplazamientos habituales, conviene disponer de acceso regular a una toma de carga. En viajes largos trabaja también el motor de gasolina. La tracción E-Four añade un motor eléctrico trasero, sin eje mecánico entre ambos ejes.',
     versions: [{
       name: '2.5 Plug-in Hybrid E-Four GLX',
-      type: 'Híbrido enchufable (gasolina + eléctrico)',
+      type: 'Híbrido enchufable',
       power: 'Sistema: 308 CV (227 kW); térmico: 143 CV (105 kW); eléctrico delantero: 206 CV (151,4 kW); eléctrico trasero: 55 CV (40,7 kW)',
       displacement: '2.487 cm³',
       maxTorque: '227 Nm',
@@ -102,7 +104,7 @@ export const suzukiModels: ModelPageData[] = [
     sources: [
       source('Suzuki España: nuevo Across 2026', `${suzuki}/modelos/hibrido-enchufable/across-26`),
       source('Suzuki España: ficha técnica del nuevo Across', 'https://auto.suzuki.es/storage/files/4k2nvg4221rrp41nnawihrpmc8m3hjz6kagmmnpd.pdf'),
-      source('Suzuki España: gama y precios vigentes', `${suzuki}/precios`),
+      source('Suzuki España: lanzamiento comercial y precio del Across', `${suzuki}/actualidad/nuevo-suzuki-across-disponible-concesionarios-espa%C3%B1oles`),
     ],
     image: {
       src: '/images/models/editorial/suzuki-across-2026-getty.png',
@@ -110,9 +112,9 @@ export const suzukiModels: ModelPageData[] = [
       caption: 'Fotografía de Suzuki Across 2026, reproducida con licencia de Getty Images para esta web.',
       width: 596,
       height: 335,
-      sourceTitle: 'Suzuki Across 2026',
-      authorName: 'DuKai photographer · Getty Images',
-      licenseName: 'Getty Images · licencia de publicación web confirmada',
+      sourceTitle: 'Getty Images; autor DuKai photographer',
+      authorName: 'DuKai photographer',
+      licenseName: 'Licencia de Getty Images; publicación web autorizada por el titular',
     },
     reviewedAt,
   },
@@ -124,7 +126,7 @@ export const suzukiModels: ModelPageData[] = [
     intro: 'El Swift es un utilitario de cinco puertas con motor de gasolina 1.2 Mild Hybrid y sistema SHVS. Suzuki ofrece tracción 2WD y 4WD; según el acabado, combina caja manual de cinco velocidades o transmisión CVT.',
     powertrainSummary: 'La ficha técnica española identifica el motor Z12E de tres cilindros y 1.197 cm³, con 81 CV (59,6 kW) a 5.700 rpm y 109 Nm a 4.500 rpm. El sistema SHVS es de hibridación ligera y no convierte al Swift en un híbrido enchufable.',
     usageNote: 'La carrocería compacta y la opción 4WD distinguen al Swift de muchos utilitarios urbanos. Si se comparan versiones, conviene tener presente que la tracción total, la transmisión CVT y las ruedas elegidas pueden cambiar los consumos homologados; consulta la ficha del acabado concreto.',
-    versions: [{ name: '1.2 Mild Hybrid SHVS', type: 'Microhíbrido de gasolina (SHVS)', power: '81 CV (59,6 kW)', displacement: '1.197 cm³', maxTorque: '109 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '4.500 rpm' }],
+    versions: [{ name: '1.2 Mild Hybrid SHVS', type: 'Híbrido no enchufable · microhíbrido de gasolina', power: '81 CV (59,6 kW)', displacement: '1.197 cm³', maxTorque: '109 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '4.500 rpm' }],
     facts: [
       { label: 'Carrocería', value: 'Utilitario de cinco puertas' },
       { label: 'Plazas', value: '5' },
@@ -160,7 +162,7 @@ export const suzukiModels: ModelPageData[] = [
     intro: 'El Vitara es un SUV compacto con tecnología Mild Hybrid de 48 V. La gama española mantiene el motor turbo de gasolina 1.4 Boosterjet, con tracción delantera o ALLGRIP y transmisión manual o automática según configuración.',
     powertrainSummary: 'El motor térmico K14D tiene 1.373 cm³, desarrolla 110 CV (80,9 kW) a 4.500 rpm y entrega 235 Nm entre 2.000 y 2.500 rpm. Suzuki también publica 16,6 CV (12,22 kW) para el ISG eléctrico de 48 V. El par del ISG es de 50 Nm, pero el catálogo no indica el régimen, por lo que no se muestra en la tabla.',
     usageNote: 'El sistema Mild Hybrid asiste al motor de gasolina y recupera energía, pero no permite circular como un eléctrico enchufable. ALLGRIP ofrece tracción total en las versiones compatibles; la transmisión y el acabado pueden modificar el consumo WLTP y el equipamiento. Las ediciones limitadas de la web española se agrupan dentro de la familia Vitara.',
-    versions: [{ name: '1.4 BOOSTERJET Mild Hybrid 48V', type: 'Microhíbrido de gasolina (48 V)', power: 'Térmico: 110 CV (80,9 kW); ISG eléctrico: 16,6 CV (12,22 kW)', displacement: '1.373 cm³', maxTorque: '235 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.000–2.500 rpm' }],
+    versions: [{ name: '1.4 BOOSTERJET Mild Hybrid 48V', type: 'Híbrido no enchufable · microhíbrido de gasolina', power: 'Térmico: 110 CV (80,9 kW); ISG eléctrico: 16,6 CV (12,22 kW)', displacement: '1.373 cm³', maxTorque: '235 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.000–2.500 rpm' }],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto' },
       { label: 'Plazas', value: '5' },
@@ -196,7 +198,7 @@ export const suzukiModels: ModelPageData[] = [
     intro: 'El S-Cross es un SUV familiar compacto con motor de gasolina 1.4 Boosterjet y sistema Mild Hybrid de 48 V. Suzuki ofrece tracción delantera o ALLGRIP y cajas manual o automática de seis velocidades, según acabado.',
     powertrainSummary: 'El motor térmico K14D de 1.373 cm³ desarrolla 110 CV (80,9 kW) a 4.500 rpm y 235 Nm entre 2.000 y 2.500 rpm. El ISG eléctrico de 48 V aporta hasta 16,6 CV (12,22 kW). Suzuki publica 50 Nm para el ISG, sin régimen en rpm; por eso esa cifra no se incluye en la columna de par.',
     usageNote: 'El S-Cross y el Vitara comparten el conjunto 1.4 Mild Hybrid, aunque su carrocería, espacio y equipamiento son distintos. La tracción ALLGRIP y la caja automática cambian la configuración y el consumo homologado; contrasta el acabado concreto. Las ediciones limitadas anunciadas en la web española se agrupan dentro de la familia S-Cross.',
-    versions: [{ name: '1.4 BOOSTERJET Mild Hybrid 48V', type: 'Microhíbrido de gasolina (48 V)', power: 'Térmico: 110 CV (80,9 kW); ISG eléctrico: 16,6 CV (12,22 kW)', displacement: '1.373 cm³', maxTorque: '235 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.000–2.500 rpm' }],
+    versions: [{ name: '1.4 BOOSTERJET Mild Hybrid 48V', type: 'Híbrido no enchufable · microhíbrido de gasolina', power: 'Térmico: 110 CV (80,9 kW); ISG eléctrico: 16,6 CV (12,22 kW)', displacement: '1.373 cm³', maxTorque: '235 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.000–2.500 rpm' }],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto familiar' },
       { label: 'Plazas', value: '5' },
@@ -222,42 +224,6 @@ export const suzukiModels: ModelPageData[] = [
       'https://creativecommons.org/licenses/by/3.0/deed.es',
       'Fotograma de AutoMotoVlog bajo licencia CC BY 3.0; muestra una unidad europea de 2022 y se ha redimensionado a 1280 px para web. El acabado puede variar.',
       'https://commons.wikimedia.org/wiki/File:2022_Suzuki_SX4_S-Cross_AllGrip_Hybrid_01.jpg',
-    ),
-    reviewedAt,
-  },
-  {
-    brandSlug: 'suzuki',
-    modelSlug: 'across-anterior',
-    title: 'Suzuki Across anterior: motor 2.5 PHEV y disponibilidad | Kilómetro Claro',
-    description: 'Ficha técnica del Suzuki Across 2.5 Plug-in Hybrid de generación anterior, todavía listado por Suzuki España con unidades limitadas.',
-    intro: 'El Across anterior es un SUV híbrido enchufable de cinco plazas con motor de gasolina 2.5 y tracción total E-Four. Suzuki España aún lo mantiene en sus páginas de modelos y precios, pero lo identifica como unidades limitadas; su disponibilidad depende del stock de concesionario.',
-    powertrainSummary: 'La ficha española publica 185 CV (136 kW) para el motor de gasolina A25A-FXS de 2.487 cm³, con 227 Nm entre 3.200 y 3.700 rpm. También documenta 182 CV (134 kW) para el motor delantero y 54 CV (40 kW) para el trasero. No mostramos una potencia de sistema porque la ficha técnica española consultada no la especifica.',
-    usageNote: 'Este modelo no debe confundirse con el nuevo Across 2026: son generaciones diferentes. La web española mantiene la ficha y un precio promocional con una fecha de validez que ya ha vencido, además de advertir que quedan unidades limitadas. Antes de considerar esta versión, confirma por escrito el año-modelo, el precio, el estado de la batería y la disponibilidad real en el concesionario.',
-    versions: [{ name: '2.5 Plug-in Hybrid E-Four GLX', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Térmico: 185 CV (136 kW); eléctrico delantero: 182 CV (134 kW); eléctrico trasero: 54 CV (40 kW)', displacement: '2.487 cm³', maxTorque: '227 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '3.200–3.700 rpm' }],
-    facts: [
-      { label: 'Carrocería', value: 'SUV híbrido enchufable' },
-      { label: 'Plazas', value: '5' },
-      { label: 'Tracción', value: 'Total electrónica E-Four' },
-      { label: 'Disponibilidad', value: 'Unidades limitadas; confirmar stock' },
-    ],
-    specNote: 'No se incluye el par de los motores eléctricos, ya que Suzuki publica esos valores sin especificar el régimen en rpm. La tabla tampoco suma las potencias de los motores: la ficha española consultada no publica la potencia máxima combinada del sistema.',
-    officialUrl: `${suzuki}/modelos/hibrido-enchufable/across`,
-    technicalUrl: 'https://auto.suzuki.es/storage/files/pcmry2jcqq1b6nh1nqbej9ls2uf261yqfgc1zbhj.pdf',
-    sources: [
-      source('Suzuki España: Across (generación anterior)', `${suzuki}/modelos/hibrido-enchufable/across`),
-      source('Suzuki España: ficha técnica del Across anterior', 'https://auto.suzuki.es/storage/files/pcmry2jcqq1b6nh1nqbej9ls2uf261yqfgc1zbhj.pdf'),
-      source('Suzuki España: precio y disponibilidad limitada del Across', `${suzuki}/precios/across`),
-    ],
-    image: photo(
-      'across-anterior',
-      '2020 Suzuki Across E-Four 2.5.jpg',
-      'Suzuki Across 2.5 E-Four de la generación anterior, fotografiado en Stratford-upon-Avon.',
-      719,
-      'Vauxford',
-      'Vauxford',
-      'CC BY-SA 4.0',
-      ccBySa4,
-      'Fotografía de la generación anterior; el año, el acabado y el color pueden diferir de las unidades restantes en España. Se ha redimensionado a 1280 px para web.',
     ),
     reviewedAt,
   },

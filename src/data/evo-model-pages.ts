@@ -1,6 +1,6 @@
 import type { ModelPageData, ModelVersion } from './model-pages';
 
-const reviewedAt = '3 de noviembre de 2026';
+const reviewedAt = '6 de noviembre de 2026';
 const evo = 'https://auto-evo.es';
 const source = (label: string, url: string) => ({ label, url });
 
@@ -52,8 +52,8 @@ function page(entry: EvoEntry): ModelPageData {
 
 const evo3Gasoline = `${evo}/modello/evo-3-2/`;
 const evo3Lpg = `${evo}/modello/evo-3/`;
-const cuatroGasoline = 'https://www.grupodeltavi.com/catalogo-vehiculo-nuevo/nuevo-evo-cuatro';
-const cuatroLpg = `${evo}/modello/evo-cuatro-gpl/`;
+const cuatroGasoline = `${evo}/modello/evo-cuatro/`;
+const cuatroLpg = `${evo}/modello/evo-cuatro-gpl-2/`;
 const cuatroCvt = `${evo}/modello/evo-cuatro-cvt/`;
 const cuatroCvtLpg = `${evo}/modello/evo-cuatro-cvt-lpg/`;
 const evo5Gasoline = `${evo}/modello/evo-5/`;
@@ -106,9 +106,9 @@ export const evoModels: ModelPageData[] = [
       { label: 'Cambios publicados', value: 'Manual de 5 velocidades o CVT, según variante' },
       { label: 'Combustibles', value: 'Gasolina o gasolina/GLP' },
     ],
-    officialUrl: `${evo}/`,
-    sources: [source('Concesionario EVO Grupo Deltavi: datos del CUATRO gasolina manual y GLP', cuatroGasoline), source('EVO CUATRO gasolina/GLP manual: ficha técnica', cuatroLpg), source('EVO CUATRO CVT gasolina: ficha técnica', cuatroCvt), source('EVO CUATRO CVT gasolina/GLP: ficha técnica', cuatroCvtLpg)],
-    specNote: 'La web de EVO España presenta el CUATRO gasolina y gasolina/GLP con cambio manual, pero su antigua URL técnica de gasolina ahora redirige a la ficha CVT. Por eso, los datos de las variantes manuales se contrastan con la ficha técnica publicada por el concesionario EVO Grupo Deltavi; las dos variantes CVT se enlazan a sus fichas de EVO. La disponibilidad puede cambiar según año-modelo y concesionario.',
+    officialUrl: cuatroGasoline,
+    sources: [source('EVO CUATRO gasolina manual: ficha técnica oficial', cuatroGasoline), source('EVO CUATRO gasolina/GLP manual: ficha técnica oficial', cuatroLpg), source('EVO CUATRO CVT gasolina: ficha técnica oficial', cuatroCvt), source('EVO CUATRO CVT gasolina/GLP: ficha técnica oficial', cuatroCvtLpg)],
+    specNote: 'EVO mantiene fichas separadas para las variantes manuales y CVT. En una de las fichas CVT, el bloque promocional incluye un precio asociado a otra configuración; aquí los precios se toman del PVP técnico publicado al final de la página específica de cada versión. Las campañas y la disponibilidad pueden cambiar, por lo que conviene confirmar la configuración en el concesionario.',
   }),
   page({
     slug: 'evo-5', model: 'EVO 5', title: 'EVO 5',
@@ -207,7 +207,7 @@ export const evoModels: ModelPageData[] = [
     specNote: 'La ficha española de gasolina/GLP reproduce 176 CV y 260 Nm, mientras que el comunicado de lanzamiento publicado el 31 de agosto de 2026 atribuye 167 CV a la versión Thermohybrid. Para evitar mezclar datos, aquí se usa la potencia del comunicado y se omite el par de esa variante.',
   }),
   page({
-    slug: 'evo-cross-4', model: 'EVO CROSS4', title: 'EVO CROSS4',
+    slug: 'evo-cross-4', model: 'EVO CROSS 4', title: 'EVO CROSS 4',
     description: 'Datos del EVO CROSS4 en España: pick-up de doble cabina, cinco plazas y motor 2.0 turbodiésel con tracción conectable.',
     intro: 'El EVO CROSS4 es una pick-up de doble cabina con cuatro puertas y cinco plazas. Frente al resto de la gama, está orientado a transportar personas y carga, y combina motor turbodiésel con tracción seleccionable 2WD o 4WD conectable.',
     summary: 'La ficha española publica un motor diésel common rail de 1.999 cm³ turbo, 136 CV y 320 Nm a 2.600 rpm. Se asocia a una caja manual de seis velocidades. EVO describe tracción 2WD y 4WD conectable con reductora 4H/4L.',

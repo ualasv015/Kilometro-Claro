@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '3 de noviembre de 2026';
+const reviewedAt = '11 de noviembre de 2026';
 const spain = 'https://www.subaru.es';
 const newElectricRange = `${spain}/blog/nuestra-marca/subaru-presenta-la-nueva-gama-electrica-uncharted-solterra-y-e-outback/`;
 const source = (label: string, url: string) => ({ label, url });
@@ -17,10 +17,10 @@ export const subaruModels: ModelPageData[] = [
     title: 'Subaru Crosstrek: motor e-Boxer y versiones en España',
     description: 'Consulta las versiones Active, Field y Touring del Subaru Crosstrek en España, su sistema e-Boxer, datos técnicos y fuentes oficiales.',
     intro: 'El Crosstrek es el crossover compacto de Subaru: combina un motor bóxer de gasolina con asistencia eléctrica e-Boxer y tracción total simétrica. La gama española se articula en tres acabados, con diferencias de equipamiento y ruedas, pero una sola motorización publicada.',
-    powertrainSummary: 'Subaru España identifica el motor como 2.0i e-Boxer y publica 153 CV para el Crosstrek. La ficha técnica vigente describe una inyección directa de 2,0 litros junto a un motor eléctrico; no ofrece un desglose de potencia por componente. Por eso la tabla muestra la cifra de la gama sin atribuirla al motor térmico o al conjunto cuando el documento no lo aclara.',
+    powertrainSummary: 'Subaru España identifica el motor como 2.0i e-Boxer y publica 153 CV. La ficha técnica detalla el motor bóxer de gasolina de 1.995 cm³, 112 kW y 248 Nm a 4.000 rpm; después especifica por separado la batería de tracción. La potencia se presenta como cifra comercial del sistema tal como la publica Subaru, mientras el par se atribuye al motor térmico según el bloque técnico del documento.',
     usageNote: 'El sistema e-Boxer es un híbrido no enchufable: no se recarga desde una toma y el motor eléctrico asiste al de gasolina en determinadas condiciones. Si lo comparas con un híbrido completo, conviene mirar el consumo homologado y el real en tu tipo de recorrido; la tracción total y la altura libre también forman parte de la propuesta, pero no sustituyen a neumáticos adecuados ni amplían por sí solas los límites de adherencia.',
     versions: [
-      { name: '2.0i e-Boxer Active / Field / Touring', type: 'Híbrido de gasolina y electricidad (e-Boxer)', power: '153 CV (112 kW)', displacement: '1.995 cm³ (motor térmico)', maxTorque: '', torqueScope: 'La ficha publica 248 Nm sin aclarar si corresponde al motor térmico o al sistema', torqueRpm: '4.000 rpm' },
+      { name: '2.0i e-Boxer Active / Field / Touring', type: 'Híbrido no enchufable · MHEV de gasolina e-Boxer', powertrainGroup: 'mild-hybrid', power: '153 CV (112 kW)', displacement: 'Térmico: 1.995 cm³', maxTorque: '248 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '4.000 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Crossover compacto de cinco plazas' },
@@ -28,12 +28,12 @@ export const subaruModels: ModelPageData[] = [
       { label: 'Tracción', value: 'Total simétrica (SAWD)' },
       { label: 'Cambio', value: 'Automático Lineartronic' },
     ],
-    specNote: 'La página de Subaru España y la ficha técnica enlazada actualmente por el modelo publican 153 CV (112 kW). La misma ficha recoge 248 Nm a 4.000 rpm, pero no identifica si es una cifra térmica o del sistema e-Boxer; por eso se deja vacía la celda de par. El modelo es híbrido de gasolina y electricidad, pero no se presupone el alcance de una cifra que Subaru no desglosa.',
+    specNote: 'La página española y la ficha técnica actualmente enlazada publican 153 CV (112 kW). En el bloque del motor de gasolina de 1.995 cm³, la ficha indica 248 Nm a 4.000 rpm; la batería aparece en un apartado separado. Por ello el par se atribuye al motor térmico, sin sumarlo ni presentarlo como par combinado del sistema.',
     officialUrl: `${spain}/vehiculos/crosstrek`,
-    technicalUrl: `${spain}//upload/modelos/crosstrek/N2_03_ACABADOS_CROSSTREK/Ficha_web_CROSSTREK.pdf`,
+    technicalUrl: `${spain}/upload/modelos/crosstrek/N2_03_ACABADOS_CROSSTREK/Ficha_web_CROSSTREK.pdf`,
     sources: [
       source('Subaru España: Crosstrek y acabados', `${spain}/vehiculos/crosstrek`),
-      source('Subaru España: ficha técnica Crosstrek (código 26GCSPEC01SS)', `${spain}//upload/modelos/crosstrek/N2_03_ACABADOS_CROSSTREK/Ficha_web_CROSSTREK.pdf`),
+      source('Subaru España: ficha técnica Crosstrek (código 26GCSPEC01SS)', `${spain}/upload/modelos/crosstrek/N2_03_ACABADOS_CROSSTREK/Ficha_web_CROSSTREK.pdf`),
       source('Subaru España: edición limitada Crosstrek 4Wild', `${spain}/blog/nuestra-marca/subaru-presenta-la-edicion-limitada-del-subaru-crosstrek-la-version-aventurera-4wild/`),
     ],
     image: image({
@@ -58,7 +58,7 @@ export const subaruModels: ModelPageData[] = [
     powertrainSummary: 'La página española actual describe un 2.0i Hybrid de 150 CV. La ficha técnica del Forester MY25, también alojada por Subaru España, indica 112 kW y 153 CV. Para no mezclar la cifra comercial actual con una ficha de año-modelo anterior, la tabla sigue la potencia que muestra hoy la página de gama y explica la discrepancia debajo.',
     usageNote: 'Por tamaño y carrocería, el Forester puede encajar en un uso familiar y en recorridos variados. Su sistema e-Boxer no se enchufa: la batería se gestiona durante la conducción. Antes de elegirlo, compara el consumo en ciudad y carretera, el espacio que necesitas y el coste de neumáticos y mantenimiento de un SUV con tracción total.',
     versions: [
-      { name: '2.0i Hybrid e-Boxer Active / Field / Touring', type: 'Híbrido de gasolina y electricidad (e-Boxer)', power: '150 CV (110 kW)', displacement: '1.995 cm³ (motor térmico)', maxTorque: '', torqueScope: 'Las fuentes difieren en la potencia publicada y no precisan el alcance del par', torqueRpm: '4.000 rpm' },
+      { name: '2.0i Hybrid e-Boxer Active / Field / Touring', type: 'Híbrido no enchufable · MHEV de gasolina e-Boxer', powertrainGroup: 'mild-hybrid', power: '150 CV (110 kW)', displacement: 'Térmico: 1.995 cm³', maxTorque: '', torqueScope: 'La ficha técnica vinculada por Subaru refleja otra edición y potencia', torqueRpm: '4.000 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV familiar de cinco plazas' },
@@ -96,8 +96,8 @@ export const subaruModels: ModelPageData[] = [
     powertrainSummary: 'La página de gama española distingue el Outback 2.5i de gasolina del 2.5i GLP y publica 169 CV para ambos. La ficha técnica oficial detalla el motor 2.5i de gasolina: 2.498 cm³, 124 kW y 252 Nm a 3.800 rpm. El documento no separa esos datos para la versión GLP; por eso no se trasladan a su celda de par.',
     usageNote: 'La opción GLP puede interesar a quien quiera usar ambos combustibles y tenga surtidores accesibles en sus rutas. Para comparar el coste de uso, cuenta el consumo de cada combustible por separado y no supongas que se mantiene la autonomía o el coste por kilómetro de la versión de gasolina. En un coche familiar de tracción total, también merece la pena considerar los kilómetros anuales y el tipo de carretera.',
     versions: [
-      { name: '2.5i Lineartronic Active / Field / Touring', type: 'Gasolina', power: '169 CV (124 kW)', displacement: '2.498 cm³', maxTorque: '252 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '3.800 rpm' },
-      { name: '2.5i GLP Active / Field / Touring', type: 'Bifuel gasolina / GLP', power: '169 CV (124 kW)', displacement: '2.498 cm³', maxTorque: '', torqueScope: 'La ficha técnica consultada no desglosa el par de la versión GLP', torqueRpm: 'No publicado para la versión GLP' },
+      { name: '2.5i Lineartronic Active / Field / Touring', type: 'Gasolina', powertrainGroup: 'petrol', power: '169 CV (124 kW)', displacement: '2.498 cm³', maxTorque: '252 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '3.800 rpm' },
+      { name: '2.5i GLP Active / Field / Touring', type: 'GLP · bifuel gasolina/GLP', powertrainGroup: 'bifuel', power: '169 CV (124 kW)', displacement: '2.498 cm³', maxTorque: '', torqueScope: 'La ficha técnica consultada no desglosa el par de la versión GLP', torqueRpm: 'No publicado para la versión GLP' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Familiar elevado de cinco plazas' },
@@ -107,10 +107,10 @@ export const subaruModels: ModelPageData[] = [
     ],
     specNote: 'Subaru España muestra actualmente 2.5i gasolina y 2.5i GLP con 169 CV. La ficha técnica oficial enlazada desde la gama corresponde al 2.5i y publica 124 kW (169 CV), 2.498 cm³ y 252 Nm a 3.800 rpm. Aunque la página comercial ofrece la misma potencia para el Outback GLP, el documento técnico consultado no presenta una fila de par específica para ese combustible; se deja sin cifra para no extrapolarla.',
     officialUrl: `${spain}/vehiculos/outback/gama`,
-    technicalUrl: `${spain}//upload/modelos/outback/N2_03_ACABADOS/Ficha_web_OUTBACK.pdf`,
+    technicalUrl: `${spain}/upload/modelos/outback/N2_03_ACABADOS/Ficha_web_OUTBACK.pdf`,
     sources: [
       source('Subaru España: Outback gasolina y GLP, acabados y cifras comerciales', `${spain}/vehiculos/outback/gama`),
-      source('Subaru España: ficha técnica 2.5i Outback', `${spain}//upload/modelos/outback/N2_03_ACABADOS/Ficha_web_OUTBACK.pdf`),
+      source('Subaru España: ficha técnica 2.5i Outback', `${spain}/upload/modelos/outback/N2_03_ACABADOS/Ficha_web_OUTBACK.pdf`),
       source('Subaru España: configurador', `${spain}/configurador/outback`),
     ],
     image: image({
@@ -135,9 +135,9 @@ export const subaruModels: ModelPageData[] = [
     powertrainSummary: 'La ficha oficial española publica tres combinaciones: Active con 169 CV y tracción delantera; Field Long Range con 227 CV y tracción delantera; y Touring con dos motores, 343 CV combinados y tracción total. Los motores eléctricos tienen cifras de par en Nm, pero Subaru no publica un régimen de rpm asociado; por eso no se muestran en la columna de par máximo.',
     usageNote: 'La elección entre Active, Field y Touring no depende solo de la potencia. La ficha técnica diferencia capacidad de batería y autonomía homologada: una batería mayor no garantiza el mismo alcance en todas las versiones, y la tracción total añade un segundo motor. Para decidir, compara autonomía WLTP de la configuración exacta, temperatura, velocidad habitual y dónde puedes recargar.',
     versions: [
-      { name: 'Active 4×2', type: 'Eléctrico, motor delantero', power: '169 CV (124 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico; Subaru no publica régimen de par', torqueRpm: 'No publicado en rpm' },
-      { name: 'Field 4×2 Long Range', type: 'Eléctrico, motor delantero', power: '227 CV (167 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico; Subaru no publica régimen de par', torqueRpm: 'No publicado en rpm' },
-      { name: 'Touring AWD', type: 'Eléctrico, dos motores', power: '343 CV (252 kW), sistema combinado', displacement: '—', maxTorque: '', torqueScope: 'Motores delantero y trasero; ficha sin rpm de par', torqueRpm: 'No publicado en rpm' },
+      { name: 'Active 4×2', type: 'Eléctrico', powertrainGroup: 'electric', power: '169 CV (124 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico; Subaru no publica régimen de par', torqueRpm: 'No publicado en rpm' },
+      { name: 'Field 4×2 Long Range', type: 'Eléctrico', powertrainGroup: 'electric', power: '227 CV (167 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico; Subaru no publica régimen de par', torqueRpm: 'No publicado en rpm' },
+      { name: 'Touring AWD', type: 'Eléctrico · dos motores', powertrainGroup: 'electric', power: '343 CV (252 kW), sistema combinado', displacement: '—', maxTorque: '', torqueScope: 'Motores delantero y trasero; ficha sin rpm de par', torqueRpm: 'No publicado en rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto eléctrico de cinco plazas' },
@@ -175,7 +175,7 @@ export const subaruModels: ModelPageData[] = [
     powertrainSummary: 'Subaru España anuncia una gama eléctrica de 227 a 343 CV y hasta 550 km de autonomía combinada. Como su anuncio no detalla la potencia de cada acabado ni enlaza una ficha española de la actualización, la tabla conserva únicamente el intervalo publicado y no reutiliza las cifras de la ficha de la generación anterior.',
     usageNote: 'En un eléctrico, la potencia no indica por sí sola cuánto podrás recorrer ni cuánto tardarás en cargar. Para una comparación útil, espera a tener la ficha de la versión concreta y revisa autonomía WLTP, tamaño de batería, potencia de carga y tipo de tracción. Antes de formalizar una compra, confirma con Subaru España si hay pedidos abiertos y cuál es el calendario de entrega.',
     versions: [
-      { name: 'Gama renovada (versiones por acabado no detalladas)', type: 'Eléctrico', power: '227–343 CV (167–252 kW)', displacement: '—', maxTorque: '', torqueScope: 'La información española de lanzamiento no publica régimen de par', torqueRpm: 'No publicado en rpm' },
+      { name: 'Gama renovada (versiones por acabado no detalladas)', type: 'Eléctrico', powertrainGroup: 'electric', power: '227–343 CV (167–252 kW)', displacement: '—', maxTorque: '', torqueScope: 'La información española de lanzamiento no publica régimen de par', torqueRpm: 'No publicado en rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV eléctrico de tamaño medio' },
@@ -213,7 +213,7 @@ export const subaruModels: ModelPageData[] = [
     powertrainSummary: 'Subaru España publica 167 kW (227 CV) y 268 Nm para cada motor eléctrico, además de 280 kW (381 CV) combinados. La ficha no asocia un régimen de rpm a las cifras de par; por eso no se muestran en la columna correspondiente.',
     usageNote: 'Su carrocería y tracción total lo sitúan como alternativa eléctrica para uso familiar y viajes, pero la decisión práctica depende de la posibilidad de cargar en destino y en ruta. La cifra de autonomía WLTP es de homologación; en autovía, frío o con carga puede ser distinta. Contrasta también con el concesionario la disponibilidad de la versión y los plazos de entrega.',
     versions: [
-      { name: 'Limited AWD · sistema combinado', type: 'Eléctrico, dos motores', power: '381 CV (280 kW), potencia combinada', displacement: '—', maxTorque: '', torqueScope: 'Motor delantero: 268 Nm; motor trasero: 268 Nm; la ficha no publica rpm', torqueRpm: 'No publicado en rpm' },
+      { name: 'Limited AWD · sistema combinado', type: 'Eléctrico · dos motores', powertrainGroup: 'electric', power: '381 CV (280 kW), potencia combinada', displacement: '—', maxTorque: '', torqueScope: 'Motor delantero: 268 Nm; motor trasero: 268 Nm; la ficha no publica rpm', torqueRpm: 'No publicado en rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV eléctrico familiar de cinco plazas' },
@@ -241,6 +241,45 @@ export const subaruModels: ModelPageData[] = [
       authorUrl: 'https://commons.wikimedia.org/wiki/User:Alexander-93',
       licenseName: 'CC BY-SA 4.0',
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    }),
+  }),
+  model({
+    modelSlug: 'brz',
+    title: 'Subaru BRZ: motor bóxer 2.4, tracción trasera y disponibilidad',
+    description: 'Ficha del Subaru BRZ Sport en España: motor bóxer 2.4 de gasolina, potencia, par, cambio manual y precio publicado por un concesionario oficial.',
+    intro: 'El Subaru BRZ es un coupé 2+2 de motor delantero y tracción trasera. La ficha técnica española consultada describe el BRZ Sport con motor bóxer atmosférico 2.4 y cambio manual; la gama nacional visible de Subaru ya no lo muestra entre sus modelos principales, pero un concesionario oficial mantiene una ficha de vehículo nuevo. Su disponibilidad debe confirmarse como dependiente de stock.',
+    powertrainSummary: 'La ficha técnica de Subaru España para el BRZ Sport indica un motor bóxer de gasolina de 2.387 cm³, 172 kW (234 CV) y 250 Nm a 3.700 rpm, asociado a un cambio manual de seis velocidades y propulsión trasera. El precio de 43.000 € que se indica más abajo procede de un concesionario oficial en Huesca y no debe interpretarse como una tarifa nacional de Subaru.',
+    usageNote: 'Su configuración de propulsión trasera y cambio manual lo diferencia de los SUV de la gama Subaru. Para valorar una unidad concreta, consulta con el concesionario el año-modelo, la disponibilidad real, el precio al contado, el equipamiento y si el vehículo corresponde a stock nuevo o a una unidad ya matriculada.',
+    versions: [
+      { name: 'BRZ Sport 2.4 D-4S', type: 'Gasolina', powertrainGroup: 'petrol', power: '234 CV (172 kW)', displacement: '2.387 cm³', maxTorque: '250 Nm', torqueScope: 'Motor bóxer de gasolina', torqueRpm: '3.700 rpm' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'Coupé 2+2' },
+      { label: 'Tracción', value: 'Trasera' },
+      { label: 'Cambio', value: 'Manual de seis velocidades' },
+      { label: 'Disponibilidad', value: 'Dependiente de stock; un concesionario oficial publica el BRZ Sport como vehículo nuevo. Confirma existencias y año-modelo antes de desplazarte.' },
+    ],
+    specNote: 'Las cifras corresponden a la ficha técnica BRZ Sport publicada en el sitio español de Subaru. El PDF oficial disponible está alojado desde hace varios años; el concesionario Subaru Huesca mantiene una ficha de BRZ Sport de 234 CV y 2.387 cm³, pero no localizamos una tarifa nacional actual de Subaru España. La gama visible en la web corporativa no presenta el BRZ junto a los modelos principales y el configurador conserva una ruta antigua; por eso se describe como dependiente de stock y se identifica el origen local del precio.',
+    officialUrl: `${spain}/configurador/subaru-brz/11-gasolina`,
+    technicalUrl: `${spain}/upload/modelos/brz/N4_ACABADO/Ficha_web_BRZ_SPORT.pdf`,
+    sources: [
+      source('Subaru España: configurador BRZ (ruta conservada; confirmar disponibilidad)', `${spain}/configurador/subaru-brz/11-gasolina`),
+      source('Subaru España: ficha técnica BRZ Sport', `${spain}/upload/modelos/brz/N4_ACABADO/Ficha_web_BRZ_SPORT.pdf`),
+      source('Concesionario oficial Subaru Huesca: BRZ Sport como vehículo nuevo y precio local publicado', 'https://subaruhuesca.es/producto/brz/'),
+      source('Subaru España: gama eléctrica y modelos principales publicados actualmente', `${spain}/`),
+    ],
+    image: image({
+      src: '/images/models/commons/model-subaru-brz.jpg',
+      alt: 'Subaru BRZ ZD8 negro fotografiado en el Salón Internacional del Automóvil de Nueva York de 2022.',
+      caption: 'La fotografía muestra un BRZ Limited de 2022 en una exposición; acabado, color y equipamiento pueden diferir de la unidad Sport anunciada por el concesionario español.',
+      width: 1280,
+      height: 749,
+      sourceTitle: '2022 Subaru BRZ Limited in Crystal Black Silica, front right (NYIAS 2022).jpg',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:2022_Subaru_BRZ_Limited_in_Crystal_Black_Silica,_front_right_(NYIAS_2022).jpg',
+      authorName: 'Mr.choppers',
+      authorUrl: 'https://commons.wikimedia.org/wiki/User:Mr.choppers',
+      licenseName: 'CC BY-SA 3.0',
+      licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/',
     }),
   }),
 ];

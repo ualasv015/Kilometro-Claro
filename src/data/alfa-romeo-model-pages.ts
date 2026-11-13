@@ -1,6 +1,6 @@
 import type { ModelPageData, ModelVersion } from './model-pages';
 
-const reviewedAt = '3 de noviembre de 2026';
+const reviewedAt = '6 de noviembre de 2026';
 const alfaRomeo = 'https://www.alfaromeo.es';
 const source = (label: string, url: string) => ({ label, url });
 
@@ -96,8 +96,8 @@ export const alfaRomeoModels: ModelPageData[] = [
     summary: 'La gama incluye Ibrida de 145 CV, Ibrida Q4 de 145 CV, Elettrica de 156 CV y Elettrica Veloce de 280 CV. En el Ibrida, el motor turbo de gasolina de 1,2 litros trabaja con una máquina eléctrica de 48 V y 21 kW; la cifra de 145 CV corresponde al sistema. En el Elettrica la propulsión es exclusivamente eléctrica.',
     usage: 'La versión Ibrida no necesita conectarse a un cargador y puede resultar práctica si se alternan ciudad y carretera. La Q4 añade tracción total mediante electrificación del eje trasero, mientras que las Elettrica requieren planificar la recarga según el uso y la infraestructura disponible. No debe confundirse un híbrido ligero con un híbrido enchufable: el Junior Ibrida no se recarga desde una toma.',
     versions: [
-      version('1.2 Ibrida 145 eDCT6', 'Microhíbrido de gasolina 48 V', 'Sistema: 145 CV (107 kW)', '1,2 l', 'Motor eléctrico de 21 kW; potencia publicada como total del sistema.'),
-      version('1.2 Ibrida Q4 145 eDCT6', 'Microhíbrido de gasolina 48 V con tracción Q4', 'Sistema: 145 CV (107 kW)', '1,2 l', 'El eje trasero incorpora propulsión eléctrica; potencia total anunciada por Alfa Romeo.'),
+      version('1.2 Ibrida 145 eDCT6', 'Híbrido no enchufable · MHEV gasolina 48 V', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³; eléctrico: —', 'El motor eléctrico de 21 kW contribuye a la potencia total del sistema.'),
+      version('1.2 Ibrida Q4 145 eDCT6', 'Híbrido no enchufable · MHEV gasolina 48 V con apoyo eléctrico Q4', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³; eléctrico: —', 'El eje trasero incorpora propulsión eléctrica; la potencia total anunciada es de 145 CV.'),
       version('Elettrica 156', 'Eléctrico', '156 CV (115 kW)', '—'),
       version('Elettrica Veloce 280', 'Eléctrico', '280 CV (207 kW)', '—'),
     ],
@@ -118,9 +118,9 @@ export const alfaRomeoModels: ModelPageData[] = [
     summary: 'Alfa Romeo España publica tres motorizaciones: 1.5 Ibrida VGT de 175 CV (128 kW), 1.6 Diésel de 130 CV (96 kW) y 1.3 Ibrida Plug-In Q4 de 270 CV (197 kW). El primero es un gasolina híbrido ligero de 48 V; el último combina motor térmico y eléctrico y puede recargarse externamente.',
     usage: 'El Ibrida de 48 V no se enchufa y conserva el funcionamiento habitual de un coche de gasolina, con asistencia eléctrica limitada. El diésel está orientado a quien cubre distancias frecuentes por carretera. El Plug-In Q4 puede aprovechar su batería en trayectos diarios si se carga de forma regular; si no, conviene comparar su consumo con la batería descargada y el peso añadido. La autonomía eléctrica homologada no equivale a la de un eléctrico puro.',
     versions: [
-      version('1.5 Ibrida VGT DCT7', 'Microhíbrido de gasolina 48 V', 'Sistema: 175 CV (128 kW)', '1,5 l'),
-      version('1.6 Diésel DCT6', 'Diésel', '130 CV (96 kW)', '1,6 l'),
-      version('1.3 Ibrida Plug-In Q4', 'Híbrido enchufable (gasolina + eléctrico)', 'Sistema: 270 CV (197 kW)', '1,3 l'),
+      version('1.5 Ibrida VGT DCT7', 'Híbrido no enchufable · MHEV gasolina 48 V', 'Sistema: 175 CV (128 kW)', 'Térmico: 1.469 cm³; eléctrico: —'),
+      version('1.6 Diésel DCT6', 'Diésel', '130 CV (96 kW)', '1.598 cm³'),
+      version('1.3 Ibrida Plug-In Q4', 'Híbrido enchufable · gasolina + eléctrico', 'Sistema: 270 CV (197 kW)', 'Térmico: 1.332 cm³; eléctrico: —'),
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto' },
@@ -139,9 +139,9 @@ export const alfaRomeoModels: ModelPageData[] = [
     summary: 'La gama consultada incluye el 2.2 turbodiésel de 160 CV (118 kW) con tracción trasera, el 2.2 diésel de 210 CV (154 kW) con Q4 y el 2.9 V6 biturbo de gasolina del Quadrifoglio, con 520 CV (382 kW). Alfa Romeo vincula los dos diésel a un cambio automático de ocho velocidades. No mostramos par motor porque las fuentes españolas consultadas no publican de manera verificable el régimen junto a cada cifra.',
     usage: 'El diésel de 160 CV prioriza una configuración de propulsión trasera; el de 210 CV suma tracción Q4 para mejorar la transmisión de fuerza cuando la adherencia es baja. El Quadrifoglio ocupa otra posición por prestaciones, neumáticos, frenos y costes de uso: no es una simple variante de acabado. Para comparar unidades de ocasión o de stock, comprueba año-modelo, tracción y equipamiento, ya que la oferta histórica del Giulia fue más amplia.',
     versions: [
-      version('2.2 Diésel 160 CV RWD', 'Diésel', '160 CV (118 kW)', '2,2 l'),
-      version('2.2 Diésel 210 CV Q4', 'Diésel', '210 CV (154 kW)', '2,2 l'),
-      version('Quadrifoglio 2.9 V6 Bi-Turbo', 'Gasolina', '520 CV (382 kW)', '2,9 l'),
+      version('2.2 Diésel 160 CV RWD', 'Diésel', '160 CV (118 kW)', '2.143 cm³'),
+      version('2.2 Diésel 210 CV Q4', 'Diésel', '210 CV (154 kW)', '2.143 cm³'),
+      version('Quadrifoglio 2.9 V6 Bi-Turbo', 'Gasolina', '520 CV (382 kW)', '2.891 cm³'),
     ],
     facts: [
       { label: 'Carrocería', value: 'Berlina deportiva' },
@@ -161,9 +161,9 @@ export const alfaRomeoModels: ModelPageData[] = [
     summary: 'Alfa Romeo publica un 2.2 turbodiésel de 160 CV (118 kW) y 450 Nm, otro de 210 CV (154 kW) y 470 Nm, y el 2.9 V6 biturbo de gasolina del Quadrifoglio con 520 CV (382 kW). La información española no indica de forma consistente el régimen de entrega del par diésel; siguiendo el criterio de esta ficha, la tabla no muestra esos Nm sin el dato de rpm.',
     usage: 'Para un SUV familiar, las versiones diésel ofrecen más orientación a los desplazamientos largos; el motor de 210 CV añade Q4. Quadrifoglio es una propuesta de altas prestaciones que implica costes potencialmente distintos en combustible, neumáticos y mantenimiento. Las páginas comerciales y el stock pueden mezclar unidades de años-modelo diferentes, así que comprueba la ficha concreta antes de comparar consumos o equipamiento.',
     versions: [
-      version('2.2 Diésel 160 CV RWD', 'Diésel', '160 CV (118 kW)', '2,2 l'),
-      version('2.2 Diésel 210 CV Q4', 'Diésel', '210 CV (154 kW)', '2,2 l'),
-      version('Quadrifoglio 2.9 V6 Bi-Turbo Q4', 'Gasolina', '520 CV (382 kW)', '2,9 l'),
+      version('2.2 Diésel 160 CV RWD', 'Diésel', '160 CV (118 kW)', '2.143 cm³'),
+      version('2.2 Diésel 210 CV Q4', 'Diésel', '210 CV (154 kW)', '2.143 cm³'),
+      version('Quadrifoglio 2.9 V6 Bi-Turbo Q4', 'Gasolina', '520 CV (382 kW)', '2.891 cm³'),
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV mediano' },

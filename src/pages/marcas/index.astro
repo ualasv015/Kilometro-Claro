@@ -9,6 +9,7 @@ import '../../styles/maximalist-listings.css';
 
 const powertrains = [...new Set(brands.flatMap((brand) => brand.powertrains))].sort((a, b) => a.localeCompare(b, 'es'));
 const countries = [...new Set(brands.map((brand) => brand.country))].sort((a, b) => a.localeCompare(b, 'es'));
+const bodyTypes = [...new Set(brands.flatMap((brand) => brand.models.map((model) => model.body)))].sort((a, b) => a.localeCompare(b, 'es'));
 const salesOrder2025 = ['toyota', 'renault', 'volkswagen', 'hyundai', 'seat', 'dacia', 'kia', 'peugeot', 'mercedes-benz', 'bmw'];
 const directoryBrands = [...brands].sort((a, b) => {
   const aRank = salesOrder2025.indexOf(a.slug);
@@ -72,15 +73,23 @@ const directoryBrands = [...brands].sort((a, b) => {
             {powertrains.map((powertrain) => <option value={powertrain.toLocaleLowerCase('es')}>{powertrain}</option>)}
           </select>
         </label>
+        <label class="brand-body-field" for="brand-body">
+          <span>Tipo de coche</span>
+          <select id="brand-body" aria-controls="brand-card-grid">
+            <option value="">Todos los tipos</option>
+            {bodyTypes.map((body) => <option value={body.toLocaleLowerCase('es')}>{body}</option>)}
+          </select>
+        </label>
       </div>
 
       <div class="brand-card-grid" id="brand-card-grid">
         {directoryBrands.map((brand, index) => (
           <article
             class={`brand-directory-card brand-card-tone-${index + 1}`}
-            data-brand-search={`${brand.name} ${brand.country} ${brand.descriptor} ${brand.powertrains.join(' ')} ${brand.models.map((model) => model.name).join(' ')}`.toLocaleLowerCase('es')}
+            data-brand-search={`${brand.name} ${brand.country} ${brand.ownershipNote ?? ''} ${brand.descriptor} ${brand.powertrains.join(' ')} ${brand.models.map((model) => model.name).join(' ')}`.toLocaleLowerCase('es')}
             data-brand-country={brand.country.toLocaleLowerCase('es')}
             data-brand-powertrains={brand.powertrains.map((powertrain) => powertrain.toLocaleLowerCase('es')).join('|')}
+            data-brand-bodies={[...new Set(brand.models.map((model) => model.body.toLocaleLowerCase('es')))].join('|')}
           >
             <a class="brand-card-main" href={`/marcas/${brand.slug}/`}>
               <span class="brand-card-topline"><span>{brand.country}</span><span>{brand.models.length} modelos destacados</span></span>
@@ -112,6 +121,7 @@ const directoryBrands = [...brands].sort((a, b) => {
     const search = document.querySelector<HTMLInputElement>('#brand-search');
     const country = document.querySelector<HTMLSelectElement>('#brand-country');
     const powertrain = document.querySelector<HTMLSelectElement>('#brand-powertrain');
+    const bodyType = document.querySelector<HTMLSelectElement>('#brand-body');
     const cards = [...document.querySelectorAll<HTMLElement>('.brand-directory-card')];
     const emptyState = document.querySelector<HTMLElement>('#brand-no-results');
 
@@ -120,6 +130,7 @@ const directoryBrands = [...brands].sort((a, b) => {
       const query = normalize(search?.value ?? '');
       const selectedCountry = normalize(country?.value ?? '');
       const selectedPowertrain = normalize(powertrain?.value ?? '');
+      const selectedBody = normalize(bodyType?.value ?? '');
       let visibleCount = 0;
 
       for (const card of cards) {
@@ -127,7 +138,9 @@ const directoryBrands = [...brands].sort((a, b) => {
         const matchesCountry = !selectedCountry || normalize(card.dataset.brandCountry ?? '') === selectedCountry;
         const cardPowertrains = (card.dataset.brandPowertrains ?? '').split('|').map(normalize);
         const matchesPowertrain = !selectedPowertrain || cardPowertrains.includes(selectedPowertrain);
-        const visible = matchesText && matchesCountry && matchesPowertrain;
+        const cardBodies = (card.dataset.brandBodies ?? '').split('|').map(normalize);
+        const matchesBody = !selectedBody || cardBodies.includes(selectedBody);
+        const visible = matchesText && matchesCountry && matchesPowertrain && matchesBody;
         card.hidden = !visible;
         if (visible) visibleCount += 1;
       }
@@ -138,5 +151,6 @@ const directoryBrands = [...brands].sort((a, b) => {
     search?.addEventListener('input', updateCards);
     country?.addEventListener('change', updateCards);
     powertrain?.addEventListener('change', updateCards);
+    bodyType?.addEventListener('change', updateCards);
   </script>
 </BaseLayout>

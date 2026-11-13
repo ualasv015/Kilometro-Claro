@@ -40,11 +40,11 @@ export const xpengModels: ModelPageData[] = [
     modelSlug: 'g9',
     title: 'XPENG G9: motores, baterías y versiones en España',
     description: 'Consulta las versiones eléctricas del XPENG G9, sus potencias, baterías y diferencias entre tracción trasera y total.',
-    intro: 'El G9 es el SUV grande de XPENG y se ofrece con tracción trasera o total. La documentación española y el catálogo técnico MY2026 no describen exactamente la misma disponibilidad: la web española conserva referencias a una Standard Range de stock, mientras que la ficha MY2026 detalla Long Range y Performance AWD.',
-    powertrainSummary: 'Todas las configuraciones son eléctricas. La Long Range monta un motor trasero; la Performance AWD añade un motor delantero. La Standard Range se recoge únicamente como unidad de stock citada por la web española, no como configuración ordinaria del catálogo MY2026. La marca no publica un régimen en rpm para el par, así que no lo mostramos.',
-    usageNote: 'La batería de mayor capacidad y la tracción total responden a necesidades distintas: autonomía y prestaciones no deben compararse sin atender al ciclo WLTP, las ruedas y el uso previsto. La disponibilidad de la Standard Range depende del stock del concesionario.',
+    intro: 'El G9 es el SUV grande de XPENG y se ofrece con tracción trasera o total. En la gama española consultada, el configurador muestra baterías de 79 y 93,1 kWh; la página técnica identifica las versiones RWD Standard Range, RWD Long Range y AWD Performance.',
+    powertrainSummary: 'Todas las configuraciones son eléctricas. La RWD Standard Range monta una batería de 79 kWh y motor trasero; la RWD Long Range utiliza una batería de 93,1 kWh, y la AWD Performance añade un motor delantero. La marca no publica un régimen en rpm para el par, así que no lo mostramos.',
+    usageNote: 'La batería de mayor capacidad y la tracción total responden a necesidades distintas: autonomía y prestaciones no deben compararse sin atender al ciclo WLTP, las ruedas y el uso previsto. El configurador y el concesionario pueden confirmar las combinaciones y los plazos de entrega disponibles.',
     versions: [
-      { name: 'RWD Standard Range · batería 79 kWh · unidades de stock', type: 'Eléctrico', power: '351 CV (258 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado en rpm' },
+      { name: 'RWD Standard Range · batería 79 kWh', type: 'Eléctrico', power: '351 CV (258 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado en rpm' },
       { name: 'RWD Long Range · batería 93,1 kWh', type: 'Eléctrico', power: '351 CV (258 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: 'No publicado en rpm' },
       { name: 'AWD Performance · doble motor · batería 93,1 kWh', type: 'Eléctrico', power: '575 CV (423 kW)', displacement: '—', maxTorque: '', torqueScope: 'Dos motores eléctricos', torqueRpm: 'No publicado en rpm' },
     ],
@@ -54,13 +54,12 @@ export const xpengModels: ModelPageData[] = [
       { label: 'Batería MY2026', value: '93,1 kWh en Long Range y Performance AWD' },
     ],
     figures: [{ label: 'Autonomía WLTP máxima MY2026', value: 'Hasta 585 km en RWD Long Range; la cifra varía según configuración' }],
-    specNote: 'La ficha técnica XPENG MY2026 indica que la configuración Standard Range no está disponible y especifica Long Range (346 hp, equivalentes a 351 CV) y Performance AWD (567 hp, equivalentes a 575 CV). La ficha comercial española todavía cita una Standard Range de 351 CV y 79 kWh ligada a unidades en stock; confirma su existencia y condiciones en el concesionario antes de considerar esa versión.',
+    specNote: 'La ficha técnica española de XPENG distingue Standard Range, Long Range y Performance AWD. El configurador español consultado el 11/11/2026 muestra precios de partida para baterías de 79 y 93,1 kWh, pero no separa el importe de la versión AWD Performance respecto a la configuración RWD con la misma capacidad.',
     officialUrl: `${xpeng}/g9`,
-    technicalUrl: 'https://s-cdn.xpeng.com/commoncms/prod/2026-04-23/23b66a96e9fb4961aa724fc8183cbdd5.pdf?name=Ficha+T%C3%A9cnica+-+G9+-+PDF',
+    technicalUrl: `${xpeng}/configurador/xpeng-g9`,
     sources: [
       source('XPENG España: página y ficha comercial del G9', `${xpeng}/g9`),
-      source('XPENG: ficha técnica G9 MY2026', 'https://s-cdn.xpeng.com/commoncms/prod/2026-04-23/23b66a96e9fb4961aa724fc8183cbdd5.pdf?name=Ficha+T%C3%A9cnica+-+G9+-+PDF'),
-      source('XPENG España: gama y configurador', `${xpeng}/configurador`),
+      source('XPENG España: configurador G9, capacidades de batería y precios desde', `${xpeng}/configurador/xpeng-g9`),
     ],
   }),
   model({
@@ -96,7 +95,7 @@ export const xpengModels: ModelPageData[] = [
     powertrainSummary: 'La página española identifica una batería LFP de 37,25 kWh, un sistema de propulsión eléctrica de 245 CV y un motor térmico de 1,5 litros asociado a la autonomía extendida. XPENG no publica el par máximo con su régimen en rpm, así que se omite. El modelo aparece en la web española con consulta a concesionario, pero no en el listado de vehículos configurables.',
     usageNote: 'El REEV puede reducir la necesidad de depender exclusivamente de cargadores en trayectos largos, pero también consume gasolina cuando interviene el extensor. La propia ficha distingue consumo ponderado con batería cargada y consumo con la batería descargada; no compares su autonomía combinada con la autonomía eléctrica de un BEV.',
     versions: [
-      { name: 'PowerX Long Range · batería LFP 37,25 kWh', type: 'Eléctrico de autonomía extendida (REEV)', powertrainGroup: 'mixed', power: 'Sistema de tracción eléctrica: 245 CV (180 kW)', displacement: '1,5 l (motor térmico extensor)', maxTorque: '', torqueScope: 'Sistema eléctrico / extensor térmico', torqueRpm: 'No publicado en rpm' },
+      { name: 'PowerX Long Range · batería LFP 37,25 kWh', type: 'Híbrido enchufable (REEV gasolina + eléctrico)', powertrainGroup: 'mixed', power: 'Sistema de tracción eléctrica: 245 CV (180 kW)', displacement: '1,5 l (motor térmico extensor)', maxTorque: '', torqueScope: 'Sistema eléctrico / extensor térmico', torqueRpm: 'No publicado en rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV coupé de cinco plazas' },

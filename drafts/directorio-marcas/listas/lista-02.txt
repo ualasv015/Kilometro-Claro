@@ -1,0 +1,10 @@
+KGM | kgm
+Dacia | dacia
+DS Automobiles | ds
+Tesla | tesla
+Toyota | toyota
+Hyundai | hyundai
+BYD | byd
+Mazda | mazda
+MG | mg
+Leapmotor | leapmotor

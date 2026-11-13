@@ -1,0 +1,10 @@
+XPENG | xpeng
+EVO | evo
+Alfa Romeo | alfa-romeo
+Subaru | subaru
+Polestar | polestar
+SWM | swm
+smart | smart
+Lancia | lancia
+Alpine | alpine
+Maserati | maserati

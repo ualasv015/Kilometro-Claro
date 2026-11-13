@@ -1,24 +1,24 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
-const jaecooReviewedAt = '29 de octubre de 2026';
+const omodaReviewedAt = '11 de noviembre de 2026';
+const jaecooReviewedAt = '8 de noviembre de 2026';
 const site = 'https://www.omodajaecoo.es';
 const source = (label: string, url: string) => ({ label, url });
 const noRpm = 'No publicado en la ficha española consultada';
-const electricDisplacement = 'No aplica: motor eléctrico';
+const electricDisplacement = '—';
 
 /** Fichas separadas por modelo y tecnología conforme a los datos oficiales de OMODA & JAECOO España. */
 export const omodaJaecooModels: ModelPageData[] = [
   {
     brandSlug: 'omoda',
     modelSlug: 'omoda-5',
-    title: 'OMODA 5 SHS-H: motor híbrido y datos técnicos | Kilómetro Claro',
-    description: 'Consulta la ficha del OMODA 5 SHS-H: potencia híbrida, cilindrada, consumo WLTP y características del sistema autorrecargable.',
+    title: 'OMODA 5 SHS-H: precio, motor híbrido y datos técnicos | Kilómetro Claro',
+    description: 'Consulta el motor HEV del OMODA 5 SHS-H, sus datos técnicos, consumo WLTP, acabados Pure y Premium y el estado de sus precios en España.',
     intro: 'El OMODA 5 SHS-H es la versión híbrida autorrecargable del SUV compacto de la marca. Su batería se recarga durante la conducción y mediante la recuperación de energía, por lo que no necesita conectarse a un punto de carga. La ficha separa esta motorización del OMODA 5 EV, que sí es eléctrico puro.',
-    powertrainSummary: 'El sistema SHS-H combina un motor de gasolina 1.5 TGDI de 1.499 cm³, dos motores eléctricos y una batería de 1,83 kWh. La potencia máxima conjunta publicada es de 224 CV (165 kW) y emplea transmisión híbrida 1DHT con tracción delantera. La gama comercial actual también ofrece el OMODA 5 EV en una ficha independiente.',
+    powertrainSummary: 'El sistema SHS-H combina un motor de gasolina 1.5 TGDI de 1.499 cm³, dos motores eléctricos y una batería de 1,83 kWh que no requiere carga externa. La ficha técnica atribuye al conjunto 224 CV (165 kW), al motor térmico 143 CV (105 kW) y al eléctrico 204 CV (150 kW). Se ofrece con los acabados Pure y Premium; la familia también incluye el OMODA 5 EV en una ficha independiente.',
     usageNote: 'Al no necesitar carga externa, el SHS-H puede encajar en un uso mixto con recorridos urbanos y periurbanos. El consumo homologado WLTP es una referencia de comparación, no una garantía del gasto real: influyen la velocidad, la temperatura, la carga y el tipo de recorrido. Para estimar el coste, utiliza tus kilómetros y el precio que pagas por el combustible.',
     versions: [
-      { name: '1.5 SHS-H', type: 'Híbrido (gasolina + eléctrico)', power: '224 CV (165 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '295 Nm', torqueScope: 'Sistema híbrido', torqueRpm: noRpm },
+      { name: '1.5 SHS-H HEV', type: 'Híbrido no enchufable · HEV gasolina + eléctrico', power: 'Sistema: 224 CV (165 kW); motor térmico: 143 CV (105 kW); motor eléctrico: 204 CV (150 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '295 Nm', torqueScope: 'Sistema híbrido', torqueRpm: noRpm },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto de 5 puertas' },
@@ -31,26 +31,27 @@ export const omodaJaecooModels: ModelPageData[] = [
       { label: 'Consumo combinado WLTP', value: '5,3 l/100 km' },
       { label: 'Emisiones de CO₂ WLTP', value: '120 g/km' },
     ],
-    specNote: 'La ficha antigua de gasolina sigue accesible en la web del fabricante, pero la oferta comercial actual presenta el OMODA 5 SHS-H y el OMODA 5 EV; OMODA indica que las versiones electrificadas han sustituido a la variante de gasolina. El régimen del par máximo del SHS-H no aparece en la ficha técnica consultada, por lo que no se muestra en la tabla.',
+    specNote: 'La ficha técnica de gasolina del OMODA 5 continúa accesible, pero la página comercial y la campaña consultadas muestran como opciones actuales la SHS-H y la EV. No se incluye la gasolina sin confirmación de disponibilidad para pedido; puede haber unidades en stock cuya situación debe consultarse con un concesionario. La ficha no publica el régimen del par máximo, así que no se muestra en la tabla.',
     officialUrl: `${site}/modelos/omoda-5`,
-    technicalUrl: `${site}/modelos/omoda-5/gasolina-ficha-tecnica`,
+    technicalUrl: `${site}/modelos/omoda-5/hibrido-ficha-tecnica`,
     sources: [
       source('Ficha técnica oficial OMODA 5 SHS', `${site}/modelos/omoda-5/hibrido-ficha-tecnica`),
-      source('Gama y versiones OMODA 5', `${site}/modelos/omoda-5`),
-      source('Evolución de la gama OMODA 5 en España', `${site}/prensa/omoda-5-alcanza-las-30-000-ventas-en-espana-entre-los-cinco-hibridos-mas-vendidos-de-2026`),
+      source('Gama comercial OMODA 5 en España', `${site}/modelos/omoda-5`),
+      source('Promoción actual y versiones anunciadas para noviembre de 2026', `${site}/comprar/promociones/black-november`),
+      source('Ficha de gasolina que sigue accesible, no incluida como disponible para pedido', `${site}/modelos/omoda-5/gasolina-ficha-tecnica`),
     ],
-    reviewedAt,
+    reviewedAt: omodaReviewedAt,
   },
   {
     brandSlug: 'omoda',
     modelSlug: 'omoda-5-ev',
-    title: 'OMODA 5 EV: batería, autonomía y datos técnicos | Kilómetro Claro',
-    description: 'Ficha del OMODA 5 EV: motor eléctrico de 155 kW, batería LFP, autonomía WLTP, consumo y tiempos de carga publicados en España.',
+    title: 'OMODA 5 EV: precio, batería, autonomía y datos técnicos | Kilómetro Claro',
+    description: 'Ficha del OMODA 5 EV: motor de 155 kW, batería LFP, autonomía WLTP, acabados Pure y Premium y estado de sus precios en España.',
     intro: 'El OMODA 5 EV es la variante eléctrica de la familia OMODA 5. No comparte el motor de gasolina ni la pequeña batería híbrida de las versiones SHS: utiliza una batería de tracción de 61 kWh y requiere recarga externa.',
     powertrainSummary: 'La ficha española declara un sistema eléctrico de 155 kW (211 CV) con tracción delantera y una batería LFP de 61 kWh. La autonomía combinada WLTP indicada es de 430 km; en ciclo urbano, la cifra publicada asciende a 604 km.',
     usageNote: 'La autonomía homologada permite comparar vehículos en condiciones normalizadas, pero el recorrido real cambia con velocidad, temperatura, climatización y carga. Para valorar este SUV, comprueba además si puedes cargar en casa o en el trabajo y calcula el coste con tu tarifa eléctrica habitual. El vehículo admite carga en corriente alterna y continua; la potencia efectiva depende del punto y de la batería.',
     versions: [
-      { name: 'EV', type: 'Eléctrico', power: '211 CV (155 kW)', displacement: electricDisplacement, maxTorque: '288 Nm', torqueScope: 'Motor eléctrico delantero', torqueRpm: 'No comparable con el régimen de un motor térmico' },
+      { name: 'EV', type: 'Eléctrico', power: '211 CV (155 kW)', displacement: electricDisplacement, maxTorque: '', torqueScope: '', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto de 5 puertas' },
@@ -70,19 +71,20 @@ export const omodaJaecooModels: ModelPageData[] = [
     sources: [
       source('Ficha técnica oficial OMODA 5 EV', `${site}/modelos/omoda-5/ev-ficha-tecnica`),
       source('Gama y características OMODA 5', `${site}/modelos/omoda-5`),
+      source('Promoción actual y versiones anunciadas para noviembre de 2026', `${site}/comprar/promociones/black-november`),
     ],
-    reviewedAt,
+    reviewedAt: omodaReviewedAt,
   },
   {
     brandSlug: 'omoda',
     modelSlug: 'omoda-7-shs',
-    title: 'OMODA 7 SHS: motor híbrido enchufable y datos técnicos',
-    description: 'Datos oficiales del OMODA 7 SHS: sistema PHEV de 279 CV, batería de 18,4 kWh, autonomía eléctrica, consumo y dimensiones.',
+    title: 'OMODA 7 SHS: precio, motor híbrido enchufable y datos técnicos',
+    description: 'Datos oficiales del OMODA 7 SHS: sistema PHEV de 279 CV, acabados Pure, Premium y Premium+, batería, autonomía y PVP en España.',
     intro: 'El OMODA 7 SHS es un SUV híbrido enchufable de cinco plazas. Su sistema permite recorrer parte de los trayectos con electricidad si se carga de forma regular; cuando la batería baja, el motor de gasolina sigue formando parte del funcionamiento del vehículo.',
-    powertrainSummary: 'Combina un motor de gasolina 1.5 TGDI de 1.499 cm³ con un sistema eléctrico y una batería LFP de 18,4 kWh. OMODA declara 205 kW (279 CV) de potencia máxima conjunta. La transmisión es automática 1DHT y la tracción delantera.',
+    powertrainSummary: 'Combina un motor de gasolina 1.5 TGDI de 1.499 cm³ con propulsión eléctrica y una batería LFP de 18,4 kWh. La potencia máxima del sistema es de 279 CV (205 kW); la ficha también separa 143 CV (105 kW) para el motor térmico y 204 CV (150 kW) para el eléctrico. La transmisión es 1DHT y la tracción delantera. La gama española ofrece Pure, Premium y Premium+; este último acabado se puede pedir desde octubre de 2026.',
     usageNote: 'La ficha publica 92 km de autonomía eléctrica combinada y 6 l/100 km con la batería en mantenimiento de carga. Esas cifras responden a condiciones diferentes: el consumo ponderado presupone batería cargada y no debe extrapolarse a viajes largos sin recargar. El ahorro potencial depende de cargarlo a menudo y de la proporción de trayectos que puedas hacer en modo eléctrico.',
     versions: [
-      { name: '1.5 SHS PHEV', power: '205 kW (279 CV) de sistema', displacement: '1.499 cm³; 4 cilindros', maxTorque: '365 Nm', torqueScope: 'Sistema híbrido enchufable', torqueRpm: noRpm, additionalTorque: 'Motor térmico: 105 kW (143 CV); batería LFP de 18,4 kWh' },
+      { name: '1.5 SHS-P PHEV', type: 'Híbrido enchufable · PHEV gasolina + eléctrico', power: 'Sistema: 279 CV (205 kW); motor térmico: 143 CV (105 kW); motor eléctrico: 204 CV (150 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '365 Nm', torqueScope: 'Sistema híbrido enchufable', torqueRpm: noRpm },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV de 5 puertas' },
@@ -102,20 +104,21 @@ export const omodaJaecooModels: ModelPageData[] = [
     technicalUrl: `${site}/modelos/omoda-7/hibrido-ficha-tecnica`,
     sources: [
       source('Ficha técnica oficial OMODA 7 SHS', `${site}/modelos/omoda-7/hibrido-ficha-tecnica`),
-      source('Gama OMODA 7 y autonomía eléctrica', `${site}/modelos/omoda-7`),
+      source('Gama OMODA 7 y acabados', `${site}/modelos/omoda-7`),
+      source('Incorporación del acabado Premium+ y tabla de precios', `${site}/prensa/el-omoda-7-shs-hibrido-enchufable-estrena-version-premium-con-mas-tecnologia-y-confort`),
     ],
-    reviewedAt,
+    reviewedAt: omodaReviewedAt,
   },
   {
     brandSlug: 'omoda',
     modelSlug: 'omoda-9-shs',
-    title: 'OMODA 9 SHS: potencia híbrida, batería y autonomía',
-    description: 'Consulta el sistema híbrido enchufable AWD del OMODA 9 SHS: 537 CV, batería de 34,46 kWh y autonomía eléctrica.',
+    title: 'OMODA 9 SHS: precio, motor híbrido AWD, batería y autonomía',
+    description: 'Consulta el OMODA 9 SHS actualizado: sistema PHEV AWD de 537 CV, batería de 34,46 kWh, autonomía eléctrica y precios por acabado.',
     intro: 'El OMODA 9 SHS es un SUV híbrido enchufable de tracción total y cinco plazas. Se sitúa por encima del OMODA 7 en tamaño y potencia; la ficha española reúne un motor turbo de gasolina y tres motores eléctricos, repartidos entre los ejes.',
-    powertrainSummary: 'El sistema combina un 1.5 TGDI de gasolina, 1.499 cm³, con tres motores eléctricos y transmisión 3DHT. La potencia máxima conjunta publicada es de 395 kW (537 CV) y la tracción es total AWD.',
+    powertrainSummary: 'El sistema combina un 1.5 TGDI de gasolina, 1.499 cm³, con tres motores eléctricos y transmisión 3DHT. La potencia máxima conjunta publicada es de 537 CV (395 kW); la ficha identifica 143 CV (105 kW) para el motor de combustión y una potencia máxima conjunta de 340 kW para los motores eléctricos. La tracción es total AWD. La gama actual mantiene el acabado Premium y añade el Black Edition, limitado a 200 unidades en España.',
     usageNote: 'La batería de 34,46 kWh permite hasta 145 km de autonomía eléctrica según la ficha, pero para aprovecharla hay que cargar el coche con regularidad. La potencia y el peso de un SUV grande también influyen en el gasto cuando funciona con el motor térmico. Compara su uso real previsto y la carga disponible, no solo la autonomía total que anuncia el fabricante.',
     versions: [
-      { name: '1.5 SHS PHEV AWD', power: '395 kW (537 CV) de sistema', displacement: '1.499 cm³; 4 cilindros', maxTorque: '650 Nm', torqueScope: 'Sistema híbrido; ficha separa 215 Nm térmicos y 700 Nm eléctricos', torqueRpm: noRpm, additionalTorque: 'Tres motores eléctricos; batería de 34,46 kWh; transmisión 3DHT' },
+      { name: '1.5 SHS-P PHEV AWD', type: 'Híbrido enchufable · PHEV gasolina + eléctrico AWD', power: 'Sistema: 537 CV (395 kW); motor térmico: 143 CV (105 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '650 Nm', torqueScope: 'Sistema híbrido enchufable', torqueRpm: noRpm },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV de 5 puertas' },
@@ -136,21 +139,22 @@ export const omodaJaecooModels: ModelPageData[] = [
     sources: [
       source('Ficha técnica oficial OMODA 9 SHS', `${site}/modelos/omoda-9/hibrido-ficha-tecnica`),
       source('Características del OMODA 9 SHS', `${site}/modelos/omoda-9`),
+      source('Actualización de gama, Black Edition y precios máximos recomendados', `${site}/prensa/el-omoda-9-shs-hibrido-enchufable-actualiza-su-gama-y-estrena-la-version-limitada-black-edition`),
     ],
-    reviewedAt,
+    reviewedAt: omodaReviewedAt,
   },
   {
     brandSlug: 'jaecoo',
     modelSlug: 'jaecoo-5',
-    title: 'JAECOO 5: gasolina, híbrido SHS y eléctrico | Kilómetro Claro',
-    description: 'Compara las tres tecnologías del JAECOO 5: 1.6 gasolina, híbrido SHS y eléctrico EV, con potencia, par, consumos y autonomía oficiales.',
-    intro: 'El JAECOO 5 comparte una carrocería SUV compacta con tres alternativas de propulsión en España: gasolina, híbrida no enchufable SHS y eléctrica. La diferencia no está solo en el motor: cada una modifica etiqueta, coste energético, necesidad de recarga y datos de espacio o autonomía.',
-    powertrainSummary: 'La gasolina recurre a un 1.6 TGDI y caja 7DCT. El SHS combina un 1.5 TGDI y un motor eléctrico con batería de 1,83 kWh, sin carga exterior. El EV utiliza un motor eléctrico delantero y batería LFP de 60,9 kWh. En las versiones híbridas la potencia distingue el sistema y sus motores; las fichas consultadas no especifican el régimen del par máximo.',
-    usageNote: 'Para elegir, considera el patrón de uso: gasolina para quien prioriza repostar sin planificar carga; SHS para uso mixto y urbano sin enchufe; EV si puedes cargar y los 402 km WLTP combinados de la ficha encajan con tus recorridos. El consumo homologado sirve para comparar versiones, no para anticipar el gasto exacto de cada conductor.',
+    title: 'JAECOO 5: motores, acabados y datos técnicos | Kilómetro Claro',
+    description: 'Consulta las versiones gasolina, híbrida SHS-H y eléctrica del JAECOO 5, sus datos técnicos oficiales y el estado de los precios por acabado.',
+    intro: 'El JAECOO 5 se comercializa en España con tres sistemas: gasolina, híbrido no enchufable SHS-H y eléctrico. Las fichas españolas diferencian sus consumos, necesidades de carga y acabados; no se ha podido verificar el PVP actual individual de sus versiones.',
+    powertrainSummary: 'La versión de gasolina emplea un 1.6 TGDI de 1.598 cm³ y cambio 7DCT. El SHS-H combina un motor térmico 1.5 con propulsión eléctrica y no requiere carga externa. El EV utiliza un motor eléctrico delantero de 155 kW y batería LFP de 60,9 kWh. En las fichas híbridas consultadas no consta el régimen del par máximo, por lo que no se muestra en la tabla.',
+    usageNote: 'La gasolina permite repostar en la red habitual; el híbrido SHS-H recupera energía durante la marcha sin conectarse a un cargador, mientras que el EV sí necesita recarga externa. La autonomía y el consumo WLTP permiten comparar versiones bajo un ciclo común, pero no predicen exactamente el uso real. Antes de comprar, confirma el PVP por acabado: los precios de lanzamiento publicados en 2025 no acreditan el precio vigente y la campaña de noviembre comunica ahorros máximos, no un importe final individual.',
     versions: [
-      { name: '1.6 TGDI gasolina', power: '147 CV (108 kW)', displacement: '1.598 cm³; 4 cilindros', maxTorque: '275 Nm', torqueScope: 'Motor de gasolina', torqueRpm: noRpm, additionalTorque: 'Cambio 7DCT; tracción delantera' },
-      { name: '1.5 SHS híbrido', power: 'Sistema: 224 CV (165 kW); motor térmico: 143 CV (105 kW); motor eléctrico: 204 CV (150 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '295 Nm de sistema; 215 Nm térmicos; 310 Nm eléctricos', torqueScope: 'Sistema híbrido y motores por separado', torqueRpm: noRpm, additionalTorque: 'Batería ternaria de litio de 1,83 kWh; no enchufable' },
-      { name: 'EV', type: 'Eléctrico', power: '211 CV (155 kW)', displacement: electricDisplacement, maxTorque: '288 Nm', torqueScope: 'Motor eléctrico delantero', torqueRpm: 'No comparable con el régimen de un motor térmico', additionalTorque: 'Batería LFP de 60,9 kWh; autonomía WLTP de 402 km' },
+      { name: '1.6 TGDI gasolina · Pure / Exclusive', type: 'Gasolina', power: '147 CV (108 kW)', displacement: '1.598 cm³; 4 cilindros', maxTorque: '275 Nm', torqueScope: 'Motor de gasolina', torqueRpm: noRpm, additionalTorque: 'Cambio 7DCT; tracción delantera' },
+      { name: '1.5 SHS-H HEV · Pure / Exclusive', type: 'Híbrido no enchufable (gasolina + eléctrico; HEV)', power: 'Sistema: 224 CV (165 kW); motor térmico: 143 CV (105 kW); motor eléctrico: 204 CV (150 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '295 Nm de sistema; 215 Nm térmicos; 310 Nm eléctricos', torqueScope: 'Sistema híbrido y motores por separado', torqueRpm: noRpm, additionalTorque: 'Batería de 1,83 kWh; no enchufable' },
+      { name: 'EV · Pure / Exclusive', type: 'Eléctrico', power: '211 CV (155 kW)', displacement: electricDisplacement, maxTorque: '288 Nm', torqueScope: 'Motor eléctrico delantero', torqueRpm: noRpm, additionalTorque: 'Batería LFP de 60,9 kWh; autonomía WLTP de 402 km' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto de 5 puertas' },
@@ -165,7 +169,7 @@ export const omodaJaecooModels: ModelPageData[] = [
       { label: 'EV · consumo eléctrico WLTP', value: '16,5 kWh/100 km' },
       { label: 'EV · carga CC 30–80 %', value: '28 minutos a un máximo de 130 kW' },
     ],
-    specNote: 'La gama reúne tres tecnologías con necesidades distintas. La ficha de cada combustible puede corresponder a acabados y pesos diferentes; verifica la versión concreta antes de comparar los datos de maletero y homologación.',
+    specNote: 'La ficha de gasolina publica 275 Nm, pero no indica el régimen; por el criterio de esta tabla no se muestra el par. En las fichas híbridas tampoco se publica el régimen de los pares de sistema y motores. Los precios de lanzamiento de 2025 se señalan solo como referencias históricas y no se tratan como tarifas actuales.',
     officialUrl: `${site}/modelos/jaecoo-5`,
     technicalUrl: `${site}/modelos/jaecoo-5/gasolina-ficha-tecnica`,
     sources: [
@@ -179,37 +183,35 @@ export const omodaJaecooModels: ModelPageData[] = [
   {
     brandSlug: 'jaecoo',
     modelSlug: 'jaecoo-7',
-    title: 'JAECOO 7: gasolina, SHS híbrido y enchufable | Kilómetro Claro',
-    description: 'Datos de las versiones JAECOO 7 gasolina, SHS-H y SHS-P: potencia, cilindrada, par, consumo y autonomía eléctrica homologada.',
-    intro: 'El JAECOO 7 es un SUV de cinco plazas con alternativas de gasolina, híbrida no enchufable e híbrida enchufable. Aunque comparten denominación y carrocería, el sistema SHS-H no necesita toma de carga y el SHS-P sí; conviene compararlos con sus consumos y autonomía eléctrica por separado.',
-    powertrainSummary: 'La versión gasolina equipa un 1.6 TGDI de 1.598 cm³, con 7DCT y configuraciones de tracción delantera o total. El SHS-H es híbrido no enchufable y el SHS-P permite cargar su batería desde una toma externa. Las fichas oficiales detallan la potencia del sistema y de sus motores; solo la ficha de gasolina especifica el régimen del par máximo.',
-    usageNote: 'El gasolina permite escoger entre 4x2 y 4x4; el SHS-H reduce el consumo homologado sin obligar a recargar; el SHS-P puede cubrir trayectos cotidianos en eléctrico cuando se carga con frecuencia. Al comparar sus gastos, utiliza el consumo SHS-P con batería en mantenimiento para viajes largos y no solo el dato ponderado con carga.',
+    title: 'JAECOO 7: versiones híbrida y enchufable | Kilómetro Claro',
+    description: 'Consulta las fichas del JAECOO 7 SHS-H y SHS-P: potencias, cilindrada, consumos y autonomía eléctrica homologada en España.',
+    intro: 'La página española actual del JAECOO 7 muestra dos motorizaciones: SHS-H híbrida no enchufable y SHS-P híbrida enchufable. Las dos combinan un motor de gasolina 1.5 TGDI con propulsión eléctrica, pero solo la SHS-P puede cargarse desde una toma y recorrer hasta 91 km en modo eléctrico según la ficha consultada.',
+    powertrainSummary: 'El SHS-H entrega 224 CV de potencia de sistema y utiliza una batería de 1,83 kWh que no se carga externamente. El SHS-P alcanza 279 CV combinados, lleva una batería de 18,4 kWh y homologa 91 km de autonomía eléctrica. Ambas fichas indican cilindrada térmica de 1.499 cm³ y tracción delantera. La ficha de gasolina del JAECOO 7 aún es accesible, pero la versión no aparece en la gama actual de producto española y no se incluye como opción vigente.',
+    usageNote: 'El SHS-H evita planificar recargas y su consumo homologado es de 5,5 l/100 km. El SHS-P puede reducir el uso de gasolina en desplazamientos cortos si se carga a menudo; para viajes largos conviene considerar también su consumo con la batería descargada (6 l/100 km en la ficha). La marca publica ahorros de campaña, pero no un precio base individual comprobable para los acabados consultados.',
     versions: [
-      { name: '1.6 TGDI gasolina 4x2 / 4x4', power: '145 CV (108 kW)', displacement: '1.598 cm³; 4 cilindros', maxTorque: '275 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '1.750 rpm', additionalTorque: 'Cambio 7DCT; tracción delantera o total' },
-      { name: '1.5 SHS-H híbrido', power: 'Sistema: 224 CV (165 kW); motor térmico: 143 CV (105 kW); motor eléctrico: 204 CV (150 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '295 Nm de sistema; 215 Nm térmicos; 310 Nm eléctricos', torqueScope: 'Sistema híbrido y motores por separado', torqueRpm: noRpm, additionalTorque: 'Batería de 1,83 kWh; no enchufable' },
-      { name: '1.5 SHS-P híbrido enchufable', power: 'Sistema: 279 CV (205 kW); motor térmico: 143 CV (105 kW); motor eléctrico: 204 CV (150 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '365 Nm de sistema; 215 Nm térmicos; 310 Nm eléctricos', torqueScope: 'Sistema híbrido enchufable y motores por separado', torqueRpm: noRpm, additionalTorque: 'Autonomía eléctrica combinada WLTP: 91 km' },
+      { name: '1.5 SHS-H HEV · Pure / Exclusive', type: 'Híbrido no enchufable (gasolina + eléctrico; HEV)', power: 'Sistema: 224 CV (165 kW); motor térmico: 143 CV (105 kW); motor eléctrico: 204 CV (150 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '295 Nm de sistema; 215 Nm térmicos; 310 Nm eléctricos', torqueScope: 'Sistema híbrido y motores por separado', torqueRpm: noRpm, additionalTorque: 'Batería de 1,83 kWh; no enchufable' },
+      { name: '1.5 SHS-P PHEV · Pure / Exclusive', type: 'Híbrido enchufable (gasolina + eléctrico; PHEV)', power: 'Sistema: 279 CV (205 kW); motor térmico: 143 CV (105 kW); motor eléctrico: 204 CV (150 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '365 Nm de sistema; 215 Nm térmicos; 310 Nm eléctricos', torqueScope: 'Sistema híbrido enchufable y motores por separado', torqueRpm: noRpm, additionalTorque: 'Batería de 18,4 kWh; autonomía eléctrica WLTP: 91 km' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV de 5 puertas' },
       { label: 'Plazas', value: '5' },
       { label: 'Longitud', value: '4.500 mm' },
       { label: 'Maletero', value: '500 litros en SHS-H; varía según versión' },
-      { label: 'Tracción', value: 'Delantera o total en gasolina; delantera en las fichas SHS consultadas' },
+      { label: 'Tracción', value: 'Delantera en las dos motorizaciones de la gama española consultada' },
     ],
     figures: [
-      { label: 'Gasolina · consumo WLTP', value: '7,0 l/100 km (4x2); 8,0 l/100 km (4x4)' },
       { label: 'SHS-H · consumo WLTP', value: '5,5 l/100 km' },
-      { label: 'SHS-P · autonomía eléctrica', value: '90 km anunciados por la marca' },
-      { label: 'SHS-P · autonomía total anunciada', value: 'Hasta 1.200 km; depende de las condiciones de homologación y uso' },
+      { label: 'SHS-P · autonomía eléctrica WLTP', value: '91 km' },
+      { label: 'SHS-P · consumo con batería descargada', value: '6,0 l/100 km' },
     ],
-    specNote: 'Las fichas del SHS-H y SHS-P publican valores de par del sistema y de sus motores, pero no indican a qué régimen se alcanzan. Por eso no se trasladan a la columna de par máximo. En gasolina sí se incluye el régimen que publica el fabricante.',
+    specNote: 'Las fichas del SHS-H y SHS-P publican los pares de sistema y motores, pero no indican el régimen; por eso la columna de par queda vacía. Aunque sigue disponible la ficha técnica del 1.6 TGDI, la página de producto española actual ofrece solo SHS-H y SHS-P, por lo que no presentamos el gasolina como una versión comercial vigente.',
     officialUrl: `${site}/modelos/jaecoo-7`,
-    technicalUrl: `${site}/modelos/jaecoo-7/gasolina-ficha-tecnica`,
+    technicalUrl: `${site}/modelos/jaecoo-7/hibrido-ficha-tecnica`,
     sources: [
       source('Gama JAECOO 7 y versiones SHS-P/SHS-H', `${site}/modelos/jaecoo-7`),
-      source('Ficha técnica JAECOO 7 gasolina', `${site}/modelos/jaecoo-7/gasolina-ficha-tecnica`),
       source('Ficha técnica JAECOO 7 SHS-H', `${site}/modelos/jaecoo-7/hibrido-ficha-tecnica`),
       source('Ficha técnica JAECOO 7 SHS-P', `${site}/modelos/jaecoo-7/hibrido-enchufable-ficha-tecnica`),
+      source('Ficha técnica de gasolina aún accesible, no listada en la gama de producto actual', `${site}/modelos/jaecoo-7/gasolina-ficha-tecnica`),
       source('Catálogo oficial JAECOO 7 SHS-P', 'https://omodajaecoo.es/wp-content/uploads/2025/05/J7_SHS_catalogo.pdf'),
     ],
     reviewedAt: jaecooReviewedAt,
@@ -223,13 +225,14 @@ export const omodaJaecooModels: ModelPageData[] = [
     powertrainSummary: 'La propulsión combina un motor de gasolina 1.5 TGDI de 1.499 cm³ con tres motores eléctricos y transmisión automática 3DHT. La ficha oficial separa la potencia combinada de la correspondiente a cada motor y declara tracción total. La batería tiene 34,46 kWh y se puede cargar en corriente alterna o continua; la ficha no indica el régimen del par máximo.',
     usageNote: 'La marca publica 134 km de autonomía eléctrica y más de 1.000 km combinados; son cifras homologadas o de referencia, no una garantía de alcance real. La carga frecuente permite aprovechar más el modo eléctrico. Si necesitas siete plazas, comprueba el maletero con la tercera fila desplegada: la ficha indica 200 litros, frente a 738 litros en la configuración de cinco plazas.',
     versions: [
-      { name: '1.5 SHS AWD · 5 o 7 plazas', power: 'Sistema: 428 CV (315 kW); motor térmico: 143 CV (105 kW); motor eléctrico delantero 1: 102 CV (75 kW); motor eléctrico delantero 2: 122 CV (90 kW); motor eléctrico trasero: 238 CV (175 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '580 Nm', torqueScope: 'Sistema híbrido enchufable AWD', torqueRpm: noRpm, additionalTorque: 'Batería de 34,46 kWh; transmisión 3DHT' },
+      { name: '1.5 SHS AWD · Exclusive 5 asientos', type: 'Híbrido enchufable (gasolina + eléctrico; AWD)', power: 'Sistema: 428 CV (315 kW); motor térmico: 143 CV (105 kW); motor eléctrico delantero 1: 102 CV (75 kW); motor eléctrico delantero 2: 122 CV (90 kW); motor eléctrico trasero: 238 CV (175 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '580 Nm', torqueScope: 'Sistema híbrido enchufable AWD', torqueRpm: noRpm, additionalTorque: 'Batería de 34,46 kWh; transmisión 3DHT' },
+      { name: '1.5 SHS AWD · Exclusive 7 asientos', type: 'Híbrido enchufable (gasolina + eléctrico; AWD)', power: 'Sistema: 428 CV (315 kW); motor térmico: 143 CV (105 kW); motor eléctrico delantero 1: 102 CV (75 kW); motor eléctrico delantero 2: 122 CV (90 kW); motor eléctrico trasero: 238 CV (175 kW)', displacement: '1.499 cm³; 4 cilindros', maxTorque: '580 Nm', torqueScope: 'Sistema híbrido enchufable AWD', torqueRpm: noRpm, additionalTorque: 'Batería de 34,46 kWh; transmisión 3DHT' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV de 5 puertas' },
-      { label: 'Plazas', value: '5 o 7, según acabado' },
+      { label: 'Plazas', value: '5 (Exclusive) o 7 (Exclusive 7 asientos)' },
       { label: 'Longitud', value: '4.820 mm' },
-      { label: 'Maletero', value: '738 litros (5 plazas); 200 litros con 7 plazas' },
+      { label: 'Maletero', value: '738 litros (5 plazas); 200 litros con 7 plazas, según ficha oficial' },
       { label: 'Tracción', value: 'Total AWD' },
     ],
     figures: [
@@ -238,7 +241,7 @@ export const omodaJaecooModels: ModelPageData[] = [
       { label: 'Carga rápida CC 30–80 %', value: '20 minutos; hasta 70 kW' },
       { label: 'Aceleración 0–100 km/h', value: '5,8 s' },
     ],
-    specNote: 'La capacidad de maletero depende de si se utiliza la tercera fila. La batería permite carga externa y el consumo ponderado de un PHEV presupone un determinado uso de electricidad; no equivale al consumo en un viaje largo con la batería descargada.',
+    specNote: 'La ficha técnica diferencia los acabados Exclusive de cinco y siete asientos. El dosier comercial consultado en noviembre no publica PVP exacto para esas configuraciones; el ahorro máximo anunciado durante la campaña no se usa como precio base. El consumo ponderado de un PHEV presupone un uso de electricidad y no equivale al consumo de un viaje largo con la batería descargada.',
     officialUrl: `${site}/modelos/jaecoo-8`,
     technicalUrl: `${site}/modelos/jaecoo-8/shs-ficha-tecnica`,
     sources: [

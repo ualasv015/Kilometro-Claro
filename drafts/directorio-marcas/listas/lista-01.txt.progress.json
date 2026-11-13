@@ -1,0 +1,20 @@
+{
+  "lista": "lista-01.txt",
+  "marcaActual": null,
+  "fase": "completa",
+  "rechazosPorUrl": {
+    "/marcas/fiat/tipo-sedan/": 1,
+    "/marcas/geely/": 1,
+    "/marcas/geely/e5/": 1,
+    "/marcas/geely/starray-em-i/": 1,
+    "/marcas/mitsubishi/colt/": 1,
+    "/marcas/mitsubishi/asx/": 1,
+    "/marcas/mitsubishi/grandis/": 1,
+    "/marcas/mitsubishi/outlander-phev/": 1,
+    "/marcas/lynk-co/": 2,
+    "/marcas/lynk-co/01/": 1,
+    "/marcas/lynk-co/02/": 1,
+    "/marcas/lynk-co/08/": 1
+  },
+  "actualizado": "2026-11-13"
+}

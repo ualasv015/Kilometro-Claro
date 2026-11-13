@@ -1,6 +1,6 @@
 import type { ModelPageData, ModelVersion } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '11 de noviembre de 2026';
 const root = 'https://www.opel.es';
 const store = 'https://store.opel.es';
 const range = `${store}/configurable`;
@@ -101,7 +101,16 @@ function version(
   torqueScope = '',
   torqueRpm = '',
 ): ModelVersion {
-  return { name, type, power, displacement, maxTorque, torqueScope, torqueRpm };
+  const powertrainGroup: NonNullable<ModelVersion['powertrainGroup']> = /híbrido enchufable/i.test(type)
+    ? 'plug-in'
+    : /48\s?V|MHEV|microhíbrido/i.test(type)
+      ? 'mild-hybrid'
+      : /eléctrico/i.test(type)
+        ? 'electric'
+        : /diésel/i.test(type)
+          ? 'diesel'
+          : 'petrol';
+  return { name, type, powertrainGroup, power, displacement, maxTorque, torqueScope, torqueRpm };
 }
 
 function makePage(seed: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>): ModelPageData {
@@ -118,11 +127,11 @@ const records: ModelPageData[] = [
     usageNote: 'El Corsa de gasolina y el Hybrid se repostan en una estación de servicio; el segundo añade asistencia eléctrica y no necesita carga externa. Las versiones eléctricas se adaptan mejor a quien puede cargar en casa o en el trabajo. Para comparar sus costes, conviene incluir tanto el precio de compra como la energía y el tipo de recorridos habituales.',
     versions: [
       version('1.2 Turbo gasolina 100', 'Gasolina', '100 CV (74 kW)', '1.199 cm³', '205 Nm', 'Motor de gasolina', '1.750 rpm'),
-      version('1.2 Hybrid 110', 'Híbrido de gasolina (48 V)', 'Sistema: 110 CV (81 kW)', 'Térmico: 1.199 cm³', '205 Nm', 'Motor térmico de gasolina', '1.750 rpm'),
-      version('1.2 Hybrid 145', 'Híbrido de gasolina (48 V)', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³', '230 Nm', 'Motor térmico de gasolina', '1.750 rpm'),
+      version('1.2 Hybrid 110', 'Híbrido no enchufable · MHEV gasolina 48 V', 'Sistema: 110 CV (81 kW)', 'Térmico: 1.199 cm³', '205 Nm', 'Motor térmico de gasolina', '1.750 rpm'),
+      version('1.2 Hybrid 145', 'Híbrido no enchufable · MHEV gasolina 48 V', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³', '230 Nm', 'Motor térmico de gasolina', '1.750 rpm'),
       version('Electric 50 kWh 136', 'Eléctrico', '136 CV (100 kW)', '—'),
-      version('Electric 51 kWh 156', 'Eléctrico', '156 CV (115 kW)', '—'),
-      version('Corsa GSE Electric 51 kWh', 'Eléctrico', '281 CV (207 kW)', '—'),
+      version('Electric 54 kWh 156', 'Eléctrico', '156 CV (115 kW)', '—'),
+      version('Corsa GSE Electric 54,4 kWh 281', 'Eléctrico', '281 CV (207 kW)', '—'),
     ],
     facts: [
       { label: 'Carrocería', value: 'Utilitario de cinco puertas' },
@@ -145,8 +154,8 @@ const records: ModelPageData[] = [
     usageNote: 'El diésel puede resultar pertinente para quien hace muchos kilómetros de carretera, mientras que Hybrid no requiere enchufe. El Plug-in Hybrid solo aprovecha plenamente su modo eléctrico si se recarga con frecuencia; si se usa con la batería descargada, su consumo puede acercarse al de un híbrido de gasolina más pesado. El Astra Electric elimina el combustible, pero exige planificar la carga.',
     versions: [
       version('1.5 Diésel 130', 'Diésel', '130 CV (96 kW)', '1.499 cm³'),
-      version('1.2 Hybrid 145', 'Híbrido de gasolina (48 V)', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³'),
-      version('1.6 Plug-in Hybrid 196', 'Híbrido enchufable de gasolina', 'Sistema: 196 CV (144 kW)', 'Térmico: 1.598 cm³; eléctrico: —'),
+      version('1.2 Hybrid 145', 'Híbrido no enchufable · MHEV gasolina 48 V', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³'),
+      version('1.6 Plug-in Hybrid 196', 'Híbrido enchufable · gasolina (PHEV)', 'Sistema: 196 CV (144 kW)', 'Térmico: 1.598 cm³; eléctrico: —'),
       version('Electric 58 kWh 156', 'Eléctrico', '156 CV (115 kW)', '—'),
     ],
     facts: [
@@ -166,13 +175,13 @@ const records: ModelPageData[] = [
     title: 'Opel Astra Sports Tourer: motores y versiones | Kilómetro Claro',
     description: 'Motorizaciones del Opel Astra Sports Tourer en España: Hybrid, diésel, híbrido enchufable y eléctrico con sus datos publicados.',
     intro: 'El Astra Sports Tourer es la carrocería familiar del compacto de Opel. Conserva las principales motorizaciones del Astra de cinco puertas y suma un formato más orientado a transportar equipaje, por lo que es importante comprobar qué combinación de motor y carrocería ofrece el configurador.',
-    powertrainSummary: 'La oferta consultada incluye un Hybrid de 145 CV, un diésel de 130 CV, un Plug-in Hybrid de 195 CV y un Electric de 156 CV. Las potencias se presentan en la denominación publicada por Opel; el par se deja sin dato cuando la documentación no indica también el régimen.',
+    powertrainSummary: 'La oferta consultada incluye un Hybrid de 145 CV, un diésel de 130 CV, un Plug-in Hybrid de 196 CV y un Electric de 156 CV. Las potencias se presentan en la denominación publicada por Opel; el par se deja sin dato cuando la documentación no indica también el régimen.',
     usageNote: 'Para viajes frecuentes con carga, el familiar puede ser más práctico que el cinco puertas; no obstante, la motorización cambia la masa y la capacidad de remolque. El híbrido enchufable requiere recarga regular para aprovechar su funcionamiento eléctrico, mientras que el eléctrico es más sencillo de integrar si los trayectos diarios y la carga disponible encajan con su autonomía.',
     versions: [
-      version('1.2 Hybrid 145', 'Híbrido de gasolina (48 V)', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³'),
+      version('1.2 Hybrid 145', 'Híbrido no enchufable · MHEV gasolina 48 V', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³'),
       version('1.5 Diésel 130', 'Diésel', '130 CV (96 kW)', '1.499 cm³'),
-      version('1.6 Plug-in Hybrid 195', 'Híbrido enchufable de gasolina', 'Sistema: 195 CV (143 kW)', 'Térmico: 1.598 cm³; eléctrico: —'),
-      version('Electric 54 kWh 156', 'Eléctrico', '156 CV (115 kW)', '—'),
+      version('1.6 Plug-in Hybrid 196', 'Híbrido enchufable · gasolina (PHEV)', 'Sistema: 196 CV (144 kW)', 'Térmico: 1.598 cm³; eléctrico: —'),
+      version('Electric 58 kWh 156', 'Eléctrico', '156 CV (115 kW)', '—'),
     ],
     facts: [
       { label: 'Carrocería', value: 'Familiar de cinco puertas' },
@@ -195,8 +204,8 @@ const records: ModelPageData[] = [
     usageNote: 'La versión gasolina es la opción convencional de la gama; Hybrid añade asistencia eléctrica, pero no se conecta a un cargador. El Frontera Electric de 44 kWh prioriza un coste de acceso y el de 54 kWh ofrece más autonomía homologada. La autonomía real depende de la temperatura, la velocidad, el uso de climatización y la carga del vehículo.',
     versions: [
       version('1.2 Turbo gasolina 100', 'Gasolina', '100 CV (74 kW)', '1.199 cm³'),
-      version('1.2 Hybrid 110', 'Híbrido de gasolina (48 V)', 'Sistema: 110 CV (81 kW)', 'Térmico: 1.199 cm³'),
-      version('1.2 Hybrid 145', 'Híbrido de gasolina (48 V)', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³'),
+      version('1.2 Hybrid 110', 'Híbrido no enchufable · MHEV gasolina 48 V', 'Sistema: 110 CV (81 kW)', 'Térmico: 1.199 cm³'),
+      version('1.2 Hybrid 145', 'Híbrido no enchufable · MHEV gasolina 48 V', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³'),
       version('Electric 44 kWh 113', 'Eléctrico', '113 CV (83 kW)', '—'),
       version('Electric Extended Range 54 kWh 113', 'Eléctrico', '113 CV (83 kW)', '—'),
     ],
@@ -221,9 +230,9 @@ const records: ModelPageData[] = [
     usageNote: 'El gasolina y el Hybrid sirven para quien no quiere depender de la recarga externa; el sistema de 48 V recupera energía y asiste al motor térmico, pero no convierte al Mokka en un híbrido enchufable. Las variantes eléctricas requieren planificar la carga y su autonomía cambia con el ritmo de conducción. El GSE debe compararse como una versión eléctrica más potente, no como una simple alternativa de acabado.',
     versions: [
       version('1.2 Turbo gasolina 136', 'Gasolina', '136 CV (100 kW)', '1.199 cm³', '230 Nm', 'Motor de gasolina', '1.750 rpm'),
-      version('1.2 Hybrid 145', 'Híbrido de gasolina (48 V)', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³', '230 Nm', 'Motor térmico de gasolina', '1.750 rpm'),
+      version('1.2 Hybrid 145', 'Híbrido no enchufable · MHEV gasolina 48 V', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³', '230 Nm', 'Motor térmico de gasolina', '1.750 rpm'),
       version('Electric 54 kWh 156', 'Eléctrico', '156 CV (115 kW)', '—'),
-      version('Mokka GSE Electric 280', 'Eléctrico', '280 CV (207 kW)', '—'),
+      version('Mokka GSE Electric 54,4 kWh 280', 'Eléctrico', '280 CV (207 kW)', '—'),
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV urbano' },
@@ -245,8 +254,8 @@ const records: ModelPageData[] = [
     powertrainSummary: 'El configurador actual muestra Hybrid de 145 CV, Plug-in Hybrid de 225 CV y eléctricos de 213, 231 y 325 CV. Las tres versiones eléctricas se distinguen por capacidad de batería y tracción; en las motorizaciones híbridas, la potencia indicada corresponde a la versión del sistema que ofrece Opel.',
     usageNote: 'El Hybrid no requiere cargarlo en un enchufe y puede encajar si se busca un SUV grande con uso mixto. El híbrido enchufable necesita recargas frecuentes para aprovechar su autonomía eléctrica; si se hacen viajes largos con la batería agotada, su consumo puede ser distinto del dato WLTP. En las versiones eléctricas, la autonomía declarada varía con la batería y la tracción, y el uso real depende de la ruta y la velocidad.',
     versions: [
-      version('1.2 Hybrid 145', 'Híbrido de gasolina (48 V)', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³'),
-      version('1.6 Plug-in Hybrid 225', 'Híbrido enchufable de gasolina', 'Sistema: 225 CV (165 kW)', 'Térmico: 1.598 cm³; eléctrico: —'),
+      version('1.2 Hybrid 145', 'Híbrido no enchufable · MHEV gasolina 48 V', 'Sistema: 145 CV (107 kW)', 'Térmico: 1.199 cm³'),
+      version('1.6 Plug-in Hybrid 225', 'Híbrido enchufable · gasolina (PHEV)', 'Sistema: 225 CV (165 kW)', 'Térmico: 1.598 cm³; eléctrico: —'),
       version('Electric 78,3 kWh 213', 'Eléctrico', '213 CV (157 kW)', '—'),
       version('Electric Long Range 100,7 kWh 231', 'Eléctrico', '231 CV (170 kW)', '—'),
       version('Electric AWD 79,9 kWh 325', 'Eléctrico con tracción total', '325 CV (239 kW)', '—'),
@@ -292,18 +301,19 @@ const records: ModelPageData[] = [
     title: 'Opel Zafira: motores diésel y eléctricos | Kilómetro Claro',
     description: 'Consulta las versiones de pasajeros del Opel Zafira: diésel de 150 o 180 CV y Zafira Electric con batería de 75 kWh.',
     intro: 'El Opel Zafira es un monovolumen grande de pasajeros pensado para familias numerosas, transporte de personas y viajes con varias filas de asientos. Opel mantiene una opción diésel y otra eléctrica; el número de plazas y la longitud dependen de la configuración.',
-    powertrainSummary: 'Opel Store muestra una variante diésel de 150 CV manual y unidades de 180 CV con cambio automático. Opel también documenta el nuevo turbodiésel 2.2 de 180 CV y 400 Nm para Zafira. Zafira Electric ofrece un motor de 136 CV y una batería de 75 kWh.',
+    powertrainSummary: 'Opel Store muestra motores diésel de 150 CV manual y 180 CV automático. Opel documenta para el nuevo 2.2 de 180 CV un par de 400 Nm, sin publicar el régimen en la nota consultada. Zafira Electric se ofrece con un motor de 136 CV y baterías de 50 o 75 kWh.',
     usageNote: 'La alternativa diésel evita depender de la recarga en viajes largos y con ocupación alta. Zafira Electric resulta más coherente cuando la carga habitual está resuelta y las rutas se pueden planificar; su tamaño, número de plazas y carga transportada influyen en el consumo y la autonomía. Comprueba qué longitud y distribución de asientos corresponden a la unidad concreta.',
     versions: [
       version('Diésel 150 manual', 'Diésel', '150 CV (110 kW)', 'No publicada en la ficha consultada'),
       version('2.2 Diésel 180 automática', 'Diésel', '180 CV (132 kW)', '2.184 cm³'),
+      version('Electric 50 kWh 136', 'Eléctrico', '136 CV (100 kW)', '—'),
       version('Electric 75 kWh 136', 'Eléctrico', '136 CV (100 kW)', '—'),
     ],
     facts: [
       { label: 'Carrocería', value: 'Monovolumen de pasajeros' },
       { label: 'Plazas', value: 'Hasta 9, según configuración' },
       { label: 'Tipos de motor', value: 'Diésel o eléctrico' },
-      { label: 'Batería eléctrica', value: '75 kWh' },
+      { label: 'Baterías eléctricas', value: '50 o 75 kWh, según versión' },
     ],
     specNote: 'El configurador español lista una opción diésel de 150 CV manual y unidades de 180 CV automáticas; el comunicado de Opel del 11 de febrero de 2026 identifica el nuevo 2.2 turbodiésel de 180 CV y 400 Nm, pero no publica el régimen del par. La cilindrada de la variante de 150 CV no se muestra en las fuentes consultadas, así que se deja expresamente sin especificar. El dato de par no se incorpora a la tabla porque falta su régimen.',
     officialUrl: `${store}/selector/configurable/zafira-zafira`,
@@ -314,11 +324,12 @@ const records: ModelPageData[] = [
   makePage({
     modelSlug: 'vivaro-combi',
     title: 'Opel Vivaro Combi: motores diésel y eléctricos | Kilómetro Claro',
-    description: 'Ficha del Opel Vivaro Combi para pasajeros: diésel 2.2 de 180 CV y Vivaro Combi Electric con batería de 50 o 75 kWh.',
+    description: 'Ficha del Opel Vivaro Combi para pasajeros: motores diésel de 150 y 180 CV y versiones eléctricas con batería de 50 o 75 kWh.',
     intro: 'El Vivaro Combi es la versión de pasajeros de la furgoneta mediana Opel Vivaro. La gama española contempla un motor diésel y una versión eléctrica; aquí se excluyen los Vivaro configurados únicamente como furgón de carga.',
-    powertrainSummary: 'Opel documenta para Vivaro Combi el turbodiésel de 2,2 litros y 180 CV (132 kW), asociado a un cambio automático de ocho velocidades. La familia eléctrica aparece con motor de 136 CV (100 kW) y baterías de 50 o 75 kWh según longitud y configuración.',
+    powertrainSummary: 'El configurador de Opel Store muestra un diésel de 150 CV manual y otro de 180 CV automático. La ficha técnica de Opel identifica el nuevo 2.2 de 180 CV (132 kW) y la gama eléctrica ofrece 136 CV con baterías de 50 o 75 kWh, según longitud y configuración.',
     usageNote: 'El diésel puede encajar en rutas interurbanas largas y traslados con ocupación elevada, mientras que el Combi Electric necesita una planificación de carga acorde con el recorrido y el tamaño de batería. En esta categoría la longitud, el número de plazas y la carga a bordo afectan especialmente al consumo y a la autonomía. Revisa la homologación de la unidad concreta antes de comparar.',
     versions: [
+      version('Diésel 150 manual', 'Diésel', '150 CV (110 kW)', 'No publicada en la ficha consultada'),
       version('2.2 Diésel 180 automática', 'Diésel', '180 CV (132 kW)', '2.184 cm³'),
       version('Electric 50 kWh 136', 'Eléctrico', '136 CV (100 kW)', '—'),
       version('Electric 75 kWh 136', 'Eléctrico', '136 CV (100 kW)', '—'),
@@ -330,9 +341,9 @@ const records: ModelPageData[] = [
       { label: 'Baterías eléctricas', value: '50 o 75 kWh, según carrocería' },
     ],
     specNote: 'Opel publica que el Vivaro Combi recibe el motor diésel 2.2 de 180 CV; en su comunicado del 11 de febrero de 2026 especifica los 400 Nm del conjunto Zafira/Vivaro, pero no el régimen del par, por lo que se omite. La foto disponible con licencia verificable muestra una generación anterior del Combi y está identificada como tal.',
-    officialUrl: range,
+    officialUrl: `${store}/selector/configurable/vivaro-combi-vivaro-combi?channel=b2c`,
     technicalUrl: 'https://www.media.stellantis.com/es-es/opel/press/potente-monovolumen-opel-zafira-con-nuevo-motor-diesel-de-2-2-litros',
-    sources: [source('Gama y configurador Opel España', range), source('Comunicado Opel sobre el Vivaro Combi diésel 2.2', 'https://www.media.stellantis.com/es-es/opel/press/potente-monovolumen-opel-zafira-con-nuevo-motor-diesel-de-2-2-litros')],
+    sources: [source('Configurador oficial del Vivaro Combi', `${store}/selector/configurable/vivaro-combi-vivaro-combi?channel=b2c`), source('Configurador oficial del Vivaro Combi Electric', `${store}/selector/configurable/vivaro-combi-electric-vivaro-combi?channel=b2c`), source('Comunicado Opel sobre el Vivaro Combi diésel 2.2', 'https://www.media.stellantis.com/es-es/opel/press/potente-monovolumen-opel-zafira-con-nuevo-motor-diesel-de-2-2-litros')],
     image: photo('vivaro-combi'),
   }),
 ];

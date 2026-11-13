@@ -1,6 +1,6 @@
 import type { ModelPageData, ModelVersion } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '10 de noviembre de 2026';
 const root = 'https://www.citroen.es';
 const source = (label: string, url: string) => ({ label, url });
 const technical = `${root}/herramientas/solicita-catalogo.html`;
@@ -21,7 +21,7 @@ const gasoline = (name: string, power: string, torque = '') =>
 const hybrid110 = (name = 'Hybrid 110 ë-DCS6') =>
   makeVersion(
     name,
-    'Híbrido (gasolina + eléctrico, 48 V)',
+    'Híbrido no enchufable (MHEV de gasolina, 48 V)',
     'Sistema: 110 CV (81 kW); térmico: 100 CV (74 kW); eléctrico: 21 CV (15,6 kW)',
     '1.199 cm³',
     '205 Nm',
@@ -32,7 +32,7 @@ const hybrid110 = (name = 'Hybrid 110 ë-DCS6') =>
 const hybrid145 = (name = 'Hybrid 145 ë-DCS6') =>
   makeVersion(
     name,
-    'Híbrido (gasolina + eléctrico, 48 V)',
+    'Híbrido no enchufable (MHEV de gasolina, 48 V)',
     'Sistema: 145 CV (107 kW); térmico: 136 CV (100 kW); eléctrico: 28 CV (21 kW)',
     '1.199 cm³',
     '230 Nm',
@@ -187,11 +187,14 @@ const records: Omit<ModelPageData, 'reviewedAt'>[] = [
     brandSlug: 'citroen', modelSlug: 'c5-x',
     title: 'Citroën C5 X: motorizaciones híbridas y datos técnicos | Kilómetro Claro',
     description: 'Consulta las motorizaciones documentadas del Citroën C5 X, sus sistemas híbridos, potencia, cilindrada y disponibilidad en España.',
-    intro: 'El C5 X combina una silueta de berlina familiar con una carrocería elevada de estilo crossover. Citroën todavía lo incluye en el configurador general español, pero el selector de compra puede redirigir a una página de error; conviene confirmar con un concesionario si hay unidades nuevas disponibles antes de considerar una versión concreta.',
-    powertrainSummary: 'La ficha técnica española de abril de 2025 documenta Hybrid 145 ë-DSC6 y dos híbridos enchufables, Plug-in Hybrid 180 y 225, ambos automáticos. Estas cifras describen las versiones recogidas por la documentación oficial; la disponibilidad actual puede limitarse a unidades en stock.',
-    usageNote: 'El Hybrid 145 es un híbrido de 48 V que no se conecta a una toma. Los Plug-in Hybrid 180 y 225 sí se recargan externamente y solo aprovechan plenamente su parte eléctrica cuando se cargan con regularidad. Al tratarse de una gama cuya venta en línea no aparece activa de forma consistente, verifica por escrito el año-modelo, la motorización, el estado de la unidad y la garantía ofrecida por el concesionario.',
+    intro: 'El C5 X combina una silueta de berlina familiar con una carrocería elevada de estilo crossover. Citroën aún lo incluye en su listado general, pero el configurador individual indica que está en mantenimiento y no ofrece un precio actual. La disponibilidad debe confirmarse como unidad nueva de stock con la red oficial.',
+    powertrainSummary: 'La ficha técnica española de abril de 2025 documenta Hybrid 145 ë-DSC6 y los híbridos enchufables Plug-in Hybrid 180 y 225. Se conserva esta información técnica como referencia de las versiones documentadas, pero no se presentan como una oferta actualmente configurable ni se atribuye un precio no comprobado.',
+    usageNote: 'El Hybrid 145 es un híbrido de 48 V que no se conecta a una toma. Los Plug-in Hybrid sí se recargan externamente. Antes de valorar una unidad, pide al concesionario una oferta escrita que confirme año-modelo, motorización, kilometraje, estado, garantía y precio final: el configurador en línea no permite verificar esos datos.',
+    basePriceLabel: 'Precio Base',
+    versionPriceHeading: 'Precios por motorización',
+    priceNote: 'Precio pendiente de verificación: el listado general de Citroën conserva el C5 X Plug-in Hybrid, pero su configurador individual muestra «Configurador en mantenimiento» y el selector de Citroën Store no permite completar la compra. Las ofertas públicas localizadas para el C5 X han caducado; no se ha localizado un precio actual ni una unidad nueva de stock con precio verificable. Confirma disponibilidad y presupuesto con la red oficial.',
     versions: [
-      makeVersion('Hybrid 145 ë-DSC6', 'Híbrido (gasolina + eléctrico, 48 V)', 'Sistema: 145 CV (107 kW); térmico: 136 CV (100 kW); eléctrico: 21 CV (15,6 kW)', '1.199 cm³'),
+      makeVersion('Hybrid 145 ë-DSC6', 'Híbrido no enchufable (MHEV de gasolina, 48 V)', 'Sistema: 145 CV (107 kW); térmico: 136 CV (100 kW); eléctrico: 21 CV (15,6 kW)', '1.199 cm³'),
       makeVersion('Plug-in Hybrid 180 automático', 'Híbrido enchufable (gasolina + eléctrico)', 'Sistema: 180 CV (132 kW); térmico: 150 CV (110 kW); eléctrico: 110 CV (81,2 kW)', '1.598 cm³'),
       makeVersion('Plug-in Hybrid 225 automático', 'Híbrido enchufable (gasolina + eléctrico)', 'Sistema: 225 CV (165 kW); térmico: 180 CV (132 kW); eléctrico: 110 CV (81,2 kW)', '1.598 cm³'),
     ],
@@ -201,13 +204,14 @@ const records: Omit<ModelPageData, 'reviewedAt'>[] = [
       { label: 'Cilindrada térmica', value: '1.199 cm³ en Hybrid 145; 1.598 cm³ en los híbridos enchufables' },
       { label: 'Disponibilidad', value: 'Consultar unidades nuevas en stock con la red Citroën' },
     ],
-    specNote: 'Las potencias térmicas y eléctricas se separan para no confundirlas con la potencia conjunta del sistema. La ficha técnica oficial de abril de 2025 recoge las tres configuraciones indicadas; no se añade par máximo porque no se ha podido contrastar de forma inequívoca el valor y el régimen para cada versión en la documentación consultada. El catálogo general de Citroën aún enlaza el C5 X Plug-in Hybrid, pero su selector puede no estar operativo: confirma disponibilidad y motorización directamente con el concesionario.',
-    officialUrl: `${root}/configurador/configurador-de-vehiculos.html`,
+    specNote: 'Las potencias térmicas y eléctricas se separan para no confundirlas con la potencia conjunta del sistema. La ficha técnica oficial de abril de 2025 recoge las tres configuraciones documentadas; no se añade par máximo porque la fuente consultada no permite contrastar de forma inequívoca el valor y el régimen para cada versión. El configurador individual está en mantenimiento; esta ficha no confirma que esas motorizaciones sigan a la venta.',
+    officialUrl: `${root}/vehiculos-citroen/c5-x/configurador.html/formulario`,
     technicalUrl: `${root}/content/dam/citroen/spain/pdf/caracteristicas-tecnicas/CT_C5_X.pdf`,
     sources: [
-      source('Citroën España: listado del configurador, incluye C5 X Plug-in Hybrid', `${root}/configurador/configurador-de-vehiculos.html`),
+      source('Citroën España: listado general de modelos, incluye C5 X Plug-in Hybrid', `${root}/configurador/configurador-de-vehiculos.html`),
+      source('Citroën España: configurador individual del C5 X (en mantenimiento)', `${root}/vehiculos-citroen/c5-x/configurador.html/formulario`),
       source('Características técnicas oficiales del C5 X (abril de 2025)', `${root}/content/dam/citroen/spain/pdf/caracteristicas-tecnicas/CT_C5_X.pdf`),
-      source('Citroën Store: selector del C5 X (puede no estar disponible)', 'https://store.citroen.es/trim/configurable/nuevo-c5-x-berlina-5-p'),
+      source('Citroën Store: catálogo y disponibilidad actual para particulares', 'https://store.citroen.es/configurable?channel=b2c'),
     ],
   },
   {
@@ -234,7 +238,7 @@ const records: Omit<ModelPageData, 'reviewedAt'>[] = [
     technicalUrl: `${root}/content/dam/citroen/spain/pdf/caracteristicas-tecnicas/CT_C5_AIRCROSS.pdf`,
     sources: [
       source('Citroën España: Nuevo C5 Aircross', `${root}/vehiculos-citroen/nuevo-c5-aircross.html`),
-      source('Configurador del C5 Aircross: motores y baterías', 'https://store.citroen.es/selector/configurable/nuevo-c5-aircross-suv?fuel=H%C3%ADbrido&gearbox=Autom%C3%A1tica'),
+      source('Citroën Store: configurador del C5 Aircross, versiones, baterías y precios', 'https://store.citroen.es/selector/configurable/nuevo-c5-aircross-suv'),
       source('Características técnicas del C5 Aircross', `${root}/content/dam/citroen/spain/pdf/caracteristicas-tecnicas/CT_C5_AIRCROSS.pdf`),
       source('Citroën España: datos técnicos del sistema Hybrid 145', 'https://www.media.stellantis.com/es-es/citroen/press/c5-aircross-hybrid-136-una-nueva-oferta-electrificada-facil-y-accesible-que-no-requiere-recarga'),
     ],
@@ -261,7 +265,8 @@ const records: Omit<ModelPageData, 'reviewedAt'>[] = [
     officialUrl: `${root}/vehiculos-citroen/berlingo.html`,
     technicalUrl: `${root}/content/dam/citroen/spain/pdf/caracteristicas-tecnicas/CT_NUEVO_BERLINGO.pdf`,
     sources: [
-      source('Citroën Store: Berlingo para particulares y carrocería XL', 'https://store.citroen.es/configurable'),
+      source('Citroën Store: Berlingo M para particulares y motores', 'https://store.citroen.es/selector/configurable/berlingo-m-talla-m'),
+      source('Citroën Store: Berlingo XL para particulares y motores', 'https://store.citroen.es/selector/configurable/berlingo-xl-talla-xl'),
       source('Características técnicas del Berlingo de pasajeros', `${root}/content/dam/citroen/spain/pdf/caracteristicas-tecnicas/CT_NUEVO_BERLINGO.pdf`),
       source('Citroën España: catálogo y fichas técnicas', technical),
     ],
@@ -291,7 +296,8 @@ const records: Omit<ModelPageData, 'reviewedAt'>[] = [
     sources: [
       source('Citroën España: SpaceTourer de pasajeros', `${root}/vehiculos-citroen/spacetourer.html`),
       source('Características técnicas del SpaceTourer', `${root}/content/dam/citroen/spain/pdf/caracteristicas-tecnicas/CT_SpaceTourer.pdf`),
-      source('Configurador actual del SpaceTourer', 'https://store.citroen.es/selector/configurable/spacetourer-combispace-m-spacetourer-talla-m/plus/diesel-180cv-automatica-diesel/verde-kapari/curitiba-black-art-grey'),
+      source('Citroën Store: SpaceTourer M, motores y precios', 'https://store.citroen.es/selector/configurable/spacetourer-combispace-m-spacetourer-talla-m'),
+      source('Citroën Store: SpaceTourer XL, motores y precios', 'https://store.citroen.es/selector/configurable/spacetourer-combispace-xl-spacetourer-talla-xl'),
       source('Stellantis: evolución del BlueHDi 150 y 180 y par máximo', 'https://www.media.stellantis.com/es-es/citroen/press/una-gama-de-energias-y-motorizaciones-eficientes-al-servicio-de-las-familias-el-ocio-y-los-profesionales'),
     ],
   },
@@ -318,6 +324,7 @@ const records: Omit<ModelPageData, 'reviewedAt'>[] = [
     sources: [
       source('Citroën España: Holidays camper y versiones', `${root}/vehiculos-citroen/holidays.html`),
       source('Características técnicas actuales de Holidays', `${root}/content/dam/citroen/spain/pdf/caracteristicas-tecnicas/CT_SpaceTourer.pdf`),
+      source('Citroën Store: configurador de Holidays, motores y precios', 'https://store.citroen.es/selector/configurable/holidays-holidays?channel=b2c'),
       source('Stellantis: evolución del BlueHDi 150 y 180 y par máximo', 'https://www.media.stellantis.com/es-es/citroen/press/una-gama-de-energias-y-motorizaciones-eficientes-al-servicio-de-las-familias-el-ocio-y-los-profesionales'),
     ],
   },

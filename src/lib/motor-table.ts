@@ -1,7 +1,7 @@
 export type MotorTableVersion = {
   name: string;
   type?: string;
-  powertrainGroup?: 'mixed' | 'mild-bifuel' | 'multi-energy';
+  powertrainGroup?: 'electric' | 'hydrogen' | 'plug-in' | 'hybrid' | 'mild-hybrid' | 'mild-bifuel' | 'multi-energy' | 'bifuel' | 'diesel' | 'petrol' | 'mixed';
   power: string;
   displacement: string;
   maxTorque: string;

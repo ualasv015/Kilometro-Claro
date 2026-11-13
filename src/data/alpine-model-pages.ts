@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '4 de noviembre de 2026';
+const reviewedAt = '6 de noviembre de 2026';
 const alpine = 'https://www.alpinecars.es';
 const source = (label: string, url: string) => ({ label, url });
 
@@ -28,13 +28,13 @@ export const alpineModels: ModelPageData[] = [
     modelSlug: 'a110',
     title: 'Alpine A110: versiones, motor 1.8 turbo y ficha técnica | Kilómetro Claro',
     description: 'Ficha del Alpine A110 disponible en España: diferencias entre A110, GTS y R 70, motor 1.8 turbo, potencia, par y situación de venta en stock.',
-    intro: 'El Alpine A110 es un deportivo biplaza de motor central y propulsión trasera. La gama española mantiene el modelo y algunas de sus versiones en la web oficial, pero Alpine ya no acepta pedidos de fábrica: las unidades nuevas se ofrecen a través del stock de Alpine Stores. Esta ficha separa las motorizaciones publicadas y aconseja confirmar qué versión queda realmente disponible antes de desplazarse o reservar.',
+    intro: 'El Alpine A110 es un coupé biplaza de motor central y propulsión trasera. Alpine mantiene en España las versiones A110, GTS y R 70 con precios desde publicados, pero indica que el modelo ya no admite pedidos de fábrica y que quedan últimas unidades en sus tiendas. La disponibilidad real depende del stock del Alpine Store.',
     powertrainSummary: 'Las versiones de gasolina emplean un cuatro cilindros turboalimentado de 1,8 litros. El A110 desarrolla 252 CV; A110 GTS y A110 R 70 elevan la potencia a 300 CV. La marca declara 320 Nm entre 2.000 y 4.800 rpm para el A110 y 340 Nm entre 2.400 y 6.000 rpm para GTS y R 70.',
     usageNote: 'Alpine indica que el A110 ya no es configurable por encargo y remite a las unidades nuevas en stock. La gama web compara también el A110 R Ultime, pero no lo hemos incluido como versión actualmente disponible al no encontrarlo en el listado español de vehículos en stock consultado. El inventario cambia por concesionario; confirma versión, kilometraje, fecha de matriculación y equipamiento de la unidad concreta.',
     versions: [
-      { name: 'A110', type: 'Gasolina turbo', power: '252 CV (185 kW)', displacement: '1.8 l', maxTorque: '320 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.000–4.800 rpm' },
-      { name: 'A110 GTS', type: 'Gasolina turbo', power: '300 CV (221 kW)', displacement: '1.8 l', maxTorque: '340 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.400–6.000 rpm' },
-      { name: 'A110 R 70', type: 'Gasolina turbo', power: '300 CV (221 kW)', displacement: '1.8 l', maxTorque: '340 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.400–6.000 rpm', note: 'Serie especial del A110; unidades sujetas a stock.' },
+      { name: 'A110', type: 'Gasolina', power: '252 CV (185 kW)', displacement: '1.798 cm³', maxTorque: '320 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.000–4.800 rpm' },
+      { name: 'A110 GTS', type: 'Gasolina', power: '300 CV (221 kW)', displacement: '1.798 cm³', maxTorque: '340 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.400–6.000 rpm' },
+      { name: 'A110 R 70', type: 'Gasolina', power: '300 CV (221 kW)', displacement: '1.798 cm³', maxTorque: '340 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.400–6.000 rpm', note: 'Serie especial del A110; disponibilidad sujeta al stock de Alpine Store.' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Coupé biplaza' },
@@ -47,6 +47,8 @@ export const alpineModels: ModelPageData[] = [
     technicalUrl: `${alpine}/gama.html`,
     sources: [
       source('Alpine España: A110 y aviso de fin de pedidos de fábrica', `${alpine}/gama/a110.html`),
+      source('Alpine España: A110 GTS', `${alpine}/gama/a110-gts.html`),
+      source('Alpine España: A110 R 70', `${alpine}/gama/a110-r-70.html`),
       source('Alpine España: comparación de A110, GTS, R 70 y R Ultime', `${alpine}/gama.html`),
       source('Alpine España: vehículos nuevos disponibles en stock', `${alpine}/stock-vehiculos-nuevos.html`),
     ],

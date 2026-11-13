@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '13 de noviembre de 2026';
 const lexusEs = 'https://www.lexusauto.es';
 const source = (label: string, url: string) => ({ label, url });
 const notPublished = '';
@@ -47,7 +47,7 @@ export const lexusModels: ModelPageData[] = [
     powertrainSummary: 'El sistema combina un motor de gasolina de tres cilindros y 1.490 cm³ con un motor eléctrico. Lexus publica 136 CV (100 kW) para el conjunto. La tracción puede ser delantera o E-Four, con un motor eléctrico adicional en el eje trasero según versión.',
     usageNote: 'El LBX está pensado para quien busca un coche de tamaño contenido con una posición de conducción elevada. La batería híbrida se recarga durante la marcha y en las frenadas; no se conecta a la red. El motor mantiene la misma potencia de sistema en la gama consultada, aunque el peso, la tracción y el equipamiento pueden variar por acabado.',
     versions: [
-      { name: 'LBX Hybrid 136 (4x2 o E-Four)', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 136 CV (100 kW)', displacement: '1.490 cm³', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
+      { name: 'LBX Hybrid 136 (4x2 o E-Four)', type: 'Híbrido no enchufable · gasolina + eléctrico (HEV)', power: 'Sistema: 136 CV (100 kW)', displacement: '1.490 cm³', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV urbano de cinco puertas' },
@@ -74,8 +74,8 @@ export const lexusModels: ModelPageData[] = [
     powertrainSummary: 'El motor térmico tiene 1.987 cm³ y el sistema híbrido desarrolla 199 CV (146 kW), tanto en 4x2 como en E-Four. Lexus publica 190 Nm para el motor de gasolina entre 4.400 y 5.200 rpm; esa cifra no corresponde al conjunto híbrido.',
     usageNote: 'La versión 4x2 mueve las ruedas delanteras, mientras que E-Four añade un motor eléctrico trasero para gestionar la tracción. Ninguna variante necesita un punto de carga. El UX 300e eléctrico aparece en contenidos históricos de Lexus, pero no en la gama configurable actual consultada, por lo que no se incluye como una opción nueva vigente.',
     versions: [
-      { name: 'UX 300h 4x2', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 199 CV (146 kW)', displacement: '1.987 cm³', maxTorque: '190 Nm', torqueScope: 'Motor térmico', torqueRpm: '4.400–5.200 rpm' },
-      { name: 'UX 300h E-Four', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 199 CV (146 kW)', displacement: '1.987 cm³', maxTorque: '190 Nm', torqueScope: 'Motor térmico', torqueRpm: '4.400–5.200 rpm' },
+      { name: 'UX 300h 4x2', type: 'Híbrido no enchufable · gasolina + eléctrico (HEV)', power: 'Sistema: 199 CV (146 kW)', displacement: '1.987 cm³', maxTorque: '190 Nm', torqueScope: 'Motor térmico', torqueRpm: '4.400–5.200 rpm' },
+      { name: 'UX 300h E-Four', type: 'Híbrido no enchufable · gasolina + eléctrico (HEV)', power: 'Sistema: 199 CV (146 kW)', displacement: '1.987 cm³', maxTorque: '190 Nm', torqueScope: 'Motor térmico', torqueRpm: '4.400–5.200 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Crossover compacto de cinco puertas' },
@@ -102,8 +102,8 @@ export const lexusModels: ModelPageData[] = [
     powertrainSummary: 'El NX 350h entrega 198 CV (145 kW) de potencia de sistema en tracción delantera o total. El NX 450h+ es enchufable, tiene tracción total y desarrolla 292 CV (215 kW). Ambos emplean un motor de gasolina de 2.487 cm³. En el 350h el par térmico máximo es 230 Nm entre 4.300 y 4.500 rpm; en el 450h+ son 224 Nm a 3.600 rpm.',
     usageNote: 'El 350h no requiere enchufe. El 450h+ sí permite cargar la batería desde la red y recorrer parte de los trayectos con propulsión eléctrica, siempre que se recargue con regularidad. Lexus ha anunciado una actualización posterior del NX para 2027 con datos aún provisionales; esta ficha usa exclusivamente la gama MY26 que el configurador y la oferta actuales mantienen identificada.',
     versions: [
-      { name: 'NX 350h FWD', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 198 CV (145 kW)', displacement: '2.487 cm³', maxTorque: '230 Nm', torqueScope: 'Motor térmico', torqueRpm: '4.300–4.500 rpm' },
-      { name: 'NX 350h AWD', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 198 CV (145 kW)', displacement: '2.487 cm³', maxTorque: '230 Nm', torqueScope: 'Motor térmico', torqueRpm: '4.300–4.500 rpm' },
+      { name: 'NX 350h FWD', type: 'Híbrido no enchufable · gasolina + eléctrico (HEV)', power: 'Sistema: 198 CV (145 kW)', displacement: '2.487 cm³', maxTorque: '230 Nm', torqueScope: 'Motor térmico', torqueRpm: '4.300–4.500 rpm' },
+      { name: 'NX 350h AWD', type: 'Híbrido no enchufable · gasolina + eléctrico (HEV)', power: 'Sistema: 198 CV (145 kW)', displacement: '2.487 cm³', maxTorque: '230 Nm', torqueScope: 'Motor térmico', torqueRpm: '4.300–4.500 rpm' },
       { name: 'NX 450h+ AWD', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 292 CV (215 kW)', displacement: '2.487 cm³', maxTorque: '224 Nm', torqueScope: 'Motor térmico', torqueRpm: '3.600 rpm' },
     ],
     facts: [
@@ -126,42 +126,44 @@ export const lexusModels: ModelPageData[] = [
   {
     brandSlug: 'lexus',
     modelSlug: 'rz',
-    title: 'Lexus RZ eléctrico: versiones 350e y 500e | Kilómetro Claro',
-    description: 'Consulta la gama eléctrica Lexus RZ 2027 en España, con potencia de las versiones 350e y 500e, tracción y datos técnicos.',
-    intro: 'El RZ es el SUV eléctrico de batería de Lexus. La gama 2027 española distingue el 350e de tracción delantera y el 500e de tracción total DIRECT4; las versiones se diferencian por potencia y configuración, no por cilindrada.',
-    powertrainSummary: 'El RZ 350e desarrolla 224 CV (165 kW) y el RZ 500e, 380 CV (280 kW). Ambos son eléctricos puros; el 350e es FWD y el 500e emplea tracción integral DIRECT4. La gama 2027 y sus precios fueron publicados por Lexus España el 28 de octubre de 2026.',
+    title: 'Lexus RZ eléctrico: versiones 350e, 500e y 550e | Kilómetro Claro',
+    description: 'Consulta las versiones eléctricas Lexus RZ 350e, 500e y 550e disponibles en España, su potencia y configuraciones de tracción.',
+    intro: 'El RZ es el SUV eléctrico de batería de Lexus. La página española actual presenta tres versiones: el 350e de tracción delantera y los 500e y 550e con tracción total DIRECT4. La actualización de gama 2027 publicada por Lexus usa una lista de precios que no coincide por completo con las denominaciones aún visibles en la ficha del modelo; indicamos esa diferencia para no confundir versiones.',
+    powertrainSummary: 'La ficha española actual atribuye 224 CV (165 kW) al RZ 350e, 380 CV (280 kW) al 500e y 408 CV (300 kW) al 550e. Los tres son eléctricos puros: el 350e es FWD y las otras dos versiones emplean tracción integral DIRECT4.',
     usageNote: 'Al no llevar motor térmico, ninguna versión tiene cilindrada. La autonomía y el consumo eléctrico dependen de la batería, las ruedas, la temperatura y el recorrido; para una comparación de uso conviene consultar la ficha homologada de la configuración exacta, no extrapolar el dato de una versión a toda la gama.',
     versions: [
       { name: 'RZ 350e FWD', type: 'Eléctrico de batería', power: '224 CV (165 kW)', displacement: '—', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
       { name: 'RZ 500e AWD', type: 'Eléctrico de batería', power: '380 CV (280 kW)', displacement: '—', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
+      { name: 'RZ 550e F SPORT AWD', type: 'Eléctrico de batería', power: '408 CV (300 kW)', displacement: '—', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV eléctrico de cinco puertas' },
       { label: 'Plazas', value: '5' },
-      { label: 'Tracción', value: 'Delantera en 350e; total DIRECT4 en 500e' },
+      { label: 'Tracción', value: 'Delantera en 350e; total DIRECT4 en 500e y 550e' },
       { label: 'Recarga', value: 'Eléctrica; requiere conexión a la red' },
     ],
-    specNote: 'Se refleja la gama 2027 anunciada más recientemente por Lexus España. El par de los motores eléctricos no se muestra: la ficha no publica un régimen en rpm y la plantilla solo incorpora pares con ese dato.',
+    specNote: 'La ficha Lexus España consultada el 13/11/2026 todavía lista el RZ 550e de 408 CV, mientras que la tarifa oficial 2027 denomina RZ 500e F SPORT a la versión de 70.900 €. Hasta que Lexus aclare la denominación y disponibilidad exactas, no se asigna ese precio de forma concluyente a la variante de 408 CV. El par de los eléctricos se omite porque las fuentes no lo expresan junto a un régimen en rpm.',
     officialUrl: `${lexusEs}/modelos/rz`,
     technicalUrl: 'https://prensa.lexusauto.es/lexus-rz-un-electrico-100-lexus-define-su-gama-2027/',
     sources: [
       source('Lexus España: ficha del RZ y datos de sus versiones', `${lexusEs}/modelos/rz`),
       source('Lexus España: gama y precios del RZ 2027, 28 de octubre de 2026', 'https://prensa.lexusauto.es/lexus-rz-un-electrico-100-lexus-define-su-gama-2027/'),
+      source('Lexus España: gama RZ 2026 con RZ 550e F SPORT', 'https://prensa.lexusauto.es/gama-y-precios-del-lexus-rz-2026-llegan-los-nuevos-rz-500e-y-rz-550e-f-sport/'),
     ],
-    image: photo('rz', 'Lexus RZ 550e (XEBM25) IMG 5164.jpg', 'Lexus RZ fotografiado en Filderstadt.', 'Alexander Migl', 'Alexander-93', 'CC BY-SA 4.0', 1280, 750, 'La fotografía muestra un RZ 550e de una gama anterior; ilustra la carrocería y no las versiones 350e/500e de la gama 2027.'),
+    image: photo('rz', 'Lexus RZ 550e (XEBM25) IMG 5164.jpg', 'Lexus RZ 550e fotografiado en Filderstadt.', 'Alexander Migl', 'Alexander-93', 'CC BY-SA 4.0', 1280, 750, 'La foto corresponde al RZ 550e; puede diferir del acabado y los cambios de la gama 2027.'),
     reviewedAt,
   },
   {
     brandSlug: 'lexus',
     modelSlug: 'rx',
     title: 'Lexus RX: motores 450h+ y 500h en España | Kilómetro Claro',
-    description: 'Compara los motores del Lexus RX MY27: híbrido enchufable 450h+ y turbo híbrido 500h, con potencia, cilindrada y par documentado.',
+    description: 'Compara las motorizaciones del Lexus RX en España: híbrido enchufable 450h+ y turbo híbrido 500h, con potencias y datos técnicos.',
     intro: 'El RX es el SUV grande de Lexus. En la gama MY27 española se ofrece con dos sistemas híbridos: el 450h+ enchufable y el 500h turbo. Aunque ambos combinan gasolina y electricidad, el primero prioriza la posibilidad de cargar la batería y el segundo adopta una arquitectura turbo con transmisión automática de seis velocidades.',
-    powertrainSummary: 'El RX 450h+ entrega 292 CV (215 kW) de potencia de sistema y combina un motor de gasolina de 2,5 litros con motores eléctricos. El RX 500h alcanza 371 CV (273 kW), usa un motor turbo de 2.393 cm³ y desarrolla 460 Nm entre 2.000 y 3.000 rpm en el motor térmico.',
+    powertrainSummary: 'La ficha actual de Lexus España atribuye 309 CV (227 kW) al RX 450h+ enchufable y 371 CV (273 kW) al RX 500h híbrido turbo. El 450h+ combina un motor de gasolina de 2,5 litros con motores eléctricos; el 500h utiliza un 2.4 turbo de gasolina y desarrolla 460 Nm entre 2.000 y 3.000 rpm en el motor térmico, según el catálogo técnico español consultado.',
     usageNote: 'El 450h+ requiere recarga externa para aprovechar la conducción eléctrica y puede seguir funcionando como híbrido cuando baja el nivel de batería. El 500h no se enchufa y utiliza el motor eléctrico como parte de un sistema híbrido turbo. Los acabados y equipamientos cambian por año-modelo; aquí las versiones se agrupan por sistema de propulsión.',
     versions: [
-      { name: 'RX 450h+ AWD', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 292 CV (215 kW)', displacement: '2,5 l', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
-      { name: 'RX 500h AWD DIRECT4', type: 'Híbrido turbo (gasolina + eléctrico)', power: 'Sistema: 371 CV (273 kW)', displacement: '2.393 cm³', maxTorque: '460 Nm', torqueScope: 'Motor térmico', torqueRpm: '2.000–3.000 rpm' },
+      { name: 'RX 450h+ AWD', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 309 CV (227 kW)', displacement: '2,5 l', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
+      { name: 'RX 500h AWD DIRECT4', type: 'Híbrido no enchufable · turbo (gasolina + eléctrico)', power: 'Sistema: 371 CV (273 kW)', displacement: '2.393 cm³', maxTorque: '460 Nm', torqueScope: 'Motor térmico', torqueRpm: '2.000–3.000 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV grande de cinco puertas' },
@@ -169,15 +171,16 @@ export const lexusModels: ModelPageData[] = [
       { label: 'Tracción', value: 'Total E-Four o DIRECT4' },
       { label: 'Recarga externa', value: 'Solo en RX 450h+' },
     ],
-    specNote: 'La potencia del RX 450h+ se toma de la gama MY27 de Lexus España (292 CV); el dato de par térmico no aparece con régimen en la documentación actual consultada y se omite. Para el RX 500h, el catálogo técnico español de noviembre de 2024 —la última ficha detallada con régimen que hemos localizado— publica 460 Nm a 2.000–3.000 rpm para el motor de gasolina. La nota MY27 confirma que conserva el 2.4 turbo y 371 CV, pero no vuelve a publicar el régimen del par; conviene confirmar la ficha de la unidad concreta en el concesionario.',
+    specNote: 'La ficha actual de Lexus España publica 309 CV (227 kW) para el RX 450h+; la nota de prensa de gama MY27 publica 292 CV. Se conserva la especificación que sigue visible en la ficha del producto, señalando la diferencia. No se muestra el par del 450h+ porque la documentación actual no proporciona también el régimen en rpm. Para el RX 500h, el catálogo técnico español de noviembre de 2024 —la última ficha detallada con régimen localizada— publica 460 Nm a 2.000–3.000 rpm para el motor de gasolina; confirma la cifra para la unidad concreta al solicitar presupuesto.',
     officialUrl: `${lexusEs}/modelos/rx`,
     technicalUrl: `${lexusEs}/content/dam/lexus/nmsc/spain/catalogos/Catalogo_RX_NOV24.pdf`,
     sources: [
-      source('Lexus España: RX 2027, gama vigente y potencia del 450h+ y 500h', 'https://prensa.lexusauto.es/lexus-rx-2027-gama-precios/'),
+      source('Lexus España: ficha actual del RX 450h+ (309 CV) y RX 500h', `${lexusEs}/modelos/rx`),
+      source('Lexus España: nota de gama MY27 del RX, con datos diferentes para el 450h+', 'https://prensa.lexusauto.es/lexus-rx-2027-gama-precios/'),
       source('Catálogo técnico Lexus RX de noviembre de 2024: cilindrada y par térmico del RX 500h', `${lexusEs}/content/dam/lexus/nmsc/spain/catalogos/Catalogo_RX_NOV24.pdf`),
       source('Lexus España: página actual del RX', `${lexusEs}/modelos/rx`),
     ],
-    image: photo('rx', 'Lexus RX 450h+ (AALH16) DSC 9033.jpg', 'Lexus RX 450h+ de la generación actual, fotografiado en Böblingen.', 'Alexander Migl', 'Alexander-93', 'CC BY-SA 4.0', 1280, 670, 'La imagen corresponde al RX 450h+; color y acabado pueden diferir de la gama MY27 española.'),
+    image: photo('rx', 'Lexus RX 450h+ (AALH16) DSC 9033.jpg', 'Lexus RX 450h+ de la generación actual, fotografiado en Böblingen.', 'Alexander Migl', 'Alexander-93', 'CC BY-SA 4.0', 1280, 670, 'La imagen corresponde al RX 450h+; color y acabado pueden diferir de la oferta española vigente.'),
     reviewedAt,
   },
   {
@@ -189,7 +192,8 @@ export const lexusModels: ModelPageData[] = [
     powertrainSummary: 'El ES 300h desarrolla 196 CV (144 kW) de potencia de sistema y emplea un motor de gasolina de 2,5 litros. El ES 350e FWD entrega 224 CV (165 kW), mientras que el ES 500e AWD desarrolla 343 CV (252 kW). Lexus no publica en la documentación española actual consultada el par térmico del 300h con un régimen de rpm, así que no lo completamos con datos de generaciones anteriores.',
     usageNote: 'El ES 300h no necesita enchufe: su batería híbrida recupera energía durante la conducción. Las versiones 350e y 500e son eléctricas puras y requieren carga externa; la segunda añade tracción total. El equipamiento y la potencia no son las únicas diferencias: comprueba también la autonomía homologada y la infraestructura de recarga que tendrás disponible.',
     versions: [
-      { name: 'ES 300h FWD / AWD E-Four', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 196 CV (144 kW)', displacement: '2,5 l', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
+      { name: 'ES 300h FWD', type: 'Híbrido no enchufable · gasolina + eléctrico (HEV)', power: 'Sistema: 196 CV (144 kW)', displacement: '2,5 l', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
+      { name: 'ES 300h AWD E-Four', type: 'Híbrido no enchufable · gasolina + eléctrico (HEV)', power: 'Sistema: 196 CV (144 kW)', displacement: '2,5 l', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
       { name: 'ES 350e FWD', type: 'Eléctrico de batería', power: '224 CV (165 kW)', displacement: '—', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
       { name: 'ES 500e AWD', type: 'Eléctrico de batería', power: '343 CV (252 kW)', displacement: '—', maxTorque: notPublished, torqueScope: '', torqueRpm: '' },
     ],
@@ -215,15 +219,15 @@ export const lexusModels: ModelPageData[] = [
     modelSlug: 'lm',
     title: 'Lexus LM 350h: motor híbrido y datos técnicos | Kilómetro Claro',
     description: 'Conoce el motor híbrido del Lexus LM 350h, su potencia de sistema, cilindrada y par térmico según la ficha técnica europea.',
-    intro: 'El LM es un monovolumen premium concebido para dar prioridad al espacio y al confort de los pasajeros. En España se ofrece con una única familia mecánica, el LM 350h híbrido, y configuraciones interiores de cuatro o siete plazas según acabado.',
+    intro: 'El LM es un monovolumen premium concebido para dar prioridad al espacio y al confort de los pasajeros. En España se ofrece con una única familia mecánica, el LM 350h híbrido, y configuraciones interiores de cuatro o seis plazas según acabado.',
     powertrainSummary: 'El LM 350h combina un motor de gasolina de 2.487 cm³ con motores eléctricos. La potencia máxima del sistema es de 250 CV (184 kW). La documentación europea publica 239 Nm entre 4.300 y 4.500 rpm para el motor térmico.',
     usageNote: 'Es un híbrido autorrecargable: no precisa conexión a la red. La elección entre cuatro y siete plazas cambia la distribución del habitáculo y el uso del espacio, pero no la familia de motorización registrada aquí. Confirma la configuración interior y el equipamiento disponibles para la unidad concreta.',
     versions: [
-      { name: 'LM 350h', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 250 CV (184 kW)', displacement: '2.487 cm³', maxTorque: '239 Nm', torqueScope: 'Motor térmico', torqueRpm: '4.300–4.500 rpm' },
+      { name: 'LM 350h', type: 'Híbrido no enchufable · gasolina + eléctrico (HEV)', power: 'Sistema: 250 CV (184 kW)', displacement: '2.487 cm³', maxTorque: '239 Nm', torqueScope: 'Motor térmico', torqueRpm: '4.300–4.500 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Monovolumen premium de pasajeros' },
-      { label: 'Plazas', value: '4 o 7, según configuración' },
+      { label: 'Plazas', value: '4 o 6, según configuración' },
       { label: 'Propulsión', value: 'Híbrida autorrecargable' },
       { label: 'Recarga externa', value: 'No' },
     ],
@@ -234,7 +238,7 @@ export const lexusModels: ModelPageData[] = [
       source('Lexus España: LM, gama y configuración de pasajeros', `${lexusEs}/modelos/lm`),
       source('Lexus Prensa: ficha técnica europea del LM 350h', 'https://prensa.lexusauto.es/presentacion-mundial-del-nuevo-lexus-lm/'),
     ],
-    image: photo('lm', '2024 Lexus LM350h CVT.jpg', 'Lexus LM 350h fotografiado en Goodwood.', 'Calreyn88', 'Calreyn88', 'CC BY-SA 4.0', 1280, 1041, 'La fotografía muestra un LM 350h de cuatro plazas; la gama también ofrece una configuración de siete plazas.'),
+    image: photo('lm', '2024 Lexus LM350h CVT.jpg', 'Lexus LM 350h fotografiado en Goodwood.', 'Calreyn88', 'Calreyn88', 'CC BY-SA 4.0', 1280, 1041, 'La fotografía muestra un LM 350h de cuatro plazas; Lexus España también ofrece una configuración de seis plazas.'),
     reviewedAt,
   },
   {

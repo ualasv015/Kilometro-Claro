@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '10 de noviembre de 2026';
 const root = 'https://www.mgmotor.es';
 const source = (label: string, url: string) => ({ label, url });
 const evDisplacement = 'No aplica: propulsión eléctrica';
@@ -15,8 +15,8 @@ export const mgModels: ModelPageData[] = [
     powertrainSummary: 'La gama española incluye el 1.5 de gasolina atmosférico, con 115 CV (85 kW), y el MG3 Hybrid+, cuyo sistema desarrolla 143 kW (194 CV) combinando un motor térmico 1.5 de 75 kW y uno eléctrico de 100 kW. El gasolina utiliza cambio manual de cinco marchas; el Hybrid+, automático híbrido de tres.',
     usageNote: 'El consumo WLTP permite comparar versiones, no anticipa exactamente el gasto de cada conductor. Si circulas a menudo por ciudad, el híbrido puede aprovechar más sus fases eléctricas; si haces pocos kilómetros, compara también el precio de compra y el coste del mantenimiento. El fabricante no muestra todas las cifras de par en el resumen público consultado.',
     versions: [
-      { name: '1.5 atmosférico gasolina', power: '115 CV (85 kW)', displacement: '1,5 l', maxTorque: '148 Nm', torqueScope: 'Motor gasolina', torqueRpm: '4.500 rpm' },
-      { name: '1.5 Hybrid+', power: '194 CV (143 kW)', displacement: 'Térmico: 1,5 l; eléctrico: —', maxTorque: '128 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' },
+      { name: '1.5 atmosférico gasolina', type: 'Gasolina', powertrainGroup: 'petrol', power: '115 CV (85 kW)', displacement: '1,5 l', maxTorque: '148 Nm', torqueScope: 'Motor gasolina', torqueRpm: '4.500 rpm' },
+      { name: '1.5 Hybrid+', type: 'Híbrido no enchufable (HEV gasolina)', powertrainGroup: 'hybrid', power: '194 CV (143 kW)', displacement: 'Térmico: 1,5 l; eléctrico: —', maxTorque: '128 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' },
     ],
     facts: [{ label: 'Carrocería', value: 'Urbano de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Combustibles', value: 'Gasolina o híbrido no enchufable' }, { label: 'Transmisión Hybrid+', value: 'Automática híbrida de tres velocidades' }],
     figures: [{ label: 'Gasolina · consumo WLTP', value: '6,1 l/100 km' }, { label: 'Hybrid+ · consumo WLTP', value: '4,4 l/100 km' }, { label: 'Hybrid+ · emisiones', value: '100 g/km de CO₂' }],
@@ -31,8 +31,8 @@ export const mgModels: ModelPageData[] = [
     powertrainSummary: 'El MG ZS se comercializa con un 1.5 de gasolina de 116 CV (85 kW) y con el sistema Hybrid+, que combina un motor térmico de 75 kW con uno eléctrico de 100 kW y entrega 145 kW (197 CV) en conjunto. El híbrido es autorrecargable y no necesita enchufarse.',
     usageNote: 'El ahorro de combustible frente al gasolina depende del kilometraje y de cuánto se circule en ciudad. El consumo homologado del Hybrid+ no debe trasladarse al ZS gasolina. Antes de comparar espacio, confirma cómo se ha medido el maletero y revisa el equipamiento del acabado, porque techo panorámico y otros elementos pueden ser opcionales.',
     versions: [
-      { name: '1.5 gasolina', power: '116 CV (85 kW)', displacement: '1,5 l', maxTorque: '148 Nm', torqueScope: 'Motor gasolina', torqueRpm: '4.500 rpm' },
-      { name: '1.5 Hybrid+', power: '197 CV (145 kW)', displacement: 'Térmico: 1,5 l; eléctrico: —', maxTorque: '128 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' },
+      { name: '1.5 gasolina', type: 'Gasolina', powertrainGroup: 'petrol', power: '116 CV (85 kW)', displacement: '1,5 l', maxTorque: '148 Nm', torqueScope: 'Motor gasolina', torqueRpm: '4.500 rpm' },
+      { name: '1.5 Hybrid+', type: 'Híbrido no enchufable (HEV gasolina)', powertrainGroup: 'hybrid', power: '197 CV (145 kW)', displacement: 'Térmico: 1,5 l; eléctrico: —', maxTorque: '128 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' },
     ],
     facts: [{ label: 'Carrocería', value: 'SUV urbano de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Maletero Hybrid+', value: '443 litros' }, { label: 'Hybrid+', value: 'Híbrido no enchufable' }],
     figures: [{ label: 'Gasolina · consumo WLTP', value: '6,5 l/100 km' }, { label: 'Hybrid+ · consumo WLTP', value: '5,0 l/100 km' }, { label: 'Gasolina · emisiones', value: '145 g/km de CO₂' }],
@@ -47,9 +47,9 @@ export const mgModels: ModelPageData[] = [
     powertrainSummary: 'MG ofrece el HS con un 1.5 turbo de gasolina de 170 CV (125 kW), el sistema no enchufable Hybrid+ de 225 CV (165 kW) y el PHEV, cuya ficha española declara 272 CV (200 kW) combinados. Las dos versiones híbridas utilizan un motor térmico 1.5; el PHEV incorpora una batería de 21,4 kWh y hasta 100 km de autonomía eléctrica WLTP.',
     usageNote: 'El dato PHEV de 0,54–1,9 l/100 km es ponderado y cambia según versión y patrón de recarga; para un conductor que no carga, el consumo real será distinto. En un híbrido autorrecargable no existe esa dependencia del enchufe, mientras que la versión de gasolina tiene una mecánica más sencilla. Compara cada variante por separado.',
     versions: [
-      { name: '1.5T gasolina', power: '170 CV (125 kW)', displacement: '1,5 l', maxTorque: '275 Nm', torqueScope: 'Motor gasolina', torqueRpm: '3.000–4.000 rpm' },
-      { name: '1.5T Hybrid+', power: '225 CV (165 kW)', displacement: 'Térmico: 1,5 l; eléctrico: —', maxTorque: '', torqueScope: 'Sistema híbrido no enchufable', torqueRpm: torqueNotPublished },
-      { name: '1.5T PHEV', power: '272 CV (200 kW)', displacement: 'Térmico: 1,5 l; eléctrico: —', maxTorque: '', torqueScope: 'Motor térmico gasolina', torqueRpm: torqueNotPublished },
+      { name: '1.5T gasolina', type: 'Gasolina', powertrainGroup: 'petrol', power: '170 CV (125 kW)', displacement: '1,5 l', maxTorque: '275 Nm', torqueScope: 'Motor gasolina', torqueRpm: '3.000–4.000 rpm' },
+      { name: '1.5T Hybrid+', type: 'Híbrido no enchufable (HEV gasolina)', powertrainGroup: 'hybrid', power: '225 CV (165 kW)', displacement: 'Térmico: 1,5 l; eléctrico: —', maxTorque: '', torqueScope: 'Sistema híbrido no enchufable', torqueRpm: torqueNotPublished },
+      { name: '1.5T PHEV', type: 'Híbrido enchufable (PHEV gasolina)', powertrainGroup: 'plug-in', power: '272 CV (200 kW)', displacement: 'Térmico: 1,5 l; eléctrico: —', maxTorque: '', torqueScope: 'Motor térmico gasolina', torqueRpm: torqueNotPublished },
     ],
     facts: [{ label: 'Carrocería', value: 'SUV familiar de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Propulsiones', value: 'Gasolina, híbrido y PHEV' }, { label: 'PHEV · autonomía eléctrica', value: 'Hasta 100 km WLTP' }],
     figures: [{ label: 'Hybrid+ · consumo WLTP', value: '5,5 l/100 km' }, { label: 'PHEV · consumo ponderado', value: '0,54–1,9 l/100 km, según versión' }, { label: 'PHEV · autonomía total', value: 'Más de 1.000 km declarados por MG' }],
@@ -64,9 +64,9 @@ export const mgModels: ModelPageData[] = [
     powertrainSummary: 'MG publica versiones con baterías de 64 y 77 kWh, autonomías WLTP de hasta 452 y 545 km y carga rápida del 10 al 80 % en hasta 25 minutos, según configuración. XPower alcanza 435 CV. La página de gama no muestra en el resumen los pares máximos de todos los acabados.',
     usageNote: 'La batería de 77 kWh permite homologar más autonomía, mientras que XPower prioriza prestaciones. No compares la cifra urbana de 817 km que aparece en promociones con la autonomía combinada WLTP; son ciclos diferentes. Para viajes, usa el dato combinado y revisa la potencia de carga de la versión concreta.',
     versions: [
-      { name: '64 kWh Premium', power: '190 CV (140 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: noRpm },
-      { name: '77 kWh Premium', power: '245 CV (180 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: noRpm },
-      { name: '64 kWh AWD XPower', power: '435 CV (320 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Sistema eléctrico de dos motores', torqueRpm: noRpm },
+      { name: '64 kWh Premium', type: 'Eléctrico', powertrainGroup: 'electric', power: '190 CV (140 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: noRpm },
+      { name: '77 kWh Premium', type: 'Eléctrico', powertrainGroup: 'electric', power: '245 CV (180 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: noRpm },
+      { name: '64 kWh AWD XPower', type: 'Eléctrico', powertrainGroup: 'electric', power: '435 CV (320 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Sistema eléctrico de dos motores', torqueRpm: noRpm },
     ],
     facts: [{ label: 'Carrocería', value: 'Compacto eléctrico de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Plataforma', value: 'MSP, específica para eléctricos' }, { label: 'Tracción', value: 'Trasera o total, según versión' }],
     figures: [{ label: 'Autonomía combinada WLTP', value: 'Hasta 545 km' }, { label: 'Baterías citadas por MG', value: '64 kWh LFP o 77 kWh NCM' }, { label: 'Carga rápida', value: '10–80 % en hasta 25 min, según versión' }],
@@ -76,19 +76,19 @@ export const mgModels: ModelPageData[] = [
   },
   {
     brandSlug: 'mg', modelSlug: 'mg4-ev-urban', title: 'MG4 EV Urban: baterías, autonomía y consumo',
-    description: 'Datos del MG4 EV Urban: baterías LFP de 42,8 y 53,9 kWh, autonomías WLTP, consumo y acabados.',
-    intro: 'MG4 EV Urban es un compacto eléctrico diferente del MG4 EV de plataforma MSP. Se presenta con baterías LFP de 42,8 o 53,9 kWh y varios acabados; la autonomía más alta de la gama corresponde al acabado Comfort con batería grande, no a todos los coches con esta denominación.',
+    description: 'Datos del MG4 EV Urban: baterías LFP de 42,8 y 53,9 kWh, autonomías WLTP, potencia, consumo y precios de tarifa publicados.',
+    intro: 'MG4 EV Urban es un compacto eléctrico distinto del MG4 EV de plataforma MSP. MG publica capacidades de 42,8 y 53,9 kWh en su información técnica, y redondea estas baterías a 43 y 54 kWh en la tarifa comercial. La autonomía más alta corresponde al acabado Comfort con batería grande; la Premium con la misma batería homologa una cifra menor por sus ruedas y equipamiento.',
     powertrainSummary: 'MG anuncia hasta 325 km WLTP para la batería de 42,8 kWh y hasta 416 km con 53,9 kWh en Comfort. Premium con la misma capacidad homologa hasta 405 km por sus ruedas y equipamiento. El consumo declarado se sitúa entre 15,3 y 15,5 kWh/100 km.',
     usageNote: 'Las diferencias entre Comfort y Premium muestran que llantas y equipamiento pueden modificar la autonomía aunque la capacidad de batería no cambie. Para calcular el gasto eléctrico, utiliza la homologación de tu acabado y añade pérdidas de carga y el precio real de tu tarifa.',
     versions: [
-      { name: 'Comfort · batería de 42,8 kWh', power: '149 CV (110 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: noRpm },
-      { name: 'Comfort · batería de 53,9 kWh', power: '160 CV (118 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: noRpm },
-      { name: 'Premium · batería de 53,9 kWh', power: '160 CV (118 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: noRpm },
+      { name: 'Comfort · batería de 42,8 kWh', type: 'Eléctrico', powertrainGroup: 'electric', power: '149 CV (110 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: noRpm },
+      { name: 'Comfort · batería de 53,9 kWh', type: 'Eléctrico', powertrainGroup: 'electric', power: '149 CV (110 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: noRpm },
+      { name: 'Premium · batería de 53,9 kWh', type: 'Eléctrico', powertrainGroup: 'electric', power: '149 CV (110 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: noRpm },
     ],
     facts: [{ label: 'Carrocería', value: 'Compacto eléctrico de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Tipo de batería', value: 'LFP' }, { label: 'Tracción', value: 'Consultar ficha del acabado' }],
     figures: [{ label: 'Autonomía WLTP', value: 'Hasta 325 km (42,8 kWh) o 416 km (53,9 kWh Comfort)' }, { label: 'Consumo', value: '15,3–15,5 kWh/100 km' }, { label: 'Carga', value: 'Ver ficha del modelo y acabado vigente' }],
     officialUrl: `${root}/model/mg4-urban`, technicalUrl: `${root}/model/mg4-urban`,
-    sources: [source('MG4 EV Urban: versiones y datos de gama', `${root}/model/mg4-urban`), source('Ficha técnica oficial europea MG4 EV Urban', 'https://cdn.mgmotor.eu/files/Fiche-produit-MG4-EV-urban-au-20-04-2026-1_compressed.pdf'), source('Comunicado de lanzamiento en España del MG4 EV Urban', 'https://news.mgmotor.eu/es/press/precio-mg4-urban/')], reviewedAt,
+    sources: [source('MG4 EV Urban: versiones y datos de gama', `${root}/model/mg4-urban`), source('Ficha técnica oficial europea MG4 EV Urban', 'https://cdn.mgmotor.eu/files/Fiche-produit-MG4-EV-urban-au-20-04-2026-1_compressed.pdf'), source('Precios de tarifa anunciados por MG España para MG4 EV Urban (28 de abril de 2026)', 'https://news.mgmotor.eu/es/press/precio-mg4-urban/')], reviewedAt,
   },
   {
     brandSlug: 'mg', modelSlug: 'mgs5-ev', title: 'MGS5 EV: autonomía, batería y espacio',
@@ -97,9 +97,9 @@ export const mgModels: ModelPageData[] = [
     powertrainSummary: 'La gama española distingue tres configuraciones: Comfort de 49 kWh y 125 kW (170 CV), Comfort de 64 kWh y Luxury de 64 kWh, ambas con 170 kW (231 CV). MG declara hasta 480 km WLTP para una versión de batería grande, con autonomía y consumo distintos según acabado. El maletero ofrece 453 litros y llega a 1.441 litros con los asientos abatidos.',
     usageNote: 'La página de producto también anuncia hasta 682 km en ciclo urbano para una versión concreta de 64 kWh; no es la autonomía combinada. La cifra combinada publicada es de hasta 480 km y debe compararse con otros coches usando el mismo ciclo WLTP.',
     versions: [
-      { name: 'Comfort · batería de 49 kWh', power: '170 CV (125 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: noRpm },
-      { name: 'Comfort · batería de 64 kWh', power: '231 CV (170 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: noRpm },
-      { name: 'Luxury · batería de 64 kWh', power: '231 CV (170 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: noRpm },
+      { name: 'Comfort · batería de 49 kWh', type: 'Eléctrico', powertrainGroup: 'electric', power: '170 CV (125 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: noRpm },
+      { name: 'Comfort · batería de 64 kWh', type: 'Eléctrico', powertrainGroup: 'electric', power: '231 CV (170 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: noRpm },
+      { name: 'Luxury · batería de 64 kWh', type: 'Eléctrico', powertrainGroup: 'electric', power: '231 CV (170 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: noRpm },
     ],
     facts: [{ label: 'Carrocería', value: 'SUV eléctrico compacto' }, { label: 'Plazas', value: '5' }, { label: 'Maletero', value: '453 litros; hasta 1.441 litros abatido' }, { label: 'Tracción', value: 'Trasera' }],
     figures: [{ label: 'Baterías', value: '49 o 64 kWh' }, { label: 'Autonomía combinada', value: 'Hasta 480 km WLTP' }, { label: 'Carga rápida', value: '10–80 % en 28 min, según MG' }],
@@ -113,8 +113,8 @@ export const mgModels: ModelPageData[] = [
     powertrainSummary: 'La gama española ofrece dos versiones Luxury con batería de 77 kWh: Long Range 4×2, con 244 CV (180 kW), y Dual Motor AWD, con 361 CV (266 kW) combinados. MG declara hasta 530 km WLTP para la primera y 485 km para la segunda; el consumo homologado de gama se sitúa entre 16,6 y 18,1 kWh/100 km.',
     usageNote: 'Al comparar RWD y AWD, ten en cuenta que la tracción total mejora la capacidad de transmitir potencia, pero la autonomía cambia con el acabado y las ruedas. La carga del 10 al 80 % puede tardar hasta 38 minutos en condiciones de ensayo de MG; la temperatura y el cargador modifican el resultado.',
     versions: [
-      { name: 'Luxury Long Range 4×2 · 77 kWh', power: '244 CV (180 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: noRpm },
-      { name: 'Luxury Dual Motor AWD · 77 kWh', power: '361 CV (266 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Sistema eléctrico de dos motores', torqueRpm: noRpm },
+      { name: 'Luxury Long Range 4×2 · 77 kWh', type: 'Eléctrico', powertrainGroup: 'electric', power: '244 CV (180 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: noRpm },
+      { name: 'Luxury Dual Motor AWD · 77 kWh', type: 'Eléctrico', powertrainGroup: 'electric', power: '361 CV (266 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Sistema eléctrico de dos motores', torqueRpm: noRpm },
     ],
     facts: [{ label: 'Carrocería', value: 'SUV eléctrico' }, { label: 'Plazas', value: '5' }, { label: 'Batería', value: '77 kWh' }, { label: 'Tracción', value: 'Trasera o total' }],
     figures: [{ label: 'Autonomía WLTP', value: 'Hasta 530 km' }, { label: 'Consumo homologado de gama', value: '16,6–18,1 kWh/100 km' }, { label: 'Carga rápida', value: 'Hasta 144 kW; 10–80 % en hasta 38 min' }],
@@ -131,7 +131,7 @@ export const mgModels: ModelPageData[] = [
     facts: [{ label: 'Carrocería', value: 'SUV familiar' }, { label: 'Plazas', value: '7' }, { label: 'Batería', value: '24,7 kWh LFP' }, { label: 'Propulsión', value: 'Híbrida enchufable' }],
     figures: [{ label: 'Potencia combinada', value: '299 CV' }, { label: 'Autonomía eléctrica', value: 'Hasta 100 km WLTP' }, { label: 'Consumo ponderado', value: '2,4 l/100 km WLTP' }],
     officialUrl: `${root}/model/mgs9-phev`, technicalUrl: `${root}/model/mgs9-phev`,
-    sources: [source('MGS9 PHEV: versiones y datos de gama', `${root}/model/mgs9-phev`), source('Presentación oficial del MGS9 PHEV en España', 'https://news.mgmotor.eu/es/press/nuevo-mgs9/'), source('Comunicado oficial de lanzamiento del MGS9 PHEV', 'https://news.mgmotor.eu/es/press/nuevo-mgs9-phev/'), source('Catálogo técnico oficial MGS9 PHEV (español)', 'https://cdn.mgmotor.eu/files/MGS9_Catalogo_ES.pdf')], reviewedAt,
+    sources: [source('MGS9 PHEV: versiones y datos de gama', `${root}/model/mgs9-phev`), source('PVP de tarifa anunciado por MG España para MGS9 Comfort y Premium (19 de marzo de 2026)', 'https://news.mgmotor.eu/es/press/nuevo-mgs9/'), source('Presentación oficial del MGS9 PHEV en España', 'https://news.mgmotor.eu/es/press/nuevo-mgs9-phev/'), source('Catálogo técnico oficial MGS9 PHEV (español)', 'https://cdn.mgmotor.eu/files/MGS9_Catalogo_ES.pdf')], reviewedAt,
   },
   {
     brandSlug: 'mg', modelSlug: 'cyberster', title: 'MG Cyberster: versiones, potencia y autonomía',
@@ -140,8 +140,8 @@ export const mgModels: ModelPageData[] = [
     powertrainSummary: 'La versión Trophy desarrolla 250 kW, acelera de 0 a 100 km/h en 5 segundos y homologa hasta 507 km WLTP combinados. GT alcanza 375 kW (510 CV) y 3,2 segundos. MG indica un tiempo estimado de carga rápida de 10 a 80 % de 38 minutos con cargador público de 150 kW.',
     usageNote: 'Los 507 km publicados corresponden a la configuración Trophy y no deben atribuirse automáticamente al GT. En un roadster, autonomía, espacio de equipaje y coste de neumáticos pueden importar tanto como la potencia; consulta la ficha técnica del acabado y la medida de rueda antes de valorar el coste total.',
     versions: [
-      { name: 'Trophy Single Motor', power: '340 CV (250 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: noRpm },
-      { name: 'GT Dual Motor', power: '510 CV (375 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Sistema eléctrico de dos motores', torqueRpm: noRpm },
+      { name: 'Trophy Single Motor', type: 'Eléctrico', powertrainGroup: 'electric', power: '340 CV (250 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: noRpm },
+      { name: 'GT Dual Motor', type: 'Eléctrico', powertrainGroup: 'electric', power: '510 CV (375 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Sistema eléctrico de dos motores', torqueRpm: noRpm },
     ],
     facts: [{ label: 'Carrocería', value: 'Roadster biplaza eléctrico' }, { label: 'Plazas', value: '2' }, { label: 'Techo', value: 'Capota eléctrica' }, { label: 'Tracción', value: 'Trasera Trophy; total GT' }],
     figures: [{ label: 'Autonomía combinada', value: 'Hasta 507 km WLTP en Trophy' }, { label: 'Potencia máxima', value: 'Hasta 375 kW (510 CV)' }, { label: 'Carga rápida', value: '10–80 % en 38 min con cargador de 150 kW, estimación MG' }],

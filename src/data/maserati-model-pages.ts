@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '4 de noviembre de 2026';
+const reviewedAt = '10 de noviembre de 2026';
 const maserati = 'https://www.maserati.com/es/es';
 const source = (label: string, url: string) => ({ label, url });
 
@@ -37,30 +37,33 @@ export const maseratiModels: ModelPageData[] = [
   model({
     modelSlug: 'grecale',
     title: 'Maserati Grecale: versiones, motores y ficha técnica | Kilómetro Claro',
-    description: 'Compara las motorizaciones del Maserati Grecale en España: microhíbridos de 250 a 330 CV, V6 de 390 y 530 CV y eléctrico Folgore.',
-    intro: 'El Maserati Grecale es un SUV de lujo que en la gama española 2027 combina motores microhíbridos, gasolina V6 y una versión eléctrica. La oferta publicada contempla siete configuraciones: Grecale 250 y 300, Modena 250 y 330, Modena V6 390, Trofeo V6 530 y Folgore 550. Las versiones concretas, precios y disponibilidad pueden variar por concesionario y stock.',
-    powertrainSummary: 'Las configuraciones 250 y 300 CV usan un cuatro cilindros 2.0 mild hybrid; Modena también se ofrece con 250 o 330 CV. Las variantes Modena V6 y Trofeo V6 emplean un V6 de 3.0 litros, con 390 y 530 CV respectivamente. Grecale Folgore es eléctrico y desarrolla 550 CV. El par máximo solo se indica en la tabla cuando el fabricante publica también su régimen.',
+    description: 'Compara las seis versiones del Maserati Grecale 2027 en España: mild hybrid de 250, 300 y 330 CV, V6 de 390 y 530 CV y Folgore eléctrico.',
+    intro: 'El Maserati Grecale es un SUV de lujo cuya gama española 2027 reúne seis versiones: Grecale 250 y 300, Grecale Modena de 330 CV, Modena V6 de 390 CV, Trofeo V6 de 530 CV y Folgore eléctrico de 550 CV. La antigua referencia Modena 250 no aparece en el configurador vigente, por lo que no se incluye. Las versiones y sus precios «desde» se han contrastado con el configurador de Maserati España.',
+    powertrainSummary: 'Los Grecale 250, 300 y Modena 330 emplean un cuatro cilindros de gasolina con hibridación ligera de 48 V; son híbridos no enchufables MHEV. Modena V6 y Trofeo V6 recurren a motores de gasolina de seis cilindros y 3,0 litros. Grecale Folgore es eléctrico y desarrolla 550 CV. En la tabla solo se muestra el par cuando la documentación consultada permite asociarlo a un régimen concreto.',
     usageNote: 'La potencia no distingue por sí sola las versiones: el sistema mild hybrid, la tracción total, el motor V6 y la propulsión eléctrica responden a usos distintos y también afectan al peso, consumo y coste de compra. En el Folgore, las cifras de autonomía WLTP dependen de la homologación y configuración. Comprueba en el configurador español el año-modelo, el acabado y la disponibilidad de la unidad antes de comparar ofertas.',
     versions: [
-      { name: 'Grecale 250', type: 'Microhíbrido de gasolina (48 V)', power: '250 CV (184 kW)', displacement: '1.995 cm³', maxTorque: '450 Nm', torqueScope: 'Motor térmico', torqueRpm: '2.000–4.000 rpm' },
-      { name: 'Grecale 300', type: 'Microhíbrido de gasolina (48 V)', power: '300 CV (221 kW)', displacement: '1.995 cm³', maxTorque: '450 Nm', torqueScope: 'Motor térmico', torqueRpm: '2.000–4.000 rpm' },
-      { name: 'Grecale Modena 250', type: 'Microhíbrido de gasolina (48 V)', power: '250 CV (184 kW)', displacement: '1.995 cm³', maxTorque: '450 Nm', torqueScope: 'Motor térmico', torqueRpm: '2.000–4.000 rpm' },
-      { name: 'Grecale Modena 330', type: 'Microhíbrido de gasolina (48 V)', power: '330 CV (243 kW)', displacement: '1.995 cm³', maxTorque: '450 Nm', torqueScope: 'Motor térmico', torqueRpm: '2.000–5.000 rpm' },
+      { name: 'Grecale 250', type: 'Híbrido no enchufable · MHEV gasolina (48 V)', power: '250 CV (184 kW)', displacement: '1.995 cm³', maxTorque: '450 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.000–4.000 rpm' },
+      { name: 'Grecale 300', type: 'Híbrido no enchufable · MHEV gasolina (48 V)', power: '300 CV (221 kW)', displacement: '1.995 cm³', maxTorque: '450 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: 'desde 1.000 rpm' },
+      { name: 'Grecale Modena 330', type: 'Híbrido no enchufable · MHEV gasolina (48 V)', power: '330 CV (243 kW)', displacement: '1.995 cm³', maxTorque: '450 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.000–5.000 rpm' },
       { name: 'Grecale Modena V6 390', type: 'Gasolina', power: '390 CV (287 kW)', displacement: '3.000 cm³', maxTorque: '500 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.000–3.750 rpm' },
       { name: 'Grecale Trofeo V6 530', type: 'Gasolina', power: '530 CV (390 kW)', displacement: '3.000 cm³', maxTorque: '620 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '3.000–5.500 rpm' },
       { name: 'Grecale Folgore', type: 'Eléctrico', power: '550 CV (404 kW)', displacement: '—', maxTorque: '', torqueScope: 'Sistema eléctrico', torqueRpm: 'No publicado en rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV de cinco plazas' },
-      { label: 'Motorizaciones', value: 'Microhíbrida, gasolina V6 y eléctrica' },
+      { label: 'Motorizaciones', value: 'MHEV de gasolina, V6 de gasolina y eléctrica' },
       { label: 'Tracción', value: 'Total (AWD) en las versiones publicadas' },
       { label: 'Año-modelo de la gama consultada', value: '2027' },
     ],
-    specNote: 'La oferta española consultada muestra siete configuraciones Grecale. Los datos de par de las versiones microhíbridas y V6 proceden de las fichas/catálogos oficiales de motor; para el V6 390, Maserati publica 500 Nm entre 2.000 y 3.750 rpm. El Folgore se mantiene en la misma ficha como modelo eléctrico, pero no se muestra su par al no publicarse un régimen en rpm asociado a la cifra.',
+    specNote: 'La gama vigente del configurador español incluye seis versiones y no muestra el antiguo Modena 250. Los motores MHEV 250/330 y el V6 Trofeo conservan los datos técnicos publicados por Maserati para esas familias; en el nuevo Grecale 300 se sigue la ficha MY27, que indica 450 Nm disponibles desde 1.000 rpm. En el Folgore no se publica el par asociado a rpm, así que la tabla no añade ese dato.',
     officialUrl: `${maserati}/modelos/grecale`,
     technicalUrl: `${maserati}/shopping-tools/configurator`,
     sources: [
       source('Maserati España: catálogo Grecale y versiones 2027', `${maserati}/modelos/grecale`),
+      source('Maserati España: Grecale Modena 2027', `${maserati}/modelos/grecale/grecale-modena`),
+      source('Maserati España: Grecale Trofeo 2027', `${maserati}/modelos/grecale/grecale-trofeo`),
+      source('Maserati España: ficha técnica MY27 Grecale 300', `${maserati}/modelos/grecale/grecale-trim`),
+      source('Maserati Italia: ficha técnica del Grecale 250 MHEV', 'https://www.maserati.com/it/it/brand/stories-of-audacity/maserati-grecale-alba-suv-edizione-limitata'),
       source('Maserati España: configurador y gama 2027', `${maserati}/shopping-tools/configurator`),
       source('Maserati: catálogo técnico oficial Grecale en español', 'https://www.maserati.com/content/dam/maserati/worldwide/brochures/catalogues/grecale/Grecale-Digital-Catalogue-ES_low.pdf'),
       source('Maserati: especificaciones oficiales Grecale Modena V6', 'https://www.maserati.com/ee/et/dealers/luxury-motors/models/grecale/grecale-trim'),
@@ -71,7 +74,7 @@ export const maseratiModels: ModelPageData[] = [
   model({
     modelSlug: 'granturismo',
     title: 'Maserati GranTurismo: versiones V6 y Folgore eléctrica | Kilómetro Claro',
-    description: 'Ficha del Maserati GranTurismo 2027: motor Nettuno V6 de 490 o 590 CV y versión eléctrica Folgore de 761 CV.',
+    description: 'Ficha del Maserati GranTurismo 2027: motor Nettuno V6 de 490 o 590 CV, versión eléctrica Folgore y precios desde por versión.',
     intro: 'El Maserati GranTurismo es un coupé de cuatro plazas pensado para recorrer largas distancias con una orientación deportiva. La gama española actual reúne dos variantes de gasolina con motor Nettuno V6 —490 CV y Trofeo de 590 CV— y el GranTurismo Folgore eléctrico de 761 CV. La carrocería y el planteamiento se mantienen, pero cambian notablemente el sistema de propulsión y la respuesta de cada versión.',
     powertrainSummary: 'El GranTurismo 490 y el Trofeo utilizan un V6 biturbo de 3.0 litros, con 600 y 650 Nm respectivamente. El Folgore es eléctrico y alcanza 560 kW (761 CV). Para el Trofeo, Maserati indica que el par máximo está disponible desde 2.500 rpm; la página no publica un límite superior, por lo que no añadimos uno.',
     usageNote: 'Las cifras de consumo y autonomía dependen del motor y del recorrido. El Folgore es una opción eléctrica de altas prestaciones y su autonomía real puede apartarse del valor WLTP por velocidad, temperatura y uso de climatización. Las especificaciones aquí resumidas corresponden a la gama 2027 publicada por Maserati; consulta el configurador y las condiciones de venta españolas para la configuración concreta.',
@@ -100,7 +103,7 @@ export const maseratiModels: ModelPageData[] = [
   model({
     modelSlug: 'grancabrio',
     title: 'Maserati GranCabrio: versiones, motores y ficha técnica | Kilómetro Claro',
-    description: 'Conoce las versiones del Maserati GranCabrio: V6 de 490 y 590 CV y Folgore eléctrico de 761 CV, con sus datos de motor.',
+    description: 'Conoce las versiones del Maserati GranCabrio 2027: V6 de 490 y 590 CV, Folgore eléctrico y precios desde por versión.',
     intro: 'El Maserati GranCabrio es un descapotable de cuatro plazas derivado del concepto GranTurismo. La gama española actual combina el V6 Nettuno de 490 CV, una versión Trofeo de 590 CV y el Folgore eléctrico de 761 CV. Las dos versiones de gasolina comparten cilindrada, pero la puesta a punto del Trofeo eleva la potencia y el par.',
     powertrainSummary: 'El GranCabrio y el GranCabrio Trofeo montan un V6 biturbo de 2.992 cm³: el primero entrega 490 CV y 600 Nm; el Trofeo 2027 alcanza 590 CV y 650 Nm. Maserati indica 3.000 rpm para el par máximo de la versión de 490 CV y disponibilidad desde 2.500 rpm en el Trofeo. El Folgore es eléctrico y desarrolla 761 CV.',
     usageNote: 'El descapotable ofrece una experiencia de conducción distinta y una configuración de techo que afecta al espacio de carga. El GranCabrio Folgore añade propulsión eléctrica y tracción total; su autonomía real dependerá de la velocidad, el clima y el uso de calefacción o climatización. Las cifras técnicas de esta ficha corresponden a las versiones publicadas por Maserati para la gama 2027; equipamiento y disponibilidad pueden variar por mercado.',

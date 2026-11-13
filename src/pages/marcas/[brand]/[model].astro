@@ -45,9 +45,16 @@ const photoMethod = detail.image
                 {brand.logo
                   ? <img class:list={{ 'brand-logo-wide': brand.logoLayout === 'wide', 'brand-logo-cropped': brand.logoCrop, 'brand-logo-dark': brand.logoTone === 'dark' }} src={brand.logo} alt={`Emblema de ${brand.name}`} width={brand.logoLayout === 'wide' ? '100' : '70'} height="52" fetchpriority="high" />
                   : <span class="model-detail-brand-monogram" aria-hidden="true">{brand.name.slice(0, 1)}</span>}
-              <span>{brand.name} · {model.body}</span>
+              <span>{brand.name} · {model.body}{model.bodySubtype && <> · {model.bodySubtype}</>}</span>
             </div>
-            <h1>{modelName}</h1>
+            <div class="model-detail-title-row">
+              <h1>{modelName}</h1>
+              {(detail.basePrice || detail.basePriceLabel || detail.currentOfferPrice) && <div class="model-detail-base-price" aria-label={`Precio del ${modelName}`}>
+                <span>{detail.basePrice ? 'Precio Base' : detail.basePricePending ? 'Precio Base' : detail.currentOfferPrice ? (detail.currentOfferLabel ?? 'Oferta al contado') : 'PVP pendiente de verificación'}</span>
+                <strong>{detail.basePrice ? `Desde ${detail.basePrice}` : detail.basePricePending ? 'Pendiente de verificar' : detail.currentOfferPrice ?? 'Pendiente de verificación'}</strong>
+                {detail.basePricePending && detail.currentOfferPrice && <small>{detail.currentOfferLabel}: {detail.currentOfferPrice}</small>}
+              </div>}
+            </div>
             <p class="model-detail-lead">{detail.intro}</p>
             <a class="model-detail-official-link" href={detail.officialUrl} target="_blank" rel="noopener noreferrer">Consultar {model.name} en {brand.name} España</a>
           </div>
@@ -89,7 +96,7 @@ const photoMethod = detail.image
                   {hasMotorTableFormat && <td>{version.type}</td>}
                   <td>{version.power}</td>
                   <td>{version.displacement}</td>
-                  <td>{version.maxTorque || (brand.slug === 'mitsubishi' || brand.slug === 'lynk-co' || brand.slug === 'porsche' || brand.slug === 'kgm' || brand.slug === 'land-rover' || brand.slug === 'xpeng' || brand.slug === 'alfa-romeo' || brand.slug === 'evo' || brand.slug === 'subaru' || brand.slug === 'polestar' || brand.slug === 'swm' || brand.slug === 'smart' || brand.slug === 'lancia' ? '' : 'No publicado')}</td>
+                  <td>{version.maxTorque || (brand.slug === 'audi' || brand.slug === 'peugeot' || brand.slug === 'seat' || brand.slug === 'dacia' || brand.slug === 'mitsubishi' || brand.slug === 'lynk-co' || brand.slug === 'porsche' || brand.slug === 'kgm' || brand.slug === 'land-rover' || brand.slug === 'xpeng' || brand.slug === 'alfa-romeo' || brand.slug === 'evo' || brand.slug === 'subaru' || brand.slug === 'polestar' || brand.slug === 'swm' || brand.slug === 'smart' || brand.slug === 'lancia' || brand.slug === 'changan' || brand.slug === 'citroen' || brand.slug === 'cupra' || brand.slug === 'ds' || brand.slug === 'omoda' || brand.slug === 'jaecoo' || brand.slug === 'suzuki' ? '' : 'No publicado')}</td>
                   {!hasMotorTableFormat && <>
                     <td>{version.torqueScope}</td>
                     <td>{version.torqueRpm}</td>

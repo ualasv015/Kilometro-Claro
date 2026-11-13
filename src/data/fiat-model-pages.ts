@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '6 de noviembre de 2026';
 const fiat = 'https://www.fiat.es';
 const source = (label: string, url: string) => ({ label, url });
 const notPublished = 'No desglosado en la ficha española consultada';
@@ -53,14 +53,14 @@ export const fiatModels: ModelPageData[] = [
     powertrainSummary: 'La gama española consultada ofrece un 1.0 FireFly mild hybrid de 65 CV y varias configuraciones eléctricas del 500e: 95 o 118 CV, según batería y acabado. Fiat publica esas potencias y sus equivalencias en kW; no se añade par máximo porque las fichas nacionales consultadas no indican un régimen de giro verificable para esa cifra.',
     usageNote: 'El 500 Hybrid no es un híbrido autorrecargable de alta tensión: su sistema de 12 V asiste al motor de gasolina y no permite circular largas distancias solo con electricidad. El 500e sí necesita recarga externa. Antes de comparar precios, autonomía o equipamiento, comprueba si el presupuesto corresponde al Hybrid o al 500e y a qué carrocería: sus prestaciones y costes de uso son distintos.',
     versions: [
-      { name: '1.0 FireFly 12 V', type: 'Microhíbrido de gasolina (12 V)', power: '65 CV (48 kW)', displacement: '999 cm³', maxTorque: notPublished, torqueScope: 'Motor de gasolina', torqueRpm: notPublished },
+      { name: '1.0 FireFly 12 V', type: 'Híbrido no enchufable · MHEV gasolina (12 V)', power: '65 CV (48 kW)', displacement: '999 cm³', maxTorque: notPublished, torqueScope: 'Motor de gasolina', torqueRpm: notPublished },
       { name: '500e 23,8 kWh', type: 'Eléctrico', power: '95 CV (70 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: 'No indicado en ficha nacional' },
       { name: '500e 42 kWh', type: 'Eléctrico', power: '118 CV (87 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: 'No indicado en ficha nacional' },
     ],
     facts: [
       { label: 'Carrocerías', value: 'Hatchback, Cabrio y 3+1, según versión' },
       { label: 'Plazas', value: '4' },
-      { label: 'Tecnologías', value: 'Microhíbrido de gasolina y eléctrico' },
+      { label: 'Tecnologías', value: 'MHEV de gasolina no enchufable y eléctrico' },
     ],
     specNote: 'Las capacidades de batería y las combinaciones de carrocería y potencia cambian según el acabado. La tabla agrupa las dos potencias eléctricas que aparecen en la ficha técnica española consultada; no implica que estén disponibles en todas las carrocerías.',
     officialUrl: `${fiat}/modelos/500-hibrido`,
@@ -84,15 +84,15 @@ export const fiatModels: ModelPageData[] = [
     usageNote: 'El 600 MHEV no se enchufa: combina el motor de gasolina con un sistema eléctrico de 48 V. El 600e sí funciona con batería y debe cargarse desde una toma. La gasolina pura, el híbrido ligero y el eléctrico pueden compartir carrocería, pero no tienen el mismo consumo, autonomía, uso ni precio; confirma siempre en el configurador qué potencia y acabado te ofrecen.',
     versions: [
       { name: '1.2 Turbo 100', type: 'Gasolina', power: '100 CV (74 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'Motor de gasolina', torqueRpm: notPublished },
-      { name: '1.2 MHEV 110', type: 'Microhíbrido de gasolina (48 V)', power: 'Sistema: 110 CV (81 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'Sistema híbrido ligero', torqueRpm: notPublished },
-      { name: '1.2 MHEV 145', type: 'Microhíbrido de gasolina (48 V)', power: 'Sistema: 145 CV (106 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'Sistema híbrido ligero', torqueRpm: notPublished },
+      { name: '1.2 MHEV 110', type: 'Híbrido no enchufable · MHEV gasolina (48 V)', power: 'Sistema: 110 CV (81 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'Sistema híbrido ligero', torqueRpm: notPublished },
+      { name: '1.2 MHEV 145', type: 'Híbrido no enchufable · MHEV gasolina (48 V)', power: 'Sistema: 145 CV (106 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'Sistema híbrido ligero', torqueRpm: notPublished },
       { name: '600e', type: 'Eléctrico', power: '156 CV (115 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: 'No indicado en ficha nacional' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV urbano de cinco puertas' },
       { label: 'Plazas', value: '5' },
       { label: 'Longitud', value: '4.171–4.178 mm, según versión' },
-      { label: 'Tecnologías', value: 'Gasolina, microhíbrido y eléctrico' },
+      { label: 'Tecnologías', value: 'Gasolina, MHEV de gasolina no enchufable y eléctrico' },
     ],
     specNote: 'El catálogo de 2025 detalla motores MHEV de 110 y 145 CV; el configurador español actual mantiene dos motores híbridos, el 600 Gasolina y el 600e. La ficha técnica eléctrica aporta 156 CV. El par máximo no se muestra aquí porque falta un régimen fiable para asociarlo.',
     officialUrl: `${fiat}/modelos/fiat-600-gasolina`,
@@ -111,19 +111,19 @@ export const fiatModels: ModelPageData[] = [
     modelSlug: 'grande-panda',
     title: 'Fiat Grande Panda: motores de gasolina, híbrido y eléctrico | Kilómetro Claro',
     description: 'Compara las tres motorizaciones del Fiat Grande Panda en España: gasolina 100 CV, híbrida 110 CV y eléctrica 113 CV.',
-    intro: 'El Grande Panda es el crossover urbano de Fiat y uno de los pocos modelos de la marca que ofrece en España tres tipos de propulsión sobre una misma familia: gasolina, microhíbrido de 48 V y eléctrico de batería. Los acabados Pop, Icon y La Prima no se cuentan como modelos separados.',
+    intro: 'El Grande Panda es el crossover urbano de Fiat y uno de los pocos modelos de la marca que ofrece en España tres tipos de propulsión sobre una misma familia: gasolina, híbrido ligero MHEV de 48 V y eléctrico de batería. Los acabados Pop, Icon y La Prima no se cuentan como modelos separados.',
     powertrainSummary: 'Fiat España confirma un motor de gasolina T-Gen3 1.2 turbo de 100 CV, una variante híbrida de 110 CV combinados y una versión eléctrica de 113 CV. En el híbrido, la cifra de sistema combina 100 CV del motor térmico y 28 CV del motor eléctrico; no se suman como si ambas potencias máximas estuvieran disponibles simultáneamente.',
     usageNote: 'La versión híbrida ligera incorpora una batería de 48 V y caja automática eDCT, pero no se conecta a un cargador. El eléctrico utiliza una batería de 43,8 kWh y requiere recarga. El motor de gasolina es manual en la ficha consultada. Si comparas presupuesto o uso diario, separa estas tres configuraciones: la potencia comercial, la transmisión y los costes de energía cambian entre ellas.',
     versions: [
       { name: 'T-Gen3 1.2 Turbo', type: 'Gasolina', power: '100 CV (74 kW)', displacement: '1.199 cm³', maxTorque: notPublished, torqueScope: 'Motor térmico', torqueRpm: notPublished },
-      { name: 'T-Gen3 1.2 Hybrid 48 V', type: 'Microhíbrido de gasolina (48 V)', power: 'Sistema: 110 CV (81 kW); térmico: 100 CV (74 kW); eléctrico: 28 CV (21 kW)', displacement: 'Térmico: 1.199 cm³; eléctrico: —', maxTorque: notPublished, torqueScope: 'Sistema híbrido; par térmico y régimen no desglosados aquí', torqueRpm: notPublished },
+      { name: 'T-Gen3 1.2 Hybrid 48 V', type: 'Híbrido no enchufable · MHEV gasolina (48 V)', power: 'Sistema: 110 CV (81 kW); térmico: 100 CV (74 kW); eléctrico: 28 CV (21 kW)', displacement: 'Térmico: 1.199 cm³; eléctrico: —', maxTorque: notPublished, torqueScope: 'Sistema híbrido; par térmico y régimen no desglosados aquí', torqueRpm: notPublished },
       { name: 'Grande Panda Eléctrico', type: 'Eléctrico', power: '113 CV (83 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: 'No indicado en ficha nacional' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Crossover urbano de cinco puertas' },
       { label: 'Plazas', value: '5' },
       { label: 'Longitud', value: '4.000 mm' },
-      { label: 'Tecnologías', value: 'Gasolina, microhíbrido y eléctrico' },
+      { label: 'Tecnologías', value: 'Gasolina, MHEV de gasolina no enchufable y eléctrico' },
     ],
     specNote: 'La potencia combinada del sistema Hybrid es la cifra comercial de Fiat. La marca especifica por separado 100 CV térmicos y un motor eléctrico de 21 kW/28 CV; el catálogo técnico indica 113 CV/83 kW para la versión eléctrica. No se atribuye un régimen de par que la ficha no publique.',
     officialUrl: `${fiat}/modelos/grande-panda-gasolina`,
@@ -146,7 +146,7 @@ export const fiatModels: ModelPageData[] = [
     powertrainSummary: 'La ficha de Fiat España identifica el motor 1.0 GSE de gasolina con tecnología híbrida ligera y 65 CV. La compañía no desglosa en la ficha española el par máximo junto con su régimen para esta versión, por lo que ese dato se deja sin publicar en la tabla.',
     usageNote: 'El sistema mild hybrid de 12 V no convierte al Pandina en un híbrido enchufable ni permite cargarlo desde una toma. Al comparar ofertas, comprueba el acabado, las plazas y la fecha de matriculación: la web del fabricante puede mostrar simultáneamente promociones, unidades de stock y configuraciones distintas.',
     versions: [
-      { name: '1.0 GSE Hybrid 12 V', type: 'Microhíbrido de gasolina (12 V)', power: '65 CV (48 kW)', displacement: '999 cm³', maxTorque: notPublished, torqueScope: 'Motor de gasolina', torqueRpm: notPublished },
+      { name: '1.0 GSE Hybrid 12 V', type: 'Híbrido no enchufable · MHEV gasolina (12 V)', power: '65 CV (48 kW)', displacement: '999 cm³', maxTorque: notPublished, torqueScope: 'Motor de gasolina', torqueRpm: notPublished },
     ],
     facts: [
       { label: 'Carrocería', value: 'Urbano de cinco puertas' },
@@ -160,33 +160,6 @@ export const fiatModels: ModelPageData[] = [
       source('Configurador Fiat España', `${fiat}/omni/configurador`),
     ],
     image: photo('pandina', '2026 Fiat Pandina 1.0 Hybrid Pop.jpg', 'Fiat Pandina 1.0 Hybrid Pop fotografiado en 2026.', 'Corvettec6r', 'CC BY 4.0', 1280, 678, 'https://commons.wikimedia.org/wiki/User:Corvettec6r'),
-    reviewedAt,
-  },
-  {
-    brandSlug: 'fiat',
-    modelSlug: 'topolino',
-    title: 'Fiat Topolino: potencia y datos del cuadriciclo eléctrico | Kilómetro Claro',
-    description: 'Conoce el Fiat Topolino eléctrico: potencia nominal, batería y su condición de cuadriciclo ligero para desplazamientos urbanos.',
-    intro: 'El Topolino es un cuadriciclo eléctrico ligero de dimensiones reducidas. Fiat España permite comprarlo online y ofrece diferentes ediciones, como Topolino Sport; son acabados de la misma familia, no carrocerías de turismo convencionales.',
-    powertrainSummary: 'El manual del fabricante indica 6 kW de potencia nominal para el motor eléctrico. Equivale aproximadamente a 8 CV mediante conversión de unidades; Fiat también presenta cifras comerciales de potencia máxima distintas en algunos materiales, por lo que esta ficha conserva el dato nominal del manual y explicita la conversión.',
-    usageNote: 'El Topolino pertenece a la categoría de cuadriciclos ligeros, no a la de un turismo M1. Su velocidad y uso previsto son distintos de los de un coche convencional; antes de elegirlo, revisa la categoría del permiso de conducción aplicable, la velocidad máxima homologada y si los trayectos previstos encajan con su autonomía y tamaño.',
-    versions: [
-      { name: 'Motor eléctrico de 6 kW nominales', type: 'Eléctrico · cuadriciclo ligero', power: 'Aprox. 8 CV (6 kW nominales)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: 'No indicado; potencia nominal según manual' },
-    ],
-    facts: [
-      { label: 'Categoría', value: 'Cuadriciclo eléctrico ligero' },
-      { label: 'Plazas', value: '2' },
-      { label: 'Batería', value: '5,4 kWh, según ficha española' },
-      { label: 'Compra', value: 'Venta online disponible; confirma plazo de entrega' },
-    ],
-    specNote: 'El manual de Fiat especifica 6 kW como potencia nominal. La equivalencia de 8 CV es una conversión aproximada (1 kW ≈ 1,36 CV), no una potencia máxima independiente publicada por el fabricante. No se consigna par máximo porque no se encontró un valor verificable con régimen.',
-    officialUrl: `${fiat}/modelos/topolino`,
-    technicalUrl: 'https://store.fiat.es/media/pdf/Manual_de_uso_y_de_mantenimiento.pdf',
-    sources: [
-      source('Fiat Topolino: catálogo y compra en España', `${fiat}/modelos/topolino`),
-      source('Manual oficial de uso y mantenimiento: potencia nominal', 'https://store.fiat.es/media/pdf/Manual_de_uso_y_de_mantenimiento.pdf'),
-    ],
-    image: photo('topolino', 'Fiat Topolino (2023) IMG 0749.jpg', 'Fiat Topolino eléctrico fotografiado en Walldorf en 2024.', 'Alexander-93', 'CC BY-SA 4.0', 1280, 987, alexander),
     reviewedAt,
   },
   {
@@ -220,24 +193,25 @@ export const fiatModels: ModelPageData[] = [
   {
     brandSlug: 'fiat',
     modelSlug: 'qubo-l',
-    title: 'Fiat Qubo L: motores diésel, plazas y versiones | Kilómetro Claro',
-    description: 'Compara el Fiat Qubo L diésel de 100 y 130 CV con la versión eléctrica de 136 CV, sus plazas y los datos técnicos publicados.',
-    intro: 'El Qubo L es un vehículo familiar de pasajeros con carrocería de monovolumen y puertas correderas. Fiat España muestra versiones diésel de cinco y siete plazas y una eléctrica de cinco plazas. La página comercial todavía califica la eléctrica como próxima, mientras que el configurador y la ficha técnica ya la muestran: conviene confirmar con un concesionario si admite pedidos en la fecha de consulta.',
-    powertrainSummary: 'La ficha técnica española identifica un 1.5 diésel de 100 CV con cambio manual y otro de 130 CV con caja manual o automática; para la versión eléctrica publica 100 kW (136 CV), batería de 50 kWh y hasta 346 km WLTP. La carrocería de siete plazas se limita al diésel. No se muestra par máximo porque la ficha española consultada no publica el régimen junto a esa cifra.',
-    usageNote: 'La versión de cinco plazas y la de siete no son intercambiables: la tercera fila modifica el espacio y la configuración. Antes de comparar precios, revisa transmisión, acabado, número de asientos y si el concesionario puede confirmar fecha de entrega. El configurador ya lista el eléctrico, aunque el texto de la página de producto aún lo anuncia como próximo.',
+    title: 'Fiat Qubo L: versiones diésel y eléctrica | Kilómetro Claro',
+    description: 'Consulta las versiones diésel de 100 y 130 CV y la eléctrica de 136 CV del Fiat Qubo L, sus datos técnicos y las configuraciones de cinco o siete plazas.',
+    intro: 'El Qubo L es un monovolumen de pasajeros con puertas correderas y configuraciones de cinco o siete plazas. La gama técnica española incluye motores diésel y una versión eléctrica de 100 kW. Fiat anuncia una oferta particular para la eléctrica, aunque la página de producto todavía la describe como «próximamente».',
+    powertrainSummary: 'La ficha técnica española identifica un motor diésel 1.5 de 100 CV manual y otro de 130 CV con cambio manual o automático. La versión eléctrica desarrolla 100 kW (136 CV) y monta una batería de 50 kWh. La carrocería de siete plazas se limita al diésel. No se publica un régimen de par comparable para la eléctrica.',
+    usageNote: 'La versión de cinco plazas y la de siete no son intercambiables: la tercera fila modifica el espacio y la configuración. La oferta eléctrica publicada por Fiat tiene condiciones de financiación y vigencia limitada; confirma la disponibilidad de pedidos, el acabado y el precio antes de comparar versiones.',
     versions: [
       { name: '1.5 Diésel 100 MT', type: 'Diésel', power: '100 CV (75 kW)', displacement: '1,5 l', maxTorque: notPublished, torqueScope: 'Motor diésel', torqueRpm: notPublished, note: 'Cambio manual de 6 velocidades.' },
       { name: '1.5 Diésel 130 MT', type: 'Diésel', power: '130 CV (96 kW)', displacement: '1,5 l', maxTorque: notPublished, torqueScope: 'Motor diésel', torqueRpm: notPublished, note: 'Cambio manual de 6 velocidades.' },
       { name: '1.5 Diésel 130 AT', type: 'Diésel', power: '130 CV (96 kW)', displacement: '1,5 l', maxTorque: notPublished, torqueScope: 'Motor diésel', torqueRpm: notPublished, note: 'Cambio automático de 8 velocidades.' },
-      { name: 'Eléctrico 50 kWh', type: 'Eléctrico', power: '136 CV (100 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: 'No indicado en régimen comparable', note: 'Carrocería de 5 plazas; la disponibilidad de pedido debe confirmarse con Fiat.' },
+      { name: 'Eléctrico 50 kWh · 136 CV', type: 'Eléctrico', powertrainGroup: 'electric', power: '136 CV (100 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: notPublished, note: 'Batería de 50 kWh; la ficha técnica indica hasta 346 km de autonomía combinada WLTP.' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Monovolumen de pasajeros' },
       { label: 'Plazas', value: '5 o 7; siete plazas solo en diésel' },
       { label: 'Longitud', value: '4,40 m en 5 plazas; 4,75 m en 7 plazas' },
-      { label: 'Autonomía eléctrica', value: 'Hasta 346 km WLTP, según Fiat España' },
+      { label: 'Motorización disponible', value: 'Diésel de 100 o 130 CV; eléctrico de 136 CV' },
     ],
-    specNote: 'La fuente técnica española publica 100 y 130 CV para el diésel y 136 CV/100 kW para el eléctrico. La página comercial todavía marca la versión eléctrica como “próximamente”, aunque el configurador y la ficha técnica la incluyen; por esa discrepancia, la ficha la documenta pero no afirma que el pedido esté abierto. El par no se deduce de datos de modelos relacionados.',
+    figures: [{ label: 'Autonomía eléctrica combinada WLTP', value: 'Hasta 346 km' }],
+    specNote: 'La página de producto aún presenta el Qubo L eléctrico como «próximamente», mientras que el configurador y una oferta particular vigente muestran una configuración eléctrica concreta. Se incluye la motorización y se indica esta diferencia de disponibilidad. La mención genérica a gasolina no especifica motor, potencia ni configuración y tampoco se añade. El par no se deduce de modelos relacionados.',
     officialUrl: `${fiat}/modelos/qubo-l-diesel`,
     technicalUrl: `${fiat}/modelos/qubo-l-diesel/detalles-tecnicos`,
     sources: [
@@ -245,6 +219,7 @@ export const fiatModels: ModelPageData[] = [
       source('Fiat Qubo L: ficha técnica de motores diésel y eléctrico', `${fiat}/modelos/qubo-l-diesel/detalles-tecnicos`),
       source('Comunicado oficial de lanzamiento: motores y configuraciones del Qubo L', `${fiat}/mundo-fiat/noticias-y-eventos/fiat-qubo-l-vehiculo-familiar`),
       source('Configurador Fiat España: Qubo L 5 y 7 plazas', `${fiat}/omni/configurador`),
+      source('Oferta particular Fiat España: Qubo L eléctrico 100 kW, Talla M POP', `${fiat}/`),
     ],
     image: photo('qubo-l', 'Fiat Qubo L Leonberg 2026 IMG 8606.jpg', 'Fiat Qubo L fotografiado en Leonberg en 2026.', 'Alexander Migl', 'CC BY-SA 4.0', 1280, 818, alexander),
     reviewedAt,
@@ -309,39 +284,6 @@ export const fiatModels: ModelPageData[] = [
       source('Ficha técnica oficial E-Ulysse (potencia y baterías)', 'https://www.media.stellantis.com/es-es/fiat/press/nuevos-fiat-e-doblo-y-fiat-e-ulysse-mayor-autonomia-ev-tecnologia-de-seguridad-actualizada-y-un-nuevo-diseno-para-la-ultima-generacion-de-monovolumenes-de-fiat'),
     ],
     image: photo('ulysse', 'Fiat E-Ulysse Leonberg 2024 IMG 0968.jpg', 'Fiat E-Ulysse fotografiado en 2024, representante de la familia Ulysse.', 'Alexander-93', 'CC BY-SA 4.0', 1280, 852, alexander, 'Fotografía de la versión E-Ulysse; la variante diésel puede diferir en detalles de acabado. Disponibilidad sujeta a confirmación del concesionario.'),
-    reviewedAt,
-  },
-  {
-    brandSlug: 'fiat',
-    modelSlug: 'ducato-camper',
-    title: 'Fiat Ducato Camper: motores diésel y eléctrico | Kilómetro Claro',
-    description: 'Conoce las motorizaciones para autocaravana de la base Fiat Ducato: motores diésel Multijet3 y versión eléctrica e-Ducato.',
-    intro: 'El Ducato Camper es la base de Fiat Professional destinada a transformaciones de autocaravana. Fiat ofrece bastidor, cabina y motorizaciones para que fabricantes especializados completen la vivienda; la foto es un ejemplo de una transformación concreta y no representa una autocaravana fabricada íntegramente por Fiat.',
-    powertrainSummary: 'La página oficial Fiat Camper publica motores diésel Multijet3 de 120, 140, 160 y 180 CV, con distintas combinaciones de cambio manual y automático, además de una opción eléctrica de 205 kW (270 CV). La potencia y el par pueden variar con la transmisión. Se muestran solo los pares y regímenes que Fiat especifica expresamente.',
-    usageNote: 'En una autocaravana, el motor es solo una parte de la compra: masa máxima autorizada, carga útil, longitud, altura y transformación alteran el consumo, la capacidad y los requisitos de conducción. El vehículo de la fotografía es una conversión individual. Confirma qué chasis y motorización incluye el precio de la autocaravana terminada y quién responde de su homologación.',
-    versions: [
-      { name: '2.2 Multijet3 120 Manual', type: 'Diésel', power: '120 CV (88 kW)', displacement: '2.184 cm³', maxTorque: '320 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.400 rpm' },
-      { name: '2.2 Multijet3 140 Manual', type: 'Diésel', power: '140 CV (103 kW)', displacement: '2.184 cm³', maxTorque: '350 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.400 rpm' },
-      { name: '2.2 Multijet3 140 Automático', type: 'Diésel', power: '140 CV (103 kW)', displacement: '2.184 cm³', maxTorque: '380 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.400 rpm' },
-      { name: '2.2 Multijet3 160 Manual', type: 'Diésel', power: '160 CV (118 kW)', displacement: '2.184 cm³', maxTorque: '380 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.500 rpm' },
-      { name: '2.2 Multijet3 160 Automático', type: 'Diésel', power: '160 CV (118 kW)', displacement: '2.184 cm³', maxTorque: '400 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.500 rpm' },
-      { name: '2.2 Multijet3 180 Automático', type: 'Diésel', power: '180 CV (132 kW)', displacement: '2.184 cm³', maxTorque: '450 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.500 rpm' },
-      { name: 'e-Ducato Camper', type: 'Eléctrico', power: '270 CV (205 kW)', displacement: '—', maxTorque: notPublished, torqueScope: 'Motor eléctrico', torqueRpm: 'No indicado en régimen comparable' },
-    ],
-    facts: [
-      { label: 'Uso', value: 'Base para autocaravana y transformaciones camper' },
-      { label: 'Carrocerías base', value: '4 longitudes y 3 alturas, según Fiat' },
-      { label: 'Tecnologías', value: 'Diésel y eléctrica' },
-      { label: 'Compra', value: 'Chasis y conversión pueden adquirirse por canales distintos' },
-    ],
-    specNote: 'Las seis combinaciones diésel de la tabla y sus pares máximos proceden de la gama oficial Fiat Camper consultada. La ficha informa 205 kW y 410 Nm para la versión eléctrica, pero no publica un régimen de par comparable; por eso se omite el valor de par en la tabla conforme al formato editorial.',
-    officialUrl: `${fiat}/camper`,
-    technicalUrl: `${fiat}/camper`,
-    sources: [
-      source('Fiat Camper España: Ducato y motorizaciones de la base camper', `${fiat}/camper`),
-      source('Fiat Professional: configurador Ducato', `${fiat}/professional/configurador`),
-    ],
-    image: photo('ducato-camper', 'Fiat Ducato Camper.jpg', 'Fiat Ducato transformado en camper; la carrocería fotografiada es una conversión particular.', 'crash71100', 'CC0 1.0', 1280, 852, 'https://www.flickr.com/photos/152930510@N02/49887096188/', 'La imagen muestra una transformación camper concreta, no un producto terminado idéntico a todas las bases Ducato.'),
     reviewedAt,
   },
 ];

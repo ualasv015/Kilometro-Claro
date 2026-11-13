@@ -21,11 +21,29 @@ const relatedBrands = brands
   .map(({ item }) => item);
 const vehicleTypes = [...new Set(brand.models.map((model) => model.body))].sort((a, b) => a.localeCompare(b, 'es'));
 const modelPowertrains = [...new Set(brand.models.flatMap((model) => model.powertrains))].sort((a, b) => a.localeCompare(b, 'es'));
+const parseBasePrice = (price?: string) => {
+  if (!price) return undefined;
+  const amount = price.match(/(\d{1,3}(?:\.\d{3})+(?:,\d{1,2})?|\d+(?:,\d{1,2})?)(?=\s*€)/)?.[1];
+  if (!amount) return undefined;
+  const value = Number(amount.replace(/\./g, '').replace(',', '.'));
+  return Number.isFinite(value) ? value : undefined;
+};
 const modelsWithImages = brand.models.map((model) => {
   const detail = model.pageSlug ? getModelPage(brand.slug, model.pageSlug) : undefined;
   if (!detail) throw new Error(`Falta el contenido para la ficha ${brand.slug}/${model.pageSlug ?? model.name}.`);
-  return { ...model, image: detail.image };
+  return {
+    ...model,
+    image: detail.image,
+    basePrice: detail.basePrice,
+    basePriceLabel: detail.basePriceLabel,
+    basePriceNote: detail.basePriceNote,
+    currentOfferPrice: detail.currentOfferPrice,
+    currentOfferLabel: detail.currentOfferLabel,
+    priceFilterValue: parseBasePrice(detail.basePrice || detail.currentOfferPrice),
+  };
 });
+const knownModelPrices = modelsWithImages.flatMap((model) => model.priceFilterValue === undefined ? [] : [model.priceFilterValue]);
+const priceFilterMax = knownModelPrices.length ? Math.ceil(Math.max(...knownModelPrices) / 1000) * 1000 : 0;
 const title = `${brand.name}: modelos, motores y origen | Kilómetro Claro`;
 const description = `Consulta el origen de ${brand.name}, sus modelos destacados y los tipos de motorización de la gama española. Incluye enlaces a las fuentes oficiales.`;
 const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilometroclaro.com');
@@ -44,7 +62,8 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
           <h1>{brand.name}</h1>
         </header>
         <dl class="brand-facts-list">
-          <div><dt>País</dt><dd>{brand.country}</dd></div>
+          <div><dt>País de origen</dt><dd>{brand.country}</dd></div>
+          {brand.ownershipNote && <div class="brand-facts-ownership"><dt>Grupo propietario</dt><dd><span>{brand.ownershipNote}</span>{brand.ownershipSource && <a href={brand.ownershipSource.url} target="_blank" rel="noopener noreferrer">{brand.ownershipSource.label}</a>}</dd></div>}
           <div><dt>Sede <span>(ciudad)</span></dt><dd>{brand.headquartersCity ?? 'No indicada'}</dd></div>
           <div><dt>Desde <span>(año de fundación)</span></dt><dd>{brand.founded ?? 'No indicado'}</dd></div>
         </dl>
@@ -79,6 +98,19 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
             {modelPowertrains.map((powertrain) => <option value={powertrain}>{powertrain}</option>)}
           </select>
         </label>
+        {!brand.disablePriceFilter && knownModelPrices.length > 0 && <div class="brand-price-filter" role="group" aria-label="Filtrar por rango de precio">
+          <div class="brand-price-range-labels">
+            <label for="brand-price-min">Mínimo <output id="brand-price-min-output" for="brand-price-min">Sin mínimo</output></label>
+            <label for="brand-price-max">Máximo <output id="brand-price-max-output" for="brand-price-max">Sin máximo</output></label>
+          </div>
+          <div class="brand-price-range">
+            <span class="brand-price-range-track" aria-hidden="true"></span>
+            <span class="brand-price-range-selected" id="brand-price-range-selected" aria-hidden="true"></span>
+            <input class="brand-price-range-input brand-price-range-input--min" id="brand-price-min" type="range" min="0" max={priceFilterMax} step="250" value="0" aria-label="Precio mínimo" aria-controls="brand-model-grid" />
+            <input class="brand-price-range-input brand-price-range-input--max" id="brand-price-max" type="range" min="0" max={priceFilterMax} step="250" value={priceFilterMax} aria-label="Precio máximo" aria-controls="brand-model-grid" />
+          </div>
+          <p class="brand-price-filter-note">Filtra por el precio mostrado en cada ficha. Los modelos sin precio publicado se excluyen al ajustar el rango.</p>
+        </div>}
       </div>
 
       <div class="toyota-model-grid" id="brand-model-grid">
@@ -87,23 +119,31 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
             class:list={["toyota-model-card", { "toyota-model-card--linked": model.pageSlug, "toyota-model-card--no-photo": !model.image }]}
             data-vehicle-type={model.body.toLocaleLowerCase('es')}
             data-powertrains={model.powertrains.map((powertrain) => powertrain.toLocaleLowerCase('es')).join('|')}
+            data-price-value={model.priceFilterValue ?? ''}
           >
             {model.image && <figure class="toyota-model-photo">
               <img src={model.image.src} alt={model.image.alt} width={model.image.width} height={model.image.height} loading="lazy" decoding="async" />
               <figcaption>
                 {model.image.authorUrl ? <a href={model.image.authorUrl} target="_blank" rel="noopener noreferrer">{model.image.authorName}</a> : model.image.authorName}
                 {model.image.sourceUrl && <> · <a href={model.image.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`Archivo original: ${model.image.sourceTitle ?? model.name}`}>Fuente</a></>}
-                {model.image.licenseUrl && <> · <a href={model.image.licenseUrl} target="_blank" rel="noopener noreferrer">{model.image.licenseName}</a></>}
+                {model.image.licenseName && <> · {model.image.licenseUrl ? <a href={model.image.licenseUrl} target="_blank" rel="noopener noreferrer">{model.image.licenseName}</a> : model.image.licenseName}</>}
                 · imagen optimizada para web
               </figcaption>
             </figure>}
             <div class="toyota-model-main">
               <span class="toyota-model-type">{model.body}</span>
+              {model.bodySubtype && <span class="toyota-model-subtype">{model.bodySubtype}</span>}
               <h3><a class="toyota-model-link" href={`/marcas/${brand.slug}/${model.pageSlug}/`} aria-label={`Ver ficha del modelo ${model.name} de ${brand.name}`}>{model.name}</a></h3>
+              {(model.basePrice || model.basePriceLabel || model.currentOfferPrice) && <p class="toyota-model-price">
+                <strong>{model.basePrice ? `Desde ${model.basePrice}` : model.currentOfferPrice ?? 'Pendiente de verificación'}</strong>
+                <small>{model.basePrice ? (model.basePriceLabel ?? 'Precio Base') : model.currentOfferPrice ? (model.currentOfferLabel ?? 'Oferta al contado') : 'PVP pendiente'}</small>
+                {model.basePriceNote && <small>{model.basePriceNote}</small>}
+              </p>}
             </div>
             <div class="toyota-model-powertrains" aria-label={`Motorizaciones de ${model.name}`}>
               {model.powertrains.map((powertrain) => <span>{powertrain}</span>)}
             </div>
+            {brand.slug === 'evo' && model.pageSlug === 'evo-cross-4' && <p class="toyota-model-photo-note">Precio con IVA; no incluye transporte, matriculación ni preentrega.</p>}
             {brand.slug === 'ebro' && model.image?.caption?.includes('Chery') && <p class="toyota-model-photo-note">{model.image.caption}</p>}
             {brand.slug === 'polestar' && model.pageSlug === '4-suv' && <p class="toyota-model-photo-note">La fotografía muestra el Polestar 4 Coupé, no el SUV con luneta trasera.</p>}
             {brand.slug === 'swm' && (model.pageSlug === 'g03f' || model.pageSlug === 'g05') && <p class="toyota-model-photo-note">{model.image?.caption}</p>}
@@ -112,8 +152,10 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
         ))}
       </div>
       <p class="toyota-model-empty" id="brand-model-empty" role="status" aria-live="polite" hidden>No hay modelos que coincidan con ambos filtros. Prueba otra combinación.</p>
-      <p class="brand-profile-source">La biografía se ha contrastado con <a href={brand.historyUrl ?? brand.officialUrl} target="_blank" rel="noopener noreferrer">información publicada por {brand.name}</a>. La selección de modelos y tecnologías se ha revisado en su <a href={brand.rangeUrl} target="_blank" rel="noopener noreferrer">gama oficial para España</a>.</p>
-      {brand.marketSources?.map((source) => <p class="brand-profile-source">Referencia complementaria: <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>.</p>)}
+      {brand.compactReferences ? <p class="brand-profile-source">La biografía se ha contrastado con <a href={brand.historyUrl ?? brand.officialUrl} target="_blank" rel="noopener noreferrer"><strong>información publicada por {brand.name}</strong></a>. La selección de modelos y tecnologías se ha revisado en su <a href={brand.rangeUrl} target="_blank" rel="noopener noreferrer"><strong>gama oficial para España</strong></a>.</p> : <>
+        <p class="brand-profile-source">La biografía se ha contrastado con <a href={brand.historyUrl ?? brand.officialUrl} target="_blank" rel="noopener noreferrer">información publicada por {brand.name}</a>. La selección de modelos y tecnologías se ha revisado en su <a href={brand.rangeUrl} target="_blank" rel="noopener noreferrer">gama oficial para España</a>.</p>
+        {brand.marketSources?.map((source) => <p class="brand-profile-source">Referencia complementaria: <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>.</p>)}
+      </>}
     </section>
 
     <section class="brand-directory-related" aria-labelledby="related-brands-title">
@@ -130,20 +172,31 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
   <script>
     const bodyFilter = document.querySelector<HTMLSelectElement>('#brand-body-filter');
     const motorFilter = document.querySelector<HTMLSelectElement>('#brand-powertrain-filter');
+    const minPriceFilter = document.querySelector<HTMLInputElement>('#brand-price-min');
+    const maxPriceFilter = document.querySelector<HTMLInputElement>('#brand-price-max');
+    const minPriceOutput = document.querySelector<HTMLOutputElement>('#brand-price-min-output');
+    const maxPriceOutput = document.querySelector<HTMLOutputElement>('#brand-price-max-output');
+    const selectedPriceRange = document.querySelector<HTMLElement>('#brand-price-range-selected');
     const modelCards = [...document.querySelectorAll<HTMLElement>('.toyota-model-card')];
     const modelEmpty = document.querySelector<HTMLElement>('#brand-model-empty');
     const normalizeFilter = (value: string) => value.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    const formatFilterPrice = (value: number) => new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
 
     const filterBrandModels = () => {
       const selectedType = normalizeFilter(bodyFilter?.value ?? '');
       const selectedMotor = normalizeFilter(motorFilter?.value ?? '');
+      const minimumPrice = Number(minPriceFilter?.value ?? 0);
+      const maximumPrice = Number(maxPriceFilter?.value ?? maxPriceFilter?.max ?? 0);
+      const hasActivePriceFilter = minimumPrice > 0 || Boolean(maxPriceFilter && maximumPrice < Number(maxPriceFilter.max));
       let visibleCount = 0;
 
       for (const card of modelCards) {
         const matchesType = !selectedType || normalizeFilter(card.dataset.vehicleType ?? '') === selectedType;
         const motors = (card.dataset.powertrains ?? '').split('|').map(normalizeFilter);
         const matchesMotor = !selectedMotor || motors.includes(selectedMotor);
-        const visible = matchesType && matchesMotor;
+        const cardPrice = card.dataset.priceValue ? Number(card.dataset.priceValue) : Number.NaN;
+        const matchesPrice = !hasActivePriceFilter || (Number.isFinite(cardPrice) && cardPrice >= minimumPrice && cardPrice <= maximumPrice);
+        const visible = matchesType && matchesMotor && matchesPrice;
         card.hidden = !visible;
         if (visible) visibleCount += 1;
       }
@@ -151,7 +204,54 @@ const canonical = new URL(`/marcas/${brand.slug}/`, Astro.site ?? 'https://kilom
       if (modelEmpty) modelEmpty.hidden = visibleCount > 0;
     };
 
+    const updatePriceOutputs = (changed: 'minimum' | 'maximum') => {
+      if (!minPriceFilter || !maxPriceFilter) return;
+      let minimum = Number(minPriceFilter.value);
+      let maximum = Number(maxPriceFilter.value);
+
+      if (minimum > maximum) {
+        if (changed === 'minimum') {
+          maximum = minimum;
+          maxPriceFilter.value = String(maximum);
+        } else {
+          minimum = maximum;
+          minPriceFilter.value = String(minimum);
+        }
+      }
+
+      minPriceFilter.value = String(minimum);
+      maxPriceFilter.value = String(maximum);
+      if (minPriceOutput) {
+        minPriceOutput.value = minimum === 0 ? 'Sin mínimo' : formatFilterPrice(minimum);
+        minPriceOutput.textContent = minPriceOutput.value;
+      }
+      if (maxPriceOutput) {
+        maxPriceOutput.value = maximum >= Number(maxPriceFilter.max) ? 'Sin máximo' : formatFilterPrice(maximum);
+        maxPriceOutput.textContent = maxPriceOutput.value;
+      }
+      if (selectedPriceRange) {
+        const rangeTrack = selectedPriceRange.parentElement;
+        const rangeMaximum = Number(maxPriceFilter.max) || 1;
+        const thumbInset = 7;
+        const usableWidth = Math.max(0, (rangeTrack?.clientWidth ?? 0) - thumbInset * 2);
+        const start = minimum / rangeMaximum;
+        const span = (maximum - minimum) / rangeMaximum;
+        selectedPriceRange.style.left = `${thumbInset + usableWidth * start}px`;
+        selectedPriceRange.style.width = `${usableWidth * span}px`;
+      }
+    };
+
     bodyFilter?.addEventListener('change', filterBrandModels);
     motorFilter?.addEventListener('change', filterBrandModels);
+    minPriceFilter?.addEventListener('input', () => {
+      updatePriceOutputs('minimum');
+      filterBrandModels();
+    });
+    maxPriceFilter?.addEventListener('input', () => {
+      updatePriceOutputs('maximum');
+      filterBrandModels();
+    });
+    updatePriceOutputs('maximum');
+    window.addEventListener('resize', () => updatePriceOutputs('minimum'));
   </script>
 </BaseLayout>

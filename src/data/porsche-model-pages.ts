@@ -1,61 +1,32 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '13 de noviembre de 2026';
 const porsche = 'https://www.porsche.com/spain';
 const source = (label: string, url: string) => ({ label, url });
 
 export const porscheModels: ModelPageData[] = [
   {
     brandSlug: 'porsche',
-    modelSlug: '718',
-    title: 'Porsche 718: Spyder RS y Cayman GT4 RS, motores y disponibilidad | Kilómetro Claro',
-    description: 'Consulta las fichas del Porsche 718 Spyder RS y Cayman GT4 RS, sus datos técnicos y su situación de disponibilidad en España.',
-    intro: 'La web española de Porsche todavía muestra dos versiones 718 RS: el roadster Spyder RS y el coupé Cayman GT4 RS. Ambas aparecen como agotadas y sin posibilidad de pedido; el anuncio de Porsche Finder consultado corresponde a un vehículo de reestreno Porsche Approved, no a una unidad nueva de fábrica.',
-    powertrainSummary: 'Spyder RS y Cayman GT4 RS comparten el bóxer atmosférico de 4,0 litros: 500 CV (368 kW), 3.996 cm³ y 450 Nm a 6.750 rpm. La ficha técnica oficial de cada versión publica también el régimen del par.',
-    usageNote: 'El 718 RS es un deportivo biplaza de motor central orientado a la conducción y, especialmente en el GT4 RS, al uso en circuito. Porsche indica que no admite nuevos pedidos. El anuncio de reestreno localizado puede dejar de estar disponible, por lo que conviene comprobar el inventario oficial antes de considerar una unidad concreta.',
-    versions: [
-      { name: '4.0 bóxer atmosférico · Spyder RS', type: 'Gasolina', power: '500 CV (368 kW)', displacement: '3.996 cm³', maxTorque: '450 Nm', torqueScope: 'Motor de combustión', torqueRpm: '6.750 rpm' },
-      { name: '4.0 bóxer atmosférico · Cayman GT4 RS', type: 'Gasolina', power: '500 CV (368 kW)', displacement: '3.996 cm³', maxTorque: '450 Nm', torqueScope: 'Motor de combustión', torqueRpm: '6.750 rpm' },
-    ],
-    facts: [
-      { label: 'Carrocería', value: 'Roadster biplaza de motor central' },
-      { label: 'Transmisión', value: 'PDK de siete velocidades' },
-      { label: 'Disponibilidad', value: 'Sin pedidos de fábrica; consultar Porsche Finder para unidades de reestreno o inventario' },
-      { label: 'Combustible', value: 'Gasolina de 98 RON recomendada por Porsche' },
-    ],
-    specNote: 'El configurador español muestra el Spyder RS y el Cayman GT4 RS como agotados y actualmente no disponibles para pedido. El anuncio de Porsche Finder consultado el 30 de octubre de 2026 era una unidad de reestreno Porsche Approved, con fecha de matriculación de febrero de 2026 y 250 km; no se presenta como vehículo nuevo. La disponibilidad del anuncio puede cambiar.',
-    officialUrl: `${porsche}/models/718/718-spyder-rs/718-spyder-rs/`,
-    technicalUrl: 'https://newsroom.porsche.com/dam/jcr%3A9707616b-7146-4487-bd92-7d7b37d1e5ac/pag-718-spyder-rs-es.pdf.PDF',
-    sources: [
-      source('Porsche España: 718 Spyder RS, pedido y especificaciones', `${porsche}/models/718/718-spyder-rs/718-spyder-rs/`),
-      source('Porsche Finder España: unidad de reestreno Porsche Approved', 'https://finder.porsche.com/es/es-ES/details/porsche-718-spyder-rs-nuevo-0DRENL'),
-      source('Porsche Newsroom: ficha técnica oficial del 718 Spyder RS', 'https://newsroom.porsche.com/dam/jcr%3A9707616b-7146-4487-bd92-7d7b37d1e5ac/pag-718-spyder-rs-es.pdf.PDF'),
-      source('Porsche España: ficha técnica del 718 Cayman GT4 RS', 'https://files.porsche.com/filestore/download/spain/es/modelseries-j1-caymangt4rs-downloads-catalogue/default/47851c47-8b7d-11ed-80f7-005056bbdc38/718-Cayman-GT4-RS-Cat%C3%A1logo.pdf'),
-    ],
-    reviewedAt,
-  },
-  {
-    brandSlug: 'porsche',
     modelSlug: '911',
     title: 'Porsche 911: motores, potencia y ficha técnica | Kilómetro Claro',
-    description: 'Compara las motorizaciones del Porsche 911 en España: Carrera, Carrera S, T-Hybrid, Turbo S y GT3.',
+    description: 'Compara las motorizaciones del Porsche 911 en España: Carrera, Carrera S, T-Hybrid, Turbo S y GT3, con sus precios base publicados.',
     intro: 'El Porsche 911 conserva su arquitectura de motor trasero, pero su gama ya reúne motores bóxer turbo, un sistema híbrido T-Hybrid y versiones atmosféricas GT. Coupé, Cabriolet y Targa son carrocerías de la misma familia; aquí agrupamos las variantes que comparten tren motriz para comparar las diferencias mecánicas.',
-    powertrainSummary: 'La gama española MY2027 abarca desde el Carrera de 290 kW hasta el Turbo S T-Hybrid de 523 kW. Las cifras de potencia combinada se identifican como potencia del sistema; el Carrera GTS y el Turbo S combinan el bóxer de gasolina con asistencia eléctrica.',
-    usageNote: 'La denominación puede ocultar diferencias importantes: un Carrera S es gasolina, mientras que Carrera GTS y Turbo S emplean T-Hybrid. La potencia máxima del sistema no equivale a la potencia aislada del motor térmico. En las variantes Carrera y Carrera S no mostramos par porque las fuentes consultadas no indican un régimen verificable junto a la cifra máxima.',
+    powertrainSummary: 'La gama española MY2027 combina motores bóxer de gasolina, el sistema T-Hybrid no enchufable de las versiones GTS y Turbo S, y el atmosférico de altas revoluciones del GT3. Las potencias híbridas corresponden al sistema completo; las cifras y precios de partida se separan por familia mecánica.',
+    usageNote: 'La denominación puede ocultar diferencias importantes: Carrera y Carrera S son de gasolina, mientras que Carrera GTS y Turbo S emplean T-Hybrid, un sistema híbrido no enchufable. La potencia máxima del sistema no equivale a la potencia aislada del motor térmico. En las variantes Carrera y Carrera S no mostramos par porque las fuentes consultadas no indican un régimen verificable junto a la cifra máxima.',
     versions: [
       { name: 'Carrera / Carrera T · bóxer 3.0 biturbo', type: 'Gasolina', power: '394 CV (290 kW)', displacement: '2.981 cm³', maxTorque: '', torqueScope: 'Motor de combustión', torqueRpm: '' },
       { name: 'Carrera S / Carrera 4S / Targa 4S · bóxer 3.0 biturbo', type: 'Gasolina', power: '480 CV (353 kW)', displacement: '2.981 cm³', maxTorque: '', torqueScope: 'Motor de combustión', torqueRpm: '' },
-      { name: 'Carrera GTS / Carrera 4 GTS / Targa 4 GTS / Spirit 70 · T-Hybrid 3.6', type: 'Híbrido T-Hybrid (gasolina + eléctrico)', power: 'Sistema: 541 CV (398 kW)', displacement: '3.591 cm³', maxTorque: '610 Nm', torqueScope: 'Par máximo del sistema híbrido', torqueRpm: '1.950–6.000 rpm' },
-      { name: 'Turbo S · T-Hybrid 3.6', type: 'Híbrido T-Hybrid (gasolina + eléctrico)', power: 'Sistema: 711 CV (523 kW)', displacement: '3.591 cm³', maxTorque: '800 Nm', torqueScope: 'Par máximo del sistema híbrido', torqueRpm: '2.300–6.000 rpm' },
+      { name: 'Carrera GTS / Carrera 4 GTS / Targa 4 GTS · T-Hybrid 3.6', type: 'Híbrido no enchufable', power: 'Sistema: 541 CV (398 kW)', displacement: '3.591 cm³', maxTorque: '610 Nm', torqueScope: 'Par máximo del sistema híbrido', torqueRpm: '1.950–6.000 rpm' },
+      { name: 'Turbo S · T-Hybrid 3.6', type: 'Híbrido no enchufable', power: 'Sistema: 711 CV (523 kW)', displacement: '3.591 cm³', maxTorque: '800 Nm', torqueScope: 'Par máximo del sistema híbrido', torqueRpm: '2.300–6.000 rpm' },
       { name: 'GT3 / GT3 Touring / GT3 S/C / GT3 90 F. A. Porsche · bóxer 4.0 atmosférico', type: 'Gasolina', power: '510 CV (375 kW)', displacement: '3.996 cm³', maxTorque: '450 Nm', torqueScope: 'Motor de combustión', torqueRpm: '6.250 rpm' },
     ],
     facts: [
       { label: 'Arquitectura', value: 'Motor bóxer trasero; seis cilindros en las versiones de esta ficha' },
       { label: 'Carrocerías', value: 'Coupé, Cabriolet y Targa, según versión' },
-      { label: 'Tipos de propulsión', value: 'Gasolina y sistema híbrido T-Hybrid' },
+      { label: 'Tipos de propulsión', value: 'Gasolina y sistema T-Hybrid no enchufable' },
       { label: 'Año-modelo consultado', value: 'MY2027 en el configurador español' },
     ],
-    specNote: 'Porsche España identifica como gasolina la categoría comercial de algunos T-Hybrid; se describe aquí su asistencia eléctrica para evitar confundirla con un híbrido enchufable. La cilindrada corresponde al motor térmico. El Spirit 70 es una edición limitada que el configurador español marca como agotada; se incluye en la fila T-Hybrid por compartir sistema. El GT3 90 F. A. Porsche es una serie especial basada en el GT3.',
+    specNote: 'La clasificación distingue los T-Hybrid de los motores exclusivamente de gasolina: son híbridos no enchufables con asistencia eléctrica. La cilindrada corresponde al motor térmico. No se incluye el Spirit 70 porque el configurador lo marca como agotado. El GT3 90 F. A. Porsche comparte el motor atmosférico de la familia GT3 y se identifica como serie especial.',
     officialUrl: `${porsche}/models/911/`,
     technicalUrl: `${porsche}/models/911/configure/`,
     sources: [
@@ -79,14 +50,14 @@ export const porscheModels: ModelPageData[] = [
     powertrainSummary: 'Las versiones van desde 300 kW (408 CV) en Taycan y Taycan 4 hasta 760 kW (1.034 CV) en Taycan Turbo GT con Launch Control. Todas son eléctricas de batería y no tienen cilindrada térmica.',
     usageNote: 'La potencia anunciada para varios Taycan corresponde al overboost con Launch Control. No debe interpretarse como una potencia sostenida en cualquier situación. Autonomía, consumo y carga dependen de carrocería, batería, equipamiento, temperatura y recorrido; la ficha oficial ofrece cifras WLTP por configuración.',
     versions: [
-      { name: 'Taycan / Taycan 4', type: 'Eléctrico de batería', power: '408 CV (300 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Taycan Black Edition / 4 Black Edition', type: 'Eléctrico de batería', power: '435 CV (320 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Taycan 4S', type: 'Eléctrico de batería', power: '544 CV (400 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Taycan 4S Black Edition / 4S Sport Turismo Black Edition / 4S Cross Turismo', type: 'Eléctrico de batería', power: '598 CV (440 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Taycan GTS', type: 'Eléctrico de batería', power: '700 CV (515 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Taycan Turbo', type: 'Eléctrico de batería', power: '884 CV (650 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Taycan Turbo S', type: 'Eléctrico de batería', power: '952 CV (700 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Taycan Turbo GT / paquete Weissach', type: 'Eléctrico de batería', power: '1.034 CV (760 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Taycan / Taycan 4', type: 'Eléctrico', power: '408 CV (300 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Taycan Black Edition / 4 Black Edition', type: 'Eléctrico', power: '435 CV (320 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Taycan 4S', type: 'Eléctrico', power: '544 CV (400 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Taycan 4S Black Edition / 4S Sport Turismo Black Edition / 4S Cross Turismo', type: 'Eléctrico', power: '598 CV (440 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Taycan GTS', type: 'Eléctrico', power: '700 CV (515 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Taycan Turbo', type: 'Eléctrico', power: '884 CV (650 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Taycan Turbo S', type: 'Eléctrico', power: '952 CV (700 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Taycan Turbo GT / paquete Weissach', type: 'Eléctrico', power: '1.034 CV (760 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocerías', value: 'Sport Saloon, Sport Turismo y Cross Turismo, según versión' },
@@ -116,11 +87,11 @@ export const porscheModels: ModelPageData[] = [
     usageNote: 'En un PHEV, la cifra de sistema integra la parte térmica y eléctrica y no puede atribuirse por completo al motor de gasolina. La autonomía eléctrica homologada depende de la configuración y del ciclo WLTP; para comparar costes de uso conviene considerar con qué frecuencia se carga y qué trayectos se realizan.',
     versions: [
       { name: 'Panamera / Panamera 4 · V6 2.9 biturbo', type: 'Gasolina', power: '353 CV (260 kW)', displacement: '2.894 cm³', maxTorque: '', torqueScope: 'Motor de combustión', torqueRpm: '' },
-      { name: 'Panamera 4 E-Hybrid · V6 2.9 + eléctrico', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 470 CV (346 kW)', displacement: '2.894 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
-      { name: 'Panamera 4S E-Hybrid · V6 2.9 + eléctrico', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 544 CV (400 kW)', displacement: '2.894 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
+      { name: 'Panamera 4 E-Hybrid · V6 2.9 + eléctrico', type: 'Híbrido enchufable', power: 'Sistema: 470 CV (346 kW)', displacement: '2.894 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
+      { name: 'Panamera 4S E-Hybrid · V6 2.9 + eléctrico', type: 'Híbrido enchufable', power: 'Sistema: 544 CV (400 kW)', displacement: '2.894 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
       { name: 'Panamera GTS · V8 4.0 biturbo', type: 'Gasolina', power: '500 CV (368 kW)', displacement: '3.996 cm³', maxTorque: '', torqueScope: 'Motor de combustión', torqueRpm: '' },
-      { name: 'Panamera Turbo E-Hybrid · V8 4.0 + eléctrico', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 680 CV (500 kW)', displacement: '3.996 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
-      { name: 'Panamera Turbo S E-Hybrid · V8 4.0 + eléctrico', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 782 CV (575 kW)', displacement: '3.996 cm³', maxTorque: '1.000 Nm', torqueScope: 'Par máximo del sistema híbrido', torqueRpm: '1.860–5.260 rpm' },
+      { name: 'Panamera Turbo E-Hybrid · V8 4.0 + eléctrico', type: 'Híbrido enchufable', power: 'Sistema: 680 CV (500 kW)', displacement: '3.996 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
+      { name: 'Panamera Turbo S E-Hybrid · V8 4.0 + eléctrico', type: 'Híbrido enchufable', power: 'Sistema: 782 CV (575 kW)', displacement: '3.996 cm³', maxTorque: '1.000 Nm', torqueScope: 'Par máximo del sistema híbrido', torqueRpm: '1.860–5.260 rpm' },
     ],
     facts: [
       { label: 'Carrocerías', value: 'Berlina deportiva y Executive en determinadas versiones' },
@@ -150,11 +121,11 @@ export const porscheModels: ModelPageData[] = [
     powertrainSummary: 'El Macan Electric parte de 265 kW (360 CV) y el Turbo alcanza 470 kW (639 CV) con Launch Control. Entre ambos están Macan 4, Macan 4S y Macan GTS. Ninguna versión de esta gama tiene cilindrada térmica.',
     usageNote: 'Porsche publica las potencias máximas con Launch Control, que no equivalen a potencia permanente. Para valorar un SUV eléctrico, además de la cifra de potencia, compara autonomía WLTP, consumo, posibilidad de cargar en casa y tiempos en corriente continua: cambian con el acabado y el equipamiento.',
     versions: [
-      { name: 'Macan Electric', type: 'Eléctrico de batería', power: '360 CV (265 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: '' },
-      { name: 'Macan 4 Electric', type: 'Eléctrico de batería', power: '408 CV (300 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Macan 4S Electric', type: 'Eléctrico de batería', power: '516 CV (380 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Macan GTS Electric', type: 'Eléctrico de batería', power: '571 CV (420 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Macan Turbo Electric', type: 'Eléctrico de batería', power: '639 CV (470 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Macan Electric', type: 'Eléctrico', power: '360 CV (265 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: '' },
+      { name: 'Macan 4 Electric', type: 'Eléctrico', power: '408 CV (300 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Macan 4S Electric', type: 'Eléctrico', power: '516 CV (380 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Macan GTS Electric', type: 'Eléctrico', power: '571 CV (420 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Macan Turbo Electric', type: 'Eléctrico', power: '639 CV (470 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV de cinco puertas' },
@@ -185,12 +156,12 @@ export const porscheModels: ModelPageData[] = [
       { name: 'Cayenne / Cayenne Coupé / Black Edition · V6 3.0 turbo', type: 'Gasolina', power: '353 CV (260 kW)', displacement: '2.995 cm³', maxTorque: '', torqueScope: 'Motor de combustión', torqueRpm: '' },
       { name: 'Cayenne S · V8 4.0 biturbo', type: 'Gasolina', power: '474 CV (349 kW)', displacement: '3.996 cm³', maxTorque: '600 Nm', torqueScope: 'Motor de combustión', torqueRpm: '2.000–5.000 rpm' },
       { name: 'Cayenne GTS · V8 4.0 biturbo', type: 'Gasolina', power: '500 CV (368 kW)', displacement: '3.996 cm³', maxTorque: '', torqueScope: 'Motor de combustión', torqueRpm: '' },
-      { name: 'Cayenne E-Hybrid / Coupé E-Hybrid / E-Hybrid Black Edition · V6 3.0 + eléctrico', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 470 CV (346 kW)', displacement: '2.995 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
-      { name: 'Cayenne S E-Hybrid / Coupé S E-Hybrid / S E-Hybrid Black Edition · V6 3.0 + eléctrico', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 519 CV (382 kW)', displacement: '2.995 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
-      { name: 'Cayenne Turbo E-Hybrid / Coupé Turbo E-Hybrid · V8 4.0 + eléctrico', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 739 CV (544 kW)', displacement: '3.996 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
-      { name: 'Cayenne Electric', type: 'Eléctrico de batería', power: '442 CV (325 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Cayenne S Electric', type: 'Eléctrico de batería', power: '666 CV (490 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
-      { name: 'Cayenne Turbo Electric', type: 'Eléctrico de batería', power: '1.156 CV (850 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Cayenne E-Hybrid / Coupé E-Hybrid / E-Hybrid Black Edition · V6 3.0 + eléctrico', type: 'Híbrido enchufable', power: 'Sistema: 470 CV (346 kW)', displacement: '2.995 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
+      { name: 'Cayenne S E-Hybrid / Coupé S E-Hybrid / S E-Hybrid Black Edition · V6 3.0 + eléctrico', type: 'Híbrido enchufable', power: 'Sistema: 519 CV (382 kW)', displacement: '2.995 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
+      { name: 'Cayenne Turbo E-Hybrid / Coupé Turbo E-Hybrid · V8 4.0 + eléctrico', type: 'Híbrido enchufable', power: 'Sistema: 739 CV (544 kW)', displacement: '3.996 cm³', maxTorque: '', torqueScope: 'Sistema híbrido', torqueRpm: '' },
+      { name: 'Cayenne Electric', type: 'Eléctrico', power: '442 CV (325 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Cayenne S Electric', type: 'Eléctrico', power: '666 CV (490 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
+      { name: 'Cayenne Turbo Electric', type: 'Eléctrico', power: '1.156 CV (850 kW) con Launch Control', displacement: '—', maxTorque: '', torqueScope: 'Motores eléctricos', torqueRpm: '' },
     ],
     facts: [
       { label: 'Carrocerías', value: 'SUV y Coupé en las familias de combustión, PHEV y Electric, según versión' },
@@ -198,7 +169,7 @@ export const porscheModels: ModelPageData[] = [
       { label: 'Sistemas híbridos', value: 'E-Hybrid enchufable de gasolina y electricidad' },
       { label: 'Año-modelo consultado', value: 'MY2027 en el configurador español, para las versiones térmicas, E-Hybrid y Electric' },
     ],
-    specNote: 'La gama que muestra el configurador español corresponde al año-modelo 2027, también para Cayenne Electric. Las filas agrupan SUV y Coupé cuando comparten motorización; también incluyen acabados Black Edition junto a su motor equivalente. La documentación técnica oficial consultada confirma la cilindrada del V8 Cayenne S y de los motores V6/V8 E-Hybrid. En híbridos y eléctricos se omite el par cuando la fuente no publica conjuntamente el régimen correspondiente.',
+    specNote: 'El configurador consultado muestra año-modelo 2027 para las variantes incluidas. Las filas agrupan SUV y Coupé cuando comparten motorización; la lista de precios más abajo separa carrocerías y acabados Black Edition con su PVP exacto. La documentación técnica oficial consultada confirma la cilindrada del V8 Cayenne S y de los motores V6/V8 E-Hybrid. En híbridos y eléctricos se omite el par cuando la fuente no publica conjuntamente el régimen correspondiente.',
     officialUrl: `${porsche}/models/cayenne/`,
     technicalUrl: `${porsche}/models/cayenne/configure/`,
     sources: [

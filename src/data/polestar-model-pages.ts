@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '3 de noviembre de 2026';
+const reviewedAt = '11 de noviembre de 2026';
 const spain = 'https://www.polestar.com/es';
 const source = (label: string, url: string) => ({ label, url });
 const image = (data: NonNullable<ModelPageData['image']>): NonNullable<ModelPageData['image']> => data;
@@ -9,6 +9,7 @@ const model = (data: Omit<ModelPageData, 'brandSlug' | 'reviewedAt'>): ModelPage
   brandSlug: 'polestar',
   reviewedAt,
   ...data,
+  versions: data.versions.map((version) => ({ ...version, type: 'Eléctrico', powertrainGroup: 'electric' })),
 });
 
 export const polestarModels: ModelPageData[] = [
@@ -69,7 +70,7 @@ export const polestarModels: ModelPageData[] = [
       { label: 'Carrocería', value: 'SUV eléctrico de cinco plazas' },
       { label: 'Tracción', value: 'Trasera o total, según versión' },
       { label: 'Batería', value: '92 kWh Rear motor; 106 kWh Dual motor y Performance' },
-      { label: 'Autonomía WLTP', value: 'De 601 a 647 km, según versión' },
+      { label: 'Autonomía WLTP', value: '603 km Rear motor, 647 km Dual motor y 601 km Performance' },
     ],
     specNote: 'Las potencias y autonomías corresponden a las tres versiones de la ficha técnica española consultada. Polestar ofrece 800 V y diferentes límites de carga según motorización, pero las celdas de par quedan vacías porque la fuente no indica el régimen de rpm.',
     officialUrl: `${spain}/polestar-3/`,

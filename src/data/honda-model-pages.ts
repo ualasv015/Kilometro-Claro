@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '13 de noviembre de 2026';
 const rangeUrl = 'https://www.honda.es/cars.html';
 const configuratorUrl = 'https://www.honda.es/cars/configurador.html';
 const honda = 'https://www.honda.es/cars/new';
@@ -44,7 +44,7 @@ export const hondaModels: ModelPageData[] = [
     intro: 'El Jazz es el utilitario híbrido de cinco puertas de Honda. Su carrocería alta prioriza el aprovechamiento del espacio y la gama española consultada se articula alrededor del sistema e:HEV de gasolina y electricidad, sin necesidad de conectarlo a la red.',
     powertrainSummary: 'Honda publica un motor de gasolina de 1.498 cm³ con 107 CV (79 kW) y un motor eléctrico de hasta 122 CV (90 kW). Son cifras de componentes distintos y no deben sumarse como si fueran la potencia combinada. El par térmico declarado es de 131 Nm entre 4.500 y 5.000 rpm; la ficha da el par eléctrico, pero no su régimen.',
     usageNote: 'El Jazz está pensado para combinar desplazamientos urbanos con trayectos interurbanos. Su sistema híbrido puede mover el coche eléctricamente durante algunas fases, pero no es un eléctrico enchufable: el motor de gasolina y la frenada regenerativa mantienen la batería. El consumo homologado depende de la configuración y no predice por sí solo el gasto de cada conductor.',
-    versions: [{ name: 'e:HEV 1.5', power: 'Térmico: 107 CV (79 kW); eléctrico: 122 CV (90 kW)', displacement: '1.498 cm³', maxTorque: '131 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500–5.000 rpm' }],
+    versions: [{ name: 'e:HEV 1.5', type: 'Híbrido no enchufable · HEV gasolina + eléctrico', power: 'Térmico: 107 CV (79 kW); eléctrico: 122 CV (90 kW)', displacement: '1.498 cm³', maxTorque: '131 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500–5.000 rpm' }],
     facts: [
       { label: 'Carrocería', value: 'Utilitario de cinco puertas' },
       { label: 'Plazas', value: '5' },
@@ -71,7 +71,7 @@ export const hondaModels: ModelPageData[] = [
     intro: 'El Jazz Crosstar parte de la base del Jazz, pero adopta una presentación de estilo crossover y una carrocería ligeramente más alta. Honda lo comercializa en España como una familia diferenciada y mantiene el sistema híbrido e:HEV de 1,5 litros.',
     powertrainSummary: 'La ficha oficial del Crosstar recoge 1.498 cm³, 107 CV (79 kW) para el motor de gasolina y hasta 122 CV (90 kW) para el eléctrico. Honda declara 131 Nm de par térmico entre 4.500 y 5.000 rpm. Las potencias pertenecen a motores distintos; el par eléctrico se omite porque la documentación no da su régimen.',
     usageNote: 'Frente al Jazz convencional, el Crosstar ofrece una apariencia más cercana a un pequeño crossover, aunque sigue siendo un modelo urbano de tracción delantera y no un todoterreno. Conviene comparar el precio y el equipamiento concreto, además del espacio, el consumo y el tipo de recorridos habituales.',
-    versions: [{ name: 'e:HEV 1.5', power: 'Térmico: 107 CV (79 kW); eléctrico: 122 CV (90 kW)', displacement: '1.498 cm³', maxTorque: '131 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500–5.000 rpm' }],
+    versions: [{ name: 'e:HEV 1.5', type: 'Híbrido no enchufable · HEV gasolina + eléctrico', power: 'Térmico: 107 CV (79 kW); eléctrico: 122 CV (90 kW)', displacement: '1.498 cm³', maxTorque: '131 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500–5.000 rpm' }],
     facts: [
       { label: 'Carrocería', value: 'Utilitario crossover de cinco puertas' },
       { label: 'Plazas', value: '5' },
@@ -98,7 +98,7 @@ export const hondaModels: ModelPageData[] = [
     intro: 'El Prelude recupera el nombre de un coupé histórico de Honda con una propuesta actual de cuatro plazas y propulsión híbrida. En la gama española consultada figura como un modelo independiente, con el sistema 2.0 e:HEV y la tecnología Honda S+ Shift.',
     powertrainSummary: 'El sistema combina un motor de gasolina de 1.993 cm³, 143 CV (105 kW) a 5.900 rpm, y un motor eléctrico de hasta 184 CV (135 kW). Honda especifica 186 Nm para el térmico a 4.500 rpm y 315 Nm para el eléctrico sin indicar régimen. Las dos potencias son datos de componentes separados, no una suma.',
     usageNote: 'Su carrocería coupé y sus cuatro plazas lo distinguen de los híbridos utilitarios y SUV de la marca. Antes de valorarlo como coche único, conviene comprobar el acceso a las plazas traseras y el maletero: Honda publica 264 litros con los asientos montados. El consumo homologado tampoco sustituye una estimación basada en el uso propio.',
-    versions: [{ name: 'e:HEV 2.0', power: 'Térmico: 143 CV (105 kW); eléctrico: 184 CV (135 kW)', displacement: '1.993 cm³', maxTorque: '186 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' }],
+    versions: [{ name: 'e:HEV 2.0', type: 'Híbrido no enchufable · HEV gasolina + eléctrico', power: 'Térmico: 143 CV (105 kW); eléctrico: 184 CV (135 kW)', displacement: '1.993 cm³', maxTorque: '186 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' }],
     facts: [
       { label: 'Carrocería', value: 'Coupé de cuatro plazas' },
       { label: 'Longitud', value: '4.525 mm' },
@@ -125,7 +125,7 @@ export const hondaModels: ModelPageData[] = [
     intro: 'El Civic es el compacto de cinco puertas de Honda y, en la oferta española consultada, se vende con el sistema híbrido e:HEV. La ficha distingue la potencia del motor de gasolina de la del eléctrico, una diferencia importante al comparar cifras entre fabricantes.',
     powertrainSummary: 'El motor térmico de 1.993 cm³ entrega 143 CV (105 kW) a 5.900 rpm y 186 Nm a 4.500 rpm. El motor eléctrico alcanza 184 CV (135 kW) y Honda declara 315 Nm sin indicar el régimen. No sumamos ambas potencias: son máximos individuales de elementos distintos.',
     usageNote: 'La carrocería de cinco puertas busca combinar uso diario, espacio para pasajeros y un tacto más dinámico que el de un SUV. Para comparar esta versión con un híbrido enchufable o un eléctrico, considera también si puedes cargar en casa, el tipo de trayectos y el gasto real, no solo la potencia máxima.',
-    versions: [{ name: 'e:HEV 2.0', power: 'Térmico: 143 CV (105 kW); eléctrico: 184 CV (135 kW)', displacement: '1.993 cm³', maxTorque: '186 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' }],
+    versions: [{ name: 'e:HEV 2.0', type: 'Híbrido no enchufable · HEV gasolina + eléctrico', power: 'Térmico: 143 CV (105 kW); eléctrico: 184 CV (135 kW)', displacement: '1.993 cm³', maxTorque: '186 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' }],
     facts: [
       { label: 'Carrocería', value: 'Compacto de cinco puertas' },
       { label: 'Plazas', value: '5' },
@@ -152,7 +152,7 @@ export const hondaModels: ModelPageData[] = [
     intro: 'El HR-V es el SUV compacto híbrido de Honda. Su sistema e:HEV no se conecta a un cargador y combina un motor de gasolina de 1,5 litros con un motor eléctrico. La ficha española separa sus cifras para que no se confunda la potencia de cada componente.',
     powertrainSummary: 'Honda declara 1.498 cm³ y 107 CV (79 kW) para el motor térmico, con 131 Nm a 5.000 rpm. El motor eléctrico alcanza 131 CV (96 kW) y 253 Nm; la ficha consultada no indica las rpm de ese par. No se deben sumar directamente las dos potencias máximas.',
     usageNote: 'La altura de carrocería y la posición de conducción lo acercan a un SUV urbano, pero sigue siendo un híbrido de gasolina: no ofrece la conducción eléctrica prolongada de un PHEV cargado ni la autonomía de un eléctrico de batería. Honda publica 4.355 mm de longitud; comprueba también espacio trasero y maletero si será el coche familiar principal.',
-    versions: [{ name: 'e:HEV 1.5', power: 'Térmico: 107 CV (79 kW); eléctrico: 131 CV (96 kW)', displacement: '1.498 cm³', maxTorque: '131 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '5.000 rpm' }],
+    versions: [{ name: 'e:HEV 1.5', type: 'Híbrido no enchufable · HEV gasolina + eléctrico', power: 'Térmico: 107 CV (79 kW); eléctrico: 131 CV (96 kW)', displacement: '1.498 cm³', maxTorque: '131 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '5.000 rpm' }],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto' },
       { label: 'Plazas', value: '5' },
@@ -179,7 +179,7 @@ export const hondaModels: ModelPageData[] = [
     intro: 'El ZR-V ocupa el espacio de SUV compacto-mediano en la gama Honda y utiliza el sistema híbrido e:HEV de dos litros. La marca lo plantea como una alternativa más amplia que el HR-V, con una única familia de propulsión híbrida en la página técnica española consultada.',
     powertrainSummary: 'El motor de gasolina de 1.993 cm³ desarrolla 143 CV (105 kW) a 6.000 rpm y 186 Nm a 4.500 rpm. El motor eléctrico alcanza 184 CV (135 kW) y 315 Nm, sin régimen publicado para esa cifra. Honda no propone sumar directamente los máximos de ambos motores.',
     usageNote: 'El tamaño y el enfoque del ZR-V pueden resultar adecuados para quien necesita más espacio que en un SUV urbano, aunque sus dimensiones también importan al aparcar y circular por calles estrechas. La ficha declara 5,8 l/100 km WLTP en ciclo combinado; el consumo real depende de velocidad, carga, temperatura y recorrido.',
-    versions: [{ name: 'e:HEV 2.0', power: 'Térmico: 143 CV (105 kW); eléctrico: 184 CV (135 kW)', displacement: '1.993 cm³', maxTorque: '186 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' }],
+    versions: [{ name: 'e:HEV 2.0', type: 'Híbrido no enchufable · HEV gasolina + eléctrico', power: 'Térmico: 143 CV (105 kW); eléctrico: 184 CV (135 kW)', displacement: '1.993 cm³', maxTorque: '186 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' }],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto-mediano' },
       { label: 'Plazas', value: '5' },
@@ -207,8 +207,8 @@ export const hondaModels: ModelPageData[] = [
     powertrainSummary: 'En las dos fichas Honda publica un motor de gasolina de 1.993 cm³, 144 CV (106 kW) y 189 Nm a 4.500 rpm, junto a un motor eléctrico de hasta 184 CV (135 kW). El CR-V e:HEV se configura con tracción delantera o total según acabado; el e:PHEV consultado es 4x2. Las potencias corresponden a cada motor por separado y no se suman. El par eléctrico no incluye régimen en rpm.',
     usageNote: 'La diferencia práctica clave es la recarga: el CR-V e:HEV no necesita enchufe, mientras que el e:PHEV permite recorrer parte de los trayectos con energía cargada desde la red y después funciona como híbrido. Para aprovechar el PHEV conviene disponer de recarga habitual; si no, su consumo real puede alejarse de la cifra ponderada homologada. Compara plazas, maletero y tracción de cada acabado antes de elegir.',
     versions: [
-      { name: 'e:HEV Full Hybrid 2.0', power: 'Térmico: 144 CV (106 kW); eléctrico: 184 CV (135 kW)', displacement: '1.993 cm³', maxTorque: '189 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' },
-      { name: 'e:PHEV Plug-in Hybrid 2.0', power: 'Térmico: 144 CV (106 kW); eléctrico: 184 CV (135 kW)', displacement: '1.993 cm³', maxTorque: '189 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' },
+      { name: 'e:HEV Full Hybrid 2.0', type: 'Híbrido no enchufable · HEV gasolina + eléctrico', power: 'Térmico: 144 CV (106 kW); eléctrico: 184 CV (135 kW)', displacement: '1.993 cm³', maxTorque: '189 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' },
+      { name: 'e:PHEV Plug-in Hybrid 2.0', type: 'Híbrido enchufable · PHEV gasolina + eléctrico', power: 'Térmico: 144 CV (106 kW); eléctrico: 184 CV (135 kW)', displacement: '1.993 cm³', maxTorque: '189 Nm', torqueScope: 'Motor térmico gasolina', torqueRpm: '4.500 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV grande de cinco plazas' },

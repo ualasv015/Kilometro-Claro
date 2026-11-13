@@ -1,6 +1,6 @@
 import type { ModelPageData, ModelVersion } from './model-pages';
 
-const reviewedAt = '28 de octubre de 2026';
+const reviewedAt = '5 de noviembre de 2026';
 const root = 'https://www.kia.com/es';
 const range = `${root}/modelos/modelos-kia/gama-kia/`;
 const version = (name: string, power: string, displacement: string, maxTorque: string, torqueRpm: string, additionalTorque?: string, classification?: Pick<ModelVersion, 'type' | 'powertrainGroup'>, torqueScopeOverride?: string): ModelVersion => ({
@@ -21,7 +21,7 @@ const profiles: KiaProfile[] = [
     intro: 'El Picanto es el turismo de acceso de Kia: una carrocería pequeña de cinco puertas pensada para maniobrar y aparcar en ciudad. La gama española consultada utiliza gasolina 1.0 y permite escoger caja manual o manual automatizada AMT.',
     summary: 'Kia España describe un motor 1.0 GDi de gasolina, con transmisión manual de cinco relaciones o AMT. La marca ofrece varios acabados; el equipamiento y las ruedas dependen de la configuración.',
     usage: 'Su tamaño favorece los desplazamientos urbanos y el aparcamiento, pero conviene probar las plazas traseras y el maletero si será el coche principal para viajar. La caja AMT automatiza el embrague y el cambio; su tacto no es idéntico al de un automático de convertidor o doble embrague.',
-    versions: [version('1.0 GDi 5MT / 5AMT', '68 CV (50 kW)', '998 cm³', '96 Nm', '4.000 rpm', 'Tracción delantera; manual o manual automatizada de cinco marchas.', undefined, 'Motor de gasolina')],
+    versions: [version('1.0 GDi 5MT', '68 CV (50 kW)', '998 cm³', '96 Nm', '4.000 rpm', 'Tracción delantera; cambio manual de cinco marchas.', undefined, 'Motor de gasolina'), version('1.0 GDi 5AMT · GT-Line', '68 CV (50 kW)', '998 cm³', '96 Nm', '4.000 rpm', 'Tracción delantera; cambio manual automatizado de cinco marchas.', undefined, 'Motor de gasolina')],
     facts: [{ label: 'Carrocería', value: 'Urbano de cinco puertas' }, { label: 'Plazas', value: '4' }, { label: 'Combustible', value: 'Gasolina' }, { label: 'Transmisión', value: 'Manual o AMT, según acabado' }],
     figures: [{ label: 'Motor anunciado', value: '1.0 GDi' }, { label: 'Cambios disponibles', value: '5MT o AMT' }],
     official: `${root}/modelos/picanto/descubrelo/`, technical: `${root}/modelos/picanto/especificaciones/`,
@@ -33,7 +33,7 @@ const profiles: KiaProfile[] = [
     usage: 'La versión MHEV puede recuperar energía y asistir al motor, aunque sigue dependiendo de la gasolina. Al comparar ofertas, revisa si el acabado incorpora caja manual o DCT y confirma la homologación WLTP de esa combinación concreta.',
     versions: [
       version('1.0 T-GDi 100 · 6MT', '100 CV (73,6 kW)', '998 cm³', '172 Nm', '1.500–3.500 rpm', 'Gasolina; tracción delantera.', undefined, 'Motor de gasolina'),
-      version('1.0 T-GDi MHEV 115 · 6MT', '115 CV (84,6 kW)', '998 cm³', '172 Nm', '1.500–3.500 rpm', 'Hibridación ligera de 48 V; tracción delantera.', undefined, 'Motor térmico de gasolina'),
+      version('1.0 T-GDi MHEV 115 · 6MT', '115 CV (84,6 kW)', '998 cm³', '200 Nm', '2.000–3.000 rpm', 'Hibridación ligera de 48 V; tracción delantera.', undefined, 'Motor térmico de gasolina'),
       version('1.0 T-GDi MHEV 115 · 7DCT', '115 CV (84,6 kW)', '998 cm³', '200 Nm', '2.000–3.000 rpm', 'Hibridación ligera de 48 V; tracción delantera.', undefined, 'Motor térmico de gasolina'),
     ],
     facts: [{ label: 'Carrocería', value: 'SUV urbano de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Motores', value: 'Gasolina y MHEV 48 V' }, { label: 'Cambio', value: 'Manual o DCT, según versión' }],
@@ -43,13 +43,16 @@ const profiles: KiaProfile[] = [
   {
     slug: 'ev2', name: 'EV2', body: 'SUV urbano eléctrico',
     intro: 'El EV2 es el eléctrico urbano de Kia. Su formato corto busca combinar uso diario en ciudad con una batería suficiente para salir del entorno urbano, aunque la ficha española debe consultarse por acabado y tamaño de rueda.',
-    summary: 'La documentación oficial del EV2 publicada para España recoge una versión Standard Range de 42,2 kWh, 108 kW (147 CV), 250 Nm y autonomía WLTP combinada de hasta 317 km. La marca puede ampliar la gama con otras capacidades y acabados.',
+    summary: 'Kia España ofrece el EV2 con batería Standard Range de 42,2 kWh y Long Range de 61,0 kWh. La marca publica 108 kW (147 CV) para la primera y 135 CV para la segunda; la autonomía WLTP combinada anunciada alcanza 317 y 453 km, respectivamente.',
     usage: 'La autonomía homologada no es una garantía de distancia en autopista: velocidad, temperatura, pendiente y climatización cambian el resultado. Para uso principalmente urbano, también importa el acceso a carga doméstica o de destino.',
-    versions: [version('Standard Range 42,2 kWh', '108 kW (147 CV)', 'No aplica: eléctrico', '250 Nm', 'En torno a 4.000 rpm según ficha técnica', 'Tracción delantera; batería de 42,2 kWh.')],
-    facts: [{ label: 'Carrocería', value: 'SUV urbano eléctrico' }, { label: 'Plazas', value: '5' }, { label: 'Maletero', value: 'Hasta 362 l, según configuración' }, { label: 'Batería citada', value: '42,2 kWh' }],
-    figures: [{ label: 'Potencia', value: '108 kW (147 CV)' }, { label: 'Autonomía WLTP combinada', value: 'Hasta 317 km en Standard Range' }, { label: 'Carga rápida', value: '10–80 % en 29 min, según ficha' }],
+    versions: [
+      version('Standard Range 42,2 kWh', '147 CV (107,8 kW)', 'No aplica: eléctrico', '250 Nm', '4.000 rpm aprox.', 'Tracción delantera; batería LFP de 42,2 kWh.'),
+      version('Long Range 61,0 kWh', '135 CV (99 kW)', 'No aplica: eléctrico', '', '', 'Tracción delantera; batería de 61,0 kWh. Kia España no publica aquí un régimen de par máximo para esta versión.'),
+    ],
+    facts: [{ label: 'Carrocería', value: 'SUV urbano eléctrico' }, { label: 'Plazas', value: '5' }, { label: 'Maletero', value: 'Hasta 362 l, según configuración' }, { label: 'Baterías', value: '42,2 o 61,0 kWh' }],
+    figures: [{ label: 'Potencia', value: '147 CV Standard Range; 135 CV Long Range' }, { label: 'Autonomía WLTP combinada', value: 'Hasta 317 km Standard Range o 453 km Long Range' }, { label: 'Carga rápida', value: '10–80 % en unos 29–30 min, según batería' }],
     official: `${root}/modelos/ev2/descubrelo/`, technical: 'https://www.kia.com/content/dam/kwcms/kme/es/es/assets/contents/catalogos/ev2/Catalogo_EV2_MY27.pdf',
-    note: 'Las cifras corresponden a la versión Standard Range de 42,2 kWh localizada en la documentación de Kia España; no se extrapolan a baterías o acabados posteriores.',
+    note: 'La ficha de Kia España anuncia 108 kW/147 CV y 317 km para Standard Range, y 135 CV y 453 km para Long Range. Las cifras de autonomía son WLTP y dependen de la configuración.',
   },
   {
     slug: 'ev3', name: 'EV3', body: 'SUV eléctrico',
@@ -97,46 +100,14 @@ const profiles: KiaProfile[] = [
   },
   {
     slug: 'niro', name: 'Niro', body: 'Crossover',
-    intro: 'El Niro es un crossover compacto de Kia que se ofrece con sistemas electrificados. La documentación española MY26 distingue el híbrido autorrecargable y el híbrido enchufable; la presencia de cada versión en la oferta comercial puede cambiar con el año-modelo.',
-    summary: 'El catálogo técnico Kia España MY26 publica un Niro HEV de 138 CV y un PHEV de 180 CV. En ambos, el par indicado en esta tabla corresponde al motor de gasolina, no al sistema híbrido completo.',
-    usage: 'El HEV no necesita enchufe y puede ser más sencillo si no dispones de plaza de carga; el PHEV aprovecha mejor sus ventajas cuando se recarga con frecuencia. Compara consumo con batería descargada para no sobreestimar el ahorro del enchufable.',
-    versions: [
-      version('1.6 GDi HEV · sistema 138 CV', '138 CV (101,5 kW)', '1.580 cm³', '141 Nm', '4.000 rpm', 'El catálogo publica además 102 CV (75 kW) para el motor gasolina; el par mostrado corresponde a ese motor.', undefined, 'Motor gasolina'),
-      version('1.6 GDi PHEV · sistema 180 CV', '180 CV', '1.580 cm³', '141 Nm', '4.000 rpm', 'El catálogo MY26 publica 102 CV (75 kW) térmicos y 84,3 CV (62 kW) eléctricos. El par indicado es del motor gasolina.', undefined, 'Motor gasolina'),
-    ],
-    facts: [{ label: 'Carrocería', value: 'Crossover compacto' }, { label: 'Tecnologías documentadas', value: 'HEV y PHEV' }, { label: 'Recarga externa', value: 'Solo en el PHEV' }, { label: 'Plazas', value: '5' }],
-    figures: [{ label: 'Potencia combinada', value: '138 CV (HEV) o 180 CV (PHEV), según catálogo MY26' }],
+    intro: 'El Niro es un crossover compacto que Kia España presenta actualmente con una única motorización híbrida no enchufable. Combina un motor de gasolina 1.6 GDi con asistencia eléctrica y transmisión automática de doble embrague.',
+    summary: 'La ficha española vigente identifica el 1.6 GDi HEV con 101,5 kW (138 CV) de potencia combinada. No añadimos el antiguo Niro PHEV: no figura en la gama actual de modelos particulares de Kia España consultada.',
+    usage: 'El sistema HEV no necesita conexión a la red: recupera energía durante la conducción y la utiliza junto al motor térmico. Para valorar su consumo, ten en cuenta que el resultado depende del recorrido, el tráfico, la temperatura y el estilo de conducción.',
+    versions: [version('1.6 GDi HEV · sistema 138 CV', '138 CV (101,5 kW)', '1.580 cm³', '141 Nm', '4.000 rpm', 'Potencia combinada del sistema; el par mostrado corresponde al motor de gasolina.', undefined, 'Motor de gasolina')],
+    facts: [{ label: 'Carrocería', value: 'Crossover compacto' }, { label: 'Tecnología', value: 'Híbrido no enchufable (HEV)' }, { label: 'Recarga externa', value: 'No requiere enchufe' }, { label: 'Plazas', value: '5' }],
+    figures: [{ label: 'Potencia combinada', value: '138 CV (101,5 kW)' }],
     official: `${root}/modelos/niro/descubrelo/`, technical: `${root}/modelos/niro/especificaciones/`,
-    note: 'En la tabla PHEV del catálogo MY26, Kia indica 180 CV combinados y 101,5 kW. Esas magnitudes no son equivalentes; la tabla presenta 180 CV y su conversión aritmética aproximada a kW, no la cifra en kW inconsistente del documento.',
-  },
-  {
-    slug: 'ceed', name: 'Ceed', body: 'Compacto',
-    intro: 'El Ceed es el compacto de cinco puertas de Kia. La última ficha técnica española localizada corresponde al año-modelo MY25; aunque Kia mantiene páginas comerciales del modelo, las motorizaciones y la disponibilidad de unidades nuevas pueden depender del stock y del concesionario.',
-    summary: 'El catálogo técnico MY25 de Kia España recoge un 1.0 T-GDi de gasolina y dos versiones MHEV. La tabla refleja esas especificaciones documentadas y no presupone que cada combinación siga disponible para pedido nuevo.',
-    usage: 'Este compacto puede servir como coche único para ciudad y carretera. Si valoras una unidad nueva, confirma el año-modelo, el motor y el plazo de entrega en la oferta concreta; una ficha MY25 no garantiza que todas las combinaciones sigan en producción.',
-    versions: [
-      version('MY25 · 1.0 T-GDi 100 · 6MT', '100 CV (73,6 kW)', '998 cm³', '172 Nm', '1.500–3.500 rpm', 'Último catálogo técnico español localizado: MY25.', undefined, 'Motor de gasolina'),
-      version('MY25 · 1.0 T-GDi MHEV 100 · 7DCT', '100 CV (73,6 kW)', '998 cm³', '200 Nm', '2.000–2.500 rpm', 'Último catálogo técnico español localizado: MY25.', undefined, 'Motor térmico de gasolina'),
-      version('MY25 · 1.5 T-GDi MHEV 140 · 7DCT', '140 CV (103 kW)', '1.482 cm³', '253 Nm', '1.500–3.000 rpm', 'Último catálogo técnico español localizado: MY25.', undefined, 'Motor térmico de gasolina'),
-    ],
-    facts: [{ label: 'Carrocería', value: 'Compacto de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Combustible', value: 'Gasolina' }, { label: 'Alternativa familiar', value: 'Ceed Tourer' }],
-    figures: [{ label: 'Gama consultada', value: 'Motores gasolina y acabados publicados por Kia España' }],
-    official: `${root}/modelos/ceed/descubrelo/`, technical: `${root}/modelos/ceed/especificaciones/`,
-  },
-  {
-    slug: 'ceed-tourer', name: 'Ceed Tourer', body: 'Familiar',
-    intro: 'El Ceed Tourer es la carrocería familiar de la gama Ceed. El aumento de longitud útil y de maletero lo orienta a viajes y a transportar carga, manteniendo una silueta baja frente a un SUV.',
-    summary: 'El último catálogo técnico español localizado (MY25) recoge un 1.0 T-GDi de gasolina y versiones MHEV de gasolina. Kia conserva una página comercial del modelo, pero conviene confirmar el año-modelo y las combinaciones disponibles antes de tomar estas cifras como una oferta actual.',
-    usage: 'Un familiar suele ofrecer una zona de carga más aprovechable que un SUV de longitud similar. Comprueba el maletero y la motorización de la unidad concreta; la documentación MY25 no garantiza que todas las variantes sigan disponibles para pedido.',
-    versions: [
-      version('MY25 · 1.0 T-GDi 100 · 6MT', '100 CV (73,6 kW)', '998 cm³', '172 Nm', '1.500–3.500 rpm', 'Último catálogo técnico español localizado: MY25.', undefined, 'Motor de gasolina'),
-      version('MY25 · 1.0 T-GDi MHEV 100 · 7DCT', '100 CV (73,6 kW)', '998 cm³', '200 Nm', '2.000–2.500 rpm', 'Último catálogo técnico español localizado: MY25.', undefined, 'Motor térmico de gasolina'),
-      version('MY25 · 1.5 T-GDi MHEV 140 · 7DCT', '140 CV (103 kW)', '1.482 cm³', '253 Nm', '1.500–3.000 rpm', 'Último catálogo técnico español localizado: MY25.', undefined, 'Motor térmico de gasolina'),
-    ],
-    facts: [{ label: 'Carrocería', value: 'Familiar de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Uso característico', value: 'Viajes y equipaje' }, { label: 'Tecnologías documentadas', value: 'Gasolina y MHEV en el catálogo MY25' }],
-    figures: [{ label: 'Dato a comparar', value: 'Maletero con batería y acabado concretos' }],
-    official: `${root}/modelos/ceed-tourer/descubrelo/`, technical: `${root}/modelos/ceed-tourer/especificaciones/`,
-    note: 'Las cifras corresponden al último catálogo técnico español que hemos localizado (MY25); no se presentan como garantía de que el Ceed Tourer siga en la gama nueva actual. Confirma disponibilidad con Kia España o un concesionario.',
+    note: 'La gama de modelos particulares de Kia España consultada muestra el Niro HEV. Se excluye el Niro PHEV de catálogos y páginas antiguas que aún pueden seguir accesibles.',
   },
   {
     slug: 'xceed', name: 'XCeed', body: 'Crossover',
@@ -156,8 +127,8 @@ const profiles: KiaProfile[] = [
   },
   {
     slug: 'seltos', name: 'Seltos', body: 'SUV',
-    intro: 'El Seltos es un SUV compacto de Kia incorporado a la gama española. En la oferta nacional consultada aparece con motor 1.6 T-GDi de gasolina y varias combinaciones de caja y tracción.',
-    summary: 'La página española muestra el Seltos 1.6 T-GDi de gasolina en configuraciones manual o DCT, con tracción delantera o total. Aunque existen versiones híbridas en otros mercados, no se incluyen porque no aparecen en el selector español consultado.',
+    intro: 'El Seltos es un SUV compacto que se ha incorporado a la gama española de Kia. Su ficha de producto permite distinguir las combinaciones manual y automática, con tracción delantera o total, todas asociadas al motor 1.6 T-GDi de gasolina.',
+    summary: 'La página de Kia España muestra tres configuraciones del 1.6 T-GDi de 180 CV: 6MT 2WD, 7DCT 2WD y 7DCT AWD. El contenido técnico del modelo todavía contiene un aviso de homologación y desarrollo, por lo que las cifras pueden cambiar antes o durante su comercialización.',
     usage: 'Antes de compararlo con Sportage, considera dimensiones, plazas, maletero y las diferencias entre tracción delantera y total. Las fichas de Kia son la referencia para comprobar consumo, emisiones y etiqueta de cada configuración.',
     versions: [
       version('1.6 T-GDi 180 · 6MT · 2WD', '180 CV (132 kW)', '1.598 cm³', '', '', 'Gasolina; tracción delantera.', undefined, 'Motor de gasolina'),
@@ -166,25 +137,25 @@ const profiles: KiaProfile[] = [
     ],
     facts: [{ label: 'Carrocería', value: 'SUV' }, { label: 'Plazas', value: '5' }, { label: 'Mercado', value: 'Gama oficial Kia España' }, { label: 'Motor', value: '1.6 T-GDi gasolina; 2WD o AWD' }],
     figures: [{ label: 'Configuraciones', value: 'Manual 6MT o automática 7DCT, según versión' }],
-    official: `${root}/modelos/seltos/descubrelo/`, technical: `${root}/modelos/seltos/especificaciones/`,
+    official: `${root}/modelos/seltos/descubrelo/`, technical: 'https://eu-www.kia.com/es/modelos/seltos/especificaciones/',
+    note: 'Kia España advierte que las especificaciones del Seltos son objetivos sujetos a desarrollo y homologación, por lo que pueden cambiar. Conviene confirmar la configuración y sus cifras en el concesionario antes de formalizar una compra.',
   },
   {
     slug: 'sportage', name: 'Sportage', body: 'SUV',
-    intro: 'El Sportage es el SUV medio de Kia y uno de los modelos de mayor amplitud de motorizaciones de la marca. La documentación española MY27 distingue gasolina, microhíbrido de gasolina y diésel, además del HEV; el PHEV aparece como próximo lanzamiento y no se incluye como versión disponible.',
-    summary: 'La gama MY27 documentada por Kia España incluye 1.6 T-GDi de 150 CV, 1.6 T-GDi MHEV de 180 CV, 1.6 CRDi MHEV de 136 CV y 1.6 HEV de 239 CV. El par del HEV se especifica por separado para el motor de gasolina; el dato combinado de 380 Nm no tiene un régimen único publicado.',
+    intro: 'El Sportage es un SUV compacto con una gama española que combina motores de gasolina, diésel con hibridación ligera de 48 V y un híbrido HEV. Kia España indica que la variante PHEV llegará más adelante; por eso no aparece aquí como una opción actualmente disponible.',
+    summary: 'El catálogo español MY27 documenta gasolina 1.6 T-GDi de 150 CV y 180 CV, diésel 1.6 MHEV de 136 CV y HEV de 239 CV. El motor de gasolina de 180 CV del HEV no es una potencia MHEV: la potencia total del sistema es 239 CV. El catálogo también ofrece el 1.6 T-GDi 180 de gasolina con 7DCT y tracción total.',
     usage: 'El HEV no requiere enchufe y puede ser apropiado para uso mixto; el PHEV puede recorrer parte de los desplazamientos con electricidad si se carga habitualmente. Las plazas, el maletero y el consumo cambian entre motorizaciones y tracciones.',
     versions: [
       version('1.6 T-GDi 150 · 6MT', '150 CV (110,3 kW)', '1.598 cm³', '250 Nm', '1.500–4.000 rpm', 'Gasolina; tracción delantera.', undefined, 'Motor de gasolina'),
-      version('1.6 T-GDi 150 · 7DCT', '150 CV (110,3 kW)', '1.598 cm³', '250 Nm', '1.500–4.000 rpm', 'Gasolina; tracción delantera.', undefined, 'Motor de gasolina'),
-      version('1.6 T-GDi MHEV 180 · 7DCT', '180 CV (132,4 kW)', '1.598 cm³', '265 Nm', '1.500–4.500 rpm', 'Microhíbrido de gasolina; 4x2 o 4x4 según acabado.', undefined, 'Motor térmico de gasolina'),
+      version('1.6 T-GDi 180 · 7DCT', '180 CV (132,4 kW)', '1.598 cm³', '265 Nm', '1.500–4.500 rpm', 'Gasolina; tracción total.', undefined, 'Motor de gasolina'),
       version('1.6 CRDi MHEV 136 · 6MT', '136 CV (100 kW)', '1.598 cm³', '280 Nm', '1.500–2.750 rpm', 'Microhíbrido diésel; tracción delantera.', undefined, 'Motor térmico diésel'),
       version('1.6 CRDi MHEV 136 · 7DCT', '136 CV (100 kW)', '1.598 cm³', '320 Nm', '2.000–2.250 rpm', 'Microhíbrido diésel; tracción delantera.', undefined, 'Motor térmico diésel'),
       version('1.6 HEV · sistema 239 CV', '239 CV (175,7 kW)', '1.598 cm³', '265 Nm', '1.500–4.500 rpm', 'Híbrido no enchufable; Kia publica por separado 380 Nm de par combinado, sin régimen único.', undefined, 'Motor gasolina'),
     ],
-    facts: [{ label: 'Carrocería', value: 'SUV medio' }, { label: 'Plazas', value: '5' }, { label: 'Longitud publicada', value: '4.540 mm (ficha MY27)' }, { label: 'Tracción', value: 'Delantera o integral según motor' }],
+    facts: [{ label: 'Carrocería', value: 'SUV compacto' }, { label: 'Plazas', value: '5' }, { label: 'Longitud publicada', value: '4.540 mm (ficha MY27)' }, { label: 'Tracción', value: 'Delantera o integral según motor' }],
     figures: [{ label: 'HEV MY27', value: '239 CV; par combinado de 380 Nm sin régimen atribuido' }, { label: 'Maletero', value: '526–591 l, según variante publicada' }],
     official: `${root}/modelos/sportage/descubrelo/`, technical: 'https://www.kia.com/content/dam/kwcms/kme/es/es/assets/contents/catalogos/sportage/Catalogo_Sportage_MY27.pdf',
-    note: 'El catálogo MY27 español presenta el PHEV como próximo lanzamiento (no disponible en la ficha técnica publicada), por lo que no se incorpora como motorización actual. Las variantes gasolina y diésel se separan por cambio cuando el par máximo difiere.',
+    note: 'La gama española consultada presenta el PHEV como próximo lanzamiento; se excluye de las motorizaciones actuales. El motor 1.6 T-GDi de 180 CV puede aparecer tanto como motor térmico del HEV como en versión de gasolina independiente: sus potencias de sistema y térmicas se identifican por separado.',
   },
   {
     slug: 'ev5', name: 'EV5', body: 'SUV eléctrico',
@@ -243,16 +214,27 @@ const profiles: KiaProfile[] = [
   },
 ];
 
+const kiaPriceNote = 'Precio pendiente de verificación (revisión: 5 de noviembre de 2026). Las fichas españolas remiten al configurador para consultar acabados y precios; el configurador identifica los importes publicados como estimaciones financiando y no vinculantes. La oferta visible indicaba vigencia hasta el 26/10/2026, ya vencida en la fecha de revisión, y algunas cifras eléctricas incorporaban anticipos de ayudas. No se muestran como precio actual ni se extrapolan a otras versiones. No se localizó una tarifa pública vigente y no condicionada que permita confirmar el PVP base de cada modelo y motorización. Comprueba la tarifa actual con Kia antes de comparar precios.';
+
 export const kiaModels: ModelPageData[] = profiles.map((item) => {
   const officialUrl = item.official;
   return {
     brandSlug: 'kia', modelSlug: item.slug,
     title: `Kia ${item.name}: motores, versiones y datos técnicos | Kilómetro Claro`,
     description: `Consulta las motorizaciones, tecnologías, datos oficiales y claves de uso del Kia ${item.name} disponible en España.`,
-    intro: item.intro, powertrainSummary: item.summary, usageNote: item.usage, versions: item.versions,
+    intro: item.intro, powertrainSummary: item.summary, usageNote: item.usage,
+    basePriceLabel: 'Pendiente de verificación',
+    priceNote: kiaPriceNote,
     facts: item.facts, figures: item.figures, specNote: item.note,
     officialUrl, technicalUrl: item.technical,
-    sources: [{ label: `Kia España: ${item.name}`, url: officialUrl }, { label: `Especificaciones técnicas del ${item.name}`, url: item.technical }, { label: 'Gama de modelos Kia España', url: range }],
+    sources: [
+      { label: `Kia España: ${item.name}`, url: officialUrl },
+      { label: `Especificaciones técnicas del ${item.name}`, url: item.technical },
+      { label: 'Gama de modelos Kia España', url: range },
+      { label: 'Configurador oficial Kia España: consulta el precio vigente', url: `${root}/quiero-un-kia/configurador.html` },
+      { label: 'Aviso legal Kia sobre precios de vehículos nuevos', url: 'https://eu-www.kia.com/content/kwcms/kme/es/es/legal-disclaimer.html' },
+    ],
+    versions: item.versions.map((motor) => ({ ...motor, price: motor.price ?? 'Pendiente de verificación' })),
     reviewedAt,
   };
 });

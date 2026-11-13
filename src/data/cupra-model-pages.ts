@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '10 de noviembre de 2026';
 const root = 'https://www.cupra.com/es-es';
 const source = (label: string, url: string) => ({ label, url });
 const evDisplacement = '—';
@@ -12,12 +12,12 @@ export const cupraModels: ModelPageData[] = [
     brandSlug: 'cupra', modelSlug: 'raval',
     title: 'CUPRA Raval: versiones eléctricas y datos técnicos | Kilómetro Claro',
     description: 'Compara las versiones Plus, Endurance y VZ del CUPRA Raval eléctrico: potencia, batería y datos técnicos de la gama española.',
-    intro: 'El Raval es el modelo urbano eléctrico de CUPRA. La gama española diferencia tres niveles de potencia —Plus, Endurance y VZ—, pero los nombres no representan solo acabados: cambian la configuración mecánica y la autonomía homologada. Esta ficha separa las potencias de cada versión y deja fuera la variante básica que la marca todavía anuncia como próxima.',
-    powertrainSummary: 'Las versiones configurables consultadas son eléctricas. Plus desarrolla 99 kW (135 CV), Endurance 155 kW (210 CV) y VZ 166 kW (226 CV). No hay cilindrada térmica; CUPRA publica cifras de par eléctrico sin indicar un régimen en rpm, por lo que no se trasladan a la columna de par máximo.',
+    intro: 'El Raval es el utilitario eléctrico de CUPRA, concebido para combinar dimensiones urbanas con una puesta a punto de enfoque deportivo. La gama configurable en España se divide en Plus, Endurance y VZ; cambian la potencia, la batería y el equipamiento, de modo que conviene comparar cada combinación y no solo el nombre del acabado.',
+    powertrainSummary: 'Las versiones configurables consultadas son eléctricas: Plus desarrolla 99 kW (135 CV), Endurance 155 kW (210 CV) y VZ 166 kW (226 CV). No hay cilindrada térmica. La oferta al contado publicada para Endurance corresponde a una batería de 51,5 kWh; la capacidad puede expresarse de forma distinta según se indique energía útil o bruta.',
     usageNote: 'Plus se orienta a quien prioriza el uso urbano y un precio de acceso; Endurance aumenta la autonomía homologada y VZ eleva la potencia y el equipamiento deportivo. La autonomía oficial cambia según versión, llanta y condiciones de homologación: para estimar un trayecto real, conviene considerar velocidad, temperatura y posibilidad de carga, no solo el máximo WLTP anunciado.',
     versions: versions([
       { name: 'Plus · 37 kWh', type: 'Eléctrico', power: '135 CV (99 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No se publica régimen de par' },
-      { name: 'Endurance · 52 kWh', type: 'Eléctrico', power: '210 CV (155 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No se publica régimen de par' },
+      { name: 'Endurance · batería 51,5 kWh', type: 'Eléctrico', power: '210 CV (155 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No se publica régimen de par' },
       { name: 'VZ · 52 kWh', type: 'Eléctrico', power: '226 CV (166 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No se publica régimen de par' },
     ]),
     facts: [{ label: 'Carrocería', value: 'Urbano eléctrico de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Propulsión', value: 'Eléctrica' }, { label: 'Versiones', value: 'Plus, Endurance y VZ' }],
@@ -28,19 +28,18 @@ export const cupraModels: ModelPageData[] = [
   {
     brandSlug: 'cupra', modelSlug: 'born',
     title: 'CUPRA Born 2026: versiones, potencia y batería | Kilómetro Claro',
-    description: 'Consulta las versiones eléctricas del CUPRA Born 2026, con potencias de 190, 231 y 326 CV y capacidades de batería por configuración.',
-    intro: 'El Born es el compacto eléctrico de CUPRA. La gama 2026 ofrece una versión de acceso de 190 CV, una variante Endurance de 231 CV y el Born VZ de 326 CV. La batería y el nivel de potencia varían juntos; comparar únicamente el nombre del acabado puede ocultar diferencias relevantes de autonomía y uso.',
-    powertrainSummary: 'Las tres configuraciones son 100 % eléctricas: 140 kW (190 CV) con batería de 58 kWh netos, 170 kW (231 CV) con batería de 79 kWh netos y 240 kW (326 CV) en el VZ, también con batería de 79 kWh netos. CUPRA indica capacidades brutas de 61 y 84 kWh, respectivamente. No se muestra par porque la documentación no facilita un régimen en rpm.',
-    usageNote: 'La versión de 190 CV cubre un uso general y emplea la batería menor; Endurance prioriza el alcance con la batería grande; VZ eleva la potencia y el enfoque prestacional. CUPRA publica hasta 631 km WLTP para una configuración concreta del Born, no para todas. Para viajes, compara la autonomía de la versión elegida y la potencia de carga disponible en tus rutas habituales.',
+    description: 'Consulta las versiones eléctricas del CUPRA Born 2026: Born de 190 CV y Born VZ de 326 CV, baterías y autonomía homologada.',
+    intro: 'El Born es el compacto eléctrico de CUPRA. La gama 2026 que presenta la marca en España distingue dos versiones: Born y Born VZ. La primera desarrolla 190 CV y la VZ alcanza 326 CV; la batería y el equipamiento también varían, por lo que sus autonomías homologadas no son intercambiables.',
+    powertrainSummary: 'Las dos configuraciones de la gama Born 2026 son eléctricas: la versión Born desarrolla 140 kW (190 CV), con 58 kWh netos (59 kWh brutos), y el Born VZ entrega 240 kW (326 CV), con batería de 79 kWh netos (84 kWh brutos). El catálogo técnico anterior recogía una configuración de 231 CV, pero no aparece entre las dos versiones de la gama Born 2026 consultada y se excluye de esta ficha.',
+    usageNote: 'El Born de 190 CV ofrece la batería menor y el Born VZ prioriza prestaciones con la batería grande. CUPRA publica hasta 631 km WLTP para una configuración concreta; la autonomía real depende, entre otros factores, de velocidad, temperatura y equipamiento. Para un viaje, compara la versión exacta y la infraestructura de carga de la ruta.',
     versions: versions([
-      { name: 'Born · 58 kWh netos', type: 'Eléctrico', power: '190 CV (140 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No se publica régimen de par' },
-      { name: 'Born Endurance · 79 kWh netos', type: 'Eléctrico', power: '231 CV (170 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No se publica régimen de par' },
+      { name: 'Born · 58 kWh netos (59 kWh brutos)', type: 'Eléctrico', power: '190 CV (140 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No se publica régimen de par' },
       { name: 'Born VZ · 79 kWh netos', type: 'Eléctrico', power: '326 CV (240 kW)', displacement: evDisplacement, maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No se publica régimen de par' },
     ]),
     facts: [{ label: 'Carrocería', value: 'Compacto eléctrico de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Batería neta', value: '58 o 79 kWh, según versión' }, { label: 'Maletero', value: '385 litros' }],
-    specNote: 'El catálogo técnico CUPRA 2026 distingue capacidad neta y bruta: 58/61 kWh y 79/84 kWh. La potencia del VZ es 240 kW (326 CV); la gama estándar documenta 140 kW (190 CV) y 170 kW (231 CV). Las autonomías son WLTP y varían con la configuración.',
-    officialUrl: `${root}/coches/born`, technicalUrl: 'https://www.cupra.com/content/dam/public/cupra-website/cars/born-2026/pdf/new-cupra-born-catalogue-april2026.pdf',
-    sources: [source('CUPRA España: Born 2026', `${root}/coches/born`), source('Versiones y equipamiento del CUPRA Born', `${root}/coches/born/versiones-y-equipamiento`), source('Catálogo técnico CUPRA Born 2026', 'https://www.cupra.com/content/dam/public/cupra-website/cars/born-2026/pdf/new-cupra-born-catalogue-april2026.pdf')],
+    specNote: 'La gama española consultada para el Born 2026 distingue las versiones Born y Born VZ. Se indican capacidades netas y brutas: 58/59 kWh y 79/84 kWh. La configuración intermedia de 231 CV aparece en documentación anterior, pero no se incluye al no figurar en la gama actual del modelo renovado. Las autonomías son WLTP y dependen de la configuración.',
+    officialUrl: `${root}/coches/born`, technicalUrl: 'https://www.cupra.com/content/dam/public/cupra-website/cars/born-2026/pdf/new-cupra-born-catalogue-june2026.pdf',
+    sources: [source('CUPRA España: Born 2026', `${root}/coches/born`), source('Versiones y equipamiento del CUPRA Born', `${root}/coches/born/versiones-y-equipamiento`), source('Catálogo técnico CUPRA Born 2026, edición de junio', 'https://www.cupra.com/content/dam/public/cupra-website/cars/born-2026/pdf/new-cupra-born-catalogue-june2026.pdf')],
   },
   {
     brandSlug: 'cupra', modelSlug: 'terramar',
@@ -50,11 +49,11 @@ export const cupraModels: ModelPageData[] = [
     powertrainSummary: 'La gama técnica consultada incluye el 1.5 eTSI microhíbrido de 150 CV; el 2.0 TSI de 204 CV con tracción 4Drive; el 2.0 TSI VZ de 265 CV; y los 1.5 e-HYBRID de 204 y 272 CV. Los PHEV combinan un motor térmico 1.5 de 1.498 cm³ con uno eléctrico. El sistema entrega 204 o 272 CV, pero el par con régimen se refiere solo al motor térmico.',
     usageNote: 'El eTSI de 48 V no se enchufa: la asistencia eléctrica acompaña al motor de gasolina, pero no equivale a circular como un eléctrico enchufable. El e-HYBRID sí puede recargarse y permite desplazamientos eléctricos cuando la batería tiene energía. Los TSI 4Drive priorizan potencia y tracción total. La elección depende de dónde puedas cargar, la frecuencia de tus trayectos cortos y el kilometraje anual.',
     versions: versions([
-      { name: '1.5 eTSI 150 DSG', type: 'Microhíbrido de 48 V (gasolina)', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–3.500 rpm' },
+      { name: '1.5 eTSI 150 DSG', type: 'Híbrido no enchufable · MHEV de gasolina (48 V)', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–3.500 rpm' },
       { name: '2.0 TSI 204 4Drive DSG', type: 'Gasolina', power: '204 CV (150 kW)', displacement: '1.984 cm³', maxTorque: '320 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '1.500–4.400 rpm' },
       { name: '2.0 TSI VZ 265 4Drive DSG', type: 'Gasolina', power: '265 CV (195 kW)', displacement: '1.984 cm³', maxTorque: '400 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '1.650–4.350 rpm' },
-      { name: '1.5 e-HYBRID 204 DSG', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 204 CV (150 kW); térmico: 150 CV (110 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
-      { name: '1.5 e-HYBRID VZ 272 DSG', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 272 CV (200 kW); térmico: 177 CV (130 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
+      { name: '1.5 e-HYBRID 204 DSG', type: 'Híbrido enchufable · gasolina + eléctrico', power: 'Sistema: 204 CV (150 kW); térmico: 150 CV (110 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
+      { name: '1.5 e-HYBRID VZ 272 DSG', type: 'Híbrido enchufable · gasolina + eléctrico', power: 'Sistema: 272 CV (200 kW); térmico: 177 CV (130 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
     ]),
     facts: [{ label: 'Carrocería', value: 'SUV compacto de cinco plazas' }, { label: 'Longitud', value: '4.519 mm' }, { label: 'Propulsiones', value: 'Gasolina, microhíbrida y PHEV' }, { label: 'Tracción', value: 'Delantera o 4Drive, según versión' }],
     specNote: 'En los híbridos enchufables se muestra la potencia conjunta del sistema y, por separado, la potencia térmica y eléctrica. CUPRA publica 250 Nm entre 1.500 y 4.000 rpm para el motor térmico de las versiones PHEV; no se atribuye ese régimen al par combinado del sistema.',
@@ -70,13 +69,13 @@ export const cupraModels: ModelPageData[] = [
     usageNote: 'El 1.5 TSI ofrece gasolina sin hibridación; el eTSI incorpora asistencia de 48 V y no se conecta a la red; el TDI puede interesar a quien recorre muchos kilómetros, aunque su conveniencia depende de rutas y restricciones locales. Los e-HYBRID necesitan recarga periódica para aprovechar la conducción eléctrica. Los TSI VZ y el VZ5 priorizan prestaciones y no deben compararse con las versiones de acceso solo por nombre de carrocería.',
     versions: versions([
       { name: '1.5 TSI 150', type: 'Gasolina', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '1.500–3.500 rpm' },
-      { name: '1.5 eTSI 150 DSG', type: 'Microhíbrido de 48 V (gasolina)', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–3.500 rpm' },
+      { name: '1.5 eTSI 150 DSG', type: 'Híbrido no enchufable · MHEV de gasolina (48 V)', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–3.500 rpm' },
       { name: '2.0 TSI 204 4Drive DSG', type: 'Gasolina', power: '204 CV (150 kW)', displacement: '1.984 cm³', maxTorque: '320 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '1.500–4.400 rpm' },
       { name: '2.0 TDI 150 DSG', type: 'Diésel', power: '150 CV (110 kW)', displacement: '1.968 cm³', maxTorque: '360 Nm', torqueScope: 'Motor diésel', torqueRpm: '1.600–2.750 rpm' },
-      { name: '1.5 e-HYBRID 204 DSG', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 204 CV (150 kW); térmico: 150 CV (110 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
+      { name: '1.5 e-HYBRID 204 DSG', type: 'Híbrido enchufable · gasolina + eléctrico', power: 'Sistema: 204 CV (150 kW); térmico: 150 CV (110 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
       { name: '2.0 TSI VZ 265 DSG', type: 'Gasolina', power: '265 CV (195 kW)', displacement: '1.984 cm³', maxTorque: '370 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '1.600–4.500 rpm' },
       { name: '2.0 TSI VZ 333 4Drive DSG', type: 'Gasolina', power: '333 CV (245 kW)', displacement: '1.984 cm³', maxTorque: '420 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.100–5.500 rpm' },
-      { name: '1.5 e-HYBRID VZ 272 DSG', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 272 CV (200 kW); térmico: 177 CV (130 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
+      { name: '1.5 e-HYBRID VZ 272 DSG', type: 'Híbrido enchufable · gasolina + eléctrico', power: 'Sistema: 272 CV (200 kW); térmico: 177 CV (130 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
       { name: '2.5 TSI VZ5 390 4Drive DSG', type: 'Gasolina', power: '390 CV (287 kW)', displacement: '2.480 cm³', maxTorque: '', torqueScope: 'Motor de gasolina', torqueRpm: 'Régimen de par no publicado en la ficha consultada' },
     ]),
     facts: [{ label: 'Carrocería', value: 'Crossover de cinco puertas y cinco plazas' }, { label: 'Longitud', value: '4.451 mm (según versión)' }, { label: 'Combustibles', value: 'Gasolina y diésel; variantes microhíbridas y PHEV' }, { label: 'Tracción', value: 'Delantera o 4Drive, según motorización' }],
@@ -93,10 +92,10 @@ export const cupraModels: ModelPageData[] = [
     usageNote: 'El 1.5 TSI es la alternativa de gasolina convencional y el eTSI añade hibridación ligera de 48 V. El diésel puede encajar en ciertos usos de larga distancia. Las opciones PHEV solo reducen el consumo de gasolina de forma consistente si se cargan con frecuencia; su masa y coste de compra también forman parte de la comparación. El VZ de 325 CV tiene una orientación prestacional distinta a la gama de 150 CV.',
     versions: versions([
       { name: '1.5 TSI 150', type: 'Gasolina', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '', torqueScope: 'Motor de gasolina', torqueRpm: '' },
-      { name: '1.5 eTSI 150 DSG', type: 'Microhíbrido de 48 V (gasolina)', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '', torqueScope: 'Motor térmico de gasolina', torqueRpm: '' },
+      { name: '1.5 eTSI 150 DSG', type: 'Híbrido no enchufable · MHEV de gasolina (48 V)', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '', torqueScope: 'Motor térmico de gasolina', torqueRpm: '' },
       { name: '2.0 TDI 150 DSG', type: 'Diésel', power: '150 CV (110 kW)', displacement: '1.968 cm³', maxTorque: '', torqueScope: 'Motor diésel', torqueRpm: '' },
-      { name: '1.5 e-HYBRID 204 DSG', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 204 CV (150 kW); térmico: 150 CV (110 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
-      { name: '1.5 e-HYBRID VZ 272 DSG', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 272 CV (200 kW); térmico: 177 CV (130 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.550–4.000 rpm' },
+      { name: '1.5 e-HYBRID 204 DSG', type: 'Híbrido enchufable · gasolina + eléctrico', power: 'Sistema: 204 CV (150 kW); térmico: 150 CV (110 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
+      { name: '1.5 e-HYBRID VZ 272 DSG', type: 'Híbrido enchufable · gasolina + eléctrico', power: 'Sistema: 272 CV (200 kW); térmico: 177 CV (130 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.550–4.000 rpm' },
       { name: '2.0 TSI VZ 325 DSG', type: 'Gasolina', power: '325 CV (239 kW)', displacement: '1.984 cm³', maxTorque: '', torqueScope: 'Motor de gasolina', torqueRpm: 'La nota oficial publica 420 Nm, pero no el régimen' },
     ]),
     facts: [{ label: 'Carrocería', value: 'Compacto de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Propulsiones', value: 'Gasolina, microhíbrida, diésel y PHEV' }, { label: 'Potencia máxima anunciada', value: '325 CV en el VZ de gasolina' }],
@@ -113,10 +112,10 @@ export const cupraModels: ModelPageData[] = [
     usageNote: 'La carrocería familiar facilita llevar equipaje, pero las dimensiones y el maletero pueden variar en la versión PHEV por el espacio de la batería. Para comparar costes, ten en cuenta el kilometraje: un híbrido enchufable suele ofrecer su ventaja de consumo cuando se recarga con regularidad, mientras que un diésel puede tener sentido en trayectos largos frecuentes. Los 333 CV corresponden a una versión VZ de gasolina y no describen toda la gama.',
     versions: versions([
       { name: '1.5 TSI 150', type: 'Gasolina', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '', torqueScope: 'Motor de gasolina', torqueRpm: '' },
-      { name: '1.5 eTSI 150 DSG', type: 'Microhíbrido de 48 V (gasolina)', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '', torqueScope: 'Motor térmico de gasolina', torqueRpm: '' },
+      { name: '1.5 eTSI 150 DSG', type: 'Híbrido no enchufable · MHEV de gasolina (48 V)', power: '150 CV (110 kW)', displacement: '1.498 cm³', maxTorque: '', torqueScope: 'Motor térmico de gasolina', torqueRpm: '' },
       { name: '2.0 TDI 150 DSG', type: 'Diésel', power: '150 CV (110 kW)', displacement: '1.968 cm³', maxTorque: '', torqueScope: 'Motor diésel', torqueRpm: '' },
-      { name: '1.5 e-HYBRID 204 DSG', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 204 CV (150 kW); térmico: 150 CV (110 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
-      { name: '1.5 e-HYBRID VZ 272 DSG', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 272 CV (200 kW); térmico: 177 CV (130 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.550–4.000 rpm' },
+      { name: '1.5 e-HYBRID 204 DSG', type: 'Híbrido enchufable · gasolina + eléctrico', power: 'Sistema: 204 CV (150 kW); térmico: 150 CV (110 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.500–4.000 rpm' },
+      { name: '1.5 e-HYBRID VZ 272 DSG', type: 'Híbrido enchufable · gasolina + eléctrico', power: 'Sistema: 272 CV (200 kW); térmico: 177 CV (130 kW); eléctrico: 116 CV (85 kW)', displacement: '1.498 cm³', maxTorque: '250 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '1.550–4.000 rpm' },
       { name: '2.0 TSI VZ 333 DSG', type: 'Gasolina', power: '333 CV (245 kW)', displacement: '1.984 cm³', maxTorque: '', torqueScope: 'Motor de gasolina', torqueRpm: 'No se ha confirmado el régimen en la ficha española consultada' },
     ]),
     facts: [{ label: 'Carrocería', value: 'Familiar compacto de cinco puertas' }, { label: 'Plazas', value: '5' }, { label: 'Maletero', value: '620 litros en la versión de combustión publicada' }, { label: 'Propulsiones', value: 'Gasolina, microhíbrida, diésel y PHEV' }],

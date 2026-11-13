@@ -1,6 +1,6 @@
 import type { ModelPageData, ModelVersion } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '10 de noviembre de 2026';
 const mazda = 'https://www.mazda.es';
 const range = mazda + '/gama/';
 const source = (label: string, url: string) => ({ label, url });
@@ -176,11 +176,11 @@ const entries: MazdaEntry[] = [
   {
     slug: 'mazda2-hybrid', name: 'Mazda2 Hybrid', body: 'Utilitario de 5 puertas',
     intro: 'El Mazda2 Hybrid es el utilitario híbrido completo de la marca. Su sistema puede mover el coche con el motor eléctrico durante parte de la conducción, especialmente a baja velocidad, y la batería se recarga mediante el propio sistema: no hay que enchufarlo.',
-    summary: 'La gama española utiliza un motor de gasolina 1.5 asociado a un sistema híbrido de 116 CV (85 kW) y transmisión automática e-CVT. Mazda publica un consumo combinado WLTP de 3,8–4,2 l/100 km, dependiendo de la versión.',
+    summary: 'La gama española utiliza un motor de gasolina 1.5 asociado a un sistema híbrido completo de 116 CV (85 kW) y transmisión automática e-CVT. Mazda publica un consumo combinado WLTP de 3,7–4,2 l/100 km, dependiendo del acabado.',
     usage: 'Por tamaño y sistema híbrido, es una alternativa pensada para ciudad y desplazamientos cotidianos. No debe confundirse con el Mazda2 de generaciones anteriores ni con un híbrido enchufable: el Mazda2 Hybrid no se conecta a la red eléctrica. Su consumo real dependerá del tráfico, la temperatura y el tipo de recorrido.',
-    versions: [version('1.5 Full Hybrid e-CVT', 'Sistema: 116 CV (85 kW)', '1.490 cm³, gasolina + motor eléctrico', '120 Nm', 'Motor térmico de gasolina', '4.800 rpm', 'El motor térmico desarrolla 92 CV (68 kW); el sistema híbrido completo entrega 116 CV (85 kW). Transmisión e-CVT y batería no enchufable.')],
+    versions: [version('1.5 Full Hybrid e-CVT', 'Sistema: 116 CV (85 kW)', '1.490 cm³, gasolina + motor eléctrico', '120 Nm', 'Motor térmico de gasolina', '3.600–4.800 rpm', 'El motor térmico desarrolla 93 CV (68 kW); el sistema híbrido completo entrega 116 CV (85 kW). Transmisión e-CVT y batería no enchufable.')],
     facts: [{ label: 'Carrocería', value: 'Utilitario de 5 puertas' }, { label: 'Plazas', value: '5' }, { label: 'Propulsión', value: 'Híbrida completa' }, { label: 'Maletero', value: '286 litros' }],
-    figures: [{ label: 'Potencia del sistema', value: '116 CV (85 kW)' }, { label: 'Consumo combinado WLTP', value: '3,8–4,2 l/100 km' }, { label: 'Transmisión', value: 'Automática e-CVT' }],
+    figures: [{ label: 'Potencia del sistema', value: '116 CV (85 kW)' }, { label: 'Consumo combinado WLTP', value: '3,7–4,2 l/100 km' }, { label: 'Transmisión', value: 'Automática e-CVT' }],
     officialUrl: mazda + '/gama/mazda2-hybrid/',
     sources: [source('Mazda2 Hybrid: ficha española', mazda + '/gama/mazda2-hybrid/'), source('Datos técnicos del sistema híbrido Mazda2', 'https://es.mazda-press.com/api/assets/download/20c88813-e326-4ab3-8cdd-5238d7ab9af8_Default?isDownload=false'), source('Consumo y versiones Mazda2 Hybrid', mazda + '/promociones/promociones-actuales/mazda2-hybrid/')],
     image: photo('mazda2-hybrid', 'Mazda2 Hybrid blanco fotografiado de frente en una zona de exposición.', 'Mazda2 Hybrid Homura Plus (IV, Facelift) – f 05062025.jpg', 676, 'M 93', 'CC BY-SA 3.0 Alemania', 'https://commons.wikimedia.org/wiki/User:M_93'),
@@ -188,7 +188,7 @@ const entries: MazdaEntry[] = [
   {
     slug: 'mazda3-5-puertas', name: 'Mazda3 5 puertas', body: 'Compacto',
     intro: 'El Mazda3 de cinco puertas es el compacto de líneas más dinámicas de la gama. Su carrocería combina una zaga inclinada con cinco plazas y un maletero de 334 litros según la ficha de Mazda. En el mercado español actual se ofrece con gasolina e hibridación ligera.',
-    summary: 'La gama española 2026 ofrece el 2.5 e-Skyactiv G de 140 CV (103 kW) y el 2.0 e-Skyactiv X de 186 CV (137 kW), ambos con M Hybrid. El X también está disponible con cambio automático y tracción total en algunos acabados; el G se ofrece con cambio manual o automático y tracción delantera.',
+    summary: 'La gama española 2027 ofrece el 2.5 e-Skyactiv G de 140 CV (103 kW) y el 2.0 e-Skyactiv X de 186 CV (137 kW), ambos con M Hybrid. El X también está disponible con cambio automático y tracción total en algunos acabados; el G se ofrece con cambio manual o automático y tracción delantera.',
     usage: 'Frente al sedán, la carrocería de cinco puertas facilita introducir objetos altos por la apertura trasera, aunque el volumen de carga es inferior. La gama incluye cajas manuales y automáticas según acabado; confirma el configurador antes de comparar precio, consumo y equipamiento.',
     versions: [
       version('2.5 e-Skyactiv G 140 M Hybrid', '140 CV (103 kW)', '2.488 cm³, gasolina', '238 Nm', 'Motor de gasolina', '3.300 rpm', 'Hibridación ligera Mazda M Hybrid.'),
@@ -203,7 +203,7 @@ const entries: MazdaEntry[] = [
   {
     slug: 'mazda3-sedan', name: 'Mazda3 Sedán', body: 'Berlina compacta',
     intro: 'El Mazda3 Sedán comparte la base técnica del compacto de cinco puertas, pero adopta una carrocería de tres volúmenes y un maletero independiente. Mazda España le atribuye 450 litros de capacidad y una gama de gasolina con hibridación ligera.',
-    summary: 'La gama española 2026 ofrece dos motores de gasolina con M Hybrid: el 2.5 e-Skyactiv G de 140 CV (103 kW) y el 2.0 e-Skyactiv X de 186 CV (137 kW). Ambos se ofrecen con cambio manual o automático según acabado y tracción delantera en las configuraciones del sedán consultadas.',
+    summary: 'La gama española 2027 ofrece dos motores de gasolina con M Hybrid: el 2.5 e-Skyactiv G de 140 CV (103 kW) y el 2.0 e-Skyactiv X de 186 CV (137 kW). Ambos se ofrecen con cambio manual o automático según acabado y tracción delantera en las configuraciones del sedán consultadas.',
     usage: 'La silueta sedán puede resultar práctica para quien prioriza una berlina compacta y un maletero separado. La abertura del portón es menos amplia que en el cinco puertas, así que conviene probar si se transportan bultos voluminosos. Consumo y equipamiento dependen del acabado y las llantas.',
     versions: [
       version('2.5 e-Skyactiv G 140 M Hybrid', '140 CV (103 kW)', '2.488 cm³, gasolina', '238 Nm', 'Motor de gasolina', '3.300 rpm', 'Hibridación ligera Mazda M Hybrid; caja manual o automática según acabado.'),
@@ -219,10 +219,10 @@ const entries: MazdaEntry[] = [
   {
     slug: 'mx-5-st', name: 'MX-5 ST', body: 'Roadster con techo de lona',
     intro: 'El Mazda MX-5 ST conserva la receta clásica del roadster: dos plazas, motor delantero, tracción trasera y techo de lona. La capota se acciona manualmente y permite disfrutar de una carrocería abierta sin añadir el mecanismo del techo rígido retráctil.',
-    summary: 'La ficha española del MX-5 ST 2027 muestra el motor atmosférico 1.5 Skyactiv-G de 136 CV (100 kW), con cambio manual de seis velocidades y tracción trasera. Mazda especifica 155 Nm a 4.500 rpm; el 2.0 de 184 CV no figura en el configurador español actual.',
+    summary: 'La ficha española del MX-5 ST 2027 muestra el motor atmosférico 1.5 Skyactiv-G de 136 CV (100 kW), con cambio manual de seis velocidades y tracción trasera. Mazda anuncia 155 Nm, pero la información técnica 2027 consultada no especifica el régimen del par; el 2.0 de 184 CV no figura en el configurador actual.',
     usage: 'Es un biplaza ligero pensado principalmente para disfrutar de la conducción, no para maximizar espacio o versatilidad familiar. Antes de elegirlo, comprueba la capacidad del maletero y la facilidad para entrar y salir; si se hacen muchos viajes con equipaje, su espacio es limitado.',
     versions: [
-      version('1.5 Skyactiv-G 136', '136 CV (100 kW)', '1.496 cm³, gasolina', '155 Nm', 'Motor de gasolina', '4.500 rpm', 'Cambio manual de 6 velocidades y tracción trasera.'),
+      version('1.5 Skyactiv-G 136', '136 CV (100 kW)', '1.496 cm³, gasolina', '', '', '', 'Cambio manual de 6 velocidades y tracción trasera. Mazda publica 155 Nm para el motor 2027, pero no el régimen correspondiente.'),
     ],
     facts: [{ label: 'Carrocería', value: 'Roadster descapotable con techo de lona' }, { label: 'Plazas', value: '2' }, { label: 'Tracción', value: 'Trasera' }, { label: 'Maletero', value: '130 litros, según ficha de Mazda' }],
     figures: [{ label: 'Motor de gasolina actual', value: '1.5 Skyactiv-G de 136 CV (100 kW)' }, { label: 'Consumo WLTP combinado publicado', value: '6,1 l/100 km' }],
@@ -233,10 +233,10 @@ const entries: MazdaEntry[] = [
   {
     slug: 'mx-5-rf', name: 'MX-5 RF', body: 'Roadster con techo rígido retráctil',
     intro: 'El Mazda MX-5 RF es la variante de techo rígido retráctil del roadster. Mantiene dos plazas y tracción trasera, pero su silueta cerrada cambia la experiencia de conducción y aporta más aislamiento cuando el techo está colocado. No es un coupé convencional: el techo se repliega para abrir el habitáculo.',
-    summary: 'El MX-5 RF comparte el 1.5 Skyactiv-G de 136 CV (100 kW) con la versión de techo de lona. La ficha técnica española publica 155 Nm a 4.500 rpm; el 2.0 de 184 CV no figura en el configurador español actual.',
+    summary: 'El MX-5 RF comparte el 1.5 Skyactiv-G de 136 CV (100 kW) con la versión de techo de lona. Mazda anuncia 155 Nm, pero la información técnica 2027 consultada no especifica el régimen del par; el 2.0 de 184 CV no figura en el configurador actual.',
     usage: 'El RF puede ser interesante si se quiere un MX-5 con techo rígido integrado y se circula a menudo con la capota cerrada. El mecanismo influye en la silueta y en el espacio disponible: compara la capacidad del maletero y prueba el funcionamiento del techo antes de decidir entre RF y ST.',
     versions: [
-      version('1.5 Skyactiv-G 136', '136 CV (100 kW)', '1.496 cm³, gasolina', '155 Nm', 'Motor de gasolina', '4.500 rpm', 'Cambio manual de 6 velocidades y tracción trasera.'),
+      version('1.5 Skyactiv-G 136', '136 CV (100 kW)', '1.496 cm³, gasolina', '', '', '', 'Cambio manual de 6 velocidades y tracción trasera. Mazda publica 155 Nm para el motor 2027, pero no el régimen correspondiente.'),
     ],
     facts: [{ label: 'Carrocería', value: 'Roadster con techo rígido retráctil' }, { label: 'Plazas', value: '2' }, { label: 'Tracción', value: 'Trasera' }, { label: 'Maletero', value: '127 litros, según ficha de Mazda' }],
     figures: [{ label: 'Motor de gasolina actual', value: '1.5 Skyactiv-G de 136 CV (100 kW)' }, { label: 'Consumo WLTP combinado publicado', value: '6,1 l/100 km; comprueba la cifra aplicable a la carrocería y configuración' }],

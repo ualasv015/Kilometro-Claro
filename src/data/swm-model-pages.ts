@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '3 de noviembre de 2026';
+const reviewedAt = '11 de noviembre de 2026';
 const spain = 'https://www.swmmotors.es';
 const source = (label: string, url: string) => ({ label, url });
 const image = (data: NonNullable<ModelPageData['image']>): NonNullable<ModelPageData['image']> => data;
@@ -20,7 +20,7 @@ export const swmModels: ModelPageData[] = [
     powertrainSummary: 'La página española identifica un motor de gasolina 1.5T GDI con 133 kW a 5.500 rpm y transmisión 7DCT. SWM anuncia 180 CV. Aunque la ficha publica 300 Nm de par máximo, no indica las rpm a las que se obtiene y por eso la celda queda vacía.',
     usageNote: 'La denominación DCT indica un cambio automático de doble embrague y siete relaciones. SWM España publica un consumo combinado WLTP de 8,489 l/100 km; es una cifra homologada para comparar, no una promesa de consumo real. En conducción urbana, con carga o a velocidad sostenida por autovía, el gasto puede variar. Comprueba también qué equipamiento incluye la versión Luxury y qué condiciones de precio o financiación aplica cada concesionario.',
     versions: [
-      { name: 'G01 PRO DCT Luxury', type: 'Gasolina turbo', power: '180 CV (133 kW)', displacement: '1.494 cm³', maxTorque: '300 Nm', torqueScope: 'Motor de gasolina', torqueRpm: 'No publicado por SWM España' },
+      { name: 'G01 PRO DCT Luxury', type: 'Gasolina', power: '180 CV (133 kW)', displacement: '1.494 cm³', maxTorque: '300 Nm', torqueScope: 'Motor de gasolina', torqueRpm: 'No publicado por SWM España' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV' },
@@ -53,9 +53,10 @@ export const swmModels: ModelPageData[] = [
     description: 'Ficha del SWM G03F en España: motor de gasolina 1.5, cambio manual, configuración de cinco o siete plazas y consumo WLTP.',
     intro: 'El SWM G03F es un SUV familiar de gasolina que se vende en España con cambio manual y posibilidad de elegir cinco o siete plazas. Su ficha local recoge un motor atmosférico 1.5 de 81 kW, identificado comercialmente como 109 CV. No hay que confundirlo con el G03F EDi, que utiliza propulsión eléctrica y un motor de gasolina como generador.',
     powertrainSummary: 'SWM España documenta un motor gasolina 1.5 de 81 kW (109 CV) y cambio manual de cinco velocidades. La ficha local publica un par máximo de 155 Nm, pero no especifica su régimen; el dato se omite de la tabla.',
-    usageNote: 'La elección entre cinco y siete plazas afecta al espacio disponible para pasajeros y equipaje, por lo que conviene comprobar en persona el acceso a la tercera fila y el maletero con todos los asientos en uso. El consumo combinado WLTP publicado es de 7,23 l/100 km; la cifra real dependerá de recorridos, velocidad, carga y estilo de conducción. La página española indica versiones MT Elite y disponibilidad a consultar con el concesionario.',
+    usageNote: 'La elección entre cinco y siete plazas afecta al espacio disponible para pasajeros y equipaje, por lo que conviene comprobar en persona el acceso a la tercera fila y el maletero con todos los asientos en uso. El consumo combinado WLTP publicado para el MT es de 7,23 l/100 km; la cifra real dependerá de recorridos, velocidad, carga y estilo de conducción. SWM España anuncia versiones MT Elite y DCT Elite, pero recomienda consultar la disponibilidad con el concesionario.',
     versions: [
-      { name: '1.5 MT Elite', type: 'Gasolina', power: '109 CV (81 kW)', displacement: '1,5 l', maxTorque: '155 Nm', torqueScope: 'Motor de gasolina', torqueRpm: 'No publicado por SWM España' },
+      { name: '1.5 MT Elite · 5 o 7 plazas', type: 'Gasolina', power: '109 CV (81 kW)', displacement: '1,5 l', maxTorque: '155 Nm', torqueScope: 'Motor de gasolina', torqueRpm: 'No publicado por SWM España' },
+      { name: 'DCT Elite · ficha de versión no desglosada', type: 'Gasolina', power: 'No desglosada por SWM España', displacement: 'No publicada para esta versión', maxTorque: '', torqueScope: 'Motor de gasolina', torqueRpm: 'No publicado por SWM España' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV familiar, cinco o siete plazas' },
@@ -63,7 +64,7 @@ export const swmModels: ModelPageData[] = [
       { label: 'Consumo combinado WLTP', value: '7,23 l/100 km' },
       { label: 'Tracción', value: 'Delantera' },
     ],
-    specNote: 'La página española ofrece el G03F en configuraciones de cinco y siete plazas. Los 155 Nm figuran sin régimen de rpm en su ficha técnica, así que no aparecen en la columna de par máximo.',
+    specNote: 'SWM España documenta con detalle el G03F 1.5 MT Elite en configuraciones de cinco y siete plazas. La página también anuncia una versión DCT Elite; se incluye en la tabla para reflejar la oferta, pero SWM no publica una ficha técnica equivalente, por lo que potencia, cilindrada y par quedan sin completar en vez de trasladar los datos de la versión manual. Tampoco aclara de forma suficiente las condiciones y el desglose por plazas de los importes DCT. Los 155 Nm del manual figuran sin régimen de rpm y no se muestran en la columna de par máximo.',
     officialUrl: `${spain}/swm-g03f/`,
     technicalUrl: `${spain}/swm-g03f/`,
     sources: [
@@ -90,8 +91,9 @@ export const swmModels: ModelPageData[] = [
     powertrainSummary: 'Las dos versiones comparten el motor gasolina 1.5T de 102 kW, anunciado como 137 CV. La caja manual de seis velocidades desarrolla 230 Nm entre 2.000 y 4.000 rpm; la DCT de siete velocidades, 212 Nm en el mismo intervalo. Se muestran por separado porque el par cambia con la transmisión.',
     usageNote: 'La caja manual y la automática DCT no tienen la misma cifra de par máximo publicada: la tabla española especifica 230 Nm para la MT y 212 Nm para la DCT. Antes de comparar ofertas, confirma si se refieren a la misma versión y si incluyen los gastos de matriculación, pintura o financiación. La página oficial presenta al G05 como SUV de siete plazas; revisa el espacio de la tercera fila y la capacidad de carga para el uso que vayas a darle.',
     versions: [
-      { name: '1.5T MT · 6 velocidades', type: 'Gasolina turbo', power: '137 CV (102 kW)', displacement: '1,5 l', maxTorque: '230 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.000–4.000 rpm' },
-      { name: '1.5T DCT · 7 velocidades', type: 'Gasolina turbo', power: '137 CV (102 kW)', displacement: '1,5 l', maxTorque: '212 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.000–4.000 rpm' },
+      { name: '1.5T MT · 6 velocidades', type: 'Gasolina', power: '137 CV (102 kW)', displacement: '1,5 l', maxTorque: '230 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.000–4.000 rpm' },
+      { name: '1.5T DCT · 7 velocidades', type: 'Gasolina', power: '137 CV (102 kW)', displacement: '1,5 l', maxTorque: '212 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.000–4.000 rpm' },
+      { name: '2.0 MT · datos de versión pendientes', type: 'Gasolina', power: 'No publicada en ficha vigente', displacement: '2,0 l', maxTorque: '', torqueScope: 'Motor de gasolina', torqueRpm: 'No publicada en ficha vigente' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV de siete plazas' },
@@ -99,7 +101,7 @@ export const swmModels: ModelPageData[] = [
       { label: 'Motor documentado en la ficha actual', value: '1.5 turbo gasolina, 102 kW' },
       { label: 'Consumo combinado WLTP publicado para MT', value: '8,51 l/100 km' },
     ],
-    specNote: 'La página general del G05 menciona motores 2.0 y 1.5T, pero la tabla de versiones y la ficha técnica disponibles detallan dos versiones 1.5T. La página comercial resume 220 Nm; la tabla técnica desglosa 230 Nm para MT y 212 Nm para DCT, que son las cifras empleadas aquí. SWM publica 8,51 l/100 km WLTP para la MT y 7,9 l/100 km como consumo anunciado para DCT; no se comparan como si fueran valores medidos bajo la misma condición.',
+    specNote: 'La página comercial general del G05 aún menciona motores 2.0 y 1.5T. Se conserva la referencia 2.0 como una línea informativa incompleta, sin atribuirle potencia ni par: el catálogo de precios y la ficha técnica vigentes detallan las versiones 1.5T MT y DCT. La mecánica 2.0 también aparece en una noticia anterior asociada a una oferta financiada, pero no se ha podido confirmar una ficha ni un precio al contado vigentes; por eso permanece en el registro de pendientes. La página comercial resume 220 Nm, mientras la ficha técnica desglosa 230 Nm para MT y 212 Nm para DCT; mostramos estos últimos por versión. SWM publica 8,51 l/100 km WLTP para MT y 7,9 l/100 km como consumo anunciado para DCT, no como cifras directamente equivalentes.',
     officialUrl: `${spain}/swm-g05/`,
     technicalUrl: `${spain}/swm-g05/swm-g05pro-ficha-tecnica/`,
     sources: [
@@ -124,25 +126,27 @@ export const swmModels: ModelPageData[] = [
     modelSlug: 'g03f-edi',
     title: 'SWM G03F EDi: autonomía extendida, motor y datos técnicos | Kilómetro Claro',
     description: 'Cómo funciona el SWM G03F EDi: motor eléctrico de tracción, generador de gasolina, batería y versiones de cinco o siete plazas.',
-    intro: 'El SWM G03F EDi es un SUV de cinco o siete plazas que el importador español denomina «super híbrido». En su descripción, el motor de gasolina no mueve las ruedas: genera electricidad para alimentar el sistema y el motor eléctrico proporciona la tracción. Por esa arquitectura, resulta más claro describirlo como eléctrico de autonomía extendida que como un híbrido convencional.',
-    powertrainSummary: 'La ficha técnica oficial italiana del G03F Super Hybrid M1 documenta un motor eléctrico de 105 kW y un motor de gasolina de 1.498 cm³, 75 kW y 102 CV que funciona como generador. Se muestran sus potencias por separado; no se suman ni se presentan como potencia combinada. El par térmico alcanza 126 Nm entre 1.500 y 4.000 rpm. La ficha técnica publica también 210 Nm para el motor eléctrico, sin indicar un régimen, por lo que esa cifra no se muestra en la tabla.',
-    usageNote: 'La web española explica que el motor térmico genera electricidad y que el vehículo se puede conectar a una toma doméstica Schuko o a un punto público. La ficha del fabricante para el modelo europeo indica una batería LFP de 8,8 kWh, hasta 50 km de autonomía eléctrica y hasta 1.000 km de alcance combinado; son cifras de homologación o estimaciones del fabricante, no una garantía de uso real. Comprueba con el concesionario la especificación y la homologación de la unidad española, ya que la página local no publica una tabla técnica detallada.',
+    intro: 'El SWM G03F EDi es un SUV de cinco o siete plazas con una arquitectura enchufable de autonomía extendida. El motor eléctrico mueve las ruedas y el motor de gasolina actúa como generador; además, el sistema permite recargar la batería desde una toma externa. La marca española lo denomina «super híbrido», aunque su funcionamiento difiere del de un híbrido convencional en el que ambos motores pueden impulsar directamente el vehículo.',
+    powertrainSummary: 'La ficha europea del G03F Super Hybrid identifica un motor eléctrico de 105 kW (143 CV) y un generador de gasolina 1.498 cm³ de 75 kW (102 CV). Las potencias se indican por separado y no se suman. Las fuentes consultadas no publican de forma consistente el par del motor térmico: la ficha técnica difundida en Italia y una prueba española discrepan, así que no lo mostramos. El par eléctrico tampoco se incluye porque no consta un régimen comparable.',
+    usageNote: 'SWM España explica que el motor térmico genera electricidad y que el vehículo puede conectarse a una toma doméstica Schuko o a un punto de carga. Para el modelo europeo, SWM Italia anuncia batería LFP de 8,8 kWh, hasta 50 km eléctricos y hasta 1.000 km combinados; son cifras del fabricante y no una garantía de alcance real. La web española no publica una tabla técnica completa, por lo que conviene confirmar con el concesionario la homologación y el equipamiento de la unidad ofrecida en España.',
     versions: [
-      { name: 'EDi 1.5 · motor eléctrico y generador gasolina', type: 'Eléctrico de autonomía extendida', powertrainGroup: 'multi-energy', power: 'Motor eléctrico: 143 CV (105 kW); generador gasolina: 102 CV (75 kW)', displacement: '1.498 cm³', maxTorque: '126 Nm', torqueScope: 'Motor térmico generador', torqueRpm: '1.500–4.000 rpm' },
+      { name: 'EDi 1.5 Super Hybrid · motor eléctrico y generador', type: 'Híbrido enchufable', powertrainGroup: 'plug-in', power: 'Motor eléctrico: 143 CV (105 kW); generador gasolina: 102 CV (75 kW)', displacement: 'Térmico: 1.498 cm³; eléctrico: —', maxTorque: '', torqueScope: 'Motor térmico generador', torqueRpm: 'No publicado de forma consistente' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV de cinco o siete plazas' },
-      { label: 'Arquitectura', value: 'Tracción eléctrica con motor de gasolina generador' },
+      { label: 'Arquitectura', value: 'Híbrido enchufable de autonomía extendida; el motor térmico actúa como generador' },
       { label: 'Batería indicada por SWM', value: 'LFP de 8,8 kWh' },
       { label: 'Autonomía eléctrica indicada por SWM', value: 'Hasta 50 km' },
       { label: 'Autonomía combinada anunciada', value: 'Hasta 1.000 km' },
     ],
-    specNote: 'SWM España describe el motor de gasolina como un generador que produce electricidad y anuncia versiones de cinco y siete plazas con entrega a consultar en concesionario. Los datos de potencia, batería y autonomía se toman de la ficha técnica oficial italiana del G03F Super Hybrid M1, porque la web española no publica esa tabla. El par eléctrico de 210 Nm se omite al no venir acompañado de rpm; las potencias del motor eléctrico y del generador se presentan por separado, no como potencia total.',
+    specNote: 'SWM España describe el motor de gasolina como un generador y anuncia versiones de cinco y siete plazas; no ofrece una ficha técnica local completa. La potencia del motor eléctrico y los datos de batería/autonomía se han contrastado con la página del fabricante italiano. La potencia y cilindrada del generador coinciden con la ficha técnica europea difundida por un concesionario SWM; no se presentan como especificación española confirmada. El par térmico se omite porque una ficha europea y una prueba española publican cifras/régimen distintos. El par eléctrico publicado no incluye rpm. Las potencias del motor y del generador se muestran por separado, nunca sumadas.',
     officialUrl: `${spain}/swm-g03f-edi/`,
-    technicalUrl: 'https://www.swm-motors.it/wp-content/uploads/dlm_uploads/2026/04/Technical-Information-G03F-Super-Hybrid-M1_IT.pdf',
+    technicalUrl: 'https://swm-motors.it/g03f-super-hybrid/',
     sources: [
       source('SWM España: G03F EDi, plazas, disponibilidad y funcionamiento', `${spain}/swm-g03f-edi/`),
-      source('SWM Motors Italia: ficha técnica G03F Super Hybrid M1 (2026)', 'https://www.swm-motors.it/wp-content/uploads/dlm_uploads/2026/04/Technical-Information-G03F-Super-Hybrid-M1_IT.pdf'),
+      source('SWM Motors Italia: ficha de gama G03F Super Hybrid', 'https://swm-motors.it/g03f-super-hybrid/'),
+      source('Ficha técnica europea G03F Super Hybrid M1 difundida por un concesionario SWM', 'https://auto.truckitalia.com/wp-content/uploads/products/Technical-Information-G03F-Super-Hybrid-M1_IT.pdf'),
+      source('alVolante: prueba y ficha técnica del G03F Super Hybrid', 'https://www.alvolante.it/prova/swm-g03f-super-hybrid-cvt'),
     ],
     image: image({
       src: '/images/models/commons/model-swm-g03f-edi.jpg',

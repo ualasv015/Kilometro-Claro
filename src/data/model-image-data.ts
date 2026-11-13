@@ -9,6 +9,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "sourceTitle": "Lancia Gamma 2026 HF.jpg",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lancia_Gamma_2026_HF.jpg",
     "authorName": "GammaSUV",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:GammaSUV",
     "licenseName": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "caption": "La imagen muestra un Gamma HF eléctrico; el acabado y la motorización pueden diferir de otras versiones de la gama."
@@ -167,6 +168,19 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseName": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
   },
+  "bmw/i3": {
+    "src": "/images/models/commons/model-bmw-i3.jpg",
+    "alt": "BMW i3 50 xDrive Berlina en la presentación de la nueva generación.",
+    "width": 1280,
+    "height": 734,
+    "sourceTitle": "BMW i3 50 xDrive First Edition (NA0) – f2 20082026.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BMW_i3_50_xDrive_First_Edition_(NA0)_–_f2_20082026.jpg",
+    "authorName": "M 93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:M_93",
+    "licenseName": "CC BY-SA 3.0 Alemania",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.es",
+    "caption": "BMW i3 50 xDrive de nueva generación; no corresponde al i3 urbano descatalogado."
+  },
   "bmw/i5": {
     "src": "/images/models/commons/model-bmw-i5.jpg",
     "alt": "Fotografía del BMW i5.",
@@ -239,6 +253,44 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseName": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
   },
+  "bmw/ix4": {
+    "src": "/images/models/commons/model-bmw-ix4.jpg",
+    "alt": "BMW iX4 eléctrico expuesto en BMW Welt.",
+    "width": 1280,
+    "height": 853,
+    "sourceTitle": "BMW iX4 M60 xDrive in der BMW Welt Bild 1 2026-10-18.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BMW_iX4_M60_xDrive_in_der_BMW_Welt_Bild_1_2026-10-18.jpg",
+    "authorName": "Strubbl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Strubbl",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Unidad expuesta en 2026; la fotografía muestra el acabado M60, aún no disponible en España."
+  },
+  "bmw/ix5": {
+    "src": "/images/models/commons/model-bmw-ix5.jpg",
+    "alt": "BMW iX5 60 xDrive eléctrico de nueva generación.",
+    "width": 1280,
+    "height": 976,
+    "sourceTitle": "BMW iX5 60 xDrive (G65) – f 20082026.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BMW_iX5_60_xDrive_(G65)_–_f_20082026.jpg",
+    "authorName": "M 93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:M_93",
+    "licenseName": "CC BY-SA 3.0 Alemania",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.es",
+    "caption": "BMW iX5 eléctrico de nueva generación."
+  },
+  "bmw/xm": {
+    "src": "/images/models/commons/model-bmw-xm.jpg",
+    "alt": "BMW XM híbrido enchufable de altas prestaciones.",
+    "width": 1280,
+    "height": 960,
+    "sourceTitle": "2023 BMW XM.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_BMW_XM.jpg",
+    "authorName": "Stefan Oberreuter",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Stefan_Oberreuter",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
   "bmw/serie-1": {
     "src": "/images/models/commons/model-bmw-serie-1.jpg",
     "alt": "Fotografía del BMW Serie 1.",
@@ -262,6 +314,32 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Chanokchon",
     "licenseName": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "bmw/serie-2-active-tourer": {
+    "src": "/images/models/commons/model-bmw-serie-2-active-tourer.jpg",
+    "alt": "BMW Serie 2 Active Tourer, monovolumen compacto de cinco plazas.",
+    "width": 1280,
+    "height": 689,
+    "sourceTitle": "BMW U06 218i 1X7A1834.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BMW_U06_218i_1X7A1834.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "BMW Serie 2 Active Tourer; la foto muestra una versión de gasolina, no la variante 225e descrita."
+  },
+  "bmw/serie-2-coupe": {
+    "src": "/images/models/commons/model-bmw-serie-2-coupe.jpg",
+    "alt": "BMW Serie 2 Coupé G42 fotografiado en Alemania.",
+    "width": 1280,
+    "height": 757,
+    "sourceTitle": "2022-01-29 BMW 220i G42.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022-01-29_BMW_220i_G42.jpg",
+    "authorName": "Wikisympathisant",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Wikisympathisant",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "BMW 220i Coupé G42 fotografiado en 2022; el diseño puede diferir de las unidades actuales."
   },
   "bmw/serie-3": {
     "src": "/images/models/commons/model-bmw-serie-3.jpg",
@@ -411,8 +489,21 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
   },
   "byd/atto-2": {
+    "src": "/images/models/commons/model-byd-atto-2-bev.jpg",
+    "alt": "BYD ATTO 2 eléctrico fotografiado en un evento al aire libre.",
+    "width": 1280,
+    "height": 751,
+    "sourceTitle": "BYD Atto 2 MYLE Festival 2025 DSC 9561.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BYD_Atto_2_MYLE_Festival_2025_DSC_9561.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Fotografía de un ATTO 2 eléctrico; el acabado y algunos detalles pueden variar según mercado y año-modelo."
+  },
+  "byd/atto-2-dmi": {
     "src": "/images/models/commons/model-byd-atto-2.jpg",
-    "alt": "Fotografía del BYD ATTO 2.",
+    "alt": "Fotografía del BYD ATTO 2 DM-i híbrido enchufable.",
     "width": 1280,
     "height": 780,
     "sourceTitle": "BYD Atto 2 DM-i IMG 6075.jpg",
@@ -420,7 +511,8 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "authorName": "Alexander Migl",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
     "licenseName": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "La fotografía muestra una unidad ATTO 2 DM-i; acabado y equipamiento pueden variar."
   },
   "byd/atto-3-evo": {
     "src": "/images/models/commons/model-byd-atto-3-evo.jpg",
@@ -508,8 +600,21 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
   },
   "byd/seal-u": {
+    "src": "/images/models/commons/model-byd-seal-u-bev.jpg",
+    "alt": "BYD SEAL U eléctrico fotografiado en Ulm, Alemania.",
+    "width": 1280,
+    "height": 743,
+    "sourceTitle": "BYD Seal U EV DSC 8762.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BYD_Seal_U_EV_DSC_8762.jpg",
+    "authorName": "Alexander Migl",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "La imagen corresponde al SEAL U eléctrico; acabado y equipamiento pueden variar según el año-modelo."
+  },
+  "byd/seal-u-dmi": {
     "src": "/images/models/commons/model-byd-seal-u.jpg",
-    "alt": "Fotografía del BYD SEAL U.",
+    "alt": "Fotografía del BYD SEAL U DM-i híbrido enchufable.",
     "width": 1280,
     "height": 855,
     "sourceTitle": "BYD Seal U DM-i DSC 9308.jpg",
@@ -517,7 +622,8 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "authorName": "Alexander Migl",
     "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
     "licenseName": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "La fotografía muestra la variante DM-i; acabado y equipamiento pueden variar según el año-modelo."
   },
   "byd/sealion-7": {
     "src": "/images/models/commons/model-byd-sealion-7.png",
@@ -546,6 +652,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   "changan/deepal-s05": {
     "src": "/images/models/commons/model-changan-deepal-s05.jpg",
     "alt": "Fotografía del Changan Deepal S05.",
+    "caption": "La imagen muestra el S05 eléctrico presentado en 2025; los acabados y detalles de la versión PHEV pueden variar.",
     "width": 1280,
     "height": 960,
     "sourceTitle": "Changan Deepal S05, IAA Summit 2025, Munich (20250908-P1049890).jpg",
@@ -558,6 +665,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   "changan/deepal-s07": {
     "src": "/images/models/commons/model-changan-deepal-s07.jpg",
     "alt": "Fotografía del Changan Deepal S07.",
+    "caption": "Fotografía de una unidad anterior al rediseño MY26; el frontal y algunos detalles de la versión actual pueden variar.",
     "width": 1280,
     "height": 853,
     "sourceTitle": "Changan Deepal S07 at GJAW 2025 in Indonesia.jpg",
@@ -570,6 +678,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   "dacia/bigster": {
     "src": "/images/models/commons/model-dacia-bigster.jpg",
     "alt": "Fotografía del Dacia Bigster.",
+    "caption": "La imagen muestra una unidad de la familia Bigster; el acabado y el equipamiento pueden diferir de la oferta actual española.",
     "width": 1280,
     "height": 720,
     "sourceTitle": "Dacia Bigster 01.jpg",
@@ -582,6 +691,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   "dacia/duster": {
     "src": "/images/models/commons/model-dacia-duster.jpg",
     "alt": "Fotografía del Dacia Duster.",
+    "caption": "La imagen muestra una unidad de la familia Duster; el año, acabado y equipamiento pueden diferir de la oferta actual española.",
     "width": 1280,
     "height": 853,
     "sourceTitle": "Dacia Duster, GIMS 2024, Le Grand-Saconnex (GIMS0126).jpg",
@@ -594,6 +704,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   "dacia/jogger": {
     "src": "/images/models/commons/model-dacia-jogger.jpg",
     "alt": "Fotografía del Dacia Jogger.",
+    "caption": "La imagen muestra una unidad de la familia Jogger; el año, acabado y configuración de plazas pueden diferir de la oferta actual española.",
     "width": 1280,
     "height": 854,
     "sourceTitle": "2023 Dacia Jogger 1X7A6203.jpg",
@@ -606,6 +717,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   "dacia/sandero": {
     "src": "/images/models/commons/model-dacia-sandero.jpg",
     "alt": "Fotografía del Dacia Sandero.",
+    "caption": "La imagen muestra una unidad de la familia Sandero; el año, acabado y equipamiento pueden diferir de la oferta actual española.",
     "width": 1280,
     "height": 854,
     "sourceTitle": "2023 Dacia Sandero III 1X7A6192.jpg",
@@ -618,6 +730,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   "dacia/sandero-stepway": {
     "src": "/images/models/commons/model-dacia-sandero-stepway.jpg",
     "alt": "Fotografía del Dacia Sandero Stepway.",
+    "caption": "La imagen muestra una unidad de la familia Sandero Stepway; el año, acabado y equipamiento pueden diferir de la oferta actual española.",
     "width": 1280,
     "height": 696,
     "sourceTitle": "2019 Dacia Sandero Stepway Techroad Front.jpg",
@@ -630,6 +743,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   "dacia/spring": {
     "src": "/images/models/commons/model-dacia-spring.jpg",
     "alt": "Fotografía del Dacia Spring.",
+    "caption": "La imagen corresponde a una generación anterior del Spring; las unidades actualmente ofrecidas pueden tener diseño y acabado distintos.",
     "width": 1280,
     "height": 854,
     "sourceTitle": "2023 Dacia Spring 1X7A6282.jpg",
@@ -654,7 +768,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   },
   "jaecoo/jaecoo-5": {
     "src": "/images/models/commons/model-jaecoo-jaecoo-5.jpg",
-    "alt": "Fotografía del JAECOO 5.",
+    "alt": "Vista delantera de tres cuartos de un JAECOO 5 rojo estacionado junto al agua.",
     "width": 1280,
     "height": 854,
     "sourceTitle": "2025 Jaecoo 5 1.6 Luxury (United Kingdom) front view.jpg",
@@ -662,11 +776,12 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "authorName": "CarsofGlasgow",
     "authorUrl": "https://commons.wikimedia.org/wiki/File:2025_Jaecoo_5_1.6_Luxury_(United_Kingdom)_front_view.jpg",
     "licenseName": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "caption": "La fotografía muestra una unidad británica 1.6 Luxury; el acabado y algunos detalles pueden diferir de la gama española."
   },
   "jaecoo/jaecoo-7": {
     "src": "/images/models/commons/model-jaecoo-jaecoo-7.jpg",
-    "alt": "Fotografía del JAECOO 7.",
+    "alt": "Vista exterior de tres cuartos de un SUV JAECOO 7 gris.",
     "width": 1280,
     "height": 863,
     "sourceTitle": "2024 Jaecoo J7.jpg",
@@ -674,11 +789,12 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "authorName": "Calreyn88",
     "authorUrl": "https://commons.wikimedia.org/w/index.php?title=User:Calreyn88&action=edit&redlink=1",
     "licenseName": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "La imagen corresponde a una unidad de 2024; el acabado y las especificaciones pueden diferir de las versiones actuales en España."
   },
   "jaecoo/jaecoo-8": {
     "src": "/images/models/commons/model-jaecoo-jaecoo-8.jpg",
-    "alt": "Fotografía del JAECOO 8 SHS.",
+    "alt": "Vista lateral delantera de un JAECOO 8 SHS híbrido enchufable.",
     "width": 1280,
     "height": 853,
     "sourceTitle": "JAECOO 8 SHS hibrido enchufable.jpg",
@@ -686,7 +802,8 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "authorName": "Jaime Sainz de la Maza",
     "authorUrl": "https://commons.wikimedia.org/wiki/File:JAECOO_8_SHS_hibrido_enchufable.jpg",
     "licenseName": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "La imagen ilustra el modelo; el acabado y la configuración de plazas pueden variar respecto a la versión española mostrada."
   },
   "kia/ceed": {
     "src": "/images/models/commons/model-kia-ceed.jpg",
@@ -1264,15 +1381,16 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   },
   "omoda/omoda-5": {
     "src": "/images/models/commons/model-omoda-omoda-5.jpg",
-    "alt": "Fotografía del OMODA 5.",
+    "alt": "Fotografía de un OMODA 5 de una generación anterior.",
     "width": 1280,
     "height": 960,
     "sourceTitle": "Chery Omoda 5 003.jpg",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chery_Omoda_5_003.jpg",
     "authorName": "Zoerides",
-    "authorUrl": "https://commons.wikimedia.org/w/index.php?title=User:Zoerides&action=edit&redlink=1",
+    "authorUrl": "https://commons.wikimedia.org/wiki/File:Chery_Omoda_5_003.jpg",
     "licenseName": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Fotografía de una unidad de generación anterior; el diseño y el equipamiento pueden diferir de la gama actual."
   },
   "omoda/omoda-5-ev": {
     "src": "/images/models/commons/model-omoda-omoda-5-ev.jpg",
@@ -1309,7 +1427,8 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "authorName": "Rutger van der Maar",
     "authorUrl": "https://commons.wikimedia.org/wiki/File:2025_Omoda_9_SHS-P_1.5T_GDi_black_front.jpg",
     "licenseName": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "caption": "Fotografía de una unidad OMODA 9 SHS anterior a la actualización de gama de noviembre de 2026."
   },
   "peugeot/2008": {
     "src": "/images/models/commons/model-peugeot-2008.jpg",
@@ -1394,7 +1513,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "sourceTitle": "Peugeot 5008 III generacji.webp",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peugeot_5008_III_generacji.webp",
     "authorName": "Adrx123ok",
-    "authorUrl": "https://commons.wikimedia.org/w/index.php?title=User:Adrx123ok&action=edit&redlink=1",
+    "authorUrl": "https://commons.wikimedia.org/wiki/Special:Contributions/Adrx123ok",
     "licenseName": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
   },
@@ -1482,6 +1601,19 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseName": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
   },
+  "volvo/ex60-cross-country": {
+    "src": "/images/models/commons/model-volvo-ex60-cross-country.jpg",
+    "alt": "Volvo EX60 Cross Country fotografiado en Estocolmo.",
+    "width": 1280,
+    "height": 863,
+    "sourceTitle": "Volvo EX60CC fr.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Volvo_EX60CC_fr.jpg",
+    "authorName": "Herranderssvensson",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Herranderssvensson",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "caption": "Fotografía de Herranderssvensson, redimensionada desde el original y licenciada bajo CC BY-SA 4.0."
+  },
   "volvo/ex90": {
     "src": "/images/models/commons/model-volvo-ex90.jpg",
     "alt": "Volvo EX90 eléctrico fotografiado en Stuttgart-Vaihingen.",
@@ -1556,7 +1688,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
   },
   "ds/ds3": {
     "src": "/images/models/commons/model-ds-ds3.jpg",
-    "alt": "DS 3 E-TENSE fotografiado en Böblingen, Alemania.",
+    "alt": "DS 3 Crossback E-TENSE de la generación anterior, fotografiado en Böblingen, Alemania.",
     "width": 1280,
     "height": 707,
     "sourceTitle": "DS 3 Crossback E-Tense IMG 9617.jpg",
@@ -1600,6 +1732,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "sourceTitle": "DS N°7.jpg",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:DS_N%C2%B07.jpg",
     "authorName": "DS Automobiles SK",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:DS_Automobiles_SK",
     "licenseName": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
@@ -1611,6 +1744,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "sourceTitle": "DS N°8.jpg",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:DS_N%C2%B08.jpg",
     "authorName": "Mmoules",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Mmoules",
     "licenseName": "CC0 1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.es"
   },
@@ -2037,6 +2171,19 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
     "caption": "Fotografía del vehículo de pasajeros; carrocería y motorización pueden variar. Redimensionada para web."
   },
+  "ford/e-tourneo-custom": {
+    "src": "/images/models/commons/model-ford-e-tourneo-custom.jpg",
+    "alt": "Ford E-Tourneo Custom expuesto en Auto Zürich 2023.",
+    "width": 1280,
+    "height": 854,
+    "sourceTitle": "Ford E-Tourneo Custom (2023) Auto Zuerich 2023 1X7A1173.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_E-Tourneo_Custom_(2023)_Auto_Zuerich_2023_1X7A1173.jpg",
+    "authorName": "Alexander-93",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Alexander-93",
+    "licenseName": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Vehículo expuesto en 2023; acabado y configuración pueden diferir. Imagen redimensionada para web."
+  },
   "ford/ranger": {
     "src": "/images/models/commons/model-ford-ranger.jpg",
     "alt": "Ford Ranger Tremor con motor diésel EcoBlue.",
@@ -2432,6 +2579,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "sourceTitle": "2024 Ssangyong Rexton Auto.jpg",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Ssangyong_Rexton_Auto.jpg",
     "authorName": "Calreyn88",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Calreyn88",
     "licenseName": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "caption": "Unidad Rexton fotografiada en 2024; los detalles de acabado pueden variar respecto a la gama española actual."
@@ -2444,6 +2592,7 @@ export const modelImageData: Record<string, NonNullable<ModelPageData['image']>>
     "sourceTitle": "SsangYong Musso Grand Q200 2.2L 4WD Indian Red 01.jpg",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:SsangYong_Musso_Grand_Q200_2.2L_4WD_Indian_Red_01.jpg",
     "authorName": "Ethan Llamas",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Ethan_Llamas",
     "licenseName": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "caption": "La imagen muestra un Musso Grand Q200 diésel; carrocería, caja y acabado pueden diferir de la versión comercializada actualmente en España."

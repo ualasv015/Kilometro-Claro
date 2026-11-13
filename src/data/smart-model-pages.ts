@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '3 de noviembre de 2026';
+const reviewedAt = '11 de noviembre de 2026';
 const smart = 'https://es.smart.com/es';
 const source = (label: string, url: string) => ({ label, url });
 
@@ -28,13 +28,14 @@ export const smartModels: ModelPageData[] = [
       { label: 'Autonomía WLTP publicada', value: 'Hasta 440 km, según versión' },
       { label: 'Baterías indicadas por smart', value: 'LFP o NCM, según acabado' },
     ],
-    specNote: 'La tabla técnica española lista Pure, Pro, Pro+, Pro+ Black Collection, Premium y BRABUS. En otros textos de la misma web aparece también la denominación Pulse asociada a cifras de consumo y autonomía, pero no figura con una potencia propia en esa tabla técnica; no le asignamos una configuración independiente. Las versiones y la oferta pueden variar, por lo que conviene confirmar el acabado disponible al configurar el vehículo.',
+    specNote: 'La tabla técnica específica compara Pure, Pro, Pro+, Pro+ Black Collection, Premium y BRABUS. La página comercial también nombra Pure+ y Pulse, pero no los desarrolla como columnas equivalentes en esa tabla; no les atribuimos una ficha ni una potencia por analogía. La smart Store publica importes sin descuentos para Pure y Pro+ Black Collection, mientras que las demás versiones quedan anotadas en precios pendientes. La portada muestra además campañas financiadas y adelanto de Auto+, que no equivalen al precio base.',
     officialUrl: `${smart}/models/hashtag-one/`,
     technicalUrl: `${smart}/models/hashtag-one/specifications/`,
     sources: [
       source('smart España: smart #1, versiones y descripción del modelo', `${smart}/models/hashtag-one/`),
       source('smart España: ficha técnica del smart #1', `${smart}/models/hashtag-one/specifications/`),
       source('smart España: gama disponible en el mercado español', `${smart}/models/`),
+      source('smart España: smart Store y precios sin descuentos', `${smart}/products/`),
     ],
     image: {
       src: '/images/models/commons/model-smart-1.jpg',
@@ -51,30 +52,69 @@ export const smartModels: ModelPageData[] = [
     },
   }),
   model({
+    modelSlug: '2',
+    title: 'smart #2: precio, pedido anticipado y ficha técnica | Kilómetro Claro',
+    description: 'Ficha del smart #2 para España: precio anunciado, versiones con pedido anticipado, motor eléctrico y datos preliminares pendientes de homologación.',
+    intro: 'El smart #2 recupera el formato biplaza urbano de la marca con propulsión eléctrica. smart ya acepta pedidos anticipados en España, pero el lanzamiento comercial y las primeras entregas están previstos para 2027. El vehículo sigue pendiente de homologación europea: sus cifras técnicas actuales son preliminares y pueden cambiar.',
+    powertrainSummary: 'La documentación preliminar de smart atribuye a Pure, Pure+ y Premium un motor eléctrico trasero de 60 kW (82 CV). Publica 130 Nm de par, pero no indica el régimen de giro; por eso no mostramos el par en la tabla. La autonomía WLTP de hasta 290 km también es un objetivo sujeto a homologación.',
+    usageNote: 'smart anuncia una batería LFP de 35,8 kWh y carga rápida en corriente continua de hasta 65 kW, con un tiempo declarado de hasta 20 minutos para pasar del 10 al 80 %. Pure incluye carga en corriente alterna a 7,4 kW y Pure+ y Premium a 11 kW. Son datos provisionales: conviene esperar a la homologación final antes de compararlos como valores definitivos o planificar recorridos con ellos.',
+    versions: [
+      { name: 'Pure, Pure+ y Premium · pedido anticipado', type: 'Eléctrico', power: '82 CV (60 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico trasero', torqueRpm: 'No publicado por smart' },
+    ],
+    facts: [
+      { label: 'Carrocería', value: 'Biplaza urbano eléctrico' },
+      { label: 'Tracción', value: 'Trasera' },
+      { label: 'Batería anunciada', value: 'LFP, 35,8 kWh' },
+      { label: 'Autonomía anunciada', value: 'Hasta 290 km WLTP · dato preliminar' },
+    ],
+    specNote: 'Las especificaciones y la autonomía permanecen sujetas a la homologación de la UE. smart acepta pedidos anticipados desde el 13 de octubre de 2026 y prevé las primeras entregas en Europa a mediados del segundo trimestre de 2027. La Couture Edition aparece en la ficha técnica, pero smart comunicó que se agotó en Europa; no se incluye entre las versiones con pedido abierto. Los importes de Pure, Pure+ y Premium son precios anunciados para España y están sujetos a las condiciones locales.',
+    officialUrl: `${smart}/models/hashtag-two/`,
+    technicalUrl: `${smart}/models/hashtag-two/specifications/`,
+    sources: [
+      source('smart España: smart #2 y estado de homologación', `${smart}/models/hashtag-two/`),
+      source('smart España: ficha técnica preliminar del smart #2', `${smart}/models/hashtag-two/specifications/`),
+      source('smart Newsroom España: pedidos anticipados, precios y calendario comercial', 'https://media.smart.com/es-ES/273208-smart-acepta-pedidos-del-nuevo-smart-2/'),
+      source('smart Newsroom España: Couture Edition agotado; reservas abiertas en Pure, Pure+ y Premium', 'https://media.smart.com/es-ES/273954-smart-2-couture-edition-agotado-en-tan-solo-dos-semanas/'),
+    ],
+    image: {
+      src: '/images/models/commons/model-smart-2.jpg',
+      alt: 'smart #2 expuesto en el Salón del Automóvil de París de 2026.',
+      caption: 'Fotografía del smart #2 expuesto en París en octubre de 2026. La unidad fotografiada es de presentación; los acabados y detalles pueden cambiar antes de la homologación y entrega.',
+      width: 1280,
+      height: 853,
+      sourceTitle: 'Smart 2 - 02.jpg',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Smart_2_-_02.jpg',
+      authorName: 'Y. Leclercq',
+      authorUrl: 'https://commons.wikimedia.org/wiki/User:Y.Leclercq',
+      licenseName: 'CC BY-SA 4.0',
+      licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    },
+  }),
+  model({
     modelSlug: '3',
     title: 'smart #3: motores eléctricos, versiones y ficha técnica | Kilómetro Claro',
     description: 'Ficha del smart #3 en España: potencias de sus versiones eléctricas, diferencias entre tracción trasera y total y límites de los datos publicados.',
-    intro: 'El smart #3 es un SUV coupé totalmente eléctrico que combina versiones de tracción trasera con variantes de dos motores y tracción total. La página técnica española recoge 200 kW para las versiones de un motor y 315 kW para BRABUS; la página comercial añade Pulse con 271 kW. Dejamos constancia de esa diferencia entre documentos oficiales.',
-    powertrainSummary: 'Pro, Pro+, Pro+ Black Collection y Premium figuran con 200 kW (272 CV). La página comercial española identifica Pulse con dos motores, tracción total y 271 kW (368 CV); BRABUS alcanza 315 kW (428 CV) en la ficha técnica. smart publica pares de 343 y 543 Nm, pero no sus regímenes en rpm, de modo que no se muestran en la última columna.',
-    usageNote: 'smart publica hasta 455 km WLTP para Premium; Pro figura con 325 km y Pulse y BRABUS con 415 km en la información comercial. La ficha técnica española mantiene una nota que califica como preliminares las cifras WLTP asociadas a su referencia de homologación europea. Por ello conviene contrastar el dato vigente en el configurador o con un concesionario antes de usarlo para planificar un recorrido. La autonomía real también varía con el ritmo, la temperatura, la carga y el recorrido.',
+    intro: 'El smart #3 es un SUV eléctrico de línea coupé. Su ficha técnica española compara cinco acabados: cuatro versiones de un motor y tracción trasera, y BRABUS con dos motores y tracción total.',
+    powertrainSummary: 'Pro, Pro+, Pro+ Black Collection y Premium figuran con 200 kW (272 CV). BRABUS alcanza 315 kW (428 CV) con dos motores. smart publica cifras de par, pero no sus regímenes en rpm, por lo que se omiten en la tabla.',
+    usageNote: 'La ficha técnica específica publica hasta 455 km WLTP para Premium y 325 km para Pro; BRABUS figura con 415 km. smart también atribuye 415 km a Pulse en información comercial, pero esa línea no aparece en la tabla técnica actual y se deja fuera de la comparación. La autonomía real varía con el ritmo, la temperatura, la carga y el recorrido.',
     versions: [
       { name: 'Pro, Pro+, Pro+ Black Collection y Premium', type: 'Eléctrico', power: '272 CV (200 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado por smart' },
-      { name: 'Pulse · dos motores', type: 'Eléctrico', power: '368 CV (271 kW)', displacement: '—', maxTorque: '', torqueScope: 'Sistema eléctrico', torqueRpm: 'No publicado por smart' },
       { name: 'BRABUS · dos motores', type: 'Eléctrico', power: '428 CV (315 kW)', displacement: '—', maxTorque: '', torqueScope: 'Sistema eléctrico', torqueRpm: 'No publicado por smart' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV coupé eléctrico de cinco plazas' },
-      { label: 'Tracción', value: 'Trasera en las versiones de un motor; total en Pulse y BRABUS' },
+      { label: 'Tracción', value: 'Trasera en las versiones de un motor; total en BRABUS' },
       { label: 'Autonomía WLTP publicada', value: 'Hasta 455 km, según versión' },
       { label: 'Baterías indicadas por smart', value: 'LFP o NCM, según acabado' },
     ],
-    specNote: 'Hay una discrepancia dentro de la web española: la ficha técnica comparativa lista Pro, Pro+, Pro+ Black Collection, Premium y BRABUS, mientras la página comercial y sus preguntas frecuentes describen también Pulse con 271 kW (368 CV). Se incluye Pulse porque smart publica esa potencia en la ficha comercial, pero no está en la tabla comparativa técnica. La misma documentación técnica califica como preliminares las cifras WLTP vinculadas a su referencia de homologación europea; verifica su estado actual con smart o un concesionario. Los datos de par aparecen sin rpm y se omiten.',
+    specNote: 'La tabla técnica específica compara Pro, Pro+, Pro+ Black Collection, Premium y BRABUS. La página comercial atribuye también datos de autonomía a Pulse, pero no lo incluye como una columna técnica equivalente; no le asignamos potencia ni precio por analogía. La smart Store confirma 48.210,01 € sin descuentos para Pro+ Black Collection; las demás versiones permanecen en precios pendientes. Los datos de par aparecen sin rpm y se omiten.',
     officialUrl: `${smart}/models/hashtag-three/`,
     technicalUrl: `${smart}/models/hashtag-three/specifications/`,
     sources: [
-      source('smart España: smart #3 y potencia de la versión Pulse', `${smart}/models/hashtag-three/`),
+      source('smart España: página comercial del smart #3 y mención de Pulse', `${smart}/models/hashtag-three/`),
       source('smart España: ficha técnica comparativa del smart #3', `${smart}/models/hashtag-three/specifications/`),
       source('smart España: gama disponible en el mercado español', `${smart}/models/`),
+      source('smart España: smart Store y precios sin descuentos', `${smart}/products/`),
     ],
     image: {
       src: '/images/models/commons/model-smart-3.jpg',
@@ -94,11 +134,10 @@ export const smartModels: ModelPageData[] = [
     modelSlug: '5',
     title: 'smart #5: versiones eléctricas, potencia y ficha técnica | Kilómetro Claro',
     description: 'Consulta la gama eléctrica del smart #5 en España, con potencias por versión, autonomía WLTP y una nota sobre diferencias entre sus fichas oficiales.',
-    intro: 'El smart #5 es el SUV mediano eléctrico de la marca y el modelo más grande de su gama española actual. La documentación oficial presenta versiones de tracción trasera y total, con potencias que varían según el acabado. La página técnica y la información comercial no coinciden en algunos datos de las versiones de mayor potencia; lo señalamos para que la cifra no se interprete sin contexto.',
-    powertrainSummary: 'La página comercial española indica 250 kW (340 CV) para Pro y 267 kW (363 CV) para Pro+ y Premium. La tabla técnica desglosa, además, 432 kW (588 CV) en Premium AWD y 475 kW (646 CV) en BRABUS. Son coches eléctricos puros, por lo que la cilindrada se marca con «—». Aunque smart publica cifras de par para las líneas del #5, las fuentes consultadas no asocian esas cifras a un régimen en rpm; se omiten.',
+    intro: 'El smart #5 es el SUV eléctrico mediano de la marca y el modelo más grande de su gama española. La ficha técnica específica vigente incluye cinco líneas: tres de tracción trasera y dos con tracción total.',
+    powertrainSummary: 'Pro+, Pro+ Black Collection y Premium ofrecen 267 kW (363 CV). Premium AWD alcanza 432 kW (588 CV) y BRABUS 475 kW (646 CV), en ambos casos con dos motores. smart publica cifras de par, pero no sus regímenes en rpm; por eso se omiten.',
     usageNote: 'La ficha técnica publica hasta 590 km de autonomía WLTP para Pro+ y Premium de tracción trasera, frente a 540 km para Premium AWD y BRABUS. El fabricante indica baterías NCM de 100 kWh brutos y tiempos de carga rápida que dependen de la potencia del punto y de las condiciones. La autonomía WLTP es un valor de homologación: la velocidad de autovía, el frío, el desnivel y el uso de climatización pueden reducir el alcance disponible en un viaje.',
     versions: [
-      { name: 'Pro', type: 'Eléctrico', power: '340 CV (250 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado por smart' },
       { name: 'Pro+, Pro+ Black Collection y Premium', type: 'Eléctrico', power: '363 CV (267 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico', torqueRpm: 'No publicado por smart' },
       { name: 'Premium AWD · dos motores', type: 'Eléctrico', power: '588 CV (432 kW)', displacement: '—', maxTorque: '', torqueScope: 'Sistema eléctrico', torqueRpm: 'No publicado por smart' },
       { name: 'BRABUS · dos motores', type: 'Eléctrico', power: '646 CV (475 kW)', displacement: '—', maxTorque: '', torqueScope: 'Sistema eléctrico', torqueRpm: 'No publicado por smart' },
@@ -109,13 +148,14 @@ export const smartModels: ModelPageData[] = [
       { label: 'Autonomía WLTP publicada', value: 'Hasta 590 km, según versión' },
       { label: 'Batería indicada en la ficha técnica', value: 'NCM, 100 kWh brutos (94 kWh netos)' },
     ],
-    specNote: 'La documentación española presenta cifras distintas según la sección: la página comercial resume hasta 400 kW (543 CV) para Pulse, BRABUS y Edition; la ficha técnica específica asigna 432 kW a Premium AWD y 475 kW a BRABUS, y no incluye filas para Pulse o Summit Edition. En esta tabla las potencias por versión proceden de la ficha técnica específica cuando existe una fila y de la FAQ comercial para Pro. La diferencia se conserva explícitamente; confirma con smart la versión y homologación de la unidad concreta antes de comprar.',
+    specNote: 'La tabla técnica específica compara Pro+, Pro+ Black Collection, Premium, Premium AWD y BRABUS. Otros textos comerciales españoles mencionan también Pro, Pulse y Summit Edition, incluso con cifras de potencia distintas, pero no las presentan de forma coherente en esa tabla. Para no mezclar configuraciones, la tabla de motores se limita a las cinco versiones comparables y deja constancia de la discrepancia. El precio de partida de 48.850 € no se asocia a un acabado concreto; la Store sí identifica 54.960 € sin descuentos para Pro+ Black Collection. Los demás importes por acabado están pendientes.',
     officialUrl: `${smart}/models/hashtag-five/`,
     technicalUrl: `${smart}/models/hashtag-five/specifications/`,
     sources: [
-      source('smart España: smart #5, datos comerciales y potencia de Pro', `${smart}/models/hashtag-five/`),
+      source('smart España: smart #5, datos comerciales y discrepancias de versiones', `${smart}/models/hashtag-five/`),
       source('smart España: tabla técnica detallada del smart #5', `${smart}/models/hashtag-five/specifications/`),
       source('smart España: gama disponible en el mercado español', `${smart}/models/`),
+      source('smart España: smart Store y precios sin descuentos', `${smart}/products/`),
     ],
     image: {
       src: '/images/models/commons/model-smart-5.jpg',

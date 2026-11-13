@@ -1,0 +1,175 @@
+/** Precios base de la gama Porsche España consultados el 13/11/2026. */
+type PorschePricing = {
+  basePrice: string;
+  note: string;
+  versionPrices: Record<string, string>;
+  options: { name: string; price: string; priceType: string }[];
+  sources: { label: string; url: string }[];
+};
+
+const spain = 'https://www.porsche.com/spain/models';
+const source = (label: string, url: string) => ({ label, url });
+const basePriceType = 'PVP recomendado de partida publicado por Porsche España; sin equipamiento opcional.';
+const price = (name: string, amount: string) => ({ name, price: amount, priceType: basePriceType });
+const recommendedPriceNote = 'Precios base recomendados consultados el 13 de noviembre de 2026 en los configuradores oficiales de Porsche España. Para Península y Baleares incluyen transporte, IVA e IEDMT calculado al tipo estatal; este impuesto puede variar según la comunidad autónoma y Porsche indica que los importes pueden cambiar y no son vinculantes. La tabla de versiones agrupa algunas carrocerías o acabados por motorización; consulta la lista de precios para el importe exacto de cada variante. No se han aplicado campañas temporales ni ayudas públicas.';
+
+export const porscheBasePriceType = basePriceType;
+
+export const porschePriceData: Record<string, PorschePricing> = {
+  '911': {
+    basePrice: '159.511 €',
+    note: recommendedPriceNote,
+    versionPrices: {
+      'Carrera / Carrera T · bóxer 3.0 biturbo': '159.511 €',
+      'Carrera S / Carrera 4S / Targa 4S · bóxer 3.0 biturbo': '180.449 €',
+      'Carrera GTS / Carrera 4 GTS / Targa 4 GTS · T-Hybrid 3.6': '205.356 €',
+      'Turbo S · T-Hybrid 3.6': '312.200 €',
+      'GT3 / GT3 Touring / GT3 S/C / GT3 90 F. A. Porsche · bóxer 4.0 atmosférico': '244.146 €',
+    },
+    options: [
+      price('Carrera · bóxer 3.0 biturbo · coupé', '159.511 €'),
+      price('Carrera T · bóxer 3.0 biturbo · coupé', '171.776 €'),
+      price('Carrera Cabriolet · bóxer 3.0 biturbo', '175.534 €'),
+      price('Carrera T Cabriolet · bóxer 3.0 biturbo', '187.812 €'),
+      price('Carrera S · bóxer 3.0 biturbo', '180.449 €'),
+      price('Carrera 4S · bóxer 3.0 biturbo', '189.745 €'),
+      price('Carrera S Cabriolet · bóxer 3.0 biturbo', '196.478 €'),
+      price('Carrera 4S Cabriolet · bóxer 3.0 biturbo', '205.780 €'),
+      price('Targa 4S · bóxer 3.0 biturbo', '207.860 €'),
+      price('Carrera GTS · T-Hybrid 3.6', '205.356 €'),
+      price('Carrera 4 GTS · T-Hybrid 3.6', '214.689 €'),
+      price('Targa 4 GTS · T-Hybrid 3.6', '230.714 €'),
+      price('Carrera GTS Cabriolet · T-Hybrid 3.6', '221.377 €'),
+      price('Carrera 4 GTS Cabriolet · T-Hybrid 3.6', '230.714 €'),
+      price('Turbo S · T-Hybrid 3.6', '312.200 €'),
+      price('Turbo S Cabriolet · T-Hybrid 3.6', '328.344 €'),
+      price('GT3 / GT3 con paquete Touring · bóxer 4.0', '244.146 €'),
+      price('GT3 S/C · bóxer 4.0', '312.556 €'),
+      price('GT3 90 F. A. Porsche · bóxer 4.0', '408.806 €'),
+    ],
+    sources: [source('Porsche España: configurador y precios del 911', `${spain}/911/configure/`)],
+  },
+  taycan: {
+    basePrice: '106.252 €',
+    note: recommendedPriceNote,
+    versionPrices: {
+      'Taycan / Taycan 4': '106.252 €',
+      'Taycan Black Edition / 4 Black Edition': '124.504 €',
+      'Taycan 4S': '125.766 €',
+      'Taycan 4S Black Edition / 4S Sport Turismo Black Edition / 4S Cross Turismo': '131.839 €',
+      'Taycan GTS': '154.159 €',
+      'Taycan Turbo': '182.251 €',
+      'Taycan Turbo S': '217.676 €',
+      'Taycan Turbo GT / paquete Weissach': '249.409 €',
+    },
+    options: [
+      price('Taycan · 408 CV · Sport Saloon', '106.252 €'),
+      price('Taycan 4 · 408 CV · Sport Saloon', '111.351 €'),
+      price('Taycan Black Edition · 435 CV', '124.504 €'),
+      price('Taycan 4 Black Edition · 435 CV', '129.584 €'),
+      price('Taycan 4S · 544 CV', '125.766 €'),
+      price('Taycan 4S Black Edition · 598 CV', '141.840 €'),
+      price('Taycan GTS · 700 CV', '154.159 €'),
+      price('Taycan Turbo · 884 CV', '182.251 €'),
+      price('Taycan Turbo S · 952 CV', '217.676 €'),
+      price('Taycan Turbo GT · 1.034 CV', '249.409 €'),
+      price('Taycan Turbo GT con paquete Weissach · 1.034 CV', '249.523 €'),
+      price('Taycan Sport Turismo · 408 CV', '107.539 €'),
+      price('Taycan Sport Turismo Black Edition · 435 CV', '125.832 €'),
+      price('Taycan 4S Sport Turismo · 544 CV', '127.044 €'),
+      price('Taycan 4S Sport Turismo Black Edition · 598 CV', '143.150 €'),
+      price('Taycan GTS Sport Turismo · 700 CV', '155.437 €'),
+      price('Taycan Turbo Sport Turismo · 884 CV', '183.517 €'),
+      price('Taycan Turbo S Sport Turismo · 952 CV', '218.942 €'),
+      price('Taycan 4 Cross Turismo · 435 CV', '119.013 €'),
+      price('Taycan 4S Cross Turismo · 598 CV', '131.839 €'),
+      price('Taycan Turbo Cross Turismo · 884 CV', '184.016 €'),
+    ],
+    sources: [source('Porsche España: configurador y precios del Taycan', `${spain}/taycan/configure/`)],
+  },
+  panamera: {
+    basePrice: '137.547 €',
+    note: recommendedPriceNote,
+    versionPrices: {
+      'Panamera / Panamera 4 · V6 2.9 biturbo': '137.547 €',
+      'Panamera 4 E-Hybrid · V6 2.9 + eléctrico': '137.578 €',
+      'Panamera 4S E-Hybrid · V6 2.9 + eléctrico': '153.086 €',
+      'Panamera GTS · V8 4.0 biturbo': '201.519 €',
+      'Panamera Turbo E-Hybrid · V8 4.0 + eléctrico': '215.547 €',
+      'Panamera Turbo S E-Hybrid · V8 4.0 + eléctrico': '249.117 €',
+    },
+    options: [
+      price('Panamera · V6 2.9 biturbo', '137.547 €'),
+      price('Panamera 4 · V6 2.9 biturbo', '142.419 €'),
+      price('Panamera 4 E-Hybrid · V6 2.9 + eléctrico', '137.578 €'),
+      price('Panamera 4 E-Hybrid Executive · V6 2.9 + eléctrico', '148.739 €'),
+      price('Panamera 4S E-Hybrid · V6 2.9 + eléctrico', '153.086 €'),
+      price('Panamera GTS · V8 4.0 biturbo', '201.519 €'),
+      price('Panamera Turbo E-Hybrid · V8 4.0 + eléctrico', '215.547 €'),
+      price('Panamera Turbo S E-Hybrid · V8 4.0 + eléctrico', '249.117 €'),
+    ],
+    sources: [source('Porsche España: configurador y precios del Panamera', `${spain}/panamera/configure/`)],
+  },
+  macan: {
+    basePrice: '83.296 €',
+    note: recommendedPriceNote,
+    versionPrices: {
+      'Macan Electric': '83.296 €',
+      'Macan 4 Electric': '86.372 €',
+      'Macan 4S Electric': '93.499 €',
+      'Macan GTS Electric': '108.327 €',
+      'Macan Turbo Electric': '119.649 €',
+    },
+    options: [
+      price('Macan Electric · 360 CV', '83.296 €'),
+      price('Macan 4 Electric · 408 CV', '86.372 €'),
+      price('Macan 4S Electric · 516 CV', '93.499 €'),
+      price('Macan GTS Electric · 571 CV', '108.327 €'),
+      price('Macan Turbo Electric · 639 CV', '119.649 €'),
+    ],
+    sources: [source('Porsche España: configurador y precios del Macan', `${spain}/macan/configure/`)],
+  },
+  cayenne: {
+    basePrice: '108.296 €',
+    note: recommendedPriceNote,
+    versionPrices: {
+      'Cayenne / Cayenne Coupé / Black Edition · V6 3.0 turbo': '119.405 €',
+      'Cayenne S · V8 4.0 biturbo': '142.380 €',
+      'Cayenne GTS · V8 4.0 biturbo': '167.766 €',
+      'Cayenne E-Hybrid / Coupé E-Hybrid / E-Hybrid Black Edition · V6 3.0 + eléctrico': '121.497 €',
+      'Cayenne S E-Hybrid / Coupé S E-Hybrid / S E-Hybrid Black Edition · V6 3.0 + eléctrico': '132.110 €',
+      'Cayenne Turbo E-Hybrid / Coupé Turbo E-Hybrid · V8 4.0 + eléctrico': '194.879 €',
+      'Cayenne Electric': '108.296 €',
+      'Cayenne S Electric': '130.154 €',
+      'Cayenne Turbo Electric': '169.124 €',
+    },
+    options: [
+      price('Cayenne · V6 3.0 turbo', '119.405 €'),
+      price('Cayenne Black Edition · V6 3.0 turbo', '136.332 €'),
+      price('Cayenne Coupé · V6 3.0 turbo', '123.485 €'),
+      price('Cayenne Coupé Black Edition · V6 3.0 turbo', '138.208 €'),
+      price('Cayenne S · V8 4.0 biturbo', '142.380 €'),
+      price('Cayenne S Coupé · V8 4.0 biturbo', '147.348 €'),
+      price('Cayenne GTS · V8 4.0 biturbo', '167.766 €'),
+      price('Cayenne GTS Coupé · V8 4.0 biturbo', '171.051 €'),
+      price('Cayenne E-Hybrid · V6 3.0 + eléctrico', '121.497 €'),
+      price('Cayenne E-Hybrid Black Edition · V6 3.0 + eléctrico', '135.892 €'),
+      price('Cayenne E-Hybrid Coupé · V6 3.0 + eléctrico', '123.717 €'),
+      price('Cayenne E-Hybrid Coupé Black Edition · V6 3.0 + eléctrico', '136.778 €'),
+      price('Cayenne S E-Hybrid · V6 3.0 + eléctrico', '132.110 €'),
+      price('Cayenne S E-Hybrid Black Edition · V6 3.0 + eléctrico', '146.542 €'),
+      price('Cayenne S E-Hybrid Coupé · V6 3.0 + eléctrico', '136.081 €'),
+      price('Cayenne S E-Hybrid Coupé Black Edition · V6 3.0 + eléctrico', '148.198 €'),
+      price('Cayenne Turbo E-Hybrid · V8 4.0 + eléctrico', '194.879 €'),
+      price('Cayenne Turbo E-Hybrid Coupé · V8 4.0 + eléctrico', '198.506 €'),
+      price('Cayenne Turbo E-Hybrid Coupé con paquete GT · V8 4.0 + eléctrico', '225.607 €'),
+      price('Cayenne Electric · 442 CV', '108.296 €'),
+      price('Cayenne Coupé Electric · 442 CV', '112.359 €'),
+      price('Cayenne S Electric · 666 CV', '130.154 €'),
+      price('Cayenne S Coupé Electric · 666 CV', '134.316 €'),
+      price('Cayenne Turbo Electric · 1.156 CV', '169.124 €'),
+      price('Cayenne Turbo Coupé Electric · 1.156 CV', '172.233 €'),
+    ],
+    sources: [source('Porsche España: configurador y precios del Cayenne', `${spain}/cayenne/configure/`)],
+  },
+};

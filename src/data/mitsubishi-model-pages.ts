@@ -1,6 +1,6 @@
 import type { ModelPageData } from './model-pages';
 
-const reviewedAt = '30 de octubre de 2026';
+const reviewedAt = '13 de noviembre de 2026';
 const mitsubishi = 'https://www.mitsubishi-motors.es';
 const source = (label: string, url: string) => ({ label, url });
 
@@ -10,26 +10,27 @@ export const mitsubishiModels: ModelPageData[] = [
     modelSlug: 'colt',
     title: 'Mitsubishi Colt: versiones, motores y ficha técnica | Kilómetro Claro',
     description: 'Consulta los motores gasolina, GLP e híbrido del Mitsubishi Colt en España, con potencia, cilindrada, par y fuentes oficiales.',
-    intro: 'El Colt es el turismo urbano de cinco puertas de Mitsubishi. En España conviven el 1.0 turbo de gasolina, una variante bifuel compatible con GLP y el híbrido 160 HEV; la oferta y los acabados visibles varían entre la página de producto, el catálogo de precios y la tienda oficial.',
+    intro: 'El Colt es el turismo urbano de cinco puertas de Mitsubishi. La gama española combina el 1.0 turbo de gasolina, una variante bifuel compatible con GLP y el 160 HEV, un híbrido no enchufable. La tarifa oficial de octubre de 2026 detalla precios para las versiones Motion y Kaiteki que recoge; la página de producto mantiene el acabado Kaiteki+ con precio bajo consulta.',
     powertrainSummary: 'La gama publicada incluye el 100T de 90 CV, el 100T GLP de 100 CV y el 160 HEV de 145 CV de potencia total. En el híbrido se separan las cifras del sistema, del motor de gasolina y de los dos motores eléctricos para no sumar potencias de componentes como si fueran una única cifra adicional.',
-    usageNote: 'El 100T es la opción de gasolina con cambio manual; el 100T GLP puede usar gasolina o gas licuado de petróleo. El 160 HEV combina gasolina y electricidad y utiliza una transmisión automática. La página española y la tienda oficial mantienen el híbrido, aunque la lista de precios de octubre de 2026 no lo incluye: confirma con un concesionario la disponibilidad y el acabado concreto antes de comprar.',
+    usageNote: 'El 100T es la opción de gasolina con cambio manual; el 100T GLP es bifuel y puede funcionar con gasolina o gas licuado de petróleo. El 160 HEV combina gasolina y electricidad y utiliza una transmisión automática. La lista oficial de octubre de 2026 publica el precio del 160 HEV Kaiteki, mientras que el Kaiteki+ figura en la página de producto con precio bajo consulta.',
     versions: [
       { name: '100T · Motion / Kaiteki', type: 'Gasolina', power: '90 CV (67 kW)', displacement: '999 cm³', maxTorque: '160 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.000–3.750 rpm' },
-      { name: '100T GLP · Motion', type: 'Bifuel (gasolina + GLP)', power: '100 CV (74 kW)', displacement: '999 cm³', maxTorque: '170 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.000–3.500 rpm' },
-      { name: '160 HEV · Kaiteki / Kaiteki+', type: 'Híbrido (gasolina + eléctrico)', power: 'Sistema: 145 CV (105 kW); motor térmico: 94 CV (69 kW); motor eléctrico principal: 49 CV (36 kW); motor eléctrico secundario: 20 CV (15 kW)', displacement: '1.598 cm³', maxTorque: '148 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '3.200–3.600 rpm' },
+      { name: '100T GLP · Motion', type: 'GLP', power: '100 CV (74 kW)', displacement: '999 cm³', maxTorque: '170 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '2.000–3.500 rpm' },
+      { name: '160 HEV · Kaiteki / Kaiteki+', type: 'Híbrido no enchufable', power: 'Sistema: 145 CV (105 kW); motor térmico: 94 CV (69 kW); motor eléctrico principal: 49 CV (36 kW); motor eléctrico secundario: 20 CV (15 kW)', displacement: '1.598 cm³', maxTorque: '148 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '3.200–3.600 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'Turismo urbano de cinco puertas' },
       { label: 'Plazas', value: '5' },
       { label: 'Tracción', value: 'Delantera' },
-      { label: 'Motorizaciones', value: 'Gasolina, gasolina/GLP e híbrido autorrecargable' },
+      { label: 'Motorizaciones', value: 'Gasolina, bifuel gasolina/GLP e híbrido no enchufable' },
     ],
-    specNote: 'La tienda oficial y la página de producto española muestran el Colt 160 HEV Kaiteki; la lista de precios de octubre de 2026 consultada no lo recoge. Se incluye por estar aún publicado en los canales oficiales, con esta discrepancia de disponibilidad expresamente indicada. Las cifras del híbrido proceden de la ficha técnica oficial del Colt; la potencia de 145 CV es la del sistema, no la suma de sus componentes.',
+    specNote: 'La ficha de gama de octubre de 2026 incluye el Colt 160 HEV Kaiteki por 27.550 €. La página del modelo muestra además el Kaiteki+ con precio bajo consulta, por lo que no se equipara al precio del acabado inferior. Las cifras del híbrido proceden de la ficha técnica oficial; los 145 CV son la potencia del sistema, no la suma de sus componentes.',
     officialUrl: `${mitsubishi}/modelos/colt`,
     technicalUrl: `${mitsubishi}/content/dam/mitsubishi-motors-es/es/catalogos/Catalogo_COLT.pdf`,
     sources: [
       source('Mitsubishi España: página oficial del Colt y versiones', `${mitsubishi}/modelos/colt`),
       source('Mitsubishi España: tienda oficial y catálogo de vehículos', 'https://www.webstore-mitsubishi.es/category/root'),
+      source('Mitsubishi España: oferta Colt 100T Motion hasta el 31/12/2026', `${mitsubishi}/loquiero/promociones/ofertas/promocion-colt`),
       source('Mitsubishi España: ficha técnica del Colt', `${mitsubishi}/content/dam/mitsubishi-motors-es/es/catalogos/Catalogo_COLT.pdf`),
       source('Mitsubishi España: gama y precios Colt, octubre de 2026', `${mitsubishi}/content/dam/mitsubishi-motors-es/es/catalogos/Gama_COLT.pdf`),
     ],
@@ -44,17 +45,17 @@ export const mitsubishiModels: ModelPageData[] = [
     powertrainSummary: 'El 120T desarrolla 115 CV, el 130T MHEV 140 CV y el sistema 180 HEV 160 CV. En el híbrido, Mitsubishi también publica por separado la potencia del motor térmico y la de los dos motores eléctricos; esas cifras describen componentes del conjunto y no se deben sumar a la potencia total.',
     usageNote: 'El 120T es la alternativa de gasolina con cambio manual. El 130T MHEV combina un motor turbo de 1,3 litros con asistencia eléctrica ligera y cambio automático de doble embrague de siete marchas. El 180 HEV utiliza un motor de gasolina de 1,8 litros y propulsión híbrida automática multimodo. El ahorro real depende del recorrido y del uso; la denominación híbrida por sí sola no permite anticipar el gasto individual.',
     versions: [
-      { name: '120T · Motion / Black Edition / Kaiteki', type: 'Gasolina', power: '115 CV (84 kW)', displacement: '1.199 cm³', maxTorque: '190 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '1.750–4.000 rpm' },
-      { name: '130T MHEV 7DCT · Kaiteki', type: 'Microhíbrido de gasolina', power: '140 CV (104 kW)', displacement: '1.332 cm³', maxTorque: '245 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.250–3.500 rpm' },
-      { name: '180 HEV · Motion / Black Edition / Kaiteki / Kaiteki+', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 160 CV (116 kW); motor térmico: 110 CV (80 kW); motor eléctrico principal: 50 CV (36 kW); motor eléctrico secundario: 20 CV (15 kW)', displacement: '1.789 cm³', maxTorque: '172 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '3.500 rpm' },
+      { name: '120T · Motion / Kaiteki', type: 'Gasolina', power: '115 CV (84 kW)', displacement: '1.199 cm³', maxTorque: '190 Nm', torqueScope: 'Motor de gasolina', torqueRpm: '1.750–4.000 rpm' },
+      { name: '130T MHEV 7DCT · Kaiteki', type: 'Híbrido no enchufable', power: '140 CV (104 kW)', displacement: '1.332 cm³', maxTorque: '245 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.250–3.500 rpm' },
+      { name: '180 HEV · Motion / Black Edition / Kaiteki / Kaiteki+', type: 'Híbrido no enchufable', power: 'Sistema: 160 CV (116 kW); motor térmico: 110 CV (80 kW); motor eléctrico principal: 50 CV (36 kW); motor eléctrico secundario: 20 CV (15 kW)', displacement: '1.789 cm³', maxTorque: '172 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '3.500 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV compacto' },
       { label: 'Plazas', value: '5' },
       { label: 'Tracción', value: 'Delantera' },
-      { label: 'Motorizaciones', value: 'Gasolina, microhíbrida e híbrida autorrecargable' },
+      { label: 'Motorizaciones', value: 'Gasolina y dos opciones de híbrido no enchufable (MHEV y HEV)' },
     ],
-    specNote: 'La gama de la página española y el catálogo 26MY incluyen 120T, 130T MHEV 7DCT y 180 HEV; el webstore consultado puede mostrar menos acabados en stock. Las potencias del HEV se identifican por componente y sistema. El catálogo rotula la potencia total como 160 CV; el nombre comercial 180 HEV no es esa cifra de potencia. Los pares de las versiones MHEV y HEV corresponden al motor térmico de gasolina.',
+    specNote: 'La tarifa de octubre de 2026 distingue 120T Motion y Kaiteki, 130T MHEV 7DCT Kaiteki y varios acabados 180 HEV, incluidos Black Edition y Kaiteki+. La potencia total del HEV es 160 CV; el nombre comercial 180 HEV no equivale a esa cifra. Los pares de las versiones MHEV y HEV corresponden al motor térmico de gasolina.',
     officialUrl: `${mitsubishi}/modelos/asx`,
     technicalUrl: `${mitsubishi}/content/dam/mitsubishi-motors-es/es/catalogos/Catalogo_ASX.pdf`,
     sources: [
@@ -73,15 +74,15 @@ export const mitsubishiModels: ModelPageData[] = [
     powertrainSummary: 'El 130T MHEV entrega 140 CV desde el motor turbo de gasolina. El 180 HEV ofrece 160 CV de potencia total del sistema y combina un motor térmico de 110 CV con dos motores eléctricos. Mitsubishi publica el par y régimen del motor térmico; no asignamos a los motores eléctricos un régimen que el catálogo no especifica.',
     usageNote: 'El MHEV mantiene un motor de gasolina como fuente principal de empuje y utiliza asistencia eléctrica ligera; no se enchufa. El HEV puede circular en eléctrico en determinadas situaciones y recarga su batería durante la marcha. Para comparar ambas opciones conviene tener en cuenta el tipo de recorrido, la transmisión y el consumo homologado de la versión concreta, además del precio y equipamiento.',
     versions: [
-      { name: '130T MHEV · Motion / Kaiteki', type: 'Microhíbrido de gasolina', power: '140 CV (104 kW)', displacement: '1.333 cm³', maxTorque: '245 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.500–3.500 rpm' },
-      { name: '130T MHEV 7DCT · Kaiteki', type: 'Microhíbrido de gasolina', power: '140 CV (104 kW)', displacement: '1.333 cm³', maxTorque: '245 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.500–3.500 rpm' },
-      { name: '180 HEV · Motion / Kaiteki / Kaiteki+', type: 'Híbrido autorrecargable (gasolina + eléctrico)', power: 'Sistema: 160 CV (116 kW); motor térmico: 110 CV (80 kW); motor eléctrico principal: 50 CV (36 kW); motor eléctrico secundario: 20 CV (15 kW)', displacement: '1.798 cm³', maxTorque: '170 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '3.500 rpm' },
+      { name: '130T MHEV · Motion / Kaiteki', type: 'Híbrido no enchufable', power: '140 CV (104 kW)', displacement: '1.333 cm³', maxTorque: '245 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.500–3.500 rpm' },
+      { name: '130T MHEV 7DCT · Kaiteki', type: 'Híbrido no enchufable', power: '140 CV (104 kW)', displacement: '1.333 cm³', maxTorque: '245 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '2.500–3.500 rpm' },
+      { name: '180 HEV · Motion / Kaiteki / Kaiteki+', type: 'Híbrido no enchufable', power: 'Sistema: 160 CV (116 kW); motor térmico: 110 CV (80 kW); motor eléctrico principal: 50 CV (36 kW); motor eléctrico secundario: 20 CV (15 kW)', displacement: '1.798 cm³', maxTorque: '170 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '3.500 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV familiar' },
       { label: 'Plazas', value: '5' },
       { label: 'Tracción', value: 'Delantera' },
-      { label: 'Motorizaciones', value: 'Microhíbrida e híbrida autorrecargable' },
+      { label: 'Motorizaciones', value: 'Dos opciones de híbrido no enchufable (MHEV y HEV)' },
     ],
     figures: [
       { label: 'Longitud publicada', value: '4.412 mm en la tabla técnica; 4.413 mm en el diagrama de cotas oficial' },
@@ -95,6 +96,7 @@ export const mitsubishiModels: ModelPageData[] = [
       source('Mitsubishi España: página oficial del Grandis y acabados', `${mitsubishi}/modelos/grandis`),
       source('Mitsubishi España: catálogo técnico Grandis 26MY', `${mitsubishi}/content/dam/mitsubishi-motors-es/es/catalogos/Catalogo_Mitsubishi_Grandis.pdf`),
       source('Mitsubishi España: ficha de gama y precios del Grandis', `${mitsubishi}/content/dam/mitsubishi-motors-es/es/catalogos/Gama_GRANDIS.pdf`),
+      source('Mitsubishi España: ofertas Webstore y precios sujetos a campaña', 'https://www.webstore-mitsubishi.es/category/root'),
     ],
     reviewedAt,
   },
@@ -107,7 +109,7 @@ export const mitsubishiModels: ModelPageData[] = [
     powertrainSummary: 'La potencia total del sistema es de 306 CV (225 kW). Mitsubishi desglosa un motor térmico de 136 CV, uno eléctrico delantero de 116 CV y otro trasero de 136 CV. Estas potencias corresponden a elementos que trabajan en conjunto y no se suman como si fueran motores independientes de máxima potencia simultánea.',
     usageNote: 'La parte enchufable permite cargar la batería desde una toma externa y utilizar energía eléctrica en desplazamientos para los que la carga disponible alcance. En recorridos largos, el sistema puede combinar el motor térmico y los eléctricos. El consumo real de un PHEV depende mucho de la frecuencia de carga y de la proporción de kilómetros recorridos con la batería cargada; una cifra homologada no describe todos los usos.',
     versions: [
-      { name: '4WD PHEV · Motion / Kaiteki / Kaiteki+ / First Edition / Black Edition', type: 'Híbrido enchufable (gasolina + eléctrico)', power: 'Sistema: 306 CV (225 kW); motor térmico: 136 CV (100 kW); eléctrico delantero: 116 CV (85 kW); eléctrico trasero: 136 CV (100 kW)', displacement: '2.360 cm³', maxTorque: '203 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '4.000 rpm' },
+      { name: '4WD PHEV · Motion / Kaiteki / Kaiteki+ / First Edition / Black Edition', type: 'Híbrido enchufable', power: 'Sistema: 306 CV (225 kW); motor térmico: 136 CV (100 kW); eléctrico delantero: 116 CV (85 kW); eléctrico trasero: 136 CV (100 kW)', displacement: '2.360 cm³', maxTorque: '203 Nm', torqueScope: 'Motor térmico de gasolina', torqueRpm: '4.000 rpm' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV grande híbrido enchufable' },
@@ -122,6 +124,7 @@ export const mitsubishiModels: ModelPageData[] = [
       source('Mitsubishi España: Outlander PHEV, versiones y equipamiento', `${mitsubishi}/modelos/outlander-phev`),
       source('Mitsubishi España: ficha de gama Outlander PHEV, octubre de 2026', `${mitsubishi}/content/dam/mitsubishi-motors-es/es/catalogos/Gama_Outlander_PHEV.pdf`),
       source('Mitsubishi España: catálogo técnico Outlander PHEV', `${mitsubishi}/content/dam/mitsubishi-motors-es/es/catalogos/Catalogo_Outlander_PHEV.pdf`),
+      source('Mitsubishi España: ofertas Webstore y precios sujetos a campaña', 'https://www.webstore-mitsubishi.es/category/root'),
     ],
     reviewedAt,
   },
@@ -134,8 +137,8 @@ export const mitsubishiModels: ModelPageData[] = [
     powertrainSummary: 'Las versiones Kaiteki y Kaiteki+ comparten un motor eléctrico delantero de 220 CV (160 kW). El vehículo no tiene cilindrada térmica. El catálogo publica un par máximo de 300 Nm, pero no indica las revoluciones a las que se alcanza, así que no se incluye como cifra en la columna de par máximo.',
     usageNote: 'La capacidad útil de la batería es de 87 kWh; la cifra bruta de 92 kWh incluye el margen de gestión que no queda disponible para la conducción. La autonomía homologada cambia con el acabado, las ruedas y el ciclo WLTP indicado. Temperatura, velocidad, climatización y tipo de carretera influyen en la autonomía real; para viajes largos conviene planificar las paradas de carga.',
     versions: [
-      { name: '92 kWh brutos / 87 kWh netos · Kaiteki', type: 'Eléctrico de batería', power: '220 CV (160 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico delantero', torqueRpm: 'No publicado por Mitsubishi' },
-      { name: '92 kWh brutos / 87 kWh netos · Kaiteki+', type: 'Eléctrico de batería', power: '220 CV (160 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico delantero', torqueRpm: 'No publicado por Mitsubishi' },
+      { name: '92 kWh brutos / 87 kWh netos · Kaiteki', type: 'Eléctrico', power: '220 CV (160 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico delantero', torqueRpm: 'No publicado por Mitsubishi' },
+      { name: '92 kWh brutos / 87 kWh netos · Kaiteki+', type: 'Eléctrico', power: '220 CV (160 kW)', displacement: '—', maxTorque: '', torqueScope: 'Motor eléctrico delantero', torqueRpm: 'No publicado por Mitsubishi' },
     ],
     facts: [
       { label: 'Carrocería', value: 'SUV eléctrico familiar' },
@@ -150,6 +153,7 @@ export const mitsubishiModels: ModelPageData[] = [
       source('Mitsubishi España: Eclipse Cross EV y acabados', `${mitsubishi}/modelos/eclipse-cross-ev`),
       source('Mitsubishi España: catálogo técnico Eclipse Cross EV', `${mitsubishi}/content/dam/mitsubishi-motors-es/es/catalogos/Catalogo_Eclipse_Cross.pdf`),
       source('Mitsubishi España: ficha de gama Eclipse Cross, octubre de 2026', `${mitsubishi}/content/dam/mitsubishi-motors-es/es/catalogos/Gama_Eclipse_Cross.pdf`),
+      source('Mitsubishi España: gama actual de la Webstore', 'https://www.webstore-mitsubishi.es/category/root'),
     ],
     reviewedAt,
   },

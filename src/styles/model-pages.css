@@ -5,6 +5,12 @@
 .model-detail-brandline img{width:46px;height:37px;object-fit:contain}
 .model-detail-brand-monogram{display:grid;place-items:center;width:46px;height:37px;border:1px solid #aeb9ae;border-radius:50%;color:var(--brand-ink);font:900 22px/1 Manrope,Arial,sans-serif;letter-spacing:-.06em}
 .model-detail-intro h1{margin:14px 0 15px;color:var(--brand-ink);font:900 clamp(42px,7vw,76px)/.98 Manrope,Arial,sans-serif;letter-spacing:-.075em}
+.model-detail-title-row{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:14px 0 15px}
+.model-detail-title-row h1{min-width:0;margin:0}
+.model-detail-base-price{flex:0 0 auto;display:grid;gap:5px;padding:10px 13px;border:1.5px solid var(--brand-ink);background:var(--brand-lime);box-shadow:3px 3px 0 var(--brand-ink);color:var(--brand-ink)}
+.model-detail-base-price span{font-size:9px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+.model-detail-base-price strong{font:900 18px/1.1 Manrope,Arial,sans-serif;white-space:nowrap}
+.model-detail-base-price small{max-width:220px;font-size:9px;line-height:1.35;font-weight:700}
 .model-detail-lead{max-width:790px;margin:0;color:#344c3e;font-size:17px;line-height:1.75}
 .model-detail-official-link{display:inline-flex;align-items:center;min-height:43px;margin-top:20px;padding:0 14px;border:1.5px solid var(--brand-ink);border-radius:5px;background:var(--brand-lime);box-shadow:3px 3px 0 var(--brand-ink);color:var(--brand-ink);font-size:11px;font-weight:900;text-decoration:none}
 .model-detail-official-link:hover{transform:translateY(-1px)}
@@ -12,6 +18,14 @@
 .model-detail-section-heading{margin-bottom:13px}
 .model-detail-section-heading h2,.model-detail-explainer h2,.model-detail-next h2{margin:8px 0 10px;color:var(--brand-ink);font:850 clamp(25px,3.7vw,36px)/1.1 Manrope,Arial,sans-serif;letter-spacing:-.055em}
 .model-detail-section>p{max-width:850px;color:#43564a;font-size:13px;line-height:1.8}
+.model-detail-version-prices{max-width:850px;margin:18px 0 23px;padding:14px;border:1px solid #aeb9ae;background:#f7f9f5}
+.model-detail-version-prices h3{margin:0 0 10px;color:var(--brand-ink);font:850 14px/1.3 Manrope,Arial,sans-serif}
+.model-detail-version-prices dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px;margin:0}
+.model-detail-version-prices dl>div{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #d5ddd5}
+.model-detail-version-prices dt{color:#43564a;font-size:11px;font-weight:750}
+.model-detail-version-prices dd{margin:0;color:var(--brand-ink);font-size:12px;font-weight:900;text-align:right}
+.model-detail-version-prices dd small{display:block;margin-top:3px;color:#647268;font-size:9px;font-weight:650;line-height:1.4}
+.model-detail-version-prices .model-detail-note{margin-bottom:0!important}
 .model-detail-table-wrap{overflow-x:auto;margin-top:21px;border-top:2px solid var(--brand-ink);border-bottom:1px solid #aeb9ae}
 .model-detail-table{width:100%;min-width:1050px;border-collapse:collapse;text-align:left}
 .model-detail-table--motorizaciones{min-width:790px}
@@ -49,4 +63,4 @@
 .model-detail-table--motorizaciones{min-width:790px}
 .model-detail-table--compact{min-width:540px}
 @media(max-width:850px){.model-detail-hero-grid{grid-template-columns:minmax(0,1fr);gap:24px}.model-detail-photo{max-width:640px}.model-detail-photo figcaption{font-size:9px}}
-@media(max-width:700px){.model-detail-intro{padding:4px 0 29px}.model-detail-intro h1{font-size:clamp(40px,12vw,60px)}.model-detail-lead{font-size:15px}.model-detail-section{margin-top:42px}.model-detail-table{min-width:1050px}.model-detail-table--motorizaciones{min-width:760px}.model-detail-table--compact{min-width:540px}.model-detail-table th,.model-detail-table td{padding:12px 9px;font-size:11px}.model-detail-specs{grid-template-columns:repeat(2,minmax(0,1fr))}.model-detail-explainer{margin-top:42px;padding-left:15px}.model-detail-next{margin-top:43px;padding:20px 0}.model-detail-links{display:grid;grid-template-columns:1fr}.model-detail-links a{min-height:45px}}
+@media(max-width:700px){.model-detail-intro{padding:4px 0 29px}.model-detail-intro h1{font-size:clamp(40px,12vw,60px)}.model-detail-title-row{align-items:start;flex-direction:column;gap:14px}.model-detail-base-price{width:max-content;max-width:100%}.model-detail-lead{font-size:15px}.model-detail-section{margin-top:42px}.model-detail-table{min-width:1050px}.model-detail-table--motorizaciones{min-width:760px}.model-detail-table--compact{min-width:540px}.model-detail-table th,.model-detail-table td{padding:12px 9px;font-size:11px}.model-detail-version-prices{padding:11px}.model-detail-version-prices dl{grid-template-columns:1fr}.model-detail-specs{grid-template-columns:repeat(2,minmax(0,1fr))}.model-detail-explainer{margin-top:42px;padding-left:15px}.model-detail-next{margin-top:43px;padding:20px 0}.model-detail-links{display:grid;grid-template-columns:1fr}.model-detail-links a{min-height:45px}}
