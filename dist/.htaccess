@@ -1,5 +1,4 @@
 Options -MultiViews
 RewriteEngine On
 RewriteRule ^categorias(/.*)?$ - [G,L]
-RewriteRule ^marcas/porsche/718/?$ /marcas/porsche/ [R=301,L]
 RewriteRule ^herramientas/?$ /calculadoras/ [R=301,L]
