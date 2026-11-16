@@ -5,6 +5,7 @@ import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
 const title = 'Zonas de bajas emisiones en España: cómo saber si afectan a tu coche';
+const seoTitle = 'Zonas de bajas emisiones: ¿te afectan? | Kilómetro Claro';
 const description = 'Consulta las ZBE por municipio en el mapa oficial y compara las reglas de Madrid Centro, Barcelona y Bilbao antes de viajar.';
 const canonical = new URL('/guias/zonas-bajas-emisiones-espana-como-afectan/', Astro.site ?? 'https://kilometroclaro.com');
 const mitecoMapUrl = 'https://app.powerbi.com/view?r=eyJrIjoiMDNjM2JhMzgtOWY3Mi00NWJhLWJhMjAtM2ZlZTZiMGExZTkwIiwidCI6ImViYzM5ZjYzLTA2NTQtNGFiMS1iYjVkLTBkOTU2Y2E1Nzk4NyIsImMiOjh9';
@@ -22,9 +23,11 @@ const articleSchema = {
   author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
   publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puedo entrar en todas las ZBE con la etiqueta B?","acceptedAnswer":{"@type":"Answer","text":"No. En los ejemplos revisados, la ZBE Rondas de Barcelona permite la circulación general de los turismos B con matrícula española, mientras que Bilbao restringe su acceso general durante el horario de aplicación. En Madrid Distrito Centro, un B no puede entrar solo para atravesar la zona."}},{"@type":"Question","name":"¿Las restricciones de Bilbao se aplican los fines de semana?","acceptedAnswer":{"@type":"Answer","text":"Según el Ayuntamiento de Bilbao, el horario general de aplicación de su ZBE es de lunes a viernes laborables, de 7:00 a 20:00. Comprueba las condiciones vigentes y cualquier otra norma de circulación o estacionamiento antes de ir."}},{"@type":"Question","name":"¿Qué ocurre si mi vehículo tiene matrícula extranjera?","acceptedAnswer":{"@type":"Answer","text":"Debes consultar el procedimiento de la ZBE concreta. En Barcelona, los vehículos extranjeros necesitan acreditar y registrar previamente sus características para circular conforme a las condiciones de la zona."}},{"@type":"Question","name":"¿La etiqueta ECO o CERO permite aparcar en cualquier lugar?","acceptedAnswer":{"@type":"Answer","text":"No. Las reglas de acceso a una ZBE y las de estacionamiento son cuestiones distintas. Consulta también la regulación del aparcamiento de la calle o zona de destino."}}]};
 ---
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Zonas de bajas emisiones' }]} />
     <article class="guide-article">

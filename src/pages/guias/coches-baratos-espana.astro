@@ -5,6 +5,7 @@ import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
 const title = 'Coches baratos en España en 2026: cinco modelos con precios sin promociones';
+const seoTitle = 'Coches baratos en España 2026: 5 modelos | Kilómetro Claro';
 const description = 'Comparamos cinco coches nuevos económicos con precios de referencia sin ayudas ni financiación. Versiones, fuentes y gastos que debes pedir en el presupuesto.';
 const canonical = new URL('/guias/coches-baratos-espana/', Astro.site ?? 'https://kilometroclaro.com');
 const publishedDate = '2026-10-13';
@@ -21,10 +22,12 @@ const articleSchema = {
   author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
   publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuál es el coche nuevo más barato de esta comparativa?","acceptedAnswer":{"@type":"Answer","text":"El Dacia Sandero Essential TCe 100 es el de menor referencia sin promociones entre los cinco seleccionados: 14.490 € en el configurador oficial consultado el 18 de octubre de 2026. No afirmamos que sea el más barato de todo el mercado en cualquier momento o concesionario."}},{"@type":"Question","name":"¿Estos precios son lo que pagaré al recoger el coche?","acceptedAnswer":{"@type":"Answer","text":"No necesariamente. Son referencias publicadas antes de promociones. El importe final depende de la configuración, el territorio, los gastos de matriculación o preentrega, la disponibilidad y el presupuesto del vendedor. Pide el total al contado por escrito."}},{"@type":"Question","name":"¿Por qué no aparecen precios anunciados más bajos?","acceptedAnswer":{"@type":"Answer","text":"Muchas cifras «desde» incluyen descuentos temporales, financiación, entrega de un usado o ayudas. Pueden ser buenas oportunidades para quien cumpla las condiciones, pero no son equivalentes a un PVP sin promociones y pueden desaparecer. Esta guía compara una misma clase de referencia."}},{"@type":"Question","name":"¿Sale más barato financiar para obtener el descuento?","acceptedAnswer":{"@type":"Answer","text":"Solo puedes saberlo comparando el importe total a plazos, con entrada, comisiones, intereses y cuota final, frente al presupuesto al contado. Un precio inicial menor puede dar lugar a un coste total mayor."}}]};
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Coches baratos en España' }]} />
     <article class="guide-article">

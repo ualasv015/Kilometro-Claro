@@ -395,4 +395,15 @@ export const guideImages: Record<string, GuideImage> = {
     licenseName: 'Licencia Unsplash',
     width: 1600, height: 900,
   },
+  'que-hace-aceite-motor-cambio-a-tiempo': {
+    src: '/images/guides/aceite-varilla-nivel.jpg',
+    alt: 'Una mano saca la varilla de nivel de aceite de un motor, con el mango amarillo con la inscripción «Engine oil»',
+    caption: 'Varilla de nivel de aceite de un motor de automóvil. El nivel correcto y el intervalo de cambio los fija el manual de cada vehículo.',
+    author: 'Dvortygirl',
+    sourceName: 'Wikimedia Commons',
+    source: 'https://commons.wikimedia.org/wiki/File:Engine_oil_dipstick.JPG',
+    license: 'https://creativecommons.org/licenses/by-sa/3.0',
+    licenseName: 'CC BY-SA 3.0',
+    width: 960, height: 720,
+  },
 };

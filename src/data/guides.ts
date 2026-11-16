@@ -198,7 +198,7 @@ export const guides = [
   {
     slug: 'cuanto-cuesta-viaje-coche',
     title: 'Cuánto cuesta un viaje en coche: ejemplo Almería-Barcelona',
-    category: 'Coste de los viajes',
+    category: 'Costes del coche',
     categorySlug: 'costes-del-coche',
     description: 'Compara cuatro presupuestos para viajar de Almería a Barcelona: sin peajes o con C-32, parking privado o aparcamiento gratuito.',
     published: true,
@@ -215,7 +215,7 @@ export const guides = [
     slug: 'consumo-coche-electrico-gasolina-diesel',
     title: 'Coche eléctrico frente a gasolina o diésel: costes y recargas en dos viajes',
     category: 'Coche eléctrico',
-    categorySlug: 'comparar-coches',
+    categorySlug: 'coche-electrico',
     description: 'Compara costes entre Almería y Granada y entre Almería y Bilbao, con recargas públicas, tiempos y planificación.',
     published: true,
   },
@@ -313,6 +313,14 @@ export const guides = [
     category: 'Uso y mantenimiento',
     categorySlug: 'uso-mantenimiento',
     description: 'Comparamos halógenas, xenón, LED, Matrix y láser: cómo funcionan, qué alcances se han publicado y qué revisar antes de elegir o sustituir los faros.',
+    published: true,
+  },
+  {
+    slug: 'que-hace-aceite-motor-cambio-a-tiempo',
+    title: '¿Qué hace el aceite del motor y qué pasa si retrasas el cambio?',
+    category: 'Uso y mantenimiento',
+    categorySlug: 'uso-mantenimiento',
+    description: 'Qué hace el aceite dentro del motor, por qué los trayectos cortos lo ensucian antes y cómo leer los intervalos del fabricante antes de alargar el cambio.',
     published: true,
   },
 ] as const;

@@ -23,10 +23,12 @@ const articleSchema = {
   author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
   publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿El Porsche Mission S sustituirá al 911?","acceptedAnswer":{"@type":"Answer","text":"Porsche anuncia la futura gama del Mission S como una oferta permanente por encima del 911. No ha comunicado que vaya a sustituirlo."}},{"@type":"Question","name":"¿Cuándo se venderá y cuánto costará?","acceptedAnswer":{"@type":"Answer","text":"A 19 de octubre de 2026, Porsche no ha anunciado fecha de comercialización ni precio para el modelo de producción."}},{"@type":"Question","name":"¿El Mission S será eléctrico o híbrido?","acceptedAnswer":{"@type":"Answer","text":"La marca ha confirmado la arquitectura de motor central del proyecto, pero no ha publicado una ficha de propulsión definitiva. No sería riguroso atribuirle ya una motorización concreta."}},{"@type":"Question","name":"¿Cuáles serán sus rivales?","acceptedAnswer":{"@type":"Answer","text":"Por el lugar que Porsche quiere darle en su gama, Ferrari 849 Testarossa, Lamborghini Temerario y McLaren 750S son referencias razonables. La comparación definitiva dependerá del precio y de las especificaciones del coche de serie."}}]};
 ---
 
 <BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Porsche Mission S' }]} />
     <article class="guide-article">

@@ -5,6 +5,7 @@ import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
 const title = 'Cómo reducir el consumo de combustible: hábitos que sí ayudan';
+const seoTitle = 'Reducir el consumo: hábitos que ayudan | Kilómetro Claro';
 const description = 'Un protocolo práctico para gastar menos combustible: prepara el coche, cambia hábitos de conducción y mide el resultado en L/100 km y euros.';
 const canonical = new URL('/guias/como-reducir-consumo-combustible/', Astro.site ?? 'https://kilometroclaro.com');
 const publishedDate = '2026-10-08';
@@ -21,9 +22,11 @@ const articleSchema = {
   author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
   publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuántos repostajes necesito para comprobar si consumo menos?","acceptedAnswer":{"@type":"Answer","text":"Dos o tres repostajes completos por periodo dan una referencia más útil que uno solo, aunque no hay un número que garantice una comparación perfecta. Si tus rutas son muy variables, acumula más kilómetros y anota las diferencias de uso."}},{"@type":"Question","name":"¿Debo subir la presión de los neumáticos para ahorrar?","acceptedAnswer":{"@type":"Answer","text":"No por encima de lo indicado por el fabricante. Revisa la presión en frío y usa el valor previsto para la carga del coche. Una presión incorrecta puede afectar al desgaste y al comportamiento del vehículo."}},{"@type":"Question","name":"¿La marcha más larga siempre consume menos?","acceptedAnswer":{"@type":"Answer","text":"No. Debe ser una marcha que permita al motor responder sin tirones, vibraciones ni falta de fuerza. Cambia según el vehículo, la pendiente y la velocidad; sigue el manual y las indicaciones del coche."}},{"@type":"Question","name":"¿Cuál es el ahorro anual que puedo esperar?","acceptedAnswer":{"@type":"Answer","text":"No hay una cifra universal. Calcula la diferencia real entre tus periodos en L/100 km y multiplícala por tus kilómetros anuales y tu precio por litro. Si las condiciones de ambos periodos cambiaron mucho, interpreta el resultado con cautela."}}]};
 ---
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Reducir el consumo' }]} />
     <article class="guide-article">

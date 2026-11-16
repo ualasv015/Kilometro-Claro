@@ -5,6 +5,7 @@ import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
 const title = 'Cuánto cuesta un viaje en coche: ejemplo Almería-Barcelona';
+const seoTitle = 'Coste del viaje Almería-Barcelona en coche | Kilómetro Claro';
 const description = 'Calcula el coste de viajar en coche de Almería a Barcelona. Comparamos ida y vuelta con o sin peajes, parking privado o aparcamiento gratuito.';
 const canonical = new URL('/guias/cuanto-cuesta-viaje-coche/', Astro.site ?? 'https://kilometroclaro.com');
 const publishedDate = '2026-10-07';
@@ -14,14 +15,16 @@ const articleSchema = {
   datePublished: publishedDate, dateModified: modifiedDate, inLanguage: 'es-ES', mainEntityOfPage: canonical.toString(),
   author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' }, publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo calculo cuánto gastaré en gasolina en un viaje?","acceptedAnswer":{"@type":"Answer","text":"Multiplica los kilómetros por el consumo en L/100 km y divide entre 100 para obtener litros. Multiplica esos litros por el precio por litro. Añade peajes y aparcamiento aparte."}},{"@type":"Question","name":"¿Debo contar la distancia de ida y vuelta?","acceptedAnswer":{"@type":"Answer","text":"Sí, si quieres el coste del viaje completo. Duplica la distancia solo cuando el regreso vaya a ser por el mismo recorrido; si no, suma los kilómetros de cada tramo."}},{"@type":"Question","name":"¿La calculadora incluye peajes y aparcamiento?","acceptedAnswer":{"@type":"Answer","text":"No. Calcula combustible e ida y vuelta y puede dividir ese gasto entre pasajeros. Añade aparte el precio de los peajes y del aparcamiento para obtener el presupuesto total."}},{"@type":"Question","name":"¿Hay aparcamiento gratuito en Barcelona para un visitante?","acceptedAnswer":{"@type":"Answer","text":"Solo puedes contar con 0 € si encuentras una plaza pública donde el estacionamiento esté permitido sin pagar durante toda la estancia. Las zonas azules y verdes tienen horarios, tarifas y límites para no residentes; revisa siempre la señalización del lugar concreto."}},{"@type":"Question","name":"¿Cómo reparto el coste del viaje entre pasajeros?","acceptedAnswer":{"@type":"Answer","text":"Divide el total de las partidas acordadas entre las personas que contribuyen. Deja claro antes del viaje si el total incluye combustible, peajes y aparcamiento."}},{"@type":"Question","name":"¿Qué precio de gasolina debo poner?","acceptedAnswer":{"@type":"Answer","text":"Usa un precio actual que te resulte aplicable, por ejemplo el de una estación de tu ruta. El Geoportal de Hidrocarburos del MITECO permite consultar precios comunicados por estaciones en España."}},{"@type":"Question","name":"¿Cómo calculo el coste de un viaje en coche eléctrico?","acceptedAnswer":{"@type":"Answer","text":"Multiplica la distancia por el consumo eléctrico en kWh/100 km y divide entre 100; después multiplica por el precio por kWh aplicable. Si cargas en distintos lugares, calcula cada tramo con su tarifa y suma los importes."}}]};
 ---
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Coste de un viaje en coche' }]} />
     <article class="guide-article">
       <header class="guide-header">
-        <span class="eyebrow">Coste de los viajes · Actualizada el 19 de octubre de 2026</span>
+        <span class="eyebrow">Costes del coche · Actualizada el 19 de octubre de 2026</span>
         <h1>{title}</h1>
         <p class="dek">Tomamos un viaje de ida y vuelta a Barcelona para ver cuánto cambia el presupuesto al elegir una ruta de pago o un parking privado. Separamos el combustible de cada gasto para que puedas sustituir los supuestos por los de tu viaje.</p>
         <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
