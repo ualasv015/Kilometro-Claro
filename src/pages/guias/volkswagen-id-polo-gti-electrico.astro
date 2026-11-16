@@ -5,12 +5,13 @@ import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
 const title = 'Volkswagen ID. Polo GTI: ¿conserva el espíritu de un deportivo pequeño?';
+const seoTitle = 'ID. Polo GTI: ¿conserva el espíritu GTI? | Kilómetro Claro';
 const description = 'Analizamos el primer GTI eléctrico: chasis, autonomía, costes, precio y diferencias frente al ID. Polo de 211 CV y sus rivales.';
 const canonical = new URL('/guias/volkswagen-id-polo-gti-electrico/', Astro.site ?? 'https://kilometroclaro.com');
 const date = '2026-11-01';
 const schema = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description, image: 'https://kilometroclaro.com/images/guides/id-polo-gti-frontal.jpg', datePublished: date, dateModified: date, inLanguage: 'es-ES', mainEntityOfPage: canonical.toString(), author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' }, publisher: { '@type': 'Organization', name: 'Kilómetro Claro' } };
 ---
-<BaseLayout title="Volkswagen ID. Polo GTI eléctrico | Kilómetro Claro" description={description} canonical={canonical} ogType="article" publishedDate={date} modifiedDate={date}>
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={date} modifiedDate={date}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(schema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{label:'Inicio',href:'/'},{label:'Guías',href:'/guias/'},{label:'Volkswagen ID. Polo GTI'}]} />

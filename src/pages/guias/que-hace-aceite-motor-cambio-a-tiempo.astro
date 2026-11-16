@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import GuideImage from '../../components/guides/GuideImage.astro';
+import '../../styles/guide.css';
+
+const slug = 'que-hace-aceite-motor-cambio-a-tiempo';
+const title = '¿Qué hace el aceite del motor y qué pasa si retrasas el cambio?';
+const seoTitle = 'Qué pasa si retrasas el cambio de aceite | Kilómetro Claro';
+const description = 'Qué hace el aceite dentro del motor, por qué los trayectos cortos lo ensucian antes y cómo leer los intervalos del fabricante antes de alargar el cambio.';
+const canonical = new URL('/guias/' + slug + '/', Astro.site ?? 'https://kilometroclaro.com');
+const publishedDate = '2026-11-16';
+const modifiedDate = '2026-11-16';
+const fechaLarga = '16 de noviembre de 2026';
+const categoria = 'Uso y mantenimiento';
+
+const sources = {
+  repsol: 'https://www.repsol.es/particulares/asesoramiento-consumo/cada-cuanto-cambiar-aceite-coche/',
+  motorEs: 'https://www.motor.es/noticias/toyota-honda-aceite-motor-turbo-2026117196.html',
+  liquiFunciones: 'https://www.liqui-moly.com/es/productos/consejos-y-temas/funciones-del-aceite-de-motor.html',
+  liquiCortos: 'https://www.liqui-moly.com/es/productos/consejos-y-temas/desplazamientos-cortos-efectos-y-prevencion.html',
+  km77: 'https://www.km77.com/revista/engendro-mecanico/normas-acea-aceite-motor-significado/?amp=1',
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: new URL('/images/og/guia-' + slug + '.png', canonical).toString(),
+  datePublished: publishedDate,
+  dateModified: modifiedDate,
+  inLanguage: 'es-ES',
+  mainEntityOfPage: canonical.toString(),
+  author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
+  publisher: { '@type': 'Organization', name: 'Kilómetro Claro' },
+};
+
+const faqs = [
+  { q: '¿Puedo esperar unos cientos de kilómetros al cambio?', a: 'Ninguna de las fuentes consultadas da una tolerancia en kilómetros. La referencia es el intervalo del manual de tu coche y, si lo tiene, su indicador de mantenimiento. Si ya has pasado el plazo, conviene cambiarlo cuanto antes.' },
+  { q: '¿Con aceite sintético puedo estirar más el cambio?', a: 'Según Repsol, un fabricante de lubricantes, el aceite mineral suele cambiarse entre 5.000 y 7.000 km y el sintético entre 15.000 y 30.000 km. Esas cifras son generales: manda el intervalo que indique el fabricante de tu coche para su aceite.' },
+  { q: '¿Y si casi no uso el coche?', a: 'Repsol indica que, en uso habitual, el cambio debe hacerse como mínimo cada 12 meses, aunque no llegues a los kilómetros previstos. Su recomendación es no dejar pasar más de dos años.' },
+];
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
+  <div class="wrap page-wrap guide-page">
+    <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Cambio de aceite' }]} />
+    <article class="guide-article">
+
+      <header class="guide-header">
+        <span class="eyebrow">{categoria} · {fechaLarga}</span>
+        <h1>{title}</h1>
+        <p class="dek">El aceite trabaja en cada arranque, incluso cuando no lo notas. Retrasar su cambio no falla de golpe: el aceite pierde margen poco a poco, y el uso de ciudad acorta ese margen.</p>
+        <p class="byline">Por el <a href="/sobre-nosotros/">equipo editorial de Kilómetro Claro</a></p>
+      </header>
+
+      <aside class="quick-answer" aria-label="Respuesta rápida">
+        <strong>Respuesta rápida</strong>
+        <p>El aceite lubrica, refrigera, arrastra residuos y sella el motor. Si retrasas el cambio, el aceite se degrada y deja de proteger igual. El intervalo que manda es el de tu fabricante, pero el uso severo lo acorta: los trayectos cortos y el motor frío obligan a acortarlo. Repsol lo cifra en una reducción de entre un 20 y un 30 % del intervalo normal. No hemos encontrado una cifra de kilómetros de tolerancia respaldada por una fuente, así que no la damos.</p>
+      </aside>
+
+      <GuideImage slug={slug} />
+
+      <nav class="article-toc" aria-label="Contenido de la guía">
+        <strong>En esta guía</strong>
+        <ul>
+          <li><a href="#funciones">Qué hace el aceite dentro del motor</a></li>
+          <li><a href="#especificacion">Viscosidad y especificación: no es cualquier aceite</a></li>
+          <li><a href="#trayectos-cortos">Qué cambia en trayectos cortos y en frío</a></li>
+          <li><a href="#intervalos">Cada cuánto cambiarlo</a></li>
+          <li><a href="#retraso">Qué pasa si retrasas el cambio</a></li>
+          <li><a href="#comprobar">Cómo comprobar el plazo de tu coche</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="funciones">Qué hace el aceite dentro del motor</h2>
+      <p>El aceite de motor cumple cinco funciones a la vez. <strong>Lubrica</strong> las piezas móviles para reducir la fricción y el desgaste. <strong>Refrigera</strong>, porque ayuda a disipar el calor que el motor no evacua por otra vía. <strong>Limpia</strong>, al arrastrar hasta el filtro los restos de la combustión, la abrasión metálica y los sedimentos. <strong>Sella</strong> los segmentos del pistón para que los gases no pasen a la parte baja del motor, y forma una <strong>película protectora</strong> sobre las superficies metálicas frente al aire, el agua y los productos de la combustión. Son funciones descritas por <a href={sources.liquiFunciones}>Liqui Moly, fabricante de lubricantes</a>.</p>
+      <p>Todo depende de que esa película exista en cada arranque. Cuando el aceite se degrada, sigue en el motor, pero cumple peor cada una de esas tareas.</p>
+
+      <h2 id="especificacion">Viscosidad y especificación: no es cualquier aceite</h2>
+      <p>En la etiqueta aparecen dos tipos de información que conviene separar. La <strong>viscosidad SAE</strong>, como 5W-30 o 0W-20, describe cómo fluye el aceite a distintas temperaturas. <a href={sources.km77}>KM77</a> aclara que no informa sobre la calidad de su base química. Las <strong>normas ACEA</strong> son otra cosa: evalúan prestaciones y ensayos. Según la misma fuente, la letra indica la aplicación principal (A y B para gasolina y diésel ligeros, C para motores con sistemas de postratamiento, E para pesados), y el número indica el paquete de exigencias.</p>
+      <p>Por eso no basta con que la viscosidad «suene» bien. KM77 recuerda que hay que respetar la especificación que indica el fabricante, y pone un ejemplo: usar un aceite C5 en un motor que pide C3 puede dar una viscosidad a alta temperatura insuficiente. <a href={sources.liquiFunciones}>Liqui Moly</a> añade que una viscosidad incorrecta puede afectar a la sincronización de los sistemas de control de válvulas variables y aumentar el consumo.</p>
+
+      <h2 id="trayectos-cortos">Qué cambia en trayectos cortos y en frío</h2>
+      <p>El motor trabaja mejor cuando alcanza su temperatura. En un recorrido de ciudad de pocos kilómetros, el motor casi no llega a ella, y el aceite tampoco. Liqui Moly señala los <strong>arranques en frío frecuentes</strong> de los trayectos cortos y sitúa el problema en recorridos de menos de 10 km; <a href={sources.repsol}>Repsol</a> habla de menos de 8 km. La diferencia es de criterio, no de mecanismo: cuanto más corto el trayecto, más frío sigue el motor.</p>
+      <p>Según Liqui Moly, en ese estado <strong>parte del combustible no se quema del todo y llega al cárter</strong>, donde se mezcla con el aceite. Esa mezcla reduce la capacidad de lubricación del aceite. La misma fuente describe depósitos que se forman con el tiempo en los inyectores y un consumo más alto. El resultado práctico es el que resume la propia marca: en trayectos cortos, el aceite se ensucia más rápido de lo habitual.</p>
+      <p>Hay que tomar esta explicación con cautela. Procede de un fabricante de lubricantes, y no hemos encontrado un estudio independiente que mida cuánto combustible llega al aceite en un coche de gasolina moderno.</p>
+
+      <h2 id="intervalos">Cada cuánto cambiarlo: los intervalos no son una sola cifra</h2>
+      <p>Las fuentes no coinciden en una cifra general, porque cada fabricante fija la suya. Repsol indica que, como norma general, el cambio se hace cada 15.000 o 30.000 km, o cada uno o dos años. Para coches de más de 15 años reduce el máximo a 10.000 km, y en motores modernos con aceite de larga duración puede llegar a 30.000 km. Según Motor.es, Toyota y Honda separan el intervalo normal del severo:</p>
+
+      <div class="table-scroll">
+        <table>
+          <caption>Intervalos de cambio de aceite según las fuentes consultadas, 16 de noviembre de 2026</caption>
+          <thead><tr><th scope="col">Fuente y motor</th><th scope="col">Uso normal</th><th scope="col">Uso severo</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Toyota, atmosférico de gasolina (Motor.es)</th><td>15.000 km o 1 año, lo que llegue antes</td><td>7.500 km o 6 meses</td></tr>
+            <tr><th scope="row">Toyota, turbo (Motor.es)</th><td>5.000 a 10.000 km o de 6 meses a 1 año</td><td>2.500 km o 3 meses</td></tr>
+            <tr><th scope="row">Honda (Motor.es)</th><td>Entre 10.000 y 15.000 km</td><td>Pasa al calendario corto si las condiciones severas suponen en torno al 30 % del recorrido</td></tr>
+            <tr><th scope="row">Repsol, referencia general</th><td>15.000 o 30.000 km, o de 1 a 2 años</td><td>Reducir el intervalo entre un 20 y un 30 %</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Cifras de Motor.es y Repsol, no del manual original de cada coche. Para tu modelo, el dato válido es el del manual. Motor.es fecha su artículo el 23 de octubre de 2026; Repsol lo actualizó el 16 de julio de 2026.</p>
+
+      <p>Lo que cuenta como uso severo tampoco varía tanto entre fuentes. Motor.es indica que los fabricantes consideran condiciones adversas los trayectos habituales de unos 8 km, y añade los atascos, los viajes largos a baja velocidad, los arranques en frío repetidos y el ralentí prolongado. Repsol incluye además el tráfico urbano denso, el remolque, las zonas montañosas, el clima extremo y los motores turbocargados. Motor.es resume la idea en una frase: lo que más castiga al aceite es la ciudad.</p>
+
+      <h2 id="retraso">Qué pasa si retrasas el cambio</h2>
+      <p>Retrasar el cambio no provoca un fallo inmediato. La secuencia que describen las fuentes es gradual: el aceite se degrada, se mezcla con combustible en los trayectos cortos y pierde capacidad de lubricación. Liqui Moly lo resume así: esa mezcla <strong>puede provocar, a largo plazo, daños costosos</strong>. Los síntomas concretos que apunta la marca son un consumo más alto y un funcionamiento irregular, con posible daño del motor en el peor caso.</p>
+      <p>Lo que no hemos podido confirmar es cuánto tiempo o cuántos kilómetros de retraso son admisibles. No hemos localizado una medición del desgaste en función del número de kilómetros de más, y no damos una cifra que no tenga respaldo. La recomendación se apoya en el intervalo del fabricante, que está pensado para ese motor concreto.</p>
+
+      <h2 id="comprobar">Cómo comprobar el plazo de tu coche</h2>
+      <p>Empieza por el manual del propietario. Busca el apartado de mantenimiento periódico y, dentro de él, la sección de <strong>uso severo</strong>: ahí está el intervalo que te corresponde si tu forma de conducir encaja en ella. Comprueba también si tu coche tiene un indicador de mantenimiento o de vida del aceite, que puede adelantar o retrasar la fecha según el uso.</p>
+      <p>Anota la fecha y los kilómetros de cada cambio. Con esos dos datos sabrás cuánto llevas desde el último y si el uso de tu coche entra en la categoría severa. Si no sabes qué tipo de aceite lleva, el manual indica su viscosidad y su especificación; es el punto de partida.</p>
+
+      <h2 id="conclusion">Qué observar antes de alargar el cambio</h2>
+      <p>Antes de estirar un cambio, mira cuánto conduces por ciudad, cuántos trayectos superan los 8 o 10 km y cuántos arrancas con el motor frío. Si la mayoría de tus trayectos son cortos, el intervalo que te corresponde probablemente es el de uso severo. Si tienes dudas sobre la especificación exacta del aceite o sobre el intervalo de tu versión, pregunta en un concesionario oficial de tu marca y pide que te lo confirmen por escrito.</p>
+
+      <section class="faq-section" aria-labelledby="preguntas">
+        <h2 id="preguntas">Preguntas frecuentes</h2>
+        {faqs.map((f) => (
+          <details><summary>{f.q}</summary><p>{f.a}</p></details>
+        ))}
+      </section>
+
+      <aside class="sources">
+        <h2>Fuentes y método</h2>
+        <p>Fuentes consultadas el 16 de noviembre de 2026. Las funciones del aceite y el mecanismo de los trayectos cortos proceden de Liqui Moly, fabricante de lubricantes; los intervalos generales y el umbral de uso severo, de Repsol (artículo actualizado el 16 de julio de 2026); las cifras de Toyota y Honda, de Motor.es (artículo del 23 de octubre de 2026), que no hemos contrastado con el manual original. La explicación de la viscosidad y de las normas ACEA procede de KM77.</p>
+        <ul>
+          <li><a href={sources.repsol}>Repsol, «¿Cada cuánto hay que cambiar el aceite del coche?»</a>.</li>
+          <li><a href={sources.motorEs}>Motor.es, «Toyota y Honda explican por qué»</a>.</li>
+          <li><a href={sources.liquiFunciones}>Liqui Moly, «Funciones del aceite de motor»</a>.</li>
+          <li><a href={sources.liquiCortos}>Liqui Moly, «Desplazamientos cortos: efectos y prevención»</a>.</li>
+          <li><a href={sources.km77}>KM77, «Normas ACEA del aceite de motor»</a>.</li>
+        </ul>
+        <p>Límites del método: no hemos consultado el manual de propietario de ninguna marca española, ni un estudio independiente sobre la dilución de combustible en motores de gasolina modernos. Los intervalos son de referencia; el dato válido es el del fabricante de tu coche.</p>
+      </aside>
+
+    </article>
+  </div>
+</BaseLayout>

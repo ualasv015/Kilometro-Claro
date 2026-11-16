@@ -5,6 +5,7 @@ import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
 const title = 'Qué coche comprar según tu presupuesto: modelos para ciudad, carretera y familia';
+const seoTitle = 'Qué coche comprar según tu presupuesto | Kilómetro Claro';
 const description = 'Opciones concretas de gasolina, diésel, híbrido y eléctrico por presupuesto y tipo de uso en España. Compara coches nuevos y usados sin olvidar los gastos de propiedad.';
 const canonical = new URL('/guias/que-coche-comprar-segun-presupuesto/', Astro.site ?? 'https://kilometroclaro.com');
 const publishedDate = '2026-10-08';
@@ -21,10 +22,12 @@ const articleSchema = {
   author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
   publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué coche puedo comprar con 10.000 € en España?","acceptedAnswer":{"@type":"Answer","text":"La búsqueda se centra normalmente en unidades usadas. Un Ibiza o León de gasolina, un 308 diésel o un Yaris Hybrid de generación anterior pueden ser puntos de partida según el uso, pero su disponibilidad bajo ese límite no está garantizada. Estado, mantenimiento e inspección previa importan más que el nombre del modelo."}},{"@type":"Question","name":"¿Hay coches eléctricos nuevos por menos de 20.000 € sin ayudas?","acceptedAnswer":{"@type":"Answer","text":"En la revisión del 18 de octubre de 2026, el configurador de Renault muestra 19.500 € al contado y sin promociones para el Twingo E-Tech evolution. Tiene cuatro plazas y está orientado sobre todo a desplazamientos urbanos. Confirma precio final, autonomía y solución de recarga antes de decidir."}},{"@type":"Question","name":"¿Un microhíbrido equivale a un híbrido autorrecargable?","acceptedAnswer":{"@type":"Answer","text":"No. Un mHEV aporta asistencia eléctrica limitada al motor térmico; un HEV utiliza un sistema híbrido distinto y puede propulsar el coche eléctricamente en determinadas condiciones sin enchufarse. Compara la versión concreta y su consumo para tu tipo de trayecto."}},{"@type":"Question","name":"¿Es mejor diésel o híbrido para muchos kilómetros?","acceptedAnswer":{"@type":"Answer","text":"Depende de cuánta autovía hagas, del consumo real, del coste de compra y mantenimiento y de dónde vayas a circular. Un diésel puede merecer estudio en recorridos largos y continuados; un HEV puede encajar mejor si también haces bastante ciudad. Calcula ambos escenarios con tus datos."}},{"@type":"Question","name":"¿Debo gastar todo mi presupuesto en el coche?","acceptedAnswer":{"@type":"Answer","text":"No. Reserva margen para trámites, seguro, mantenimiento y contingencias. Una compra que consume todo el dinero disponible puede dejarte sin capacidad para afrontar el primer año de uso."}}]};
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Comprar según presupuesto' }]} />
     <article class="guide-article">

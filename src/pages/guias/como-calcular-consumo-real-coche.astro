@@ -5,6 +5,7 @@ import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
 const title = 'Cómo calcular el consumo real de tu coche: fórmula y ejemplo';
+const seoTitle = 'Cómo calcular el consumo real de tu coche | Kilómetro Claro';
 const description = 'Aprende a medir el consumo en L/100 km y revisa un caso real: 380 km entre Almería y Granada en un Toyota Auris 1.4 D-4D de 2010.';
 const canonical = new URL('/guias/como-calcular-consumo-real-coche/', Astro.site ?? 'https://kilometroclaro.com');
 const publishedDate = '2026-10-07';
@@ -14,9 +15,11 @@ const articleSchema = {
   datePublished: publishedDate, dateModified: modifiedDate, inLanguage: 'es-ES', mainEntityOfPage: canonical.toString(),
   author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' }, publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo se calcula el consumo de un coche en L/100 km?","acceptedAnswer":{"@type":"Answer","text":"Divide los litros consumidos entre los kilómetros recorridos y multiplica por 100. Por ejemplo, 40 litros en 620 km equivalen a 6,45 L/100 km."}},{"@type":"Question","name":"¿Tengo que llenar el depósito para medirlo?","acceptedAnswer":{"@type":"Answer","text":"Para el método sencillo de repostajes, compara dos llenados hasta el primer corte automático de la pistola y registra los litros añadidos y los kilómetros del intervalo. No fuerces el llenado después del corte."}},{"@type":"Question","name":"¿Cuántos depósitos debo medir para obtener una media?","acceptedAnswer":{"@type":"Answer","text":"No hay un número universal. Repetir durante varios depósitos reduce el peso de una ruta o un llenado atípico; anota cada periodo y calcula la media con el total de litros y kilómetros."}},{"@type":"Question","name":"¿Puedo calcular L/100 km con los euros pagados?","acceptedAnswer":{"@type":"Answer","text":"No. Para medir consumo necesitas litros y kilómetros. El precio por litro puede variar entre estaciones o fechas y solo se utiliza después, si quieres expresar el combustible consumido en euros."}},{"@type":"Question","name":"¿Qué hago si un repostaje da un consumo muy distinto?","acceptedAnswer":{"@type":"Answer","text":"Comprueba primero el cuentakilómetros, los litros, el nivel de llenado y si hubo un repostaje parcial u omitido. Compara también el tipo de trayecto y repite la medida. Un solo valor distinto no demuestra una avería; si el aumento persiste con datos y condiciones comparables, revisa el mantenimiento y consulta a un taller."}},{"@type":"Question","name":"¿Por qué mi consumo real es mayor que el homologado?","acceptedAnswer":{"@type":"Answer","text":"El procedimiento de homologación y tu uso real no son iguales. Tráfico, velocidad, trayectos cortos, carga, temperatura y estilo de conducción pueden cambiar el resultado."}},{"@type":"Question","name":"¿Cómo paso de L/100 km a euros?","acceptedAnswer":{"@type":"Answer","text":"Multiplica los L/100 km por el precio por litro para obtener euros por cada 100 km. Para una ruta concreta, usa la distancia, tu consumo real y el precio previsto en la calculadora de coste de viaje."}}]};
 ---
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Calcular el consumo real' }]} />
     <article class="guide-article">

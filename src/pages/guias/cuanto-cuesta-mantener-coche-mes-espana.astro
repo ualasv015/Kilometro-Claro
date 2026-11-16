@@ -6,6 +6,7 @@ import CapitalIvtm from '../../components/guides/CapitalIvtm.astro';
 import '../../styles/guide.css';
 
 const title = '¿Cuánto cuesta mantener un coche al mes en España? (Guía y desglose de costes)';
+const seoTitle = '¿Cuánto cuesta mantener un coche al mes? | Kilómetro Claro';
 const description = 'Desglosamos el coste mensual de un coche en España: combustible, seguro, ITV, mantenimiento e IVTM. Consulta las tarifas 2026 de las capitales y calcula tu caso.';
 const canonical = new URL('/guias/cuanto-cuesta-mantener-coche-mes-espana/', Astro.site ?? 'https://kilometroclaro.com');
 const publishedDate = '2026-10-06';
@@ -15,9 +16,11 @@ const articleSchema = {
   datePublished: publishedDate, dateModified: modifiedDate, inLanguage: 'es-ES', mainEntityOfPage: canonical.toString(),
   author: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' }, publisher: { '@type': 'Organization', name: 'Kilómetro Claro', url: 'https://kilometroclaro.com/sobre-nosotros/' },
 };
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto cuesta mantener un coche al mes en España?","acceptedAnswer":{"@type":"Answer","text":"RACE estima para 2026 entre 2.000 y 3.500 € anuales en un coche de combustión que recorre alrededor de 15.000 km; equivale aproximadamente a 170–290 € al mes. Es una referencia general, no una factura garantizada."}},{"@type":"Question","name":"¿Cuánto cuesta mantener un coche sin contar gasolina?","acceptedAnswer":{"@type":"Answer","text":"No existe una cifra única: seguro, IVTM, ITV y mantenimiento varían según el coche y el conductor. Aparcamiento, reparaciones y financiación pueden añadir una cantidad importante. Suma tus recibos y divide por 12 para obtener tu promedio mensual."}},{"@type":"Question","name":"¿Cada cuánto pasa la ITV un turismo particular?","acceptedAnswer":{"@type":"Answer","text":"En general, la primera inspección es a los cuatro años; desde los cuatro hasta los diez años se realiza cada dos años y, con más de diez años, cada año. La DGT detalla estos plazos y contempla particularidades por tipo de vehículo."}},{"@type":"Question","name":"¿El impuesto de circulación cuesta lo mismo en toda España?","acceptedAnswer":{"@type":"Answer","text":"No. El IVTM es municipal y la cuota depende, entre otros factores, de la ordenanza local y los caballos fiscales. Consulta el importe publicado por el ayuntamiento donde esté domiciliado el vehículo."}},{"@type":"Question","name":"¿El desplegable muestra el IVTM de todos los municipios de mi provincia?","acceptedAnswer":{"@type":"Answer","text":"No. Muestra la capital de cada una de las 50 provincias y, además, Ceuta y Melilla. Si el vehículo está domiciliado en otro municipio, consulta la ordenanza o el recibo de ese ayuntamiento. Las cifras de AEA son tarifas generales de 2026 para turismos de 8 a 11,99 caballos fiscales y no incluyen bonificaciones personales."}},{"@type":"Question","name":"¿Debo incluir la depreciación y la cuota del préstamo?","acceptedAnswer":{"@type":"Answer","text":"Depende de qué quieras medir. La cuota refleja una salida de dinero; la depreciación estima la pérdida de valor del coche. Si incluyes ambas, define el objetivo del cálculo y el criterio para no contabilizar dos veces el mismo coste."}}]};
 ---
-<BaseLayout title="Cuánto cuesta mantener un coche al mes | Kilómetro Claro" description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Coste mensual de un coche' }]} />
     <article class="guide-article">

@@ -4,7 +4,8 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import GuideImage from '../../components/guides/GuideImage.astro';
 import '../../styles/guide.css';
 
-const title = 'Tipos de luces del coche: guía | Kilómetro Claro';
+const title = 'Luces del coche: diferencias entre halógenas, xenón, LED y láser';
+const seoTitle = 'Tipos de luces del coche: cómo funcionan | Kilómetro Claro';
 const description = 'Comparamos halógenas, xenón, LED, Matrix y láser: cómo funcionan, qué alcances se han publicado y qué revisar antes de elegir o sustituir los faros.';
 const canonical = new URL('/guias/tipos-luces-coche/', Astro.site ?? 'https://kilometroclaro.com');
 const publishedDate = '2026-10-27';
@@ -45,7 +46,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
+<BaseLayout title={seoTitle} description={description} canonical={canonical} ogType="article" publishedDate={publishedDate} modifiedDate={modifiedDate}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
   <div class="wrap page-wrap guide-page">
     <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Guías', href: '/guias/' }, { label: 'Tipos de luces del coche' }]} />
